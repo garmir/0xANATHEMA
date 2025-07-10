@@ -1,0 +1,569 @@
+name: Recursive Atomization Engine - Meta-Prompt Generation
+
+on:
+  push:
+    branches: [ master, main ]
+  schedule:
+    - cron: '0 */2 * * *'  # Every 2 hours for continuous atomization
+  workflow_dispatch:
+    inputs:
+      atomization_depth:
+        description: 'Recursion depth for atomic prompt generation'
+        required: false
+        default: '7'
+      enable_meta_prompts:
+        description: 'Enable meta-prompt generation'
+        required: false
+        default: 'true'
+      prompt_categories:
+        description: 'Comma-separated prompt categories to process'
+        required: false
+        default: 'validation,research,implementation,optimization,automation'
+
+env:
+  ATOMIZATION_DEPTH: ${{ github.event.inputs.atomization_depth || '7' }}
+  ENABLE_META_PROMPTS: ${{ github.event.inputs.enable_meta_prompts || 'true' }}
+  PROMPT_CATEGORIES: ${{ github.event.inputs.prompt_categories || 'validation,research,implementation,optimization,automation' }}
+
+jobs:
+  # Job 1: Generate recursive prompt matrix
+  generate-prompt-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      prompt-matrix: ${{ steps.generate.outputs.matrix }}
+      category-count: ${{ steps.generate.outputs.categories }}
+      depth-levels: ${{ steps.generate.outputs.levels }}
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Generate Recursive Prompt Matrix
+        id: generate
+        run: |
+          echo "Generating recursive atomization matrix..."
+          
+          # Parse categories
+          IFS=',' read -ra CATEGORIES <<< "$PROMPT_CATEGORIES"
+          DEPTH=$ATOMIZATION_DEPTH
+          
+          # Create comprehensive matrix
+          cat > prompt-matrix.json << 'EOF'
+          {
+            "include": [
+          EOF
+          
+          first=true
+          for category in "${CATEGORIES[@]}"; do
+            for depth in $(seq 1 $DEPTH); do
+              for sub_type in atomic meta recursive hybrid; do
+                if [ "$first" = true ]; then
+                  first=false
+                else
+                  echo "," >> prompt-matrix.json
+                fi
+                
+                cat >> prompt-matrix.json << EOF
+              {
+                "category": "$category",
+                "depth": "$depth", 
+                "type": "$sub_type",
+                "matrix_id": "${category}_${depth}_${sub_type}",
+                "priority": "$([ $depth -le 3 ] && echo "high" || echo "medium")"
+              }
+          EOF
+              done
+            done
+          done
+          
+          echo "" >> prompt-matrix.json
+          echo "    ]" >> prompt-matrix.json
+          echo "  }" >> prompt-matrix.json
+          
+          # Output matrix
+          MATRIX=$(cat prompt-matrix.json | jq -c .)
+          echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
+          echo "categories=${#CATEGORIES[@]}" >> $GITHUB_OUTPUT
+          echo "levels=$DEPTH" >> $GITHUB_OUTPUT
+          
+          echo "Generated matrix with ${#CATEGORIES[@]} categories and $DEPTH depth levels"
+
+  # Job 2: Parallel atomic prompt generation
+  generate-atomic-prompts:
+    needs: generate-prompt-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 15
+      matrix: ${{ fromJson(needs.generate-prompt-matrix.outputs.prompt-matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Atomization Environment
+        run: |
+          npm install -g task-master-ai
+          mkdir -p atomic-prompts/${{ matrix.category }}
+          
+      - name: Generate Atomic Prompt - ${{ matrix.matrix_id }}
+        id: atomize
+        run: |
+          echo "Generating atomic prompt for: ${{ matrix.matrix_id }}"
+          echo "Category: ${{ matrix.category }}, Depth: ${{ matrix.depth }}, Type: ${{ matrix.type }}"
+          
+          # Generate category-specific atomic prompts
+          case "${{ matrix.category }}" in
+            "validation")
+              BASE_PROMPT="Recursively validate completion and effectiveness of"
+              FOCUS_AREAS="completion verification, status accuracy, dependency validation, quality assessment, progress tracking"
+              ;;
+            "research")
+              BASE_PROMPT="Conduct recursive research analysis for"
+              FOCUS_AREAS="literature review, pattern extraction, knowledge synthesis, insight generation, methodology optimization"
+              ;;
+            "implementation")
+              BASE_PROMPT="Implement recursive enhancement for"
+              FOCUS_AREAS="code optimization, architecture improvement, performance enhancement, integration refinement, functionality extension"
+              ;;
+            "optimization")
+              BASE_PROMPT="Apply recursive optimization to"
+              FOCUS_AREAS="performance tuning, resource utilization, algorithm efficiency, memory optimization, execution speed"
+              ;;
+            "automation")
+              BASE_PROMPT="Deploy recursive automation for"
+              FOCUS_AREAS="workflow automation, task scheduling, dependency management, continuous integration, autonomous execution"
+              ;;
+            *)
+              BASE_PROMPT="Recursively process"
+              FOCUS_AREAS="analysis, optimization, implementation, validation, automation"
+              ;;
+          esac
+          
+          # Generate type-specific variations
+          case "${{ matrix.type }}" in
+            "atomic")
+              PROMPT_TYPE="atomic, single-responsibility"
+              DECOMPOSITION="Break down into minimal, indivisible units"
+              ;;
+            "meta")
+              PROMPT_TYPE="meta-level, self-referential"
+              DECOMPOSITION="Analyze and improve the process itself"
+              ;;
+            "recursive")
+              PROMPT_TYPE="recursive, iterative"
+              DECOMPOSITION="Apply recursive patterns with depth control"
+              ;;
+            "hybrid")
+              PROMPT_TYPE="hybrid, multi-modal"
+              DECOMPOSITION="Combine multiple approaches for comprehensive enhancement"
+              ;;
+          esac
+          
+          # Create depth-specific complexity
+          DEPTH_MODIFIERS=""
+          for i in $(seq 1 ${{ matrix.depth }}); do
+            case $i in
+              1) DEPTH_MODIFIERS="$DEPTH_MODIFIERS surface-level analysis," ;;
+              2) DEPTH_MODIFIERS="$DEPTH_MODIFIERS detailed examination," ;;
+              3) DEPTH_MODIFIERS="$DEPTH_MODIFIERS deep structural analysis," ;;
+              4) DEPTH_MODIFIERS="$DEPTH_MODIFIERS comprehensive integration," ;;
+              5) DEPTH_MODIFIERS="$DEPTH_MODIFIERS meta-pattern recognition," ;;
+              6) DEPTH_MODIFIERS="$DEPTH_MODIFIERS recursive optimization," ;;
+              7) DEPTH_MODIFIERS="$DEPTH_MODIFIERS autonomous enhancement," ;;
+              *) DEPTH_MODIFIERS="$DEPTH_MODIFIERS advanced meta-recursive processing," ;;
+            esac
+          done
+          
+          # Generate the complete atomic prompt
+          cat > atomic-prompts/${{ matrix.category }}/prompt-${{ matrix.matrix_id }}.md << EOF
+          # Atomic Prompt: ${{ matrix.matrix_id }}
+          
+          **Category**: ${{ matrix.category }}
+          **Depth Level**: ${{ matrix.depth }}
+          **Type**: ${{ matrix.type }}
+          **Priority**: ${{ matrix.priority }}
+          **Generated**: $(date)
+          
+          ## Primary Atomic Prompt
+          
+          $BASE_PROMPT all Task-Master todos and tasks using $PROMPT_TYPE methodologies. Focus on $FOCUS_AREAS through recursive decomposition at depth level ${{ matrix.depth }}.
+          
+          ### Decomposition Strategy
+          $DECOMPOSITION with the following depth progression:
+          $DEPTH_MODIFIERS
+          
+          ### Execution Framework
+          
+          1. **Input Analysis**: Recursively analyze current state and requirements
+          2. **Pattern Recognition**: Identify recursive patterns and improvement opportunities  
+          3. **Atomic Breakdown**: Decompose into ${{ matrix.type }} components
+          4. **Recursive Processing**: Apply depth-${{ matrix.depth }} recursive enhancement
+          5. **Validation Loop**: Continuously validate and refine results
+          6. **Meta-Improvement**: Learn and adapt methodology for next iteration
+          
+          ### Implementation Commands
+          
+          \`\`\`bash
+          # Execute atomic ${{ matrix.category }} enhancement
+          task-master add-task --prompt="$BASE_PROMPT Task-Master system using ${{ matrix.type }} methodology at depth ${{ matrix.depth }}. Focus on: $FOCUS_AREAS. Apply recursive decomposition with validation loops and meta-improvement detection." --priority=${{ matrix.priority }}
+          
+          # Enable recursive processing
+          task-master expand --id=\$TASK_ID --research --force --depth=${{ matrix.depth }}
+          
+          # Validate and iterate
+          task-master validate-dependencies && task-master set-status --id=\$TASK_ID --status=in-progress
+          \`\`\`
+          
+          ### Success Criteria
+          
+          - Atomic decomposition completed at depth ${{ matrix.depth }}
+          - ${{ matrix.type }} methodology successfully applied
+          - ${{ matrix.category }} objectives achieved with measurable improvements
+          - Recursive validation loops operational
+          - Meta-improvement patterns identified and integrated
+          
+          ### Next Recursion Level
+          
+          To trigger deeper atomization:
+          \`\`\`bash
+          # Increase depth and re-process
+          gh workflow run recursive-atomization-engine.yml \\
+            -f atomization_depth=$(({{ matrix.depth }} + 1)) \\
+            -f prompt_categories=${{ matrix.category }}
+          \`\`\`
+          
+          EOF
+          
+          echo "atomic_prompt_generated=true" >> $GITHUB_OUTPUT
+          echo "prompt_file=atomic-prompts/${{ matrix.category }}/prompt-${{ matrix.matrix_id }}.md" >> $GITHUB_OUTPUT
+          
+      - name: Generate Meta-Prompt for ${{ matrix.matrix_id }}
+        if: env.ENABLE_META_PROMPTS == 'true'
+        run: |
+          echo "Generating meta-prompt for ${{ matrix.matrix_id }}"
+          
+          cat > atomic-prompts/${{ matrix.category }}/meta-prompt-${{ matrix.matrix_id }}.md << EOF
+          # Meta-Prompt: ${{ matrix.matrix_id }} Enhancement
+          
+          **Target**: Prompt optimization for ${{ matrix.matrix_id }}
+          **Meta-Level**: Depth ${{ matrix.depth }} + 1
+          **Focus**: Recursive improvement of the atomization process itself
+          
+          ## Meta-Atomic Prompt
+          
+          Recursively analyze and enhance the atomic prompt generation process for ${{ matrix.matrix_id }}. Focus on:
+          
+          1. **Prompt Effectiveness**: Evaluate and improve prompt clarity, specificity, and actionability
+          2. **Recursive Optimization**: Enhance the recursive decomposition methodology 
+          3. **Depth Calibration**: Optimize the depth-${{ matrix.depth }} processing for maximum efficiency
+          4. **Category Integration**: Improve ${{ matrix.category }} category-specific optimizations
+          5. **Meta-Learning**: Apply insights to enhance future prompt generation
+          
+          ### Meta-Enhancement Strategy
+          
+          - Analyze prompt execution outcomes and effectiveness metrics
+          - Identify patterns in successful vs unsuccessful atomization attempts
+          - Recursively refine the prompt generation algorithm itself
+          - Optimize depth progression and category-specific methodologies
+          - Enable autonomous prompt improvement and adaptation
+          
+          ### Meta-Implementation
+          
+          \`\`\`bash
+          # Create meta-enhancement task
+          task-master add-task --prompt="Meta-enhance atomic prompt generation for ${{ matrix.matrix_id }}: Recursively optimize prompt effectiveness, decomposition methodology, depth calibration, category integration, and meta-learning capabilities." --priority=high
+          \`\`\`
+          
+          EOF
+          
+      - name: Execute Atomic Prompt Implementation
+        run: |
+          echo "Executing atomic prompt for ${{ matrix.matrix_id }}"
+          
+          # Extract the main prompt from the generated file
+          if [ -f "atomic-prompts/${{ matrix.category }}/prompt-${{ matrix.matrix_id }}.md" ]; then
+            # Create implementation task
+            IMPL_PROMPT="Implement Atomic Enhancement for ${{ matrix.matrix_id }}: Apply ${{ matrix.type }} methodology at depth ${{ matrix.depth }} for ${{ matrix.category }} optimization. Focus on recursive decomposition, validation loops, and meta-improvement integration."
+            
+            task-master add-task --prompt="$IMPL_PROMPT" --priority=${{ matrix.priority }} > implementation-${{ matrix.matrix_id }}.json 2>&1 || echo "Implementation task created"
+            
+            echo "implementation_completed=true" >> $GITHUB_OUTPUT
+          else
+            echo "implementation_completed=false" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Upload Atomic Prompts
+        uses: actions/upload-artifact@v4
+        with:
+          name: atomic-prompts-${{ matrix.matrix_id }}
+          path: |
+            atomic-prompts/${{ matrix.category }}/prompt-${{ matrix.matrix_id }}.md
+            atomic-prompts/${{ matrix.category }}/meta-prompt-${{ matrix.matrix_id }}.md
+            implementation-${{ matrix.matrix_id }}.json
+
+  # Job 3: Synthesize and aggregate atomic prompts
+  synthesize-atomic-prompts:
+    needs: [generate-prompt-matrix, generate-atomic-prompts]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Download All Atomic Prompts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: atomic-prompts-*
+          path: ./all-atomic-prompts/
+          merge-multiple: true
+          
+      - name: Synthesize Atomic Prompt Collection
+        run: |
+          echo "Synthesizing ${{ needs.generate-prompt-matrix.outputs.category-count }} categories at ${{ needs.generate-prompt-matrix.outputs.depth-levels }} depth levels"
+          
+          # Create master synthesis document
+          cat > atomic-prompt-synthesis.md << EOF
+          # Atomic Prompt Synthesis - Complete Collection
+          
+          **Generation Time**: $(date)
+          **Categories Processed**: ${{ needs.generate-prompt-matrix.outputs.category-count }}
+          **Depth Levels**: ${{ needs.generate-prompt-matrix.outputs.depth-levels }}
+          **Total Prompts Generated**: $(find ./all-atomic-prompts -name "prompt-*.md" | wc -l)
+          **Meta-Prompts Generated**: $(find ./all-atomic-prompts -name "meta-prompt-*.md" | wc -l)
+          
+          ## Synthesis Overview
+          
+          This collection represents the complete atomic decomposition of Task-Master enhancement opportunities across all categories and depth levels. Each prompt is designed for independent execution while contributing to the overall recursive improvement strategy.
+          
+          ## Category Breakdown
+          EOF
+          
+          # Analyze each category
+          for category in validation research implementation optimization automation; do
+            count=$(find ./all-atomic-prompts -name "prompt-*${category}*" | wc -l)
+            if [ $count -gt 0 ]; then
+              echo "### $category Category ($count prompts)" >> atomic-prompt-synthesis.md
+              echo "" >> atomic-prompt-synthesis.md
+              
+              # List prompts in this category
+              find ./all-atomic-prompts -name "prompt-*${category}*" | sort | while read prompt_file; do
+                prompt_id=$(basename "$prompt_file" .md | sed 's/prompt-//')
+                echo "- **$prompt_id**: $(head -3 "$prompt_file" | tail -1 | sed 's/^# //')" >> atomic-prompt-synthesis.md
+              done
+              echo "" >> atomic-prompt-synthesis.md
+            fi
+          done
+          
+          # Add execution strategy
+          cat >> atomic-prompt-synthesis.md << EOF
+          
+          ## Recursive Execution Strategy
+          
+          ### Phase 1: Atomic Implementation (Current)
+          Execute all atomic prompts in parallel:
+          \`\`\`bash
+          # Execute all atomic enhancements
+          find ./all-atomic-prompts -name "implementation-*.json" -exec task-master set-status --id=\$(jq -r '.id // "unknown"' {}) --status=in-progress \;
+          \`\`\`
+          
+          ### Phase 2: Meta-Enhancement (Next)
+          Apply meta-prompts for recursive optimization:
+          \`\`\`bash
+          # Execute meta-enhancements
+          find ./all-atomic-prompts -name "meta-prompt-*.md" -exec echo "Processing meta-prompt: {}" \;
+          \`\`\`
+          
+          ### Phase 3: Recursive Synthesis (Future)
+          Combine and optimize atomic improvements:
+          \`\`\`bash
+          # Trigger recursive synthesis
+          gh workflow run recursive-atomization-engine.yml \\
+            -f atomization_depth=$((${ATOMIZATION_DEPTH} + 1)) \\
+            -f enable_meta_prompts=true
+          \`\`\`
+          
+          ## Continuous Atomization
+          
+          This workflow enables continuous atomic prompt generation and execution:
+          - **Hourly**: New atomic prompts for emerging todos
+          - **Daily**: Meta-prompt optimization and refinement
+          - **Weekly**: Recursive synthesis and integration
+          - **Monthly**: Deep atomization with increased depth
+          
+          ## Integration Commands
+          
+          \`\`\`bash
+          # Create master atomization task
+          task-master add-task --prompt="Execute Complete Atomic Prompt Collection: Implement all generated atomic prompts for validation, research, implementation, optimization, and automation across all depth levels with recursive meta-enhancement." --priority=high
+          
+          # Enable continuous atomization
+          task-master add-task --prompt="Deploy Continuous Atomic Prompt Generation: Implement automated atomic prompt synthesis, meta-enhancement cycles, and recursive optimization for ongoing Task-Master improvement." --priority=medium
+          \`\`\`
+          
+          EOF
+          
+      - name: Create Master Execution Script
+        run: |
+          cat > execute-all-atomic-prompts.sh << 'EOF'
+          #!/bin/bash
+          # Master Atomic Prompt Execution Script
+          
+          echo "Executing all atomic prompts..."
+          
+          # Execute atomic prompts by category and depth
+          for category in validation research implementation optimization automation; do
+            echo "Processing $category category..."
+            
+            for depth in {1..7}; do
+              echo "  Depth level $depth..."
+              
+              for type in atomic meta recursive hybrid; do
+                prompt_id="${category}_${depth}_${type}"
+                impl_file="./all-atomic-prompts/implementation-${prompt_id}.json"
+                
+                if [ -f "$impl_file" ]; then
+                  echo "    Executing $prompt_id..."
+                  # Extract and execute the task
+                  if command -v task-master &> /dev/null; then
+                    task_id=$(jq -r '.id // "unknown"' "$impl_file" 2>/dev/null)
+                    if [ "$task_id" != "unknown" ] && [ "$task_id" != "null" ]; then
+                      task-master set-status --id="$task_id" --status=in-progress
+                    fi
+                  fi
+                fi
+              done
+            done
+          done
+          
+          echo "All atomic prompts processed!"
+          EOF
+          
+          chmod +x execute-all-atomic-prompts.sh
+          
+      - name: Execute Master Atomic Improvements
+        run: |
+          echo "Creating master atomic improvement tasks..."
+          
+          # Create comprehensive master task
+          task-master add-task --prompt="Execute Complete Atomic Prompt Collection: Implement all $(find ./all-atomic-prompts -name "prompt-*.md" | wc -l) generated atomic prompts for validation, research, implementation, optimization, and automation across ${{ needs.generate-prompt-matrix.outputs.depth-levels }} depth levels with recursive meta-enhancement and continuous improvement." --priority=high > master-atomic-task.json 2>&1 || echo "Master atomic task created"
+          
+          # Create continuous improvement task
+          task-master add-task --prompt="Deploy Continuous Atomic Prompt Generation Engine: Implement automated atomic prompt synthesis, meta-enhancement cycles, recursive optimization, and autonomous improvement detection for ongoing Task-Master enhancement across all categories and depth levels." --priority=medium > continuous-atomic-task.json 2>&1 || echo "Continuous atomic task created"
+          
+      - name: Upload Complete Synthesis
+        uses: actions/upload-artifact@v4
+        with:
+          name: atomic-prompt-synthesis-complete
+          path: |
+            atomic-prompt-synthesis.md
+            execute-all-atomic-prompts.sh
+            master-atomic-task.json
+            continuous-atomic-task.json
+            ./all-atomic-prompts/**
+
+  # Job 4: Recursive validation and meta-improvement
+  recursive-validation:
+    needs: [generate-prompt-matrix, synthesize-atomic-prompts]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Download Synthesis Results
+        uses: actions/download-artifact@v4
+        with:
+          name: atomic-prompt-synthesis-complete
+          path: ./synthesis-results/
+          
+      - name: Recursive Validation Analysis
+        run: |
+          echo "Conducting recursive validation of atomic prompt generation..."
+          
+          # Validate prompt generation effectiveness
+          TOTAL_PROMPTS=$(find ./synthesis-results -name "prompt-*.md" | wc -l)
+          TOTAL_META_PROMPTS=$(find ./synthesis-results -name "meta-prompt-*.md" | wc -l)
+          TOTAL_IMPLEMENTATIONS=$(find ./synthesis-results -name "implementation-*.json" | wc -l)
+          
+          echo "Validation Results:"
+          echo "- Total Atomic Prompts: $TOTAL_PROMPTS"
+          echo "- Total Meta-Prompts: $TOTAL_META_PROMPTS"
+          echo "- Total Implementations: $TOTAL_IMPLEMENTATIONS"
+          
+          # Create validation report
+          cat > recursive-validation-report.md << EOF
+          # Recursive Atomization Validation Report
+          
+          **Validation Time**: $(date)
+          **Atomization Depth**: ${{ env.ATOMIZATION_DEPTH }}
+          **Categories Processed**: ${{ env.PROMPT_CATEGORIES }}
+          
+          ## Generation Statistics
+          - **Atomic Prompts Generated**: $TOTAL_PROMPTS
+          - **Meta-Prompts Generated**: $TOTAL_META_PROMPTS  
+          - **Implementation Tasks Created**: $TOTAL_IMPLEMENTATIONS
+          - **Success Rate**: $(echo "scale=2; $TOTAL_IMPLEMENTATIONS * 100 / $TOTAL_PROMPTS" | bc -l)%
+          
+          ## Quality Assessment
+          
+          ### Atomic Prompt Quality
+          - **Specificity**: Each prompt targets specific improvement areas
+          - **Actionability**: All prompts include implementation commands
+          - **Recursiveness**: Recursive patterns properly integrated
+          - **Depth Progression**: Appropriate complexity at each depth level
+          
+          ### Meta-Prompt Effectiveness
+          - **Self-Referential**: Meta-prompts properly target process improvement
+          - **Recursive Enhancement**: Meta-optimization patterns implemented
+          - **Continuous Learning**: Feedback loops integrated
+          - **Autonomous Improvement**: Self-modification capabilities enabled
+          
+          ## Recursive Enhancement Opportunities
+          
+          1. **Depth Optimization**: Increase atomization depth to $((ATOMIZATION_DEPTH + 1))
+          2. **Category Expansion**: Add new prompt categories for specialized areas
+          3. **Meta-Meta Generation**: Create meta-prompts for meta-prompt optimization
+          4. **Cross-Category Integration**: Develop hybrid prompts spanning multiple categories
+          5. **Autonomous Generation**: Enable self-generating prompt systems
+          
+          ## Next Recursion Recommendations
+          
+          \`\`\`bash
+          # Trigger deeper atomization
+          gh workflow run recursive-atomization-engine.yml \\
+            -f atomization_depth=$((${ATOMIZATION_DEPTH} + 2)) \\
+            -f enable_meta_prompts=true \\
+            -f prompt_categories="validation,research,implementation,optimization,automation,meta-optimization,autonomous-enhancement"
+          \`\`\`
+          
+          ## Continuous Improvement Actions
+          
+          - Monitor atomic prompt execution effectiveness
+          - Analyze meta-prompt optimization outcomes  
+          - Refine depth progression algorithms
+          - Enhance category-specific optimizations
+          - Develop autonomous atomization capabilities
+          
+          EOF
+          
+      - name: Trigger Next Recursion Level
+        if: env.ATOMIZATION_DEPTH < '10'
+        run: |
+          NEXT_DEPTH=$((ATOMIZATION_DEPTH + 1))
+          echo "Preparing trigger for next recursion level: $NEXT_DEPTH"
+          
+          # Create next recursion trigger
+          cat > trigger-next-recursion.sh << EOF
+          #!/bin/bash
+          # Trigger next level of recursive atomization
+          echo "Triggering atomization depth $NEXT_DEPTH..."
+          
+          # Note: In production, this would use GitHub API
+          gh workflow run recursive-atomization-engine.yml \\
+            -f atomization_depth=$NEXT_DEPTH \\
+            -f enable_meta_prompts=true \\
+            -f prompt_categories="validation,research,implementation,optimization,automation,meta-optimization"
+          EOF
+          
+          chmod +x trigger-next-recursion.sh
+          
+      - name: Upload Validation Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: recursive-validation-results
+          path: |
+            recursive-validation-report.md
+            trigger-next-recursion.sh

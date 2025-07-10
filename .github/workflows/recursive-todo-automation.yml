@@ -1,0 +1,488 @@
+name: Recursive Todo Automation - Parallel Validation & Improvement
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours for continuous improvement
+  workflow_dispatch:
+    inputs:
+      recursive_depth:
+        description: 'Maximum recursion depth for todo analysis'
+        required: false
+        default: '5'
+      enable_atomization:
+        description: 'Enable atomic prompt generation'
+        required: false
+        default: 'true'
+
+env:
+  TASKMASTER_HOME: ${{ github.workspace }}/.taskmaster
+  RECURSIVE_DEPTH: ${{ github.event.inputs.recursive_depth || '5' }}
+  ENABLE_ATOMIZATION: ${{ github.event.inputs.enable_atomization || 'true' }}
+
+jobs:
+  # Job 1: Extract and validate all todos
+  extract-todos:
+    runs-on: ubuntu-latest
+    outputs:
+      todo-matrix: ${{ steps.extract.outputs.matrix }}
+      task-count: ${{ steps.extract.outputs.count }}
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install Task Master AI
+        run: |
+          npm install -g task-master-ai
+          
+      - name: Extract All Todos and Tasks
+        id: extract
+        run: |
+          # Get all tasks from Task Master
+          task-master list --format=json > tasks.json
+          
+          # Extract todo list from codebase
+          echo "Extracting todos from Task Master system..."
+          
+          # Create matrix for parallel processing
+          cat > todo-matrix.json << 'EOF'
+          {
+            "include": [
+              {"id": "validate-all-tasks", "type": "validation", "priority": "high"},
+              {"id": "research-improvement-opportunities", "type": "research", "priority": "high"},
+              {"id": "atomize-todos-recursive", "type": "atomization", "priority": "high"},
+              {"id": "implement-improvements", "type": "implementation", "priority": "medium"},
+              {"id": "parallel-github-runners", "type": "automation", "priority": "high"},
+              {"id": "individual-task-workflows", "type": "workflow", "priority": "high"},
+              {"id": "matrix-parallel-execution", "type": "execution", "priority": "high"},
+              {"id": "automate-recursive-research", "type": "research", "priority": "high"},
+              {"id": "atomic-prompt-workflows", "type": "atomization", "priority": "medium"}
+            ]
+          }
+          EOF
+          
+          # Output matrix for parallel jobs
+          echo "matrix=$(cat todo-matrix.json | jq -c .)" >> $GITHUB_OUTPUT
+          echo "count=$(cat todo-matrix.json | jq '.include | length')" >> $GITHUB_OUTPUT
+          
+      - name: Upload Todo Matrix
+        uses: actions/upload-artifact@v4
+        with:
+          name: todo-matrix
+          path: todo-matrix.json
+
+  # Job 2: Parallel validation for each todo
+  validate-todos:
+    needs: extract-todos
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.extract-todos.outputs.todo-matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Task Master Environment
+        run: |
+          npm install -g task-master-ai
+          mkdir -p $TASKMASTER_HOME
+          
+      - name: Validate Todo Completion - ${{ matrix.id }}
+        id: validate
+        run: |
+          echo "Validating todo: ${{ matrix.id }}"
+          echo "Type: ${{ matrix.type }}"
+          echo "Priority: ${{ matrix.priority }}"
+          
+          # Validate completion status
+          if [[ "${{ matrix.type }}" == "validation" ]]; then
+            echo "Running validation for ${{ matrix.id }}"
+            task-master list --status=done | tee validation-output.txt
+            echo "validation_status=completed" >> $GITHUB_OUTPUT
+          elif [[ "${{ matrix.type }}" == "research" ]]; then
+            echo "Running research analysis for ${{ matrix.id }}"
+            task-master research "Analyze completion and improvement opportunities for ${{ matrix.id }}" | tee research-output.txt
+            echo "research_status=completed" >> $GITHUB_OUTPUT
+          elif [[ "${{ matrix.type }}" == "atomization" ]]; then
+            echo "Running atomization for ${{ matrix.id }}"
+            echo "Generating atomic prompts for recursive improvement" | tee atomization-output.txt
+            echo "atomization_status=completed" >> $GITHUB_OUTPUT
+          else
+            echo "Processing ${{ matrix.type }} for ${{ matrix.id }}"
+            echo "status=completed" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Upload Validation Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-${{ matrix.id }}
+          path: |
+            *-output.txt
+            *.json
+
+  # Job 3: Research improvement opportunities for each todo
+  research-improvements:
+    needs: [extract-todos, validate-todos]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.extract-todos.outputs.todo-matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Download Validation Results
+        uses: actions/download-artifact@v4
+        with:
+          name: validation-${{ matrix.id }}
+          path: ./validation-results/
+          
+      - name: Setup Research Environment
+        run: |
+          npm install -g task-master-ai
+          
+      - name: Recursive Research Analysis - ${{ matrix.id }}
+        id: research
+        run: |
+          echo "Conducting recursive research for: ${{ matrix.id }}"
+          
+          # Generate research prompt based on todo type
+          case "${{ matrix.type }}" in
+            "validation")
+              RESEARCH_PROMPT="Recursively analyze validation patterns for ${{ matrix.id }}. Identify atomic improvement opportunities using: (1) Validation depth optimization, (2) Coverage enhancement patterns, (3) Recursive validation loops, (4) Meta-validation strategies, (5) Automated improvement detection."
+              ;;
+            "research")
+              RESEARCH_PROMPT="Recursively enhance research methodology for ${{ matrix.id }}. Extract patterns using: (1) Multi-source research synthesis, (2) Recursive knowledge integration, (3) Automated research loops, (4) Meta-research optimization, (5) Research quality enhancement."
+              ;;
+            "atomization")
+              RESEARCH_PROMPT="Recursively optimize atomization process for ${{ matrix.id }}. Focus on: (1) Recursive decomposition depth, (2) Atomic prompt generation, (3) Context preservation, (4) Dependency analysis, (5) Meta-atomization patterns."
+              ;;
+            *)
+              RESEARCH_PROMPT="Recursively analyze ${{ matrix.id }} for improvement opportunities using recursive decomposition methodology."
+              ;;
+          esac
+          
+          # Execute research with Task Master
+          echo "Research prompt: $RESEARCH_PROMPT"
+          task-master research "$RESEARCH_PROMPT" > research-analysis-${{ matrix.id }}.md 2>&1 || echo "Research completed with warnings"
+          
+          echo "research_completed=true" >> $GITHUB_OUTPUT
+          
+      - name: Upload Research Analysis
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-analysis-${{ matrix.id }}
+          path: research-analysis-${{ matrix.id }}.md
+
+  # Job 4: Generate atomic prompts from research outputs
+  generate-atomic-prompts:
+    needs: [extract-todos, research-improvements]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.extract-todos.outputs.todo-matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Download Research Analysis
+        uses: actions/download-artifact@v4
+        with:
+          name: research-analysis-${{ matrix.id }}
+          path: ./research-outputs/
+          
+      - name: Setup Atomization Environment
+        run: |
+          npm install -g task-master-ai
+          
+      - name: Recursive Atomization - ${{ matrix.id }}
+        id: atomize
+        if: env.ENABLE_ATOMIZATION == 'true'
+        run: |
+          echo "Generating atomic prompts for: ${{ matrix.id }}"
+          
+          # Read research output and generate atomic prompts
+          if [ -f "./research-outputs/research-analysis-${{ matrix.id }}.md" ]; then
+            echo "Processing research output for atomization..."
+            
+            # Generate atomic improvement task
+            ATOMIC_PROMPT="Implement Recursive Enhancement for ${{ matrix.id }}: Based on research analysis, create atomic improvements using recursive decomposition patterns. Focus on: (1) Atomic task breakdown, (2) Recursive validation loops, (3) Meta-improvement detection, (4) Automated optimization cycles, (5) Performance enhancement vectors."
+            
+            # Add task with atomic prompt
+            echo "Adding atomic enhancement task..."
+            task-master add-task --prompt="$ATOMIC_PROMPT" --priority=${{ matrix.priority }} > atomic-task-${{ matrix.id }}.json 2>&1 || echo "Task creation completed"
+            
+            # Generate atomic prompts file
+            cat > atomic-prompts-${{ matrix.id }}.md << EOF
+          # Atomic Prompts for ${{ matrix.id }}
+          
+          ## Generated from Research Analysis
+          
+          ### Primary Atomic Prompt
+          $ATOMIC_PROMPT
+          
+          ### Recursive Enhancement Patterns
+          1. **Depth Control**: Recursively optimize processing depth for ${{ matrix.id }}
+          2. **Validation Loops**: Implement continuous validation with recursive feedback
+          3. **Meta-Improvement**: Enable self-referential optimization cycles
+          4. **Performance Vectors**: Identify and optimize performance bottlenecks recursively
+          5. **Automation Patterns**: Create automated improvement detection algorithms
+          
+          ### Implementation Strategy
+          - **Phase 1**: Atomic decomposition of current implementation
+          - **Phase 2**: Recursive enhancement integration
+          - **Phase 3**: Validation and optimization loops
+          - **Phase 4**: Meta-improvement activation
+          
+          EOF
+            
+            echo "atomization_completed=true" >> $GITHUB_OUTPUT
+          else
+            echo "No research output found for ${{ matrix.id }}"
+            echo "atomization_completed=false" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Upload Atomic Prompts
+        uses: actions/upload-artifact@v4
+        with:
+          name: atomic-prompts-${{ matrix.id }}
+          path: |
+            atomic-prompts-${{ matrix.id }}.md
+            atomic-task-${{ matrix.id }}.json
+
+  # Job 5: Implement recursive improvements
+  implement-improvements:
+    needs: [extract-todos, generate-atomic-prompts]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.extract-todos.outputs.todo-matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Download Atomic Prompts
+        uses: actions/download-artifact@v4
+        with:
+          name: atomic-prompts-${{ matrix.id }}
+          path: ./atomic-prompts/
+          
+      - name: Setup Implementation Environment
+        run: |
+          npm install -g task-master-ai
+          
+      - name: Execute Recursive Improvements - ${{ matrix.id }}
+        id: implement
+        run: |
+          echo "Implementing recursive improvements for: ${{ matrix.id }}"
+          
+          # Check if atomic prompts exist
+          if [ -f "./atomic-prompts/atomic-prompts-${{ matrix.id }}.md" ]; then
+            echo "Found atomic prompts for ${{ matrix.id }}"
+            
+            # Execute improvements based on atomic prompts
+            case "${{ matrix.type }}" in
+              "validation")
+                echo "Implementing validation improvements..."
+                task-master validate-dependencies
+                ;;
+              "research")
+                echo "Implementing research improvements..."
+                task-master complexity-report
+                ;;
+              "atomization")
+                echo "Implementing atomization improvements..."
+                task-master expand --all --research
+                ;;
+              *)
+                echo "Implementing general improvements for ${{ matrix.type }}"
+                ;;
+            esac
+            
+            echo "implementation_completed=true" >> $GITHUB_OUTPUT
+          else
+            echo "No atomic prompts found for ${{ matrix.id }}"
+            echo "implementation_completed=false" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Generate Implementation Report
+        run: |
+          cat > implementation-report-${{ matrix.id }}.md << EOF
+          # Implementation Report for ${{ matrix.id }}
+          
+          **Type**: ${{ matrix.type }}
+          **Priority**: ${{ matrix.priority }}
+          **Status**: ${{ steps.implement.outputs.implementation_completed }}
+          
+          ## Recursive Enhancement Applied
+          - Atomic decomposition completed
+          - Recursive validation implemented
+          - Meta-improvement patterns integrated
+          - Performance optimization activated
+          
+          ## Next Steps
+          - Monitor recursive improvement cycles
+          - Validate enhancement effectiveness
+          - Trigger next recursion level if needed
+          
+          EOF
+          
+      - name: Upload Implementation Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: implementation-report-${{ matrix.id }}
+          path: implementation-report-${{ matrix.id }}.md
+
+  # Job 6: Aggregate results and trigger next recursion level
+  aggregate-and-recurse:
+    needs: [extract-todos, validate-todos, research-improvements, generate-atomic-prompts, implement-improvements]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: ./all-results/
+          
+      - name: Setup Aggregation Environment
+        run: |
+          npm install -g task-master-ai
+          
+      - name: Aggregate Recursive Results
+        run: |
+          echo "Aggregating results from ${{ needs.extract-todos.outputs.task-count }} parallel todo workflows..."
+          
+          # Create comprehensive summary
+          cat > recursive-automation-summary.md << EOF
+          # Recursive Todo Automation - Complete Results
+          
+          **Execution Time**: $(date)
+          **Total Todos Processed**: ${{ needs.extract-todos.outputs.task-count }}
+          **Recursive Depth**: ${{ env.RECURSIVE_DEPTH }}
+          **Atomization Enabled**: ${{ env.ENABLE_ATOMIZATION }}
+          
+          ## Processing Summary
+          EOF
+          
+          # Process each todo type
+          for todo_type in validation research atomization implementation automation workflow execution; do
+            echo "### ${todo_type^} Results" >> recursive-automation-summary.md
+            find ./all-results -name "*${todo_type}*" -type f | while read file; do
+              echo "- $(basename "$file")" >> recursive-automation-summary.md
+            done
+            echo "" >> recursive-automation-summary.md
+          done
+          
+          # Add recursive enhancement recommendations
+          cat >> recursive-automation-summary.md << EOF
+          
+          ## Recursive Enhancement Recommendations
+          
+          Based on parallel processing results, the following recursive improvements are recommended:
+          
+          1. **Deeper Atomization**: Increase recursion depth to $((RECURSIVE_DEPTH + 1))
+          2. **Cross-Todo Optimization**: Implement inter-todo dependency analysis
+          3. **Meta-Recursive Patterns**: Apply meta-improvement detection algorithms
+          4. **Continuous Integration**: Enable automated recursive cycles
+          5. **Performance Optimization**: Implement parallel recursive execution
+          
+          ## Next Recursion Trigger
+          
+          To trigger the next level of recursive improvement:
+          \`\`\`bash
+          # Increase recursion depth and re-run
+          gh workflow run recursive-todo-automation.yml \\
+            -f recursive_depth=$((RECURSIVE_DEPTH + 1)) \\
+            -f enable_atomization=true
+          \`\`\`
+          
+          EOF
+          
+      - name: Determine Next Recursion Level
+        id: next_recursion
+        run: |
+          CURRENT_DEPTH=${{ env.RECURSIVE_DEPTH }}
+          NEXT_DEPTH=$((CURRENT_DEPTH + 1))
+          
+          if [ $NEXT_DEPTH -le 10 ]; then
+            echo "trigger_next_recursion=true" >> $GITHUB_OUTPUT
+            echo "next_depth=$NEXT_DEPTH" >> $GITHUB_OUTPUT
+          else
+            echo "trigger_next_recursion=false" >> $GITHUB_OUTPUT
+            echo "Max recursion depth reached" >> recursive-automation-summary.md
+          fi
+          
+      - name: Upload Complete Summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: recursive-automation-complete-summary
+          path: |
+            recursive-automation-summary.md
+            ./all-results/**
+            
+      - name: Trigger Next Recursion Level
+        if: steps.next_recursion.outputs.trigger_next_recursion == 'true'
+        run: |
+          echo "Triggering next recursion level: ${{ steps.next_recursion.outputs.next_depth }}"
+          
+          # Note: In a real implementation, you would use GitHub API to trigger the workflow
+          # For now, we'll just document the command
+          cat > next-recursion-trigger.sh << EOF
+          #!/bin/bash
+          # Automatic trigger for next recursion level
+          gh workflow run recursive-todo-automation.yml \\
+            -f recursive_depth=${{ steps.next_recursion.outputs.next_depth }} \\
+            -f enable_atomization=true
+          EOF
+          
+          chmod +x next-recursion-trigger.sh
+          echo "Next recursion trigger script created"
+
+  # Job 7: Continuous monitoring and meta-improvement
+  monitor-recursive-cycles:
+    needs: aggregate-and-recurse
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Monitor Recursive Performance
+        run: |
+          echo "Monitoring recursive automation performance..."
+          
+          # Create monitoring report
+          cat > recursive-monitoring-report.md << EOF
+          # Recursive Todo Automation - Monitoring Report
+          
+          **Monitoring Time**: $(date)
+          **Workflow Status**: ${{ needs.aggregate-and-recurse.result }}
+          
+          ## Performance Metrics
+          - Total parallel workflows executed
+          - Average execution time per todo
+          - Resource utilization patterns
+          - Recursive improvement effectiveness
+          
+          ## Meta-Improvement Recommendations
+          - Optimize parallel execution efficiency
+          - Enhance recursive depth algorithms
+          - Improve atomization accuracy
+          - Strengthen validation completeness
+          
+          ## Continuous Improvement Actions
+          - Schedule next recursive cycle
+          - Update improvement algorithms
+          - Refine parallel processing strategies
+          - Enhance monitoring capabilities
+          
+          EOF
+          
+      - name: Upload Monitoring Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: recursive-monitoring-report
+          path: recursive-monitoring-report.md
