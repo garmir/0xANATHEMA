@@ -1,0 +1,16 @@
+# Task ID: 781
+# Title: Implement assumes a 'matrix' transform.
+    # No other transform functions are supported at the moment.
+    #  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: assumes a 'matrix' transform.
+    # No other transform functions are supported at the moment.
+    # https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
+    # start simple: if you aren
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/svgLib/path/shapes.py
+
+# Test Strategy:
+Validate completion of: code-todo item

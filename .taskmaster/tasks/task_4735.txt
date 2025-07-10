@@ -1,0 +1,11 @@
+# Task ID: 4735
+# Title: **Validate Autonomy Scoring**: Create concrete autonomy metrics and validation (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Validate Autonomy Scoring**: Create concrete autonomy metrics and validation
+# Details:
+Converted from todo: .taskmaster/docs/project/project-conformance-review.md
+
+# Test Strategy:
+Validate completion of: action-item item

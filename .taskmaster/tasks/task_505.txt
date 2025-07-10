@@ -1,0 +1,19 @@
+# Task ID: 505
+# Title: Implement use the QR wrapper once dask
+# supports the mode keyword on QR
+# https://github.com/dask/dask/issues (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: use the QR wrapper once dask
+# supports the mode keyword on QR
+# https://github.com/dask/dask/issues/10388
+#qr = get_xp(da)(_linalg.qr)
+def qr(
+    x: _Array,
+    mode: Literal["reduced", "complete"] 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/_lib/array_api_compat/dask/array/linalg.py
+
+# Test Strategy:
+Validate completion of: code-todo item

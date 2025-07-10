@@ -1,0 +1,18 @@
+# Task ID: 482
+# Title: add meaningful test where X0 is a list
+        tout, y = impulse(system, X0=[3], T=[5, 6])
+        t (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: add meaningful test where X0 is a list
+        tout, y = impulse(system, X0=[3], T=[5, 6])
+        tout, y = impulse(system, X0=[3], T=[5])
+
+    def test_array_like2(self):
+        system = ([1.0], [1
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/signal/tests/test_ltisys.py
+
+# Test Strategy:
+Validate completion of: code-todo item

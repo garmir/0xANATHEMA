@@ -1,0 +1,11 @@
+# Task ID: 2145
+# Title: Implement Rollback Procedures with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Rollback Procedures
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

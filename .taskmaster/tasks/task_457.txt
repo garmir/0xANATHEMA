@@ -1,0 +1,17 @@
+# Task ID: 457
+# Title: implement all relevant operations
+# use .data.__methods__() instead of /=, *=, etc.
+class _data_matr (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: implement all relevant operations
+# use .data.__methods__() instead of /=, *=, etc.
+class _data_matrix(_spbase):
+    def __init__(self, arg1, *, maxprint=None):
+        _spbase.__init__(self, arg1, ma
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/sparse/_data.py
+
+# Test Strategy:
+Validate completion of: code-todo item

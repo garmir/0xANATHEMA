@@ -1,0 +1,14 @@
+# Task ID: 691
+# Title: Implement In the future, it would be nice if pip supported PEP 691
+        #       style responses in the file (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: In the future, it would be nice if pip supported PEP 691
+        #       style responses in the file:// URLs, however there's no
+        #       standard file extension for application/vnd.pypi.simple
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pip/_internal/index/collector.py
+
+# Test Strategy:
+Validate completion of: code-todo item

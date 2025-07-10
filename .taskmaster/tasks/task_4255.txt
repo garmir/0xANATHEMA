@@ -1,0 +1,15 @@
+# Task ID: 4255
+# Title: Implement Research-Driven Task Generation Example:
+```bash
+task-master add-task --prompt="Complex monitoring d (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Research-Driven Task Generation Example:
+```bash
+task-master add-task --prompt="Complex monitoring dashboard..." --research
+# Details:
+Converted from todo: .taskmaster/reports/optimization-success-summary.md
+
+# Test Strategy:
+Validate completion of: action-item item

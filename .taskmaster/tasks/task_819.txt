@@ -1,0 +1,15 @@
+# Task ID: 819
+# Title: Implement Is this really the intended behavior for providing a
+        # single node as the argument `nodes`?  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Is this really the intended behavior for providing a
+        # single node as the argument `nodes`? Shouldn't the function
+        # just return the connectivity value itself?
+        G = nx.trivial_g
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/assortativity/tests/test_connectivity.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,18 @@
+# Task ID: 865
+# Title: Implement give this to a perl guy who knows how to parse perl...
+    tokens = {
+        'balanced-regex': [
+   (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: give this to a perl guy who knows how to parse perl...
+    tokens = {
+        'balanced-regex': [
+            (r'/(\\\\|\\[^\\]|[^\\/])*/[egimosx]*', String.Regex, '#pop'),
+            (r'!(\\\\|\\[^\
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/perl.py
+
+# Test Strategy:
+Validate completion of: code-todo item

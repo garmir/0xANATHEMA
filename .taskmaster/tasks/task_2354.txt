@@ -1,0 +1,14 @@
+# Task ID: 2354
+# Title: Implement 2. Predictive Analytics for Project Management
+- **AI-Driven Estimation**: Cost overrun prediction u (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 2. Predictive Analytics for Project Management
+- **AI-Driven Estimation**: Cost overrun prediction using historical data
+- **Risk Analysis**: Automate
+# Details:
+Converted from todo: .taskmaster/research/perplexity-research-findings-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

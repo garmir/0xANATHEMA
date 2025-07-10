@@ -1,0 +1,15 @@
+# Task ID: 434
+# Title: Implement not reached in tests 2023-10-11
+        # matches base class except for whitespace padding and date_ (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: not reached in tests 2023-10-11
+        # matches base class except for whitespace padding and date_format
+        return header + list(
+            self._get_values_for_csv(na_rep=na_rep, date_format
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/indexes/datetimelike.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,15 @@
+# Task ID: 2762
+# Title: Implement 1. OpenTelemetry Instrumentation
+- Instrument all core Task-Master modules with OpenTelemetry SDK
+-  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 1. OpenTelemetry Instrumentation
+- Instrument all core Task-Master modules with OpenTelemetry SDK
+- Implement distributed tracing for recursive operat
+# Details:
+Converted from todo: .taskmaster/docs/melt-observability-enhancement-prd.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,18 @@
+# Task ID: 782
+# Title: Implement The warnings below need to be dealt with, but for now we silence them.
+@pytest.fixture(autouse=True) (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: The warnings below need to be dealt with, but for now we silence them.
+@pytest.fixture(autouse=True)
+def set_warnings():
+    warnings.filterwarnings(
+        "ignore",
+        category=UserWarning,
+  
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/conftest.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,16 @@
+# Task ID: 571
+# Title: (1.8): Remove cv="prefit" options here and the @ignore_warnings of the test
+    n_samples = 50
+    X (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8): Remove cv="prefit" options here and the @ignore_warnings of the test
+    n_samples = 50
+    X, y = make_classification(n_samples=3 * n_samples, n_features=6, random_state=42)
+    sample_weight 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/tests/test_calibration.py
+
+# Test Strategy:
+Validate completion of: code-todo item

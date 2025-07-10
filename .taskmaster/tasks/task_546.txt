@@ -1,0 +1,19 @@
+# Task ID: 546
+# Title: Implement straight removal since in joblib.test.common?
+IS_PYPY = hasattr(sys, "pypy_version_info")
+IS_GIL_DIS (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: straight removal since in joblib.test.common?
+IS_PYPY = hasattr(sys, "pypy_version_info")
+IS_GIL_DISABLED = (
+    sysconfig.get_config_var("Py_GIL_DISABLED") and not sys._is_gil_enabled()
+)
+
+# A decor
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/joblib/test/common.py
+
+# Test Strategy:
+Validate completion of: code-todo item

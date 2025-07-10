@@ -1,0 +1,11 @@
+# Task ID: 4066
+# Title: Implement **perplexity_client.py.old** with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **perplexity_client.py.old**
+# Details:
+Converted from todo: .taskmaster/reports/local-llm-migration-health-check.md
+
+# Test Strategy:
+Validate completion of: action-item item

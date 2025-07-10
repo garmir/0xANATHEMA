@@ -1,0 +1,18 @@
+# Task ID: 680
+# Title: Implement Add optional support for socket.gethostbyname checking.
+        scheme, host, port = get_host(url)
+  (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Add optional support for socket.gethostbyname checking.
+        scheme, host, port = get_host(url)
+        if host is not None:
+            host = _normalize_host(host, scheme=scheme)
+
+        # Use e
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pip/_vendor/urllib3/connectionpool.py
+
+# Test Strategy:
+Validate completion of: code-todo item

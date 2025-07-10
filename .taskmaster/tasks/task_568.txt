@@ -1,0 +1,18 @@
+# Task ID: 568
+# Title: Implement (devtools): use _tested_estimators instead of all_estimators in the
+        # decorator
+        est  (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (devtools): use _tested_estimators instead of all_estimators in the
+        # decorator
+        est = next(_construct_instances(Estimator))
+
+    if Estimator.__name__ == "SelectKBest":
+        est.set
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/tests/test_docstring_parameters.py
+
+# Test Strategy:
+Validate completion of: code-todo item

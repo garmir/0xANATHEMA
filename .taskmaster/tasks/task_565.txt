@@ -1,0 +1,16 @@
+# Task ID: 565
+# Title: Implement remove data validation for the following estimators
+# They should be able to work on any data and de (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: remove data validation for the following estimators
+# They should be able to work on any data and delegate data validation to
+# their inner estimator(s).
+DATA_VALIDATION_META_ESTIMATORS_TO_IGNORE = [
+
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/tests/test_metaestimators.py
+
+# Test Strategy:
+Validate completion of: code-todo item

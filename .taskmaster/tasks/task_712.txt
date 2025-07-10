@@ -1,0 +1,19 @@
+# Task ID: 712
+# Title: Implement support Fortran `len` function with optional kind parameter
+    expr = re.sub(r'\blen\b', 'f2py_slen (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: support Fortran `len` function with optional kind parameter
+    expr = re.sub(r'\blen\b', 'f2py_slen', expr)
+    return expr
+
+
+def getstrlength(var):
+    if isstringfunction(var):
+        if 'result' 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/f2py/capi_maps.py
+
+# Test Strategy:
+Validate completion of: code-todo item

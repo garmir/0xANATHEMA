@@ -1,0 +1,19 @@
+# Task ID: 242
+# Title: Implement add more  dtypes here
+        Index(np.arange(5, dtype="float64")),
+        Index(np.arange(5, dtype (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: add more  dtypes here
+        Index(np.arange(5, dtype="float64")),
+        Index(np.arange(5, dtype="int64")),
+        Index(np.arange(5, dtype="uint64")),
+        RangeIndex(5),
+    ],
+    ids=lambd
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arithmetic/test_numeric.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,14 @@
+# Task ID: 510
+# Title: Implement nodes and weights are currently hard-coded for values 15 and 21, but in
+        # the future it woul (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: nodes and weights are currently hard-coded for values 15 and 21, but in
+        # the future it would be best to compute the Kronrod extension of the lower rule
+        if npoints != 15 and npoints !=
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/integrate/_rules/_gauss_kronrod.py
+
+# Test Strategy:
+Validate completion of: code-todo item

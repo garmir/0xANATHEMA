@@ -1,0 +1,18 @@
+# Task ID: 413
+# Title: Implement sure we want to overwrite results?
+                result[name] = extra_col
+            elif name in (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: sure we want to overwrite results?
+                result[name] = extra_col
+            elif name in result.index.names:
+                pass
+            elif name in self._selected_obj.columns:
+     
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/window/rolling.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,17 @@
+# Task ID: 871
+# Title: finish implementing other possibilities for scope
+            # L173 ANTLRv3.g from ANTLR book
+      (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: finish implementing other possibilities for scope
+            # L173 ANTLRv3.g from ANTLR book
+            (r'(scope)(\s+)(\{)', bygroups(Keyword, Whitespace, Punctuation),
+             'action'),
+   
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/parsers.py
+
+# Test Strategy:
+Validate completion of: code-todo item

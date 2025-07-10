@@ -1,0 +1,21 @@
+# Task ID: 519
+# Title: Add a test for ONB?
+                u = u[:, :n]
+
+            if lsvec and rsvec:
+                as (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Add a test for ONB?
+                u = u[:, :n]
+
+            if lsvec and rsvec:
+                assert_allclose(u @ np.diag(sigma) @ v.conj().T, A, atol=atol)
+            if lsvec:
+                a
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/linalg/tests/test_lapack.py
+
+# Test Strategy:
+Validate completion of: code-todo item

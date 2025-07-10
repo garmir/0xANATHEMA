@@ -1,0 +1,18 @@
+# Task ID: 506
+# Title: Implement #   - both integer and reals are treated as numeric -> the integer info
+#    is lost!
+#   - Replace  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: #   - both integer and reals are treated as numeric -> the integer info
+#    is lost!
+#   - Replace ValueError by ParseError or something
+
+# We know can handle the following:
+#   - numeric and nominal
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/io/arff/_arffread.py
+
+# Test Strategy:
+Validate completion of: code-todo item

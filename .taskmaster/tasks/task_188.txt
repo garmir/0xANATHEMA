@@ -1,0 +1,17 @@
+# Task ID: 188
+# Title: Implement this fails bc we do not pass through data_missing. If we did,
+        #  the 0-fill case would xpass (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: this fails bc we do not pass through data_missing. If we did,
+        #  the 0-fill case would xpass
+        super().test_fillna_series()
+
+    def test_fillna_frame(self, data_missing):
+        # Have
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/extension/test_sparse.py
+
+# Test Strategy:
+Validate completion of: code-todo item

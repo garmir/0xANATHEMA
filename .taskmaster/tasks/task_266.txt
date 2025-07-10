@@ -1,0 +1,14 @@
+# Task ID: 266
+# Title: Implement this is raising in constructing a Categorical when calling
+    #  algos.safe_sort. Should we catch a (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: this is raising in constructing a Categorical when calling
+    #  algos.safe_sort. Should we catch and re-raise with a better message?
+    msg = "'values' is not ordered, please explicitly specify the
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/multi/test_setops.py
+
+# Test Strategy:
+Validate completion of: code-todo item

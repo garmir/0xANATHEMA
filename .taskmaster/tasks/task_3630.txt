@@ -1,0 +1,16 @@
+# Task ID: 3630
+# Title: 2.1 Research Module Migration
+- Replace Perplexity API with local RAG system
+- Implement semantic se (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 2.1 Research Module Migration
+- Replace Perplexity API with local RAG system
+- Implement semantic search with BGE-M3 embeddings
+- Create local knowled
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

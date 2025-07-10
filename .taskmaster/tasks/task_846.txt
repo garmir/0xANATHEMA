@@ -1,0 +1,14 @@
+# Task ID: 846
+# Title: implement `is_finalvar_annotation` as Final can be wrapped with other special forms:
+def is_finalvar (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: implement `is_finalvar_annotation` as Final can be wrapped with other special forms:
+def is_finalvar(tp: Any, /) -> bool:
+    """Return whether the provided argument is a `Final` special form, paramet
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pydantic/_internal/_typing_extra.py
+
+# Test Strategy:
+Validate completion of: code-todo item

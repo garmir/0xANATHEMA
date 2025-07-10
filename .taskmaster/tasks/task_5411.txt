@@ -1,0 +1,21 @@
+# Task ID: 5411
+# Title: Implement 1.1 Multi-Layer Decision Making
+```
+Strategic Decisions (Long-term Planning)
+    ↓
+Tactical Decision (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 1.1 Multi-Layer Decision Making
+```
+Strategic Decisions (Long-term Planning)
+    ↓
+Tactical Decisions (Medium-term Optimization)
+    ↓
+Operational Dec
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/core-engine/decision-framework.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,46 @@
+[
+  {
+    "policy_id": "policy_tenant_cf7490df",
+    "tenant_id": "tenant_cf7490df",
+    "password_requirements": {
+      "min_length": 12,
+      "require_uppercase": true,
+      "require_lowercase": true,
+      "require_numbers": true,
+      "require_special_chars": true,
+      "max_age_days": 90
+    },
+    "session_timeout_minutes": 480,
+    "mfa_required": true,
+    "ip_whitelist": [],
+    "audit_retention_days": 2555,
+    "encryption_level": "AES-256",
+    "compliance_standards": [
+      "SOC2",
+      "GDPR",
+      "HIPAA"
+    ]
+  },
+  {
+    "policy_id": "policy_tenant_9dd82033",
+    "tenant_id": "tenant_9dd82033",
+    "password_requirements": {
+      "min_length": 12,
+      "require_uppercase": true,
+      "require_lowercase": true,
+      "require_numbers": true,
+      "require_special_chars": true,
+      "max_age_days": 90
+    },
+    "session_timeout_minutes": 480,
+    "mfa_required": true,
+    "ip_whitelist": [],
+    "audit_retention_days": 2555,
+    "encryption_level": "AES-256",
+    "compliance_standards": [
+      "SOC2",
+      "GDPR",
+      "HIPAA"
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+# Task ID: 617
+# Title: Implement (1.8): remove `learning_curve`, `validation_curve` and `permutation_test_score`.
+@pytest.mark.parame (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8): remove `learning_curve`, `validation_curve` and `permutation_test_score`.
+@pytest.mark.parametrize(
+    "func, extra_args",
+    [
+        (learning_curve, {}),
+        (permutation_test_score, 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/model_selection/tests/test_validation.py
+
+# Test Strategy:
+Validate completion of: code-todo item

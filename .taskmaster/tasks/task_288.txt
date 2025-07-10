@@ -1,0 +1,18 @@
+# Task ID: 288
+# Title: Implement KeyError is the appropriate error?
+            with pytest.raises(KeyError, match=msg):
+             (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: KeyError is the appropriate error?
+            with pytest.raises(KeyError, match=msg):
+                ser.loc[1:4]
+
+    def test_non_unique(self, indexer_sl):
+        idx = IntervalIndex.from_tuples
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexing/interval/test_interval_new.py
+
+# Test Strategy:
+Validate completion of: code-todo item

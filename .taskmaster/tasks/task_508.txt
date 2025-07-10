@@ -1,0 +1,19 @@
+# Task ID: 508
+# Title: Implement current converting to/from numpy
+        nodes, weights = roots_legendre(self.npoints)
+
+        retu (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: current converting to/from numpy
+        nodes, weights = roots_legendre(self.npoints)
+
+        return (
+            self.xp.asarray(nodes, dtype=self.xp.float64),
+            self.xp.asarray(weights,
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/integrate/_rules/_gauss_legendre.py
+
+# Test Strategy:
+Validate completion of: code-todo item

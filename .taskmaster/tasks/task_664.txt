@@ -1,0 +1,18 @@
+# Task ID: 664
+# Title: Implement (1.9): Remove in 1.9
+def test_roc_curve_display_estimator_name_deprecation(pyplot):
+    """Check dep (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.9): Remove in 1.9
+def test_roc_curve_display_estimator_name_deprecation(pyplot):
+    """Check deprecation of `estimator_name`."""
+    fpr = np.array([0, 0.5, 1])
+    tpr = np.array([0, 0.5, 1])
+   
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/metrics/_plot/tests/test_roc_curve_display.py
+
+# Test Strategy:
+Validate completion of: code-todo item

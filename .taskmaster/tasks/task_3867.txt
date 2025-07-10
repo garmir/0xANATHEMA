@@ -1,0 +1,11 @@
+# Task ID: 3867
+# Title: **Recursive Breakdown Automation**: Atomic task methodology implemented in workflows
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Recursive Breakdown Automation**: Atomic task methodology implemented in workflows
+# Details:
+Converted from todo: .taskmaster/reports/github-actions-impact-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,23 @@
+# Task ID: 197
+# Title: (GH#14008): once GH 14008 is fixed, move these tests into
+# `Base` test class
+
+
+@pytest.fixture
+def  (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (GH#14008): once GH 14008 is fixed, move these tests into
+# `Base` test class
+
+
+@pytest.fixture
+def index():
+    index = date_range(datetime(2005, 1, 1), datetime(2005, 1, 10), freq="D")
+    index.nam
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/resample/test_resample_api.py
+
+# Test Strategy:
+Validate completion of: code-todo item

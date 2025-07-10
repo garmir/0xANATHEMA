@@ -1,0 +1,11 @@
+# Task ID: 2116
+# Title: Implement **Autonomy Score Tracking** - Historical and current scores (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Autonomy Score Tracking** - Historical and current scores
+# Details:
+Converted from todo: .taskmaster/execution-roadmap.md
+
+# Test Strategy:
+Validate completion of: action-item item

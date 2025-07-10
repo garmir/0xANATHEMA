@@ -1,0 +1,18 @@
+# Task ID: 263
+# Title: Implement standardize return type of non-union setops type(self vs other)
+        # non-IntervalIndex
+         (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: standardize return type of non-union setops type(self vs other)
+        # non-IntervalIndex
+        if op_name == "difference":
+            expected = index
+        else:
+            expected = getatt
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/interval/test_setops.py
+
+# Test Strategy:
+Validate completion of: code-todo item

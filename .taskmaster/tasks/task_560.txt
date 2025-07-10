@@ -1,0 +1,17 @@
+# Task ID: 560
+# Title: Implement handle working_memory somehow?
+    core_distances_ = _compute_core_distances_(
+        X=X, neighbor (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: handle working_memory somehow?
+    core_distances_ = _compute_core_distances_(
+        X=X, neighbors=nbrs, min_samples=min_samples, working_memory=None
+    )
+    # OPTICS puts an upper limit on these
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/cluster/_optics.py
+
+# Test Strategy:
+Validate completion of: code-todo item

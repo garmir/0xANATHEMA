@@ -1,0 +1,17 @@
+# Task ID: 5525
+# Title: 2. Visual Workflow Designer
+**Purpose**: Drag-and-drop interface for complex workflow creation
+**Key
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 2. Visual Workflow Designer
+**Purpose**: Drag-and-drop interface for complex workflow creation
+**Key Features**:
+- Node-based workflow editor
+- Real-t
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/level-1/interface-layer.md
+
+# Test Strategy:
+Validate completion of: action-item item

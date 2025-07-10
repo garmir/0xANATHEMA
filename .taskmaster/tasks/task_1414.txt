@@ -1,0 +1,11 @@
+# Task ID: 1414
+# Title: Implement ✅ **Task-Master Integration**: Uses task-master research commands (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: ✅ **Task-Master Integration**: Uses task-master research commands
+# Details:
+Converted from todo: AUTONOMOUS_WORKFLOW_COMPLETION.md
+
+# Test Strategy:
+Validate completion of: action-item item

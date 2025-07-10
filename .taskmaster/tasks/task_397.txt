@@ -1,0 +1,15 @@
+# Task ID: 397
+# Title: Implement (typing) the return value on this callable should be any *scalar*.
+AggScalar = Union[str, Callable[. (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (typing) the return value on this callable should be any *scalar*.
+AggScalar = Union[str, Callable[..., Any]]
+# TODO: validate types on ScalarResult and move to _typing
+# Blocked from using by https:/
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/groupby/generic.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,17 @@
+# Task ID: 202
+# Title: Implement clean up types_data_frame fixture
+        result["BoolCol"] = result["BoolCol"].astype(int)
+         (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: clean up types_data_frame fixture
+        result["BoolCol"] = result["BoolCol"].astype(int)
+        result["BoolColWithNull"] = result["BoolColWithNull"].astype(float)
+
+    if conn_name == "postgresql
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/io/test_sql.py
+
+# Test Strategy:
+Validate completion of: code-todo item

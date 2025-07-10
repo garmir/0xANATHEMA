@@ -1,0 +1,16 @@
+# Task ID: 3622
+# Title: Implement Efficiency Models (Routine Tasks)
+- **Mistral 7B** - General tasks, quick responses
+- **Llama 3.1 8B (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Efficiency Models (Routine Tasks)
+- **Mistral 7B** - General tasks, quick responses
+- **Llama 3.1 8B** - Task decomposition, validation
+- **CodeLlama 
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

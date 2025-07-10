@@ -1,0 +1,18 @@
+# Task ID: 622
+# Title: rewrite this test to make less sensitive to the random seed,
+    # irrespective of the platform.
+    (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: rewrite this test to make less sensitive to the random seed,
+    # irrespective of the platform.
+    rng = np.random.RandomState(42)
+
+    # grid of equidistant points in 2D, n_components = n_dim
+    X
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/manifold/tests/test_locally_linear.py
+
+# Test Strategy:
+Validate completion of: code-todo item

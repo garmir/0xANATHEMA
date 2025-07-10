@@ -1,0 +1,11 @@
+# Task ID: 1780
+# Title: Implement Essential MCP Tools with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Essential MCP Tools
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,15 @@
+# Task ID: 259
+# Title: Implement a bunch of scattered tests check this deprecation is enforced.
+        #  de-duplicate/centralize th (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: a bunch of scattered tests check this deprecation is enforced.
+        #  de-duplicate/centralize them.
+        with pytest.raises(ValueError, match="Multi-dimensional indexing"):
+            # GH#305
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/test_base.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,2604 @@
+{
+  "decision_points": {
+    "test_task_001_root": {
+      "point_id": "test_task_001_root",
+      "level": 0,
+      "parent_id": null,
+      "children": [
+        "test_task_001_root_child_0",
+        "test_task_001_root_child_1"
+      ],
+      "performance_score": 0.7608260711090802,
+      "feedback_buffer": [
+        {
+          "timestamp": 1752176771.639443,
+          "feedback": {
+            "performance": 0.7673420490393249,
+            "level": 1,
+            "adaptation_params": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 1.0,
+                "regularization_strength": 0.1,
+                "exploration_factor": 0.1,
+                "performance_gradient": 0.0,
+                "confidence": 0.1
+              }
+            },
+            "context": {
+              "task_type": "code_optimization",
+              "complexity": "medium",
+              "previous_performance": 0.75,
+              "resource_constraints": {
+                "memory": "limited",
+                "time": "moderate"
+              }
+            },
+            "timestamp": 1752176771.639442
+          },
+          "source_level": 1
+        },
+        {
+          "timestamp": 1752176771.63972,
+          "feedback": {
+            "child_performance": 0.7673420490393249,
+            "child_adaptations": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 1.0,
+                "regularization_strength": 0.1,
+                "exploration_factor": 0.1,
+                "performance_gradient": 0.0,
+                "confidence": 0.1
+              }
+            },
+            "source_child": "test_task_001_root_child_0"
+          },
+          "source_level": 1
+        },
+        {
+          "timestamp": 1752176771.639764,
+          "feedback": {
+            "performance": 0.6798019762733362,
+            "level": 1,
+            "adaptation_params": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 1.0,
+                "regularization_strength": 0.1,
+                "exploration_factor": 0.1,
+                "performance_gradient": 0.0,
+                "confidence": 0.1
+              }
+            },
+            "context": {
+              "task_type": "code_optimization",
+              "complexity": "medium",
+              "previous_performance": 0.75,
+              "resource_constraints": {
+                "memory": "limited",
+                "time": "moderate"
+              }
+            },
+            "timestamp": 1752176771.639764
+          },
+          "source_level": 1
+        },
+        {
+          "timestamp": 1752176771.640345,
+          "feedback": {
+            "child_performance": 0.6798019762733362,
+            "child_adaptations": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 1.0,
+                "regularization_strength": 0.1,
+                "exploration_factor": 0.1,
+                "performance_gradient": 0.0,
+                "confidence": 0.1
+              }
+            },
+            "source_child": "test_task_001_root_child_1"
+          },
+          "source_level": 1
+        }
+      ]
+    },
+    "test_task_001_root_child_0": {
+      "point_id": "test_task_001_root_child_0",
+      "level": 1,
+      "parent_id": "test_task_001_root",
+      "children": [
+        "test_task_001_root_child_0_child_0",
+        "test_task_001_root_child_0_child_1"
+      ],
+      "performance_score": 0.7673420490393249,
+      "feedback_buffer": [
+        {
+          "timestamp": 1752176771.6394958,
+          "feedback": {
+            "performance": 0.5948019658284629,
+            "level": 2,
+            "adaptation_params": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 1.0006515977930244,
+                "regularization_strength": 0.09967420110348776,
+                "exploration_factor": 0.1,
+                "performance_gradient": 0.006515977930244721,
+                "confidence": 0.2
+              }
+            },
+            "context": {
+              "task_type": "code_optimization",
+              "complexity": "medium",
+              "previous_performance": 0.75,
+              "resource_constraints": {
+                "memory": "limited",
+                "time": "moderate"
+              }
+            },
+            "timestamp": 1752176771.639495
+          },
+          "source_level": 2
+        },
+        {
+          "timestamp": 1752176771.639591,
+          "feedback": {
+            "child_performance": 0.5948019658284629,
+            "child_adaptations": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 1.0006515977930244,
+                "regularization_strength": 0.09967420110348776,
+                "exploration_factor": 0.1,
+                "performance_gradient": 0.006515977930244721,
+                "confidence": 0.2
+              }
+            },
+            "source_child": "test_task_001_root_child_0_child_0"
+          },
+          "source_level": 2
+        },
+        {
+          "timestamp": 1752176771.6396348,
+          "feedback": {
+            "performance": 0.6798010346373713,
+            "level": 2,
+            "adaptation_params": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 1.0006515977930244,
+                "regularization_strength": 0.09967420110348776,
+                "exploration_factor": 0.1,
+                "performance_gradient": 0.006515977930244721,
+                "confidence": 0.2
+              }
+            },
+            "context": {
+              "task_type": "code_optimization",
+              "complexity": "medium",
+              "previous_performance": 0.75,
+              "resource_constraints": {
+                "memory": "limited",
+                "time": "moderate"
+              }
+            },
+            "timestamp": 1752176771.6396348
+          },
+          "source_level": 2
+        },
+        {
+          "timestamp": 1752176771.639719,
+          "feedback": {
+            "child_performance": 0.6798010346373713,
+            "child_adaptations": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 1.0006515977930244,
+                "regularization_strength": 0.09967420110348776,
+                "exploration_factor": 0.1,
+                "performance_gradient": 0.006515977930244721,
+                "confidence": 0.2
+              }
+            },
+            "source_child": "test_task_001_root_child_0_child_1"
+          },
+          "source_level": 2
+        }
+      ]
+    },
+    "test_task_001_root_child_0_child_0": {
+      "point_id": "test_task_001_root_child_0_child_0",
+      "level": 2,
+      "parent_id": "test_task_001_root_child_0",
+      "children": [
+        "test_task_001_root_child_0_child_0_child_0",
+        "test_task_001_root_child_0_child_0_child_1"
+      ],
+      "performance_score": 0.5948019658284629,
+      "feedback_buffer": [
+        {
+          "timestamp": 1752176771.639539,
+          "feedback": {
+            "performance": 0.721249206568532,
+            "level": 3,
+            "adaptation_params": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9833975894719382,
+                "regularization_strength": 0.09169879473596915,
+                "exploration_factor": 0.13320482105612347,
+                "performance_gradient": -0.16602410528061728,
+                "confidence": 0.3
+              }
+            },
+            "context": {
+              "task_type": "code_optimization",
+              "complexity": "medium",
+              "previous_performance": 0.75,
+              "resource_constraints": {
+                "memory": "limited",
+                "time": "moderate"
+              }
+            },
+            "timestamp": 1752176771.639539
+          },
+          "source_level": 3
+        },
+        {
+          "timestamp": 1752176771.639542,
+          "feedback": {
+            "child_performance": 0.721249206568532,
+            "child_adaptations": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9833975894719382,
+                "regularization_strength": 0.09169879473596915,
+                "exploration_factor": 0.13320482105612347,
+                "performance_gradient": -0.16602410528061728,
+                "confidence": 0.3
+              }
+            },
+            "source_child": "test_task_001_root_child_0_child_0_child_0"
+          },
+          "source_level": 3
+        },
+        {
+          "timestamp": 1752176771.639588,
+          "feedback": {
+            "performance": 0.713190908738547,
+            "level": 3,
+            "adaptation_params": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9833975894719382,
+                "regularization_strength": 0.09169879473596915,
+                "exploration_factor": 0.13320482105612347,
+                "performance_gradient": -0.16602410528061728,
+                "confidence": 0.3
+              }
+            },
+            "context": {
+              "task_type": "code_optimization",
+              "complexity": "medium",
+              "previous_performance": 0.75,
+              "resource_constraints": {
+                "memory": "limited",
+                "time": "moderate"
+              }
+            },
+            "timestamp": 1752176771.639588
+          },
+          "source_level": 3
+        },
+        {
+          "timestamp": 1752176771.6395898,
+          "feedback": {
+            "child_performance": 0.713190908738547,
+            "child_adaptations": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9833975894719382,
+                "regularization_strength": 0.09169879473596915,
+                "exploration_factor": 0.13320482105612347,
+                "performance_gradient": -0.16602410528061728,
+                "confidence": 0.3
+              }
+            },
+            "source_child": "test_task_001_root_child_0_child_0_child_1"
+          },
+          "source_level": 3
+        }
+      ]
+    },
+    "test_task_001_root_child_0_child_0_child_0": {
+      "point_id": "test_task_001_root_child_0_child_0_child_0",
+      "level": 3,
+      "parent_id": "test_task_001_root_child_0_child_0",
+      "children": [],
+      "performance_score": 0.721249206568532,
+      "feedback_buffer": []
+    },
+    "test_task_001_root_child_0_child_0_child_1": {
+      "point_id": "test_task_001_root_child_0_child_0_child_1",
+      "level": 3,
+      "parent_id": "test_task_001_root_child_0_child_0",
+      "children": [],
+      "performance_score": 0.713190908738547,
+      "feedback_buffer": []
+    },
+    "test_task_001_root_child_0_child_1": {
+      "point_id": "test_task_001_root_child_0_child_1",
+      "level": 2,
+      "parent_id": "test_task_001_root_child_0",
+      "children": [
+        "test_task_001_root_child_0_child_1_child_0",
+        "test_task_001_root_child_0_child_1_child_1"
+      ],
+      "performance_score": 0.6798010346373713,
+      "feedback_buffer": [
+        {
+          "timestamp": 1752176771.6396742,
+          "feedback": {
+            "performance": 0.6994678111272749,
+            "level": 3,
+            "adaptation_params": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9918974963528291,
+                "regularization_strength": 0.09594874817641456,
+                "exploration_factor": 0.11620500729434179,
+                "performance_gradient": -0.08102503647170889,
+                "confidence": 0.3
+              }
+            },
+            "context": {
+              "task_type": "code_optimization",
+              "complexity": "medium",
+              "previous_performance": 0.75,
+              "resource_constraints": {
+                "memory": "limited",
+                "time": "moderate"
+              }
+            },
+            "timestamp": 1752176771.6396742
+          },
+          "source_level": 3
+        },
+        {
+          "timestamp": 1752176771.639675,
+          "feedback": {
+            "child_performance": 0.6994678111272749,
+            "child_adaptations": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9918974963528291,
+                "regularization_strength": 0.09594874817641456,
+                "exploration_factor": 0.11620500729434179,
+                "performance_gradient": -0.08102503647170889,
+                "confidence": 0.3
+              }
+            },
+            "source_child": "test_task_001_root_child_0_child_1_child_0"
+          },
+          "source_level": 3
+        },
+        {
+          "timestamp": 1752176771.6397178,
+          "feedback": {
+            "performance": 0.6835231398794003,
+            "level": 3,
+            "adaptation_params": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9918974963528291,
+                "regularization_strength": 0.09594874817641456,
+                "exploration_factor": 0.11620500729434179,
+                "performance_gradient": -0.08102503647170889,
+                "confidence": 0.3
+              }
+            },
+            "context": {
+              "task_type": "code_optimization",
+              "complexity": "medium",
+              "previous_performance": 0.75,
+              "resource_constraints": {
+                "memory": "limited",
+                "time": "moderate"
+              }
+            },
+            "timestamp": 1752176771.639717
+          },
+          "source_level": 3
+        },
+        {
+          "timestamp": 1752176771.6397178,
+          "feedback": {
+            "child_performance": 0.6835231398794003,
+            "child_adaptations": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9918974963528291,
+                "regularization_strength": 0.09594874817641456,
+                "exploration_factor": 0.11620500729434179,
+                "performance_gradient": -0.08102503647170889,
+                "confidence": 0.3
+              }
+            },
+            "source_child": "test_task_001_root_child_0_child_1_child_1"
+          },
+          "source_level": 3
+        }
+      ]
+    },
+    "test_task_001_root_child_0_child_1_child_0": {
+      "point_id": "test_task_001_root_child_0_child_1_child_0",
+      "level": 3,
+      "parent_id": "test_task_001_root_child_0_child_1",
+      "children": [],
+      "performance_score": 0.6994678111272749,
+      "feedback_buffer": []
+    },
+    "test_task_001_root_child_0_child_1_child_1": {
+      "point_id": "test_task_001_root_child_0_child_1_child_1",
+      "level": 3,
+      "parent_id": "test_task_001_root_child_0_child_1",
+      "children": [],
+      "performance_score": 0.6835231398794003,
+      "feedback_buffer": []
+    },
+    "test_task_001_root_child_1": {
+      "point_id": "test_task_001_root_child_1",
+      "level": 1,
+      "parent_id": "test_task_001_root",
+      "children": [
+        "test_task_001_root_child_1_child_0",
+        "test_task_001_root_child_1_child_1"
+      ],
+      "performance_score": 0.6798019762733362,
+      "feedback_buffer": [
+        {
+          "timestamp": 1752176771.639928,
+          "feedback": {
+            "performance": 0.6226938852524967,
+            "level": 2,
+            "adaptation_params": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9918975905164256,
+                "regularization_strength": 0.0959487952582128,
+                "exploration_factor": 0.1162048189671488,
+                "performance_gradient": -0.08102409483574402,
+                "confidence": 0.2
+              }
+            },
+            "context": {
+              "task_type": "code_optimization",
+              "complexity": "medium",
+              "previous_performance": 0.75,
+              "resource_constraints": {
+                "memory": "limited",
+                "time": "moderate"
+              }
+            },
+            "timestamp": 1752176771.639926
+          },
+          "source_level": 2
+        },
+        {
+          "timestamp": 1752176771.64021,
+          "feedback": {
+            "child_performance": 0.6226938852524967,
+            "child_adaptations": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9918975905164256,
+                "regularization_strength": 0.0959487952582128,
+                "exploration_factor": 0.1162048189671488,
+                "performance_gradient": -0.08102409483574402,
+                "confidence": 0.2
+              }
+            },
+            "source_child": "test_task_001_root_child_1_child_0"
+          },
+          "source_level": 2
+        },
+        {
+          "timestamp": 1752176771.640256,
+          "feedback": {
+            "performance": 0.7068455099359112,
+            "level": 2,
+            "adaptation_params": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9918975905164256,
+                "regularization_strength": 0.0959487952582128,
+                "exploration_factor": 0.1162048189671488,
+                "performance_gradient": -0.08102409483574402,
+                "confidence": 0.2
+              }
+            },
+            "context": {
+              "task_type": "code_optimization",
+              "complexity": "medium",
+              "previous_performance": 0.75,
+              "resource_constraints": {
+                "memory": "limited",
+                "time": "moderate"
+              }
+            },
+            "timestamp": 1752176771.640256
+          },
+          "source_level": 2
+        },
+        {
+          "timestamp": 1752176771.6403441,
+          "feedback": {
+            "child_performance": 0.7068455099359112,
+            "child_adaptations": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9918975905164256,
+                "regularization_strength": 0.0959487952582128,
+                "exploration_factor": 0.1162048189671488,
+                "performance_gradient": -0.08102409483574402,
+                "confidence": 0.2
+              }
+            },
+            "source_child": "test_task_001_root_child_1_child_1"
+          },
+          "source_level": 2
+        }
+      ]
+    },
+    "test_task_001_root_child_1_child_0": {
+      "point_id": "test_task_001_root_child_1_child_0",
+      "level": 2,
+      "parent_id": "test_task_001_root_child_1",
+      "children": [
+        "test_task_001_root_child_1_child_0_child_0",
+        "test_task_001_root_child_1_child_0_child_1"
+      ],
+      "performance_score": 0.6226938852524967,
+      "feedback_buffer": [
+        {
+          "timestamp": 1752176771.640147,
+          "feedback": {
+            "performance": 0.7060685626588468,
+            "level": 3,
+            "adaptation_params": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9861867814143417,
+                "regularization_strength": 0.09309339070717083,
+                "exploration_factor": 0.12762643717131672,
+                "performance_gradient": -0.1381321858565835,
+                "confidence": 0.3
+              }
+            },
+            "context": {
+              "task_type": "code_optimization",
+              "complexity": "medium",
+              "previous_performance": 0.75,
+              "resource_constraints": {
+                "memory": "limited",
+                "time": "moderate"
+              }
+            },
+            "timestamp": 1752176771.640146
+          },
+          "source_level": 3
+        },
+        {
+          "timestamp": 1752176771.6401489,
+          "feedback": {
+            "child_performance": 0.7060685626588468,
+            "child_adaptations": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9861867814143417,
+                "regularization_strength": 0.09309339070717083,
+                "exploration_factor": 0.12762643717131672,
+                "performance_gradient": -0.1381321858565835,
+                "confidence": 0.3
+              }
+            },
+            "source_child": "test_task_001_root_child_1_child_0_child_0"
+          },
+          "source_level": 3
+        },
+        {
+          "timestamp": 1752176771.640207,
+          "feedback": {
+            "performance": 0.6771557211689887,
+            "level": 3,
+            "adaptation_params": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9861867814143417,
+                "regularization_strength": 0.09309339070717083,
+                "exploration_factor": 0.12762643717131672,
+                "performance_gradient": -0.1381321858565835,
+                "confidence": 0.3
+              }
+            },
+            "context": {
+              "task_type": "code_optimization",
+              "complexity": "medium",
+              "previous_performance": 0.75,
+              "resource_constraints": {
+                "memory": "limited",
+                "time": "moderate"
+              }
+            },
+            "timestamp": 1752176771.640207
+          },
+          "source_level": 3
+        },
+        {
+          "timestamp": 1752176771.640209,
+          "feedback": {
+            "child_performance": 0.6771557211689887,
+            "child_adaptations": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9861867814143417,
+                "regularization_strength": 0.09309339070717083,
+                "exploration_factor": 0.12762643717131672,
+                "performance_gradient": -0.1381321858565835,
+                "confidence": 0.3
+              }
+            },
+            "source_child": "test_task_001_root_child_1_child_0_child_1"
+          },
+          "source_level": 3
+        }
+      ]
+    },
+    "test_task_001_root_child_1_child_0_child_0": {
+      "point_id": "test_task_001_root_child_1_child_0_child_0",
+      "level": 3,
+      "parent_id": "test_task_001_root_child_1_child_0",
+      "children": [],
+      "performance_score": 0.7060685626588468,
+      "feedback_buffer": []
+    },
+    "test_task_001_root_child_1_child_0_child_1": {
+      "point_id": "test_task_001_root_child_1_child_0_child_1",
+      "level": 3,
+      "parent_id": "test_task_001_root_child_1_child_0",
+      "children": [],
+      "performance_score": 0.6771557211689887,
+      "feedback_buffer": []
+    },
+    "test_task_001_root_child_1_child_1": {
+      "point_id": "test_task_001_root_child_1_child_1",
+      "level": 2,
+      "parent_id": "test_task_001_root_child_1",
+      "children": [
+        "test_task_001_root_child_1_child_1_child_0",
+        "test_task_001_root_child_1_child_1_child_1"
+      ],
+      "performance_score": 0.7068455099359112,
+      "feedback_buffer": [
+        {
+          "timestamp": 1752176771.6403022,
+          "feedback": {
+            "performance": 0.6691835868669038,
+            "level": 3,
+            "adaptation_params": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9946019438826831,
+                "regularization_strength": 0.09730097194134156,
+                "exploration_factor": 0.1107961122346338,
+                "performance_gradient": -0.05398056117316896,
+                "confidence": 0.3
+              }
+            },
+            "context": {
+              "task_type": "code_optimization",
+              "complexity": "medium",
+              "previous_performance": 0.75,
+              "resource_constraints": {
+                "memory": "limited",
+                "time": "moderate"
+              }
+            },
+            "timestamp": 1752176771.6403022
+          },
+          "source_level": 3
+        },
+        {
+          "timestamp": 1752176771.6403031,
+          "feedback": {
+            "child_performance": 0.6691835868669038,
+            "child_adaptations": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9946019438826831,
+                "regularization_strength": 0.09730097194134156,
+                "exploration_factor": 0.1107961122346338,
+                "performance_gradient": -0.05398056117316896,
+                "confidence": 0.3
+              }
+            },
+            "source_child": "test_task_001_root_child_1_child_1_child_0"
+          },
+          "source_level": 3
+        },
+        {
+          "timestamp": 1752176771.640343,
+          "feedback": {
+            "performance": 0.6536947783120344,
+            "level": 3,
+            "adaptation_params": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9946019438826831,
+                "regularization_strength": 0.09730097194134156,
+                "exploration_factor": 0.1107961122346338,
+                "performance_gradient": -0.05398056117316896,
+                "confidence": 0.3
+              }
+            },
+            "context": {
+              "task_type": "code_optimization",
+              "complexity": "medium",
+              "previous_performance": 0.75,
+              "resource_constraints": {
+                "memory": "limited",
+                "time": "moderate"
+              }
+            },
+            "timestamp": 1752176771.640343
+          },
+          "source_level": 3
+        },
+        {
+          "timestamp": 1752176771.6403441,
+          "feedback": {
+            "child_performance": 0.6536947783120344,
+            "child_adaptations": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 0.9946019438826831,
+                "regularization_strength": 0.09730097194134156,
+                "exploration_factor": 0.1107961122346338,
+                "performance_gradient": -0.05398056117316896,
+                "confidence": 0.3
+              }
+            },
+            "source_child": "test_task_001_root_child_1_child_1_child_1"
+          },
+          "source_level": 3
+        }
+      ]
+    },
+    "test_task_001_root_child_1_child_1_child_0": {
+      "point_id": "test_task_001_root_child_1_child_1_child_0",
+      "level": 3,
+      "parent_id": "test_task_001_root_child_1_child_1",
+      "children": [],
+      "performance_score": 0.6691835868669038,
+      "feedback_buffer": []
+    },
+    "test_task_001_root_child_1_child_1_child_1": {
+      "point_id": "test_task_001_root_child_1_child_1_child_1",
+      "level": 3,
+      "parent_id": "test_task_001_root_child_1_child_1",
+      "children": [],
+      "performance_score": 0.6536947783120344,
+      "feedback_buffer": []
+    }
+  },
+  "global_state": {
+    "task_id": "global",
+    "decision_level": 0,
+    "context": {},
+    "performance_history": [
+      0.7608260711090802
+    ],
+    "adaptation_parameters": {},
+    "recursive_feedback": [
+      {
+        "task_id": "test_task_001",
+        "decision_point": "test_task_001_root",
+        "depth": 0,
+        "performance": 0.7608260711090802,
+        "adaptations": {
+          "simple_meta_learner": {
+            "learning_rate_multiplier": 1.0,
+            "regularization_strength": 0.1,
+            "exploration_factor": 0.1,
+            "performance_gradient": 0.0,
+            "confidence": 0.0
+          }
+        },
+        "context": {
+          "task_type": "code_optimization",
+          "complexity": "medium",
+          "previous_performance": 0.75,
+          "resource_constraints": {
+            "memory": "limited",
+            "time": "moderate"
+          }
+        },
+        "converged": false,
+        "child_results": [
+          {
+            "task_id": "test_task_001_child_0",
+            "decision_point": "test_task_001_root_child_0",
+            "depth": 1,
+            "performance": 0.7673420490393249,
+            "adaptations": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 1.0,
+                "regularization_strength": 0.1,
+                "exploration_factor": 0.1,
+                "performance_gradient": 0.0,
+                "confidence": 0.1
+              }
+            },
+            "context": {
+              "task_type": "code_optimization",
+              "complexity": "medium",
+              "previous_performance": 0.75,
+              "resource_constraints": {
+                "memory": "limited",
+                "time": "moderate"
+              }
+            },
+            "converged": false,
+            "child_results": [
+              {
+                "task_id": "test_task_001_child_0_child_0",
+                "decision_point": "test_task_001_root_child_0_child_0",
+                "depth": 2,
+                "performance": 0.5948019658284629,
+                "adaptations": {
+                  "simple_meta_learner": {
+                    "learning_rate_multiplier": 1.0006515977930244,
+                    "regularization_strength": 0.09967420110348776,
+                    "exploration_factor": 0.1,
+                    "performance_gradient": 0.006515977930244721,
+                    "confidence": 0.2
+                  }
+                },
+                "context": {
+                  "task_type": "code_optimization",
+                  "complexity": "medium",
+                  "previous_performance": 0.75,
+                  "resource_constraints": {
+                    "memory": "limited",
+                    "time": "moderate"
+                  }
+                },
+                "converged": false,
+                "child_results": [
+                  {
+                    "task_id": "test_task_001_child_0_child_0_child_0",
+                    "decision_point": "test_task_001_root_child_0_child_0_child_0",
+                    "depth": 3,
+                    "performance": 0.721249206568532,
+                    "adaptations": {
+                      "simple_meta_learner": {
+                        "learning_rate_multiplier": 0.9833975894719382,
+                        "regularization_strength": 0.09169879473596915,
+                        "exploration_factor": 0.13320482105612347,
+                        "performance_gradient": -0.16602410528061728,
+                        "confidence": 0.3
+                      }
+                    },
+                    "context": {
+                      "task_type": "code_optimization",
+                      "complexity": "medium",
+                      "previous_performance": 0.75,
+                      "resource_constraints": {
+                        "memory": "limited",
+                        "time": "moderate"
+                      }
+                    },
+                    "converged": false,
+                    "child_results": [],
+                    "recursive_feedback_count": 0,
+                    "timestamp": 1752176771.63954
+                  },
+                  {
+                    "task_id": "test_task_001_child_0_child_0_child_1",
+                    "decision_point": "test_task_001_root_child_0_child_0_child_1",
+                    "depth": 3,
+                    "performance": 0.713190908738547,
+                    "adaptations": {
+                      "simple_meta_learner": {
+                        "learning_rate_multiplier": 0.9833975894719382,
+                        "regularization_strength": 0.09169879473596915,
+                        "exploration_factor": 0.13320482105612347,
+                        "performance_gradient": -0.16602410528061728,
+                        "confidence": 0.3
+                      }
+                    },
+                    "context": {
+                      "task_type": "code_optimization",
+                      "complexity": "medium",
+                      "previous_performance": 0.75,
+                      "resource_constraints": {
+                        "memory": "limited",
+                        "time": "moderate"
+                      }
+                    },
+                    "converged": false,
+                    "child_results": [],
+                    "recursive_feedback_count": 0,
+                    "timestamp": 1752176771.639589
+                  }
+                ],
+                "recursive_feedback_count": 4,
+                "timestamp": 1752176771.6395898
+              },
+              {
+                "task_id": "test_task_001_child_0_child_1",
+                "decision_point": "test_task_001_root_child_0_child_1",
+                "depth": 2,
+                "performance": 0.6798010346373713,
+                "adaptations": {
+                  "simple_meta_learner": {
+                    "learning_rate_multiplier": 1.0006515977930244,
+                    "regularization_strength": 0.09967420110348776,
+                    "exploration_factor": 0.1,
+                    "performance_gradient": 0.006515977930244721,
+                    "confidence": 0.2
+                  }
+                },
+                "context": {
+                  "task_type": "code_optimization",
+                  "complexity": "medium",
+                  "previous_performance": 0.75,
+                  "resource_constraints": {
+                    "memory": "limited",
+                    "time": "moderate"
+                  }
+                },
+                "converged": false,
+                "child_results": [
+                  {
+                    "task_id": "test_task_001_child_0_child_1_child_0",
+                    "decision_point": "test_task_001_root_child_0_child_1_child_0",
+                    "depth": 3,
+                    "performance": 0.6994678111272749,
+                    "adaptations": {
+                      "simple_meta_learner": {
+                        "learning_rate_multiplier": 0.9918974963528291,
+                        "regularization_strength": 0.09594874817641456,
+                        "exploration_factor": 0.11620500729434179,
+                        "performance_gradient": -0.08102503647170889,
+                        "confidence": 0.3
+                      }
+                    },
+                    "context": {
+                      "task_type": "code_optimization",
+                      "complexity": "medium",
+                      "previous_performance": 0.75,
+                      "resource_constraints": {
+                        "memory": "limited",
+                        "time": "moderate"
+                      }
+                    },
+                    "converged": false,
+                    "child_results": [],
+                    "recursive_feedback_count": 0,
+                    "timestamp": 1752176771.639675
+                  },
+                  {
+                    "task_id": "test_task_001_child_0_child_1_child_1",
+                    "decision_point": "test_task_001_root_child_0_child_1_child_1",
+                    "depth": 3,
+                    "performance": 0.6835231398794003,
+                    "adaptations": {
+                      "simple_meta_learner": {
+                        "learning_rate_multiplier": 0.9918974963528291,
+                        "regularization_strength": 0.09594874817641456,
+                        "exploration_factor": 0.11620500729434179,
+                        "performance_gradient": -0.08102503647170889,
+                        "confidence": 0.3
+                      }
+                    },
+                    "context": {
+                      "task_type": "code_optimization",
+                      "complexity": "medium",
+                      "previous_performance": 0.75,
+                      "resource_constraints": {
+                        "memory": "limited",
+                        "time": "moderate"
+                      }
+                    },
+                    "converged": false,
+                    "child_results": [],
+                    "recursive_feedback_count": 0,
+                    "timestamp": 1752176771.6397178
+                  }
+                ],
+                "recursive_feedback_count": 4,
+                "timestamp": 1752176771.639719
+              }
+            ],
+            "recursive_feedback_count": 4,
+            "timestamp": 1752176771.63972
+          },
+          {
+            "task_id": "test_task_001_child_1",
+            "decision_point": "test_task_001_root_child_1",
+            "depth": 1,
+            "performance": 0.6798019762733362,
+            "adaptations": {
+              "simple_meta_learner": {
+                "learning_rate_multiplier": 1.0,
+                "regularization_strength": 0.1,
+                "exploration_factor": 0.1,
+                "performance_gradient": 0.0,
+                "confidence": 0.1
+              }
+            },
+            "context": {
+              "task_type": "code_optimization",
+              "complexity": "medium",
+              "previous_performance": 0.75,
+              "resource_constraints": {
+                "memory": "limited",
+                "time": "moderate"
+              }
+            },
+            "converged": false,
+            "child_results": [
+              {
+                "task_id": "test_task_001_child_1_child_0",
+                "decision_point": "test_task_001_root_child_1_child_0",
+                "depth": 2,
+                "performance": 0.6226938852524967,
+                "adaptations": {
+                  "simple_meta_learner": {
+                    "learning_rate_multiplier": 0.9918975905164256,
+                    "regularization_strength": 0.0959487952582128,
+                    "exploration_factor": 0.1162048189671488,
+                    "performance_gradient": -0.08102409483574402,
+                    "confidence": 0.2
+                  }
+                },
+                "context": {
+                  "task_type": "code_optimization",
+                  "complexity": "medium",
+                  "previous_performance": 0.75,
+                  "resource_constraints": {
+                    "memory": "limited",
+                    "time": "moderate"
+                  }
+                },
+                "converged": false,
+                "child_results": [
+                  {
+                    "task_id": "test_task_001_child_1_child_0_child_0",
+                    "decision_point": "test_task_001_root_child_1_child_0_child_0",
+                    "depth": 3,
+                    "performance": 0.7060685626588468,
+                    "adaptations": {
+                      "simple_meta_learner": {
+                        "learning_rate_multiplier": 0.9861867814143417,
+                        "regularization_strength": 0.09309339070717083,
+                        "exploration_factor": 0.12762643717131672,
+                        "performance_gradient": -0.1381321858565835,
+                        "confidence": 0.3
+                      }
+                    },
+                    "context": {
+                      "task_type": "code_optimization",
+                      "complexity": "medium",
+                      "previous_performance": 0.75,
+                      "resource_constraints": {
+                        "memory": "limited",
+                        "time": "moderate"
+                      }
+                    },
+                    "converged": false,
+                    "child_results": [],
+                    "recursive_feedback_count": 0,
+                    "timestamp": 1752176771.640148
+                  },
+                  {
+                    "task_id": "test_task_001_child_1_child_0_child_1",
+                    "decision_point": "test_task_001_root_child_1_child_0_child_1",
+                    "depth": 3,
+                    "performance": 0.6771557211689887,
+                    "adaptations": {
+                      "simple_meta_learner": {
+                        "learning_rate_multiplier": 0.9861867814143417,
+                        "regularization_strength": 0.09309339070717083,
+                        "exploration_factor": 0.12762643717131672,
+                        "performance_gradient": -0.1381321858565835,
+                        "confidence": 0.3
+                      }
+                    },
+                    "context": {
+                      "task_type": "code_optimization",
+                      "complexity": "medium",
+                      "previous_performance": 0.75,
+                      "resource_constraints": {
+                        "memory": "limited",
+                        "time": "moderate"
+                      }
+                    },
+                    "converged": false,
+                    "child_results": [],
+                    "recursive_feedback_count": 0,
+                    "timestamp": 1752176771.6402078
+                  }
+                ],
+                "recursive_feedback_count": 4,
+                "timestamp": 1752176771.640209
+              },
+              {
+                "task_id": "test_task_001_child_1_child_1",
+                "decision_point": "test_task_001_root_child_1_child_1",
+                "depth": 2,
+                "performance": 0.7068455099359112,
+                "adaptations": {
+                  "simple_meta_learner": {
+                    "learning_rate_multiplier": 0.9918975905164256,
+                    "regularization_strength": 0.0959487952582128,
+                    "exploration_factor": 0.1162048189671488,
+                    "performance_gradient": -0.08102409483574402,
+                    "confidence": 0.2
+                  }
+                },
+                "context": {
+                  "task_type": "code_optimization",
+                  "complexity": "medium",
+                  "previous_performance": 0.75,
+                  "resource_constraints": {
+                    "memory": "limited",
+                    "time": "moderate"
+                  }
+                },
+                "converged": false,
+                "child_results": [
+                  {
+                    "task_id": "test_task_001_child_1_child_1_child_0",
+                    "decision_point": "test_task_001_root_child_1_child_1_child_0",
+                    "depth": 3,
+                    "performance": 0.6691835868669038,
+                    "adaptations": {
+                      "simple_meta_learner": {
+                        "learning_rate_multiplier": 0.9946019438826831,
+                        "regularization_strength": 0.09730097194134156,
+                        "exploration_factor": 0.1107961122346338,
+                        "performance_gradient": -0.05398056117316896,
+                        "confidence": 0.3
+                      }
+                    },
+                    "context": {
+                      "task_type": "code_optimization",
+                      "complexity": "medium",
+                      "previous_performance": 0.75,
+                      "resource_constraints": {
+                        "memory": "limited",
+                        "time": "moderate"
+                      }
+                    },
+                    "converged": false,
+                    "child_results": [],
+                    "recursive_feedback_count": 0,
+                    "timestamp": 1752176771.6403031
+                  },
+                  {
+                    "task_id": "test_task_001_child_1_child_1_child_1",
+                    "decision_point": "test_task_001_root_child_1_child_1_child_1",
+                    "depth": 3,
+                    "performance": 0.6536947783120344,
+                    "adaptations": {
+                      "simple_meta_learner": {
+                        "learning_rate_multiplier": 0.9946019438826831,
+                        "regularization_strength": 0.09730097194134156,
+                        "exploration_factor": 0.1107961122346338,
+                        "performance_gradient": -0.05398056117316896,
+                        "confidence": 0.3
+                      }
+                    },
+                    "context": {
+                      "task_type": "code_optimization",
+                      "complexity": "medium",
+                      "previous_performance": 0.75,
+                      "resource_constraints": {
+                        "memory": "limited",
+                        "time": "moderate"
+                      }
+                    },
+                    "converged": false,
+                    "child_results": [],
+                    "recursive_feedback_count": 0,
+                    "timestamp": 1752176771.640343
+                  }
+                ],
+                "recursive_feedback_count": 4,
+                "timestamp": 1752176771.6403441
+              }
+            ],
+            "recursive_feedback_count": 4,
+            "timestamp": 1752176771.640345
+          }
+        ],
+        "recursive_feedback_count": 4,
+        "timestamp": 1752176771.640345
+      }
+    ],
+    "timestamp": 1752176771.639224,
+    "meta_gradient": null
+  },
+  "adaptation_history": [
+    {
+      "task_id": "test_task_001_child_0_child_0_child_0",
+      "decision_point": "test_task_001_root_child_0_child_0_child_0",
+      "depth": 3,
+      "performance": 0.721249206568532,
+      "adaptations": {
+        "simple_meta_learner": {
+          "learning_rate_multiplier": 0.9833975894719382,
+          "regularization_strength": 0.09169879473596915,
+          "exploration_factor": 0.13320482105612347,
+          "performance_gradient": -0.16602410528061728,
+          "confidence": 0.3
+        }
+      },
+      "context": {
+        "task_type": "code_optimization",
+        "complexity": "medium",
+        "previous_performance": 0.75,
+        "resource_constraints": {
+          "memory": "limited",
+          "time": "moderate"
+        }
+      },
+      "converged": false,
+      "child_results": [],
+      "recursive_feedback_count": 0,
+      "timestamp": 1752176771.63954
+    },
+    {
+      "task_id": "test_task_001_child_0_child_0_child_1",
+      "decision_point": "test_task_001_root_child_0_child_0_child_1",
+      "depth": 3,
+      "performance": 0.713190908738547,
+      "adaptations": {
+        "simple_meta_learner": {
+          "learning_rate_multiplier": 0.9833975894719382,
+          "regularization_strength": 0.09169879473596915,
+          "exploration_factor": 0.13320482105612347,
+          "performance_gradient": -0.16602410528061728,
+          "confidence": 0.3
+        }
+      },
+      "context": {
+        "task_type": "code_optimization",
+        "complexity": "medium",
+        "previous_performance": 0.75,
+        "resource_constraints": {
+          "memory": "limited",
+          "time": "moderate"
+        }
+      },
+      "converged": false,
+      "child_results": [],
+      "recursive_feedback_count": 0,
+      "timestamp": 1752176771.639589
+    },
+    {
+      "task_id": "test_task_001_child_0_child_0",
+      "decision_point": "test_task_001_root_child_0_child_0",
+      "depth": 2,
+      "performance": 0.5948019658284629,
+      "adaptations": {
+        "simple_meta_learner": {
+          "learning_rate_multiplier": 1.0006515977930244,
+          "regularization_strength": 0.09967420110348776,
+          "exploration_factor": 0.1,
+          "performance_gradient": 0.006515977930244721,
+          "confidence": 0.2
+        }
+      },
+      "context": {
+        "task_type": "code_optimization",
+        "complexity": "medium",
+        "previous_performance": 0.75,
+        "resource_constraints": {
+          "memory": "limited",
+          "time": "moderate"
+        }
+      },
+      "converged": false,
+      "child_results": [
+        {
+          "task_id": "test_task_001_child_0_child_0_child_0",
+          "decision_point": "test_task_001_root_child_0_child_0_child_0",
+          "depth": 3,
+          "performance": 0.721249206568532,
+          "adaptations": {
+            "simple_meta_learner": {
+              "learning_rate_multiplier": 0.9833975894719382,
+              "regularization_strength": 0.09169879473596915,
+              "exploration_factor": 0.13320482105612347,
+              "performance_gradient": -0.16602410528061728,
+              "confidence": 0.3
+            }
+          },
+          "context": {
+            "task_type": "code_optimization",
+            "complexity": "medium",
+            "previous_performance": 0.75,
+            "resource_constraints": {
+              "memory": "limited",
+              "time": "moderate"
+            }
+          },
+          "converged": false,
+          "child_results": [],
+          "recursive_feedback_count": 0,
+          "timestamp": 1752176771.63954
+        },
+        {
+          "task_id": "test_task_001_child_0_child_0_child_1",
+          "decision_point": "test_task_001_root_child_0_child_0_child_1",
+          "depth": 3,
+          "performance": 0.713190908738547,
+          "adaptations": {
+            "simple_meta_learner": {
+              "learning_rate_multiplier": 0.9833975894719382,
+              "regularization_strength": 0.09169879473596915,
+              "exploration_factor": 0.13320482105612347,
+              "performance_gradient": -0.16602410528061728,
+              "confidence": 0.3
+            }
+          },
+          "context": {
+            "task_type": "code_optimization",
+            "complexity": "medium",
+            "previous_performance": 0.75,
+            "resource_constraints": {
+              "memory": "limited",
+              "time": "moderate"
+            }
+          },
+          "converged": false,
+          "child_results": [],
+          "recursive_feedback_count": 0,
+          "timestamp": 1752176771.639589
+        }
+      ],
+      "recursive_feedback_count": 4,
+      "timestamp": 1752176771.6395898
+    },
+    {
+      "task_id": "test_task_001_child_0_child_1_child_0",
+      "decision_point": "test_task_001_root_child_0_child_1_child_0",
+      "depth": 3,
+      "performance": 0.6994678111272749,
+      "adaptations": {
+        "simple_meta_learner": {
+          "learning_rate_multiplier": 0.9918974963528291,
+          "regularization_strength": 0.09594874817641456,
+          "exploration_factor": 0.11620500729434179,
+          "performance_gradient": -0.08102503647170889,
+          "confidence": 0.3
+        }
+      },
+      "context": {
+        "task_type": "code_optimization",
+        "complexity": "medium",
+        "previous_performance": 0.75,
+        "resource_constraints": {
+          "memory": "limited",
+          "time": "moderate"
+        }
+      },
+      "converged": false,
+      "child_results": [],
+      "recursive_feedback_count": 0,
+      "timestamp": 1752176771.639675
+    },
+    {
+      "task_id": "test_task_001_child_0_child_1_child_1",
+      "decision_point": "test_task_001_root_child_0_child_1_child_1",
+      "depth": 3,
+      "performance": 0.6835231398794003,
+      "adaptations": {
+        "simple_meta_learner": {
+          "learning_rate_multiplier": 0.9918974963528291,
+          "regularization_strength": 0.09594874817641456,
+          "exploration_factor": 0.11620500729434179,
+          "performance_gradient": -0.08102503647170889,
+          "confidence": 0.3
+        }
+      },
+      "context": {
+        "task_type": "code_optimization",
+        "complexity": "medium",
+        "previous_performance": 0.75,
+        "resource_constraints": {
+          "memory": "limited",
+          "time": "moderate"
+        }
+      },
+      "converged": false,
+      "child_results": [],
+      "recursive_feedback_count": 0,
+      "timestamp": 1752176771.6397178
+    },
+    {
+      "task_id": "test_task_001_child_0_child_1",
+      "decision_point": "test_task_001_root_child_0_child_1",
+      "depth": 2,
+      "performance": 0.6798010346373713,
+      "adaptations": {
+        "simple_meta_learner": {
+          "learning_rate_multiplier": 1.0006515977930244,
+          "regularization_strength": 0.09967420110348776,
+          "exploration_factor": 0.1,
+          "performance_gradient": 0.006515977930244721,
+          "confidence": 0.2
+        }
+      },
+      "context": {
+        "task_type": "code_optimization",
+        "complexity": "medium",
+        "previous_performance": 0.75,
+        "resource_constraints": {
+          "memory": "limited",
+          "time": "moderate"
+        }
+      },
+      "converged": false,
+      "child_results": [
+        {
+          "task_id": "test_task_001_child_0_child_1_child_0",
+          "decision_point": "test_task_001_root_child_0_child_1_child_0",
+          "depth": 3,
+          "performance": 0.6994678111272749,
+          "adaptations": {
+            "simple_meta_learner": {
+              "learning_rate_multiplier": 0.9918974963528291,
+              "regularization_strength": 0.09594874817641456,
+              "exploration_factor": 0.11620500729434179,
+              "performance_gradient": -0.08102503647170889,
+              "confidence": 0.3
+            }
+          },
+          "context": {
+            "task_type": "code_optimization",
+            "complexity": "medium",
+            "previous_performance": 0.75,
+            "resource_constraints": {
+              "memory": "limited",
+              "time": "moderate"
+            }
+          },
+          "converged": false,
+          "child_results": [],
+          "recursive_feedback_count": 0,
+          "timestamp": 1752176771.639675
+        },
+        {
+          "task_id": "test_task_001_child_0_child_1_child_1",
+          "decision_point": "test_task_001_root_child_0_child_1_child_1",
+          "depth": 3,
+          "performance": 0.6835231398794003,
+          "adaptations": {
+            "simple_meta_learner": {
+              "learning_rate_multiplier": 0.9918974963528291,
+              "regularization_strength": 0.09594874817641456,
+              "exploration_factor": 0.11620500729434179,
+              "performance_gradient": -0.08102503647170889,
+              "confidence": 0.3
+            }
+          },
+          "context": {
+            "task_type": "code_optimization",
+            "complexity": "medium",
+            "previous_performance": 0.75,
+            "resource_constraints": {
+              "memory": "limited",
+              "time": "moderate"
+            }
+          },
+          "converged": false,
+          "child_results": [],
+          "recursive_feedback_count": 0,
+          "timestamp": 1752176771.6397178
+        }
+      ],
+      "recursive_feedback_count": 4,
+      "timestamp": 1752176771.639719
+    },
+    {
+      "task_id": "test_task_001_child_0",
+      "decision_point": "test_task_001_root_child_0",
+      "depth": 1,
+      "performance": 0.7673420490393249,
+      "adaptations": {
+        "simple_meta_learner": {
+          "learning_rate_multiplier": 1.0,
+          "regularization_strength": 0.1,
+          "exploration_factor": 0.1,
+          "performance_gradient": 0.0,
+          "confidence": 0.1
+        }
+      },
+      "context": {
+        "task_type": "code_optimization",
+        "complexity": "medium",
+        "previous_performance": 0.75,
+        "resource_constraints": {
+          "memory": "limited",
+          "time": "moderate"
+        }
+      },
+      "converged": false,
+      "child_results": [
+        {
+          "task_id": "test_task_001_child_0_child_0",
+          "decision_point": "test_task_001_root_child_0_child_0",
+          "depth": 2,
+          "performance": 0.5948019658284629,
+          "adaptations": {
+            "simple_meta_learner": {
+              "learning_rate_multiplier": 1.0006515977930244,
+              "regularization_strength": 0.09967420110348776,
+              "exploration_factor": 0.1,
+              "performance_gradient": 0.006515977930244721,
+              "confidence": 0.2
+            }
+          },
+          "context": {
+            "task_type": "code_optimization",
+            "complexity": "medium",
+            "previous_performance": 0.75,
+            "resource_constraints": {
+              "memory": "limited",
+              "time": "moderate"
+            }
+          },
+          "converged": false,
+          "child_results": [
+            {
+              "task_id": "test_task_001_child_0_child_0_child_0",
+              "decision_point": "test_task_001_root_child_0_child_0_child_0",
+              "depth": 3,
+              "performance": 0.721249206568532,
+              "adaptations": {
+                "simple_meta_learner": {
+                  "learning_rate_multiplier": 0.9833975894719382,
+                  "regularization_strength": 0.09169879473596915,
+                  "exploration_factor": 0.13320482105612347,
+                  "performance_gradient": -0.16602410528061728,
+                  "confidence": 0.3
+                }
+              },
+              "context": {
+                "task_type": "code_optimization",
+                "complexity": "medium",
+                "previous_performance": 0.75,
+                "resource_constraints": {
+                  "memory": "limited",
+                  "time": "moderate"
+                }
+              },
+              "converged": false,
+              "child_results": [],
+              "recursive_feedback_count": 0,
+              "timestamp": 1752176771.63954
+            },
+            {
+              "task_id": "test_task_001_child_0_child_0_child_1",
+              "decision_point": "test_task_001_root_child_0_child_0_child_1",
+              "depth": 3,
+              "performance": 0.713190908738547,
+              "adaptations": {
+                "simple_meta_learner": {
+                  "learning_rate_multiplier": 0.9833975894719382,
+                  "regularization_strength": 0.09169879473596915,
+                  "exploration_factor": 0.13320482105612347,
+                  "performance_gradient": -0.16602410528061728,
+                  "confidence": 0.3
+                }
+              },
+              "context": {
+                "task_type": "code_optimization",
+                "complexity": "medium",
+                "previous_performance": 0.75,
+                "resource_constraints": {
+                  "memory": "limited",
+                  "time": "moderate"
+                }
+              },
+              "converged": false,
+              "child_results": [],
+              "recursive_feedback_count": 0,
+              "timestamp": 1752176771.639589
+            }
+          ],
+          "recursive_feedback_count": 4,
+          "timestamp": 1752176771.6395898
+        },
+        {
+          "task_id": "test_task_001_child_0_child_1",
+          "decision_point": "test_task_001_root_child_0_child_1",
+          "depth": 2,
+          "performance": 0.6798010346373713,
+          "adaptations": {
+            "simple_meta_learner": {
+              "learning_rate_multiplier": 1.0006515977930244,
+              "regularization_strength": 0.09967420110348776,
+              "exploration_factor": 0.1,
+              "performance_gradient": 0.006515977930244721,
+              "confidence": 0.2
+            }
+          },
+          "context": {
+            "task_type": "code_optimization",
+            "complexity": "medium",
+            "previous_performance": 0.75,
+            "resource_constraints": {
+              "memory": "limited",
+              "time": "moderate"
+            }
+          },
+          "converged": false,
+          "child_results": [
+            {
+              "task_id": "test_task_001_child_0_child_1_child_0",
+              "decision_point": "test_task_001_root_child_0_child_1_child_0",
+              "depth": 3,
+              "performance": 0.6994678111272749,
+              "adaptations": {
+                "simple_meta_learner": {
+                  "learning_rate_multiplier": 0.9918974963528291,
+                  "regularization_strength": 0.09594874817641456,
+                  "exploration_factor": 0.11620500729434179,
+                  "performance_gradient": -0.08102503647170889,
+                  "confidence": 0.3
+                }
+              },
+              "context": {
+                "task_type": "code_optimization",
+                "complexity": "medium",
+                "previous_performance": 0.75,
+                "resource_constraints": {
+                  "memory": "limited",
+                  "time": "moderate"
+                }
+              },
+              "converged": false,
+              "child_results": [],
+              "recursive_feedback_count": 0,
+              "timestamp": 1752176771.639675
+            },
+            {
+              "task_id": "test_task_001_child_0_child_1_child_1",
+              "decision_point": "test_task_001_root_child_0_child_1_child_1",
+              "depth": 3,
+              "performance": 0.6835231398794003,
+              "adaptations": {
+                "simple_meta_learner": {
+                  "learning_rate_multiplier": 0.9918974963528291,
+                  "regularization_strength": 0.09594874817641456,
+                  "exploration_factor": 0.11620500729434179,
+                  "performance_gradient": -0.08102503647170889,
+                  "confidence": 0.3
+                }
+              },
+              "context": {
+                "task_type": "code_optimization",
+                "complexity": "medium",
+                "previous_performance": 0.75,
+                "resource_constraints": {
+                  "memory": "limited",
+                  "time": "moderate"
+                }
+              },
+              "converged": false,
+              "child_results": [],
+              "recursive_feedback_count": 0,
+              "timestamp": 1752176771.6397178
+            }
+          ],
+          "recursive_feedback_count": 4,
+          "timestamp": 1752176771.639719
+        }
+      ],
+      "recursive_feedback_count": 4,
+      "timestamp": 1752176771.63972
+    },
+    {
+      "task_id": "test_task_001_child_1_child_0_child_0",
+      "decision_point": "test_task_001_root_child_1_child_0_child_0",
+      "depth": 3,
+      "performance": 0.7060685626588468,
+      "adaptations": {
+        "simple_meta_learner": {
+          "learning_rate_multiplier": 0.9861867814143417,
+          "regularization_strength": 0.09309339070717083,
+          "exploration_factor": 0.12762643717131672,
+          "performance_gradient": -0.1381321858565835,
+          "confidence": 0.3
+        }
+      },
+      "context": {
+        "task_type": "code_optimization",
+        "complexity": "medium",
+        "previous_performance": 0.75,
+        "resource_constraints": {
+          "memory": "limited",
+          "time": "moderate"
+        }
+      },
+      "converged": false,
+      "child_results": [],
+      "recursive_feedback_count": 0,
+      "timestamp": 1752176771.640148
+    },
+    {
+      "task_id": "test_task_001_child_1_child_0_child_1",
+      "decision_point": "test_task_001_root_child_1_child_0_child_1",
+      "depth": 3,
+      "performance": 0.6771557211689887,
+      "adaptations": {
+        "simple_meta_learner": {
+          "learning_rate_multiplier": 0.9861867814143417,
+          "regularization_strength": 0.09309339070717083,
+          "exploration_factor": 0.12762643717131672,
+          "performance_gradient": -0.1381321858565835,
+          "confidence": 0.3
+        }
+      },
+      "context": {
+        "task_type": "code_optimization",
+        "complexity": "medium",
+        "previous_performance": 0.75,
+        "resource_constraints": {
+          "memory": "limited",
+          "time": "moderate"
+        }
+      },
+      "converged": false,
+      "child_results": [],
+      "recursive_feedback_count": 0,
+      "timestamp": 1752176771.6402078
+    },
+    {
+      "task_id": "test_task_001_child_1_child_0",
+      "decision_point": "test_task_001_root_child_1_child_0",
+      "depth": 2,
+      "performance": 0.6226938852524967,
+      "adaptations": {
+        "simple_meta_learner": {
+          "learning_rate_multiplier": 0.9918975905164256,
+          "regularization_strength": 0.0959487952582128,
+          "exploration_factor": 0.1162048189671488,
+          "performance_gradient": -0.08102409483574402,
+          "confidence": 0.2
+        }
+      },
+      "context": {
+        "task_type": "code_optimization",
+        "complexity": "medium",
+        "previous_performance": 0.75,
+        "resource_constraints": {
+          "memory": "limited",
+          "time": "moderate"
+        }
+      },
+      "converged": false,
+      "child_results": [
+        {
+          "task_id": "test_task_001_child_1_child_0_child_0",
+          "decision_point": "test_task_001_root_child_1_child_0_child_0",
+          "depth": 3,
+          "performance": 0.7060685626588468,
+          "adaptations": {
+            "simple_meta_learner": {
+              "learning_rate_multiplier": 0.9861867814143417,
+              "regularization_strength": 0.09309339070717083,
+              "exploration_factor": 0.12762643717131672,
+              "performance_gradient": -0.1381321858565835,
+              "confidence": 0.3
+            }
+          },
+          "context": {
+            "task_type": "code_optimization",
+            "complexity": "medium",
+            "previous_performance": 0.75,
+            "resource_constraints": {
+              "memory": "limited",
+              "time": "moderate"
+            }
+          },
+          "converged": false,
+          "child_results": [],
+          "recursive_feedback_count": 0,
+          "timestamp": 1752176771.640148
+        },
+        {
+          "task_id": "test_task_001_child_1_child_0_child_1",
+          "decision_point": "test_task_001_root_child_1_child_0_child_1",
+          "depth": 3,
+          "performance": 0.6771557211689887,
+          "adaptations": {
+            "simple_meta_learner": {
+              "learning_rate_multiplier": 0.9861867814143417,
+              "regularization_strength": 0.09309339070717083,
+              "exploration_factor": 0.12762643717131672,
+              "performance_gradient": -0.1381321858565835,
+              "confidence": 0.3
+            }
+          },
+          "context": {
+            "task_type": "code_optimization",
+            "complexity": "medium",
+            "previous_performance": 0.75,
+            "resource_constraints": {
+              "memory": "limited",
+              "time": "moderate"
+            }
+          },
+          "converged": false,
+          "child_results": [],
+          "recursive_feedback_count": 0,
+          "timestamp": 1752176771.6402078
+        }
+      ],
+      "recursive_feedback_count": 4,
+      "timestamp": 1752176771.640209
+    },
+    {
+      "task_id": "test_task_001_child_1_child_1_child_0",
+      "decision_point": "test_task_001_root_child_1_child_1_child_0",
+      "depth": 3,
+      "performance": 0.6691835868669038,
+      "adaptations": {
+        "simple_meta_learner": {
+          "learning_rate_multiplier": 0.9946019438826831,
+          "regularization_strength": 0.09730097194134156,
+          "exploration_factor": 0.1107961122346338,
+          "performance_gradient": -0.05398056117316896,
+          "confidence": 0.3
+        }
+      },
+      "context": {
+        "task_type": "code_optimization",
+        "complexity": "medium",
+        "previous_performance": 0.75,
+        "resource_constraints": {
+          "memory": "limited",
+          "time": "moderate"
+        }
+      },
+      "converged": false,
+      "child_results": [],
+      "recursive_feedback_count": 0,
+      "timestamp": 1752176771.6403031
+    },
+    {
+      "task_id": "test_task_001_child_1_child_1_child_1",
+      "decision_point": "test_task_001_root_child_1_child_1_child_1",
+      "depth": 3,
+      "performance": 0.6536947783120344,
+      "adaptations": {
+        "simple_meta_learner": {
+          "learning_rate_multiplier": 0.9946019438826831,
+          "regularization_strength": 0.09730097194134156,
+          "exploration_factor": 0.1107961122346338,
+          "performance_gradient": -0.05398056117316896,
+          "confidence": 0.3
+        }
+      },
+      "context": {
+        "task_type": "code_optimization",
+        "complexity": "medium",
+        "previous_performance": 0.75,
+        "resource_constraints": {
+          "memory": "limited",
+          "time": "moderate"
+        }
+      },
+      "converged": false,
+      "child_results": [],
+      "recursive_feedback_count": 0,
+      "timestamp": 1752176771.640343
+    },
+    {
+      "task_id": "test_task_001_child_1_child_1",
+      "decision_point": "test_task_001_root_child_1_child_1",
+      "depth": 2,
+      "performance": 0.7068455099359112,
+      "adaptations": {
+        "simple_meta_learner": {
+          "learning_rate_multiplier": 0.9918975905164256,
+          "regularization_strength": 0.0959487952582128,
+          "exploration_factor": 0.1162048189671488,
+          "performance_gradient": -0.08102409483574402,
+          "confidence": 0.2
+        }
+      },
+      "context": {
+        "task_type": "code_optimization",
+        "complexity": "medium",
+        "previous_performance": 0.75,
+        "resource_constraints": {
+          "memory": "limited",
+          "time": "moderate"
+        }
+      },
+      "converged": false,
+      "child_results": [
+        {
+          "task_id": "test_task_001_child_1_child_1_child_0",
+          "decision_point": "test_task_001_root_child_1_child_1_child_0",
+          "depth": 3,
+          "performance": 0.6691835868669038,
+          "adaptations": {
+            "simple_meta_learner": {
+              "learning_rate_multiplier": 0.9946019438826831,
+              "regularization_strength": 0.09730097194134156,
+              "exploration_factor": 0.1107961122346338,
+              "performance_gradient": -0.05398056117316896,
+              "confidence": 0.3
+            }
+          },
+          "context": {
+            "task_type": "code_optimization",
+            "complexity": "medium",
+            "previous_performance": 0.75,
+            "resource_constraints": {
+              "memory": "limited",
+              "time": "moderate"
+            }
+          },
+          "converged": false,
+          "child_results": [],
+          "recursive_feedback_count": 0,
+          "timestamp": 1752176771.6403031
+        },
+        {
+          "task_id": "test_task_001_child_1_child_1_child_1",
+          "decision_point": "test_task_001_root_child_1_child_1_child_1",
+          "depth": 3,
+          "performance": 0.6536947783120344,
+          "adaptations": {
+            "simple_meta_learner": {
+              "learning_rate_multiplier": 0.9946019438826831,
+              "regularization_strength": 0.09730097194134156,
+              "exploration_factor": 0.1107961122346338,
+              "performance_gradient": -0.05398056117316896,
+              "confidence": 0.3
+            }
+          },
+          "context": {
+            "task_type": "code_optimization",
+            "complexity": "medium",
+            "previous_performance": 0.75,
+            "resource_constraints": {
+              "memory": "limited",
+              "time": "moderate"
+            }
+          },
+          "converged": false,
+          "child_results": [],
+          "recursive_feedback_count": 0,
+          "timestamp": 1752176771.640343
+        }
+      ],
+      "recursive_feedback_count": 4,
+      "timestamp": 1752176771.6403441
+    },
+    {
+      "task_id": "test_task_001_child_1",
+      "decision_point": "test_task_001_root_child_1",
+      "depth": 1,
+      "performance": 0.6798019762733362,
+      "adaptations": {
+        "simple_meta_learner": {
+          "learning_rate_multiplier": 1.0,
+          "regularization_strength": 0.1,
+          "exploration_factor": 0.1,
+          "performance_gradient": 0.0,
+          "confidence": 0.1
+        }
+      },
+      "context": {
+        "task_type": "code_optimization",
+        "complexity": "medium",
+        "previous_performance": 0.75,
+        "resource_constraints": {
+          "memory": "limited",
+          "time": "moderate"
+        }
+      },
+      "converged": false,
+      "child_results": [
+        {
+          "task_id": "test_task_001_child_1_child_0",
+          "decision_point": "test_task_001_root_child_1_child_0",
+          "depth": 2,
+          "performance": 0.6226938852524967,
+          "adaptations": {
+            "simple_meta_learner": {
+              "learning_rate_multiplier": 0.9918975905164256,
+              "regularization_strength": 0.0959487952582128,
+              "exploration_factor": 0.1162048189671488,
+              "performance_gradient": -0.08102409483574402,
+              "confidence": 0.2
+            }
+          },
+          "context": {
+            "task_type": "code_optimization",
+            "complexity": "medium",
+            "previous_performance": 0.75,
+            "resource_constraints": {
+              "memory": "limited",
+              "time": "moderate"
+            }
+          },
+          "converged": false,
+          "child_results": [
+            {
+              "task_id": "test_task_001_child_1_child_0_child_0",
+              "decision_point": "test_task_001_root_child_1_child_0_child_0",
+              "depth": 3,
+              "performance": 0.7060685626588468,
+              "adaptations": {
+                "simple_meta_learner": {
+                  "learning_rate_multiplier": 0.9861867814143417,
+                  "regularization_strength": 0.09309339070717083,
+                  "exploration_factor": 0.12762643717131672,
+                  "performance_gradient": -0.1381321858565835,
+                  "confidence": 0.3
+                }
+              },
+              "context": {
+                "task_type": "code_optimization",
+                "complexity": "medium",
+                "previous_performance": 0.75,
+                "resource_constraints": {
+                  "memory": "limited",
+                  "time": "moderate"
+                }
+              },
+              "converged": false,
+              "child_results": [],
+              "recursive_feedback_count": 0,
+              "timestamp": 1752176771.640148
+            },
+            {
+              "task_id": "test_task_001_child_1_child_0_child_1",
+              "decision_point": "test_task_001_root_child_1_child_0_child_1",
+              "depth": 3,
+              "performance": 0.6771557211689887,
+              "adaptations": {
+                "simple_meta_learner": {
+                  "learning_rate_multiplier": 0.9861867814143417,
+                  "regularization_strength": 0.09309339070717083,
+                  "exploration_factor": 0.12762643717131672,
+                  "performance_gradient": -0.1381321858565835,
+                  "confidence": 0.3
+                }
+              },
+              "context": {
+                "task_type": "code_optimization",
+                "complexity": "medium",
+                "previous_performance": 0.75,
+                "resource_constraints": {
+                  "memory": "limited",
+                  "time": "moderate"
+                }
+              },
+              "converged": false,
+              "child_results": [],
+              "recursive_feedback_count": 0,
+              "timestamp": 1752176771.6402078
+            }
+          ],
+          "recursive_feedback_count": 4,
+          "timestamp": 1752176771.640209
+        },
+        {
+          "task_id": "test_task_001_child_1_child_1",
+          "decision_point": "test_task_001_root_child_1_child_1",
+          "depth": 2,
+          "performance": 0.7068455099359112,
+          "adaptations": {
+            "simple_meta_learner": {
+              "learning_rate_multiplier": 0.9918975905164256,
+              "regularization_strength": 0.0959487952582128,
+              "exploration_factor": 0.1162048189671488,
+              "performance_gradient": -0.08102409483574402,
+              "confidence": 0.2
+            }
+          },
+          "context": {
+            "task_type": "code_optimization",
+            "complexity": "medium",
+            "previous_performance": 0.75,
+            "resource_constraints": {
+              "memory": "limited",
+              "time": "moderate"
+            }
+          },
+          "converged": false,
+          "child_results": [
+            {
+              "task_id": "test_task_001_child_1_child_1_child_0",
+              "decision_point": "test_task_001_root_child_1_child_1_child_0",
+              "depth": 3,
+              "performance": 0.6691835868669038,
+              "adaptations": {
+                "simple_meta_learner": {
+                  "learning_rate_multiplier": 0.9946019438826831,
+                  "regularization_strength": 0.09730097194134156,
+                  "exploration_factor": 0.1107961122346338,
+                  "performance_gradient": -0.05398056117316896,
+                  "confidence": 0.3
+                }
+              },
+              "context": {
+                "task_type": "code_optimization",
+                "complexity": "medium",
+                "previous_performance": 0.75,
+                "resource_constraints": {
+                  "memory": "limited",
+                  "time": "moderate"
+                }
+              },
+              "converged": false,
+              "child_results": [],
+              "recursive_feedback_count": 0,
+              "timestamp": 1752176771.6403031
+            },
+            {
+              "task_id": "test_task_001_child_1_child_1_child_1",
+              "decision_point": "test_task_001_root_child_1_child_1_child_1",
+              "depth": 3,
+              "performance": 0.6536947783120344,
+              "adaptations": {
+                "simple_meta_learner": {
+                  "learning_rate_multiplier": 0.9946019438826831,
+                  "regularization_strength": 0.09730097194134156,
+                  "exploration_factor": 0.1107961122346338,
+                  "performance_gradient": -0.05398056117316896,
+                  "confidence": 0.3
+                }
+              },
+              "context": {
+                "task_type": "code_optimization",
+                "complexity": "medium",
+                "previous_performance": 0.75,
+                "resource_constraints": {
+                  "memory": "limited",
+                  "time": "moderate"
+                }
+              },
+              "converged": false,
+              "child_results": [],
+              "recursive_feedback_count": 0,
+              "timestamp": 1752176771.640343
+            }
+          ],
+          "recursive_feedback_count": 4,
+          "timestamp": 1752176771.6403441
+        }
+      ],
+      "recursive_feedback_count": 4,
+      "timestamp": 1752176771.640345
+    },
+    {
+      "task_id": "test_task_001",
+      "decision_point": "test_task_001_root",
+      "depth": 0,
+      "performance": 0.7608260711090802,
+      "adaptations": {
+        "simple_meta_learner": {
+          "learning_rate_multiplier": 1.0,
+          "regularization_strength": 0.1,
+          "exploration_factor": 0.1,
+          "performance_gradient": 0.0,
+          "confidence": 0.0
+        }
+      },
+      "context": {
+        "task_type": "code_optimization",
+        "complexity": "medium",
+        "previous_performance": 0.75,
+        "resource_constraints": {
+          "memory": "limited",
+          "time": "moderate"
+        }
+      },
+      "converged": false,
+      "child_results": [
+        {
+          "task_id": "test_task_001_child_0",
+          "decision_point": "test_task_001_root_child_0",
+          "depth": 1,
+          "performance": 0.7673420490393249,
+          "adaptations": {
+            "simple_meta_learner": {
+              "learning_rate_multiplier": 1.0,
+              "regularization_strength": 0.1,
+              "exploration_factor": 0.1,
+              "performance_gradient": 0.0,
+              "confidence": 0.1
+            }
+          },
+          "context": {
+            "task_type": "code_optimization",
+            "complexity": "medium",
+            "previous_performance": 0.75,
+            "resource_constraints": {
+              "memory": "limited",
+              "time": "moderate"
+            }
+          },
+          "converged": false,
+          "child_results": [
+            {
+              "task_id": "test_task_001_child_0_child_0",
+              "decision_point": "test_task_001_root_child_0_child_0",
+              "depth": 2,
+              "performance": 0.5948019658284629,
+              "adaptations": {
+                "simple_meta_learner": {
+                  "learning_rate_multiplier": 1.0006515977930244,
+                  "regularization_strength": 0.09967420110348776,
+                  "exploration_factor": 0.1,
+                  "performance_gradient": 0.006515977930244721,
+                  "confidence": 0.2
+                }
+              },
+              "context": {
+                "task_type": "code_optimization",
+                "complexity": "medium",
+                "previous_performance": 0.75,
+                "resource_constraints": {
+                  "memory": "limited",
+                  "time": "moderate"
+                }
+              },
+              "converged": false,
+              "child_results": [
+                {
+                  "task_id": "test_task_001_child_0_child_0_child_0",
+                  "decision_point": "test_task_001_root_child_0_child_0_child_0",
+                  "depth": 3,
+                  "performance": 0.721249206568532,
+                  "adaptations": {
+                    "simple_meta_learner": {
+                      "learning_rate_multiplier": 0.9833975894719382,
+                      "regularization_strength": 0.09169879473596915,
+                      "exploration_factor": 0.13320482105612347,
+                      "performance_gradient": -0.16602410528061728,
+                      "confidence": 0.3
+                    }
+                  },
+                  "context": {
+                    "task_type": "code_optimization",
+                    "complexity": "medium",
+                    "previous_performance": 0.75,
+                    "resource_constraints": {
+                      "memory": "limited",
+                      "time": "moderate"
+                    }
+                  },
+                  "converged": false,
+                  "child_results": [],
+                  "recursive_feedback_count": 0,
+                  "timestamp": 1752176771.63954
+                },
+                {
+                  "task_id": "test_task_001_child_0_child_0_child_1",
+                  "decision_point": "test_task_001_root_child_0_child_0_child_1",
+                  "depth": 3,
+                  "performance": 0.713190908738547,
+                  "adaptations": {
+                    "simple_meta_learner": {
+                      "learning_rate_multiplier": 0.9833975894719382,
+                      "regularization_strength": 0.09169879473596915,
+                      "exploration_factor": 0.13320482105612347,
+                      "performance_gradient": -0.16602410528061728,
+                      "confidence": 0.3
+                    }
+                  },
+                  "context": {
+                    "task_type": "code_optimization",
+                    "complexity": "medium",
+                    "previous_performance": 0.75,
+                    "resource_constraints": {
+                      "memory": "limited",
+                      "time": "moderate"
+                    }
+                  },
+                  "converged": false,
+                  "child_results": [],
+                  "recursive_feedback_count": 0,
+                  "timestamp": 1752176771.639589
+                }
+              ],
+              "recursive_feedback_count": 4,
+              "timestamp": 1752176771.6395898
+            },
+            {
+              "task_id": "test_task_001_child_0_child_1",
+              "decision_point": "test_task_001_root_child_0_child_1",
+              "depth": 2,
+              "performance": 0.6798010346373713,
+              "adaptations": {
+                "simple_meta_learner": {
+                  "learning_rate_multiplier": 1.0006515977930244,
+                  "regularization_strength": 0.09967420110348776,
+                  "exploration_factor": 0.1,
+                  "performance_gradient": 0.006515977930244721,
+                  "confidence": 0.2
+                }
+              },
+              "context": {
+                "task_type": "code_optimization",
+                "complexity": "medium",
+                "previous_performance": 0.75,
+                "resource_constraints": {
+                  "memory": "limited",
+                  "time": "moderate"
+                }
+              },
+              "converged": false,
+              "child_results": [
+                {
+                  "task_id": "test_task_001_child_0_child_1_child_0",
+                  "decision_point": "test_task_001_root_child_0_child_1_child_0",
+                  "depth": 3,
+                  "performance": 0.6994678111272749,
+                  "adaptations": {
+                    "simple_meta_learner": {
+                      "learning_rate_multiplier": 0.9918974963528291,
+                      "regularization_strength": 0.09594874817641456,
+                      "exploration_factor": 0.11620500729434179,
+                      "performance_gradient": -0.08102503647170889,
+                      "confidence": 0.3
+                    }
+                  },
+                  "context": {
+                    "task_type": "code_optimization",
+                    "complexity": "medium",
+                    "previous_performance": 0.75,
+                    "resource_constraints": {
+                      "memory": "limited",
+                      "time": "moderate"
+                    }
+                  },
+                  "converged": false,
+                  "child_results": [],
+                  "recursive_feedback_count": 0,
+                  "timestamp": 1752176771.639675
+                },
+                {
+                  "task_id": "test_task_001_child_0_child_1_child_1",
+                  "decision_point": "test_task_001_root_child_0_child_1_child_1",
+                  "depth": 3,
+                  "performance": 0.6835231398794003,
+                  "adaptations": {
+                    "simple_meta_learner": {
+                      "learning_rate_multiplier": 0.9918974963528291,
+                      "regularization_strength": 0.09594874817641456,
+                      "exploration_factor": 0.11620500729434179,
+                      "performance_gradient": -0.08102503647170889,
+                      "confidence": 0.3
+                    }
+                  },
+                  "context": {
+                    "task_type": "code_optimization",
+                    "complexity": "medium",
+                    "previous_performance": 0.75,
+                    "resource_constraints": {
+                      "memory": "limited",
+                      "time": "moderate"
+                    }
+                  },
+                  "converged": false,
+                  "child_results": [],
+                  "recursive_feedback_count": 0,
+                  "timestamp": 1752176771.6397178
+                }
+              ],
+              "recursive_feedback_count": 4,
+              "timestamp": 1752176771.639719
+            }
+          ],
+          "recursive_feedback_count": 4,
+          "timestamp": 1752176771.63972
+        },
+        {
+          "task_id": "test_task_001_child_1",
+          "decision_point": "test_task_001_root_child_1",
+          "depth": 1,
+          "performance": 0.6798019762733362,
+          "adaptations": {
+            "simple_meta_learner": {
+              "learning_rate_multiplier": 1.0,
+              "regularization_strength": 0.1,
+              "exploration_factor": 0.1,
+              "performance_gradient": 0.0,
+              "confidence": 0.1
+            }
+          },
+          "context": {
+            "task_type": "code_optimization",
+            "complexity": "medium",
+            "previous_performance": 0.75,
+            "resource_constraints": {
+              "memory": "limited",
+              "time": "moderate"
+            }
+          },
+          "converged": false,
+          "child_results": [
+            {
+              "task_id": "test_task_001_child_1_child_0",
+              "decision_point": "test_task_001_root_child_1_child_0",
+              "depth": 2,
+              "performance": 0.6226938852524967,
+              "adaptations": {
+                "simple_meta_learner": {
+                  "learning_rate_multiplier": 0.9918975905164256,
+                  "regularization_strength": 0.0959487952582128,
+                  "exploration_factor": 0.1162048189671488,
+                  "performance_gradient": -0.08102409483574402,
+                  "confidence": 0.2
+                }
+              },
+              "context": {
+                "task_type": "code_optimization",
+                "complexity": "medium",
+                "previous_performance": 0.75,
+                "resource_constraints": {
+                  "memory": "limited",
+                  "time": "moderate"
+                }
+              },
+              "converged": false,
+              "child_results": [
+                {
+                  "task_id": "test_task_001_child_1_child_0_child_0",
+                  "decision_point": "test_task_001_root_child_1_child_0_child_0",
+                  "depth": 3,
+                  "performance": 0.7060685626588468,
+                  "adaptations": {
+                    "simple_meta_learner": {
+                      "learning_rate_multiplier": 0.9861867814143417,
+                      "regularization_strength": 0.09309339070717083,
+                      "exploration_factor": 0.12762643717131672,
+                      "performance_gradient": -0.1381321858565835,
+                      "confidence": 0.3
+                    }
+                  },
+                  "context": {
+                    "task_type": "code_optimization",
+                    "complexity": "medium",
+                    "previous_performance": 0.75,
+                    "resource_constraints": {
+                      "memory": "limited",
+                      "time": "moderate"
+                    }
+                  },
+                  "converged": false,
+                  "child_results": [],
+                  "recursive_feedback_count": 0,
+                  "timestamp": 1752176771.640148
+                },
+                {
+                  "task_id": "test_task_001_child_1_child_0_child_1",
+                  "decision_point": "test_task_001_root_child_1_child_0_child_1",
+                  "depth": 3,
+                  "performance": 0.6771557211689887,
+                  "adaptations": {
+                    "simple_meta_learner": {
+                      "learning_rate_multiplier": 0.9861867814143417,
+                      "regularization_strength": 0.09309339070717083,
+                      "exploration_factor": 0.12762643717131672,
+                      "performance_gradient": -0.1381321858565835,
+                      "confidence": 0.3
+                    }
+                  },
+                  "context": {
+                    "task_type": "code_optimization",
+                    "complexity": "medium",
+                    "previous_performance": 0.75,
+                    "resource_constraints": {
+                      "memory": "limited",
+                      "time": "moderate"
+                    }
+                  },
+                  "converged": false,
+                  "child_results": [],
+                  "recursive_feedback_count": 0,
+                  "timestamp": 1752176771.6402078
+                }
+              ],
+              "recursive_feedback_count": 4,
+              "timestamp": 1752176771.640209
+            },
+            {
+              "task_id": "test_task_001_child_1_child_1",
+              "decision_point": "test_task_001_root_child_1_child_1",
+              "depth": 2,
+              "performance": 0.7068455099359112,
+              "adaptations": {
+                "simple_meta_learner": {
+                  "learning_rate_multiplier": 0.9918975905164256,
+                  "regularization_strength": 0.0959487952582128,
+                  "exploration_factor": 0.1162048189671488,
+                  "performance_gradient": -0.08102409483574402,
+                  "confidence": 0.2
+                }
+              },
+              "context": {
+                "task_type": "code_optimization",
+                "complexity": "medium",
+                "previous_performance": 0.75,
+                "resource_constraints": {
+                  "memory": "limited",
+                  "time": "moderate"
+                }
+              },
+              "converged": false,
+              "child_results": [
+                {
+                  "task_id": "test_task_001_child_1_child_1_child_0",
+                  "decision_point": "test_task_001_root_child_1_child_1_child_0",
+                  "depth": 3,
+                  "performance": 0.6691835868669038,
+                  "adaptations": {
+                    "simple_meta_learner": {
+                      "learning_rate_multiplier": 0.9946019438826831,
+                      "regularization_strength": 0.09730097194134156,
+                      "exploration_factor": 0.1107961122346338,
+                      "performance_gradient": -0.05398056117316896,
+                      "confidence": 0.3
+                    }
+                  },
+                  "context": {
+                    "task_type": "code_optimization",
+                    "complexity": "medium",
+                    "previous_performance": 0.75,
+                    "resource_constraints": {
+                      "memory": "limited",
+                      "time": "moderate"
+                    }
+                  },
+                  "converged": false,
+                  "child_results": [],
+                  "recursive_feedback_count": 0,
+                  "timestamp": 1752176771.6403031
+                },
+                {
+                  "task_id": "test_task_001_child_1_child_1_child_1",
+                  "decision_point": "test_task_001_root_child_1_child_1_child_1",
+                  "depth": 3,
+                  "performance": 0.6536947783120344,
+                  "adaptations": {
+                    "simple_meta_learner": {
+                      "learning_rate_multiplier": 0.9946019438826831,
+                      "regularization_strength": 0.09730097194134156,
+                      "exploration_factor": 0.1107961122346338,
+                      "performance_gradient": -0.05398056117316896,
+                      "confidence": 0.3
+                    }
+                  },
+                  "context": {
+                    "task_type": "code_optimization",
+                    "complexity": "medium",
+                    "previous_performance": 0.75,
+                    "resource_constraints": {
+                      "memory": "limited",
+                      "time": "moderate"
+                    }
+                  },
+                  "converged": false,
+                  "child_results": [],
+                  "recursive_feedback_count": 0,
+                  "timestamp": 1752176771.640343
+                }
+              ],
+              "recursive_feedback_count": 4,
+              "timestamp": 1752176771.6403441
+            }
+          ],
+          "recursive_feedback_count": 4,
+          "timestamp": 1752176771.640345
+        }
+      ],
+      "recursive_feedback_count": 4,
+      "timestamp": 1752176771.640345
+    }
+  ],
+  "performance_tracker": [],
+  "framework_config": {
+    "max_recursion_depth": 4,
+    "convergence_threshold": 0.005
+  }
+}

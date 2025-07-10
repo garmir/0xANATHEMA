@@ -1,0 +1,11 @@
+# Task ID: 3678
+# Title: Implement Documentation and Training with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Documentation and Training
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

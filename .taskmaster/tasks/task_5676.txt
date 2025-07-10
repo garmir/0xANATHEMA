@@ -1,0 +1,22 @@
+# Task ID: 5676
+# Title: Implement Main Analysis Function
+```bash
+is_atomic_task() {
+    local prd_file="$1"
+    local threshold="${2:- (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Main Analysis Function
+```bash
+is_atomic_task() {
+    local prd_file="$1"
+    local threshold="${2:-0.7}"
+    
+    if [ ! -f "$prd_file" ]; then
+     
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-2-recursive/prd-2.3-atomic-detection.md
+
+# Test Strategy:
+Validate completion of: action-item item

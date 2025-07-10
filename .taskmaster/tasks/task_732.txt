@@ -1,0 +1,17 @@
+# Task ID: 732
+# Title: test for multidimensional
+NEIGH_MODE = {'zero': 0, 'one': 1, 'constant': 2, 'circular': 3, 'mirror': (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: test for multidimensional
+NEIGH_MODE = {'zero': 0, 'one': 1, 'constant': 2, 'circular': 3, 'mirror': 4}
+
+
+@pytest.mark.parametrize('dt', [float, Decimal], ids=['float', 'object'])
+class TestNeighborho
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/_core/tests/test_multiarray.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,18 @@
+# Task ID: 701
+# Title: Implement Custom repr for user DTypes, logic should likely move.
+        return repr(dtype)
+    if dtype.names (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Custom repr for user DTypes, logic should likely move.
+        return repr(dtype)
+    if dtype.names is not None:
+        # structured dtypes give a list or tuple repr
+        return str(dtype)
+    el
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/_core/arrayprint.py
+
+# Test Strategy:
+Validate completion of: code-todo item

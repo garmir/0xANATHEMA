@@ -1,0 +1,16 @@
+# Task ID: 644
+# Title: Implement (1.8): remove in 1.8
+def test_deprecation_warning_base_estimator():
+    warn_msg = "`base_estimator` (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8): remove in 1.8
+def test_deprecation_warning_base_estimator():
+    warn_msg = "`base_estimator` has been deprecated in 1.6 and will be removed"
+    with pytest.warns(FutureWarning, match=warn_msg
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/semi_supervised/tests/test_self_training.py
+
+# Test Strategy:
+Validate completion of: code-todo item

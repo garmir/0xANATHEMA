@@ -1,0 +1,15 @@
+# Task ID: 530
+# Title: Implement SKIPPABLE_HEADERS from urllib3 are ignored.
+        header = header.encode() if isinstance(header, s (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: SKIPPABLE_HEADERS from urllib3 are ignored.
+        header = header.encode() if isinstance(header, str) else header
+        header = header.lower()  # A lot of upstream code uses capitalized headers.
+
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/urllib3/http2/connection.py
+
+# Test Strategy:
+Validate completion of: code-todo item

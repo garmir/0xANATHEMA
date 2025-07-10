@@ -1,0 +1,18 @@
+# Task ID: 355
+# Title: Implement box over scalar, [scalar], (scalar,)?
+
+        msg = (
+            r"only integers, slices \(`:`\),  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: box over scalar, [scalar], (scalar,)?
+
+        msg = (
+            r"only integers, slices \(`:`\), ellipsis \(`...`\), numpy.newaxis "
+            r"\(`None`\) and integer or boolean arrays are valid
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/extension/base/getitem.py
+
+# Test Strategy:
+Validate completion of: code-todo item

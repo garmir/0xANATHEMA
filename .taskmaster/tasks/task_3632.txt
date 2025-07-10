@@ -1,0 +1,16 @@
+# Task ID: 3632
+# Title: 2.3 Task Generation Migration
+- Migrate PRD processing to local models
+- Implement prompt engineerin (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 2.3 Task Generation Migration
+- Migrate PRD processing to local models
+- Implement prompt engineering for task creation
+- Add validation and quality c
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

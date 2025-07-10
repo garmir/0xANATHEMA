@@ -1,0 +1,17 @@
+# Task ID: 4015
+# Title: Research Interface Compatibility
+**Status**: ❌ FAIL
+**Duration**: 0.08s
+**Result**: Interface test f (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Research Interface Compatibility
+**Status**: ❌ FAIL
+**Duration**: 0.08s
+**Result**: Interface test failed: Import error: No module named 'httpx'
+# Details:
+Converted from todo: .taskmaster/reports/local_llm_functionality_test.md
+
+# Test Strategy:
+Validate completion of: action-item item

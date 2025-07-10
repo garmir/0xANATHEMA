@@ -1,0 +1,16 @@
+# Task ID: 5219
+# Title: Success Criteria
+- Achieves ≥0.95 autonomy score within 20 iterations
+- Demonstrates measurable impr (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Success Criteria
+- Achieves ≥0.95 autonomy score within 20 iterations
+- Demonstrates measurable improvement across generations
+- Produces stable, repr
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-2.md
+
+# Test Strategy:
+Validate completion of: action-item item

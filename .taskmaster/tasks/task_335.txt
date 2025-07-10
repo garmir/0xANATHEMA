@@ -1,0 +1,17 @@
+# Task ID: 335
+# Title: Implement belongs in arithmetic tests?
+    @pytest.mark.filterwarnings(
+        "ignore:Non-vectorized DateOff (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: belongs in arithmetic tests?
+    @pytest.mark.filterwarnings(
+        "ignore:Non-vectorized DateOffset being applied to Series or DatetimeIndex"
+    )
+    @pytest.mark.parametrize("unit", ["s", "ms",
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/tseries/offsets/test_offsets.py
+
+# Test Strategy:
+Validate completion of: code-todo item

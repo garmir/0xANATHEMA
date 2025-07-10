@@ -1,0 +1,14 @@
+# Task ID: 597
+# Title: Implement for Scipy <= 1.10, `isspmatrix(X)` returns `True` for sparse arrays.
+        # Here, we check the ou (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: for Scipy <= 1.10, `isspmatrix(X)` returns `True` for sparse arrays.
+        # Here, we check the output of the `.mean` operation that returns a `np.matrix`
+        # for sparse matrices while a `np.a
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/feature_selection/_univariate_selection.py
+
+# Test Strategy:
+Validate completion of: code-todo item

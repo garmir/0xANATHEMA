@@ -1,0 +1,21 @@
+# Task ID: 240
+# Title: Implement moved from tests.series.test_operators; needs cleanup
+
+    @pytest.mark.parametrize(
+        "pair", (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: moved from tests.series.test_operators; needs cleanup
+
+    @pytest.mark.parametrize(
+        "pair",
+        [
+            (
+                [Timestamp("2011-01-01"), NaT, Timestamp("2011-01-03")],
+  
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arithmetic/test_datetime64.py
+
+# Test Strategy:
+Validate completion of: code-todo item

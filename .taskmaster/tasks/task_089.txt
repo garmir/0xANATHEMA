@@ -1,0 +1,27 @@
+# Task ID: 89
+# Title: Implement do something
+    ]
+    
+    for line in lines:
+        line = line.strip()
+        if not line:
+     (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: done
+# Dependencies: None
+# Priority: low
+# Description: do something
+    ]
+    
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+            
+        # Check if line matches step patterns
+        is_step = False
+
+# Details:
+Converted from todo: hardcoded_research_workflow.py
+
+# Test Strategy:
+Validate completion of: code-todo item

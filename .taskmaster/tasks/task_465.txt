@@ -1,0 +1,19 @@
+# Task ID: 465
+# Title: Implement review threshold acc. to benchmark?
+ 
+            if (xp.isdtype(b.dtype, "real floating") and
+      (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: review threshold acc. to benchmark?
+ 
+            if (xp.isdtype(b.dtype, "real floating") and
+                xp.isdtype(a.dtype, "real floating")
+            ):
+                fft_func = sp_fft.rff
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/signal/_filter_design.py
+
+# Test Strategy:
+Validate completion of: code-todo item

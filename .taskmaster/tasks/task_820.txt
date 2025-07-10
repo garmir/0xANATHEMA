@@ -1,0 +1,18 @@
+# Task ID: 820
+# Title: Implement Assert that the vertices are the correct ones.
+
+    def test_eppstein_matching(self):
+        """Tes (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Assert that the vertices are the correct ones.
+
+    def test_eppstein_matching(self):
+        """Tests that David Eppstein's implementation of the Hopcroft--Karp
+        algorithm produces a maximum c
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/bipartite/tests/test_matching.py
+
+# Test Strategy:
+Validate completion of: code-todo item

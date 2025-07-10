@@ -1,0 +1,16 @@
+# Task ID: 549
+# Title: investigate why using `concurrent.futures.Future` directly does not
+# always work in our test suite. (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: investigate why using `concurrent.futures.Future` directly does not
+# always work in our test suite.
+class Future(_BaseFuture):
+    def _invoke_callbacks(self):
+        for callback in self._done_call
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/joblib/externals/loky/_base.py
+
+# Test Strategy:
+Validate completion of: code-todo item

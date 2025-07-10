@@ -1,0 +1,14 @@
+# Task ID: 850
+# Title: we can also stop there if `__pydantic_fields_complete__` is False.
+                # However, `set_m (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: we can also stop there if `__pydantic_fields_complete__` is False.
+                # However, `set_model_fields()` is currently lenient and we don't have access to the `NameError`.
+                # (
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pydantic/_internal/_model_construction.py
+
+# Test Strategy:
+Validate completion of: code-todo item

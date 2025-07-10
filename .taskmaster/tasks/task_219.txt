@@ -1,0 +1,15 @@
+# Task ID: 219
+# Title: Implement test_bool_flex_frame needs a better name
+    @pytest.mark.parametrize("op", ["eq", "ne", "gt", "lt", (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: test_bool_flex_frame needs a better name
+    @pytest.mark.parametrize("op", ["eq", "ne", "gt", "lt", "ge", "le"])
+    def test_bool_flex_frame(self, op):
+        data = np.random.default_rng(2).standa
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/test_arithmetic.py
+
+# Test Strategy:
+Validate completion of: code-todo item

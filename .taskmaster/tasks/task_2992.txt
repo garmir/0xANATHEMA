@@ -1,0 +1,13 @@
+# Task ID: 2992
+# Title: Implement For Large Projects (1000+ tasks)
+```bash (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: For Large Projects (1000+ tasks)
+```bash
+# Details:
+Converted from todo: .taskmaster/examples/integration-guide.md
+
+# Test Strategy:
+Validate completion of: action-item item

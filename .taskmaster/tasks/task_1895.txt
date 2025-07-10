@@ -1,0 +1,11 @@
+# Task ID: 1895
+# Title: Implement Download from https://lmstudio.ai/ with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Download from https://lmstudio.ai/
+# Details:
+Converted from todo: LOCAL_LLM_MIGRATION_GUIDE.md
+
+# Test Strategy:
+Validate completion of: action-item item

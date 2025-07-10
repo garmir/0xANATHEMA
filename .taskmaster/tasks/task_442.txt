@@ -1,0 +1,15 @@
+# Task ID: 442
+# Title: Implement revert this suppress_warning once the warning bug fix in
+                # sksparse is merged/releas (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: revert this suppress_warning once the warning bug fix in
+                # sksparse is merged/released
+                # Suppress spurious warning bug from sksparse with csc_array gh-22089
+           
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/optimize/_linprog_ip.py
+
+# Test Strategy:
+Validate completion of: code-todo item

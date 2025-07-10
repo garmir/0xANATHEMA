@@ -1,0 +1,16 @@
+# Task ID: 3044
+# Title: Implement 2. Multi-Step Reasoning
+Evaluates logical reasoning and problem-solving capabilities:
+- **Input**: C (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 2. Multi-Step Reasoning
+Evaluates logical reasoning and problem-solving capabilities:
+- **Input**: Complex mathematical or logical problems
+- **Expect
+# Details:
+Converted from todo: .taskmaster/benchmarks/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

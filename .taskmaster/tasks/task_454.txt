@@ -1,0 +1,17 @@
+# Task ID: 454
+# Title: Implement use xpx.lazy_apply to add jax.jit support
+            # (but dtype propagation can be non-trivial)
+  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: use xpx.lazy_apply to add jax.jit support
+            # (but dtype propagation can be non-trivial)
+            args = [np.asarray(arg) for arg in args]
+            out = _f(*args, **kwargs)
+          
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/special/_support_alternative_backends.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,16 @@
+# Task ID: 178
+# Title: Implement np.modf, np.frexp
+@pytest.mark.parametrize("shuffle", [True, False])
+@pytest.mark.filterwarnings("ig (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: np.modf, np.frexp
+@pytest.mark.parametrize("shuffle", [True, False])
+@pytest.mark.filterwarnings("ignore:divide by zero:RuntimeWarning")
+def test_multiple_output_binary_ufuncs(ufunc, sparse, shuffle, 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/series/test_ufunc.py
+
+# Test Strategy:
+Validate completion of: code-todo item

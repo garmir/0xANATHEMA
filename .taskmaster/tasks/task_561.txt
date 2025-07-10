@@ -1,0 +1,18 @@
+# Task ID: 561
+# Title: (1.8) remove None option
+        "estimator": [None, HasMethods(["fit"])],
+        # TODO(1.8) remov
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8) remove None option
+        "estimator": [None, HasMethods(["fit"])],
+        # TODO(1.8) remove
+        "base_estimator": [
+            HasMethods(["fit"]),
+            Hidden(StrOptions({"depre
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/semi_supervised/_self_training.py
+
+# Test Strategy:
+Validate completion of: code-todo item

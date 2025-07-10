@@ -1,0 +1,16 @@
+# Task ID: 772
+# Title: Implement (behdad): Add a configuration option for this?
+            deltas = self.compileDeltasGreedy(self.fl (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (behdad): Add a configuration option for this?
+            deltas = self.compileDeltasGreedy(self.flags, deltas)
+            # deltas = self.compileDeltasOptimal(self.flags, deltas)
+        else:
+    
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/ttLib/tables/_g_l_y_f.py
+
+# Test Strategy:
+Validate completion of: code-todo item

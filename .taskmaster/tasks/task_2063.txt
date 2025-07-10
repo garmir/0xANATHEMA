@@ -1,0 +1,11 @@
+# Task ID: 2063
+# Title: Implement 28. Delete Tag (`delete_tag`) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 28. Delete Tag (`delete_tag`)
+# Details:
+Converted from todo: .trae/rules/taskmaster.md
+
+# Test Strategy:
+Validate completion of: action-item item

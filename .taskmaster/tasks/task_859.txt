@@ -1,0 +1,17 @@
+# Task ID: 859
+# Title: Implement use Name.Namespace if appropriate.  This needs
+            # work to disinguish imports from aspects (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: use Name.Namespace if appropriate.  This needs
+            # work to disinguish imports from aspects.
+            (r'[\w.]+', Name, '#pop'),
+            default('#pop'),
+        ],
+        'formal_par
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/ada.py
+
+# Test Strategy:
+Validate completion of: code-todo item

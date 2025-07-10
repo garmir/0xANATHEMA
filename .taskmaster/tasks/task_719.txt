@@ -1,0 +1,17 @@
+# Task ID: 719
+# Title: Implement we're stuck with disabling math formatting until we handle
+        # exponents in this function
+     (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: we're stuck with disabling math formatting until we handle
+        # exponents in this function
+        return fr'\text{{{pu.format_float(x, parens=parens)}}}'
+
+    def _format_term(self, scalar_forma
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/polynomial/_polybase.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,11 @@
+# Task ID: 4123
+# Title: Implement **Sequential Research Calls**: Research is done sequentially rather than in parallel (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Sequential Research Calls**: Research is done sequentially rather than in parallel
+# Details:
+Converted from todo: .taskmaster/reports/recursive-workflow-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,18 @@
+# Task ID: 4104
+# Title: Implement **Before Migration**
+```
+[Task Master] → [External APIs] → [Research Results]
+                 ├─ Pe (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Before Migration**
+```
+[Task Master] → [External APIs] → [Research Results]
+                 ├─ Perplexity API (requires internet)
+                 
+# Details:
+Converted from todo: .taskmaster/reports/local-llm-migration-health-check.md
+
+# Test Strategy:
+Validate completion of: action-item item

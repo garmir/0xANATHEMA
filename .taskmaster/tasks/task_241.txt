@@ -1,0 +1,17 @@
+# Task ID: 241
+# Title: Implement All of these need to be parametrized over box
+
+    @pytest.mark.parametrize("dtype", [None, object]) (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: All of these need to be parametrized over box
+
+    @pytest.mark.parametrize("dtype", [None, object])
+    def test_comp_nat(self, dtype):
+        left = TimedeltaIndex([Timedelta("1 days"), NaT, Timede
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arithmetic/test_timedelta64.py
+
+# Test Strategy:
+Validate completion of: code-todo item

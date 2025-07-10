@@ -1,0 +1,16 @@
+# Task ID: 5917
+# Title: Implement Expected Outcome
+- Complex tasks broken into 5-15 minute atomic components
+- Clear, simple execution (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Expected Outcome
+- Complex tasks broken into 5-15 minute atomic components
+- Clear, simple execution prompts generated
+- Reduced complexity and cognit
+# Details:
+Converted from todo: .claude/commands/stuck-prompt-resolve.md
+
+# Test Strategy:
+Validate completion of: action-item item

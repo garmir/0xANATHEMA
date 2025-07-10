@@ -1,0 +1,16 @@
+# Task ID: 611
+# Title: Implement systematize this mapping of metric for
+            # PairwiseDistancesReductions.
+            metric (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: systematize this mapping of metric for
+            # PairwiseDistancesReductions.
+            metric, metric_kwargs = _adjusted_metric(
+                metric=self.metric, metric_kwargs=self.metric_pa
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/neighbors/_classification.py
+
+# Test Strategy:
+Validate completion of: code-todo item

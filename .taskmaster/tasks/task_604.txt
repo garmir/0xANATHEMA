@@ -1,0 +1,14 @@
+# Task ID: 604
+# Title: Implement Remove this condition, once scipy 1.10 is the minimum version.
+        #       Only scipy => 1.10 su (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Remove this condition, once scipy 1.10 is the minimum version.
+        #       Only scipy => 1.10 supports design_matrix(.., extrapolate=..).
+        #       The default (implicit in scipy < 1.10) is 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/preprocessing/_polynomial.py
+
+# Test Strategy:
+Validate completion of: code-todo item

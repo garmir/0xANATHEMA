@@ -1,0 +1,14 @@
+# Task ID: 629
+# Title: (devtools): allow third-party developers to pass test specific params to checks
+PER_ESTIMATOR_CHECK_ (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (devtools): allow third-party developers to pass test specific params to checks
+PER_ESTIMATOR_CHECK_PARAMS: dict = {
+    # TODO(devtools): check that function names here exist in checks for the estima
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/utils/_test_common/instance_generator.py
+
+# Test Strategy:
+Validate completion of: code-todo item

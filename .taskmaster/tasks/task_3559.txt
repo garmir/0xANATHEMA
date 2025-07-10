@@ -1,0 +1,18 @@
+# Task ID: 3559
+# Title: Quality Targets
+- **Relevance score**: > 0.7
+- **Completeness score**: > 0.8
+- **Coherence score**:  (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Quality Targets
+- **Relevance score**: > 0.7
+- **Completeness score**: > 0.8
+- **Coherence score**: > 0.7
+- **Overall quality**: > 0.75
+# Details:
+Converted from todo: .taskmaster/migration/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

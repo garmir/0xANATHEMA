@@ -1,0 +1,11 @@
+# Task ID: 1579
+# Title: Implement Privacy Classification with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Privacy Classification
+# Details:
+Converted from todo: privacy_compliant_note.md
+
+# Test Strategy:
+Validate completion of: action-item item

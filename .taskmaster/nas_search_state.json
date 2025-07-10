@@ -1,0 +1,1219 @@
+{
+  "population": [
+    {
+      "arch_id": "random_arch_1",
+      "layers": [
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.2976400284883063,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_0"
+        },
+        {
+          "layer_type": "lstm",
+          "units": 128,
+          "activation": "tanh",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_1"
+        },
+        {
+          "layer_type": "lstm",
+          "units": 256,
+          "activation": "swish",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_2"
+        },
+        {
+          "layer_type": "lstm",
+          "units": 32,
+          "activation": "leaky_relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_4"
+        },
+        {
+          "layer_type": "dense",
+          "units": 64,
+          "activation": "relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_7"
+        }
+      ],
+      "performance_score": 0.8223003923868893,
+      "complexity_score": 0.78,
+      "efficiency_score": 1.0542312722908838,
+      "generation": 0,
+      "parent_ids": []
+    },
+    {
+      "arch_id": "random_arch_2",
+      "layers": [
+        {
+          "layer_type": "lstm",
+          "units": 256,
+          "activation": "leaky_relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_0"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.10752446892907455,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_1"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.4114922094504737,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_2"
+        },
+        {
+          "layer_type": "lstm",
+          "units": 32,
+          "activation": "leaky_relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_3"
+        },
+        {
+          "layer_type": "dense",
+          "units": 32,
+          "activation": "sigmoid",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_4"
+        },
+        {
+          "layer_type": "lstm",
+          "units": 128,
+          "activation": "sigmoid",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_5"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.15383389956743915,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_6"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.3546167569404949,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_8"
+        }
+      ],
+      "performance_score": 0.9632337189011627,
+      "complexity_score": 0.748,
+      "efficiency_score": 1.2877456135042282,
+      "generation": 0,
+      "parent_ids": []
+    },
+    {
+      "arch_id": "random_arch_3",
+      "layers": [
+        {
+          "layer_type": "dense",
+          "units": 512,
+          "activation": "gelu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_0"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.32658001144319393,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_1"
+        },
+        {
+          "layer_type": "dense",
+          "units": 256,
+          "activation": "swish",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_2"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.33679227478218665,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_3"
+        }
+      ],
+      "performance_score": 0.5460474858190676,
+      "complexity_score": 0.768,
+      "efficiency_score": 0.7109993304935776,
+      "generation": 0,
+      "parent_ids": []
+    },
+    {
+      "arch_id": "random_arch_4",
+      "layers": [
+        {
+          "layer_type": "lstm",
+          "units": 256,
+          "activation": "gelu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_0"
+        },
+        {
+          "layer_type": "lstm",
+          "units": 64,
+          "activation": "relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_1"
+        }
+      ],
+      "performance_score": 0.872058054521583,
+      "complexity_score": 0.52,
+      "efficiency_score": 1.6770347202338134,
+      "generation": 0,
+      "parent_ids": []
+    },
+    {
+      "arch_id": "random_arch_5",
+      "layers": [
+        {
+          "layer_type": "lstm",
+          "units": 512,
+          "activation": "relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_0"
+        },
+        {
+          "layer_type": "lstm",
+          "units": 64,
+          "activation": "sigmoid",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_1"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.49295854030465347,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_4"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.4771364357329696,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_5"
+        }
+      ],
+      "performance_score": 0.6561953808353528,
+      "complexity_score": 0.7759999999999999,
+      "efficiency_score": 0.8456126041692692,
+      "generation": 0,
+      "parent_ids": []
+    },
+    {
+      "arch_id": "random_arch_6",
+      "layers": [
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.39104223710987274,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_0"
+        },
+        {
+          "layer_type": "lstm",
+          "units": 128,
+          "activation": "relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_1"
+        },
+        {
+          "layer_type": "dense",
+          "units": 128,
+          "activation": "gelu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_2"
+        },
+        {
+          "layer_type": "dense",
+          "units": 64,
+          "activation": "swish",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_3"
+        },
+        {
+          "layer_type": "dense",
+          "units": 128,
+          "activation": "gelu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_4"
+        },
+        {
+          "layer_type": "lstm",
+          "units": 128,
+          "activation": "sigmoid",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_5"
+        }
+      ],
+      "performance_score": 0.9158555751223394,
+      "complexity_score": 0.776,
+      "efficiency_score": 1.1802262566009527,
+      "generation": 0,
+      "parent_ids": []
+    },
+    {
+      "arch_id": "random_arch_7",
+      "layers": [
+        {
+          "layer_type": "lstm",
+          "units": 512,
+          "activation": "relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_0"
+        },
+        {
+          "layer_type": "dense",
+          "units": 64,
+          "activation": "relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_2"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.16342540544467954,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_3"
+        },
+        {
+          "layer_type": "dense",
+          "units": 64,
+          "activation": "leaky_relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_4"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.40016001135822055,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_5"
+        },
+        {
+          "layer_type": "dense",
+          "units": 32,
+          "activation": "leaky_relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_6"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.43323093467451035,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_7"
+        }
+      ],
+      "performance_score": 0.7155670056757026,
+      "complexity_score": 0.772,
+      "efficiency_score": 0.9269002664193039,
+      "generation": 0,
+      "parent_ids": []
+    },
+    {
+      "arch_id": "random_arch_8",
+      "layers": [
+        {
+          "layer_type": "lstm",
+          "units": 128,
+          "activation": "sigmoid",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_0"
+        },
+        {
+          "layer_type": "lstm",
+          "units": 256,
+          "activation": "relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_1"
+        },
+        {
+          "layer_type": "dense",
+          "units": 128,
+          "activation": "leaky_relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_2"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.4746621529919056,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_3"
+        },
+        {
+          "layer_type": "dense",
+          "units": 64,
+          "activation": "swish",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_6"
+        }
+      ],
+      "performance_score": 0.8762550737035695,
+      "complexity_score": 0.776,
+      "efficiency_score": 1.1291946826076926,
+      "generation": 0,
+      "parent_ids": []
+    },
+    {
+      "arch_id": "random_arch_9",
+      "layers": [
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.3433608260076494,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_0"
+        },
+        {
+          "layer_type": "dense",
+          "units": 32,
+          "activation": "leaky_relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_1"
+        },
+        {
+          "layer_type": "dense",
+          "units": 128,
+          "activation": "tanh",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_2"
+        }
+      ],
+      "performance_score": 0.5487056473372214,
+      "complexity_score": 0.16,
+      "efficiency_score": 3.4294102958576334,
+      "generation": 0,
+      "parent_ids": []
+    },
+    {
+      "arch_id": "random_arch_10",
+      "layers": [
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.19135247316300685,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_0"
+        },
+        {
+          "layer_type": "lstm",
+          "units": 64,
+          "activation": "tanh",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_1"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.354583045844035,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_2"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.33371559792362065,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_3"
+        },
+        {
+          "layer_type": "dense",
+          "units": 512,
+          "activation": "relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_4"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.16430645982006153,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_6"
+        }
+      ],
+      "performance_score": 0.672891637187055,
+      "complexity_score": 0.676,
+      "efficiency_score": 0.9954018301583654,
+      "generation": 0,
+      "parent_ids": []
+    },
+    {
+      "arch_id": "random_arch_11",
+      "layers": [
+        {
+          "layer_type": "lstm",
+          "units": 64,
+          "activation": "sigmoid",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_0"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.3148849660385289,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_1"
+        },
+        {
+          "layer_type": "dense",
+          "units": 512,
+          "activation": "gelu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_2"
+        },
+        {
+          "layer_type": "dense",
+          "units": 64,
+          "activation": "gelu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_4"
+        }
+      ],
+      "performance_score": 0.4507106262953219,
+      "complexity_score": 0.74,
+      "efficiency_score": 0.6090684139125971,
+      "generation": 0,
+      "parent_ids": []
+    },
+    {
+      "arch_id": "random_arch_12",
+      "layers": [
+        {
+          "layer_type": "lstm",
+          "units": 64,
+          "activation": "relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_0"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.45408691426976144,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_1"
+        },
+        {
+          "layer_type": "lstm",
+          "units": 128,
+          "activation": "gelu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_2"
+        }
+      ],
+      "performance_score": 0.8429867546615855,
+      "complexity_score": 0.392,
+      "efficiency_score": 2.150476414953024,
+      "generation": 0,
+      "parent_ids": []
+    },
+    {
+      "arch_id": "random_arch_13",
+      "layers": [
+        {
+          "layer_type": "dense",
+          "units": 64,
+          "activation": "gelu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_0"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.4186824086326202,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_1"
+        },
+        {
+          "layer_type": "dense",
+          "units": 256,
+          "activation": "relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_2"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.28492974473881716,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_3"
+        },
+        {
+          "layer_type": "dense",
+          "units": 256,
+          "activation": "swish",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_4"
+        },
+        {
+          "layer_type": "lstm",
+          "units": 32,
+          "activation": "sigmoid",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_5"
+        }
+      ],
+      "performance_score": 0.7468056551970359,
+      "complexity_score": 0.7080000000000001,
+      "efficiency_score": 1.0548102474534404,
+      "generation": 0,
+      "parent_ids": []
+    },
+    {
+      "arch_id": "random_arch_14",
+      "layers": [
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.4586312538127313,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_0"
+        },
+        {
+          "layer_type": "dense",
+          "units": 128,
+          "activation": "tanh",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_1"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.2729887849041553,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_2"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.14909040597647963,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_3"
+        },
+        {
+          "layer_type": "lstm",
+          "units": 128,
+          "activation": "tanh",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_4"
+        },
+        {
+          "layer_type": "dense",
+          "units": 256,
+          "activation": "gelu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_5"
+        },
+        {
+          "layer_type": "dense",
+          "units": 32,
+          "activation": "relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_6"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.23111943602401488,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_7"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.38784050135706505,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_8"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.36754708894058663,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_9"
+        }
+      ],
+      "performance_score": 0.5776031726189287,
+      "complexity_score": 0.644,
+      "efficiency_score": 0.896899336364796,
+      "generation": 0,
+      "parent_ids": []
+    },
+    {
+      "arch_id": "random_arch_15",
+      "layers": [
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.2171780207443865,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_0"
+        },
+        {
+          "layer_type": "dense",
+          "units": 512,
+          "activation": "tanh",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_1"
+        },
+        {
+          "layer_type": "lstm",
+          "units": 64,
+          "activation": "swish",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_2"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.4932403394502043,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_4"
+        },
+        {
+          "layer_type": "dense",
+          "units": 64,
+          "activation": "gelu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_5"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.12787884699962457,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_7"
+        }
+      ],
+      "performance_score": 0.5899706765522789,
+      "complexity_score": 0.74,
+      "efficiency_score": 0.7972576710165931,
+      "generation": 0,
+      "parent_ids": []
+    }
+  ],
+  "best_architectures": [
+    {
+      "arch_id": "random_arch_2",
+      "layers": [
+        {
+          "layer_type": "lstm",
+          "units": 256,
+          "activation": "leaky_relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_0"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.10752446892907455,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_1"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.4114922094504737,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_2"
+        },
+        {
+          "layer_type": "lstm",
+          "units": 32,
+          "activation": "leaky_relu",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_3"
+        },
+        {
+          "layer_type": "dense",
+          "units": 32,
+          "activation": "sigmoid",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_4"
+        },
+        {
+          "layer_type": "lstm",
+          "units": 128,
+          "activation": "sigmoid",
+          "dropout_rate": null,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_5"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.15383389956743915,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_6"
+        },
+        {
+          "layer_type": "dropout",
+          "units": null,
+          "activation": null,
+          "dropout_rate": 0.3546167569404949,
+          "kernel_size": null,
+          "filters": null,
+          "attention_heads": null,
+          "layer_id": "layer_8"
+        }
+      ],
+      "performance_score": 0.9632337189011627,
+      "complexity_score": 0.748,
+      "efficiency_score": 1.2877456135042282,
+      "generation": 0,
+      "parent_ids": []
+    }
+  ],
+  "generation_history": [
+    {
+      "generation": 0,
+      "best_performance": 0.9632337189011627,
+      "avg_performance": 0.7198124571210063,
+      "worst_performance": 0.4507106262953219,
+      "population_size": 15,
+      "timestamp": 1752176940.7498298
+    }
+  ],
+  "current_generation": 0,
+  "search_started": true,
+  "evaluator_history": [
+    {
+      "arch_id": "random_arch_1",
+      "task_context": {
+        "task_type": "sequence",
+        "complexity": "medium",
+        "data_size": "large",
+        "performance_target": 0.85
+      },
+      "performance": 0.8223003923868893,
+      "timestamp": 1752176940.749599
+    },
+    {
+      "arch_id": "random_arch_2",
+      "task_context": {
+        "task_type": "sequence",
+        "complexity": "medium",
+        "data_size": "large",
+        "performance_target": 0.85
+      },
+      "performance": 0.9632337189011627,
+      "timestamp": 1752176940.749622
+    },
+    {
+      "arch_id": "random_arch_3",
+      "task_context": {
+        "task_type": "sequence",
+        "complexity": "medium",
+        "data_size": "large",
+        "performance_target": 0.85
+      },
+      "performance": 0.5460474858190676,
+      "timestamp": 1752176940.7496378
+    },
+    {
+      "arch_id": "random_arch_4",
+      "task_context": {
+        "task_type": "sequence",
+        "complexity": "medium",
+        "data_size": "large",
+        "performance_target": 0.85
+      },
+      "performance": 0.872058054521583,
+      "timestamp": 1752176940.7496488
+    },
+    {
+      "arch_id": "random_arch_5",
+      "task_context": {
+        "task_type": "sequence",
+        "complexity": "medium",
+        "data_size": "large",
+        "performance_target": 0.85
+      },
+      "performance": 0.6561953808353528,
+      "timestamp": 1752176940.749661
+    },
+    {
+      "arch_id": "random_arch_6",
+      "task_context": {
+        "task_type": "sequence",
+        "complexity": "medium",
+        "data_size": "large",
+        "performance_target": 0.85
+      },
+      "performance": 0.9158555751223394,
+      "timestamp": 1752176940.749675
+    },
+    {
+      "arch_id": "random_arch_7",
+      "task_context": {
+        "task_type": "sequence",
+        "complexity": "medium",
+        "data_size": "large",
+        "performance_target": 0.85
+      },
+      "performance": 0.7155670056757026,
+      "timestamp": 1752176940.7496881
+    },
+    {
+      "arch_id": "random_arch_8",
+      "task_context": {
+        "task_type": "sequence",
+        "complexity": "medium",
+        "data_size": "large",
+        "performance_target": 0.85
+      },
+      "performance": 0.8762550737035695,
+      "timestamp": 1752176940.749699
+    },
+    {
+      "arch_id": "random_arch_9",
+      "task_context": {
+        "task_type": "sequence",
+        "complexity": "medium",
+        "data_size": "large",
+        "performance_target": 0.85
+      },
+      "performance": 0.5487056473372214,
+      "timestamp": 1752176940.749711
+    },
+    {
+      "arch_id": "random_arch_10",
+      "task_context": {
+        "task_type": "sequence",
+        "complexity": "medium",
+        "data_size": "large",
+        "performance_target": 0.85
+      },
+      "performance": 0.672891637187055,
+      "timestamp": 1752176940.749722
+    },
+    {
+      "arch_id": "random_arch_11",
+      "task_context": {
+        "task_type": "sequence",
+        "complexity": "medium",
+        "data_size": "large",
+        "performance_target": 0.85
+      },
+      "performance": 0.4507106262953219,
+      "timestamp": 1752176940.7497332
+    },
+    {
+      "arch_id": "random_arch_12",
+      "task_context": {
+        "task_type": "sequence",
+        "complexity": "medium",
+        "data_size": "large",
+        "performance_target": 0.85
+      },
+      "performance": 0.8429867546615855,
+      "timestamp": 1752176940.7497442
+    },
+    {
+      "arch_id": "random_arch_13",
+      "task_context": {
+        "task_type": "sequence",
+        "complexity": "medium",
+        "data_size": "large",
+        "performance_target": 0.85
+      },
+      "performance": 0.7468056551970359,
+      "timestamp": 1752176940.749755
+    },
+    {
+      "arch_id": "random_arch_14",
+      "task_context": {
+        "task_type": "sequence",
+        "complexity": "medium",
+        "data_size": "large",
+        "performance_target": 0.85
+      },
+      "performance": 0.5776031726189287,
+      "timestamp": 1752176940.74977
+    },
+    {
+      "arch_id": "random_arch_15",
+      "task_context": {
+        "task_type": "sequence",
+        "complexity": "medium",
+        "data_size": "large",
+        "performance_target": 0.85
+      },
+      "performance": 0.5899706765522789,
+      "timestamp": 1752176940.749782
+    }
+  ],
+  "config": {
+    "population_size": 15,
+    "max_generations": 8
+  }
+}

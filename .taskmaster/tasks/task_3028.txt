@@ -1,0 +1,11 @@
+# Task ID: 3028
+# Title: Implement `LLMInterface` for new model type (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Implement `LLMInterface` for new model type
+# Details:
+Converted from todo: .taskmaster/benchmarks/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

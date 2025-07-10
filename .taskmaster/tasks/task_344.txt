@@ -1,0 +1,15 @@
+# Task ID: 344
+# Title: Implement (infer_string) make this work for string dtype
+            msg = "Saving a MultiIndex with an extens (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (infer_string) make this work for string dtype
+            msg = "Saving a MultiIndex with an extension dtype is not supported."
+            with pytest.raises(NotImplementedError, match=msg):
+       
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/io/pytables/test_put.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,15 @@
+# Task ID: 180
+# Title: Implement constructing DatetimeIndex with dtype="M8[s]" without truncating
+        #  the first entry here rai (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: constructing DatetimeIndex with dtype="M8[s]" without truncating
+        #  the first entry here raises in array_to_datetime. Should truncate
+        #  instead of raising?
+        # See https://githu
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/reshape/test_cut.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,17 @@
+# Task ID: 123
+# Title: Implement I'd like to dynamically add the _repr_html_ method
+    # to the figure in the right context, but the (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: I'd like to dynamically add the _repr_html_ method
+    # to the figure in the right context, but then IPython doesn't
+    # use it, for some reason.
+
+    def _repr_html_(self):
+        # We can't use 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/matplotlib/figure.py
+
+# Test Strategy:
+Validate completion of: code-todo item

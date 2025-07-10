@@ -1,0 +1,21 @@
+# Task ID: 463
+# Title: implement resize across dimensions
+            raise NotImplementedError
+
+        if self.ndim == 1: (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: implement resize across dimensions
+            raise NotImplementedError
+
+        if self.ndim == 1:
+            newN = shape[-1]
+            for i in list(self._dict):
+                if i >= newN:
+ 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/sparse/_dok.py
+
+# Test Strategy:
+Validate completion of: code-todo item

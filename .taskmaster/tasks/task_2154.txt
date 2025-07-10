@@ -1,0 +1,15 @@
+# Task ID: 2154
+# Title: Implement Environment Setup Scripts:
+- `scripts/environment-setup.sh` - Full environment initialization
+- `scr (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Environment Setup Scripts:
+- `scripts/environment-setup.sh` - Full environment initialization
+- `scripts/dependency-install.sh` - Dependency installat
+# Details:
+Converted from todo: .taskmaster/execution-roadmap.md
+
+# Test Strategy:
+Validate completion of: action-item item

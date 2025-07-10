@@ -1,0 +1,330 @@
+{
+  "functionality_validation_summary": {
+    "timestamp": "2025-07-10T20:22:14.206311",
+    "duration_seconds": 12.443716,
+    "total_tests": 39,
+    "passed_tests": 37,
+    "failed_tests": 2,
+    "functionality_score": 94.87179487179486,
+    "category_scores": {
+      "Task Master Core": 100.0,
+      "Local LLM Adapter": 100.0,
+      "Research Module": 100.0,
+      "Planning Engine": 100.0,
+      "Autonomous Integration": 100.0,
+      "Recursive Functionality": 0.0,
+      "Configuration & Privacy": 100.0,
+      "Documentation": 100.0,
+      "Integration": 100.0,
+      "Performance": 100.0
+    }
+  },
+  "detailed_test_results": {
+    "taskmaster_version_check": {
+      "passed": true,
+      "message": "Command executed successfully",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:02.732169"
+    },
+    "taskmaster_list_tasks": {
+      "passed": true,
+      "message": "Command executed successfully",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:04.737662"
+    },
+    "taskmaster_model_configuration": {
+      "passed": true,
+      "message": "Command executed successfully",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:06.915722"
+    },
+    "taskmaster_next_task_retrieval": {
+      "passed": true,
+      "message": "Command executed successfully",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.943953"
+    },
+    "llm_adapter_import": {
+      "passed": true,
+      "message": "LocalLLMAdapter imported successfully",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.951624"
+    },
+    "llm_adapter_init": {
+      "passed": true,
+      "message": "LocalLLMAdapter initialized",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.952232"
+    },
+    "llm_provider_availability": {
+      "passed": true,
+      "message": "Provider availability checked: {'ollama': False, 'localai': False, 'text-generation-webui': False}",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.952256"
+    },
+    "llm_inference_fallback": {
+      "passed": true,
+      "message": "Inference correctly returned error without LLM servers",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.952267"
+    },
+    "research_module_import": {
+      "passed": true,
+      "message": "LocalResearchModule imported",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.959189"
+    },
+    "research_module_init": {
+      "passed": true,
+      "message": "Research module initialized",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.959205"
+    },
+    "research_sync_function": {
+      "passed": true,
+      "message": "Sync research function executed: <class 'str'>",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.959726"
+    },
+    "perplexity_replacement": {
+      "passed": true,
+      "message": "Perplexity replacement created",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.959738"
+    },
+    "planning_engine_import": {
+      "passed": true,
+      "message": "LocalPlanningEngine imported",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.967207"
+    },
+    "planning_engine_init": {
+      "passed": true,
+      "message": "Planning engine initialized",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.968024"
+    },
+    "planning_project_success": {
+      "passed": true,
+      "message": "Project planning successful: 6 tasks generated",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.968330"
+    },
+    "planning_recursive_fallback": {
+      "passed": true,
+      "message": "Recursive breakdown failed gracefully without LLM",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.968368"
+    },
+    "autonomous_file_exists": {
+      "passed": true,
+      "message": "Autonomous research file exists",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.968407"
+    },
+    "autonomous_syntax": {
+      "passed": true,
+      "message": "Autonomous research file syntax valid",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.969925"
+    },
+    "autonomous_components": {
+      "passed": true,
+      "message": "Found required components: AutoResearchWorkflow, local_autonomous_stuck_handler, LOCAL_LLM_AVAILABLE, autonomous_stuck_handler",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.969947"
+    },
+    "recursive_integration_autonomous_research_workflow.py": {
+      "passed": false,
+      "message": "Insufficient recursive patterns: breakdown, LocalLLM",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.981031"
+    },
+    "recursive_integration_hardcoded_research_workflow.py": {
+      "passed": false,
+      "message": "Insufficient recursive patterns: ",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.981612"
+    },
+    "config_models_complete": {
+      "passed": true,
+      "message": "All model roles configured: main, research, fallback",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.981760"
+    },
+    "config_local_llm": {
+      "passed": true,
+      "message": "Local LLM configuration detected",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:08.981797"
+    },
+    "privacy_localhost_only": {
+      "passed": true,
+      "message": "Privacy audit confirms localhost-only connections",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:09.055956"
+    },
+    "doc_complete_CLAUDE_md": {
+      "passed": true,
+      "message": "Documentation complete: local, LLM, migration, privacy",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:09.056342"
+    },
+    "doc_complete_privacy_compliant_note_md": {
+      "passed": true,
+      "message": "Documentation complete: localhost, compliant, privacy",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:09.062667"
+    },
+    "doc_complete_health_check_script_py": {
+      "passed": true,
+      "message": "Documentation complete: health, test",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:09.071888"
+    },
+    "taskmaster_subtasks_tracked": {
+      "passed": true,
+      "message": "All migration subtasks are tracked",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:11.413305"
+    },
+    "taskmaster_subtasks_complete": {
+      "passed": true,
+      "message": "Most migration subtasks complete: 8/5",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:11.413367"
+    },
+    "taskmaster_list_functional": {
+      "passed": true,
+      "message": "Task list functionality works",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:13.789370"
+    },
+    "compat_updated_perplexity_client.py.old": {
+      "passed": true,
+      "message": "File updated for local LLM compatibility",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:13.789726"
+    },
+    "compat_updated_autonomous_research_integration.py": {
+      "passed": true,
+      "message": "File updated for local LLM compatibility",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:13.790037"
+    },
+    "compat_updated_hardcoded_research_workflow.py": {
+      "passed": true,
+      "message": "File updated for local LLM compatibility",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:13.790253"
+    },
+    "error_handling_local_llm_without_requests": {
+      "passed": true,
+      "message": "Error handling works for: Local LLM without requests",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:13.856725"
+    },
+    "error_handling_research_without_llm": {
+      "passed": true,
+      "message": "Error handling works for: Research without LLM",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:13.922711"
+    },
+    "error_handling_planning_without_inference": {
+      "passed": true,
+      "message": "Error handling works for: Planning without inference",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:13.987902"
+    },
+    "performance_import_local_llm_adapter": {
+      "passed": true,
+      "message": "Module imports in 0.06s",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:14.046651"
+    },
+    "performance_import_local_research_module": {
+      "passed": true,
+      "message": "Module imports in 0.09s",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:14.133542"
+    },
+    "performance_import_local_planning_engine": {
+      "passed": true,
+      "message": "Module imports in 0.07s",
+      "details": null,
+      "timestamp": "2025-07-10T20:22:14.206197"
+    }
+  },
+  "errors": [
+    "recursive_integration_autonomous_research_workflow.py: Insufficient recursive patterns: breakdown, LocalLLM",
+    "recursive_integration_hardcoded_research_workflow.py: Insufficient recursive patterns: "
+  ],
+  "warnings": [],
+  "validation_status": "MOSTLY_OPERATIONAL",
+  "todo_completion_assessment": {
+    "overall_completion_rate": 90.0,
+    "overall_status": "COMPLETE",
+    "individual_todos": {
+      "Local LLM Migration": {
+        "completion_rate": 100.0,
+        "status": "COMPLETE",
+        "passed_tests": 3,
+        "total_tests": 3
+      },
+      "Research Module Refactoring": {
+        "completion_rate": 100.0,
+        "status": "COMPLETE",
+        "passed_tests": 3,
+        "total_tests": 3
+      },
+      "Planning Engine Implementation": {
+        "completion_rate": 100.0,
+        "status": "COMPLETE",
+        "passed_tests": 2,
+        "total_tests": 2
+      },
+      "Autonomous Integration": {
+        "completion_rate": 100.0,
+        "status": "COMPLETE",
+        "passed_tests": 3,
+        "total_tests": 3
+      },
+      "Privacy Compliance": {
+        "completion_rate": 100.0,
+        "status": "COMPLETE",
+        "passed_tests": 1,
+        "total_tests": 1
+      },
+      "Configuration Setup": {
+        "completion_rate": 100.0,
+        "status": "COMPLETE",
+        "passed_tests": 2,
+        "total_tests": 2
+      },
+      "Documentation Updates": {
+        "completion_rate": 100.0,
+        "status": "COMPLETE",
+        "passed_tests": 2,
+        "total_tests": 2
+      },
+      "Task Master Integration": {
+        "completion_rate": 100.0,
+        "status": "COMPLETE",
+        "passed_tests": 2,
+        "total_tests": 2
+      },
+      "Backwards Compatibility": {
+        "completion_rate": 0,
+        "status": "NOT_TESTED",
+        "passed_tests": 0,
+        "total_tests": 0
+      },
+      "Error Handling": {
+        "completion_rate": 100.0,
+        "status": "COMPLETE",
+        "passed_tests": 1,
+        "total_tests": 1
+      }
+    }
+  }
+}

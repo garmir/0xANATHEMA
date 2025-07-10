@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "environment": "production",
+  "alerts": {
+    "workflowFailure": true,
+    "highProcessingTime": true,
+    "lowSuccessRate": true
+  },
+  "metrics": {
+    "successRate": {
+      "threshold": 0.8
+    },
+    "processingTime": {
+      "threshold": 300000
+    },
+    "errorRate": {
+      "threshold": 0.1
+    }
+  },
+  "notifications": {
+    "slack": false,
+    "email": false,
+    "github": true
+  }
+}

@@ -1,0 +1,17 @@
+# Task ID: 620
+# Title: Implement (1.9): remove warning filter
+@pytest.mark.filterwarnings("ignore::FutureWarning")
+@pytest.mark.param (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.9): remove warning filter
+@pytest.mark.filterwarnings("ignore::FutureWarning")
+@pytest.mark.parametrize("k", [0.5, 1.5, 2])
+def test_normed_stress(k):
+    """Test that non-metric MDS normalized str
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/manifold/tests/test_mds.py
+
+# Test Strategy:
+Validate completion of: code-todo item

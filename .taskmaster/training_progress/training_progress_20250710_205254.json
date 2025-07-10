@@ -1,0 +1,1872 @@
+[
+  {
+    "timestamp": "2025-07-10 20:52:54.941865",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.33005385596974013,
+    "accuracy": 0.8349730720151299,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7778360879821253,
+    "meta_learning_score": 0.8349730720151299,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_5",
+      "training_time": 7.152557373046875e-07,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.941993",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1641270746634218,
+    "accuracy": 0.9179364626682891,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8405870442872041,
+    "meta_learning_score": 0.9179364626682891,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_7",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.941628",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1,
+    "accuracy": 1.0,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7978048907281268,
+    "meta_learning_score": 1.0451228720695573,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_0",
+      "training_time": 4.0531158447265625e-06,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.941883",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.3359510794613947,
+    "accuracy": 0.8320244602693027,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9441361911836755,
+    "meta_learning_score": 0.8320244602693027,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_4",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.941755",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.46311745788312786,
+    "accuracy": 0.7684412710584361,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7253296181496794,
+    "meta_learning_score": 0.7684412710584361,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_2",
+      "training_time": 1.9073486328125e-06,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.942020",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1632993053389471,
+    "accuracy": 0.9183503473305265,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7760799694831126,
+    "meta_learning_score": 0.9183503473305265,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_6",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.941898",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.3484081868797708,
+    "accuracy": 0.8257959065601146,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8214757741150306,
+    "meta_learning_score": 0.8257959065601146,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_3",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.941778",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.45215338745530453,
+    "accuracy": 0.7739233062723477,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9861501211783205,
+    "meta_learning_score": 0.7739233062723477,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_1",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.941978",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.15507093548542872,
+    "accuracy": 0.9224645322572856,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7700879272882913,
+    "meta_learning_score": 0.9224645322572856,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_9",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.942007",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.7958129344666647,
+    "accuracy": 0.6020935327666677,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7338203743463707,
+    "meta_learning_score": 0.6020935327666677,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_8",
+      "training_time": 0.0,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.943051",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.14916272990453616,
+    "accuracy": 0.9254186350477319,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9208413936222226,
+    "meta_learning_score": 0.9254186350477319,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_10",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.943062",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.4626428335201842,
+    "accuracy": 0.7686785832399079,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7405792773731867,
+    "meta_learning_score": 0.7686785832399079,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_14",
+      "training_time": 0.0,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.943067",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.363134455481001,
+    "accuracy": 0.8184327722594995,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7113244035027443,
+    "meta_learning_score": 0.8184327722594995,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_15",
+      "training_time": 0.0,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.943071",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.4187819996693951,
+    "accuracy": 0.7906090001653024,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8285686547553863,
+    "meta_learning_score": 0.7906090001653024,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_16",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.943075",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.6863435277685714,
+    "accuracy": 0.6568282361157143,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7774892261659234,
+    "meta_learning_score": 0.6568282361157143,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_17",
+      "training_time": 0.0,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.943079",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1,
+    "accuracy": 0.9917944817960658,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9030753705154099,
+    "meta_learning_score": 0.9917944817960658,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_18",
+      "training_time": 0.0,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.943082",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.4818888076037451,
+    "accuracy": 0.7590555961981275,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8829967355578513,
+    "meta_learning_score": 0.7590555961981275,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_19",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.943094",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.31024786496788037,
+    "accuracy": 0.8448760675160598,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7157805238875102,
+    "meta_learning_score": 0.8448760675160598,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_11",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.943103",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.42486514761352767,
+    "accuracy": 0.7875674261932362,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8157278793255461,
+    "meta_learning_score": 0.7875674261932362,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_12",
+      "training_time": 0.0,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.943111",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.14750713101824675,
+    "accuracy": 0.9262464344908766,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9911942735754729,
+    "meta_learning_score": 0.9262464344908766,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_13",
+      "training_time": 0.0,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.947916",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.8113018945127346,
+    "accuracy": 0.5943490527436327,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8481182740185402,
+    "meta_learning_score": 0.5943490527436327,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_20",
+      "training_time": 2.1457672119140625e-06,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.947927",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1,
+    "accuracy": 0.9882873625206,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7330894863770017,
+    "meta_learning_score": 0.9882873625206,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_24",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.947931",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.6477633806470038,
+    "accuracy": 0.6761183096764981,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.852157359323507,
+    "meta_learning_score": 0.6761183096764981,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_25",
+      "training_time": 0.0,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.947935",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.6813395422110251,
+    "accuracy": 0.6593302288944874,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8985658297368766,
+    "meta_learning_score": 0.6593302288944874,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_26",
+      "training_time": 0.0,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.947938",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.24490936247922113,
+    "accuracy": 0.8775453187603894,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8808308978655897,
+    "meta_learning_score": 0.8775453187603894,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_27",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.947942",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.35646940413327033,
+    "accuracy": 0.8217652979333648,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8624751697699671,
+    "meta_learning_score": 0.8217652979333648,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_28",
+      "training_time": 7.152557373046875e-07,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.947946",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.43174862554145776,
+    "accuracy": 0.7841256872292711,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8067279055741267,
+    "meta_learning_score": 0.7841256872292711,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_29",
+      "training_time": 0.0,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.948008",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.17493346980329427,
+    "accuracy": 0.9125332650983529,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8222477195094742,
+    "meta_learning_score": 0.9125332650983529,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_21",
+      "training_time": 4.0531158447265625e-06,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.948081",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1268808931984149,
+    "accuracy": 0.9365595534007926,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9580649201593887,
+    "meta_learning_score": 0.9365595534007926,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_22",
+      "training_time": 1.9073486328125e-06,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.948113",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.5985727227266873,
+    "accuracy": 0.7007136386366564,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9626707755021958,
+    "meta_learning_score": 0.7007136386366564,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_23",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.953878",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.4319124583544478,
+    "accuracy": 0.7840437708227761,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.79836073500628,
+    "meta_learning_score": 0.7840437708227761,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_30",
+      "training_time": 3.814697265625e-06,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.953921",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.30405241952512974,
+    "accuracy": 0.8479737902374351,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.746346617865636,
+    "meta_learning_score": 0.8479737902374351,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_34",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.953933",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.6180064997362205,
+    "accuracy": 0.6909967501318898,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9970481783441691,
+    "meta_learning_score": 0.6909967501318898,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_35",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.953942",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1109045410125078,
+    "accuracy": 0.9445477294937461,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.828282162518096,
+    "meta_learning_score": 0.9445477294937461,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_36",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.953951",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.348136888651563,
+    "accuracy": 0.8259315556742185,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7293586522502602,
+    "meta_learning_score": 0.8259315556742185,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_37",
+      "training_time": 0.0,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.953959",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.4128696651190966,
+    "accuracy": 0.7935651674404517,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7808018466870119,
+    "meta_learning_score": 0.7935651674404517,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_38",
+      "training_time": 7.152557373046875e-07,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.953968",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1,
+    "accuracy": 1.0,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7647222636578559,
+    "meta_learning_score": 1.0116936290161818,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_39",
+      "training_time": 0.0,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.953992",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.5952693136431384,
+    "accuracy": 0.7023653431784308,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.706970808229369,
+    "meta_learning_score": 0.7023653431784308,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_31",
+      "training_time": 1.9073486328125e-06,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.954016",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.446409467858337,
+    "accuracy": 0.7767952660708315,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7220133935141306,
+    "meta_learning_score": 0.7767952660708315,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_32",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.954041",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.24615154675363815,
+    "accuracy": 0.8769242266231809,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8111446393853544,
+    "meta_learning_score": 0.8769242266231809,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_33",
+      "training_time": 1.9073486328125e-06,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.959976",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1287692652863215,
+    "accuracy": 0.9356153673568393,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9368111127121497,
+    "meta_learning_score": 0.9356153673568393,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_40",
+      "training_time": 5.245208740234375e-06,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.960004",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.303654255847581,
+    "accuracy": 0.8481728720762095,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8807638299051288,
+    "meta_learning_score": 0.8481728720762095,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_44",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.960016",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.2740213318397229,
+    "accuracy": 0.8629893340801386,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.860946802357508,
+    "meta_learning_score": 0.8629893340801386,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_45",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.960041",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.5610084798207091,
+    "accuracy": 0.7194957600896454,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8254447771575482,
+    "meta_learning_score": 0.7194957600896454,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_46",
+      "training_time": 1.430511474609375e-05,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.960073",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.6350576816718705,
+    "accuracy": 0.6824711591640648,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.728157639100459,
+    "meta_learning_score": 0.6824711591640648,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_47",
+      "training_time": 1.9073486328125e-06,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.960082",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.3076820020574238,
+    "accuracy": 0.8461589989712881,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7167025192962423,
+    "meta_learning_score": 0.8461589989712881,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_48",
+      "training_time": 0.0,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.960087",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.18328911255253644,
+    "accuracy": 0.9083554437237318,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8405359893811304,
+    "meta_learning_score": 0.9083554437237318,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_49",
+      "training_time": 0.0,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.960118",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.7606493948160007,
+    "accuracy": 0.6196753025919997,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7369224408025316,
+    "meta_learning_score": 0.6196753025919997,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_41",
+      "training_time": 2.1457672119140625e-06,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.960147",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.33721726282751097,
+    "accuracy": 0.8313913685862445,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9813668268699035,
+    "meta_learning_score": 0.8313913685862445,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_42",
+      "training_time": 1.6689300537109375e-06,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.960168",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.5069646962401544,
+    "accuracy": 0.7465176518799228,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9746566528658327,
+    "meta_learning_score": 0.7465176518799228,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_43",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.965548",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.687475958370352,
+    "accuracy": 0.656262020814824,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8047586259379106,
+    "meta_learning_score": 0.656262020814824,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_50",
+      "training_time": 2.6226043701171875e-06,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.965572",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.16853865699111337,
+    "accuracy": 0.9157306715044433,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7036246021031173,
+    "meta_learning_score": 0.9157306715044433,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_54",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.965582",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.39558527992090675,
+    "accuracy": 0.8022073600395466,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8210943374224559,
+    "meta_learning_score": 0.8022073600395466,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_55",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.965592",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.8478614493346559,
+    "accuracy": 0.576069275332672,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7087848465756824,
+    "meta_learning_score": 0.576069275332672,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_56",
+      "training_time": 0.0,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.965601",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.41366996153459223,
+    "accuracy": 0.7931650192327039,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8134776397651344,
+    "meta_learning_score": 0.7931650192327039,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_57",
+      "training_time": 0.0,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.965610",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.5041491260262332,
+    "accuracy": 0.7479254369868834,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8163679645197142,
+    "meta_learning_score": 0.7479254369868834,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_58",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.965619",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.8480614202533836,
+    "accuracy": 0.5759692898733082,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9496300892229236,
+    "meta_learning_score": 0.5759692898733082,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_59",
+      "training_time": 0.0,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.965643",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1,
+    "accuracy": 1.0,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8333483512219719,
+    "meta_learning_score": 1.0383037669745718,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_51",
+      "training_time": 1.9073486328125e-06,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.965664",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.2601415545514312,
+    "accuracy": 0.8699292227242844,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9621983006091694,
+    "meta_learning_score": 0.8699292227242844,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_52",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.965683",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.6818139286827019,
+    "accuracy": 0.6590930356586491,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7441579414577729,
+    "meta_learning_score": 0.6590930356586491,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_53",
+      "training_time": 1.6689300537109375e-06,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.972573",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1,
+    "accuracy": 1.0,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.850424695218005,
+    "meta_learning_score": 1.0076721870410446,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_60",
+      "training_time": 3.0994415283203125e-06,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.972601",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.21351896021639827,
+    "accuracy": 0.8932405198918009,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.901669535545394,
+    "meta_learning_score": 0.8932405198918009,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_64",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.972626",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.8105363742263298,
+    "accuracy": 0.5947318128868351,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7815920767509931,
+    "meta_learning_score": 0.5947318128868351,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_65",
+      "training_time": 2.1457672119140625e-06,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.972633",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.4342420906101194,
+    "accuracy": 0.7828789546949403,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9509656351989897,
+    "meta_learning_score": 0.7828789546949403,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_66",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.972637",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.15306982232692512,
+    "accuracy": 0.9234650888365374,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9683126550310612,
+    "meta_learning_score": 0.9234650888365374,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_67",
+      "training_time": 0.0,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.972641",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.36824477338605566,
+    "accuracy": 0.8158776133069722,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8386159160963449,
+    "meta_learning_score": 0.8158776133069722,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_68",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.972645",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.27414970460335875,
+    "accuracy": 0.8629251476983206,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8797020718027326,
+    "meta_learning_score": 0.8629251476983206,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_69",
+      "training_time": 0.0,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.972676",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.19155404998288228,
+    "accuracy": 0.9042229750085589,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9461820613927614,
+    "meta_learning_score": 0.9042229750085589,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_61",
+      "training_time": 2.1457672119140625e-06,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.972702",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.3495427474824562,
+    "accuracy": 0.8252286262587719,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7716591020368584,
+    "meta_learning_score": 0.8252286262587719,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_62",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.972721",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1,
+    "accuracy": 1.0,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9724449409092781,
+    "meta_learning_score": 1.0108312985875096,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_63",
+      "training_time": 2.1457672119140625e-06,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.977998",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.6387897244015932,
+    "accuracy": 0.6806051377992034,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9320303349589005,
+    "meta_learning_score": 0.6806051377992034,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_70",
+      "training_time": 3.0994415283203125e-06,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.978024",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.6321472557046384,
+    "accuracy": 0.6839263721476808,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8623169296114368,
+    "meta_learning_score": 0.6839263721476808,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_74",
+      "training_time": 7.152557373046875e-07,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.978034",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.277983598216222,
+    "accuracy": 0.861008200891889,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7198456670611568,
+    "meta_learning_score": 0.861008200891889,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_75",
+      "training_time": 7.152557373046875e-07,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.978044",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.5207636476328492,
+    "accuracy": 0.7396181761835754,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9473764436478611,
+    "meta_learning_score": 0.7396181761835754,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_76",
+      "training_time": 0.0,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.978053",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.4418777844174535,
+    "accuracy": 0.7790611077912732,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8862762687066696,
+    "meta_learning_score": 0.7790611077912732,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_77",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.978062",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.2339961303086764,
+    "accuracy": 0.8830019348456618,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9664757705879194,
+    "meta_learning_score": 0.8830019348456618,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_78",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.978071",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.3910508599600193,
+    "accuracy": 0.8044745700199903,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7008411753550511,
+    "meta_learning_score": 0.8044745700199903,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_79",
+      "training_time": 0.0,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.978098",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.7792646739710976,
+    "accuracy": 0.6103676630144512,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7360929887978084,
+    "meta_learning_score": 0.6103676630144512,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_71",
+      "training_time": 1.9073486328125e-06,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.978120",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.28122247953397417,
+    "accuracy": 0.8593887602330129,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9731356835788458,
+    "meta_learning_score": 0.8593887602330129,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_72",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.978139",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.3084029383821887,
+    "accuracy": 0.8457985308089057,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.718716151180998,
+    "meta_learning_score": 0.8457985308089057,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_73",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.984771",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.3379250496942041,
+    "accuracy": 0.8310374751528979,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9566557787818886,
+    "meta_learning_score": 0.8310374751528979,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_80",
+      "training_time": 3.814697265625e-06,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.984792",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.3292714113508164,
+    "accuracy": 0.8353642943245918,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9442898519362114,
+    "meta_learning_score": 0.8353642943245918,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_84",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.984803",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.6253302243538572,
+    "accuracy": 0.6873348878230714,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7976568950329882,
+    "meta_learning_score": 0.6873348878230714,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_85",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.984812",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.7712324714976946,
+    "accuracy": 0.6143837642511527,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9141950156812322,
+    "meta_learning_score": 0.6143837642511527,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_86",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.984821",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.280220978955634,
+    "accuracy": 0.859889510522183,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8222812193902816,
+    "meta_learning_score": 0.859889510522183,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_87",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.984841",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.6035735477166118,
+    "accuracy": 0.6982132261416941,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8295884431236586,
+    "meta_learning_score": 0.6982132261416941,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_88",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.984847",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.7456593520814541,
+    "accuracy": 0.627170323959273,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7121895442991109,
+    "meta_learning_score": 0.627170323959273,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_89",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.984878",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1,
+    "accuracy": 1.0,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7516202892228575,
+    "meta_learning_score": 1.0074327836550225,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_81",
+      "training_time": 3.0994415283203125e-06,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.984903",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.5956362093546452,
+    "accuracy": 0.7021818953226774,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9692155430312668,
+    "meta_learning_score": 0.7021818953226774,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_82",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.984922",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.48133630415774586,
+    "accuracy": 0.7593318479211271,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7084146892859409,
+    "meta_learning_score": 0.7593318479211271,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_83",
+      "training_time": 1.9073486328125e-06,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.990356",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1598265295489023,
+    "accuracy": 0.9200867352255488,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7998184550005135,
+    "meta_learning_score": 0.9200867352255488,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_90",
+      "training_time": 3.0994415283203125e-06,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.990380",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.4489186337001392,
+    "accuracy": 0.7755406831499304,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8044965771427165,
+    "meta_learning_score": 0.7755406831499304,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_94",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.990391",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.6664344011733307,
+    "accuracy": 0.6667827994133346,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8892087450999352,
+    "meta_learning_score": 0.6667827994133346,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_95",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.990402",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.23910938258208425,
+    "accuracy": 0.8804453087089579,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.966647149985715,
+    "meta_learning_score": 0.8804453087089579,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_96",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.990410",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1994515405392756,
+    "accuracy": 0.9002742297303622,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9180777996718235,
+    "meta_learning_score": 0.9002742297303622,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_97",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.990419",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.4943132016358056,
+    "accuracy": 0.7528433991820972,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8826306174927008,
+    "meta_learning_score": 0.7528433991820972,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_98",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.990428",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1,
+    "accuracy": 0.9662100400434341,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7877251636191402,
+    "meta_learning_score": 0.9662100400434341,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_99",
+      "training_time": 0.0,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.990450",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.244179651282739,
+    "accuracy": 0.8779101743586305,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9929912853936864,
+    "meta_learning_score": 0.8779101743586305,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_91",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.990469",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.5280959401862191,
+    "accuracy": 0.7359520299068905,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9432433180565123,
+    "meta_learning_score": 0.7359520299068905,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_92",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.990487",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.14077356026107202,
+    "accuracy": 0.929613219869464,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7708243394943178,
+    "meta_learning_score": 0.929613219869464,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_93",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.998173",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1855596740289931,
+    "accuracy": 0.9072201629855035,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8767449990641303,
+    "meta_learning_score": 0.9072201629855035,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_100",
+      "training_time": 3.0994415283203125e-06,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.998195",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.7282703180668895,
+    "accuracy": 0.6358648409665553,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.855688210532602,
+    "meta_learning_score": 0.6358648409665553,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_104",
+      "training_time": 7.152557373046875e-07,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.998205",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.1,
+    "accuracy": 1.0,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9996860216382573,
+    "meta_learning_score": 1.0389909501931993,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_105",
+      "training_time": 7.152557373046875e-07,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.998214",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.5743830500663822,
+    "accuracy": 0.7128084749668089,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7277827143842638,
+    "meta_learning_score": 0.7128084749668089,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_106",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.998223",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.4451913743085314,
+    "accuracy": 0.7774043128457343,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7574149414130333,
+    "meta_learning_score": 0.7774043128457343,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_107",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.998232",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.4467364367336861,
+    "accuracy": 0.7766317816331569,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7286761150738675,
+    "meta_learning_score": 0.7766317816331569,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_108",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.998240",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.3680545933302837,
+    "accuracy": 0.8159727033348582,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9784277439608942,
+    "meta_learning_score": 0.8159727033348582,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_109",
+      "training_time": 1.1920928955078125e-06,
+      "task_difficulty": "medium"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.998274",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.826832551354652,
+    "accuracy": 0.586583724322674,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.8652750071214039,
+    "meta_learning_score": 0.586583724322674,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_101",
+      "training_time": 3.0994415283203125e-06,
+      "task_difficulty": "hard"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.998313",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.3913894309787067,
+    "accuracy": 0.8043052845106466,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.7408339244512228,
+    "meta_learning_score": 0.8043052845106466,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_102",
+      "training_time": 2.1457672119140625e-06,
+      "task_difficulty": "easy"
+    }
+  },
+  {
+    "timestamp": "2025-07-10 20:52:54.998337",
+    "stage": "PipelineStage.META_TRAINING",
+    "epoch": 1,
+    "loss": 0.4247238510604905,
+    "accuracy": 0.7876380744697548,
+    "validation_loss": 0.0,
+    "validation_accuracy": 0.0,
+    "convergence_rate": 0.9498294852854609,
+    "meta_learning_score": 0.7876380744697548,
+    "architecture_id": "48b22f8b",
+    "metadata": {
+      "task_id": "meta_task_103",
+      "training_time": 9.5367431640625e-07,
+      "task_difficulty": "medium"
+    }
+  }
+]

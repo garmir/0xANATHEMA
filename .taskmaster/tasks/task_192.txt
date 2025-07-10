@@ -1,0 +1,15 @@
+# Task ID: 192
+# Title: Implement NumpyExtensionArray.searchsorted calls ndarray.searchsorted which
+        #  isn't quite what we wan (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: NumpyExtensionArray.searchsorted calls ndarray.searchsorted which
+        #  isn't quite what we want in nested data cases. Instead we need to
+        #  adapt something like libindex._bin_search.
+   
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/extension/test_numpy.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,15 @@
+# Task ID: 584
+# Title: Implement (1.8): remove force_all_finite and change the default value of ensure_all_finite
+# to True (remove N (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8): remove force_all_finite and change the default value of ensure_all_finite
+# to True (remove None without deprecation).
+def _deprecate_force_all_finite(force_all_finite, ensure_all_finite):
+    
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/utils/deprecation.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,16 @@
+# Task ID: 361
+# Title: should the next loop be un-indented? doing so breaks this test
+            for kwarg in [
+           (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: should the next loop be un-indented? doing so breaks this test
+            for kwarg in [
+                {"left_index": True, "right_index": True},
+                {"left_index": True, "right_on": "x
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/reshape/merge/test_merge.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,16 @@
+# Task ID: 1036
+# Title: Implement Analysis Tools:
+- **Static Code Analysis**: AST parsing, pattern matching
+- **Dynamic Analysis**: Ru (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Analysis Tools:
+- **Static Code Analysis**: AST parsing, pattern matching
+- **Dynamic Analysis**: Runtime behavior monitoring
+- **Complexity Metrics**
+# Details:
+Converted from todo: introspection.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,18 @@
+# Task ID: 120
+# Title: Implement do the finite filtering on this
+        return obj[0]
+    elif isinstance(obj, collections.abc.Itera (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: do the finite filtering on this
+        return obj[0]
+    elif isinstance(obj, collections.abc.Iterator):
+        raise RuntimeError("matplotlib does not support generators as input")
+    else:
+      
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/matplotlib/cbook.py
+
+# Test Strategy:
+Validate completion of: code-todo item

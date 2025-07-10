@@ -1,0 +1,18 @@
+# Task ID: 290
+# Title: Implement standardize return type for MultiIndex.get_loc
+    tm.assert_numpy_array_equal(loc.nonzero()[0], exp (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: standardize return type for MultiIndex.get_loc
+    tm.assert_numpy_array_equal(loc.nonzero()[0], expected)
+
+
+def test_loc_setitem_indexer_differently_ordered():
+    # GH#34603
+    mi = MultiIndex.from
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexing/multiindex/test_loc.py
+
+# Test Strategy:
+Validate completion of: code-todo item

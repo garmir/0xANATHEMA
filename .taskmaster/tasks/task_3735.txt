@@ -1,0 +1,18 @@
+# Task ID: 3735
+# Title: Implement Scenario 3: Timeline Delays
+**Trigger**: 2+ weeks behind schedule
+**Response**:
+1. Immediate: Assess (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Scenario 3: Timeline Delays
+**Trigger**: 2+ weeks behind schedule
+**Response**:
+1. Immediate: Assess critical path and resources
+2. Short-term: Priori
+# Details:
+Converted from todo: .taskmaster/migration/migration_timeline.md
+
+# Test Strategy:
+Validate completion of: action-item item

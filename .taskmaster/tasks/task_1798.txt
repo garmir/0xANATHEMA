@@ -1,0 +1,11 @@
+# Task ID: 1798
+# Title: Implement Git Integration with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Git Integration
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,15 @@
+# Task ID: 886
+# Title: Implement make sure tab expansion happens earlier in the chain.  It
+            # really ought to be done on t (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: make sure tab expansion happens earlier in the chain.  It
+            # really ought to be done on the input, as to do it right here is
+            # quite complex.
+            value = value.expandtab
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/formatters/img.py
+
+# Test Strategy:
+Validate completion of: code-todo item

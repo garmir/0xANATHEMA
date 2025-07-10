@@ -1,0 +1,11 @@
+# Task ID: 1777
+# Title: Implement Claude Code Integration Files (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Claude Code Integration Files
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

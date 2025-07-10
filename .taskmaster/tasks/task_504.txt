@@ -1,0 +1,26 @@
+# Task ID: 504
+# Title: Implement respect device keyword?
+    _helpers._check_device(da, device)
+
+    if not copy and dtype == x.dtype (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: respect device keyword?
+    _helpers._check_device(da, device)
+
+    if not copy and dtype == x.dtype:
+        return x
+    x = x.astype(dtype)
+    return x.copy() if copy else x
+
+
+# Common aliases
+
+
+#
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/_lib/array_api_compat/dask/array/_aliases.py
+
+# Test Strategy:
+Validate completion of: code-todo item

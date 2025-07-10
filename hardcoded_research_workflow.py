@@ -1,3 +1,27 @@
+
+# Local LLM imports for autonomous operation
+import asyncio
+from pathlib import Path
+import sys
+
+# Add local LLM modules to path
+sys.path.append(str(Path(__file__).parent / ".taskmaster"))
+try:
+    from adapters.local_api_adapter import (
+        LocalAPIAdapter, 
+        replace_perplexity_call,
+        replace_task_master_research,
+        replace_autonomous_stuck_handler
+    )
+    from research.local_research_workflow import (
+        LocalResearchWorkflow,
+        local_autonomous_stuck_handler
+    )
+    LOCAL_LLM_AVAILABLE = True
+except ImportError as e:
+    print(f"⚠️ Local LLM modules not available: {e}")
+    LOCAL_LLM_AVAILABLE = False
+
 #!/usr/bin/env python3
 """
 HARDCODED AUTONOMOUS RESEARCH WORKFLOW
@@ -18,7 +42,7 @@ from pathlib import Path
 # AUTONOMOUS RESEARCH WORKFLOW LOOP
 # This is the hardcoded pattern for handling stuck situations
 
-def autonomous_stuck_handler(problem_description, task_context=""):
+def await local_autonomous_stuck_handler(problem_description, task_context=""):
     '''
     HARDCODED WORKFLOW:
     When stuck -> research solution -> parse to todos -> execute until success
@@ -487,7 +511,7 @@ def run_autonomous_research_loop():
                 print(f"🚨 SIMULATED STUCK SITUATION: {stuck_problem}")
                 
                 # EXECUTE AUTONOMOUS RESEARCH WORKFLOW
-                success = autonomous_stuck_handler(stuck_problem, task_output)
+                success = await local_autonomous_stuck_handler(stuck_problem, task_output)
                 
                 if success:
                     print(f"✅ Successfully resolved stuck situation via research workflow")
@@ -520,7 +544,7 @@ if __name__ == "__main__":
             if len(sys.argv) > 2:
                 problem = sys.argv[2]
                 context = sys.argv[3] if len(sys.argv) > 3 else ""
-                autonomous_stuck_handler(problem, context)
+                await local_autonomous_stuck_handler(problem, context)
             else:
                 print("Usage: python autonomous_research_integration.py research 'problem description' ['context']")
         
@@ -534,3 +558,35 @@ if __name__ == "__main__":
         # Default: run the autonomous loop
         run_autonomous_research_loop()
 
+
+
+async def local_research_replacement(query: str, context: str = "") -> str:
+    """Local LLM replacement for Perplexity research"""
+    if LOCAL_LLM_AVAILABLE:
+        try:
+            return await replace_perplexity_call(query, context)
+        except Exception as e:
+            print(f"⚠️ Local research failed: {e}")
+            return f"Local research unavailable. Manual research needed for: {query}"
+    else:
+        return f"Local LLM not available. Manual research needed for: {query}"
+
+async def local_autonomous_stuck_handler(problem: str, context: str = "") -> dict:
+    """Local LLM replacement for autonomous stuck handler"""
+    if LOCAL_LLM_AVAILABLE:
+        try:
+            return await replace_autonomous_stuck_handler(problem, context)
+        except Exception as e:
+            print(f"⚠️ Local stuck handler failed: {e}")
+            return {
+                "problem": problem,
+                "context": context,
+                "todo_steps": [f"Manual investigation needed: {problem}"],
+                "error": str(e)
+            }
+    else:
+        return {
+            "problem": problem,
+            "context": context,
+            "todo_steps": [f"Local LLM unavailable. Manual research needed: {problem}"]
+        }

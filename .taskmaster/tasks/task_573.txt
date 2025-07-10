@@ -1,0 +1,22 @@
+# Task ID: 573
+# Title: Implement (1.8): change warning to checking for NotFittedError
+@pytest.mark.parametrize(
+    "method",
+    [
+  (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8): change warning to checking for NotFittedError
+@pytest.mark.parametrize(
+    "method",
+    [
+        "predict",
+        "predict_proba",
+        "predict_log_proba",
+        "decision_function",
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/tests/test_pipeline.py
+
+# Test Strategy:
+Validate completion of: code-todo item

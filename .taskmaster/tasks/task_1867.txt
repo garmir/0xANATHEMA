@@ -1,0 +1,11 @@
+# Task ID: 1867
+# Title: Implement **Performance Benchmarking**: Compare autonomous vs. manual execution across different project sizes (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Performance Benchmarking**: Compare autonomous vs. manual execution across different project sizes
+# Details:
+Converted from todo: execution-planning.md
+
+# Test Strategy:
+Validate completion of: action-item item

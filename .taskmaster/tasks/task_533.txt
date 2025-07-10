@@ -1,0 +1,15 @@
+# Task ID: 533
+# Title: Implement this should be latex_pt_to_in instead of mpl_pt_to_in
+        # but having a little bit more space a (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: this should be latex_pt_to_in instead of mpl_pt_to_in
+        # but having a little bit more space around the text looks better,
+        # plus the bounding box reported by LaTeX is VERY narrow
+      
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/matplotlib/backends/backend_pgf.py
+
+# Test Strategy:
+Validate completion of: code-todo item

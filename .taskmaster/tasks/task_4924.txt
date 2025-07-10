@@ -1,0 +1,11 @@
+# Task ID: 4924
+# Title: Implement Environment variables persist across shell sessions (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Environment variables persist across shell sessions
+# Details:
+Converted from todo: .taskmaster/docs/prds/level-0/prd-environment.md
+
+# Test Strategy:
+Validate completion of: action-item item

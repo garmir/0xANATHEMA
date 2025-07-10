@@ -1,0 +1,20 @@
+# Task ID: 166
+# Title: Implement could check with arraylike of Period objects
+    arr, data = array_likes
+
+    cls = {"M8[ns]": Datet
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: could check with arraylike of Period objects
+    arr, data = array_likes
+
+    cls = {"M8[ns]": DatetimeArray, "m8[ns]": TimedeltaArray}[dtype]
+
+    depr_msg = f"{cls.__name__}.__init__ is deprecated"
+
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/test_downstream.py
+
+# Test Strategy:
+Validate completion of: code-todo item

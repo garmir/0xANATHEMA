@@ -1,0 +1,18 @@
+# Task ID: 627
+# Title: (1.8): Update when implementing __sklearn_tags__ is required
+@pytest.mark.filterwarnings(
+    "ignor
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8): Update when implementing __sklearn_tags__ is required
+@pytest.mark.filterwarnings(
+    "ignore:.*no attribute '__sklearn_tags__'.*:DeprecationWarning"
+)
+@pytest.mark.parametrize(
+    "estimator
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/utils/tests/test_tags.py
+
+# Test Strategy:
+Validate completion of: code-todo item

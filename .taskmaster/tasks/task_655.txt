@@ -1,0 +1,16 @@
+# Task ID: 655
+# Title: Implement (1.9): remove after the end of the deprecation period of `y_pred`
+        if y_score is not None and (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.9): remove after the end of the deprecation period of `y_pred`
+        if y_score is not None and not (
+            isinstance(y_pred, str) and y_pred == "deprecated"
+        ):
+            raise V
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/metrics/_plot/roc_curve.py
+
+# Test Strategy:
+Validate completion of: code-todo item

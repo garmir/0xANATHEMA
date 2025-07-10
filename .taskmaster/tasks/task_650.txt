@@ -1,0 +1,14 @@
+# Task ID: 650
+# Title: Implement consider always using platform agnostic dtypes for fitted
+        # estimator attributes. For this p (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: consider always using platform agnostic dtypes for fitted
+        # estimator attributes. For this particular estimator, this would
+        # mean replacing the intp field of PREDICTOR_RECORD_DTYPE by
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/ensemble/_hist_gradient_boosting/predictor.py
+
+# Test Strategy:
+Validate completion of: code-todo item

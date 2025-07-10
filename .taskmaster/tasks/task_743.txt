@@ -1,0 +1,26 @@
+# Task ID: 743
+# Title: Implement Do smarter merge.
+    return sumLists(lst)
+
+
+def mergeFeatures(lst):
+    assert lst
+    self = otTab (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Do smarter merge.
+    return sumLists(lst)
+
+
+def mergeFeatures(lst):
+    assert lst
+    self = otTables.Feature()
+    self.FeatureParams = None
+    self.LookupListIndex = mergeLookupLists(
+        [l.
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/merge/layout.py
+
+# Test Strategy:
+Validate completion of: code-todo item

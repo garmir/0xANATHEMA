@@ -1,0 +1,19 @@
+# Task ID: 828
+# Title: Implement actual types are:
+        #   parser: WebSocketReader
+        #   payload: WebSocketDataQueue
+       (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: actual types are:
+        #   parser: WebSocketReader
+        #   payload: WebSocketDataQueue
+        # but they are not generi enough
+        # Need an ABC for both types
+        self._payload = payl
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/aiohttp/client_proto.py
+
+# Test Strategy:
+Validate completion of: code-todo item

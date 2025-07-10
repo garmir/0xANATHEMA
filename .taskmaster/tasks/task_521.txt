@@ -1,0 +1,17 @@
+# Task ID: 521
+# Title: Implement re-enable this test.
+    # def test_num_ctx_switches_mocked(self):
+    #     with mock.patch('psutil (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: re-enable this test.
+    # def test_num_ctx_switches_mocked(self):
+    #     with mock.patch('psutil._common.open', create=True) as m:
+    #         self.assertRaises(
+    #             NotImplemented
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/psutil/tests/test_linux.py
+
+# Test Strategy:
+Validate completion of: code-todo item

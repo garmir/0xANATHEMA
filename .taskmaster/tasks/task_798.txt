@@ -1,0 +1,18 @@
+# Task ID: 798
+# Title: Implement Does this need to be sorted in reverse order?
+    deg = sorted((s for s in deg_sequence if s > 1), r (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Does this need to be sorted in reverse order?
+    deg = sorted((s for s in deg_sequence if s > 1), reverse=True)
+
+    # make path graph as backbone
+    n = len(deg) + 2
+    nx.add_path(G, range(n))
+  
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/generators/degree_seq.py
+
+# Test Strategy:
+Validate completion of: code-todo item

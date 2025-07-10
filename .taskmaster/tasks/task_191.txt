@@ -1,0 +1,15 @@
+# Task ID: 191
+# Title: Implement either belongs in tests.arrays.interval or move into base tests.
+def test_fillna_non_scalar_raises(d (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: either belongs in tests.arrays.interval or move into base tests.
+def test_fillna_non_scalar_raises(data_missing):
+    msg = "can only insert Interval objects and NA into an IntervalArray"
+    with pyt
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/extension/test_interval.py
+
+# Test Strategy:
+Validate completion of: code-todo item

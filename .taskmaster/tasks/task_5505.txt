@@ -1,0 +1,14 @@
+# Task ID: 5505
+# Title: Implement 3.2 Model Selection Criteria
+- **Capability Matching**: Match request requirements to model strength (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 3.2 Model Selection Criteria
+- **Capability Matching**: Match request requirements to model strengths
+- **Performance History**: Use historical perfor
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/ai-integration/llm-orchestration.md
+
+# Test Strategy:
+Validate completion of: action-item item

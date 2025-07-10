@@ -1,0 +1,17 @@
+# Task ID: 769
+# Title: Implement Report this specification bug to Apple.
+        self.ReservedFlags = flags & 0x1FFF
+        actionIn (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Report this specification bug to Apple.
+        self.ReservedFlags = flags & 0x1FFF
+        actionIndex = reader.readUShort()
+        if performAction:
+            self.Actions = self._decompileLigAct
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/ttLib/tables/otTables.py
+
+# Test Strategy:
+Validate completion of: code-todo item

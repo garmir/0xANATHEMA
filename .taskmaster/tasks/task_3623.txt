@@ -1,0 +1,16 @@
+# Task ID: 3623
+# Title: Implement Specialized Models
+- **BGE-M3** - Embeddings for RAG and semantic search
+- **Qdrant** - Vector datab (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Specialized Models
+- **BGE-M3** - Embeddings for RAG and semantic search
+- **Qdrant** - Vector database for local knowledge retrieval
+- **Sentence-Tra
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

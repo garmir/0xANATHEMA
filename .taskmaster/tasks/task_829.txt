@@ -1,0 +1,17 @@
+# Task ID: 829
+# Title: Implement Fix session=None in tests (see ClientRequest.__init__).
+        if session is not None:
+             (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Fix session=None in tests (see ClientRequest.__init__).
+        if session is not None:
+            # store a reference to session #1985
+            self._session = session
+            self._resolve_c
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/aiohttp/client_reqrep.py
+
+# Test Strategy:
+Validate completion of: code-todo item

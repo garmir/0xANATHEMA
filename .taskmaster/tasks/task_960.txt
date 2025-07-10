@@ -1,0 +1,11 @@
+# Task ID: 960
+# Title: Implement **Hard-Coded Workflow Pattern** ✅ (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Hard-Coded Workflow Pattern** ✅
+# Details:
+Converted from todo: FINAL_PROJECT_ASSESSMENT.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,11 @@
+# Task ID: 2012
+# Title: Implement How the Tag System Works (For Your Reference) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: How the Tag System Works (For Your Reference)
+# Details:
+Converted from todo: .trae/rules/dev_workflow.md
+
+# Test Strategy:
+Validate completion of: action-item item

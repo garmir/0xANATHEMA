@@ -1,0 +1,14 @@
+# Task ID: 647
+# Title: AffinityPropagation must preserve dtype for its fitted attributes
+# and test must be created accordi (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: AffinityPropagation must preserve dtype for its fitted attributes
+# and test must be created accordingly to this new behavior.
+# For more details, see: https://github.com/scikit-learn/scikit-learn/iss
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/cluster/tests/test_affinity_propagation.py
+
+# Test Strategy:
+Validate completion of: code-todo item

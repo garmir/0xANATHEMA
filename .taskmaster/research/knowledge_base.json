@@ -1,0 +1,65 @@
+{
+  "domains": {
+    "task_management": {
+      "patterns": [
+        "recursive decomposition",
+        "atomic task breakdown",
+        "hierarchical planning"
+      ],
+      "best_practices": [
+        "clear dependencies",
+        "measurable outcomes",
+        "iterative refinement"
+      ],
+      "frameworks": [
+        "Task Master AI",
+        "autonomous execution",
+        "workflow optimization"
+      ]
+    },
+    "local_llm_integration": {
+      "providers": [
+        "Ollama",
+        "LocalAI",
+        "Text-generation-webui"
+      ],
+      "models": [
+        "llama2",
+        "mistral",
+        "codellama"
+      ],
+      "features": [
+        "API compatibility",
+        "fallback handling",
+        "performance optimization"
+      ]
+    },
+    "research_automation": {
+      "methodologies": [
+        "autonomous research loops",
+        "meta-improvement analysis",
+        "evidence-based optimization"
+      ],
+      "tools": [
+        "research workflow engine",
+        "knowledge synthesis",
+        "hypothesis generation"
+      ],
+      "validation": [
+        "peer review simulation",
+        "evidence assessment",
+        "confidence scoring"
+      ]
+    }
+  },
+  "research_patterns": {
+    "autonomous_workflow": "detect stuck \u2192 research solution \u2192 parse to todos \u2192 execute until success",
+    "recursive_improvement": "analyze \u2192 decompose \u2192 optimize \u2192 validate \u2192 iterate",
+    "knowledge_synthesis": "gather evidence \u2192 assess quality \u2192 synthesize insights \u2192 generate recommendations"
+  },
+  "metadata": {
+    "created": "2025-07-10T20:24:16.510045",
+    "version": "1.1.0",
+    "source": "Task Master AI validation fixes"
+  }
+}

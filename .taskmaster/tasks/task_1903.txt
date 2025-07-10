@@ -1,0 +1,11 @@
+# Task ID: 1903
+# Title: Implement **✅ Recursive Task Breakdown**: Depth-limited recursion with dependency tracking functions correctly (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **✅ Recursive Task Breakdown**: Depth-limited recursion with dependency tracking functions correctly
+# Details:
+Converted from todo: LOCAL_LLM_MIGRATION_GUIDE.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,11 @@
+# Task ID: 2928
+# Title: Implement **Detailed PRDs**: More detailed PRDs = better task generation (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Detailed PRDs**: More detailed PRDs = better task generation
+# Details:
+Converted from todo: .taskmaster/examples/web-app-integration.md
+
+# Test Strategy:
+Validate completion of: action-item item

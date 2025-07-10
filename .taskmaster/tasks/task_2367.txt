@@ -1,0 +1,11 @@
+# Task ID: 2367
+# Title: Implement **ADaPT Recursive Decomposition** - 28.3% performance improvement methodology (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **ADaPT Recursive Decomposition** - 28.3% performance improvement methodology
+# Details:
+Converted from todo: .taskmaster/research/comprehensive-research-implementation-report.md
+
+# Test Strategy:
+Validate completion of: action-item item

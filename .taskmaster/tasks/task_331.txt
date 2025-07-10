@@ -1,0 +1,21 @@
+# Task ID: 331
+# Title: Implement i think this isn't about MultiIndex and could be done with iloc?
+
+
+def test_37477():
+    # fixed by 
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: i think this isn't about MultiIndex and could be done with iloc?
+
+
+def test_37477():
+    # fixed by GH#45121
+    orig = DataFrame({"A": [1, 2, 3], "B": [3, 4, 5]})
+    expected = DataFrame({"A": [1, 2
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/indexing/test_coercion.py
+
+# Test Strategy:
+Validate completion of: code-todo item

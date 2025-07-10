@@ -1,0 +1,22 @@
+# Task ID: 350
+# Title: Implement GH 57739
+            mask = np.array(mask)
+            mask.flags.writeable = True
+
+        mask[:]  (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: GH 57739
+            mask = np.array(mask)
+            mask.flags.writeable = True
+
+        mask[:] = True
+        tm.assert_series_equal(result, expected)
+
+    def test_dropna_array(self, data_missin
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/extension/base/missing.py
+
+# Test Strategy:
+Validate completion of: code-todo item

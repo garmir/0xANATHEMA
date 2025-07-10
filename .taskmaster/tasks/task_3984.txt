@@ -1,0 +1,14 @@
+# Task ID: 3984
+# Title: Implement **Task Complexity Before Breakdown**
+- **Original Task**: Complex analytical task requiring theoreti (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Task Complexity Before Breakdown**
+- **Original Task**: Complex analytical task requiring theoretical understanding and practical application
+- **Es
+# Details:
+Converted from todo: .taskmaster/reports/atomic-breakdown-effectiveness-45-2.md
+
+# Test Strategy:
+Validate completion of: action-item item

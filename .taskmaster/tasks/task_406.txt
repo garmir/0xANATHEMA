@@ -1,0 +1,27 @@
+# Task ID: 406
+# Title: Implement share more methods/attributes
+
+    axes: list[Index]
+
+    @property
+    def items(self) -> Index:
+   (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: share more methods/attributes
+
+    axes: list[Index]
+
+    @property
+    def items(self) -> Index:
+        raise AbstractMethodError(self)
+
+    @final
+    def __len__(self) -> int:
+        return len(s
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/internals/base.py
+
+# Test Strategy:
+Validate completion of: code-todo item

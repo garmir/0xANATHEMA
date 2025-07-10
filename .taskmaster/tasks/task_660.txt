@@ -1,0 +1,15 @@
+# Task ID: 660
+# Title: Implement Fix manhattan_distances to preserve dtype.
+        # currently pairwise_distances uses manhattan_dis (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Fix manhattan_distances to preserve dtype.
+        # currently pairwise_distances uses manhattan_distances but converts the result
+        # back to the input dtype
+        with pytest.raises(Assertio
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/metrics/tests/test_pairwise.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,24 @@
+# Task ID: 763
+# Title: Implement Port to otTraverse
+
+SubTablePath = Tuple[otBase.BaseTable.SubTableEntry, ...]
+
+
+def _bfs_base_table( (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Port to otTraverse
+
+SubTablePath = Tuple[otBase.BaseTable.SubTableEntry, ...]
+
+
+def _bfs_base_table(
+    root: otBase.BaseTable, root_accessor: str
+) -> Iterable[SubTablePath]:
+    yield from _travers
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/ttLib/reorderGlyphs.py
+
+# Test Strategy:
+Validate completion of: code-todo item

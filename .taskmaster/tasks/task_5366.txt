@@ -1,0 +1,11 @@
+# Task ID: 5366
+# Title: Implement 3. Advanced Techniques with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 3. Advanced Techniques
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/core-engine/learning-system.md
+
+# Test Strategy:
+Validate completion of: action-item item

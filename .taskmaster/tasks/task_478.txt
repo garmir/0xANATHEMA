@@ -1,0 +1,19 @@
+# Task ID: 478
+# Title: Implement write these tests to handle missing values properly
+    dprec = np.finfo(np.float64).precision
+
+     (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: write these tests to handle missing values properly
+    dprec = np.finfo(np.float64).precision
+
+    @make_xp_test_case(stats.tmean)
+    def test_tmean(self, xp):
+        default_dtype = xp_default_dty
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/stats/tests/test_stats.py
+
+# Test Strategy:
+Validate completion of: code-todo item

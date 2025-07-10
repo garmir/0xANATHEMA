@@ -1,0 +1,11 @@
+# Task ID: 3692
+# Title: Implement Short-term: Optimize prompts and model selection (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Short-term: Optimize prompts and model selection
+# Details:
+Converted from todo: .taskmaster/migration/migration_timeline.md
+
+# Test Strategy:
+Validate completion of: action-item item

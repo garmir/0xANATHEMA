@@ -1,0 +1,15 @@
+# Task ID: 151
+# Title: Implement test_resample_apply_with_additional_args fails if we go
+                #  through the non-lambda pa (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: test_resample_apply_with_additional_args fails if we go
+                #  through the non-lambda path, not clear that it should.
+                func = lambda x: how(x, *args, **kwargs)
+             
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/resample.py
+
+# Test Strategy:
+Validate completion of: code-todo item

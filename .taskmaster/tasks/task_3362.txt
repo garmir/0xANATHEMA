@@ -1,0 +1,11 @@
+# Task ID: 3362
+# Title: **State Assessment** → Analyzes implementation progress and gaps
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **State Assessment** → Analyzes implementation progress and gaps
+# Details:
+Converted from todo: .taskmaster/automation/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

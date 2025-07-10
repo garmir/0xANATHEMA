@@ -1,0 +1,11 @@
+# Task ID: 2930
+# Title: Implement **Testing Integration**: Include testing in every task (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Testing Integration**: Include testing in every task
+# Details:
+Converted from todo: .taskmaster/examples/web-app-integration.md
+
+# Test Strategy:
+Validate completion of: action-item item

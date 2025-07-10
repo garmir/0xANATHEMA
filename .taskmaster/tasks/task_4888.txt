@@ -1,0 +1,11 @@
+# Task ID: 4888
+# Title: Test atomicity detection with various task types (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Test atomicity detection with various task types
+# Details:
+Converted from todo: .taskmaster/docs/prds/level-1/prd-decomposition.md
+
+# Test Strategy:
+Validate completion of: action-item item

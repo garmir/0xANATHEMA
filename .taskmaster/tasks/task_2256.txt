@@ -1,0 +1,18 @@
+# Task ID: 2256
+# Title: Implement Llama 3.1 8B
+- **Capabilities**: Balanced performance, large context window
+- **Strengths**:
+  - 128 (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Llama 3.1 8B
+- **Capabilities**: Balanced performance, large context window
+- **Strengths**:
+  - 128K context window in compact model
+  - Strong multi
+# Details:
+Converted from todo: .taskmaster/research/local-llm-survey-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

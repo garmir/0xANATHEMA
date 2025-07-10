@@ -1,0 +1,15 @@
+# Task ID: 204
+# Title: Implement (CoW) - detection of chained assignment in cython
+# https://github.com/pandas-dev/pandas/issues/5131 (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (CoW) - detection of chained assignment in cython
+# https://github.com/pandas-dev/pandas/issues/51315
+@pytest.mark.filterwarnings("ignore::pandas.errors.ChainedAssignmentError")
+@pytest.mark.filterwar
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/io/test_spss.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,18 @@
+# Task ID: 3730
+# Title: Weekly Status Reports
+- Progress against timeline
+- Key milestones achieved
+- Issues and risks ident (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Weekly Status Reports
+- Progress against timeline
+- Key milestones achieved
+- Issues and risks identified
+- Next week's objectives
+# Details:
+Converted from todo: .taskmaster/migration/migration_timeline.md
+
+# Test Strategy:
+Validate completion of: action-item item

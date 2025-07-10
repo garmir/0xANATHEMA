@@ -1,0 +1,16 @@
+# Task ID: 2180
+# Title: Implement 3. **Executable Launcher**
+- **File**: `.taskmaster/start-autonomous-loop.sh`
+- **Function**: Simple (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 3. **Executable Launcher**
+- **File**: `.taskmaster/start-autonomous-loop.sh`
+- **Function**: Simple bash launcher for autonomous workflow
+- **Usage**
+# Details:
+Converted from todo: .taskmaster/AUTONOMOUS-WORKFLOW-IMPLEMENTATION.md
+
+# Test Strategy:
+Validate completion of: action-item item

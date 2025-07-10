@@ -1,0 +1,11 @@
+# Task ID: 1965
+# Title: **Create Dedicated Tag**: `add_tag feature-[name] --description="[Feature description]"`
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Create Dedicated Tag**: `add_tag feature-[name] --description="[Feature description]"`
+# Details:
+Converted from todo: .trae/rules/dev_workflow.md
+
+# Test Strategy:
+Validate completion of: action-item item

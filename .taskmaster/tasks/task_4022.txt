@@ -1,0 +1,11 @@
+# Task ID: 4022
+# Title: Implement Add performance metrics collection to evolutionary optimizer (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Add performance metrics collection to evolutionary optimizer
+# Details:
+Converted from todo: .taskmaster/reports/recursive-research-improvement-framework.md
+
+# Test Strategy:
+Validate completion of: action-item item

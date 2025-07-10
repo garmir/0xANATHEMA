@@ -1,0 +1,15 @@
+# Task ID: 601
+# Title: Implement (jjerphan): Once SciPy 1.11.3 is the minimum supported version, use
+        # `accept_large_sparse=T (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (jjerphan): Once SciPy 1.11.3 is the minimum supported version, use
+        # `accept_large_sparse=True`.
+        accept_large_sparse = sp_version >= parse_version("1.11.3")
+        graph = check_arra
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/manifold/_spectral_embedding.py
+
+# Test Strategy:
+Validate completion of: code-todo item

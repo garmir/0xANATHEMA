@@ -1,0 +1,14 @@
+# Task ID: 4964
+# Title: Functional Requirements
+1. Create .taskmaster directory with subdirectories (docs, optimization, cat (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Functional Requirements
+1. Create .taskmaster directory with subdirectories (docs, optimization, catalytic, logs)
+2. Set environment variables: TASKMA
+# Details:
+Converted from todo: .taskmaster/docs/prds/level-0/prd-1-environment-setup.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,17 @@
+# Task ID: 774
+# Title: Implement what if there are more glyph data records than (glyf table) glyphs?
+        xmlWriter.endtag("strike (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: what if there are more glyph data records than (glyf table) glyphs?
+        xmlWriter.endtag("strike")
+        xmlWriter.newline()
+
+    def fromXML(self, name, attrs, content, ttFont):
+        if name
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/ttLib/tables/sbixStrike.py
+
+# Test Strategy:
+Validate completion of: code-todo item

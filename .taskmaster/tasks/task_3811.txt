@@ -1,0 +1,14 @@
+# Task ID: 3811
+# Title: Implement Intelligence Enhancement Patterns
+- **Retrieval-Augmented Generation**: Combining AI with knowledge  (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Intelligence Enhancement Patterns
+- **Retrieval-Augmented Generation**: Combining AI with knowledge base retrieval for better task generation
+- **Chai
+# Details:
+Converted from todo: .taskmaster/reports/comprehensive-research-assessment.md
+
+# Test Strategy:
+Validate completion of: action-item item

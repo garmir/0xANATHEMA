@@ -1,0 +1,17 @@
+# Task ID: 279
+# Title: Implement de-duplicate with other test_equals2 methods
+    @pytest.mark.parametrize("freq", ["D", "M"])
+    de (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: de-duplicate with other test_equals2 methods
+    @pytest.mark.parametrize("freq", ["D", "M"])
+    def test_equals2(self, freq):
+        # GH#13107
+        idx = PeriodIndex(["2011-01-01", "2011-01-02"
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/datetimelike_/test_equals.py
+
+# Test Strategy:
+Validate completion of: code-todo item

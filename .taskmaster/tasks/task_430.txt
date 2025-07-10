@@ -1,0 +1,21 @@
+# Task ID: 430
+# Title: Implement need is_valid_na_for_dtype(key, level_index.dtype)
+            return -1
+        else:
+            r (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: need is_valid_na_for_dtype(key, level_index.dtype)
+            return -1
+        else:
+            return level_index.get_loc(key)
+
+    def get_loc(self, key):
+        """
+        Get location for a l
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/indexes/multi.py
+
+# Test Strategy:
+Validate completion of: code-todo item

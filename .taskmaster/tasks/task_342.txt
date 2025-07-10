@@ -1,0 +1,18 @@
+# Task ID: 342
+# Title: Implement datedate.date? datetime.time?
+        assert as_json_table_type(date_dtype) == "datetime"
+
+    @pyte (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: datedate.date? datetime.time?
+        assert as_json_table_type(date_dtype) == "datetime"
+
+    @pytest.mark.parametrize("td_dtype", [np.dtype("<m8[ns]")])
+    def test_as_json_table_type_timedelta_dty
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/io/json/test_json_table_schema.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,11 @@
+# Task ID: 1625
+# Title: Implement **Complexity Dashboard** (`complexity_dashboard.py`) with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Complexity Dashboard** (`complexity_dashboard.py`)
+# Details:
+Converted from todo: execution-roadmap.md
+
+# Test Strategy:
+Validate completion of: action-item item

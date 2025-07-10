@@ -1,0 +1,14 @@
+# Task ID: 2692
+# Title: Implement 3. **ADaPT Recursive Decomposition**
+- **Location**: `.taskmaster/scripts/adapt-recursive-decomposit (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 3. **ADaPT Recursive Decomposition**
+- **Location**: `.taskmaster/scripts/adapt-recursive-decomposition.py`
+- **Function**: Capability-aware task brea
+# Details:
+Converted from todo: .taskmaster/docs/research-planning-workflow-map.md
+
+# Test Strategy:
+Validate completion of: action-item item

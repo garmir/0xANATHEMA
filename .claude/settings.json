@@ -1,0 +1,81 @@
+{
+  "hooks": {
+    "sessionStart": {
+      "enabled": true,
+      "command": ".claude/hooks/session-start.sh",
+      "description": "Automatically run task-master research and execute steps as prompts"
+    }
+  },
+  "autoPrompts": {
+    "research_driven_development": {
+      "trigger": "session_start",
+      "prompt": "run 'task-master research' to identify next steps. execute these steps as prompts",
+      "enabled": true,
+      "priority": "high"
+    },
+    "atomic_task_breakdown": {
+      "trigger": "stuck_prompt",
+      "prompt": "execute 'task-master research' to recursively break down complex tasks to atomic levels. use 'task-master expand --id=<id> --research --force' then 'task-master next' for atomic execution",
+      "enabled": true,
+      "priority": "critical",
+      "workflow_rule": "hard_coded"
+    }
+  },
+  "commands": {
+    "auto-research": {
+      "enabled": true,
+      "description": "Automatically execute research-driven development steps",
+      "file": ".claude/commands/auto-research.md"
+    }
+  },
+  "preferences": {
+    "research_automation": true,
+    "autonomous_development": true,
+    "progress_tracking": true,
+    "theoretical_validation": true
+  },
+  "allowedTools": [
+    "Bash(task-master *)",
+    "Bash(.claude/hooks/*)",
+    "Read",
+    "Write", 
+    "Edit",
+    "TodoWrite",
+    "Glob",
+    "Grep"
+  ],
+  "taskmaster_integration": {
+    "auto_research": true,
+    "prompt_automation": true,
+    "session_continuity": true,
+    "research_driven": true,
+    "atomic_breakdown_workflow": true,
+    "stuck_prompt_resolution": "automatic",
+    "recursive_task_expansion": true,
+    "complexity_management": "atomic_level"
+  },
+  "workflow_rules": {
+    "atomic_task_breakdown": {
+      "status": "hard_coded",
+      "trigger_conditions": [
+        "prompt_complexity_high",
+        "task_execution_stalled", 
+        "multiple_failed_attempts",
+        "user_requests_breakdown"
+      ],
+      "execution_protocol": [
+        "execute_task_master_research",
+        "recursive_expand_to_atomic",
+        "get_next_atomic_task",
+        "execute_simple_prompts"
+      ],
+      "success_criteria": [
+        "atomic_tasks_generated",
+        "execution_time_5_15_minutes",
+        "reduced_cognitive_load",
+        "clear_simple_prompts"
+      ],
+      "implementation_file": ".taskmaster/scripts/atomic-task-breakdown-workflow.py"
+    }
+  }
+}

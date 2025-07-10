@@ -1,0 +1,16 @@
+# Task ID: 405
+# Title: Implement (EA2D): unnecessary with 2D EAs
+            # if we get a 2D ExtensionArray, we need to split it int (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (EA2D): unnecessary with 2D EAs
+            # if we get a 2D ExtensionArray, we need to split it into 1D pieces
+            nbs = []
+            for i, loc in enumerate(self._mgr_locs):
+              
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/internals/blocks.py
+
+# Test Strategy:
+Validate completion of: code-todo item

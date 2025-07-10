@@ -1,0 +1,15 @@
+# Task ID: 633
+# Title: Implement (1.8): remove filterwarnings after the deprecation of multi_class
+@pytest.mark.filterwarnings("ignor (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8): remove filterwarnings after the deprecation of multi_class
+@pytest.mark.filterwarnings("ignore:.*'multi_class' was deprecated.*:FutureWarning")
+@pytest.mark.filterwarnings(
+    "ignore:.*'libli
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/linear_model/tests/test_logistic.py
+
+# Test Strategy:
+Validate completion of: code-todo item

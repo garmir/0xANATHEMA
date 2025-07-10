@@ -1,0 +1,17 @@
+# Task ID: 842
+# Title: Implement Subclasses can will optimize this even further.
+        try:
+            key = self._fd_to_key[s (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Subclasses can probably optimize this even further.
+        try:
+            key = self._fd_to_key[self._fileobj_lookup(fileobj)]
+        except KeyError:
+            raise KeyError("{!r} is not regis
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/asyncio/selectors.py
+
+# Test Strategy:
+Validate completion of: code-todo item

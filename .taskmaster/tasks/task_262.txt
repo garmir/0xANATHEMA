@@ -1,0 +1,20 @@
+# Task ID: 262
+# Title: this is a test for DataFrame/Series, not IntervalIndex
+    @pytest.mark.parametrize(
+        "constr (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: this is a test for DataFrame/Series, not IntervalIndex
+    @pytest.mark.parametrize(
+        "constructor,expected",
+        [
+            (
+                Series,
+                (
+                 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/interval/test_formats.py
+
+# Test Strategy:
+Validate completion of: code-todo item

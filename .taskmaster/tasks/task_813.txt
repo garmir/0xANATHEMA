@@ -1,0 +1,22 @@
+# Task ID: 813
+# Title: Implement This can be trivially parallelized.
+    return {v: _node_redundancy(G, v) for v in nodes}
+
+
+def _nod (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: This can be trivially parallelized.
+    return {v: _node_redundancy(G, v) for v in nodes}
+
+
+def _node_redundancy(G, v):
+    """Returns the redundancy of the node `v` in the bipartite graph `G`.
+
+    I
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/bipartite/redundancy.py
+
+# Test Strategy:
+Validate completion of: code-todo item

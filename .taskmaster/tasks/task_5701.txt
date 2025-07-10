@@ -1,0 +1,20 @@
+# Task ID: 5701
+# Title: Implementation Command
+```bash
+task-master research \
+    --input project-plan.md \
+    --output-pat
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Implementation Command
+```bash
+task-master research \
+    --input project-plan.md \
+    --output-pattern "$TASKMASTER_DOCS/prd-{n}.md" \
+    --log-lev
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-2-recursive/prd-2.1-first-level-generation.md
+
+# Test Strategy:
+Validate completion of: action-item item

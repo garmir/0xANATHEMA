@@ -1,0 +1,11 @@
+# Task ID: 1121
+# Title: Implement Custom Claude Prompts with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Custom Claude Prompts
+# Details:
+Converted from todo: README-github-scaling.md
+
+# Test Strategy:
+Validate completion of: action-item item

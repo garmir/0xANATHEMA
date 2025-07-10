@@ -1,0 +1,16 @@
+# Task ID: 574
+# Title: Implement bayesian_ridge_regression and bayesian_regression_ard
+# should be squashed into its respective objec (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: bayesian_ridge_regression and bayesian_regression_ard
+# should be squashed into its respective objects.
+
+SPARSE_INTERCEPT_DECAY = 0.01
+# For sparse data intercept updates are scaled by this decay fact
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/linear_model/_base.py
+
+# Test Strategy:
+Validate completion of: code-todo item

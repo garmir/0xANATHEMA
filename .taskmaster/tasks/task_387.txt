@@ -1,0 +1,17 @@
+# Task ID: 387
+# Title: Implement this prob needs some better checking for 2D cases
+    nlocs = mask.sum()
+    if nlocs > 0 and is_lis (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: this prob needs some better checking for 2D cases
+    nlocs = mask.sum()
+    if nlocs > 0 and is_list_like(new) and getattr(new, "ndim", 1) == 1:
+        shape = np.shape(new)
+        # np.shape compa
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/array_algos/putmask.py
+
+# Test Strategy:
+Validate completion of: code-todo item

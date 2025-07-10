@@ -1,0 +1,14 @@
+# Task ID: 4171
+# Title: Implement Advanced Planning Intelligence 🚀
+- **Complexity Analysis**: Research-driven scoring with ML recommen (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Advanced Planning Intelligence 🚀
+- **Complexity Analysis**: Research-driven scoring with ML recommendations
+- **Dependency Resolution**: Automatic gra
+# Details:
+Converted from todo: .taskmaster/reports/recursive-workflow-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

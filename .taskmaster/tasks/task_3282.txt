@@ -1,0 +1,17 @@
+# Task ID: 3282
+# Title: Implement **Step 1: Task Analysis**
+**Action**: Analyze current task for complexity indicators
+**Atomic Compon (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Step 1: Task Analysis**
+**Action**: Analyze current task for complexity indicators
+**Atomic Components**:
+- Identify main objective
+- List all requi
+# Details:
+Converted from todo: .taskmaster/workflow-rules/recursive-breakdown-rule.md
+
+# Test Strategy:
+Validate completion of: action-item item

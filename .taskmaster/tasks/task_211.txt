@@ -1,0 +1,14 @@
+# Task ID: 211
+# Title: Implement use ArrowSchema to get reference C-string.
+# At the time, there is no way to access ArrowSchema hold (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: use ArrowSchema to get reference C-string.
+# At the time, there is no way to access ArrowSchema holding a type format string
+# from python. The only way to access it is to export the structure to a C-
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/interchange/test_utils.py
+
+# Test Strategy:
+Validate completion of: code-todo item

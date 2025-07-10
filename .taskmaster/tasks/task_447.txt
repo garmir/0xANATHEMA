@@ -1,0 +1,17 @@
+# Task ID: 447
+# Title: Implement Fast sparse rank check?
+            rr_res = _remove_redundancy_pivot_sparse(A_eq, b_eq)
+            (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Fast sparse rank check?
+            rr_res = _remove_redundancy_pivot_sparse(A_eq, b_eq)
+            A_eq, b_eq, status, message = rr_res
+            if A_eq.shape[0] < n_rows_A:
+                warn(
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/optimize/_linprog_util.py
+
+# Test Strategy:
+Validate completion of: code-todo item

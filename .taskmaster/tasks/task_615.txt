@@ -1,0 +1,20 @@
+# Task ID: 615
+# Title: Implement use the provided W when init="custom".
+        non_negative_factorization(
+            X, W=W_init,  (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: use the provided W when init="custom".
+        non_negative_factorization(
+            X, W=W_init, H=H_init, update_H=False, n_components="auto"
+        )
+
+
+def test_nmf_custom_init_shape_error():
+  
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/decomposition/tests/test_nmf.py
+
+# Test Strategy:
+Validate completion of: code-todo item

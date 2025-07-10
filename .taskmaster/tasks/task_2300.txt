@@ -1,0 +1,11 @@
+# Task ID: 2300
+# Title: Implement Capability Comparison Matrix with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Capability Comparison Matrix
+# Details:
+Converted from todo: .taskmaster/research/local-llm-survey-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

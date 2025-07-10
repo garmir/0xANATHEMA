@@ -1,0 +1,16 @@
+# Task ID: 837
+# Title: Implement I dislike that we have to wrap these basic dict updates in callables, is there any way around this?
+ (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: I dislike that we have to wrap these basic dict updates in callables, is there any way around this?
+
+        if js_updates := metadata.get('pydantic_js_updates'):
+
+            def js_updates_handler_f
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pydantic/json_schema.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,15 @@
+# Task ID: 186
+# Title: Implement Timestamp raises ValueError("could not convert string to Timestamp")
+        #  can we make these mo
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Timestamp raises ValueError("could not convert string to Timestamp")
+        #  can we make these more consistent?
+        arg = "08335394550"
+        msg = 'Parsing "08335394550" to datetime overflow
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/tools/test_to_datetime.py
+
+# Test Strategy:
+Validate completion of: code-todo item

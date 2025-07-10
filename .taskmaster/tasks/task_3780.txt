@@ -1,0 +1,17 @@
+# Task ID: 3780
+# Title: API-Dependent (Future):
+1. Validate and correct API key configuration
+2. Test MCP server integration (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: API-Dependent (Future):
+1. Validate and correct API key configuration
+2. Test MCP server integration
+3. Enable research-driven optimization
+4. Impleme
+# Details:
+Converted from todo: .taskmaster/reports/api-optimization-validation.md
+
+# Test Strategy:
+Validate completion of: action-item item

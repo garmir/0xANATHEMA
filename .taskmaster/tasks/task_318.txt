@@ -1,0 +1,18 @@
+# Task ID: 318
+# Title: Implement (wesm): verification?
+        tf = float_frame.astype(np.float64)
+        tf.astype(np.int64, copy=F (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (wesm): verification?
+        tf = float_frame.astype(np.float64)
+        tf.astype(np.int64, copy=False)
+
+    def test_astype_with_view_mixed_float(self, mixed_float_frame):
+        tf = mixed_float_
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/methods/test_astype.py
+
+# Test Strategy:
+Validate completion of: code-todo item

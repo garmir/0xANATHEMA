@@ -1,0 +1,11 @@
+# Task ID: 1647
+# Title: Implement Revert to manual task management (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Revert to manual task management
+# Details:
+Converted from todo: execution-roadmap.md
+
+# Test Strategy:
+Validate completion of: action-item item

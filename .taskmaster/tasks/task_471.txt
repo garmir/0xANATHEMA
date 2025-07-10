@@ -1,0 +1,17 @@
+# Task ID: 471
+# Title: Implement add support for `axis` tuples
+def _remove_nans(samples, paired):
+    "Remove nans from paired or unp (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: add support for `axis` tuples
+def _remove_nans(samples, paired):
+    "Remove nans from paired or unpaired 1D samples"
+    # potential optimization: don't copy arrays that don't contain nans
+    if not
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/stats/_axis_nan_policy.py
+
+# Test Strategy:
+Validate completion of: code-todo item

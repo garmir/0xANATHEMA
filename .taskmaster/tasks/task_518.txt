@@ -1,0 +1,15 @@
+# Task ID: 518
+# Title: Implement revert this once the warning bug fix in sksparse is merged/released
+    # Add suppression of spuriou (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: revert this once the warning bug fix in sksparse is merged/released
+    # Add suppression of spurious warning bug from sksparse with csc_array gh-22089
+    # factor = cholesky_AAt(A)
+    with catch_wa
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/optimize/_trustregion_constr/projections.py
+
+# Test Strategy:
+Validate completion of: code-todo item

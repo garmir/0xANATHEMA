@@ -1,0 +1,15 @@
+# Task ID: 652
+# Title: Implement Ideally this should be computed in parallel over the leaves using something
+    # similar to _update (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Ideally this should be computed in parallel over the leaves using something
+    # similar to _update_raw_predictions(), but this requires a cython version of
+    # median().
+    for leaf in grower.fin
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/ensemble/_hist_gradient_boosting/gradient_boosting.py
+
+# Test Strategy:
+Validate completion of: code-todo item

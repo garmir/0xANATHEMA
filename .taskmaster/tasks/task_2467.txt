@@ -1,0 +1,16 @@
+# Task ID: 2467
+# Title: Implement **Assessment Frequency**
+- **Schedule**: Every 2 hours for continuous monitoring
+- **Trigger Events* (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Assessment Frequency**
+- **Schedule**: Every 2 hours for continuous monitoring
+- **Trigger Events**: Push, PR, manual dispatch
+- **Assessment Types*
+# Details:
+Converted from todo: .taskmaster/analysis/github-actions-validation-report.md
+
+# Test Strategy:
+Validate completion of: action-item item

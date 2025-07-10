@@ -1,0 +1,11 @@
+# Task ID: 4080
+# Title: Implement **Test Integration**: Validate local inference works (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Test Integration**: Validate local inference works
+# Details:
+Converted from todo: .taskmaster/reports/local-llm-migration-health-check.md
+
+# Test Strategy:
+Validate completion of: action-item item

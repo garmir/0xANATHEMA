@@ -1,0 +1,11 @@
+# Task ID: 3541
+# Title: Implement Available Models with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Available Models
+# Details:
+Converted from todo: .taskmaster/migration/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

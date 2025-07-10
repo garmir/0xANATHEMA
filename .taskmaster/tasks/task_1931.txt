@@ -1,0 +1,15 @@
+# Task ID: 1931
+# Title: Implement Basic Research Query
+```python
+from local_llm_research_module import LocalLLMResearchEngine, Researc (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Basic Research Query
+```python
+from local_llm_research_module import LocalLLMResearchEngine, ResearchContext
+# Details:
+Converted from todo: LOCAL_LLM_MIGRATION_GUIDE.md
+
+# Test Strategy:
+Validate completion of: action-item item

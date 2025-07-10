@@ -1,0 +1,16 @@
+# Task ID: 249
+# Title: GH#27620 this test used to compare iloc against ix; check if this
+    #  is redundant with another t (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: GH#27620 this test used to compare iloc against ix; check if this
+    #  is redundant with another test comparing iloc against loc
+    def test_iloc_getitem_frame(self):
+        df = DataFrame(
+      
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexing/test_iloc.py
+
+# Test Strategy:
+Validate completion of: code-todo item

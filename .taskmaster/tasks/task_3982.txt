@@ -1,0 +1,11 @@
+# Task ID: 3982
+# Title: **Quality Validation**: Add validation steps for atomic output completeness (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Quality Validation**: Add validation steps for atomic output completeness
+# Details:
+Converted from todo: .taskmaster/reports/atomic-breakdown-effectiveness-45-2.md
+
+# Test Strategy:
+Validate completion of: action-item item

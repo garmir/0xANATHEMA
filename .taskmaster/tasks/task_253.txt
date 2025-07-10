@@ -1,0 +1,18 @@
+# Task ID: 253
+# Title: Implement (GH#32514): Order of entries with the same count is inconsistent
+    #  on CI (gh-32449)
+    if obj. (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (GH#32514): Order of entries with the same count is inconsistent
+    #  on CI (gh-32449)
+    if obj.duplicated().any():
+        result = result.sort_index()
+        expected = expected.sort_index()
+  
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/base/test_value_counts.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,19 @@
+# Task ID: 532
+# Title: Implement s:
+#
+# * encoding of fonts, including mathtext fonts and Unicode support
+# * TTF support has lots of (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: s:
+#
+# * encoding of fonts, including mathtext fonts and Unicode support
+# * TTF support has lots of small TODOs, e.g., how do you know if a font
+#   is serif/sans-serif, or symbolic/non-symbolic?
+# *
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/matplotlib/backends/backend_pdf.py
+
+# Test Strategy:
+Validate completion of: code-todo item

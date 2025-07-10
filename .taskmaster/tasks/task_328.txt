@@ -1,0 +1,18 @@
+# Task ID: 328
+# Title: Implement more descriptive name
+        # based on example in advanced.rst
+        arrays = [
+            ["ba (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: more descriptive name
+        # based on example in advanced.rst
+        arrays = [
+            ["bar", "bar", "baz", "baz", "foo", "foo", "qux", "qux"],
+            ["one", "two", "one", "two", "one"
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/indexing/test_xs.py
+
+# Test Strategy:
+Validate completion of: code-todo item

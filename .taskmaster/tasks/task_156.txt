@@ -1,0 +1,22 @@
+# Task ID: 156
+# Title: Implement integrate bottleneck
+    def count(self) -> int:
+        """
+        Return number of non-NA/null ob (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: integrate bottleneck
+    def count(self) -> int:
+        """
+        Return number of non-NA/null observations in the Series.
+
+        Returns
+        -------
+        int
+            Number of non-nul
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/series.py
+
+# Test Strategy:
+Validate completion of: code-todo item

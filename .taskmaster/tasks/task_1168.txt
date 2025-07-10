@@ -1,0 +1,15 @@
+# Task ID: 1168
+# Title: Implement Monitoring Integration
+- **Guardian Monitor Window**: Dedicated window for guardian status
+- **Real- (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Monitoring Integration
+- **Guardian Monitor Window**: Dedicated window for guardian status
+- **Real-time Updates**: Guardian activity and maintenance 
+# Details:
+Converted from todo: LABRYS_MONITORING_SYSTEM.md
+
+# Test Strategy:
+Validate completion of: action-item item

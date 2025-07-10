@@ -1,0 +1,19 @@
+# Task ID: 295
+# Title: Implement raises if we pass axis=0  (on Index and Categorical, not Series)
+
+        cat = Categorical(
+        (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: raises if we pass axis=0  (on Index and Categorical, not Series)
+
+        cat = Categorical(
+            ["a", "b", "c", "d"], categories=["d", "c", "b", "a"], ordered=True
+        )
+        obj = ind
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arrays/categorical/test_analytics.py
+
+# Test Strategy:
+Validate completion of: code-todo item

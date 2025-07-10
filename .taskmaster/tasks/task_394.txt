@@ -1,0 +1,17 @@
+# Task ID: 394
+# Title: Implement fastpath for pandas' StringDtype
+            return _array_equivalent_object(left, right, strict_nan (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: fastpath for pandas' StringDtype
+            return _array_equivalent_object(left, right, strict_nan)
+        else:
+            return np.array_equal(left, right)
+
+    # Slow path when we allow compar
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/dtypes/missing.py
+
+# Test Strategy:
+Validate completion of: code-todo item

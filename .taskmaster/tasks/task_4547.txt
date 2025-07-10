@@ -1,0 +1,11 @@
+# Task ID: 4547
+# Title: Implement Pattern 3: Intelligent Task Routing (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Pattern 3: Intelligent Task Routing
+# Details:
+Converted from todo: .taskmaster/examples/real-world-integration/claude-code-mcp-integration.md
+
+# Test Strategy:
+Validate completion of: action-item item

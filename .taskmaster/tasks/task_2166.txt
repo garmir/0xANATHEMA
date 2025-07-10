@@ -1,0 +1,11 @@
+# Task ID: 2166
+# Title: Implement Generate Claude-specific prompts with execution context (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Generate Claude-specific prompts with execution context
+# Details:
+Converted from todo: .taskmaster/AUTONOMOUS-WORKFLOW-IMPLEMENTATION.md
+
+# Test Strategy:
+Validate completion of: action-item item

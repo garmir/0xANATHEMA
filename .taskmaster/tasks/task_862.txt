@@ -1,0 +1,22 @@
+# Task ID: 862
+# Title: Implement #   - Make lexers for:
+#       - asm sources
+#       - man pages
+#       - mkfiles
+#       - module  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: #   - Make lexers for:
+#       - asm sources
+#       - man pages
+#       - mkfiles
+#       - module definitions
+#       - namespace definitions
+#       - shell scripts
+#       - maybe keyfiles and fon
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/inferno.py
+
+# Test Strategy:
+Validate completion of: code-todo item

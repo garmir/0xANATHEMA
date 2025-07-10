@@ -1,0 +1,15 @@
+# Task ID: 581
+# Title: Implement (1.8): remove this once the deprecation is removed. In the meantime,
+        # we need to catch the  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8): remove this once the deprecation is removed. In the meantime,
+        # we need to catch the warning to avoid false positives.
+        catch_warning = (
+            self.initial_strategy == "co
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/impute/_iterative.py
+
+# Test Strategy:
+Validate completion of: code-todo item

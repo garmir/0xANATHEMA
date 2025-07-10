@@ -1,0 +1,17 @@
+# Task ID: 704
+# Title: Implement Wait until mypy supports recursive objects in combination with typevars
+_FiniteNestedSequence: TypeA (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Wait until mypy supports recursive objects in combination with typevars
+_FiniteNestedSequence: TypeAlias = (
+    _T
+    | Sequence[_T]
+    | Sequence[Sequence[_T]]
+    | Sequence[Sequence[Sequence[_T]
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/_typing/_array_like.py
+
+# Test Strategy:
+Validate completion of: code-todo item

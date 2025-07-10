@@ -1,0 +1,18 @@
+# Task ID: 607
+# Title: Implement (SLEP6): To be removed when set_config(enable_metadata_routing=False) is not
+    # possible.
+    """ (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (SLEP6): To be removed when set_config(enable_metadata_routing=False) is not
+    # possible.
+    """
+    if params is not None and fit_params is not None:
+        raise ValueError(
+            "`param
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/model_selection/_validation.py
+
+# Test Strategy:
+Validate completion of: code-todo item

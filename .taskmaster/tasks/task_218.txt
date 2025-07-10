@@ -1,0 +1,16 @@
+# Task ID: 218
+# Title: Implement (FloatArray): this will be Float64Dtype.
+    expected = pd.DataFrame(expected, index=["a", "b", "c"] (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (FloatArray): this will be Float64Dtype.
+    expected = pd.DataFrame(expected, index=["a", "b", "c"], columns=["A", "B"])
+    tm.assert_frame_equal(result, expected)
+
+    result = np.heaviside(df1, df
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/test_ufunc.py
+
+# Test Strategy:
+Validate completion of: code-todo item

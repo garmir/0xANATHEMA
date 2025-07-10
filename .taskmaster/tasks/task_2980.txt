@@ -1,0 +1,11 @@
+# Task ID: 2980
+# Title: Implement Pattern 1: MCP-First Integration (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Pattern 1: MCP-First Integration
+# Details:
+Converted from todo: .taskmaster/examples/integration-guide.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,14 @@
+# Task ID: 839
+# Title: Implement `parent_namespace` is currently None, but we could do the same thing as Pydantic models:
+        # f
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: `parent_namespace` is currently None, but we could do the same thing as Pydantic models:
+        # fetch the parent ns using `parent_frame_namespace` (if the dataclass was defined in a function),
+    
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pydantic/dataclasses.py
+
+# Test Strategy:
+Validate completion of: code-todo item

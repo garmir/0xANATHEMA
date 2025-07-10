@@ -1,0 +1,16 @@
+# Task ID: 3679
+# Title: Technical Documentation
+- **Architecture Guide**: Complete system architecture documentation
+- **API (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Technical Documentation
+- **Architecture Guide**: Complete system architecture documentation
+- **API Reference**: Local LLM API documentation
+- **Depl
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

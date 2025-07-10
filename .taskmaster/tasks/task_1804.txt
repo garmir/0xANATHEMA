@@ -1,0 +1,11 @@
+# Task ID: 1804
+# Title: Implement Important Notes with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Important Notes
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

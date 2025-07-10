@@ -1,0 +1,16 @@
+# Task ID: 572
+# Title: (1.8): Remove this test when the deprecation is removed
+def test_is_estimator_type_class():
+    with (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8): Remove this test when the deprecation is removed
+def test_is_estimator_type_class():
+    with pytest.warns(FutureWarning, match="passing a class to.*is deprecated"):
+        assert is_classifie
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/tests/test_base.py
+
+# Test Strategy:
+Validate completion of: code-todo item

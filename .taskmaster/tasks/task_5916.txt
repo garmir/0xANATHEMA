@@ -1,0 +1,16 @@
+# Task ID: 5916
+# Title: Implement When to Use
+- Prompts are getting too complex or overwhelming
+- Task execution has stalled or failed (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: When to Use
+- Prompts are getting too complex or overwhelming
+- Task execution has stalled or failed multiple times
+- Need to break down work into man
+# Details:
+Converted from todo: .claude/commands/stuck-prompt-resolve.md
+
+# Test Strategy:
+Validate completion of: action-item item

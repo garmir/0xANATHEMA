@@ -1,0 +1,18 @@
+# Task ID: 3474
+# Title: Implement Llama 2 13B Chat
+- **Model Size:** 13B parameters
+- **Context Length:** 4,096 tokens
+- **Memory Requ (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Llama 2 13B Chat
+- **Model Size:** 13B parameters
+- **Context Length:** 4,096 tokens
+- **Memory Requirement:** 9.5 GB
+- **License:** Custom (commercia
+# Details:
+Converted from todo: .taskmaster/migration/llm_evaluation_report.md
+
+# Test Strategy:
+Validate completion of: action-item item

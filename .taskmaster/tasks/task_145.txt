@@ -1,0 +1,15 @@
+# Task ID: 145
+# Title: Implement (typing#684): add Ellipsis, see
+# https://github.com/python/typing/issues/684#issuecomment-548203158 (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (typing#684): add Ellipsis, see
+# https://github.com/python/typing/issues/684#issuecomment-548203158
+# https://bugs.python.org/issue41810
+# Using List[int] here rather than Sequence[int] to disallow t
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/_typing.py
+
+# Test Strategy:
+Validate completion of: code-todo item

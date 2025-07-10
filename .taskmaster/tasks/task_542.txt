@@ -1,0 +1,20 @@
+# Task ID: 542
+# Title: Implement debug why WX needs this only on py >= 3.8
+        fig.canvas.flush_events()
+
+
+_thread_safe_backends  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: debug why WX needs this only on py >= 3.8
+        fig.canvas.flush_events()
+
+
+_thread_safe_backends = _get_testable_interactive_backends()
+# Known unsafe backends. Remove the xfails if they start to p
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/matplotlib/tests/test_backends_interactive.py
+
+# Test Strategy:
+Validate completion of: code-todo item

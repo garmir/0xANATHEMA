@@ -1,0 +1,14 @@
+# Task ID: 3385
+# Title: Implement 2. **Auto Research Prompt Generator** (`.taskmaster/scripts/auto-research-prompt-generator.py`)
+- An (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 2. **Auto Research Prompt Generator** (`.taskmaster/scripts/auto-research-prompt-generator.py`)
+- Analyzes current research implementation state
+- Ide
+# Details:
+Converted from todo: .taskmaster/automation/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,16 @@
+# Task ID: 3574
+# Title: Implement Compliance
+- **GDPR**: Full compliance through local processing
+- **CCPA**: Data privacy requirement (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Compliance
+- **GDPR**: Full compliance through local processing
+- **CCPA**: Data privacy requirements met
+- **SOX**: Audit trail and data integrity ma
+# Details:
+Converted from todo: .taskmaster/migration/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

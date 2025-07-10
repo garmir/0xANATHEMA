@@ -1,0 +1,16 @@
+# Task ID: 4554
+# Title: 2. Error Handling
+- Implement retry logic with exponential backoff
+- Use circuit breakers for extern (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 2. Error Handling
+- Implement retry logic with exponential backoff
+- Use circuit breakers for external services
+- Log errors with context for debuggin
+# Details:
+Converted from todo: .taskmaster/examples/real-world-integration/claude-code-mcp-integration.md
+
+# Test Strategy:
+Validate completion of: action-item item

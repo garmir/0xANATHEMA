@@ -1,3 +1,27 @@
+
+# Local LLM imports for autonomous operation
+import asyncio
+from pathlib import Path
+import sys
+
+# Add local LLM modules to path
+sys.path.append(str(Path(__file__).parent / ".taskmaster"))
+try:
+    from adapters.local_api_adapter import (
+        LocalAPIAdapter, 
+        replace_perplexity_call,
+        replace_task_master_research,
+        replace_autonomous_stuck_handler
+    )
+    from research.local_research_workflow import (
+        LocalResearchWorkflow,
+        local_autonomous_stuck_handler
+    )
+    LOCAL_LLM_AVAILABLE = True
+except ImportError as e:
+    print(f"⚠️ Local LLM modules not available: {e}")
+    LOCAL_LLM_AVAILABLE = False
+
 #!/usr/bin/env python3
 """
 Autonomous Research Integration - Enhanced workflow with deep task-master + perplexity integration
@@ -18,6 +42,9 @@ from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 
+# Import local LLM modules for offline research
+from local_research_module import LocalResearchModule, create_local_perplexity_replacement
+
 
 class AutoResearchWorkflow:
     """
@@ -29,7 +56,7 @@ class AutoResearchWorkflow:
 # AUTONOMOUS RESEARCH WORKFLOW LOOP
 # This is the hardcoded pattern for handling stuck situations
 
-def autonomous_stuck_handler(problem_description, task_context=""):
+def await local_autonomous_stuck_handler(problem_description, task_context=""):
     '''
     HARDCODED WORKFLOW:
     When stuck -> research solution -> parse to todos -> execute until success
@@ -498,7 +525,7 @@ def run_autonomous_research_loop():
                 print(f"🚨 SIMULATED STUCK SITUATION: {stuck_problem}")
                 
                 # EXECUTE AUTONOMOUS RESEARCH WORKFLOW
-                success = autonomous_stuck_handler(stuck_problem, task_output)
+                success = await local_autonomous_stuck_handler(stuck_problem, task_output)
                 
                 if success:
                     print(f"✅ Successfully resolved stuck situation via research workflow")
@@ -531,7 +558,7 @@ if __name__ == "__main__":
             if len(sys.argv) > 2:
                 problem = sys.argv[2]
                 context = sys.argv[3] if len(sys.argv) > 3 else ""
-                autonomous_stuck_handler(problem, context)
+                await local_autonomous_stuck_handler(problem, context)
             else:
                 print("Usage: python autonomous_research_integration.py research 'problem description' ['context']")
         
@@ -624,3 +651,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def run_async_research(coro):
+    """Helper to run async research functions"""
+    try:
+        loop = asyncio.get_event_loop()
+    except RuntimeError:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+    
+    return loop.run_until_complete(coro)

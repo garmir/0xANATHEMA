@@ -1,0 +1,11 @@
+# Task ID: 3509
+# Title: Implement **Migration Validator** (`migration_validator.py`) with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Migration Validator** (`migration_validator.py`)
+# Details:
+Converted from todo: .taskmaster/migration/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,18 @@
+# Task ID: 2668
+# Title: Implement Convergence Criteria
+- Autonomy score ≥ 0.95
+- Performance stability across iterations
+- Resource us (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Convergence Criteria
+- Autonomy score ≥ 0.95
+- Performance stability across iterations
+- Resource usage within bounds
+- Task execution success rate > 
+# Details:
+Converted from todo: .taskmaster/docs/prd-evolution.md
+
+# Test Strategy:
+Validate completion of: action-item item

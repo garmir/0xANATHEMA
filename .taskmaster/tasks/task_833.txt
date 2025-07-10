@@ -1,0 +1,14 @@
+# Task ID: 833
+# Title: Implement if `schema['serialization']` is one of `'include-exclude-dict/sequence',
+            # schema valida (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: if `schema['serialization']` is one of `'include-exclude-dict/sequence',
+            # schema validation will fail. That's why we use 'type ignore' comments below.
+            serialization = schema.g
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pydantic/functional_validators.py
+
+# Test Strategy:
+Validate completion of: code-todo item

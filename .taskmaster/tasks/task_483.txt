@@ -1,0 +1,16 @@
+# Task ID: 483
+# Title: Implement Why so inaccurate?  Is reference flawed?
+        a = np.asarray([1, 2.481, 2.463, 1.018])
+        b2 (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Why so inaccurate?  Is reference flawed?
+        a = np.asarray([1, 2.481, 2.463, 1.018])
+        b2, a2 = bessel(3, 1, norm='phase', analog=True)
+        assert_array_almost_equal(a[::-1], a2/b2, dec
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/signal/tests/test_filter_design.py
+
+# Test Strategy:
+Validate completion of: code-todo item

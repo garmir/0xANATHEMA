@@ -1,0 +1,11 @@
+# Task ID: 2996
+# Title: Implement **Recursive Task Breakdown** - Decomposing complex tasks into hierarchical subtasks (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Recursive Task Breakdown** - Decomposing complex tasks into hierarchical subtasks
+# Details:
+Converted from todo: .taskmaster/benchmarks/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

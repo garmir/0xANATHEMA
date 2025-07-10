@@ -1,0 +1,16 @@
+# Task ID: 142
+# Title: Implement the C ext can will be refactored in order
+                # to get this from cext.proc_info()
+   (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: the C ext can probably be refactored in order
+                # to get this from cext.proc_info()
+                debug("attempting memory_info() fallback (slower)")
+                info = self._proc_
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/psutil/_pswindows.py
+
+# Test Strategy:
+Validate completion of: code-todo item

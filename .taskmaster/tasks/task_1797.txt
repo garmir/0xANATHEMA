@@ -1,0 +1,11 @@
+# Task ID: 1797
+# Title: Implement Complex Workflows with Checklists (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Complex Workflows with Checklists
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

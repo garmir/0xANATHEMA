@@ -1,0 +1,15 @@
+# Task ID: 736
+# Title: Implement Move somewhere else where it's triggered less:
+        tickdirs_base = [v["tickdir"] for v in self._ (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Move somewhere else where it's triggered less:
+        tickdirs_base = [v["tickdir"] for v in self._AXINFO.values()]  # default
+        elev_mod = np.mod(self.axes.elev + 180, 360) - 180
+        azim_
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/mpl_toolkits/mplot3d/axis3d.py
+
+# Test Strategy:
+Validate completion of: code-todo item

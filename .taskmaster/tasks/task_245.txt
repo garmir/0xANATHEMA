@@ -1,0 +1,19 @@
+# Task ID: 245
+# Title: frame
+    @not_implemented
+    def test_align(self, other):
+        s = pd.Series([0, 1], index=["a"
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: frame
+    @not_implemented
+    def test_align(self, other):
+        s = pd.Series([0, 1], index=["a", "b"]).set_flags(allows_duplicate_labels=False)
+        a, b = s.align(other)
+        assert a.flag
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/generic/test_duplicate_labels.py
+
+# Test Strategy:
+Validate completion of: code-todo item

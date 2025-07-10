@@ -1,0 +1,17 @@
+# Task ID: 496
+# Title: Implement special expert should correct
+    # the coercion at the true location?
+    args = np.asarray(args, d (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: special expert should correct
+    # the coercion at the true location?
+    args = np.asarray(args, dtype=np.dtype("long"))
+    if action == 'warn':
+        with pytest.warns(sc.SpecialFunctionWarning)
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/special/tests/test_sf_error.py
+
+# Test Strategy:
+Validate completion of: code-todo item

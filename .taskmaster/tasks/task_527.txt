@@ -1,0 +1,25 @@
+# Task ID: 527
+# Title: test for timeout
+
+
+class TestFSTestUtils(PsutilTestCase):
+    def test_open_text(self):
+        with (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: test for timeout
+
+
+class TestFSTestUtils(PsutilTestCase):
+    def test_open_text(self):
+        with open_text(__file__) as f:
+            assert f.mode == 'r'
+
+    def test_open_binary(self):
+       
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/psutil/tests/test_testutils.py
+
+# Test Strategy:
+Validate completion of: code-todo item

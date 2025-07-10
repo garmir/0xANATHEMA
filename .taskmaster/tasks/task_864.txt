@@ -1,0 +1,15 @@
+# Task ID: 864
+# Title: Implement , $GENERATE https://bind9.readthedocs.io/en/v9.18.14/chapter3.html#soa-rr
+            (r'^\$[A-Z]+\b (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: , $GENERATE https://bind9.readthedocs.io/en/v9.18.14/chapter3.html#soa-rr
+            (r'^\$[A-Z]+\b', Keyword, 'values'),
+            # Records:
+            # <domain-name> [<TTL>] [<class>] <type> <
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/dns.py
+
+# Test Strategy:
+Validate completion of: code-todo item

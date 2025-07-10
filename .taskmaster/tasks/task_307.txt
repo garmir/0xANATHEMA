@@ -1,0 +1,20 @@
+# Task ID: 307
+# Title: add MultiIndex test
+
+    @pytest.mark.parametrize(
+        "input_log, expected_log", [(True, "log") (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: add MultiIndex test
+
+    @pytest.mark.parametrize(
+        "input_log, expected_log", [(True, "log"), ("sym", "symlog")]
+    )
+    def test_logscales(self, input_log, expected_log):
+        df = DataF
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/plotting/frame/test_frame.py
+
+# Test Strategy:
+Validate completion of: code-todo item

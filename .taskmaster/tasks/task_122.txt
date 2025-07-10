@@ -1,0 +1,17 @@
+# Task ID: 122
+# Title: Implement make this warn on access
+from matplotlib.colorizer import _ScalarMappable as ScalarMappable  # noqa
+ (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: make this warn on access
+from matplotlib.colorizer import _ScalarMappable as ScalarMappable  # noqa
+from matplotlib._cm import datad
+from matplotlib._cm_listed import cmaps as cmaps_listed
+from matplo
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/matplotlib/cm.py
+
+# Test Strategy:
+Validate completion of: code-todo item

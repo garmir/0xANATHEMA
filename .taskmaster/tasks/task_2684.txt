@@ -1,0 +1,11 @@
+# Task ID: 2684
+# Title: Implement Meta-Improvement Analysis → with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Meta-Improvement Analysis →
+# Details:
+Converted from todo: .taskmaster/docs/research-planning-workflow-map.md
+
+# Test Strategy:
+Validate completion of: action-item item

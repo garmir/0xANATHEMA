@@ -1,0 +1,19 @@
+# Task ID: 199
+# Title: Implement (ArrayManager) fastparquet relies on BlockManager internals
+
+pytestmark = [
+    pytest.mark.filterwa (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (ArrayManager) fastparquet relies on BlockManager internals
+
+pytestmark = [
+    pytest.mark.filterwarnings("ignore:DataFrame._data is deprecated:FutureWarning"),
+    pytest.mark.filterwarnings(
+      
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/io/test_parquet.py
+
+# Test Strategy:
+Validate completion of: code-todo item

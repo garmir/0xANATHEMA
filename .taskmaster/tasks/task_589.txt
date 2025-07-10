@@ -1,0 +1,17 @@
+# Task ID: 589
+# Title: Implement remove when pyamg > 5.0.1
+        # Avoid a deprecation warning due pkg_resources usage in pyamg.
+   (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: remove when pyamg > 5.0.1
+        # Avoid a deprecation warning due pkg_resources usage in pyamg.
+        WarningInfo(
+            "ignore",
+            message="pkg_resources is deprecated as an API"
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/utils/_testing.py
+
+# Test Strategy:
+Validate completion of: code-todo item

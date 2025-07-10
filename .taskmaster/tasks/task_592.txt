@@ -1,0 +1,14 @@
+# Task ID: 592
+# Title: Implement Remove when the minimum version of SciPy supported is 1.12
+    # With SciPy sparse arrays, conversio (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Remove when the minimum version of SciPy supported is 1.12
+    # With SciPy sparse arrays, conversion from DIA format to COO, CSR, or BSR
+    # triggers the use of `np.int64` indices even if the data 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/utils/validation.py
+
+# Test Strategy:
+Validate completion of: code-todo item

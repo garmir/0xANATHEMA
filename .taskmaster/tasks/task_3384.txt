@@ -1,0 +1,15 @@
+# Task ID: 3384
+# Title: Implement 1. **Session Start Hook** (`.claude/hooks/session-start.sh`)
+- Executes automatically when Claude se (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 1. **Session Start Hook** (`.claude/hooks/session-start.sh`)
+- Executes automatically when Claude session starts
+- Runs research prompt generator
+- Pr
+# Details:
+Converted from todo: .taskmaster/automation/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

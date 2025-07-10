@@ -1,0 +1,11 @@
+# Task ID: 2918
+# Title: Implement Run `task-master next` to get the current task (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Run `task-master next` to get the current task
+# Details:
+Converted from todo: .taskmaster/examples/web-app-integration.md
+
+# Test Strategy:
+Validate completion of: action-item item

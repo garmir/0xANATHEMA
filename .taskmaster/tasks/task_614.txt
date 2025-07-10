@@ -1,0 +1,18 @@
+# Task ID: 614
+# Title: also test radius_neighbors, but requires different assertion
+
+        # As a feature matrix (n_sampl (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: also test radius_neighbors, but requires different assertion
+
+        # As a feature matrix (n_samples by n_features)
+        nbrs_X = neighbors.NearestNeighbors(n_neighbors=3)
+        nbrs_X.fit(X)
+ 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/neighbors/tests/test_neighbors.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,11 @@
+# Task ID: 4532
+# Title: Continue with next task until all complete (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Continue with next task until all complete
+# Details:
+Converted from todo: .taskmaster/examples/real-world-integration/claude-code-mcp-integration.md
+
+# Test Strategy:
+Validate completion of: action-item item

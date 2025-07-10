@@ -1,0 +1,17 @@
+# Task ID: 297
+# Title: test True & False
+        a = pd.array([True, False, None], dtype="boolean")
+        result = a | ot (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: test True & False
+        a = pd.array([True, False, None], dtype="boolean")
+        result = a | other
+        expected = pd.array(expected, dtype="boolean")
+        tm.assert_extension_array_equal(r
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arrays/boolean/test_logical.py
+
+# Test Strategy:
+Validate completion of: code-todo item

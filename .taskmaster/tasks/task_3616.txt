@@ -1,0 +1,15 @@
+# Task ID: 3616
+# Title: Implement External Dependencies to Replace
+1. **Perplexity AI** - Research and information synthesis
+2. **Clau (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: External Dependencies to Replace
+1. **Perplexity AI** - Research and information synthesis
+2. **Claude/Anthropic** - Primary planning and task generat
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,16 @@
+# Task ID: 872
+# Title: Implement language-dependent syntax highlighting (see Markdown lexer)
+            (r'(?i)^( *#\+begin_src .*)( (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: language-dependent syntax highlighting (see Markdown lexer)
+            (r'(?i)^( *#\+begin_src .*)((?:.|\n)*?)(^ *#\+end_src *$)',
+             bygroups(Operator.Word, Text, Operator.Word)),
+
+       
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/markup.py
+
+# Test Strategy:
+Validate completion of: code-todo item

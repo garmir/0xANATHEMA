@@ -1,0 +1,16 @@
+# Task ID: 1955
+# Title: Implement Getting Help
+For issues specific to the Task Master AI local LLM integration:
+1. Run the privacy com (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Getting Help
+For issues specific to the Task Master AI local LLM integration:
+1. Run the privacy compliance test for diagnostics
+2. Check provider ser
+# Details:
+Converted from todo: LOCAL_LLM_MIGRATION_GUIDE.md
+
+# Test Strategy:
+Validate completion of: action-item item

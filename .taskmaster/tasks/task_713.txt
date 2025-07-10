@@ -1,0 +1,23 @@
+# Task ID: 713
+# Title: Implement See gh-25229
+isoc_c2pycode_map = {}
+iso_c2py_map = {}
+
+isoc_kindmap = {}
+for fortran_type, c_type_di (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: See gh-25229
+isoc_c2pycode_map = {}
+iso_c2py_map = {}
+
+isoc_kindmap = {}
+for fortran_type, c_type_dict in iso_c_binding_map.items():
+    for c_type in c_type_dict.keys():
+        isoc_kindmap[c_type] 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/f2py/_isocbind.py
+
+# Test Strategy:
+Validate completion of: code-todo item

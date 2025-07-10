@@ -1,0 +1,11 @@
+# Task ID: 1202
+# Title: Implement **Cross-Platform Testing**: Extend Linux/Windows testing coverage (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Cross-Platform Testing**: Extend Linux/Windows testing coverage
+# Details:
+Converted from todo: COMPREHENSIVE_TESTING_REPORT.md
+
+# Test Strategy:
+Validate completion of: action-item item

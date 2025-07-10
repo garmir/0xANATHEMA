@@ -1,0 +1,19 @@
+# Task ID: 216
+# Title: Implement assert that we have copies?
+        tm.assert_frame_equal(result, expected)
+        tm.assert_frame_ (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: assert that we have copies?
+        tm.assert_frame_equal(result, expected)
+        tm.assert_frame_equal(res_ufunc, expected)
+
+        result = -df
+        res_ufunc = np.negative(df)
+        expecte
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/test_unary.py
+
+# Test Strategy:
+Validate completion of: code-todo item

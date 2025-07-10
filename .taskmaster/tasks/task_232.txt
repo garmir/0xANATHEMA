@@ -1,0 +1,19 @@
+# Task ID: 232
+# Title: Implement s1 = Series(
+            np.arange(20, dtype=np.float64),
+            index=date_range("2020-01-01", (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: s1 = Series(
+            np.arange(20, dtype=np.float64),
+            index=date_range("2020-01-01", periods=20, freq="B"),
+        )
+        s2 = s1.iloc[[0, 5, 10, 11, 12, 13, 14, 15]]
+
+        # it
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/plotting/test_datetimelike.py
+
+# Test Strategy:
+Validate completion of: code-todo item

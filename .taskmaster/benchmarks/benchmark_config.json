@@ -1,0 +1,221 @@
+{
+  "models": [
+    {
+      "name": "llama-3.1-70b-awq",
+      "model_path": "hugging-quants/Llama-3.1-70B-Instruct-AWQ-INT4",
+      "model_type": "huggingface",
+      "quantization": "4bit",
+      "max_tokens": 8192,
+      "temperature": 0.7,
+      "top_p": 0.9
+    },
+    {
+      "name": "mistral-7b-instruct",
+      "model_path": "mistralai/Mistral-7B-Instruct-v0.1",
+      "model_type": "huggingface",
+      "max_tokens": 8192,
+      "temperature": 0.7,
+      "top_p": 0.9
+    },
+    {
+      "name": "codellama-13b-instruct",
+      "model_path": "codellama/CodeLlama-13b-Instruct-hf",
+      "model_type": "huggingface",
+      "max_tokens": 8192,
+      "temperature": 0.7,
+      "top_p": 0.9
+    },
+    {
+      "name": "qwen2.5-14b-instruct",
+      "model_path": "Qwen/Qwen2.5-14B-Instruct",
+      "model_type": "huggingface",
+      "max_tokens": 8192,
+      "temperature": 0.7,
+      "top_p": 0.9
+    },
+    {
+      "name": "starcoder-15b",
+      "model_path": "bigcode/starcoder",
+      "model_type": "huggingface",
+      "max_tokens": 8192,
+      "temperature": 0.7,
+      "top_p": 0.9
+    },
+    {
+      "name": "deepseek-coder-6.7b",
+      "model_path": "deepseek-ai/deepseek-coder-6.7b-instruct",
+      "model_type": "huggingface",
+      "max_tokens": 8192,
+      "temperature": 0.7,
+      "top_p": 0.9
+    },
+    {
+      "name": "gemma-7b",
+      "model_path": "google/gemma-7b-it",
+      "model_type": "huggingface",
+      "max_tokens": 8192,
+      "temperature": 0.7,
+      "top_p": 0.9
+    },
+    {
+      "name": "ollama-llama3.1-70b",
+      "model_path": "llama3.1:70b",
+      "model_type": "ollama",
+      "api_endpoint": "http://localhost:11434",
+      "max_tokens": 8192,
+      "temperature": 0.7,
+      "top_p": 0.9
+    },
+    {
+      "name": "ollama-mistral-7b",
+      "model_path": "mistral:7b",
+      "model_type": "ollama",
+      "api_endpoint": "http://localhost:11434",
+      "max_tokens": 8192,
+      "temperature": 0.7,
+      "top_p": 0.9
+    },
+    {
+      "name": "ollama-codellama-13b",
+      "model_path": "codellama:13b",
+      "model_type": "ollama",
+      "api_endpoint": "http://localhost:11434",
+      "max_tokens": 8192,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  ],
+  "standardized_benchmarks": {
+    "mmlu": {
+      "enabled": true,
+      "categories": [
+        "abstract_algebra",
+        "anatomy",
+        "astronomy",
+        "business_ethics",
+        "clinical_knowledge",
+        "college_biology",
+        "college_chemistry",
+        "college_computer_science",
+        "college_mathematics",
+        "college_medicine",
+        "college_physics",
+        "computer_security",
+        "conceptual_physics",
+        "econometrics",
+        "electrical_engineering",
+        "elementary_mathematics",
+        "formal_logic",
+        "global_facts",
+        "high_school_biology",
+        "high_school_chemistry",
+        "high_school_computer_science",
+        "high_school_european_history",
+        "high_school_geography",
+        "high_school_government_and_politics",
+        "high_school_macroeconomics",
+        "high_school_mathematics",
+        "high_school_microeconomics",
+        "high_school_physics",
+        "high_school_psychology",
+        "high_school_statistics",
+        "high_school_us_history",
+        "high_school_world_history",
+        "human_aging",
+        "human_sexuality",
+        "international_law",
+        "jurisprudence",
+        "logical_fallacies",
+        "machine_learning",
+        "management",
+        "marketing",
+        "medical_genetics",
+        "miscellaneous",
+        "moral_disputes",
+        "moral_scenarios",
+        "nutrition",
+        "philosophy",
+        "prehistory",
+        "professional_accounting",
+        "professional_law",
+        "professional_medicine",
+        "professional_psychology",
+        "public_relations",
+        "security_studies",
+        "sociology",
+        "us_foreign_policy",
+        "virology",
+        "world_religions"
+      ]
+    },
+    "hellaswag": {
+      "enabled": true,
+      "sample_size": 1000
+    },
+    "bbh": {
+      "enabled": true,
+      "tasks": [
+        "boolean_expressions",
+        "causal_judgement",
+        "date_understanding",
+        "disambiguation_qa",
+        "dyck_languages",
+        "formal_fallacies",
+        "geometric_shapes",
+        "hyperbaton",
+        "logical_deduction_five_objects",
+        "logical_deduction_seven_objects",
+        "logical_deduction_three_objects",
+        "movie_recommendation",
+        "multistep_arithmetic_two",
+        "navigate",
+        "object_counting",
+        "penguins_in_a_table",
+        "reasoning_about_colored_objects",
+        "ruin_names",
+        "salient_translation_error_detection",
+        "snarks",
+        "sports_understanding",
+        "temporal_sequences",
+        "tracking_shuffled_objects_five_objects",
+        "tracking_shuffled_objects_seven_objects",
+        "tracking_shuffled_objects_three_objects",
+        "web_of_lies",
+        "word_sorting"
+      ]
+    },
+    "humaneval": {
+      "enabled": true,
+      "sample_size": 164
+    },
+    "codexglue": {
+      "enabled": true,
+      "tasks": [
+        "code_to_text",
+        "text_to_code",
+        "code_to_code",
+        "code_search",
+        "code_repair",
+        "clone_detection"
+      ]
+    }
+  },
+  "evaluation_settings": {
+    "timeout_per_test": 300,
+    "max_retries": 3,
+    "parallel_execution": true,
+    "max_concurrent_tests": 4,
+    "output_format": "json",
+    "include_traces": true,
+    "include_raw_outputs": false,
+    "performance_monitoring": true
+  },
+  "task_master_specific": {
+    "test_recursive_depth": 5,
+    "test_context_window": 8192,
+    "test_reasoning_steps": 10,
+    "test_code_complexity": "medium",
+    "test_research_sources": 5,
+    "test_autonomy_levels": ["basic", "intermediate", "advanced"]
+  }
+}

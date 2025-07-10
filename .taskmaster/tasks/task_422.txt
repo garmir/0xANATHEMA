@@ -1,0 +1,15 @@
+# Task ID: 422
+# Title: Implement this "if" can be removed when requiring pyarrow >= 10.0, which fixed
+            # combine_chunks fo (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: this "if" can be removed when requiring pyarrow >= 10.0, which fixed
+            # combine_chunks for empty arrays https://github.com/apache/arrow/pull/13757
+            if array.num_chunks == 0:
+    
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/arrays/numeric.py
+
+# Test Strategy:
+Validate completion of: code-todo item

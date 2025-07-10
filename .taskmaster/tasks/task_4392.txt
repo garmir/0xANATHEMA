@@ -1,0 +1,15 @@
+# Task ID: 4392
+# Title: Mark tasks complete
+Use `set_task_status` to mark tasks as done when finished.
+``` (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Mark tasks complete
+Use `set_task_status` to mark tasks as done when finished.
+```
+# Details:
+Converted from todo: .taskmaster/examples/web-app-project/workflow-example.md
+
+# Test Strategy:
+Validate completion of: action-item item

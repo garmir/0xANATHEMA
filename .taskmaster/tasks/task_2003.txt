@@ -1,0 +1,13 @@
+# Task ID: 2003
+# Title: Implement Pattern 2: Team Collaboration
+- **Trigger**: The user mentions working with teammates (e.g., "My tea (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Pattern 2: Team Collaboration
+- **Trigger**: The user mentions working with teammates (e.g., "My teammate Alice is handling the database schema," or "
+# Details:
+Converted from todo: .trae/rules/dev_workflow.md
+
+# Test Strategy:
+Validate completion of: action-item item

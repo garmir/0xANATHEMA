@@ -1,0 +1,11 @@
+# Task ID: 5168
+# Title: Implement **PRD-2: Recursive PRD Generation** - Core recursive decomposition system (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **PRD-2: Recursive PRD Generation** - Core recursive decomposition system
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

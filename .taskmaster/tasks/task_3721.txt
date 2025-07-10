@@ -1,0 +1,21 @@
+# Task ID: 3721
+# Title: Implement Software Dependencies
+- Docker and Docker Compose
+- Python 3.8+
+- Ollama LLM runtime
+- Redis cache s (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Software Dependencies
+- Docker and Docker Compose
+- Python 3.8+
+- Ollama LLM runtime
+- Redis cache server
+- Qdrant vector database
+- Prometheus and Gr
+# Details:
+Converted from todo: .taskmaster/migration/migration_timeline.md
+
+# Test Strategy:
+Validate completion of: action-item item

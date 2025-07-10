@@ -1,0 +1,11 @@
+# Task ID: 3756
+# Title: Test MCP server integration (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Test MCP server integration
+# Details:
+Converted from todo: .taskmaster/reports/api-optimization-validation.md
+
+# Test Strategy:
+Validate completion of: action-item item

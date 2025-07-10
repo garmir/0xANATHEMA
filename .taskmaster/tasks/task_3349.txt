@@ -1,0 +1,14 @@
+# Task ID: 3349
+# Title: Implement **Intelligence Features**
+- **Automatic Complexity Assessment**: Dynamic evaluation of task difficul (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Intelligence Features**
+- **Automatic Complexity Assessment**: Dynamic evaluation of task difficulty
+- **Context-Aware Breakdown**: Considers curren
+# Details:
+Converted from todo: .taskmaster/automation/atomic-breakdown-implementation-summary.md
+
+# Test Strategy:
+Validate completion of: action-item item

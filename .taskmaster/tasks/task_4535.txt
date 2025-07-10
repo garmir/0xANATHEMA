@@ -1,0 +1,11 @@
+# Task ID: 4535
+# Title: Implement Validate dependencies: task-master validate-dependencies (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Validate dependencies: task-master validate-dependencies
+# Details:
+Converted from todo: .taskmaster/examples/real-world-integration/claude-code-mcp-integration.md
+
+# Test Strategy:
+Validate completion of: action-item item

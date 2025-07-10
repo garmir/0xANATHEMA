@@ -1,0 +1,21 @@
+# Task ID: 393
+# Title: Implement complex?  what if result is already non-object?
+                dtype = "object"
+
+        dtype = np (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: complex?  what if result is already non-object?
+                dtype = "object"
+
+        dtype = np.dtype(dtype)
+
+    if not isinstance(dtype, np.dtype):
+        # enforce our signature annotation
+  
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/dtypes/cast.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,11 @@
+# Task ID: 1773
+# Title: Implement Use `task-master update-subtask` to log progress on each task/subtask and/or updating/researching th (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Use `task-master update-subtask` to log progress on each task/subtask and/or updating/researching them before/during implementation if getting stuck
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

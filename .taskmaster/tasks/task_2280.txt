@@ -1,0 +1,11 @@
+# Task ID: 2280
+# Title: Implement Reasoning Frameworks Analysis with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Reasoning Frameworks Analysis
+# Details:
+Converted from todo: .taskmaster/research/local-llm-survey-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

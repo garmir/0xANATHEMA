@@ -1,0 +1,17 @@
+# Task ID: 299
+# Title: Implement (extension) numpy's mul with object array sees booleans as numbers
+        msg = "|".join(
+          (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (extension) numpy's mul with object array sees booleans as numbers
+        msg = "|".join(
+            [
+                r"unsupported operand type\(s\) for",
+                "can only concatenate str
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arrays/boolean/test_arithmetic.py
+
+# Test Strategy:
+Validate completion of: code-todo item

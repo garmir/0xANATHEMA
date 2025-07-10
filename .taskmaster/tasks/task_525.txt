@@ -1,0 +1,26 @@
+# Task ID: 525
+# Title: (FreeBSD) add test for comparing connections with 'sockstat' cmd.
+
+
+"""Tests specific to all BSD pla (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (FreeBSD) add test for comparing connections with 'sockstat' cmd.
+
+
+"""Tests specific to all BSD platforms."""
+
+import datetime
+import os
+import re
+import shutil
+import time
+
+import psutil
+from psutil
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/psutil/tests/test_bsd.py
+
+# Test Strategy:
+Validate completion of: code-todo item

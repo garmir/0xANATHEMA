@@ -1,0 +1,11 @@
+# Task ID: 2061
+# Title: Implement 26. List Tags (`tags`) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 26. List Tags (`tags`)
+# Details:
+Converted from todo: .trae/rules/taskmaster.md
+
+# Test Strategy:
+Validate completion of: action-item item

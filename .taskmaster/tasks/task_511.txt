@@ -1,0 +1,16 @@
+# Task ID: 511
+# Title: Test zero tolerance
+        # # ~~What's going on here - why are iterations repeated?~~
+        # #  (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Test zero tolerance
+        # # ~~What's going on here - why are iterations repeated?~~
+        # # tl goes to zero when xatol=xrtol=0. When function is nearly linear,
+        # # this causes converge
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/optimize/tests/test_chandrupatla.py
+
+# Test Strategy:
+Validate completion of: code-todo item

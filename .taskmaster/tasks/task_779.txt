@@ -1,0 +1,17 @@
+# Task ID: 779
+# Title: Implement (behdad) My confidence in this function is rather low;
+    # It needs more testing. Specially with p (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (behdad) My confidence in this function is rather low;
+    # It needs more testing. Specially with partial-instancing,
+    # I don't think it currently works.
+
+    varc = varfont["VARC"].table
+    fva
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/varLib/instancer/__init__.py
+
+# Test Strategy:
+Validate completion of: code-todo item

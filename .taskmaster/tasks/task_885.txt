@@ -1,0 +1,18 @@
+# Task ID: 885
+# Title: Implement Treat context-depedendent names specially
+            # https://www.w3.org/TR/WGSL/#context-dependen (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Treat context-depedendent names specially
+            # https://www.w3.org/TR/WGSL/#context-dependent-name
+
+            # Identifiers
+            (ident_pattern_token, Name),
+
+            # TODO: temp
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/wgsl.py
+
+# Test Strategy:
+Validate completion of: code-todo item

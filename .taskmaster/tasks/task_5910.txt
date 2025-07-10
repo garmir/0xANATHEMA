@@ -1,0 +1,11 @@
+# Task ID: 5910
+# Title: Implement Recursively expand current task to atomic levels using task-master expand --id=<current_task> --rese (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Recursively expand current task to atomic levels using task-master expand --id=<current_task> --research --force
+# Details:
+Converted from todo: .claude/commands/stuck-prompt-resolve.md
+
+# Test Strategy:
+Validate completion of: action-item item

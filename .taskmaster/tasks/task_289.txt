@@ -1,0 +1,14 @@
+# Task ID: 289
+# Title: Implement (ArrayManager) df.loc["bar"] *= 2 doesn't raise an error but results in
+    # all NaNs -> doesn't wo (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (ArrayManager) df.loc["bar"] *= 2 doesn't raise an error but results in
+    # all NaNs -> doesn't work in the "split" path (also for BlockManager actually)
+    @td.skip_array_manager_not_yet_implement
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexing/multiindex/test_setitem.py
+
+# Test Strategy:
+Validate completion of: code-todo item

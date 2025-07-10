@@ -1,0 +1,17 @@
+# Task ID: 360
+# Title: Implement (GH#32306): may be relevant to the expected behavior here.
+
+        arr = pd.array([pd.NA, 0, 1], dt (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (GH#32306): may be relevant to the expected behavior here.
+
+        arr = pd.array([pd.NA, 0, 1], dtype=any_numeric_ea_dtype)
+        if arr.dtype.kind in ["i", "u"]:
+            max_val = np.iinfo(ar
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/reshape/merge/test_merge_asof.py
+
+# Test Strategy:
+Validate completion of: code-todo item

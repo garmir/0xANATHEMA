@@ -1,0 +1,17 @@
+# Task ID: 235
+# Title: Implement We're missing a flag somewhere in meson
+            pytest.param(
+                lambda x, y: x.rol (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: We're missing a flag somewhere in meson
+            pytest.param(
+                lambda x, y: x.rolling(window=3).corr(y, pairwise=True),
+                marks=pytest.mark.xfail(
+                    
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/window/test_pairwise.py
+
+# Test Strategy:
+Validate completion of: code-todo item

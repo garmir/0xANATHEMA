@@ -1,0 +1,22 @@
+# Task ID: 536
+# Title: Implement Only update the rubberband area.
+        self.queue_draw()
+
+    def _post_draw(self, widget, ctx):
+  (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Only update the rubberband area.
+        self.queue_draw()
+
+    def _post_draw(self, widget, ctx):
+        if self._rubberband_rect is None:
+            return
+
+        x0, y0, w, h = (dim / self.devi
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/matplotlib/backends/backend_gtk3.py
+
+# Test Strategy:
+Validate completion of: code-todo item

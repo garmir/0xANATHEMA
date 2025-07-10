@@ -1,0 +1,15 @@
+# Task ID: 3284
+# Title: **Step 3: Create Atomic Subtasks**
+**Action**: Generate individual subtasks for each atomic componen (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Step 3: Create Atomic Subtasks**
+**Action**: Generate individual subtasks for each atomic component
+**Atomic Components**:
+- Write subtask title (ma
+# Details:
+Converted from todo: .taskmaster/workflow-rules/recursive-breakdown-rule.md
+
+# Test Strategy:
+Validate completion of: action-item item

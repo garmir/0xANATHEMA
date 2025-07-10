@@ -1,0 +1,175 @@
+{
+  "project_overview": {
+    "total_todos": 6,
+    "by_status": {
+      "pending": 5,
+      "in-progress": 1
+    },
+    "by_priority": {
+      "high": 3,
+      "medium": 1,
+      "low": 2
+    }
+  },
+  "quality_analysis": {
+    "average_score": 0.6733333333333333,
+    "median_score": 0.6975,
+    "min_score": 0.585,
+    "max_score": 0.745,
+    "individual_scores": {
+      "1": {
+        "clarity_score": 0.7999999999999999,
+        "completeness_score": 0.5,
+        "actionability_score": 0.6000000000000001,
+        "specificity_score": 0.2,
+        "testability_score": 0.7,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.605
+      },
+      "2": {
+        "clarity_score": 0.7999999999999999,
+        "completeness_score": 0.7,
+        "actionability_score": 0.8,
+        "specificity_score": 0.6,
+        "testability_score": 0.7,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.745
+      },
+      "3": {
+        "clarity_score": 0.7999999999999999,
+        "completeness_score": 0.7,
+        "actionability_score": 0.6000000000000001,
+        "specificity_score": 0.6,
+        "testability_score": 0.7,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.705
+      },
+      "4": {
+        "clarity_score": 0.7999999999999999,
+        "completeness_score": 0.5,
+        "actionability_score": 0.8,
+        "specificity_score": 0.5,
+        "testability_score": 0.7,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.6900000000000001
+      },
+      "5": {
+        "clarity_score": 0.7999999999999999,
+        "completeness_score": 0.5,
+        "actionability_score": 0.6000000000000001,
+        "specificity_score": 0.7,
+        "testability_score": 0.8999999999999999,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.71
+      },
+      "6": {
+        "clarity_score": 0.6,
+        "completeness_score": 0.7,
+        "actionability_score": 0.2,
+        "specificity_score": 0.6,
+        "testability_score": 0.7,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.585
+      }
+    },
+    "recommendations": []
+  },
+  "optimization_opportunities": [
+    {
+      "type": "missing_dependency",
+      "task_id": "5",
+      "suggested_dependency": "3",
+      "suggestion": "Task 'Setup automated testing pipeline' may depend on 'Implement user authentication API'"
+    },
+    {
+      "type": "missing_dependency",
+      "task_id": "5",
+      "suggested_dependency": "4",
+      "suggestion": "Task 'Setup automated testing pipeline' may depend on 'Build user management dashboard'"
+    }
+  ],
+  "dependency_analysis": {
+    "circular_dependencies": [],
+    "parallel_opportunities": [
+      [
+        "3",
+        "5"
+      ]
+    ],
+    "optimal_order": [
+      "1",
+      "2",
+      "3",
+      "5",
+      "4",
+      "6"
+    ]
+  },
+  "decomposition_recommendations": [],
+  "performance_metrics": {
+    "enhancement_statistics": {
+      "decomposition": {
+        "average_time": 0,
+        "average_improvement": 0,
+        "success_count": 0,
+        "error_count": 0,
+        "success_rate": 0
+      },
+      "dependency_analysis": {
+        "average_time": 0,
+        "average_improvement": 0,
+        "success_count": 0,
+        "error_count": 0,
+        "success_rate": 0
+      },
+      "quality_improvement": {
+        "average_time": 0,
+        "average_improvement": 0,
+        "success_count": 0,
+        "error_count": 0,
+        "success_rate": 0
+      },
+      "description_enhancement": {
+        "average_time": 0.0005586147308349609,
+        "average_improvement": 0.06249999999999999,
+        "success_count": 12,
+        "error_count": 0,
+        "success_rate": 1.0
+      },
+      "time_estimation": {
+        "average_time": 0.0005586147308349609,
+        "average_improvement": 0.06249999999999999,
+        "success_count": 12,
+        "error_count": 0,
+        "success_rate": 1.0
+      },
+      "resource_planning": {
+        "average_time": 0.0005586147308349609,
+        "average_improvement": 0.06249999999999999,
+        "success_count": 12,
+        "error_count": 0,
+        "success_rate": 1.0
+      },
+      "test_strategy": {
+        "average_time": 0.0005586147308349609,
+        "average_improvement": 0.06249999999999999,
+        "success_count": 12,
+        "error_count": 0,
+        "success_rate": 1.0
+      },
+      "validation_criteria": {
+        "average_time": 0.0005586147308349609,
+        "average_improvement": 0.06249999999999999,
+        "success_count": 12,
+        "error_count": 0,
+        "success_rate": 1.0
+      }
+    },
+    "overall_performance": {
+      "total_enhancements": 60,
+      "average_time": 0.0005586147308349609,
+      "average_improvement": 0.06249999999999999,
+      "total_errors": 0
+    }
+  }
+}

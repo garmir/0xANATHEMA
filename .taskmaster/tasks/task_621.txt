@@ -1,0 +1,14 @@
+# Task ID: 621
+# Title: investigate why this test is seed-sensitive on 32-bit Python
+# runtimes. Is this revealing a numeric (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: investigate why this test is seed-sensitive on 32-bit Python
+# runtimes. Is this revealing a numerical stability problem ? Or is it
+# expected from the test numerical design ? In the latter case the t
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/manifold/tests/test_spectral_embedding.py
+
+# Test Strategy:
+Validate completion of: code-todo item

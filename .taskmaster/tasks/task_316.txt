@@ -1,0 +1,23 @@
+# Task ID: 316
+# Title: tests for axis=1?
+    # TODO: empty case?
+
+    @pytest.fixture(
+        params=[
+            pytest.
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: tests for axis=1?
+    # TODO: empty case?
+
+    @pytest.fixture(
+        params=[
+            pytest.param(
+                pd.IntervalIndex.from_breaks(range(10)),
+                marks=pytest.mark.xf
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/methods/test_quantile.py
+
+# Test Strategy:
+Validate completion of: code-todo item

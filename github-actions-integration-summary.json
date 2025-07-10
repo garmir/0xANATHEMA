@@ -1,0 +1,616 @@
+{
+  "timestamp": "2025-07-10T20:35:46.106190",
+  "todos_processed": 10,
+  "runners_generated": 10,
+  "workflow_file": ".github/workflows/recursive-todo-validation.yml",
+  "runner_details": [
+    {
+      "runner_id": "runner-task-11-58b45334",
+      "todo_id": "task-11",
+      "workflow_name": "validate-task-task-11",
+      "runner_config": {
+        "runs-on": "ubuntu-latest",
+        "timeout-minutes": 30,
+        "environment": {
+          "PYTHONPATH": "${{ github.workspace }}",
+          "TODO_VALIDATION_MODE": "strict",
+          "TASKMASTER_HOME": "${{ github.workspace }}/.taskmaster",
+          "ANTHROPIC_API_KEY": "${{ secrets.ANTHROPIC_API_KEY }}",
+          "PERPLEXITY_API_KEY": "${{ secrets.PERPLEXITY_API_KEY }}"
+        }
+      },
+      "validation_steps": [
+        {
+          "name": "Checkout Repository",
+          "uses": "actions/checkout@v4",
+          "with": {
+            "fetch-depth": 0
+          }
+        },
+        {
+          "name": "Setup Python",
+          "uses": "actions/setup-python@v4",
+          "with": {
+            "python-version": "3.11"
+          }
+        },
+        {
+          "name": "Install Dependencies",
+          "run": "\n                    pip install --upgrade pip\n                    if [ -f requirements.txt ]; then pip install -r requirements.txt; fi\n                    pip install pytest taskmaster-ai httpx aiofiles\n                "
+        },
+        {
+          "name": "Validate TaskMaster Setup",
+          "run": "\n                    if [ ! -d \".taskmaster\" ]; then\n                        echo \"TaskMaster not initialized\"\n                        echo \"VALIDATION_STATUS=missing_taskmaster\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    if [ ! -f \".taskmaster/tasks/tasks.json\" ]; then\n                        echo \"TaskMaster tasks.json not found\"\n                        echo \"VALIDATION_STATUS=missing_tasks\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    echo \"TaskMaster validation passed\"\n                    echo \"VALIDATION_STATUS=taskmaster_ready\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Validate Specific Task",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    todo_id = \"task-11\"\n                    \n                    try:\n                        with open('.taskmaster/tasks/tasks.json', 'r') as f:\n                            data = json.load(f)\n                        \n                        task_found = False\n                        task_status = 'unknown'\n                        \n                        if 'master' in data and 'tasks' in data['master']:\n                            for task in data['master']['tasks']:\n                                if f\"task-{task['id']}\" == todo_id:\n                                    task_found = True\n                                    task_status = task.get('status', 'pending')\n                                    break\n                                \n                                for subtask in task.get('subtasks', []):\n                                    if f\"subtask-{subtask['id']}\" == todo_id:\n                                        task_found = True\n                                        task_status = subtask.get('status', 'pending')\n                                        break\n                        \n                        if task_found:\n                            print(f\"Task {todo_id} found with status: {task_status}\")\n                            os.environ['TASK_STATUS'] = task_status\n                            if task_status == 'done':\n                                os.environ['VALIDATION_STATUS'] = 'valid'\n                            else:\n                                os.environ['VALIDATION_STATUS'] = 'incomplete'\n                        else:\n                            print(f\"Task {todo_id} not found\")\n                            os.environ['VALIDATION_STATUS'] = 'missing'\n                    \n                    except Exception as e:\n                        print(f\"Error validating task: {e}\")\n                        os.environ['VALIDATION_STATUS'] = 'error'\n                    EOF\n                    \n                    echo \"VALIDATION_STATUS=$VALIDATION_STATUS\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Collect Validation Results",
+          "run": "\n                python3 << 'EOF'\n                import json\n                import os\n                from datetime import datetime\n                \n                # Collect validation results for todo task-11\n                results = {\n                    'todo_id': 'task-11',\n                    'todo_type': 'task',\n                    'validation_timestamp': datetime.now().isoformat(),\n                    'validation_status': os.environ.get('VALIDATION_STATUS', 'unknown'),\n                    'validation_details': {\n                        'description': 'Initialize Environment and Directory Structure...',\n                        'source': 'taskmaster',\n                        'priority': 'high'\n                    },\n                    'environment_info': {\n                        'runner_os': os.environ.get('RUNNER_OS', 'unknown'),\n                        'python_version': os.environ.get('pythonLocation', 'unknown')\n                    }\n                }\n                \n                # Save results\n                with open('validation_results_task_11.json', 'w') as f:\n                    json.dump(results, f, indent=2)\n                \n                print(f\"Validation completed for todo task-11\")\n                print(f\"Status: {results['validation_status']}\")\n                EOF\n            ",
+          "env": {
+            "TODO_ID": "task-11",
+            "TODO_TYPE": "task"
+          }
+        }
+      ],
+      "improvement_steps": [
+        {
+          "name": "Generate Improvement Prompts",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    validation_status = os.environ.get('VALIDATION_STATUS', 'unknown')\n                    todo_type = \"task\"\n                    todo_description = \"Initialize Environment and Directory Structure\"\n                    \n                    improvement_prompts = []\n                    \n                    if validation_status != 'valid':\n                        # Generate base improvement prompt\n                        improvement_prompts.append(f\"Fix todo item: {todo_description}\")\n                        \n                        # Type-specific prompts\n                        if todo_type in ['task', 'subtask']:\n                            if validation_status == 'missing_taskmaster':\n                                improvement_prompts.extend([\n                                    \"Initialize TaskMaster project structure\",\n                                    \"Set up .taskmaster directory and configuration\"\n                                ])\n                            elif validation_status == 'incomplete':\n                                improvement_prompts.extend([\n                                    f\"Complete TaskMaster task: {todo_description}\",\n                                    f\"Update task status to done\"\n                                ])\n                        \n                        elif todo_type == 'code-todo':\n                            if validation_status == 'missing_file':\n                                improvement_prompts.extend([\n                                    f\"Create missing source file: taskmaster\",\n                                    f\"Implement basic structure\"\n                                ])\n                            elif validation_status == 'syntax_error':\n                                improvement_prompts.extend([\n                                    f\"Fix syntax error in taskmaster\",\n                                    \"Validate Python syntax\"\n                                ])\n                            elif validation_status == 'todo_pending':\n                                improvement_prompts.extend([\n                                    f\"Implement TODO: {todo_description}\",\n                                    \"Replace TODO comment with implementation\"\n                                ])\n                    \n                    # Save improvement prompts\n                    improvement_data = {\n                        'todo_id': \"task-11\",\n                        'validation_status': validation_status,\n                        'improvement_prompts': improvement_prompts,\n                        'atomized_actions': [\n                            {\n                                'action_type': 'fix' if 'fix' in prompt.lower() else 'implement',\n                                'prompt': prompt,\n                                'priority': 'high' if validation_status == 'error' else 'medium'\n                            } for prompt in improvement_prompts\n                        ]\n                    }\n                    \n                    with open('improvement_prompts_task_11.json', 'w') as f:\n                        json.dump(improvement_data, f, indent=2)\n                    \n                    print(f\"Generated {len(improvement_prompts)} improvement prompts\")\n                    EOF\n                "
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "runner_id": "runner-task-12-d13cb183",
+      "todo_id": "task-12",
+      "workflow_name": "validate-task-task-12",
+      "runner_config": {
+        "runs-on": "ubuntu-latest",
+        "timeout-minutes": 30,
+        "environment": {
+          "PYTHONPATH": "${{ github.workspace }}",
+          "TODO_VALIDATION_MODE": "strict",
+          "TASKMASTER_HOME": "${{ github.workspace }}/.taskmaster",
+          "ANTHROPIC_API_KEY": "${{ secrets.ANTHROPIC_API_KEY }}",
+          "PERPLEXITY_API_KEY": "${{ secrets.PERPLEXITY_API_KEY }}"
+        }
+      },
+      "validation_steps": [
+        {
+          "name": "Checkout Repository",
+          "uses": "actions/checkout@v4",
+          "with": {
+            "fetch-depth": 0
+          }
+        },
+        {
+          "name": "Setup Python",
+          "uses": "actions/setup-python@v4",
+          "with": {
+            "python-version": "3.11"
+          }
+        },
+        {
+          "name": "Install Dependencies",
+          "run": "\n                    pip install --upgrade pip\n                    if [ -f requirements.txt ]; then pip install -r requirements.txt; fi\n                    pip install pytest taskmaster-ai httpx aiofiles\n                "
+        },
+        {
+          "name": "Validate TaskMaster Setup",
+          "run": "\n                    if [ ! -d \".taskmaster\" ]; then\n                        echo \"TaskMaster not initialized\"\n                        echo \"VALIDATION_STATUS=missing_taskmaster\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    if [ ! -f \".taskmaster/tasks/tasks.json\" ]; then\n                        echo \"TaskMaster tasks.json not found\"\n                        echo \"VALIDATION_STATUS=missing_tasks\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    echo \"TaskMaster validation passed\"\n                    echo \"VALIDATION_STATUS=taskmaster_ready\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Validate Specific Task",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    todo_id = \"task-12\"\n                    \n                    try:\n                        with open('.taskmaster/tasks/tasks.json', 'r') as f:\n                            data = json.load(f)\n                        \n                        task_found = False\n                        task_status = 'unknown'\n                        \n                        if 'master' in data and 'tasks' in data['master']:\n                            for task in data['master']['tasks']:\n                                if f\"task-{task['id']}\" == todo_id:\n                                    task_found = True\n                                    task_status = task.get('status', 'pending')\n                                    break\n                                \n                                for subtask in task.get('subtasks', []):\n                                    if f\"subtask-{subtask['id']}\" == todo_id:\n                                        task_found = True\n                                        task_status = subtask.get('status', 'pending')\n                                        break\n                        \n                        if task_found:\n                            print(f\"Task {todo_id} found with status: {task_status}\")\n                            os.environ['TASK_STATUS'] = task_status\n                            if task_status == 'done':\n                                os.environ['VALIDATION_STATUS'] = 'valid'\n                            else:\n                                os.environ['VALIDATION_STATUS'] = 'incomplete'\n                        else:\n                            print(f\"Task {todo_id} not found\")\n                            os.environ['VALIDATION_STATUS'] = 'missing'\n                    \n                    except Exception as e:\n                        print(f\"Error validating task: {e}\")\n                        os.environ['VALIDATION_STATUS'] = 'error'\n                    EOF\n                    \n                    echo \"VALIDATION_STATUS=$VALIDATION_STATUS\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Collect Validation Results",
+          "run": "\n                python3 << 'EOF'\n                import json\n                import os\n                from datetime import datetime\n                \n                # Collect validation results for todo task-12\n                results = {\n                    'todo_id': 'task-12',\n                    'todo_type': 'task',\n                    'validation_timestamp': datetime.now().isoformat(),\n                    'validation_status': os.environ.get('VALIDATION_STATUS', 'unknown'),\n                    'validation_details': {\n                        'description': 'Implement First-Level PRD Generation...',\n                        'source': 'taskmaster',\n                        'priority': 'high'\n                    },\n                    'environment_info': {\n                        'runner_os': os.environ.get('RUNNER_OS', 'unknown'),\n                        'python_version': os.environ.get('pythonLocation', 'unknown')\n                    }\n                }\n                \n                # Save results\n                with open('validation_results_task_12.json', 'w') as f:\n                    json.dump(results, f, indent=2)\n                \n                print(f\"Validation completed for todo task-12\")\n                print(f\"Status: {results['validation_status']}\")\n                EOF\n            ",
+          "env": {
+            "TODO_ID": "task-12",
+            "TODO_TYPE": "task"
+          }
+        }
+      ],
+      "improvement_steps": [
+        {
+          "name": "Generate Improvement Prompts",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    validation_status = os.environ.get('VALIDATION_STATUS', 'unknown')\n                    todo_type = \"task\"\n                    todo_description = \"Implement First-Level PRD Generation\"\n                    \n                    improvement_prompts = []\n                    \n                    if validation_status != 'valid':\n                        # Generate base improvement prompt\n                        improvement_prompts.append(f\"Fix todo item: {todo_description}\")\n                        \n                        # Type-specific prompts\n                        if todo_type in ['task', 'subtask']:\n                            if validation_status == 'missing_taskmaster':\n                                improvement_prompts.extend([\n                                    \"Initialize TaskMaster project structure\",\n                                    \"Set up .taskmaster directory and configuration\"\n                                ])\n                            elif validation_status == 'incomplete':\n                                improvement_prompts.extend([\n                                    f\"Complete TaskMaster task: {todo_description}\",\n                                    f\"Update task status to done\"\n                                ])\n                        \n                        elif todo_type == 'code-todo':\n                            if validation_status == 'missing_file':\n                                improvement_prompts.extend([\n                                    f\"Create missing source file: taskmaster\",\n                                    f\"Implement basic structure\"\n                                ])\n                            elif validation_status == 'syntax_error':\n                                improvement_prompts.extend([\n                                    f\"Fix syntax error in taskmaster\",\n                                    \"Validate Python syntax\"\n                                ])\n                            elif validation_status == 'todo_pending':\n                                improvement_prompts.extend([\n                                    f\"Implement TODO: {todo_description}\",\n                                    \"Replace TODO comment with implementation\"\n                                ])\n                    \n                    # Save improvement prompts\n                    improvement_data = {\n                        'todo_id': \"task-12\",\n                        'validation_status': validation_status,\n                        'improvement_prompts': improvement_prompts,\n                        'atomized_actions': [\n                            {\n                                'action_type': 'fix' if 'fix' in prompt.lower() else 'implement',\n                                'prompt': prompt,\n                                'priority': 'high' if validation_status == 'error' else 'medium'\n                            } for prompt in improvement_prompts\n                        ]\n                    }\n                    \n                    with open('improvement_prompts_task_12.json', 'w') as f:\n                        json.dump(improvement_data, f, indent=2)\n                    \n                    print(f\"Generated {len(improvement_prompts)} improvement prompts\")\n                    EOF\n                "
+        }
+      ],
+      "dependencies": [
+        "task-11"
+      ]
+    },
+    {
+      "runner_id": "runner-task-13-663e6ac9",
+      "todo_id": "task-13",
+      "workflow_name": "validate-task-task-13",
+      "runner_config": {
+        "runs-on": "ubuntu-latest",
+        "timeout-minutes": 30,
+        "environment": {
+          "PYTHONPATH": "${{ github.workspace }}",
+          "TODO_VALIDATION_MODE": "strict",
+          "TASKMASTER_HOME": "${{ github.workspace }}/.taskmaster",
+          "ANTHROPIC_API_KEY": "${{ secrets.ANTHROPIC_API_KEY }}",
+          "PERPLEXITY_API_KEY": "${{ secrets.PERPLEXITY_API_KEY }}"
+        }
+      },
+      "validation_steps": [
+        {
+          "name": "Checkout Repository",
+          "uses": "actions/checkout@v4",
+          "with": {
+            "fetch-depth": 0
+          }
+        },
+        {
+          "name": "Setup Python",
+          "uses": "actions/setup-python@v4",
+          "with": {
+            "python-version": "3.11"
+          }
+        },
+        {
+          "name": "Install Dependencies",
+          "run": "\n                    pip install --upgrade pip\n                    if [ -f requirements.txt ]; then pip install -r requirements.txt; fi\n                    pip install pytest taskmaster-ai httpx aiofiles\n                "
+        },
+        {
+          "name": "Validate TaskMaster Setup",
+          "run": "\n                    if [ ! -d \".taskmaster\" ]; then\n                        echo \"TaskMaster not initialized\"\n                        echo \"VALIDATION_STATUS=missing_taskmaster\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    if [ ! -f \".taskmaster/tasks/tasks.json\" ]; then\n                        echo \"TaskMaster tasks.json not found\"\n                        echo \"VALIDATION_STATUS=missing_tasks\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    echo \"TaskMaster validation passed\"\n                    echo \"VALIDATION_STATUS=taskmaster_ready\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Validate Specific Task",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    todo_id = \"task-13\"\n                    \n                    try:\n                        with open('.taskmaster/tasks/tasks.json', 'r') as f:\n                            data = json.load(f)\n                        \n                        task_found = False\n                        task_status = 'unknown'\n                        \n                        if 'master' in data and 'tasks' in data['master']:\n                            for task in data['master']['tasks']:\n                                if f\"task-{task['id']}\" == todo_id:\n                                    task_found = True\n                                    task_status = task.get('status', 'pending')\n                                    break\n                                \n                                for subtask in task.get('subtasks', []):\n                                    if f\"subtask-{subtask['id']}\" == todo_id:\n                                        task_found = True\n                                        task_status = subtask.get('status', 'pending')\n                                        break\n                        \n                        if task_found:\n                            print(f\"Task {todo_id} found with status: {task_status}\")\n                            os.environ['TASK_STATUS'] = task_status\n                            if task_status == 'done':\n                                os.environ['VALIDATION_STATUS'] = 'valid'\n                            else:\n                                os.environ['VALIDATION_STATUS'] = 'incomplete'\n                        else:\n                            print(f\"Task {todo_id} not found\")\n                            os.environ['VALIDATION_STATUS'] = 'missing'\n                    \n                    except Exception as e:\n                        print(f\"Error validating task: {e}\")\n                        os.environ['VALIDATION_STATUS'] = 'error'\n                    EOF\n                    \n                    echo \"VALIDATION_STATUS=$VALIDATION_STATUS\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Collect Validation Results",
+          "run": "\n                python3 << 'EOF'\n                import json\n                import os\n                from datetime import datetime\n                \n                # Collect validation results for todo task-13\n                results = {\n                    'todo_id': 'task-13',\n                    'todo_type': 'task',\n                    'validation_timestamp': datetime.now().isoformat(),\n                    'validation_status': os.environ.get('VALIDATION_STATUS', 'unknown'),\n                    'validation_details': {\n                        'description': 'Develop Recursive PRD Decomposition System...',\n                        'source': 'taskmaster',\n                        'priority': 'high'\n                    },\n                    'environment_info': {\n                        'runner_os': os.environ.get('RUNNER_OS', 'unknown'),\n                        'python_version': os.environ.get('pythonLocation', 'unknown')\n                    }\n                }\n                \n                # Save results\n                with open('validation_results_task_13.json', 'w') as f:\n                    json.dump(results, f, indent=2)\n                \n                print(f\"Validation completed for todo task-13\")\n                print(f\"Status: {results['validation_status']}\")\n                EOF\n            ",
+          "env": {
+            "TODO_ID": "task-13",
+            "TODO_TYPE": "task"
+          }
+        }
+      ],
+      "improvement_steps": [
+        {
+          "name": "Generate Improvement Prompts",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    validation_status = os.environ.get('VALIDATION_STATUS', 'unknown')\n                    todo_type = \"task\"\n                    todo_description = \"Develop Recursive PRD Decomposition System\"\n                    \n                    improvement_prompts = []\n                    \n                    if validation_status != 'valid':\n                        # Generate base improvement prompt\n                        improvement_prompts.append(f\"Fix todo item: {todo_description}\")\n                        \n                        # Type-specific prompts\n                        if todo_type in ['task', 'subtask']:\n                            if validation_status == 'missing_taskmaster':\n                                improvement_prompts.extend([\n                                    \"Initialize TaskMaster project structure\",\n                                    \"Set up .taskmaster directory and configuration\"\n                                ])\n                            elif validation_status == 'incomplete':\n                                improvement_prompts.extend([\n                                    f\"Complete TaskMaster task: {todo_description}\",\n                                    f\"Update task status to done\"\n                                ])\n                        \n                        elif todo_type == 'code-todo':\n                            if validation_status == 'missing_file':\n                                improvement_prompts.extend([\n                                    f\"Create missing source file: taskmaster\",\n                                    f\"Implement basic structure\"\n                                ])\n                            elif validation_status == 'syntax_error':\n                                improvement_prompts.extend([\n                                    f\"Fix syntax error in taskmaster\",\n                                    \"Validate Python syntax\"\n                                ])\n                            elif validation_status == 'todo_pending':\n                                improvement_prompts.extend([\n                                    f\"Implement TODO: {todo_description}\",\n                                    \"Replace TODO comment with implementation\"\n                                ])\n                    \n                    # Save improvement prompts\n                    improvement_data = {\n                        'todo_id': \"task-13\",\n                        'validation_status': validation_status,\n                        'improvement_prompts': improvement_prompts,\n                        'atomized_actions': [\n                            {\n                                'action_type': 'fix' if 'fix' in prompt.lower() else 'implement',\n                                'prompt': prompt,\n                                'priority': 'high' if validation_status == 'error' else 'medium'\n                            } for prompt in improvement_prompts\n                        ]\n                    }\n                    \n                    with open('improvement_prompts_task_13.json', 'w') as f:\n                        json.dump(improvement_data, f, indent=2)\n                    \n                    print(f\"Generated {len(improvement_prompts)} improvement prompts\")\n                    EOF\n                "
+        }
+      ],
+      "dependencies": [
+        "task-12"
+      ]
+    },
+    {
+      "runner_id": "runner-task-14-e65e7c7a",
+      "todo_id": "task-14",
+      "workflow_name": "validate-task-task-14",
+      "runner_config": {
+        "runs-on": "ubuntu-latest",
+        "timeout-minutes": 30,
+        "environment": {
+          "PYTHONPATH": "${{ github.workspace }}",
+          "TODO_VALIDATION_MODE": "strict",
+          "TASKMASTER_HOME": "${{ github.workspace }}/.taskmaster",
+          "ANTHROPIC_API_KEY": "${{ secrets.ANTHROPIC_API_KEY }}",
+          "PERPLEXITY_API_KEY": "${{ secrets.PERPLEXITY_API_KEY }}"
+        }
+      },
+      "validation_steps": [
+        {
+          "name": "Checkout Repository",
+          "uses": "actions/checkout@v4",
+          "with": {
+            "fetch-depth": 0
+          }
+        },
+        {
+          "name": "Setup Python",
+          "uses": "actions/setup-python@v4",
+          "with": {
+            "python-version": "3.11"
+          }
+        },
+        {
+          "name": "Install Dependencies",
+          "run": "\n                    pip install --upgrade pip\n                    if [ -f requirements.txt ]; then pip install -r requirements.txt; fi\n                    pip install pytest taskmaster-ai httpx aiofiles\n                "
+        },
+        {
+          "name": "Validate TaskMaster Setup",
+          "run": "\n                    if [ ! -d \".taskmaster\" ]; then\n                        echo \"TaskMaster not initialized\"\n                        echo \"VALIDATION_STATUS=missing_taskmaster\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    if [ ! -f \".taskmaster/tasks/tasks.json\" ]; then\n                        echo \"TaskMaster tasks.json not found\"\n                        echo \"VALIDATION_STATUS=missing_tasks\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    echo \"TaskMaster validation passed\"\n                    echo \"VALIDATION_STATUS=taskmaster_ready\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Validate Specific Task",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    todo_id = \"task-14\"\n                    \n                    try:\n                        with open('.taskmaster/tasks/tasks.json', 'r') as f:\n                            data = json.load(f)\n                        \n                        task_found = False\n                        task_status = 'unknown'\n                        \n                        if 'master' in data and 'tasks' in data['master']:\n                            for task in data['master']['tasks']:\n                                if f\"task-{task['id']}\" == todo_id:\n                                    task_found = True\n                                    task_status = task.get('status', 'pending')\n                                    break\n                                \n                                for subtask in task.get('subtasks', []):\n                                    if f\"subtask-{subtask['id']}\" == todo_id:\n                                        task_found = True\n                                        task_status = subtask.get('status', 'pending')\n                                        break\n                        \n                        if task_found:\n                            print(f\"Task {todo_id} found with status: {task_status}\")\n                            os.environ['TASK_STATUS'] = task_status\n                            if task_status == 'done':\n                                os.environ['VALIDATION_STATUS'] = 'valid'\n                            else:\n                                os.environ['VALIDATION_STATUS'] = 'incomplete'\n                        else:\n                            print(f\"Task {todo_id} not found\")\n                            os.environ['VALIDATION_STATUS'] = 'missing'\n                    \n                    except Exception as e:\n                        print(f\"Error validating task: {e}\")\n                        os.environ['VALIDATION_STATUS'] = 'error'\n                    EOF\n                    \n                    echo \"VALIDATION_STATUS=$VALIDATION_STATUS\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Collect Validation Results",
+          "run": "\n                python3 << 'EOF'\n                import json\n                import os\n                from datetime import datetime\n                \n                # Collect validation results for todo task-14\n                results = {\n                    'todo_id': 'task-14',\n                    'todo_type': 'task',\n                    'validation_timestamp': datetime.now().isoformat(),\n                    'validation_status': os.environ.get('VALIDATION_STATUS', 'unknown'),\n                    'validation_details': {\n                        'description': 'Build Dependency Analysis and Task Graph...',\n                        'source': 'taskmaster',\n                        'priority': 'medium'\n                    },\n                    'environment_info': {\n                        'runner_os': os.environ.get('RUNNER_OS', 'unknown'),\n                        'python_version': os.environ.get('pythonLocation', 'unknown')\n                    }\n                }\n                \n                # Save results\n                with open('validation_results_task_14.json', 'w') as f:\n                    json.dump(results, f, indent=2)\n                \n                print(f\"Validation completed for todo task-14\")\n                print(f\"Status: {results['validation_status']}\")\n                EOF\n            ",
+          "env": {
+            "TODO_ID": "task-14",
+            "TODO_TYPE": "task"
+          }
+        }
+      ],
+      "improvement_steps": [
+        {
+          "name": "Generate Improvement Prompts",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    validation_status = os.environ.get('VALIDATION_STATUS', 'unknown')\n                    todo_type = \"task\"\n                    todo_description = \"Build Dependency Analysis and Task Graph\"\n                    \n                    improvement_prompts = []\n                    \n                    if validation_status != 'valid':\n                        # Generate base improvement prompt\n                        improvement_prompts.append(f\"Fix todo item: {todo_description}\")\n                        \n                        # Type-specific prompts\n                        if todo_type in ['task', 'subtask']:\n                            if validation_status == 'missing_taskmaster':\n                                improvement_prompts.extend([\n                                    \"Initialize TaskMaster project structure\",\n                                    \"Set up .taskmaster directory and configuration\"\n                                ])\n                            elif validation_status == 'incomplete':\n                                improvement_prompts.extend([\n                                    f\"Complete TaskMaster task: {todo_description}\",\n                                    f\"Update task status to done\"\n                                ])\n                        \n                        elif todo_type == 'code-todo':\n                            if validation_status == 'missing_file':\n                                improvement_prompts.extend([\n                                    f\"Create missing source file: taskmaster\",\n                                    f\"Implement basic structure\"\n                                ])\n                            elif validation_status == 'syntax_error':\n                                improvement_prompts.extend([\n                                    f\"Fix syntax error in taskmaster\",\n                                    \"Validate Python syntax\"\n                                ])\n                            elif validation_status == 'todo_pending':\n                                improvement_prompts.extend([\n                                    f\"Implement TODO: {todo_description}\",\n                                    \"Replace TODO comment with implementation\"\n                                ])\n                    \n                    # Save improvement prompts\n                    improvement_data = {\n                        'todo_id': \"task-14\",\n                        'validation_status': validation_status,\n                        'improvement_prompts': improvement_prompts,\n                        'atomized_actions': [\n                            {\n                                'action_type': 'fix' if 'fix' in prompt.lower() else 'implement',\n                                'prompt': prompt,\n                                'priority': 'high' if validation_status == 'error' else 'medium'\n                            } for prompt in improvement_prompts\n                        ]\n                    }\n                    \n                    with open('improvement_prompts_task_14.json', 'w') as f:\n                        json.dump(improvement_data, f, indent=2)\n                    \n                    print(f\"Generated {len(improvement_prompts)} improvement prompts\")\n                    EOF\n                "
+        }
+      ],
+      "dependencies": [
+        "task-13"
+      ]
+    },
+    {
+      "runner_id": "runner-task-15-f28a6a3b",
+      "todo_id": "task-15",
+      "workflow_name": "validate-task-task-15",
+      "runner_config": {
+        "runs-on": "ubuntu-latest",
+        "timeout-minutes": 30,
+        "environment": {
+          "PYTHONPATH": "${{ github.workspace }}",
+          "TODO_VALIDATION_MODE": "strict",
+          "TASKMASTER_HOME": "${{ github.workspace }}/.taskmaster",
+          "ANTHROPIC_API_KEY": "${{ secrets.ANTHROPIC_API_KEY }}",
+          "PERPLEXITY_API_KEY": "${{ secrets.PERPLEXITY_API_KEY }}"
+        }
+      },
+      "validation_steps": [
+        {
+          "name": "Checkout Repository",
+          "uses": "actions/checkout@v4",
+          "with": {
+            "fetch-depth": 0
+          }
+        },
+        {
+          "name": "Setup Python",
+          "uses": "actions/setup-python@v4",
+          "with": {
+            "python-version": "3.11"
+          }
+        },
+        {
+          "name": "Install Dependencies",
+          "run": "\n                    pip install --upgrade pip\n                    if [ -f requirements.txt ]; then pip install -r requirements.txt; fi\n                    pip install pytest taskmaster-ai httpx aiofiles\n                "
+        },
+        {
+          "name": "Validate TaskMaster Setup",
+          "run": "\n                    if [ ! -d \".taskmaster\" ]; then\n                        echo \"TaskMaster not initialized\"\n                        echo \"VALIDATION_STATUS=missing_taskmaster\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    if [ ! -f \".taskmaster/tasks/tasks.json\" ]; then\n                        echo \"TaskMaster tasks.json not found\"\n                        echo \"VALIDATION_STATUS=missing_tasks\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    echo \"TaskMaster validation passed\"\n                    echo \"VALIDATION_STATUS=taskmaster_ready\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Validate Specific Task",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    todo_id = \"task-15\"\n                    \n                    try:\n                        with open('.taskmaster/tasks/tasks.json', 'r') as f:\n                            data = json.load(f)\n                        \n                        task_found = False\n                        task_status = 'unknown'\n                        \n                        if 'master' in data and 'tasks' in data['master']:\n                            for task in data['master']['tasks']:\n                                if f\"task-{task['id']}\" == todo_id:\n                                    task_found = True\n                                    task_status = task.get('status', 'pending')\n                                    break\n                                \n                                for subtask in task.get('subtasks', []):\n                                    if f\"subtask-{subtask['id']}\" == todo_id:\n                                        task_found = True\n                                        task_status = subtask.get('status', 'pending')\n                                        break\n                        \n                        if task_found:\n                            print(f\"Task {todo_id} found with status: {task_status}\")\n                            os.environ['TASK_STATUS'] = task_status\n                            if task_status == 'done':\n                                os.environ['VALIDATION_STATUS'] = 'valid'\n                            else:\n                                os.environ['VALIDATION_STATUS'] = 'incomplete'\n                        else:\n                            print(f\"Task {todo_id} not found\")\n                            os.environ['VALIDATION_STATUS'] = 'missing'\n                    \n                    except Exception as e:\n                        print(f\"Error validating task: {e}\")\n                        os.environ['VALIDATION_STATUS'] = 'error'\n                    EOF\n                    \n                    echo \"VALIDATION_STATUS=$VALIDATION_STATUS\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Collect Validation Results",
+          "run": "\n                python3 << 'EOF'\n                import json\n                import os\n                from datetime import datetime\n                \n                # Collect validation results for todo task-15\n                results = {\n                    'todo_id': 'task-15',\n                    'todo_type': 'task',\n                    'validation_timestamp': datetime.now().isoformat(),\n                    'validation_status': os.environ.get('VALIDATION_STATUS', 'unknown'),\n                    'validation_details': {\n                        'description': 'Implement Space-Efficient Optimization Algorithms...',\n                        'source': 'taskmaster',\n                        'priority': 'medium'\n                    },\n                    'environment_info': {\n                        'runner_os': os.environ.get('RUNNER_OS', 'unknown'),\n                        'python_version': os.environ.get('pythonLocation', 'unknown')\n                    }\n                }\n                \n                # Save results\n                with open('validation_results_task_15.json', 'w') as f:\n                    json.dump(results, f, indent=2)\n                \n                print(f\"Validation completed for todo task-15\")\n                print(f\"Status: {results['validation_status']}\")\n                EOF\n            ",
+          "env": {
+            "TODO_ID": "task-15",
+            "TODO_TYPE": "task"
+          }
+        }
+      ],
+      "improvement_steps": [
+        {
+          "name": "Generate Improvement Prompts",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    validation_status = os.environ.get('VALIDATION_STATUS', 'unknown')\n                    todo_type = \"task\"\n                    todo_description = \"Implement Space-Efficient Optimization Algorithms\"\n                    \n                    improvement_prompts = []\n                    \n                    if validation_status != 'valid':\n                        # Generate base improvement prompt\n                        improvement_prompts.append(f\"Fix todo item: {todo_description}\")\n                        \n                        # Type-specific prompts\n                        if todo_type in ['task', 'subtask']:\n                            if validation_status == 'missing_taskmaster':\n                                improvement_prompts.extend([\n                                    \"Initialize TaskMaster project structure\",\n                                    \"Set up .taskmaster directory and configuration\"\n                                ])\n                            elif validation_status == 'incomplete':\n                                improvement_prompts.extend([\n                                    f\"Complete TaskMaster task: {todo_description}\",\n                                    f\"Update task status to done\"\n                                ])\n                        \n                        elif todo_type == 'code-todo':\n                            if validation_status == 'missing_file':\n                                improvement_prompts.extend([\n                                    f\"Create missing source file: taskmaster\",\n                                    f\"Implement basic structure\"\n                                ])\n                            elif validation_status == 'syntax_error':\n                                improvement_prompts.extend([\n                                    f\"Fix syntax error in taskmaster\",\n                                    \"Validate Python syntax\"\n                                ])\n                            elif validation_status == 'todo_pending':\n                                improvement_prompts.extend([\n                                    f\"Implement TODO: {todo_description}\",\n                                    \"Replace TODO comment with implementation\"\n                                ])\n                    \n                    # Save improvement prompts\n                    improvement_data = {\n                        'todo_id': \"task-15\",\n                        'validation_status': validation_status,\n                        'improvement_prompts': improvement_prompts,\n                        'atomized_actions': [\n                            {\n                                'action_type': 'fix' if 'fix' in prompt.lower() else 'implement',\n                                'prompt': prompt,\n                                'priority': 'high' if validation_status == 'error' else 'medium'\n                            } for prompt in improvement_prompts\n                        ]\n                    }\n                    \n                    with open('improvement_prompts_task_15.json', 'w') as f:\n                        json.dump(improvement_data, f, indent=2)\n                    \n                    print(f\"Generated {len(improvement_prompts)} improvement prompts\")\n                    EOF\n                "
+        }
+      ],
+      "dependencies": [
+        "task-14"
+      ]
+    },
+    {
+      "runner_id": "runner-task-16-6139881f",
+      "todo_id": "task-16",
+      "workflow_name": "validate-task-task-16",
+      "runner_config": {
+        "runs-on": "ubuntu-latest",
+        "timeout-minutes": 30,
+        "environment": {
+          "PYTHONPATH": "${{ github.workspace }}",
+          "TODO_VALIDATION_MODE": "strict",
+          "TASKMASTER_HOME": "${{ github.workspace }}/.taskmaster",
+          "ANTHROPIC_API_KEY": "${{ secrets.ANTHROPIC_API_KEY }}",
+          "PERPLEXITY_API_KEY": "${{ secrets.PERPLEXITY_API_KEY }}"
+        }
+      },
+      "validation_steps": [
+        {
+          "name": "Checkout Repository",
+          "uses": "actions/checkout@v4",
+          "with": {
+            "fetch-depth": 0
+          }
+        },
+        {
+          "name": "Setup Python",
+          "uses": "actions/setup-python@v4",
+          "with": {
+            "python-version": "3.11"
+          }
+        },
+        {
+          "name": "Install Dependencies",
+          "run": "\n                    pip install --upgrade pip\n                    if [ -f requirements.txt ]; then pip install -r requirements.txt; fi\n                    pip install pytest taskmaster-ai httpx aiofiles\n                "
+        },
+        {
+          "name": "Validate TaskMaster Setup",
+          "run": "\n                    if [ ! -d \".taskmaster\" ]; then\n                        echo \"TaskMaster not initialized\"\n                        echo \"VALIDATION_STATUS=missing_taskmaster\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    if [ ! -f \".taskmaster/tasks/tasks.json\" ]; then\n                        echo \"TaskMaster tasks.json not found\"\n                        echo \"VALIDATION_STATUS=missing_tasks\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    echo \"TaskMaster validation passed\"\n                    echo \"VALIDATION_STATUS=taskmaster_ready\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Validate Specific Task",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    todo_id = \"task-16\"\n                    \n                    try:\n                        with open('.taskmaster/tasks/tasks.json', 'r') as f:\n                            data = json.load(f)\n                        \n                        task_found = False\n                        task_status = 'unknown'\n                        \n                        if 'master' in data and 'tasks' in data['master']:\n                            for task in data['master']['tasks']:\n                                if f\"task-{task['id']}\" == todo_id:\n                                    task_found = True\n                                    task_status = task.get('status', 'pending')\n                                    break\n                                \n                                for subtask in task.get('subtasks', []):\n                                    if f\"subtask-{subtask['id']}\" == todo_id:\n                                        task_found = True\n                                        task_status = subtask.get('status', 'pending')\n                                        break\n                        \n                        if task_found:\n                            print(f\"Task {todo_id} found with status: {task_status}\")\n                            os.environ['TASK_STATUS'] = task_status\n                            if task_status == 'done':\n                                os.environ['VALIDATION_STATUS'] = 'valid'\n                            else:\n                                os.environ['VALIDATION_STATUS'] = 'incomplete'\n                        else:\n                            print(f\"Task {todo_id} not found\")\n                            os.environ['VALIDATION_STATUS'] = 'missing'\n                    \n                    except Exception as e:\n                        print(f\"Error validating task: {e}\")\n                        os.environ['VALIDATION_STATUS'] = 'error'\n                    EOF\n                    \n                    echo \"VALIDATION_STATUS=$VALIDATION_STATUS\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Collect Validation Results",
+          "run": "\n                python3 << 'EOF'\n                import json\n                import os\n                from datetime import datetime\n                \n                # Collect validation results for todo task-16\n                results = {\n                    'todo_id': 'task-16',\n                    'todo_type': 'task',\n                    'validation_timestamp': datetime.now().isoformat(),\n                    'validation_status': os.environ.get('VALIDATION_STATUS', 'unknown'),\n                    'validation_details': {\n                        'description': 'Generate Pebbling Strategy for Resource Allocation...',\n                        'source': 'taskmaster',\n                        'priority': 'medium'\n                    },\n                    'environment_info': {\n                        'runner_os': os.environ.get('RUNNER_OS', 'unknown'),\n                        'python_version': os.environ.get('pythonLocation', 'unknown')\n                    }\n                }\n                \n                # Save results\n                with open('validation_results_task_16.json', 'w') as f:\n                    json.dump(results, f, indent=2)\n                \n                print(f\"Validation completed for todo task-16\")\n                print(f\"Status: {results['validation_status']}\")\n                EOF\n            ",
+          "env": {
+            "TODO_ID": "task-16",
+            "TODO_TYPE": "task"
+          }
+        }
+      ],
+      "improvement_steps": [
+        {
+          "name": "Generate Improvement Prompts",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    validation_status = os.environ.get('VALIDATION_STATUS', 'unknown')\n                    todo_type = \"task\"\n                    todo_description = \"Generate Pebbling Strategy for Resource Allocation\"\n                    \n                    improvement_prompts = []\n                    \n                    if validation_status != 'valid':\n                        # Generate base improvement prompt\n                        improvement_prompts.append(f\"Fix todo item: {todo_description}\")\n                        \n                        # Type-specific prompts\n                        if todo_type in ['task', 'subtask']:\n                            if validation_status == 'missing_taskmaster':\n                                improvement_prompts.extend([\n                                    \"Initialize TaskMaster project structure\",\n                                    \"Set up .taskmaster directory and configuration\"\n                                ])\n                            elif validation_status == 'incomplete':\n                                improvement_prompts.extend([\n                                    f\"Complete TaskMaster task: {todo_description}\",\n                                    f\"Update task status to done\"\n                                ])\n                        \n                        elif todo_type == 'code-todo':\n                            if validation_status == 'missing_file':\n                                improvement_prompts.extend([\n                                    f\"Create missing source file: taskmaster\",\n                                    f\"Implement basic structure\"\n                                ])\n                            elif validation_status == 'syntax_error':\n                                improvement_prompts.extend([\n                                    f\"Fix syntax error in taskmaster\",\n                                    \"Validate Python syntax\"\n                                ])\n                            elif validation_status == 'todo_pending':\n                                improvement_prompts.extend([\n                                    f\"Implement TODO: {todo_description}\",\n                                    \"Replace TODO comment with implementation\"\n                                ])\n                    \n                    # Save improvement prompts\n                    improvement_data = {\n                        'todo_id': \"task-16\",\n                        'validation_status': validation_status,\n                        'improvement_prompts': improvement_prompts,\n                        'atomized_actions': [\n                            {\n                                'action_type': 'fix' if 'fix' in prompt.lower() else 'implement',\n                                'prompt': prompt,\n                                'priority': 'high' if validation_status == 'error' else 'medium'\n                            } for prompt in improvement_prompts\n                        ]\n                    }\n                    \n                    with open('improvement_prompts_task_16.json', 'w') as f:\n                        json.dump(improvement_data, f, indent=2)\n                    \n                    print(f\"Generated {len(improvement_prompts)} improvement prompts\")\n                    EOF\n                "
+        }
+      ],
+      "dependencies": [
+        "task-15"
+      ]
+    },
+    {
+      "runner_id": "runner-task-17-360075ab",
+      "todo_id": "task-17",
+      "workflow_name": "validate-task-task-17",
+      "runner_config": {
+        "runs-on": "ubuntu-latest",
+        "timeout-minutes": 30,
+        "environment": {
+          "PYTHONPATH": "${{ github.workspace }}",
+          "TODO_VALIDATION_MODE": "strict",
+          "TASKMASTER_HOME": "${{ github.workspace }}/.taskmaster",
+          "ANTHROPIC_API_KEY": "${{ secrets.ANTHROPIC_API_KEY }}",
+          "PERPLEXITY_API_KEY": "${{ secrets.PERPLEXITY_API_KEY }}"
+        }
+      },
+      "validation_steps": [
+        {
+          "name": "Checkout Repository",
+          "uses": "actions/checkout@v4",
+          "with": {
+            "fetch-depth": 0
+          }
+        },
+        {
+          "name": "Setup Python",
+          "uses": "actions/setup-python@v4",
+          "with": {
+            "python-version": "3.11"
+          }
+        },
+        {
+          "name": "Install Dependencies",
+          "run": "\n                    pip install --upgrade pip\n                    if [ -f requirements.txt ]; then pip install -r requirements.txt; fi\n                    pip install pytest taskmaster-ai httpx aiofiles\n                "
+        },
+        {
+          "name": "Validate TaskMaster Setup",
+          "run": "\n                    if [ ! -d \".taskmaster\" ]; then\n                        echo \"TaskMaster not initialized\"\n                        echo \"VALIDATION_STATUS=missing_taskmaster\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    if [ ! -f \".taskmaster/tasks/tasks.json\" ]; then\n                        echo \"TaskMaster tasks.json not found\"\n                        echo \"VALIDATION_STATUS=missing_tasks\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    echo \"TaskMaster validation passed\"\n                    echo \"VALIDATION_STATUS=taskmaster_ready\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Validate Specific Task",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    todo_id = \"task-17\"\n                    \n                    try:\n                        with open('.taskmaster/tasks/tasks.json', 'r') as f:\n                            data = json.load(f)\n                        \n                        task_found = False\n                        task_status = 'unknown'\n                        \n                        if 'master' in data and 'tasks' in data['master']:\n                            for task in data['master']['tasks']:\n                                if f\"task-{task['id']}\" == todo_id:\n                                    task_found = True\n                                    task_status = task.get('status', 'pending')\n                                    break\n                                \n                                for subtask in task.get('subtasks', []):\n                                    if f\"subtask-{subtask['id']}\" == todo_id:\n                                        task_found = True\n                                        task_status = subtask.get('status', 'pending')\n                                        break\n                        \n                        if task_found:\n                            print(f\"Task {todo_id} found with status: {task_status}\")\n                            os.environ['TASK_STATUS'] = task_status\n                            if task_status == 'done':\n                                os.environ['VALIDATION_STATUS'] = 'valid'\n                            else:\n                                os.environ['VALIDATION_STATUS'] = 'incomplete'\n                        else:\n                            print(f\"Task {todo_id} not found\")\n                            os.environ['VALIDATION_STATUS'] = 'missing'\n                    \n                    except Exception as e:\n                        print(f\"Error validating task: {e}\")\n                        os.environ['VALIDATION_STATUS'] = 'error'\n                    EOF\n                    \n                    echo \"VALIDATION_STATUS=$VALIDATION_STATUS\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Collect Validation Results",
+          "run": "\n                python3 << 'EOF'\n                import json\n                import os\n                from datetime import datetime\n                \n                # Collect validation results for todo task-17\n                results = {\n                    'todo_id': 'task-17',\n                    'todo_type': 'task',\n                    'validation_timestamp': datetime.now().isoformat(),\n                    'validation_status': os.environ.get('VALIDATION_STATUS', 'unknown'),\n                    'validation_details': {\n                        'description': 'Initialize Catalytic Workspace and Execution Planning...',\n                        'source': 'taskmaster',\n                        'priority': 'medium'\n                    },\n                    'environment_info': {\n                        'runner_os': os.environ.get('RUNNER_OS', 'unknown'),\n                        'python_version': os.environ.get('pythonLocation', 'unknown')\n                    }\n                }\n                \n                # Save results\n                with open('validation_results_task_17.json', 'w') as f:\n                    json.dump(results, f, indent=2)\n                \n                print(f\"Validation completed for todo task-17\")\n                print(f\"Status: {results['validation_status']}\")\n                EOF\n            ",
+          "env": {
+            "TODO_ID": "task-17",
+            "TODO_TYPE": "task"
+          }
+        }
+      ],
+      "improvement_steps": [
+        {
+          "name": "Generate Improvement Prompts",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    validation_status = os.environ.get('VALIDATION_STATUS', 'unknown')\n                    todo_type = \"task\"\n                    todo_description = \"Initialize Catalytic Workspace and Execution Planning\"\n                    \n                    improvement_prompts = []\n                    \n                    if validation_status != 'valid':\n                        # Generate base improvement prompt\n                        improvement_prompts.append(f\"Fix todo item: {todo_description}\")\n                        \n                        # Type-specific prompts\n                        if todo_type in ['task', 'subtask']:\n                            if validation_status == 'missing_taskmaster':\n                                improvement_prompts.extend([\n                                    \"Initialize TaskMaster project structure\",\n                                    \"Set up .taskmaster directory and configuration\"\n                                ])\n                            elif validation_status == 'incomplete':\n                                improvement_prompts.extend([\n                                    f\"Complete TaskMaster task: {todo_description}\",\n                                    f\"Update task status to done\"\n                                ])\n                        \n                        elif todo_type == 'code-todo':\n                            if validation_status == 'missing_file':\n                                improvement_prompts.extend([\n                                    f\"Create missing source file: taskmaster\",\n                                    f\"Implement basic structure\"\n                                ])\n                            elif validation_status == 'syntax_error':\n                                improvement_prompts.extend([\n                                    f\"Fix syntax error in taskmaster\",\n                                    \"Validate Python syntax\"\n                                ])\n                            elif validation_status == 'todo_pending':\n                                improvement_prompts.extend([\n                                    f\"Implement TODO: {todo_description}\",\n                                    \"Replace TODO comment with implementation\"\n                                ])\n                    \n                    # Save improvement prompts\n                    improvement_data = {\n                        'todo_id': \"task-17\",\n                        'validation_status': validation_status,\n                        'improvement_prompts': improvement_prompts,\n                        'atomized_actions': [\n                            {\n                                'action_type': 'fix' if 'fix' in prompt.lower() else 'implement',\n                                'prompt': prompt,\n                                'priority': 'high' if validation_status == 'error' else 'medium'\n                            } for prompt in improvement_prompts\n                        ]\n                    }\n                    \n                    with open('improvement_prompts_task_17.json', 'w') as f:\n                        json.dump(improvement_data, f, indent=2)\n                    \n                    print(f\"Generated {len(improvement_prompts)} improvement prompts\")\n                    EOF\n                "
+        }
+      ],
+      "dependencies": [
+        "task-16"
+      ]
+    },
+    {
+      "runner_id": "runner-task-18-2bfb6df3",
+      "todo_id": "task-18",
+      "workflow_name": "validate-task-task-18",
+      "runner_config": {
+        "runs-on": "ubuntu-latest",
+        "timeout-minutes": 30,
+        "environment": {
+          "PYTHONPATH": "${{ github.workspace }}",
+          "TODO_VALIDATION_MODE": "strict",
+          "TASKMASTER_HOME": "${{ github.workspace }}/.taskmaster",
+          "ANTHROPIC_API_KEY": "${{ secrets.ANTHROPIC_API_KEY }}",
+          "PERPLEXITY_API_KEY": "${{ secrets.PERPLEXITY_API_KEY }}"
+        }
+      },
+      "validation_steps": [
+        {
+          "name": "Checkout Repository",
+          "uses": "actions/checkout@v4",
+          "with": {
+            "fetch-depth": 0
+          }
+        },
+        {
+          "name": "Setup Python",
+          "uses": "actions/setup-python@v4",
+          "with": {
+            "python-version": "3.11"
+          }
+        },
+        {
+          "name": "Install Dependencies",
+          "run": "\n                    pip install --upgrade pip\n                    if [ -f requirements.txt ]; then pip install -r requirements.txt; fi\n                    pip install pytest taskmaster-ai httpx aiofiles\n                "
+        },
+        {
+          "name": "Validate TaskMaster Setup",
+          "run": "\n                    if [ ! -d \".taskmaster\" ]; then\n                        echo \"TaskMaster not initialized\"\n                        echo \"VALIDATION_STATUS=missing_taskmaster\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    if [ ! -f \".taskmaster/tasks/tasks.json\" ]; then\n                        echo \"TaskMaster tasks.json not found\"\n                        echo \"VALIDATION_STATUS=missing_tasks\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    echo \"TaskMaster validation passed\"\n                    echo \"VALIDATION_STATUS=taskmaster_ready\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Validate Specific Task",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    todo_id = \"task-18\"\n                    \n                    try:\n                        with open('.taskmaster/tasks/tasks.json', 'r') as f:\n                            data = json.load(f)\n                        \n                        task_found = False\n                        task_status = 'unknown'\n                        \n                        if 'master' in data and 'tasks' in data['master']:\n                            for task in data['master']['tasks']:\n                                if f\"task-{task['id']}\" == todo_id:\n                                    task_found = True\n                                    task_status = task.get('status', 'pending')\n                                    break\n                                \n                                for subtask in task.get('subtasks', []):\n                                    if f\"subtask-{subtask['id']}\" == todo_id:\n                                        task_found = True\n                                        task_status = subtask.get('status', 'pending')\n                                        break\n                        \n                        if task_found:\n                            print(f\"Task {todo_id} found with status: {task_status}\")\n                            os.environ['TASK_STATUS'] = task_status\n                            if task_status == 'done':\n                                os.environ['VALIDATION_STATUS'] = 'valid'\n                            else:\n                                os.environ['VALIDATION_STATUS'] = 'incomplete'\n                        else:\n                            print(f\"Task {todo_id} not found\")\n                            os.environ['VALIDATION_STATUS'] = 'missing'\n                    \n                    except Exception as e:\n                        print(f\"Error validating task: {e}\")\n                        os.environ['VALIDATION_STATUS'] = 'error'\n                    EOF\n                    \n                    echo \"VALIDATION_STATUS=$VALIDATION_STATUS\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Collect Validation Results",
+          "run": "\n                python3 << 'EOF'\n                import json\n                import os\n                from datetime import datetime\n                \n                # Collect validation results for todo task-18\n                results = {\n                    'todo_id': 'task-18',\n                    'todo_type': 'task',\n                    'validation_timestamp': datetime.now().isoformat(),\n                    'validation_status': os.environ.get('VALIDATION_STATUS', 'unknown'),\n                    'validation_details': {\n                        'description': 'Implement Evolutionary Optimization Loop...',\n                        'source': 'taskmaster',\n                        'priority': 'high'\n                    },\n                    'environment_info': {\n                        'runner_os': os.environ.get('RUNNER_OS', 'unknown'),\n                        'python_version': os.environ.get('pythonLocation', 'unknown')\n                    }\n                }\n                \n                # Save results\n                with open('validation_results_task_18.json', 'w') as f:\n                    json.dump(results, f, indent=2)\n                \n                print(f\"Validation completed for todo task-18\")\n                print(f\"Status: {results['validation_status']}\")\n                EOF\n            ",
+          "env": {
+            "TODO_ID": "task-18",
+            "TODO_TYPE": "task"
+          }
+        }
+      ],
+      "improvement_steps": [
+        {
+          "name": "Generate Improvement Prompts",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    validation_status = os.environ.get('VALIDATION_STATUS', 'unknown')\n                    todo_type = \"task\"\n                    todo_description = \"Implement Evolutionary Optimization Loop\"\n                    \n                    improvement_prompts = []\n                    \n                    if validation_status != 'valid':\n                        # Generate base improvement prompt\n                        improvement_prompts.append(f\"Fix todo item: {todo_description}\")\n                        \n                        # Type-specific prompts\n                        if todo_type in ['task', 'subtask']:\n                            if validation_status == 'missing_taskmaster':\n                                improvement_prompts.extend([\n                                    \"Initialize TaskMaster project structure\",\n                                    \"Set up .taskmaster directory and configuration\"\n                                ])\n                            elif validation_status == 'incomplete':\n                                improvement_prompts.extend([\n                                    f\"Complete TaskMaster task: {todo_description}\",\n                                    f\"Update task status to done\"\n                                ])\n                        \n                        elif todo_type == 'code-todo':\n                            if validation_status == 'missing_file':\n                                improvement_prompts.extend([\n                                    f\"Create missing source file: taskmaster\",\n                                    f\"Implement basic structure\"\n                                ])\n                            elif validation_status == 'syntax_error':\n                                improvement_prompts.extend([\n                                    f\"Fix syntax error in taskmaster\",\n                                    \"Validate Python syntax\"\n                                ])\n                            elif validation_status == 'todo_pending':\n                                improvement_prompts.extend([\n                                    f\"Implement TODO: {todo_description}\",\n                                    \"Replace TODO comment with implementation\"\n                                ])\n                    \n                    # Save improvement prompts\n                    improvement_data = {\n                        'todo_id': \"task-18\",\n                        'validation_status': validation_status,\n                        'improvement_prompts': improvement_prompts,\n                        'atomized_actions': [\n                            {\n                                'action_type': 'fix' if 'fix' in prompt.lower() else 'implement',\n                                'prompt': prompt,\n                                'priority': 'high' if validation_status == 'error' else 'medium'\n                            } for prompt in improvement_prompts\n                        ]\n                    }\n                    \n                    with open('improvement_prompts_task_18.json', 'w') as f:\n                        json.dump(improvement_data, f, indent=2)\n                    \n                    print(f\"Generated {len(improvement_prompts)} improvement prompts\")\n                    EOF\n                "
+        }
+      ],
+      "dependencies": [
+        "task-17"
+      ]
+    },
+    {
+      "runner_id": "runner-task-19-4a7eea7c",
+      "todo_id": "task-19",
+      "workflow_name": "validate-task-task-19",
+      "runner_config": {
+        "runs-on": "ubuntu-latest",
+        "timeout-minutes": 30,
+        "environment": {
+          "PYTHONPATH": "${{ github.workspace }}",
+          "TODO_VALIDATION_MODE": "strict",
+          "TASKMASTER_HOME": "${{ github.workspace }}/.taskmaster",
+          "ANTHROPIC_API_KEY": "${{ secrets.ANTHROPIC_API_KEY }}",
+          "PERPLEXITY_API_KEY": "${{ secrets.PERPLEXITY_API_KEY }}"
+        }
+      },
+      "validation_steps": [
+        {
+          "name": "Checkout Repository",
+          "uses": "actions/checkout@v4",
+          "with": {
+            "fetch-depth": 0
+          }
+        },
+        {
+          "name": "Setup Python",
+          "uses": "actions/setup-python@v4",
+          "with": {
+            "python-version": "3.11"
+          }
+        },
+        {
+          "name": "Install Dependencies",
+          "run": "\n                    pip install --upgrade pip\n                    if [ -f requirements.txt ]; then pip install -r requirements.txt; fi\n                    pip install pytest taskmaster-ai httpx aiofiles\n                "
+        },
+        {
+          "name": "Validate TaskMaster Setup",
+          "run": "\n                    if [ ! -d \".taskmaster\" ]; then\n                        echo \"TaskMaster not initialized\"\n                        echo \"VALIDATION_STATUS=missing_taskmaster\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    if [ ! -f \".taskmaster/tasks/tasks.json\" ]; then\n                        echo \"TaskMaster tasks.json not found\"\n                        echo \"VALIDATION_STATUS=missing_tasks\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    echo \"TaskMaster validation passed\"\n                    echo \"VALIDATION_STATUS=taskmaster_ready\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Validate Specific Task",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    todo_id = \"task-19\"\n                    \n                    try:\n                        with open('.taskmaster/tasks/tasks.json', 'r') as f:\n                            data = json.load(f)\n                        \n                        task_found = False\n                        task_status = 'unknown'\n                        \n                        if 'master' in data and 'tasks' in data['master']:\n                            for task in data['master']['tasks']:\n                                if f\"task-{task['id']}\" == todo_id:\n                                    task_found = True\n                                    task_status = task.get('status', 'pending')\n                                    break\n                                \n                                for subtask in task.get('subtasks', []):\n                                    if f\"subtask-{subtask['id']}\" == todo_id:\n                                        task_found = True\n                                        task_status = subtask.get('status', 'pending')\n                                        break\n                        \n                        if task_found:\n                            print(f\"Task {todo_id} found with status: {task_status}\")\n                            os.environ['TASK_STATUS'] = task_status\n                            if task_status == 'done':\n                                os.environ['VALIDATION_STATUS'] = 'valid'\n                            else:\n                                os.environ['VALIDATION_STATUS'] = 'incomplete'\n                        else:\n                            print(f\"Task {todo_id} not found\")\n                            os.environ['VALIDATION_STATUS'] = 'missing'\n                    \n                    except Exception as e:\n                        print(f\"Error validating task: {e}\")\n                        os.environ['VALIDATION_STATUS'] = 'error'\n                    EOF\n                    \n                    echo \"VALIDATION_STATUS=$VALIDATION_STATUS\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Collect Validation Results",
+          "run": "\n                python3 << 'EOF'\n                import json\n                import os\n                from datetime import datetime\n                \n                # Collect validation results for todo task-19\n                results = {\n                    'todo_id': 'task-19',\n                    'todo_type': 'task',\n                    'validation_timestamp': datetime.now().isoformat(),\n                    'validation_status': os.environ.get('VALIDATION_STATUS', 'unknown'),\n                    'validation_details': {\n                        'description': 'Implement Final Validation and Queue Generation...',\n                        'source': 'taskmaster',\n                        'priority': 'medium'\n                    },\n                    'environment_info': {\n                        'runner_os': os.environ.get('RUNNER_OS', 'unknown'),\n                        'python_version': os.environ.get('pythonLocation', 'unknown')\n                    }\n                }\n                \n                # Save results\n                with open('validation_results_task_19.json', 'w') as f:\n                    json.dump(results, f, indent=2)\n                \n                print(f\"Validation completed for todo task-19\")\n                print(f\"Status: {results['validation_status']}\")\n                EOF\n            ",
+          "env": {
+            "TODO_ID": "task-19",
+            "TODO_TYPE": "task"
+          }
+        }
+      ],
+      "improvement_steps": [
+        {
+          "name": "Generate Improvement Prompts",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    validation_status = os.environ.get('VALIDATION_STATUS', 'unknown')\n                    todo_type = \"task\"\n                    todo_description = \"Implement Final Validation and Queue Generation\"\n                    \n                    improvement_prompts = []\n                    \n                    if validation_status != 'valid':\n                        # Generate base improvement prompt\n                        improvement_prompts.append(f\"Fix todo item: {todo_description}\")\n                        \n                        # Type-specific prompts\n                        if todo_type in ['task', 'subtask']:\n                            if validation_status == 'missing_taskmaster':\n                                improvement_prompts.extend([\n                                    \"Initialize TaskMaster project structure\",\n                                    \"Set up .taskmaster directory and configuration\"\n                                ])\n                            elif validation_status == 'incomplete':\n                                improvement_prompts.extend([\n                                    f\"Complete TaskMaster task: {todo_description}\",\n                                    f\"Update task status to done\"\n                                ])\n                        \n                        elif todo_type == 'code-todo':\n                            if validation_status == 'missing_file':\n                                improvement_prompts.extend([\n                                    f\"Create missing source file: taskmaster\",\n                                    f\"Implement basic structure\"\n                                ])\n                            elif validation_status == 'syntax_error':\n                                improvement_prompts.extend([\n                                    f\"Fix syntax error in taskmaster\",\n                                    \"Validate Python syntax\"\n                                ])\n                            elif validation_status == 'todo_pending':\n                                improvement_prompts.extend([\n                                    f\"Implement TODO: {todo_description}\",\n                                    \"Replace TODO comment with implementation\"\n                                ])\n                    \n                    # Save improvement prompts\n                    improvement_data = {\n                        'todo_id': \"task-19\",\n                        'validation_status': validation_status,\n                        'improvement_prompts': improvement_prompts,\n                        'atomized_actions': [\n                            {\n                                'action_type': 'fix' if 'fix' in prompt.lower() else 'implement',\n                                'prompt': prompt,\n                                'priority': 'high' if validation_status == 'error' else 'medium'\n                            } for prompt in improvement_prompts\n                        ]\n                    }\n                    \n                    with open('improvement_prompts_task_19.json', 'w') as f:\n                        json.dump(improvement_data, f, indent=2)\n                    \n                    print(f\"Generated {len(improvement_prompts)} improvement prompts\")\n                    EOF\n                "
+        }
+      ],
+      "dependencies": [
+        "task-18"
+      ]
+    },
+    {
+      "runner_id": "runner-task-20-a3e9984a",
+      "todo_id": "task-20",
+      "workflow_name": "validate-task-task-20",
+      "runner_config": {
+        "runs-on": "ubuntu-latest",
+        "timeout-minutes": 30,
+        "environment": {
+          "PYTHONPATH": "${{ github.workspace }}",
+          "TODO_VALIDATION_MODE": "strict",
+          "TASKMASTER_HOME": "${{ github.workspace }}/.taskmaster",
+          "ANTHROPIC_API_KEY": "${{ secrets.ANTHROPIC_API_KEY }}",
+          "PERPLEXITY_API_KEY": "${{ secrets.PERPLEXITY_API_KEY }}"
+        }
+      },
+      "validation_steps": [
+        {
+          "name": "Checkout Repository",
+          "uses": "actions/checkout@v4",
+          "with": {
+            "fetch-depth": 0
+          }
+        },
+        {
+          "name": "Setup Python",
+          "uses": "actions/setup-python@v4",
+          "with": {
+            "python-version": "3.11"
+          }
+        },
+        {
+          "name": "Install Dependencies",
+          "run": "\n                    pip install --upgrade pip\n                    if [ -f requirements.txt ]; then pip install -r requirements.txt; fi\n                    pip install pytest taskmaster-ai httpx aiofiles\n                "
+        },
+        {
+          "name": "Validate TaskMaster Setup",
+          "run": "\n                    if [ ! -d \".taskmaster\" ]; then\n                        echo \"TaskMaster not initialized\"\n                        echo \"VALIDATION_STATUS=missing_taskmaster\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    if [ ! -f \".taskmaster/tasks/tasks.json\" ]; then\n                        echo \"TaskMaster tasks.json not found\"\n                        echo \"VALIDATION_STATUS=missing_tasks\" >> $GITHUB_ENV\n                        exit 1\n                    fi\n                    \n                    echo \"TaskMaster validation passed\"\n                    echo \"VALIDATION_STATUS=taskmaster_ready\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Validate Specific Task",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    todo_id = \"task-20\"\n                    \n                    try:\n                        with open('.taskmaster/tasks/tasks.json', 'r') as f:\n                            data = json.load(f)\n                        \n                        task_found = False\n                        task_status = 'unknown'\n                        \n                        if 'master' in data and 'tasks' in data['master']:\n                            for task in data['master']['tasks']:\n                                if f\"task-{task['id']}\" == todo_id:\n                                    task_found = True\n                                    task_status = task.get('status', 'pending')\n                                    break\n                                \n                                for subtask in task.get('subtasks', []):\n                                    if f\"subtask-{subtask['id']}\" == todo_id:\n                                        task_found = True\n                                        task_status = subtask.get('status', 'pending')\n                                        break\n                        \n                        if task_found:\n                            print(f\"Task {todo_id} found with status: {task_status}\")\n                            os.environ['TASK_STATUS'] = task_status\n                            if task_status == 'done':\n                                os.environ['VALIDATION_STATUS'] = 'valid'\n                            else:\n                                os.environ['VALIDATION_STATUS'] = 'incomplete'\n                        else:\n                            print(f\"Task {todo_id} not found\")\n                            os.environ['VALIDATION_STATUS'] = 'missing'\n                    \n                    except Exception as e:\n                        print(f\"Error validating task: {e}\")\n                        os.environ['VALIDATION_STATUS'] = 'error'\n                    EOF\n                    \n                    echo \"VALIDATION_STATUS=$VALIDATION_STATUS\" >> $GITHUB_ENV\n                "
+        },
+        {
+          "name": "Collect Validation Results",
+          "run": "\n                python3 << 'EOF'\n                import json\n                import os\n                from datetime import datetime\n                \n                # Collect validation results for todo task-20\n                results = {\n                    'todo_id': 'task-20',\n                    'todo_type': 'task',\n                    'validation_timestamp': datetime.now().isoformat(),\n                    'validation_status': os.environ.get('VALIDATION_STATUS', 'unknown'),\n                    'validation_details': {\n                        'description': 'Setup Execution Monitoring and Dashboard...',\n                        'source': 'taskmaster',\n                        'priority': 'medium'\n                    },\n                    'environment_info': {\n                        'runner_os': os.environ.get('RUNNER_OS', 'unknown'),\n                        'python_version': os.environ.get('pythonLocation', 'unknown')\n                    }\n                }\n                \n                # Save results\n                with open('validation_results_task_20.json', 'w') as f:\n                    json.dump(results, f, indent=2)\n                \n                print(f\"Validation completed for todo task-20\")\n                print(f\"Status: {results['validation_status']}\")\n                EOF\n            ",
+          "env": {
+            "TODO_ID": "task-20",
+            "TODO_TYPE": "task"
+          }
+        }
+      ],
+      "improvement_steps": [
+        {
+          "name": "Generate Improvement Prompts",
+          "run": "\n                    python3 << 'EOF'\n                    import json\n                    import os\n                    \n                    validation_status = os.environ.get('VALIDATION_STATUS', 'unknown')\n                    todo_type = \"task\"\n                    todo_description = \"Setup Execution Monitoring and Dashboard\"\n                    \n                    improvement_prompts = []\n                    \n                    if validation_status != 'valid':\n                        # Generate base improvement prompt\n                        improvement_prompts.append(f\"Fix todo item: {todo_description}\")\n                        \n                        # Type-specific prompts\n                        if todo_type in ['task', 'subtask']:\n                            if validation_status == 'missing_taskmaster':\n                                improvement_prompts.extend([\n                                    \"Initialize TaskMaster project structure\",\n                                    \"Set up .taskmaster directory and configuration\"\n                                ])\n                            elif validation_status == 'incomplete':\n                                improvement_prompts.extend([\n                                    f\"Complete TaskMaster task: {todo_description}\",\n                                    f\"Update task status to done\"\n                                ])\n                        \n                        elif todo_type == 'code-todo':\n                            if validation_status == 'missing_file':\n                                improvement_prompts.extend([\n                                    f\"Create missing source file: taskmaster\",\n                                    f\"Implement basic structure\"\n                                ])\n                            elif validation_status == 'syntax_error':\n                                improvement_prompts.extend([\n                                    f\"Fix syntax error in taskmaster\",\n                                    \"Validate Python syntax\"\n                                ])\n                            elif validation_status == 'todo_pending':\n                                improvement_prompts.extend([\n                                    f\"Implement TODO: {todo_description}\",\n                                    \"Replace TODO comment with implementation\"\n                                ])\n                    \n                    # Save improvement prompts\n                    improvement_data = {\n                        'todo_id': \"task-20\",\n                        'validation_status': validation_status,\n                        'improvement_prompts': improvement_prompts,\n                        'atomized_actions': [\n                            {\n                                'action_type': 'fix' if 'fix' in prompt.lower() else 'implement',\n                                'prompt': prompt,\n                                'priority': 'high' if validation_status == 'error' else 'medium'\n                            } for prompt in improvement_prompts\n                        ]\n                    }\n                    \n                    with open('improvement_prompts_task_20.json', 'w') as f:\n                        json.dump(improvement_data, f, indent=2)\n                    \n                    print(f\"Generated {len(improvement_prompts)} improvement prompts\")\n                    EOF\n                "
+        }
+      ],
+      "dependencies": [
+        "task-19"
+      ]
+    }
+  ]
+}

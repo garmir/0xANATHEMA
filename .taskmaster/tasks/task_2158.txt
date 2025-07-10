@@ -1,0 +1,19 @@
+# Task ID: 2158
+# Title: Implement Alert Conditions:
+- Autonomy score drops below 0.90
+- Task failure rate exceeds 5%
+- System resource (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Alert Conditions:
+- Autonomy score drops below 0.90
+- Task failure rate exceeds 5%
+- System resource usage exceeds 90%
+- Error rate exceeds 2%
+- Respo
+# Details:
+Converted from todo: .taskmaster/execution-roadmap.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,15 @@
+# Task ID: 5810
+# Title: Implement 4. Inter-Node Communication
+**Purpose**: Enable efficient communication and coordination between exe (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 4. Inter-Node Communication
+**Purpose**: Enable efficient communication and coordination between execution nodes
+**Protocol Specifications**:
+- gRPC f
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/level-2/core-engine/distributed-execution.md
+
+# Test Strategy:
+Validate completion of: action-item item

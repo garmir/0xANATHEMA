@@ -1,0 +1,21 @@
+# Task ID: 461
+# Title: Implement uncomment this once it's faster:
+        # return self._getrow(row)._minor_slice(col)
+
+        M, N  (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: uncomment this once it's faster:
+        # return self._getrow(row)._minor_slice(col)
+
+        M, N = self.shape
+        start, stop, stride = col.indices(N)
+
+        ii, jj = self.indptr[row:row+2]
+ 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/sparse/_csr.py
+
+# Test Strategy:
+Validate completion of: code-todo item

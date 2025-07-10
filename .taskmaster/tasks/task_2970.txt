@@ -1,0 +1,11 @@
+# Task ID: 2970
+# Title: Implement Choose integration pattern based on team needs (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Choose integration pattern based on team needs
+# Details:
+Converted from todo: .taskmaster/examples/integration-guide.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,14 @@
+# Task ID: 4154
+# Title: Implement Recursive Elements Identified
+- **Context Analysis**: Recursive examination of existing tasks (up to (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Recursive Elements Identified
+- **Context Analysis**: Recursive examination of existing tasks (up to 21 relevant tasks)
+- **Research Loop**: API calls
+# Details:
+Converted from todo: .taskmaster/reports/recursive-workflow-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

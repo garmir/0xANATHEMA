@@ -1,0 +1,11 @@
+# Task ID: 4551
+# Title: Implement Integration Metrics Collection with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Integration Metrics Collection
+# Details:
+Converted from todo: .taskmaster/examples/real-world-integration/claude-code-mcp-integration.md
+
+# Test Strategy:
+Validate completion of: action-item item

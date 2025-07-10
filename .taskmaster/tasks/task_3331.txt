@@ -1,0 +1,19 @@
+# Task ID: 3331
+# Title: Implement **Automatic Activation Triggers**
+```
+When any of these conditions detected:
+✓ Prompt complexity too (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Automatic Activation Triggers**
+```
+When any of these conditions detected:
+✓ Prompt complexity too high
+✓ Task execution stalled  
+✓ Multiple failed
+# Details:
+Converted from todo: .taskmaster/automation/atomic-breakdown-implementation-summary.md
+
+# Test Strategy:
+Validate completion of: action-item item

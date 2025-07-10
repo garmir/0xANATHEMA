@@ -1,0 +1,17 @@
+# Task ID: 306
+# Title: actionable?
+        # XXX: test change: fill_value=True -> allow_fill=True
+        result = sparse.t (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: actionable?
+        # XXX: test change: fill_value=True -> allow_fill=True
+        result = sparse.take(np.array([1, 0, -1]), allow_fill=True)
+        expected = SparseArray([np.nan, np.nan, np.nan])
+
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arrays/sparse/test_indexing.py
+
+# Test Strategy:
+Validate completion of: code-todo item

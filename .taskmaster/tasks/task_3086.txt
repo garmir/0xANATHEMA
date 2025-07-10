@@ -1,0 +1,13 @@
+# Task ID: 3086
+# Title: Implement Core Features
+Numbered list of main features (5-10 items max) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Core Features
+Numbered list of main features (5-10 items max)
+# Details:
+Converted from todo: .taskmaster/templates/best-practices.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,17 @@
+# Task ID: 509
+# Title: Implement Currently only support for degree 7 Genz-Malik cubature, should aim to
+        # support arbitrary d (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Currently only support for degree 7 Genz-Malik cubature, should aim to
+        # support arbitrary degree
+        l_2 = math.sqrt(9/70)
+        l_3 = math.sqrt(9/10)
+        l_4 = math.sqrt(9/10)
+    
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/integrate/_rules/_genz_malik.py
+
+# Test Strategy:
+Validate completion of: code-todo item

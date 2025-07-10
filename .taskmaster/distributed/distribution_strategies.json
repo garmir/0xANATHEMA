@@ -1,0 +1,38 @@
+{
+  "cost_optimized": {
+    "strategy_name": "cost_optimized",
+    "load_balancing_algorithm": "least_cost",
+    "failover_enabled": true,
+    "cost_optimization": true,
+    "performance_priority": false,
+    "geographic_distribution": false,
+    "max_providers_per_task": 1
+  },
+  "performance_first": {
+    "strategy_name": "performance_first",
+    "load_balancing_algorithm": "highest_performance",
+    "failover_enabled": true,
+    "cost_optimization": false,
+    "performance_priority": true,
+    "geographic_distribution": false,
+    "max_providers_per_task": 1
+  },
+  "balanced": {
+    "strategy_name": "balanced",
+    "load_balancing_algorithm": "weighted_round_robin",
+    "failover_enabled": true,
+    "cost_optimization": true,
+    "performance_priority": true,
+    "geographic_distribution": true,
+    "max_providers_per_task": 2
+  },
+  "high_availability": {
+    "strategy_name": "high_availability",
+    "load_balancing_algorithm": "geographic_distribution",
+    "failover_enabled": true,
+    "cost_optimization": false,
+    "performance_priority": false,
+    "geographic_distribution": true,
+    "max_providers_per_task": 3
+  }
+}

@@ -1,0 +1,20 @@
+# Task ID: 423
+# Title: Implement Remove Datetime & DatetimeTZ formatters.
+        return "'{}'".format
+
+    # ----------------------- (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Remove Datetime & DatetimeTZ formatters.
+        return "'{}'".format
+
+    # ----------------------------------------------------------------
+    # Array-Like / EA-Interface Methods
+
+    def __array__
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/arrays/datetimelike.py
+
+# Test Strategy:
+Validate completion of: code-todo item

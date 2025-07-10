@@ -1,0 +1,15 @@
+# Task ID: 366
+# Title: Implement Refactor this logic, its pretty convoluted
+                    if "python" in engine and argname not (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Refactor this logic, its pretty convoluted
+                    if "python" in engine and argname not in _python_unsupported:
+                        pass
+                    elif "pyarrow" in engine a
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/io/parsers/readers.py
+
+# Test Strategy:
+Validate completion of: code-todo item

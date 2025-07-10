@@ -1,0 +1,14 @@
+# Task ID: 433
+# Title: Implement Consider deprecating these in favor of `union` (xref gh-15506)
+    # error: Incompatible types in as (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Consider deprecating these in favor of `union` (xref gh-15506)
+    # error: Incompatible types in assignment (expression has type
+    # "Callable[[FrozenList, Any], FrozenList]", base class "list" def
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/indexes/frozen.py
+
+# Test Strategy:
+Validate completion of: code-todo item

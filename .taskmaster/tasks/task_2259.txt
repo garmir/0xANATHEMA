@@ -1,0 +1,17 @@
+# Task ID: 2259
+# Title: Implement StarCoder 15B
+- **Capabilities**: Code generation, 8K context, 80+ programming languages
+- **Strengt (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: StarCoder 15B
+- **Capabilities**: Code generation, 8K context, 80+ programming languages
+- **Strengths**:
+  - Trained on permissively licensed code
+  
+# Details:
+Converted from todo: .taskmaster/research/local-llm-survey-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

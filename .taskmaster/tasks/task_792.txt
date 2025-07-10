@@ -1,0 +1,18 @@
+# Task ID: 792
+# Title: Implement In Python 3, this would be better as `yield from ...`.
+    return chaini(starmap(all_paths, product( (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: In Python 3, this would be better as `yield from ...`.
+    return chaini(starmap(all_paths, product(roots, leaves)))
+
+
+@not_implemented_for("multigraph")
+@not_implemented_for("undirected")
+@nx._dispat
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/dag.py
+
+# Test Strategy:
+Validate completion of: code-todo item

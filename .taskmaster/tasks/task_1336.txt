@@ -1,0 +1,11 @@
+# Task ID: 1336
+# Title: Implement Configure Perplexity API key in `.env` for full research capabilities (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Configure Perplexity API key in `.env` for full research capabilities
+# Details:
+Converted from todo: IMPLEMENTATION_COMPLETE.md
+
+# Test Strategy:
+Validate completion of: action-item item

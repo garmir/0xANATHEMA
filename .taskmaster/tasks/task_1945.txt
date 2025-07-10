@@ -1,0 +1,16 @@
+# Task ID: 1945
+# Title: Implement Model Selection
+- **Research Tasks**: Llama2 or Mistral 7B
+- **Code Generation**: CodeLlama or StarC (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Model Selection
+- **Research Tasks**: Llama2 or Mistral 7B
+- **Code Generation**: CodeLlama or StarCoder
+- **Analysis Tasks**: Llama2 13B or Vicuna 13
+# Details:
+Converted from todo: LOCAL_LLM_MIGRATION_GUIDE.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -13,6 +13,75 @@
         "DEFAULT_SUBTASKS": 5,
         "DEFAULT_PRIORITY": "medium"
       }
+    },
+    "github-mcp": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": ""
+      }
+    },
+    "filesystem-mcp": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/anam/archive"],
+      "env": {}
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": ""
+      }
+    }
+  },
+  "remoteServers": {
+    "task-master-cloud": {
+      "url": "https://api.taskmaster.ai/mcp/v1",
+      "apiKey": "",
+      "capabilities": [
+        "code_execution",
+        "files_api", 
+        "prompt_caching",
+        "mathematical_optimization",
+        "adaptive_decomposition",
+        "autonomous_execution"
+      ],
+      "enabled": false,
+      "fallback": true
+    },
+    "anthropic-mcp-hub": {
+      "url": "https://mcp-hub.anthropic.com/v1",
+      "apiKey": "",
+      "capabilities": [
+        "extended_thinking",
+        "multi_agent_orchestration",
+        "predictive_analytics"
+      ],
+      "enabled": false,
+      "experimental": true
+    }
+  },
+  "configuration": {
+    "version": "2025.1",
+    "features": {
+      "remote_mcp_support": true,
+      "local_fallback": true,
+      "prompt_caching": true,
+      "parallel_execution": true,
+      "self_healing_workflows": true
+    },
+    "optimizations": {
+      "williams_sqrt_space": true,
+      "cook_mertz_tree_eval": true,
+      "adapt_decomposition": true,
+      "catalytic_computing": true,
+      "red_blue_pebbling": false
+    },
+    "claude_integration": {
+      "opus_4_features": true,
+      "extended_thinking": true,
+      "autonomous_agents": true,
+      "tool_use_enhanced": true
     }
   }
 }

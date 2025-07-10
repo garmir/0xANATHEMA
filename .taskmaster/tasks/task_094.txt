@@ -1,0 +1,14 @@
+# Task ID: 94
+# Title: Implement The spec doesn't say anything about if the keys should be
+        #       considered case sensitive  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: done
+# Dependencies: None
+# Priority: low
+# Description: The spec doesn't say anything about if the keys should be
+        #       considered case sensitive or not... logically they should
+        #       be case-preserving and case-insensitive, but doing t
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pip/_vendor/packaging/metadata.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,15 @@
+# Task ID: 2697
+# Title: Implement Research State Analysis
+- **File**: `.taskmaster/scripts/auto-research-prompt-generator.py`
+- **Func (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Research State Analysis
+- **File**: `.taskmaster/scripts/auto-research-prompt-generator.py`
+- **Function**: Dynamic assessment of research implementat
+# Details:
+Converted from todo: .taskmaster/docs/research-planning-workflow-map.md
+
+# Test Strategy:
+Validate completion of: action-item item

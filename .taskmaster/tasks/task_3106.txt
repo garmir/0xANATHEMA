@@ -1,0 +1,19 @@
+# Task ID: 3106
+# Title: Autonomous Loop Implementation
+```python
+def autonomous_execution_loop():
+    """Implement safe auto
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Autonomous Loop Implementation
+```python
+def autonomous_execution_loop():
+    """Implement safe autonomous execution loop"""
+    
+    max_iterations =
+# Details:
+Converted from todo: .taskmaster/templates/best-practices.md
+
+# Test Strategy:
+Validate completion of: action-item item

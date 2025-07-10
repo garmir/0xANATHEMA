@@ -1,0 +1,20 @@
+# Task ID: 717
+# Title: Implement .zip support, .tar support?
+class _FileOpeners:
+    """
+    Container for different methods to open  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: .zip support, .tar support?
+class _FileOpeners:
+    """
+    Container for different methods to open (un-)compressed files.
+
+    `_FileOpeners` contains a dictionary that holds one method for each
+    
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/lib/_datasource.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,18 @@
+# Task ID: 3577
+# Title: Implement Service URLs
+- **Ollama**: http://localhost:11434
+- **LocalAI**: http://localhost:8080
+- **Qdrant**: (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Service URLs
+- **Ollama**: http://localhost:11434
+- **LocalAI**: http://localhost:8080
+- **Qdrant**: http://localhost:6333
+- **Grafana**: http://local
+# Details:
+Converted from todo: .taskmaster/migration/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,13 @@
+# Task ID: 2005
+# Title: Implement Pattern 4: Large Feature Initiatives (PRD-Driven)
+This is a more structured approach for significant (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Pattern 4: Large Feature Initiatives (PRD-Driven)
+This is a more structured approach for significant new features or epics.
+# Details:
+Converted from todo: .trae/rules/dev_workflow.md
+
+# Test Strategy:
+Validate completion of: action-item item

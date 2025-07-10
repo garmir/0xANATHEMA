@@ -1,0 +1,14 @@
+# Task ID: 1564
+# Title: Implement Key Enhancement Features:
+- **AI-Guided Conflict Resolution**: Automatic Claude session spawning for (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Key Enhancement Features:
+- **AI-Guided Conflict Resolution**: Automatic Claude session spawning for complex conflicts
+- **LABRYS Analysis Integration
+# Details:
+Converted from todo: gitconf.md
+
+# Test Strategy:
+Validate completion of: action-item item

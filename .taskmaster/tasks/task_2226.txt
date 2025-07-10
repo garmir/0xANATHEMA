@@ -1,0 +1,11 @@
+# Task ID: 2226
+# Title: **API Adaptation**: Implement LocalAI endpoints with OpenAI compatibility (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **API Adaptation**: Implement LocalAI endpoints with OpenAI compatibility
+# Details:
+Converted from todo: .taskmaster/research/local-llm-survey-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

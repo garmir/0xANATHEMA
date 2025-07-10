@@ -1,0 +1,17 @@
+# Task ID: 634
+# Title: Implement FIx SAGA which fails badly with sample_weights.
+        # This is a known limitation, see:
+        # (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: FIx SAGA which fails badly with sample_weights.
+        # This is a known limitation, see:
+        # https://github.com/scikit-learn/scikit-learn/issues/21305
+        pytest.param(
+            Logisti
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/linear_model/tests/test_common.py
+
+# Test Strategy:
+Validate completion of: code-todo item

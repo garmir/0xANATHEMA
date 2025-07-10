@@ -1,0 +1,15 @@
+# Task ID: 638
+# Title: Implement uncomment when sparse Ridge with intercept will be fixed (#4710)
+    # assert_array_almost_equal(clf (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: uncomment when sparse Ridge with intercept will be fixed (#4710)
+    # assert_array_almost_equal(clf2.coef_.ravel(),
+    #                          spweights2.ravel(),
+    #                          d
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/linear_model/tests/test_sag.py
+
+# Test Strategy:
+Validate completion of: code-todo item

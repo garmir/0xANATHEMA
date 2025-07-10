@@ -1,0 +1,18 @@
+# Task ID: 599
+# Title: Implement add keyword copy to copy on demand
+            self.__Xfit = X
+            X = self._compute_kernel( (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: add keyword copy to copy on demand
+            self.__Xfit = X
+            X = self._compute_kernel(X)
+
+            if X.shape[0] != X.shape[1]:
+                raise ValueError("X.shape[0] should be 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/svm/_base.py
+
+# Test Strategy:
+Validate completion of: code-todo item

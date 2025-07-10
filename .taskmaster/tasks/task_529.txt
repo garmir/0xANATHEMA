@@ -1,0 +1,18 @@
+# Task ID: 529
+# Title: Implement Offer 'http/1.1' as well, but for testing purposes this is handy.
+    urllib3_util.ALPN_PROTOCOLS =  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Offer 'http/1.1' as well, but for testing purposes this is handy.
+    urllib3_util.ALPN_PROTOCOLS = ["h2"]
+    urllib3_util_ssl.ALPN_PROTOCOLS = ["h2"]
+
+
+def extract_from_urllib3() -> None:
+    from .
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/urllib3/http2/__init__.py
+
+# Test Strategy:
+Validate completion of: code-todo item

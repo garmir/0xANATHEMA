@@ -1,0 +1,20 @@
+# Task ID: 231
+# Title: Implement using range(5) here is a kludge
+@pytest.fixture(
+    params=list(range(5)),
+    ids=["DataFrame", "S (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: using range(5) here is a kludge
+@pytest.fixture(
+    params=list(range(5)),
+    ids=["DataFrame", "Series", "SeriesNaN", "DataFrameNaN", "float"],
+)
+def lhs(request):
+    nan_df1 = DataFrame(np.random
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/computation/test_eval.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,14 @@
+# Task ID: 2730
+# Title: Stakeholder Cross-Reference
+- **Research Team**: Perplexity AI integration and findings implementati
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Stakeholder Cross-Reference
+- **Research Team**: Perplexity AI integration and findings implementation ✅
+- **Development Team**: Atomic task execution
+# Details:
+Converted from todo: .taskmaster/docs/research-planning-workflow-map.md
+
+# Test Strategy:
+Validate completion of: action-item item

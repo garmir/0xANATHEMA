@@ -1,0 +1,16 @@
+# Task ID: 780
+# Title: Implement Only prune unused ltag tags, renumerating langIDs accordingly.
+        # Note ltag can also be used  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Only prune unused ltag tags, renumerating langIDs accordingly.
+        # Note ltag can also be used by feat or morx tables, so check those too.
+        if not any(
+            record
+            for r
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/varLib/instancer/names.py
+
+# Test Strategy:
+Validate completion of: code-todo item

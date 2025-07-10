@@ -1,0 +1,15 @@
+# Task ID: 252
+# Title: Implement ATM inserting '2012-01-01 00:00:00' when we have obj.freq=="M"
+            #  casts that string to P (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: ATM inserting '2012-01-01 00:00:00' when we have obj.freq=="M"
+            #  casts that string to Period[M], not clear that is desirable
+            if not isinstance(insert, pd.Timestamp):
+         
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexing/test_coercion.py
+
+# Test Strategy:
+Validate completion of: code-todo item

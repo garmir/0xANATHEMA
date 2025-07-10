@@ -1,0 +1,18 @@
+# Task ID: 3111
+# Title: Implement API Key Management
+- Use environment variables, never hard-code keys
+- Rotate keys regularly
+- Use l (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: API Key Management
+- Use environment variables, never hard-code keys
+- Rotate keys regularly
+- Use least-privilege access
+- Monitor API usage for anom
+# Details:
+Converted from todo: .taskmaster/templates/best-practices.md
+
+# Test Strategy:
+Validate completion of: action-item item

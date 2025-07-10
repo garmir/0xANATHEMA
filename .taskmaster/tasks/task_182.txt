@@ -1,0 +1,18 @@
+# Task ID: 182
+# Title: Implement Strimg option, this should return string dtype
+        expected = Index([np.nan] * 4, dtype=object)
+ (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Strimg option, this should return string dtype
+        expected = Index([np.nan] * 4, dtype=object)
+    result = s.str.cat(t, join="left")
+    tm.assert_equal(result, expected)
+
+    # all-NA caller (o
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/strings/test_cat.py
+
+# Test Strategy:
+Validate completion of: code-todo item

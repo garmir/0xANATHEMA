@@ -1,0 +1,15 @@
+# Task ID: 836
+# Title: Implement Only do this if the first argument of the decorated function is `cls`
+                    sym.node.f (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Only do this if the first argument of the decorated function is `cls`
+                    sym.node.func.is_class = True
+
+    def collect_config(self) -> ModelConfigData:  # noqa: C901 (ignore complexi
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pydantic/mypy.py
+
+# Test Strategy:
+Validate completion of: code-todo item

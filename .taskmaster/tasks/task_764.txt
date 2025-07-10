@@ -1,0 +1,17 @@
+# Task ID: 764
+# Title: Implement CFF2 no need for endchar.
+            charstring.program.append("endchar")
+        if hasattr(charst (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: CFF2 no need for endchar.
+            charstring.program.append("endchar")
+        if hasattr(charstring, "width"):
+            # Insert width back if needed
+            if charstring.width != charstr
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/cffLib/transforms.py
+
+# Test Strategy:
+Validate completion of: code-todo item

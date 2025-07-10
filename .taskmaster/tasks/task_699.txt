@@ -1,0 +1,16 @@
+# Task ID: 699
+# Title: Implement These docs will need an if to highlight the default rather than
+#       the C-types (and be corr (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: These docs probably need an if to highlight the default rather than
+#       the C-types (and be correct).
+add_newdoc_for_scalar_type('int_', [],
+    """
+    Default signed integer type, 64bit on 64bit
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/_core/_add_newdocs_scalars.py
+
+# Test Strategy:
+Validate completion of: code-todo item

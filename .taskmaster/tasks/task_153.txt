@@ -1,0 +1,19 @@
+# Task ID: 153
+# Title: test cases with arr.dtype.kind in "mM"
+        if is_ndarray:
+            arr = cast(np.ndarray, arr (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: test cases with arr.dtype.kind in "mM"
+        if is_ndarray:
+            arr = cast(np.ndarray, arr)
+            shape = arr.shape
+            if arr.ndim > 1:
+                arr = arr.ravel()
+     
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/construction.py
+
+# Test Strategy:
+Validate completion of: code-todo item

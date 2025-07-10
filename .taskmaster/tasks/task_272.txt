@@ -1,0 +1,16 @@
+# Task ID: 272
+# Title: Implement give a more useful or informative message?
+            date_range("2016-01-01", "2016-01-02", freq=" (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: give a more useful or informative message?
+            date_range("2016-01-01", "2016-01-02", freq="ns", unit="ms")
+
+    def test_date_range_freq_matches_reso(self):
+        # GH#49106 matching reso i
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/datetimes/test_date_range.py
+
+# Test Strategy:
+Validate completion of: code-todo item

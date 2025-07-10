@@ -1,0 +1,16 @@
+# Task ID: 555
+# Title: Implement (SLEP6): remove if-condition for unrouted sample_weight when metadata
+    # routing can't be disable (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (SLEP6): remove if-condition for unrouted sample_weight when metadata
+    # routing can't be disabled.
+    if not _routing_enabled() and "sample_weight" in fit_params:
+        try:
+            with _p
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/ensemble/_base.py
+
+# Test Strategy:
+Validate completion of: code-todo item

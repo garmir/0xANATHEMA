@@ -1,0 +1,16 @@
+# Task ID: 3309
+# Title: Implement Rule Definition
+When prompts get stuck or become too complex:
+1. Run 'task-master research' for brea (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Rule Definition
+When prompts get stuck or become too complex:
+1. Run 'task-master research' for breakdown analysis
+2. Recursively expand tasks to atom
+# Details:
+Converted from todo: .taskmaster/automation/HARD_CODED_WORKFLOW_RULE.md
+
+# Test Strategy:
+Validate completion of: action-item item

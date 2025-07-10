@@ -1,0 +1,15 @@
+# Task ID: 3406
+# Title: Implement Automation Quality Metrics
+- **Session Continuity**: 100% automated prompt generation
+- **Research A (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Automation Quality Metrics
+- **Session Continuity**: 100% automated prompt generation
+- **Research Alignment**: Dynamic analysis of implementation gap
+# Details:
+Converted from todo: .taskmaster/automation/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

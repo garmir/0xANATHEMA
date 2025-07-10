@@ -1,0 +1,21 @@
+# Task ID: 487
+# Title: test prune
+# TODO test has_sorted_indices
+class _TestCommon:
+    """test common functionality shared (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: test prune
+# TODO test has_sorted_indices
+class _TestCommon:
+    """test common functionality shared by all sparse formats"""
+    math_dtypes = supported_dtypes
+
+    bsr_container = bsr_array
+    coo_
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/sparse/tests/test_base.py
+
+# Test Strategy:
+Validate completion of: code-todo item

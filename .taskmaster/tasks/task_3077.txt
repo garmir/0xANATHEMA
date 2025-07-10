@@ -1,0 +1,11 @@
+# Task ID: 3077
+# Title: Implement General Best Practices with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: General Best Practices
+# Details:
+Converted from todo: .taskmaster/templates/best-practices.md
+
+# Test Strategy:
+Validate completion of: action-item item

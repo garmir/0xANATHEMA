@@ -1,0 +1,11 @@
+# Task ID: 4485
+# Title: **Integration Testing**: Validate each completed task before marking done (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Integration Testing**: Validate each completed task before marking done
+# Details:
+Converted from todo: .taskmaster/examples/real-world-integration/web-app-scenario.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,11 @@
+# Task ID: 4117
+# Title: Implement **Self-Improving Loops**: Autonomous research-driven workflow loops (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Self-Improving Loops**: Autonomous research-driven workflow loops
+# Details:
+Converted from todo: .taskmaster/reports/recursive-workflow-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,18 @@
+# Task ID: 856
+# Title: Implement Add a suggested migration path once there is a way to use custom encoders
+@deprecated(
+    '`custom_ (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Add a suggested migration path once there is a way to use custom encoders
+@deprecated(
+    '`custom_pydantic_encoder` is deprecated, use `BaseModel.model_dump` instead.',
+    category=None,
+)
+def cust
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pydantic/deprecated/json.py
+
+# Test Strategy:
+Validate completion of: code-todo item

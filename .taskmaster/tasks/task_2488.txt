@@ -1,0 +1,11 @@
+# Task ID: 2488
+# Title: Implement **Primary Speed Factors** with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Primary Speed Factors**
+# Details:
+Converted from todo: .taskmaster/analysis/github-actions-validation-report.md
+
+# Test Strategy:
+Validate completion of: action-item item

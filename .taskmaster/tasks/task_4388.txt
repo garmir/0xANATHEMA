@@ -1,0 +1,11 @@
+# Task ID: 4388
+# Title: Implement Step 3: Claude Code Integration (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Step 3: Claude Code Integration
+# Details:
+Converted from todo: .taskmaster/examples/web-app-project/workflow-example.md
+
+# Test Strategy:
+Validate completion of: action-item item

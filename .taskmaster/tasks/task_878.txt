@@ -1,0 +1,18 @@
+# Task ID: 878
+# Title: Implement / should divide keywords/symbols into namespace/rest
+    # but that's hard, so just pretend / is par (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: / should divide keywords/symbols into namespace/rest
+    # but that's hard, so just pretend / is part of the name
+    valid_name = r'(?!#)[\w!$%*+<=>?/.#|-]+'
+
+    tokens = {
+        'root': [
+       
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/jvm.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,17 @@
+# Task ID: 3497
+# Title: Implement Architecture Overview
+```
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   Tas (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Architecture Overview
+```
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   Task Master   │───▶│   Model Router   │───▶│  Local L
+# Details:
+Converted from todo: .taskmaster/migration/llm_evaluation_report.md
+
+# Test Strategy:
+Validate completion of: action-item item

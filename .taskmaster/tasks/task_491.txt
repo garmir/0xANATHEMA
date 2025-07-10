@@ -1,0 +1,15 @@
+# Task ID: 491
+# Title: Implement arpack crashes when v0=v0, which="SM"
+            kwargs = {'v0': v0} if solver not in {None, 'arpac (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: arpack crashes when v0=v0, which="SM"
+            kwargs = {'v0': v0} if solver not in {None, 'arpack'} else {}
+            if self.solver == 'lobpcg':
+                with pytest.warns(UserWarning, m
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/sparse/linalg/_eigen/tests/test_svds.py
+
+# Test Strategy:
+Validate completion of: code-todo item

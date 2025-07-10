@@ -1,0 +1,17 @@
+# Task ID: 441
+# Title: Implement use a better error approximation
+    with np.errstate(divide='ignore', invalid='ignore'):
+        er (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: use a better error approximation
+    with np.errstate(divide='ignore', invalid='ignore'):
+        errest = norm(expm(F)-A, 1) / np.asarray(norm(A, 1), dtype=A.dtype).real[()]
+    if disp:
+        if n
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/linalg/_matfuncs.py
+
+# Test Strategy:
+Validate completion of: code-todo item

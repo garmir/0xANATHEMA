@@ -1,0 +1,21 @@
+# Task ID: 194
+# Title: Implement should this raise at the resample call instead of at the mean call?
+            rs.mean()
+
+    @pyte (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: should this raise at the resample call instead of at the mean call?
+            rs.mean()
+
+    @pytest.mark.parametrize(
+        "tz",
+        [
+            pytz.timezone("America/Los_Angeles"),
+     
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/resample/test_period_index.py
+
+# Test Strategy:
+Validate completion of: code-todo item

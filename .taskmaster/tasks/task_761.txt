@@ -1,0 +1,19 @@
+# Task ID: 761
+# Title: Implement (anthrotype): remove once this Skia bug is fixed
+    try:
+        return pathops.simplify(path, cloc (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (anthrotype): remove once this Skia bug is fixed
+    try:
+        return pathops.simplify(path, clockwise=path.clockwise)
+    except pathops.PathOpsError:
+        pass
+
+    path = _round_path(path, ro
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/ttLib/removeOverlaps.py
+
+# Test Strategy:
+Validate completion of: code-todo item

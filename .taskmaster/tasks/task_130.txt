@@ -1,0 +1,14 @@
+# Task ID: 130
+# Title: Implement : This function may move into the Text class as a method. As a
+    # matter of fact, the information (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: : This function may move into the Text class as a method. As a
+    # matter of fact, the information from the _get_textbox function
+    # should be available during the Text._get_layout() call, which 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/matplotlib/text.py
+
+# Test Strategy:
+Validate completion of: code-todo item

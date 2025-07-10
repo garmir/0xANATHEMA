@@ -1,0 +1,16 @@
+# Task ID: 596
+# Title: Implement (SLEP6): remove when metadata routing cannot be disabled.
+                self.estimator_ = clone(se (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (SLEP6): remove when metadata routing cannot be disabled.
+                self.estimator_ = clone(self.estimator)
+                self.estimator_.fit(X, y, **fit_params)
+
+        if hasattr(self.estim
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/feature_selection/_from_model.py
+
+# Test Strategy:
+Validate completion of: code-todo item

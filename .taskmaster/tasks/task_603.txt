@@ -1,0 +1,16 @@
+# Task ID: 603
+# Title: Implement (1.9): remove and switch to quantile_method="averaged_inverted_cdf"
+        # by default.
+        qu (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.9): remove and switch to quantile_method="averaged_inverted_cdf"
+        # by default.
+        quantile_method = self.quantile_method
+        if self.strategy == "quantile" and quantile_method == "
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/preprocessing/_discretization.py
+
+# Test Strategy:
+Validate completion of: code-todo item

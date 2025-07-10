@@ -1,0 +1,18 @@
+# Task ID: 270
+# Title: Implement we could plausibly try to infer down to int16 here
+    expected = Index([1000, 2000, 3000], dtype=np
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: we could plausibly try to infer down to int16 here
+    expected = Index([1000, 2000, 3000], dtype=np.int64)
+    tm.assert_index_equal(result, expected)
+
+
+def test_view_to_datetimelike():
+    # GH#5571
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/numeric/test_numeric.py
+
+# Test Strategy:
+Validate completion of: code-todo item

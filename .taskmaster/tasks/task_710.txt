@@ -1,0 +1,18 @@
+# Task ID: 710
+# Title: Implement Remove all this when scaninputline is replaced
+    if args.module_name:
+        if "-h" in comline_l (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Remove all this when scaninputline is replaced
+    if args.module_name:
+        if "-h" in comline_list:
+            modname = (
+                args.module_name
+            )  # Directly use from arg
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/f2py/f2py2e.py
+
+# Test Strategy:
+Validate completion of: code-todo item

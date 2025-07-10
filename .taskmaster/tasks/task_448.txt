@@ -1,0 +1,21 @@
+# Task ID: 448
+# Title: Implement fix disp argument
+    x, fun, ret_code, nfev, nit = _direct(
+        _func_wrap,
+        np.asarray( (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: fix disp argument
+    x, fun, ret_code, nfev, nit = _direct(
+        _func_wrap,
+        np.asarray(lb), np.asarray(ub),
+        args,
+        False, eps, maxfun, maxiter,
+        locally_biased,
+    
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/optimize/_direct_py.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,11 @@
+# Task ID: 2165
+# Title: Classify implement types (installation, creation, configuration, execution, validation) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Classify todo types (installation, creation, configuration, execution, validation)
+# Details:
+Converted from todo: .taskmaster/AUTONOMOUS-WORKFLOW-IMPLEMENTATION.md
+
+# Test Strategy:
+Validate completion of: action-item item

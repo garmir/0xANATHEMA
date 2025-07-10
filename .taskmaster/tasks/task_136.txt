@@ -1,0 +1,19 @@
+# Task ID: 136
+# Title: Implement support for BOM within a stream.
+        #if ch == '\uFEFF':
+        #    return self.fetch_bom()    (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: support for BOM within a stream.
+        #if ch == '\uFEFF':
+        #    return self.fetch_bom()    <-- issue BOMToken
+
+        # Note: the order of the following checks is NOT significant.
+
+        
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/yaml/scanner.py
+
+# Test Strategy:
+Validate completion of: code-todo item

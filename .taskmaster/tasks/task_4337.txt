@@ -1,0 +1,11 @@
+# Task ID: 4337
+# Title: Implement 3. Research Quality Assessment Module (RQAM) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 3. Research Quality Assessment Module (RQAM)
+# Details:
+Converted from todo: .taskmaster/reports/recursive-improvement-framework.md
+
+# Test Strategy:
+Validate completion of: action-item item

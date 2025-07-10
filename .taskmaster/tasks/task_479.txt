@@ -1,0 +1,15 @@
+# Task ID: 479
+# Title: Implement multiple checks in this function are not robust, tweaking the
+        # seed above will make differe (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: multiple checks in this function are not robust, tweaking the
+        # seed above will make different distributions fail.
+        check_sample_meanvar_(m, v, rvs, rng)
+    check_cdf_ppf(distfn, arg, 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/stats/tests/test_continuous_basic.py
+
+# Test Strategy:
+Validate completion of: code-todo item

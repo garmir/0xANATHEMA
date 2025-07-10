@@ -1,0 +1,11 @@
+# Task ID: 2931
+# Title: **Documentation**: Keep implementation notes in task details
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Documentation**: Keep implementation notes in task details
+# Details:
+Converted from todo: .taskmaster/examples/web-app-integration.md
+
+# Test Strategy:
+Validate completion of: action-item item

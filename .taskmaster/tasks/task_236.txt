@@ -1,0 +1,21 @@
+# Task ID: 236
+# Title: Implement more freq variants
+@pytest.fixture(params=["D", "B", "W", "ME", "QE", "YE"])
+def freqstr(request):
+  (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: more freq variants
+@pytest.fixture(params=["D", "B", "W", "ME", "QE", "YE"])
+def freqstr(request):
+    """Fixture returning parametrized frequency in string format."""
+    return request.param
+
+
+@pyte
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arrays/test_datetimelike.py
+
+# Test Strategy:
+Validate completion of: code-todo item

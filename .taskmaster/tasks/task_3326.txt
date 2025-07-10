@@ -1,0 +1,15 @@
+# Task ID: 3326
+# Title: Implement 1. **Hard-Coded Workflow Rule** 
+- **File**: `.taskmaster/automation/HARD_CODED_WORKFLOW_RULE.md`
+-  (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 1. **Hard-Coded Workflow Rule** 
+- **File**: `.taskmaster/automation/HARD_CODED_WORKFLOW_RULE.md`
+- **Status**: Permanently integrated into Task-Maste
+# Details:
+Converted from todo: .taskmaster/automation/atomic-breakdown-implementation-summary.md
+
+# Test Strategy:
+Validate completion of: action-item item

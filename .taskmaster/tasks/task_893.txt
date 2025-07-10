@@ -1,0 +1,11 @@
+# Task ID: 893
+# Title: Implement Execute: next with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Execute: next
+# Details:
+Converted from todo: CLAUDE.md
+
+# Test Strategy:
+Validate completion of: documentation item

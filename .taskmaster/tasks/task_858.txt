@@ -1,0 +1,17 @@
+# Task ID: 858
+# Title: Implement "correctly" parse complex code attributes
+            (r'(\[)(CCode|(?:Integer|Floating)Type)',
+     (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: "correctly" parse complex code attributes
+            (r'(\[)(CCode|(?:Integer|Floating)Type)',
+             bygroups(Punctuation, Name.Decorator)),
+            (r'[()\[\],.]', Punctuation),
+         
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/c_like.py
+
+# Test Strategy:
+Validate completion of: code-todo item

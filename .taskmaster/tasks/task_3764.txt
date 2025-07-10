@@ -1,0 +1,16 @@
+# Task ID: 3764
+# Title: Implement Model Configuration Active:
+- Main: Claude 3.7 Sonnet (62.3% SWE score)
+- Research: Perplexity Sonar (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Model Configuration Active:
+- Main: Claude 3.7 Sonnet (62.3% SWE score)
+- Research: Perplexity Sonar Pro
+- Fallback: Claude 3.5 Sonnet
+# Details:
+Converted from todo: .taskmaster/reports/api-optimization-validation.md
+
+# Test Strategy:
+Validate completion of: action-item item

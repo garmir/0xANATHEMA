@@ -1,0 +1,17 @@
+# Task ID: 810
+# Title: Why doesn't this algorithm work for directed graphs?
+@not_implemented_for("directed")
+@nx._dispatcha
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Why doesn't this algorithm work for directed graphs?
+@not_implemented_for("directed")
+@nx._dispatchable(node_attrs="weight")
+def min_weighted_dominating_set(G, weight=None):
+    r"""Returns a dominati
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/approximation/dominating_set.py
+
+# Test Strategy:
+Validate completion of: code-todo item

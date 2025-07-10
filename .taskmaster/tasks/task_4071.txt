@@ -1,0 +1,11 @@
+# Task ID: 4071
+# Title: Implement **Local LLM Server Required**: Ollama or similar needed for full functionality (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Local LLM Server Required**: Ollama or similar needed for full functionality
+# Details:
+Converted from todo: .taskmaster/reports/local-llm-migration-health-check.md
+
+# Test Strategy:
+Validate completion of: action-item item

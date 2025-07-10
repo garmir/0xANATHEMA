@@ -1,0 +1,16 @@
+# Task ID: 5563
+# Title: Implement 4. Selection Mechanisms
+- **Tournament Selection**: Competition-based selection
+- **Roulette Wheel** (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 4. Selection Mechanisms
+- **Tournament Selection**: Competition-based selection
+- **Roulette Wheel**: Fitness-proportionate selection
+- **Rank-based S
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-2/prd-2.1.md
+
+# Test Strategy:
+Validate completion of: action-item item

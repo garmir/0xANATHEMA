@@ -1,0 +1,16 @@
+# Task ID: 649
+# Title: Implement (1.8): remove
+def test_deprecated_algorithm():
+    adaboost_clf = AdaBoostClassifier(n_estimators=1, (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8): remove
+def test_deprecated_algorithm():
+    adaboost_clf = AdaBoostClassifier(n_estimators=1, algorithm="SAMME")
+    with pytest.warns(FutureWarning, match="The parameter 'algorithm' is depreca
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/ensemble/tests/test_weight_boosting.py
+
+# Test Strategy:
+Validate completion of: code-todo item

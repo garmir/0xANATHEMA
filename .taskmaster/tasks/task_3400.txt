@@ -1,0 +1,11 @@
+# Task ID: 3400
+# Title: Implement Success Criteria Tracking with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Success Criteria Tracking
+# Details:
+Converted from todo: .taskmaster/automation/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

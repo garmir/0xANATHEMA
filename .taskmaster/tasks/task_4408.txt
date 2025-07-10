@@ -1,0 +1,18 @@
+# Task ID: 4408
+# Title: Database Design
+- Microservices-oriented database per service
+- Database migrations and versioning
+- (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Database Design
+- Microservices-oriented database per service
+- Database migrations and versioning
+- Connection pooling and optimization
+- Read replic
+# Details:
+Converted from todo: .taskmaster/examples/api-project/api-prd.md
+
+# Test Strategy:
+Validate completion of: action-item item

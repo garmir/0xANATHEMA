@@ -1,0 +1,16 @@
+# Task ID: 758
+# Title: Implement (Python 3.10): use TypeGuard
+            # https://mypy.readthedocs.io/en/stable/type_narrowing.html (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (Python 3.10): use TypeGuard
+            # https://mypy.readthedocs.io/en/stable/type_narrowing.html
+            axis = cast(DiscreteAxisDescriptor, axis)
+            discreteAxes.append(axis)
+       
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/designspaceLib/split.py
+
+# Test Strategy:
+Validate completion of: code-todo item

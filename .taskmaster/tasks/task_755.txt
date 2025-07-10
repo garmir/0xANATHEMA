@@ -1,0 +1,17 @@
+# Task ID: 755
+# Title: Implement (anthrotype): try to narrow this down a little
+            raise UFOLibError(f"'{fileName}' could no
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (anthrotype): try to narrow this down a little
+            raise UFOLibError(f"'{fileName}' could not be read on {self.fs}: {e}")
+
+    def _writePlist(self, fileName, obj):
+        """
+        Write a
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/ufoLib/__init__.py
+
+# Test Strategy:
+Validate completion of: code-todo item

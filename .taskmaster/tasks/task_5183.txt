@@ -1,0 +1,13 @@
+# Task ID: 5183
+# Title: Overview
+This directory contains the complete PRD tree for the Task-Master Recursive Generation and  (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Overview
+This directory contains the complete PRD tree for the Task-Master Recursive Generation and Optimization System, decomposed into atomic tasks 
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

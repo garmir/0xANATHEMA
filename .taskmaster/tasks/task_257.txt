@@ -1,0 +1,22 @@
+# Task ID: 257
+# Title: Implement do we want this to raise?
+
+        msg = "unhashable type: 'list'"
+        with pytest.raises(TypeEr (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: do we want this to raise?
+
+        msg = "unhashable type: 'list'"
+        with pytest.raises(TypeError, match=msg):
+            [] in index
+
+        msg = "|".join(
+            [
+                r"un
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/test_indexing.py
+
+# Test Strategy:
+Validate completion of: code-todo item

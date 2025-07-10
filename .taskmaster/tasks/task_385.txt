@@ -1,0 +1,20 @@
+# Task ID: 385
+# Title: Implement Dispatch all the methods
+    # Currently the following are not dispatched to the array
+    # * cat
+  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Dispatch all the methods
+    # Currently the following are not dispatched to the array
+    # * cat
+    # * extractall
+
+    def __init__(self, data) -> None:
+        from pandas.core.arrays.string_ imp
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/strings/accessor.py
+
+# Test Strategy:
+Validate completion of: code-todo item

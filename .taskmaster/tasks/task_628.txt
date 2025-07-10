@@ -1,0 +1,17 @@
+# Task ID: 628
+# Title: Implement add cupy to the list of libraries once the following upstream issue
+# has been fixed:
+# https://gith (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: add cupy to the list of libraries once the following upstream issue
+# has been fixed:
+# https://github.com/cupy/cupy/issues/8180
+@skip_if_array_api_compat_not_configured
+@pytest.mark.parametrize("libr
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/utils/tests/test_array_api.py
+
+# Test Strategy:
+Validate completion of: code-todo item

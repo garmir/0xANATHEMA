@@ -1,0 +1,306 @@
+{
+  "enhanced_tasks": [
+    {
+      "id": "1",
+      "title": "Setup project infrastructure",
+      "description": "Initialize development environment",
+      "status": "pending",
+      "priority": "high",
+      "dependencies": [],
+      "subtasks": [],
+      "details": "Setup Git repository, configure development tools",
+      "testStrategy": "Unit tests for core functionality",
+      "timeEstimate": 120,
+      "resourceRequirements": [
+        "Developer time"
+      ],
+      "validationCriteria": [
+        "Task requirements are met",
+        "Implementation is tested and validated",
+        "Documentation is updated"
+      ],
+      "createdAt": "2025-07-10T21:21:38.238383",
+      "updatedAt": "2025-07-10T21:21:38.238386",
+      "qualityMetrics": {
+        "clarity_score": 0.7999999999999999,
+        "completeness_score": 0.5,
+        "actionability_score": 0.6000000000000001,
+        "specificity_score": 0.2,
+        "testability_score": 0.7,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.605
+      },
+      "enhancementHistory": [
+        {
+          "type": "validation_criteria",
+          "qualityImprovement": 0.0,
+          "suggestions": [
+            "Make criteria measurable and specific",
+            "Include both functional and non-functional requirements"
+          ],
+          "timestamp": "2025-07-10T21:21:38.328374",
+          "metadata": {}
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "2",
+      "title": "Design system architecture",
+      "description": "Create technical architecture document",
+      "status": "pending",
+      "priority": "high",
+      "dependencies": [
+        "1"
+      ],
+      "subtasks": [],
+      "details": "Define microservices architecture, API design",
+      "testStrategy": "Unit tests for core functionality",
+      "timeEstimate": 120,
+      "resourceRequirements": [
+        "Developer time"
+      ],
+      "validationCriteria": [
+        "Task requirements are met",
+        "Implementation is tested and validated",
+        "Documentation is updated"
+      ],
+      "createdAt": "2025-07-10T21:21:38.238393",
+      "updatedAt": "2025-07-10T21:21:38.238393",
+      "qualityMetrics": {
+        "clarity_score": 0.7999999999999999,
+        "completeness_score": 0.7,
+        "actionability_score": 0.8,
+        "specificity_score": 0.6,
+        "testability_score": 0.7,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.745
+      },
+      "enhancementHistory": [
+        {
+          "type": "validation_criteria",
+          "qualityImprovement": 0.0,
+          "suggestions": [
+            "Make criteria measurable and specific",
+            "Include both functional and non-functional requirements"
+          ],
+          "timestamp": "2025-07-10T21:21:38.344396",
+          "metadata": {}
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "3",
+      "title": "Implement user authentication API",
+      "description": "Create secure authentication endpoints",
+      "status": "in-progress",
+      "priority": "high",
+      "dependencies": [
+        "2"
+      ],
+      "subtasks": [],
+      "details": "JWT tokens, password hashing, session management",
+      "testStrategy": "Unit tests for business logic. Integration tests for API endpoints. Contract tests for API specification",
+      "timeEstimate": 240,
+      "resourceRequirements": [
+        "Backend developer",
+        "API documentation",
+        "Testing environment"
+      ],
+      "validationCriteria": [
+        "Implementation is complete and functional",
+        "Code follows project standards and conventions",
+        "All tests pass successfully",
+        "API endpoints respond correctly",
+        "API documentation is updated",
+        "Error handling is implemented"
+      ],
+      "createdAt": "2025-07-10T21:21:38.238398",
+      "updatedAt": "2025-07-10T21:21:38.238398",
+      "qualityMetrics": {
+        "clarity_score": 0.7999999999999999,
+        "completeness_score": 0.7,
+        "actionability_score": 0.6000000000000001,
+        "specificity_score": 0.6,
+        "testability_score": 0.7,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.705
+      },
+      "enhancementHistory": [
+        {
+          "type": "validation_criteria",
+          "qualityImprovement": 0.0,
+          "suggestions": [
+            "Make criteria measurable and specific",
+            "Include both functional and non-functional requirements"
+          ],
+          "timestamp": "2025-07-10T21:21:38.359554",
+          "metadata": {}
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "4",
+      "title": "Build user management dashboard",
+      "description": "Admin interface for user operations",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": [
+        "3"
+      ],
+      "subtasks": [],
+      "details": "React components, user CRUD operations",
+      "testStrategy": "Unit tests for component logic. Integration tests for user interactions. Visual regression tests",
+      "timeEstimate": 216,
+      "resourceRequirements": [
+        "Frontend developer",
+        "Design assets",
+        "Testing devices"
+      ],
+      "validationCriteria": [
+        "Implementation is complete and functional",
+        "Code follows project standards and conventions",
+        "All tests pass successfully",
+        "UI components render correctly",
+        "User interactions work as expected",
+        "UI is responsive and accessible"
+      ],
+      "createdAt": "2025-07-10T21:21:38.238403",
+      "updatedAt": "2025-07-10T21:21:38.238404",
+      "qualityMetrics": {
+        "clarity_score": 0.7999999999999999,
+        "completeness_score": 0.5,
+        "actionability_score": 0.8,
+        "specificity_score": 0.5,
+        "testability_score": 0.7,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.6900000000000001
+      },
+      "enhancementHistory": [
+        {
+          "type": "validation_criteria",
+          "qualityImprovement": 0.0,
+          "suggestions": [
+            "Make criteria measurable and specific",
+            "Include both functional and non-functional requirements"
+          ],
+          "timestamp": "2025-07-10T21:21:38.374138",
+          "metadata": {}
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "5",
+      "title": "Setup automated testing pipeline",
+      "description": "CI/CD with automated testing",
+      "status": "pending",
+      "priority": "low",
+      "dependencies": [
+        "2"
+      ],
+      "subtasks": [],
+      "details": "GitHub Actions, unit tests, integration tests",
+      "testStrategy": "Unit tests for core functionality",
+      "timeEstimate": 144,
+      "resourceRequirements": [
+        "Developer time"
+      ],
+      "validationCriteria": [
+        "Task requirements are met",
+        "Implementation is tested and validated",
+        "Documentation is updated"
+      ],
+      "createdAt": "2025-07-10T21:21:38.238408",
+      "updatedAt": "2025-07-10T21:21:38.238408",
+      "qualityMetrics": {
+        "clarity_score": 0.7999999999999999,
+        "completeness_score": 0.5,
+        "actionability_score": 0.6000000000000001,
+        "specificity_score": 0.7,
+        "testability_score": 0.8999999999999999,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.71
+      },
+      "enhancementHistory": [
+        {
+          "type": "validation_criteria",
+          "qualityImprovement": 0.0,
+          "suggestions": [
+            "Make criteria measurable and specific",
+            "Include both functional and non-functional requirements"
+          ],
+          "timestamp": "2025-07-10T21:21:38.388676",
+          "metadata": {}
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "6",
+      "title": "Write comprehensive documentation",
+      "description": "Technical and user documentation",
+      "status": "pending",
+      "priority": "low",
+      "dependencies": [
+        "4",
+        "5"
+      ],
+      "subtasks": [],
+      "details": "API docs, user guides, technical specifications",
+      "testStrategy": "Unit tests for core functionality",
+      "timeEstimate": 120,
+      "resourceRequirements": [
+        "Developer time"
+      ],
+      "validationCriteria": [
+        "Task requirements are met",
+        "Implementation is tested and validated",
+        "Documentation is updated"
+      ],
+      "createdAt": "2025-07-10T21:21:38.238413",
+      "updatedAt": "2025-07-10T21:21:38.238413",
+      "qualityMetrics": {
+        "clarity_score": 0.6,
+        "completeness_score": 0.7,
+        "actionability_score": 0.2,
+        "specificity_score": 0.6,
+        "testability_score": 0.7,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.585
+      },
+      "enhancementHistory": [
+        {
+          "type": "validation_criteria",
+          "qualityImprovement": 0.0,
+          "suggestions": [
+            "Make criteria measurable and specific",
+            "Include both functional and non-functional requirements"
+          ],
+          "timestamp": "2025-07-10T21:21:38.400339",
+          "metadata": {}
+        }
+      ],
+      "metadata": {}
+    }
+  ],
+  "export_timestamp": "2025-07-10T21:21:38.418391",
+  "enhancement_summary": {
+    "total_tasks": 6,
+    "enhanced_tasks": 6,
+    "enhancement_types": {
+      "validation_criteria": 6
+    },
+    "quality_improvements": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "average_quality_improvement": 0.0
+  }
+}

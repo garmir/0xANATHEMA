@@ -1,0 +1,16 @@
+# Task ID: 777
+# Title: Implement Following hack to be removed by rewriting how FormatSwitching tables
+        # are handled.
+         (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Following hack to be removed by rewriting how FormatSwitching tables
+        # are handled.
+        # https://github.com/fonttools/fonttools/pull/2238#issuecomment-805192631
+        if hasattr(self, "
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/ttLib/tables/otBase.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,15 @@
+# Task ID: 223
+# Title: Implement For skipna=False, bool(pd.NA) raises; should groupby?
+        expected_value = False if reduction_fu (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: For skipna=False, bool(pd.NA) raises; should groupby?
+        expected_value = False if reduction_func == "any" else True
+    elif reduction_func in ["count", "nunique", "size"]:
+        # TODO: Shoul
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/groupby/test_reductions.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,16 @@
+# Task ID: 298
+# Title: Implement this is currently not public API
+    values = np.array([True, False, True, False], dtype="bool")
+    (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: this is currently not public API
+    values = np.array([True, False, True, False], dtype="bool")
+    mask = np.array([False, False, False, True], dtype="bool")
+    result = BooleanArray(*coerce_to_arr
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arrays/boolean/test_construction.py
+
+# Test Strategy:
+Validate completion of: code-todo item

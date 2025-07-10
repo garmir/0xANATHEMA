@@ -1,0 +1,21 @@
+# Task ID: 512
+# Title: Implement add tests for:
+# https://github.com/scipy/scipy/issues/5400
+# https://github.com/scipy/scipy/issues/ (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: add tests for:
+# https://github.com/scipy/scipy/issues/5400
+# https://github.com/scipy/scipy/issues/6690
+
+import numpy as np
+from numpy.testing import (
+    assert_,
+    assert_allclose,
+    assert_eq
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/optimize/tests/test__remove_redundancy.py
+
+# Test Strategy:
+Validate completion of: code-todo item

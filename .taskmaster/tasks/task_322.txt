@@ -1,0 +1,18 @@
+# Task ID: 322
+# Title: Implement what is this even testing?
+            result = tsframe.fillna(method="bfill")
+            tm.assert (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: what is this even testing?
+            result = tsframe.fillna(method="bfill")
+            tm.assert_frame_equal(result, tsframe.fillna(method="bfill"))
+
+    @pytest.mark.parametrize(
+        "frame, 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/methods/test_replace.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,16 @@
+# Task ID: 2650
+# Title: Implement 5.2 Predictive Analytics
+- Develop project success prediction models
+- Add resource utilization fore (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 5.2 Predictive Analytics
+- Develop project success prediction models
+- Add resource utilization forecasting
+- Create timeline prediction and optimizat
+# Details:
+Converted from todo: .taskmaster/planning/next_development_roadmap.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,17 @@
+# Task ID: 740
+# Title: Implement (antrotype): Replace with functools.cache once we are 3.9+
+@lru_cache(maxsize=None)
+def xpath(path): (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (antrotype): Replace with functools.cache once we are 3.9+
+@lru_cache(maxsize=None)
+def xpath(path):
+    # compile XPath upfront, caching result to reuse on multiple elements
+    return etree.XPath(pa
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/subset/svg.py
+
+# Test Strategy:
+Validate completion of: code-todo item

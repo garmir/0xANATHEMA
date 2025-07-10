@@ -1,0 +1,11 @@
+# Task ID: 1155
+# Title: Implement 🪟 Active Monitoring Windows (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 🪟 Active Monitoring Windows
+# Details:
+Converted from todo: LABRYS_MONITORING_SYSTEM.md
+
+# Test Strategy:
+Validate completion of: action-item item

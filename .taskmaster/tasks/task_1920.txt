@@ -1,0 +1,11 @@
+# Task ID: 1920
+# Title: Implement Preserved Capabilities with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Preserved Capabilities
+# Details:
+Converted from todo: LOCAL_LLM_MIGRATION_GUIDE.md
+
+# Test Strategy:
+Validate completion of: action-item item

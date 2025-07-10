@@ -1,0 +1,11 @@
+# Task ID: 2183
+# Title: 📝 Todo Parsing Algorithm with clear acceptance criteria and deliverables (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 📝 Todo Parsing Algorithm
+# Details:
+Converted from todo: .taskmaster/AUTONOMOUS-WORKFLOW-IMPLEMENTATION.md
+
+# Test Strategy:
+Validate completion of: action-item item

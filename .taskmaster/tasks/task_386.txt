@@ -1,0 +1,17 @@
+# Task ID: 386
+# Title: Implement Combine with above if DTI/DTA supports Arrow timestamps
+        if utc:
+            # pyarrow uses U (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Combine with above if DTI/DTA supports Arrow timestamps
+        if utc:
+            # pyarrow uses UTC, not lowercase utc
+            if isinstance(arg, Index):
+                arg_array = cast(ArrowE
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/tools/datetimes.py
+
+# Test Strategy:
+Validate completion of: code-todo item

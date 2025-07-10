@@ -1,0 +1,19 @@
+# Task ID: 663
+# Title: remove this test once classes moved to using `name` instead of
+# `estimator_name`
+@pytest.mark.param (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: remove this test once classes moved to using `name` instead of
+# `estimator_name`
+@pytest.mark.parametrize(
+    "clf",
+    [
+        LogisticRegression(),
+        make_pipeline(StandardScaler(), Logis
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/metrics/_plot/tests/test_common_curve_display.py
+
+# Test Strategy:
+Validate completion of: code-todo item

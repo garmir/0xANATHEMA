@@ -1,0 +1,11 @@
+# Task ID: 1776
+# Title: Implement Key Files & Project Structure (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Key Files & Project Structure
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

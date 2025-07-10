@@ -1,0 +1,11 @@
+# Task ID: 1637
+# Title: Implement **TouchID Sudo Integration (macOS only)** (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **TouchID Sudo Integration (macOS only)**
+# Details:
+Converted from todo: execution-roadmap.md
+
+# Test Strategy:
+Validate completion of: action-item item

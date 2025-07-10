@@ -1,0 +1,11 @@
+# Task ID: 1087
+# Title: Implement **Reset State**: Clear stuck tasks and restart execution (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Reset State**: Clear stuck tasks and restart execution
+# Details:
+Converted from todo: README-github-scaling.md
+
+# Test Strategy:
+Validate completion of: action-item item

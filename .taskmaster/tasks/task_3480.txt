@@ -1,0 +1,16 @@
+# Task ID: 3480
+# Title: Implement Recursive Breakdown  
+1. **Code Llama 13B** - Superior hierarchical analysis
+2. **Mistral 7B** - Goo (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Recursive Breakdown  
+1. **Code Llama 13B** - Superior hierarchical analysis
+2. **Mistral 7B** - Good structured decomposition
+3. **Mixtral 8x7B** - E
+# Details:
+Converted from todo: .taskmaster/migration/llm_evaluation_report.md
+
+# Test Strategy:
+Validate completion of: action-item item

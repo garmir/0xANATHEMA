@@ -1,0 +1,19 @@
+# Task ID: 590
+# Title: Implement (1.8): Remove this function
+def default_tags(estimator) -> Tags:
+    """Get the default tags for an  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8): Remove this function
+def default_tags(estimator) -> Tags:
+    """Get the default tags for an estimator.
+
+    This ignores any ``__sklearn_tags__`` method that the estimator may have.
+
+    If th
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/utils/_tags.py
+
+# Test Strategy:
+Validate completion of: code-todo item

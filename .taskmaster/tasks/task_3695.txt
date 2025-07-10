@@ -1,0 +1,11 @@
+# Task ID: 3695
+# Title: Implement Short-term: Prioritize core features, defer nice-to-haves (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Short-term: Prioritize core features, defer nice-to-haves
+# Details:
+Converted from todo: .taskmaster/migration/migration_timeline.md
+
+# Test Strategy:
+Validate completion of: action-item item

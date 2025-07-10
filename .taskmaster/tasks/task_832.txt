@@ -1,0 +1,18 @@
+# Task ID: 832
+# Title: Implement This never terminates if the passed generator never terminates.
+    text = "".join(generator)
+    if (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: This never terminates if the passed generator never terminates.
+    text = "".join(generator)
+    if not color:
+        text = strip_ansi(text)
+    encoding = get_best_encoding(sys.stdout)
+    with op
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/click/_termui_impl.py
+
+# Test Strategy:
+Validate completion of: code-todo item

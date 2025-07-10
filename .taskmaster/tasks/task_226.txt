@@ -1,0 +1,17 @@
+# Task ID: 226
+# Title: Implement (GH#34306): Use assert_frame_equal when column name is not np.nan
+    tm.assert_index_equal(result.i (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (GH#34306): Use assert_frame_equal when column name is not np.nan
+    tm.assert_index_equal(result.index, expected.index)
+    tm.assert_numpy_array_equal(result.values, expected.values)
+
+
+def test_app
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/groupby/test_apply.py
+
+# Test Strategy:
+Validate completion of: code-todo item

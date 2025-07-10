@@ -1,0 +1,17 @@
+# Task ID: 563
+# Title: Implement We can do this cheaper; sorted_indices copies the whole matrix.
+    if yval is y and hasattr(yval, " (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: We can do this cheaper; sorted_indices copies the whole matrix.
+    if yval is y and hasattr(yval, "sorted_indices"):
+        y = yval.sorted_indices()
+    else:
+        y = yval
+        if hasattr(y,
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/datasets/_svmlight_format_io.py
+
+# Test Strategy:
+Validate completion of: code-todo item

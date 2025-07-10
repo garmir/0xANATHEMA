@@ -1,0 +1,11 @@
+# Task ID: 3433
+# Title: Implement **DeepSeek Coder 6.7B** - Specialized code generation (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **DeepSeek Coder 6.7B** - Specialized code generation
+# Details:
+Converted from todo: .taskmaster/migration/llm_evaluation_report.md
+
+# Test Strategy:
+Validate completion of: action-item item

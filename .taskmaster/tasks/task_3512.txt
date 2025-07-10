@@ -1,0 +1,11 @@
+# Task ID: 3512
+# Title: Implement **Task Master Integration** (`.taskmaster/config/taskmaster-local-llm.json`) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Task Master Integration** (`.taskmaster/config/taskmaster-local-llm.json`)
+# Details:
+Converted from todo: .taskmaster/migration/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

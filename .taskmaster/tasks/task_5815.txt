@@ -1,0 +1,11 @@
+# Task ID: 5815
+# Title: Implement **Priority Queue Manager**: Multi-level priority queues with aging (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Priority Queue Manager**: Multi-level priority queues with aging
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/level-2/core-engine/intelligent-scheduler.md
+
+# Test Strategy:
+Validate completion of: action-item item

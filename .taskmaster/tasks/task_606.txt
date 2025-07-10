@@ -1,0 +1,19 @@
+# Task ID: 606
+# Title: Implement remove this check once the estimator is no longer experimental.
+    from ._search_successive_halving (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: remove this check once the estimator is no longer experimental.
+    from ._search_successive_halving import (  # noqa: F401
+        HalvingGridSearchCV,
+        HalvingRandomSearchCV,
+    )
+
+
+__all__ 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/model_selection/__init__.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,13 @@
+# Task ID: 2884
+# Title: Implement Emergency Rollback (2 minutes)
+```bash (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Emergency Rollback (2 minutes)
+```bash
+# Details:
+Converted from todo: .taskmaster/docs/execution-roadmap.md
+
+# Test Strategy:
+Validate completion of: action-item item

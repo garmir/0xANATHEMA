@@ -1,0 +1,21 @@
+# Task ID: 5677
+# Title: Implement Atomicity Score Calculation
+```bash
+calculate_atomicity_score() {
+    local prd_file="$1"
+    local  (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Atomicity Score Calculation
+```bash
+calculate_atomicity_score() {
+    local prd_file="$1"
+    local score=0
+    
+    # Factor 1: Single responsibility
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-2-recursive/prd-2.3-atomic-detection.md
+
+# Test Strategy:
+Validate completion of: action-item item

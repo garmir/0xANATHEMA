@@ -1,0 +1,18 @@
+# Task ID: 158
+# Title: Implement (EA2D): special case not needed with 2D EAs
+
+                values = [
+                    construc (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (EA2D): special case not needed with 2D EAs
+
+                values = [
+                    construct_1d_arraylike_from_scalar(data, len(index), dtype)
+                    for _ in range(len(columns))
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/frame.py
+
+# Test Strategy:
+Validate completion of: code-todo item

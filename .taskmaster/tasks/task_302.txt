@@ -1,0 +1,18 @@
+# Task ID: 302
+# Title: Implement can we specify "floating" in general?
+    result = pd.array(np.array([1, 2], dtype="int32"), dtype=" (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: can we specify "floating" in general?
+    result = pd.array(np.array([1, 2], dtype="int32"), dtype="Float64")
+    assert result.dtype == Float64Dtype()
+
+
+@pytest.mark.parametrize(
+    "bool_values, va
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arrays/floating/test_construction.py
+
+# Test Strategy:
+Validate completion of: code-todo item

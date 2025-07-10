@@ -1,0 +1,18 @@
+# Task ID: 550
+# Title: Implement investigate which Python version is required to be able to use
+# multiprocessing.resource_tracker an (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: investigate which Python version is required to be able to use
+# multiprocessing.resource_tracker and therefore multiprocessing.synchronize
+# instead of a loky-specific fork.
+
+import os
+import sys
+imp
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/joblib/externals/loky/backend/synchronize.py
+
+# Test Strategy:
+Validate completion of: code-todo item

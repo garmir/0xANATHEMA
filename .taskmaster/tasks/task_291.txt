@@ -1,0 +1,16 @@
+# Task ID: 291
+# Title: (ArrayManager) rewrite test to not use .values
+    # exp.loc[2000, 4].values[:] select multiple colu (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (ArrayManager) rewrite test to not use .values
+    # exp.loc[2000, 4].values[:] select multiple columns -> .values is not a view
+    @td.skip_array_manager_invalid_test
+    def test_partial_set(
+     
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexing/multiindex/test_partial.py
+
+# Test Strategy:
+Validate completion of: code-todo item

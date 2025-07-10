@@ -1,0 +1,16 @@
+# Task ID: 831
+# Title: Implement remove this workaround when CM standard will allow nested links
+            #       (we can replace  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: remove this workaround when CM standard will allow nested links
+            #       (we can replace it by preventing links from being parsed in
+            #       validation mode)
+            #
+     
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/markdown_it/parser_inline.py
+
+# Test Strategy:
+Validate completion of: code-todo item

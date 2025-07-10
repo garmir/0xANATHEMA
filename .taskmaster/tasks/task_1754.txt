@@ -1,0 +1,11 @@
+# Task ID: 1754
+# Title: Implement If a task is available, run `task-master show <id>` for full details (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: If a task is available, run `task-master show <id>` for full details
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

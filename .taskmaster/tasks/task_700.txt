@@ -1,0 +1,16 @@
+# Task ID: 700
+# Title: Implement this works around .astype(bool) not working properly (gh-9847)
+    if np.issubdtype(a.dtype, np.char (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: this works around .astype(bool) not working properly (gh-9847)
+    if np.issubdtype(a.dtype, np.character):
+        a_bool = a != a.dtype.type()
+    else:
+        a_bool = a.astype(np.bool, copy=False
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/_core/numeric.py
+
+# Test Strategy:
+Validate completion of: code-todo item

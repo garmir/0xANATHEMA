@@ -1,0 +1,20 @@
+# Task ID: 100
+# Title: Implement remove this check when dropping Python 3.7 support
+if TYPE_CHECKING:
+    from typing_extensions impo (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: remove this check when dropping Python 3.7 support
+if TYPE_CHECKING:
+    from typing_extensions import TypedDict
+
+    class ResultDict(TypedDict):
+        encoding: str | None
+        language: str
+  
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/charset_normalizer/legacy.py
+
+# Test Strategy:
+Validate completion of: code-todo item

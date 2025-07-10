@@ -1,0 +1,59 @@
+{
+  "workflow_id": "recursive-integration-1752176283",
+  "start_time": "2025-07-10T20:38:03.685066",
+  "validation": {
+    "timestamp": "2025-07-10T20:37:58.523558",
+    "taskmaster_initialized": true,
+    "tasks_file_exists": true,
+    "tasks_count": 46,
+    "config_valid": true,
+    "command_availability": {
+      "list": true,
+      "show": true,
+      "next": true,
+      "set-status": true,
+      "add-task": true
+    },
+    "integration_health": "healthy"
+  },
+  "cycles": [
+    {
+      "cycle_number": 1,
+      "start_time": "2025-07-10T20:38:03.685142",
+      "steps_completed": [
+        "extract_todos",
+        "sync_to_taskmaster",
+        "validate_todos",
+        "check_convergence"
+      ],
+      "errors": [],
+      "todos_extracted": 7414,
+      "sync_result": {
+        "todos_synced": 7414,
+        "tasks_created": 0,
+        "tasks_updated": 7414,
+        "commands_executed": 0,
+        "validation_results": {},
+        "errors": []
+      },
+      "validation_results": 10,
+      "convergence_rate": 1.0,
+      "converged": true
+    }
+  ],
+  "final_sync": {
+    "todos_synced": 13243,
+    "tasks_created": 0,
+    "tasks_updated": 13243,
+    "commands_executed": 0,
+    "validation_results": {},
+    "errors": []
+  },
+  "summary": {
+    "cycles_completed": 1,
+    "total_todos_processed": 13243,
+    "final_convergence_rate": 1.0,
+    "integration_successful": true
+  },
+  "end_time": "2025-07-10T20:38:27.512383"
+}

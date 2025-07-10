@@ -1,0 +1,21 @@
+# Task ID: 392
+# Title: chunks are implemented now, will this should return something
+        return 0
+
+    @cache_reado
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: chunks are implemented now, probably this should return something
+        return 0
+
+    @cache_readonly
+    def dtype(self) -> tuple[DtypeKind, int, str, str]:
+        dtype = self._col.dtype
+
+       
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/interchange/column.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,16 @@
+# Task ID: 3481
+# Title: Implement Code Generation
+1. **Code Llama 13B** - Best code quality and architecture
+2. **DeepSeek Coder 6.7B* (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Code Generation
+1. **Code Llama 13B** - Best code quality and architecture
+2. **DeepSeek Coder 6.7B** - Specialized code generation
+3. **Mixtral 8x7B*
+# Details:
+Converted from todo: .taskmaster/migration/llm_evaluation_report.md
+
+# Test Strategy:
+Validate completion of: action-item item

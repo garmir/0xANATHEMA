@@ -1,0 +1,16 @@
+# Task ID: 610
+# Title: Implement make Parallel._effective_n_jobs public instead?
+        n_jobs = effective_n_jobs(self.n_jobs)
+      (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: make Parallel._effective_n_jobs public instead?
+        n_jobs = effective_n_jobs(self.n_jobs)
+        if parallel is None:
+            parallel = Parallel(n_jobs=n_jobs, verbose=max(0, self.verbose -
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/decomposition/_lda.py
+
+# Test Strategy:
+Validate completion of: code-todo item

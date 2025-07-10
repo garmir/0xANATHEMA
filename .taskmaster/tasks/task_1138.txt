@@ -1,0 +1,16 @@
+# Task ID: 1138
+# Title: Implement Community
+- GitHub Issues: Report bugs and feature requests
+- Discussions: General questions and ide (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Community
+- GitHub Issues: Report bugs and feature requests
+- Discussions: General questions and ideas
+- Wiki: Additional examples and tutorials
+# Details:
+Converted from todo: README-github-scaling.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,17 @@
+# Task ID: 473
+# Title: Implement calculate exact distribution considering ties
+    # We could avoid summing over more than half the f
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: calculate exact distribution considering ties
+    # We could avoid summing over more than half the frequencies,
+    # but initially it doesn't seem worth the extra complexity
+
+    def __init__(self):
+
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/stats/_morestats.py
+
+# Test Strategy:
+Validate completion of: code-todo item

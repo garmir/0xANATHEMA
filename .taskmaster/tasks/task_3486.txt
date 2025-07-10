@@ -1,0 +1,18 @@
+# Task ID: 3486
+# Title: Implement Minimum Configuration (Mistral 7B)
+- **RAM:** 8 GB
+- **GPU:** Optional (CPU inference viable)
+- **St (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Minimum Configuration (Mistral 7B)
+- **RAM:** 8 GB
+- **GPU:** Optional (CPU inference viable)
+- **Storage:** 20 GB free space
+- **CPU:** 4+ cores
+# Details:
+Converted from todo: .taskmaster/migration/llm_evaluation_report.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,18 @@
+# Task ID: 340
+# Title: Implement make unit check more specific
+    if parser.engine == "pyarrow":
+        result.index = result.index (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: make unit check more specific
+    if parser.engine == "pyarrow":
+        result.index = result.index.as_unit("ns")
+    expected = DataFrame(
+        [
+            [0.980269, 3.685731, -0.364216805298,
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/io/parser/common/test_common_basic.py
+
+# Test Strategy:
+Validate completion of: code-todo item

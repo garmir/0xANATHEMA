@@ -1,0 +1,18 @@
+# Task ID: 793
+# Title: There is a definition for directed strongly regular graphs.
+@not_implemented_for("directed")
+@not_im
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: There is a definition for directed strongly regular graphs.
+@not_implemented_for("directed")
+@not_implemented_for("multigraph")
+@nx._dispatchable
+def is_strongly_regular(G):
+    """Returns True if and
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/distance_regular.py
+
+# Test Strategy:
+Validate completion of: code-todo item

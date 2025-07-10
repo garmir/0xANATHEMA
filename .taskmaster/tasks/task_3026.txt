@@ -1,0 +1,11 @@
+# Task ID: 3026
+# Title: Add test to appropriate suite in `run_benchmark_suite.py` (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Add test to appropriate suite in `run_benchmark_suite.py`
+# Details:
+Converted from todo: .taskmaster/benchmarks/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

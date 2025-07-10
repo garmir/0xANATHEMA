@@ -1,0 +1,11 @@
+# Task ID: 2045
+# Title: Implement 14. Expand All Tasks (`expand_all`) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 14. Expand All Tasks (`expand_all`)
+# Details:
+Converted from todo: .trae/rules/taskmaster.md
+
+# Test Strategy:
+Validate completion of: action-item item

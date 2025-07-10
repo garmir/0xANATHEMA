@@ -1,0 +1,20 @@
+# Task ID: 455
+# Title: Implement (followup):
+    #  - investigate behavior at saddle points
+    #  - multivariate functions?
+    #  - (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (followup):
+    #  - investigate behavior at saddle points
+    #  - multivariate functions?
+    #  - relative steps?
+    #  - show example of `np.vectorize`
+
+    res = _derivative_iv(f, x, args, toler
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/differentiate/_differentiate.py
+
+# Test Strategy:
+Validate completion of: code-todo item

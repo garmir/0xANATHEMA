@@ -1,0 +1,15 @@
+# Task ID: 626
+# Title: Implement add this estimator into the _mocking module in a further refactoring
+from sklearn.metrics.tests.test (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: add this estimator into the _mocking module in a further refactoring
+from sklearn.metrics.tests.test_score_objects import EstimatorWithFit
+from sklearn.neighbors import KNeighborsClassifier
+from sklea
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/utils/tests/test_validation.py
+
+# Test Strategy:
+Validate completion of: code-todo item

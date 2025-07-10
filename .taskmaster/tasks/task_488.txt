@@ -1,0 +1,15 @@
+# Task ID: 488
+# Title: this test seems to give estimates that match the table,
+        #TODO even though no attempt has bee (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: this test seems to give estimates that match the table,
+        #TODO even though no attempt has been made to deal with
+        #TODO complex numbers in the one-norm estimation.
+        # This will ta
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/sparse/linalg/tests/test_onenormest.py
+
+# Test Strategy:
+Validate completion of: code-todo item

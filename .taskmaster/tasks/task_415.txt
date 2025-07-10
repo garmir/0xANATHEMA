@@ -1,0 +1,17 @@
+# Task ID: 415
+# Title: Implement in an IntervalIndex we can reuse the cached
+            #  IntervalTree.left_sorter
+            retu (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: in an IntervalIndex we can reuse the cached
+            #  IntervalTree.left_sorter
+            return np.lexsort((self.right, self.left))
+
+        # TODO: other cases we can use lexsort for?  much mo
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/arrays/interval.py
+
+# Test Strategy:
+Validate completion of: code-todo item

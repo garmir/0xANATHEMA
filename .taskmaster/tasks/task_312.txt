@@ -1,0 +1,16 @@
+# Task ID: 312
+# Title: Test more than just reductions (e.g. actually test transformations once we have
+@pytest.mark.paramet (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Test more than just reductions (e.g. actually test transformations once we have
+@pytest.mark.parametrize(
+    "agg_func", [["min", "max"], "min", {"B": ["min", "max"], "C": "sum"}]
+)
+def test_string_c
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/groupby/transform/test_numba.py
+
+# Test Strategy:
+Validate completion of: code-todo item

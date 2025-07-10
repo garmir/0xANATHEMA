@@ -1,0 +1,15 @@
+# Task ID: 786
+# Title: Implement rm csr_array wrapper when spdiags array creation becomes available
+        D = sp.sparse.csr_array(s (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: rm csr_array wrapper when spdiags array creation becomes available
+        D = sp.sparse.csr_array(sp.sparse.spdiags(1 / e, 0, n, n, format="csr"))
+        L = D @ L @ D
+        e *= 1.0 / np.linalg.n
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/linalg/algebraicconnectivity.py
+
+# Test Strategy:
+Validate completion of: code-todo item

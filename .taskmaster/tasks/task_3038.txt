@@ -1,0 +1,13 @@
+# Task ID: 3038
+# Title: Implement 3. Capability Comparison
+```bash (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 3. Capability Comparison
+```bash
+# Details:
+Converted from todo: .taskmaster/benchmarks/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

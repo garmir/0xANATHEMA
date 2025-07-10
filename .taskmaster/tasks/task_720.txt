@@ -1,0 +1,21 @@
+# Task ID: 720
+# Title: Include test for randint once it can broadcast
+    # Can steal the test written in PR #6938
+
+    def (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Include test for randint once it can broadcast
+    # Can steal the test written in PR #6938
+
+    def test_uniform(self):
+        low = [0]
+        high = [1]
+        uniform = np.random.uniform
+      
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/random/tests/test_random.py
+
+# Test Strategy:
+Validate completion of: code-todo item

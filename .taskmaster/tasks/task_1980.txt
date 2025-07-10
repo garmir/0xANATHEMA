@@ -1,0 +1,11 @@
+# Task ID: 1980
+# Title: Create tags for different improvement areas (refactor-components, improve-state-management, etc.) (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Create tags for different improvement areas (refactor-components, improve-state-management, etc.)
+# Details:
+Converted from todo: .trae/rules/dev_workflow.md
+
+# Test Strategy:
+Validate completion of: action-item item

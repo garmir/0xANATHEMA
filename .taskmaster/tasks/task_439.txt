@@ -1,0 +1,17 @@
+# Task ID: 439
+# Title: Implement ARRAY_API complex indexing not supported
+        this_group[idx] = xp.min(last_group[idx])
+        t (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: ARRAY_API complex indexing not supported
+        this_group[idx] = xp.min(last_group[idx])
+        this_group[this_group > xp.max(last_group[idx])] -= 1
+        if i + 1 in cols_idx:
+            group
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/cluster/hierarchy.py
+
+# Test Strategy:
+Validate completion of: code-todo item

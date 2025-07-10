@@ -1,0 +1,16 @@
+# Task ID: 443
+# Title: test redundant row removal better
+    # TODO: make solve more efficient with BGLU? This could take a
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: test redundant row removal better
+    # TODO: make solve more efficient with BGLU? This could take a while.
+    keep_rows = np.ones(m, dtype=bool)
+    for basis_column in basis[basis >= n]:
+        B 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/optimize/_linprog_rs.py
+
+# Test Strategy:
+Validate completion of: code-todo item

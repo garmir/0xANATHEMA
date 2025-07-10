@@ -1,0 +1,497 @@
+name: Recursive Enhancement Engine
+on:
+  workflow_dispatch:
+    inputs:
+      enhancement_mode:
+        description: 'Enhancement mode'
+        required: true
+        default: 'comprehensive'
+        type: choice
+        options:
+          - 'comprehensive'
+          - 'targeted'
+          - 'experimental'
+          - 'maintenance'
+      max_parallel_enhancers:
+        description: 'Maximum parallel enhancement runners'
+        required: false
+        default: '8'
+        type: string
+      recursion_depth:
+        description: 'Maximum recursion depth for enhancements'
+        required: false
+        default: '5'
+        type: string
+      enhancement_scope:
+        description: 'Scope of enhancement'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - 'all'
+          - 'code_quality'
+          - 'performance'
+          - 'architecture'
+          - 'documentation'
+          - 'testing'
+          - 'security'
+      enable_self_improvement:
+        description: 'Enable self-improvement mechanisms'
+        required: false
+        default: 'true'
+        type: boolean
+      
+  schedule:
+    # Run enhancement engine daily at 3 AM UTC
+    - cron: '0 3 * * *'
+    
+  push:
+    paths:
+      - '.github/workflows/recursive-enhancement-engine.yml'
+      - '.github/scripts/enhancement-**'
+      - '.taskmaster/enhancement/**'
+
+env:
+  ENHANCEMENT_WORKSPACE: '.taskmaster/enhancement'
+  MAX_PARALLEL_ENHANCERS: ${{ github.event.inputs.max_parallel_enhancers || '8' }}
+  RECURSION_DEPTH: ${{ github.event.inputs.recursion_depth || '5' }}
+  ENHANCEMENT_MODE: ${{ github.event.inputs.enhancement_mode || 'comprehensive' }}
+  ENHANCEMENT_SCOPE: ${{ github.event.inputs.enhancement_scope || 'all' }}
+  ENABLE_SELF_IMPROVEMENT: ${{ github.event.inputs.enable_self_improvement || 'true' }}
+
+jobs:
+  # Phase 1: Initialize Enhancement Environment
+  initialize-enhancement:
+    runs-on: ubuntu-latest
+    outputs:
+      enhancement-id: ${{ steps.init.outputs.enhancement-id }}
+      baseline-metrics: ${{ steps.init.outputs.baseline-metrics }}
+      enhancement-targets: ${{ steps.init.outputs.enhancement-targets }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Initialize enhancement environment
+        id: init
+        run: |
+          node .github/scripts/enhancement-initializer.js \
+            --mode="${{ env.ENHANCEMENT_MODE }}" \
+            --scope="${{ env.ENHANCEMENT_SCOPE }}" \
+            --recursion-depth="${{ env.RECURSION_DEPTH }}" \
+            --max-parallel="${{ env.MAX_PARALLEL_ENHANCERS }}" \
+            --enable-self-improvement="${{ env.ENABLE_SELF_IMPROVEMENT }}"
+            
+      - name: Upload enhancement workspace
+        uses: actions/upload-artifact@v4
+        with:
+          name: enhancement-workspace-init
+          path: ${{ env.ENHANCEMENT_WORKSPACE }}/
+          retention-days: 7
+
+  # Phase 2: Discover Enhancement Opportunities
+  discover-opportunities:
+    runs-on: ubuntu-latest
+    needs: initialize-enhancement
+    outputs:
+      opportunity-matrix: ${{ steps.discover.outputs.matrix }}
+      total-opportunities: ${{ steps.discover.outputs.total }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Download enhancement workspace
+        uses: actions/download-artifact@v4
+        with:
+          name: enhancement-workspace-init
+          path: ${{ env.ENHANCEMENT_WORKSPACE }}/
+          
+      - name: Discover enhancement opportunities
+        id: discover
+        run: |
+          node .github/scripts/enhancement-discovery.js \
+            --enhancement-id="${{ needs.initialize-enhancement.outputs.enhancement-id }}" \
+            --scope="${{ env.ENHANCEMENT_SCOPE }}" \
+            --baseline="${{ needs.initialize-enhancement.outputs.baseline-metrics }}" \
+            --targets="${{ needs.initialize-enhancement.outputs.enhancement-targets }}"
+            
+      - name: Upload discovery results
+        uses: actions/upload-artifact@v4
+        with:
+          name: enhancement-opportunities
+          path: ${{ env.ENHANCEMENT_WORKSPACE }}/discovery/
+          retention-days: 7
+
+  # Phase 3: Execute Parallel Enhancement Processing
+  execute-enhancements:
+    runs-on: ubuntu-latest
+    needs: [initialize-enhancement, discover-opportunities]
+    if: fromJson(needs.discover-opportunities.outputs.total-opportunities) > 0
+    strategy:
+      matrix:
+        include: ${{ fromJson(needs.discover-opportunities.outputs.opportunity-matrix) }}
+      max-parallel: ${{ fromJson(env.MAX_PARALLEL_ENHANCERS) }}
+      fail-fast: false
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Download enhancement workspace
+        uses: actions/download-artifact@v4
+        with:
+          name: enhancement-workspace-init
+          path: ${{ env.ENHANCEMENT_WORKSPACE }}/
+          
+      - name: Download opportunities
+        uses: actions/download-artifact@v4
+        with:
+          name: enhancement-opportunities
+          path: ${{ env.ENHANCEMENT_WORKSPACE }}/discovery/
+          
+      - name: Execute enhancement batch
+        id: enhance
+        run: |
+          node .github/scripts/enhancement-executor.js \
+            --enhancement-id="${{ needs.initialize-enhancement.outputs.enhancement-id }}" \
+            --batch-id="${{ matrix.batch_id }}" \
+            --opportunities="${{ matrix.opportunities }}" \
+            --enhancement-type="${{ matrix.enhancement_type }}" \
+            --priority="${{ matrix.priority }}" \
+            --recursion-depth="${{ env.RECURSION_DEPTH }}" \
+            --enable-self-improvement="${{ env.ENABLE_SELF_IMPROVEMENT }}"
+            
+      - name: Upload enhancement results
+        uses: actions/upload-artifact@v4
+        with:
+          name: enhancement-results-${{ matrix.batch_id }}
+          path: ${{ env.ENHANCEMENT_WORKSPACE }}/execution/batch-${{ matrix.batch_id }}/
+          retention-days: 7
+          
+      - name: Generate enhancement metrics
+        run: |
+          node .github/scripts/enhancement-metrics.js \
+            --batch-id="${{ matrix.batch_id }}" \
+            --workspace="${{ env.ENHANCEMENT_WORKSPACE }}"
+
+  # Phase 4: Recursive Enhancement Optimization
+  recursive-optimization:
+    runs-on: ubuntu-latest
+    needs: [initialize-enhancement, discover-opportunities, execute-enhancements]
+    if: ${{ env.ENABLE_SELF_IMPROVEMENT == 'true' && fromJson(env.RECURSION_DEPTH) > 1 }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Download enhancement workspace
+        uses: actions/download-artifact@v4
+        with:
+          name: enhancement-workspace-init
+          path: ${{ env.ENHANCEMENT_WORKSPACE }}/
+          
+      - name: Download all enhancement results
+        run: |
+          # Download all batch results
+          for i in $(seq 1 ${{ env.MAX_PARALLEL_ENHANCERS }}); do
+            if gh run download --name "enhancement-results-$i" --dir "${{ env.ENHANCEMENT_WORKSPACE }}/execution/" 2>/dev/null; then
+              echo "Downloaded batch $i results"
+            fi
+          done
+        env:
+          GH_TOKEN: ${{ github.token }}
+          
+      - name: Execute recursive optimization
+        id: recursive
+        run: |
+          node .github/scripts/recursive-enhancement-optimizer.js \
+            --enhancement-id="${{ needs.initialize-enhancement.outputs.enhancement-id }}" \
+            --current-depth="1" \
+            --max-depth="${{ env.RECURSION_DEPTH }}" \
+            --optimization-mode="adaptive" \
+            --enable-meta-learning="true"
+            
+      - name: Upload recursive optimization results
+        uses: actions/upload-artifact@v4
+        with:
+          name: recursive-optimization-results
+          path: ${{ env.ENHANCEMENT_WORKSPACE }}/recursive/
+          retention-days: 7
+
+  # Phase 5: Validate and Consolidate Enhancements
+  validate-consolidate:
+    runs-on: ubuntu-latest
+    needs: [initialize-enhancement, discover-opportunities, execute-enhancements]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Download enhancement workspace
+        uses: actions/download-artifact@v4
+        with:
+          name: enhancement-workspace-init
+          path: ${{ env.ENHANCEMENT_WORKSPACE }}/
+          
+      - name: Download all enhancement results
+        run: |
+          # Download all batch results and recursive optimization
+          for i in $(seq 1 ${{ env.MAX_PARALLEL_ENHANCERS }}); do
+            if gh run download --name "enhancement-results-$i" --dir "${{ env.ENHANCEMENT_WORKSPACE }}/execution/" 2>/dev/null; then
+              echo "Downloaded batch $i results"
+            fi
+          done
+          
+          # Download recursive optimization if available
+          if gh run download --name "recursive-optimization-results" --dir "${{ env.ENHANCEMENT_WORKSPACE }}/" 2>/dev/null; then
+            echo "Downloaded recursive optimization results"
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+          
+      - name: Validate enhancements
+        id: validate
+        run: |
+          node .github/scripts/enhancement-validator.js \
+            --enhancement-id="${{ needs.initialize-enhancement.outputs.enhancement-id }}" \
+            --baseline-metrics="${{ needs.initialize-enhancement.outputs.baseline-metrics }}" \
+            --validation-mode="comprehensive" \
+            --quality-threshold="0.8" \
+            --performance-threshold="0.15"
+            
+      - name: Consolidate enhancement results
+        id: consolidate
+        run: |
+          node .github/scripts/enhancement-consolidator.js \
+            --enhancement-id="${{ needs.initialize-enhancement.outputs.enhancement-id }}" \
+            --total-opportunities="${{ needs.discover-opportunities.outputs.total-opportunities }}" \
+            --generate-report="true" \
+            --create-artifacts="true"
+            
+      - name: Upload consolidated results
+        uses: actions/upload-artifact@v4
+        with:
+          name: enhancement-final-results
+          path: ${{ env.ENHANCEMENT_WORKSPACE }}/consolidated/
+          retention-days: 30
+
+  # Phase 6: Generate Enhancement Report and Deploy Improvements
+  deploy-improvements:
+    runs-on: ubuntu-latest
+    needs: [initialize-enhancement, discover-opportunities, execute-enhancements, validate-consolidate]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Download consolidated results
+        uses: actions/download-artifact@v4
+        with:
+          name: enhancement-final-results
+          path: ${{ env.ENHANCEMENT_WORKSPACE }}/consolidated/
+          
+      - name: Generate enhancement report
+        id: report
+        run: |
+          node .github/scripts/enhancement-reporter.js \
+            --enhancement-id="${{ needs.initialize-enhancement.outputs.enhancement-id }}" \
+            --format="markdown,json,html" \
+            --include-metrics="true" \
+            --include-recommendations="true" \
+            --include-visualizations="true"
+            
+      - name: Deploy approved improvements
+        id: deploy
+        run: |
+          node .github/scripts/enhancement-deployer.js \
+            --enhancement-id="${{ needs.initialize-enhancement.outputs.enhancement-id }}" \
+            --deployment-mode="staged" \
+            --auto-approve-threshold="0.9" \
+            --create-pull-requests="true" \
+            --update-documentation="true"
+            
+      - name: Update enhancement metrics
+        run: |
+          node .github/scripts/enhancement-metrics-updater.js \
+            --enhancement-id="${{ needs.initialize-enhancement.outputs.enhancement-id }}" \
+            --update-baselines="true" \
+            --store-historical="true"
+            
+      - name: Upload enhancement report
+        uses: actions/upload-artifact@v4
+        with:
+          name: enhancement-report-${{ needs.initialize-enhancement.outputs.enhancement-id }}
+          path: ${{ env.ENHANCEMENT_WORKSPACE }}/reports/
+          retention-days: 90
+          
+      - name: Create enhancement summary
+        run: |
+          echo "## 🚀 Recursive Enhancement Engine - Execution Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Enhancement ID:** ${{ needs.initialize-enhancement.outputs.enhancement-id }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Mode:** ${{ env.ENHANCEMENT_MODE }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Scope:** ${{ env.ENHANCEMENT_SCOPE }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Opportunities Processed:** ${{ needs.discover-opportunities.outputs.total-opportunities }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Parallel Enhancers:** ${{ env.MAX_PARALLEL_ENHANCERS }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Recursion Depth:** ${{ env.RECURSION_DEPTH }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📊 Results" >> $GITHUB_STEP_SUMMARY
+          echo "- Validation Status: ${{ steps.validate.outputs.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Quality Score: ${{ steps.validate.outputs.quality-score }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Performance Improvement: ${{ steps.validate.outputs.performance-improvement }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Deployed Improvements: ${{ steps.deploy.outputs.deployed-count }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔗 Artifacts" >> $GITHUB_STEP_SUMMARY
+          echo "- [Enhancement Report](./enhancement-report-${{ needs.initialize-enhancement.outputs.enhancement-id }})" >> $GITHUB_STEP_SUMMARY
+          echo "- [Consolidated Results](./enhancement-final-results)" >> $GITHUB_STEP_SUMMARY
+
+  # Phase 7: Self-Improvement and Meta-Learning
+  self-improvement:
+    runs-on: ubuntu-latest
+    needs: [initialize-enhancement, discover-opportunities, execute-enhancements, validate-consolidate, deploy-improvements]
+    if: ${{ env.ENABLE_SELF_IMPROVEMENT == 'true' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Download all results
+        run: |
+          # Download consolidated results and reports
+          gh run download --name "enhancement-final-results" --dir "${{ env.ENHANCEMENT_WORKSPACE }}/consolidated/" || true
+          gh run download --name "enhancement-report-${{ needs.initialize-enhancement.outputs.enhancement-id }}" --dir "${{ env.ENHANCEMENT_WORKSPACE }}/reports/" || true
+          
+          # Download recursive optimization if available
+          gh run download --name "recursive-optimization-results" --dir "${{ env.ENHANCEMENT_WORKSPACE }}/recursive/" || true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          
+      - name: Execute self-improvement analysis
+        id: self-improve
+        run: |
+          node .github/scripts/self-improvement-engine.js \
+            --enhancement-id="${{ needs.initialize-enhancement.outputs.enhancement-id }}" \
+            --analysis-mode="comprehensive" \
+            --learning-rate="adaptive" \
+            --update-algorithms="true" \
+            --optimize-strategies="true" \
+            --enhance-discovery="true"
+            
+      - name: Update enhancement algorithms
+        run: |
+          node .github/scripts/algorithm-updater.js \
+            --enhancement-id="${{ needs.initialize-enhancement.outputs.enhancement-id }}" \
+            --improvements="${{ steps.self-improve.outputs.algorithm-improvements }}" \
+            --validate-updates="true" \
+            --create-backup="true"
+            
+      - name: Generate meta-learning insights
+        run: |
+          node .github/scripts/meta-learning-generator.js \
+            --enhancement-id="${{ needs.initialize-enhancement.outputs.enhancement-id }}" \
+            --historical-data="true" \
+            --pattern-analysis="true" \
+            --predictive-modeling="true" \
+            --optimization-recommendations="true"
+            
+      - name: Upload self-improvement results
+        uses: actions/upload-artifact@v4
+        with:
+          name: self-improvement-results-${{ needs.initialize-enhancement.outputs.enhancement-id }}
+          path: ${{ env.ENHANCEMENT_WORKSPACE }}/self-improvement/
+          retention-days: 180
+          
+      - name: Commit algorithm improvements
+        if: steps.self-improve.outputs.has-improvements == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .github/scripts/enhancement-*
+          git add .taskmaster/enhancement/algorithms/
+          git commit -m "🤖 Auto-enhance: Update enhancement algorithms from run ${{ needs.initialize-enhancement.outputs.enhancement-id }}
+
+          - Applied ${{ steps.self-improve.outputs.improvement-count }} algorithm improvements
+          - Enhanced discovery efficiency by ${{ steps.self-improve.outputs.discovery-improvement }}%
+          - Optimized processing strategies for ${{ steps.self-improve.outputs.optimized-strategies }} enhancement types
+          - Updated meta-learning models with latest performance data
+          
+          Generated by Recursive Enhancement Engine
+          Enhancement ID: ${{ needs.initialize-enhancement.outputs.enhancement-id }}
+          " || echo "No changes to commit"
+          
+      - name: Push improvements
+        if: steps.self-improve.outputs.has-improvements == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          
+  # Notification and Monitoring
+  notify-completion:
+    runs-on: ubuntu-latest
+    needs: [initialize-enhancement, discover-opportunities, execute-enhancements, validate-consolidate, deploy-improvements, self-improvement]
+    if: always()
+    steps:
+      - name: Determine overall status
+        id: status
+        run: |
+          if [[ "${{ needs.execute-enhancements.result }}" == "success" && "${{ needs.validate-consolidate.result }}" == "success" ]]; then
+            echo "status=success" >> $GITHUB_OUTPUT
+            echo "message=Recursive Enhancement Engine completed successfully" >> $GITHUB_OUTPUT
+          else
+            echo "status=failure" >> $GITHUB_OUTPUT
+            echo "message=Recursive Enhancement Engine encountered issues" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Create enhancement completion notification
+        run: |
+          echo "# 🎯 Recursive Enhancement Engine - Execution Complete" > enhancement_notification.md
+          echo "" >> enhancement_notification.md
+          echo "**Status:** ${{ steps.status.outputs.status == 'success' && '✅ Success' || '❌ Failed' }}" >> enhancement_notification.md
+          echo "**Enhancement ID:** ${{ needs.initialize-enhancement.outputs.enhancement-id }}" >> enhancement_notification.md
+          echo "**Execution Time:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> enhancement_notification.md
+          echo "**Mode:** ${{ env.ENHANCEMENT_MODE }}" >> enhancement_notification.md
+          echo "**Scope:** ${{ env.ENHANCEMENT_SCOPE }}" >> enhancement_notification.md
+          echo "" >> enhancement_notification.md
+          echo "## 📈 Enhancement Metrics" >> enhancement_notification.md
+          echo "- **Opportunities Discovered:** ${{ needs.discover-opportunities.outputs.total-opportunities }}" >> enhancement_notification.md
+          echo "- **Parallel Processing:** ${{ env.MAX_PARALLEL_ENHANCERS }} enhancers" >> enhancement_notification.md
+          echo "- **Recursion Depth:** ${{ env.RECURSION_DEPTH }} levels" >> enhancement_notification.md
+          echo "- **Self-Improvement:** ${{ env.ENABLE_SELF_IMPROVEMENT == 'true' && 'Enabled' || 'Disabled' }}" >> enhancement_notification.md
+          echo "" >> enhancement_notification.md
+          echo "## 🔗 Resources" >> enhancement_notification.md
+          echo "- [Workflow Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> enhancement_notification.md
+          echo "- [Enhancement Report](./enhancement-report-${{ needs.initialize-enhancement.outputs.enhancement-id }})" >> enhancement_notification.md
+          echo "" >> enhancement_notification.md
+          echo "${{ steps.status.outputs.message }}" >> enhancement_notification.md
+          
+          cat enhancement_notification.md >> $GITHUB_STEP_SUMMARY

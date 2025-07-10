@@ -1,0 +1,22 @@
+# Task ID: 817
+# Title: Implement This can be trivially parallelized.
+    for n in G:
+        yield (n, length(G, n, cutoff=cutoff))
+
+ (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: This can be trivially parallelized.
+    for n in G:
+        yield (n, length(G, n, cutoff=cutoff))
+
+
+@nx._dispatchable
+def bidirectional_shortest_path(G, source, target):
+    """Returns a list of node
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/shortest_paths/unweighted.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,13 @@
+# Task ID: 2954
+# Title: Implement Custom Task Types
+```bash (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Custom Task Types
+```bash
+# Details:
+Converted from todo: .taskmaster/examples/web-app-integration.md
+
+# Test Strategy:
+Validate completion of: action-item item

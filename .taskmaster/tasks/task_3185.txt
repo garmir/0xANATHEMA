@@ -1,0 +1,19 @@
+# Task ID: 3185
+# Title: Implement Task Information
+- **ID**: {task_id}
+- **Title**: {task_title}
+- **Status**: {pending/in-progress/do (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Task Information
+- **ID**: {task_id}
+- **Title**: {task_title}
+- **Status**: {pending/in-progress/done/blocked}
+- **Priority**: {high/medium/low}
+- **
+# Details:
+Converted from todo: .taskmaster/templates/task-template.md
+
+# Test Strategy:
+Validate completion of: action-item item

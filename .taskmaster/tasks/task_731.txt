@@ -1,0 +1,17 @@
+# Task ID: 731
+# Title: Implement generalize to more ufuncs
+    inp = ["hello", "world"]
+    arr = np.array(inp, dtype=StringDType(na_ (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: generalize to more ufuncs
+    inp = ["hello", "world"]
+    arr = np.array(inp, dtype=StringDType(na_object=None))
+    for op_dtype in [None, StringDType(), StringDType(coerce=False),
+                 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/_core/tests/test_stringdtype.py
+
+# Test Strategy:
+Validate completion of: code-todo item

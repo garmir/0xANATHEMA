@@ -1,0 +1,18 @@
+# Task ID: 869
+# Title: Implement JES3 statement
+            (r'.*\n', Other)  # Input text or inline code in any language.
+        ], (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: JES3 statement
+            (r'.*\n', Other)  # Input text or inline code in any language.
+        ],
+        'statement': [
+            (r'\s*\n', Whitespace, '#pop'),
+            (r'([a-z]\w*)(\s+)(e
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/scripting.py
+
+# Test Strategy:
+Validate completion of: code-todo item

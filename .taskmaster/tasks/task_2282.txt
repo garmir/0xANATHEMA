@@ -1,0 +1,17 @@
+# Task ID: 2282
+# Title: Implement LangChain + LangGraph
+- **Capabilities**: Multi-agent orchestration, stateful workflows
+- **Strength (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: LangChain + LangGraph
+- **Capabilities**: Multi-agent orchestration, stateful workflows
+- **Strengths**:
+  - 60% adoption rate among AI developers
+  -
+# Details:
+Converted from todo: .taskmaster/research/local-llm-survey-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

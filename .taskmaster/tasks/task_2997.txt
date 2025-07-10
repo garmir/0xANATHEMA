@@ -1,0 +1,11 @@
+# Task ID: 2997
+# Title: Implement **Multi-Step Reasoning** - Logical reasoning chains and complex problem solving (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Multi-Step Reasoning** - Logical reasoning chains and complex problem solving
+# Details:
+Converted from todo: .taskmaster/benchmarks/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

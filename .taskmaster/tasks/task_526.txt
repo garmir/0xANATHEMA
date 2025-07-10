@@ -1,0 +1,16 @@
+# Task ID: 526
+# Title: UNIX sockets are temporarily implemented by parsing
+        # 'pfiles' cmd  output; we don't want th
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: UNIX sockets are temporarily implemented by parsing
+        # 'pfiles' cmd  output; we don't want that part of the code to
+        # be executed.
+        with create_sockets():
+            kind = 'ine
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/psutil/tests/test_memleaks.py
+
+# Test Strategy:
+Validate completion of: code-todo item

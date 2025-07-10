@@ -1,0 +1,17 @@
+# Task ID: 251
+# Title: Implement (EA2D): we can make this no-copy in tz-naive case too
+            assert ser.dtype == dti.dtype
+     (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (EA2D): we can make this no-copy in tz-naive case too
+            assert ser.dtype == dti.dtype
+            assert ser._values._ndarray is values._ndarray
+        else:
+            assert ser._values 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexing/test_indexing.py
+
+# Test Strategy:
+Validate completion of: code-todo item

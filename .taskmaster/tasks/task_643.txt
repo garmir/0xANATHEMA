@@ -1,0 +1,16 @@
+# Task ID: 643
+# Title: (1.9): remove this test
+@pytest.mark.parametrize("force_int_remainder_cols", [True, False])
+def test (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.9): remove this test
+@pytest.mark.parametrize("force_int_remainder_cols", [True, False])
+def test_force_int_remainder_cols_deprecation(force_int_remainder_cols):
+    """Check that ColumnTransformer
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/compose/tests/test_column_transformer.py
+
+# Test Strategy:
+Validate completion of: code-todo item

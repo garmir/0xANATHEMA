@@ -1,0 +1,14 @@
+# Task ID: 389
+# Title: Implement No DLPack yet, so need to construct a new ndarray from the data pointer
+    # and size in the buffer (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: No DLPack yet, so need to construct a new ndarray from the data pointer
+    # and size in the buffer plus the dtype on the column. Use DLPack as NumPy supports
+    # it since https://github.com/numpy/
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/interchange/from_dataframe.py
+
+# Test Strategy:
+Validate completion of: code-todo item

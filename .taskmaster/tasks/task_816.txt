@@ -1,0 +1,20 @@
+# Task ID: 816
+# Title: Implement This can be trivially parallelized.
+    for n in G:
+        yield (n, path(G, n, cutoff=cutoff, weig (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: This can be trivially parallelized.
+    for n in G:
+        yield (n, path(G, n, cutoff=cutoff, weight=weight))
+
+
+@nx._dispatchable(edge_attrs="weight")
+def bellman_ford_predecessor_and_distance(
+    
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/shortest_paths/weighted.py
+
+# Test Strategy:
+Validate completion of: code-todo item

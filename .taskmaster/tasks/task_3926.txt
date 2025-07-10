@@ -1,0 +1,11 @@
+# Task ID: 3926
+# Title: Implement **Process Affinity**: Pin processes to specific CPU cores (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Process Affinity**: Pin processes to specific CPU cores
+# Details:
+Converted from todo: .taskmaster/reports/performance-optimization-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

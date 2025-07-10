@@ -1,0 +1,11 @@
+# Task ID: 1640
+# Title: Implement Restore previous task-master configuration (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Restore previous task-master configuration
+# Details:
+Converted from todo: execution-roadmap.md
+
+# Test Strategy:
+Validate completion of: action-item item

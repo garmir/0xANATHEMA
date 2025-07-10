@@ -1,0 +1,15 @@
+# Task ID: 208
+# Title: (infer_string) this test can be removed after 3.0 (once str is the default)
+    # https://github.com (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (infer_string) this test can be removed after 3.0 (once str is the default)
+    # https://github.com/pandas-dev/pandas/issues/54654
+    # ensure_string_array may alter array inplace
+    base = Series(
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/copy_view/test_astype.py
+
+# Test Strategy:
+Validate completion of: code-todo item

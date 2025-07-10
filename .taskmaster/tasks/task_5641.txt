@@ -1,0 +1,16 @@
+# Task ID: 5641
+# Title: Non-Functional Requirements
+- Each optimization step must complete within 5 minutes
+- Memory usage m (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Non-Functional Requirements
+- Each optimization step must complete within 5 minutes
+- Memory usage must not exceed sqrt(task_count) * 1MB
+- Optimized 
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-3-optimization/prd-3.2-space-optimization.md
+
+# Test Strategy:
+Validate completion of: action-item item

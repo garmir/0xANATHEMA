@@ -1,0 +1,18 @@
+# Task ID: 452
+# Title: # * properly implement ``_FillValue``.
+# * fix character variables.
+# * implement PAGESIZE for Pytho (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: # * properly implement ``_FillValue``.
+# * fix character variables.
+# * implement PAGESIZE for Python 2.6?
+
+# The Scientific.IO.NetCDF API allows attributes to be added directly to
+# instances of ``ne
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/io/_netcdf.py
+
+# Test Strategy:
+Validate completion of: code-todo item

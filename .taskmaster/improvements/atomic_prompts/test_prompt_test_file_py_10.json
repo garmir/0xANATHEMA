@@ -1,0 +1,26 @@
+{
+  "prompt_id": "improve_test_file_py_10_1752176477",
+  "target_todo_id": "test_file_py_10",
+  "prompt_type": "atomic_improvement",
+  "priority": "medium",
+  "context": {
+    "todo_type": "code_todo",
+    "title": "Code Todo: test_file.py:10",
+    "description": "# TODO: Implement this function",
+    "current_status": "file_missing",
+    "completion_assessment": "unknown"
+  },
+  "improvement_prompt": "Analyze and improve todo 'Code Todo: test_file.py:10': # TODO: Implement this function. Current status: file_missing. Recommendations: . Generate specific, actionable steps to complete this todo with measurable outcomes.",
+  "expected_outcomes": [
+    "Clear action items with deadlines",
+    "Measurable success criteria",
+    "Dependencies and prerequisites identified",
+    "Risk assessment and mitigation strategies"
+  ],
+  "validation_criteria": [
+    "All action items are specific and actionable",
+    "Success criteria are measurable",
+    "Timeline is realistic",
+    "Dependencies are properly identified"
+  ]
+}

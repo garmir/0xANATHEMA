@@ -1,0 +1,18 @@
+# Task ID: 788
+# Title: Implement rm csr_array wrapper when spdiags can produce arrays
+    D = sp.sparse.csr_array(sp.sparse.spdiags(A (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: rm csr_array wrapper when spdiags can produce arrays
+    D = sp.sparse.csr_array(sp.sparse.spdiags(A.sum(axis=1), 0, m, n, format="csr"))
+    return D - A
+
+
+@nx._dispatchable(edge_attrs="weight")
+def 
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/linalg/laplacianmatrix.py
+
+# Test Strategy:
+Validate completion of: code-todo item

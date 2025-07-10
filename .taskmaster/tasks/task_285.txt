@@ -1,0 +1,19 @@
+# Task ID: 285
+# Title: this is a test of to_timedelta string parsing
+    def test_iso_conversion(self):
+        # GH #21877 (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: this is a test of to_timedelta string parsing
+    def test_iso_conversion(self):
+        # GH #21877
+        expected = Timedelta(1, unit="s")
+        assert to_timedelta("P0DT0H0M1S") == expected
+
+  
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/scalar/timedelta/test_timedelta.py
+
+# Test Strategy:
+Validate completion of: code-todo item

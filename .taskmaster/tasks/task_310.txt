@@ -1,0 +1,17 @@
+# Task ID: 310
+# Title: Implement agg should raise for functions that don't aggregate
+    df = DataFrame({"a": [1, 1, 2, 2], "b": [1,  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: agg should raise for functions that don't aggregate
+    df = DataFrame({"a": [1, 1, 2, 2], "b": [1, 2, 2, 1]})
+    g = df.groupby("a")
+
+    result = g.agg(["cumsum"])
+    result.columns = result.colum
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/groupby/aggregate/test_aggregate.py
+
+# Test Strategy:
+Validate completion of: code-todo item

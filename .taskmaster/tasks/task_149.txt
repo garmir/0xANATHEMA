@@ -1,0 +1,15 @@
+# Task ID: 149
+# Title: Implement (GH-18976) update all the nanops methods to
+                # correctly handle empty inputs and remo (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (GH-18976) update all the nanops methods to
+                # correctly handle empty inputs and remove this check.
+                # It *may* just be `var`
+                return _na_for_min_count(val
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/nanops.py
+
+# Test Strategy:
+Validate completion of: code-todo item

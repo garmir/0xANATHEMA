@@ -1,0 +1,15 @@
+# Task ID: 2710
+# Title: 2. **Recursive Research Analysis**
+- **Query Generation**: Based on current implementation state
+- *
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 2. **Recursive Research Analysis**
+- **Query Generation**: Based on current implementation state
+- **Finding Integration**: Direct translation to acti
+# Details:
+Converted from todo: .taskmaster/docs/research-planning-workflow-map.md
+
+# Test Strategy:
+Validate completion of: action-item item

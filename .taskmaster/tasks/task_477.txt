@@ -1,0 +1,19 @@
+# Task ID: 477
+# Title: Implement add `supported` method and check here
+    on = np.zeros(a.shape, dtype=int)
+    on[a == arg] = -1
+   (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: add `supported` method and check here
+    on = np.zeros(a.shape, dtype=int)
+    on[a == arg] = -1
+    on[b == arg] = 1
+    outside = np.zeros(a.shape, dtype=int)
+    outside[(arg < a) if a_included el
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/stats/tests/test_continuous.py
+
+# Test Strategy:
+Validate completion of: code-todo item

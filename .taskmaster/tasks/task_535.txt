@@ -1,0 +1,21 @@
+# Task ID: 535
+# Title: Implement Only update the rubberband area.
+        self.queue_draw()
+
+    def _draw_func(self, drawing_area, c (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Only update the rubberband area.
+        self.queue_draw()
+
+    def _draw_func(self, drawing_area, ctx, width, height):
+        self.on_draw_event(self, ctx)
+        self._post_draw(self, ctx)
+
+    de
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/matplotlib/backends/backend_gtk4.py
+
+# Test Strategy:
+Validate completion of: code-todo item

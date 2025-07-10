@@ -1,0 +1,16 @@
+# Task ID: 363
+# Title: Implement same for EA float/uint dtypes, signed integers?
+        arr = np.arange(5).astype(float_numpy_dtype) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: same for EA float/uint dtypes, signed integers?
+        arr = np.arange(5).astype(float_numpy_dtype) - 3  # includes negatives
+        ser = Series(arr)
+
+        msg = "Cannot losslessly cast from .* 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/series/methods/test_astype.py
+
+# Test Strategy:
+Validate completion of: code-todo item

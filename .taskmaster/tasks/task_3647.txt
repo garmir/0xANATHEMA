@@ -1,0 +1,18 @@
+# Task ID: 3647
+# Title: Implement Core Planning Migration
+1. **Claude API Replacement**
+   - Migrate to Llama 3.1 70B
+   - Optimize pr (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Core Planning Migration
+1. **Claude API Replacement**
+   - Migrate to Llama 3.1 70B
+   - Optimize prompts for local models
+   - Implement response par
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,14 @@
+# Task ID: 553
+# Title: Implement (1.9): When `raise_warning` is removed, the following changes need to be made:
+    # The checks for  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.9): When `raise_warning` is removed, the following changes need to be made:
+    # The checks for `raise_warning==True` need to be removed and we will always warn,
+    # remove `FutureWarning`, and 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/metrics/_classification.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,22 @@
+# Task ID: 5735
+# Title: Implementation
+```bash
+process_sub_prds() {
+    local output_dir="$1"
+    local current_depth="$2"
+ 
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Implementation
+```bash
+process_sub_prds() {
+    local output_dir="$1"
+    local current_depth="$2"
+    local processed_count=0
+    local atomic_count=
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-2-recursive/prd-2.2-recursive-processing/prd-2.2.3-sub-prd-iteration.md
+
+# Test Strategy:
+Validate completion of: action-item item

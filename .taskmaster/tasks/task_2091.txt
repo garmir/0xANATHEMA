@@ -1,0 +1,16 @@
+# Task ID: 2091
+# Title: Implement Task-Master CLI Integration
+- `task-master next` - Get next available task
+- `task-master show {id}` (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Task-Master CLI Integration
+- `task-master next` - Get next available task
+- `task-master show {id}` - Get task details
+- `task-master research "{prom
+# Details:
+Converted from todo: .taskmaster/README-AUTONOMOUS-WORKFLOW.md
+
+# Test Strategy:
+Validate completion of: action-item item

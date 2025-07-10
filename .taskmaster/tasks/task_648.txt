@@ -1,0 +1,17 @@
+# Task ID: 648
+# Title: Support np.nan in Cython implementation for precomputed
+                # dense HDBSCAN
+            
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Support np.nan in Cython implementation for precomputed
+                # dense HDBSCAN
+                raise ValueError("np.nan values found in precomputed-dense")
+        if X.shape[0] == 1:
+       
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/cluster/_hdbscan/hdbscan.py
+
+# Test Strategy:
+Validate completion of: code-todo item

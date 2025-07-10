@@ -1,0 +1,15 @@
+# Task ID: 220
+# Title: Implement moved from test_algos; may be redundancies with other tests
+    def test_string_hashtable_set_item_s (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: moved from test_algos; may be redundancies with other tests
+    def test_string_hashtable_set_item_signature(self):
+        # GH#30419 fix typing in StringHashTable.set_item to prevent segfault
+      
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/libs/test_hashtable.py
+
+# Test Strategy:
+Validate completion of: code-todo item

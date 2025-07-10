@@ -1,0 +1,16 @@
+# Task ID: 804
+# Title: graph and subgraph setter methods that invalidate the caches.
+        # TODO: allow for precomputed 
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: graph and subgraph setter methods that invalidate the caches.
+        # TODO: allow for precomputed partitions and colors
+        self.graph = graph
+        self.subgraph = subgraph
+        self._symm
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/isomorphism/ismags.py
+
+# Test Strategy:
+Validate completion of: code-todo item

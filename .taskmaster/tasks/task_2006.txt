@@ -1,0 +1,13 @@
+# Task ID: 2006
+# Title: Implement Pattern 5: Version-Based Development
+Tailor your approach based on the project maturity indicated by (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Pattern 5: Version-Based Development
+Tailor your approach based on the project maturity indicated by tag names.
+# Details:
+Converted from todo: .trae/rules/dev_workflow.md
+
+# Test Strategy:
+Validate completion of: action-item item

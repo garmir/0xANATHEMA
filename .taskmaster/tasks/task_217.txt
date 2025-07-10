@@ -1,0 +1,20 @@
+# Task ID: 217
+# Title: Implement (wesm): do something with this?
+        dm.cumsum()
+
+    def test_cumprod_smoke(self, datetime_frame (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (wesm): do something with this?
+        dm.cumsum()
+
+    def test_cumprod_smoke(self, datetime_frame):
+        datetime_frame.iloc[5:10, 0] = np.nan
+        datetime_frame.iloc[10:15, 1] = np.nan
+    
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/test_cumulative.py
+
+# Test Strategy:
+Validate completion of: code-todo item

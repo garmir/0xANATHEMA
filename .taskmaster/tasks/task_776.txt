@@ -1,0 +1,15 @@
+# Task ID: 776
+# Title: Implement Symbol bit has a special meaning (check the spec), we need
+        # to confirm if this is wanted by (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Symbol bit has a special meaning (check the spec), we need
+        # to confirm if this is wanted by default.
+        # elif chr(0xF000) <= char <= chr(0xF0FF):
+        #    codepageRanges.add(31)    
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/ttLib/tables/O_S_2f_2.py
+
+# Test Strategy:
+Validate completion of: code-todo item

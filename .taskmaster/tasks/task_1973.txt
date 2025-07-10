@@ -1,0 +1,11 @@
+# Task ID: 1973
+# Title: Implement **Master List Curation**: Keep only the most valuable initiatives in master (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Master List Curation**: Keep only the most valuable initiatives in master
+# Details:
+Converted from todo: .trae/rules/dev_workflow.md
+
+# Test Strategy:
+Validate completion of: action-item item

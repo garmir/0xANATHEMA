@@ -1,0 +1,18 @@
+# Task ID: 187
+# Title: Implement patching self is a bad pattern here
+        orig_data1, orig_data2 = data_repeated(2)
+        if ori (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: patching self is a bad pattern here
+        orig_data1, orig_data2 = data_repeated(2)
+        if orig_data1.dtype.kind == "b":
+            self._combine_le_expected_dtype = "boolean"
+        else:
+   
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/extension/test_masked.py
+
+# Test Strategy:
+Validate completion of: code-todo item

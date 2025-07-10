@@ -1,0 +1,14 @@
+# Task ID: 3621
+# Title: Implement Primary Models (Resource-Intensive Tasks)
+- **Llama 3.1 70B (AWQ 4-bit)** - Complex reasoning, plann (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Primary Models (Resource-Intensive Tasks)
+- **Llama 3.1 70B (AWQ 4-bit)** - Complex reasoning, planning, meta-analysis
+- **Qwen 32B** - Research synth
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

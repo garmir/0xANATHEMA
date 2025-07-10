@@ -1,0 +1,16 @@
+# Task ID: 1921
+# Title: Implement ✅ Recursive Research Loops
+- Context-aware research queries
+- Depth-limited recursion (max 3 levels) (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: ✅ Recursive Research Loops
+- Context-aware research queries
+- Depth-limited recursion (max 3 levels)  
+- Correlation ID tracking for complex workflows
+# Details:
+Converted from todo: LOCAL_LLM_MIGRATION_GUIDE.md
+
+# Test Strategy:
+Validate completion of: action-item item

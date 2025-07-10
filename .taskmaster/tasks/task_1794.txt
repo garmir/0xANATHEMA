@@ -1,0 +1,11 @@
+# Task ID: 1794
+# Title: Implement Claude Code Best Practices with Task Master (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Claude Code Best Practices with Task Master
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,15 @@
+# Task ID: 237
+# Title: 2022-07-11 this is the only test that gets to DTA.tz_convert
+    #  or tz_localize with non-nano; im (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: 2022-07-11 this is the only test that gets to DTA.tz_convert
+    #  or tz_localize with non-nano; implement tests specific to that.
+    def test_add_datetimelike_scalar(self, tda, tz_naive_fixture):
+ 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arrays/test_timedeltas.py
+
+# Test Strategy:
+Validate completion of: code-todo item

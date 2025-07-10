@@ -1,0 +1,16 @@
+# Task ID: 283
+# Title: Implement de-duplicate this version (from test_ops) with the one above
+    # (from test_period)
+    def test_a (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: de-duplicate this version (from test_ops) with the one above
+    # (from test_period)
+    def test_astype_object2(self):
+        idx = period_range(start="2013-01-01", periods=4, freq="M", name="idx")
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/period/methods/test_astype.py
+
+# Test Strategy:
+Validate completion of: code-todo item

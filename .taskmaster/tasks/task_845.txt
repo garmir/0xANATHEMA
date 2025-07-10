@@ -1,0 +1,15 @@
+# Task ID: 845
+# Title: Implement replace annotation with actual expected types once #1055 solved
+            kwargs = {'default': fie (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: replace annotation with actual expected types once #1055 solved
+            kwargs = {'default': field.default} if not field.required else {}
+            merged_params[param_name] = Parameter(
+       
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pydantic/v1/utils.py
+
+# Test Strategy:
+Validate completion of: code-todo item

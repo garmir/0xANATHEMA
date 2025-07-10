@@ -1,0 +1,11 @@
+# Task ID: 3057
+# Title: Implement Capability-Specific Recommendations with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Capability-Specific Recommendations
+# Details:
+Converted from todo: .taskmaster/benchmarks/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

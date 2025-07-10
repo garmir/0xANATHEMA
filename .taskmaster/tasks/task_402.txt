@@ -1,0 +1,23 @@
+# Task ID: 402
+# Title: check len(values) == 0?
+        block_values = []
+
+    return create_block_manager_from_blocks(
+    
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: check len(values) == 0?
+        block_values = []
+
+    return create_block_manager_from_blocks(
+        block_values, [columns, index], verify_integrity=False
+    )
+
+
+def _check_values_indices_shape_m
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/internals/construction.py
+
+# Test Strategy:
+Validate completion of: code-todo item

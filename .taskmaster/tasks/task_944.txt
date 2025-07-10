@@ -1,0 +1,11 @@
+# Task ID: 944
+# Title: Implement Resource Utilization with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Resource Utilization
+# Details:
+Converted from todo: LABRYS_PID_REPORT.md
+
+# Test Strategy:
+Validate completion of: action-item item

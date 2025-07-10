@@ -1,0 +1,16 @@
+# Task ID: 557
+# Title: Implement Use loss.fit_intercept_only where appropriate instead of
+    # DummyRegressor which is the default g (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Use loss.fit_intercept_only where appropriate instead of
+    # DummyRegressor which is the default given by the `init` parameter,
+    # see also _init_state.
+    if use_predict_proba:
+        # Our pa
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/ensemble/_gb.py
+
+# Test Strategy:
+Validate completion of: code-todo item

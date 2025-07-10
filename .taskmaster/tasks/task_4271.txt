@@ -1,0 +1,17 @@
+# Task ID: 4271
+# Title: Set up secure API key management
+- [ ] Configure AWS region for Bedrock
+- [ ] Test all AI provider c (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Set up secure API key management
+- [ ] Configure AWS region for Bedrock
+- [ ] Test all AI provider connections
+
+### Phase 2: Performance Core (Week 2)
+# Details:
+Converted from todo: .taskmaster/reports/self-optimization-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

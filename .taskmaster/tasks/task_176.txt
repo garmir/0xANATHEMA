@@ -1,0 +1,15 @@
+# Task ID: 176
+# Title: Implement (infer_string) should this behave differently?
+                # -> https://github.com/pandas-dev/pa (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (infer_string) should this behave differently?
+                # -> https://github.com/pandas-dev/pandas/issues/60234
+                with pytest.raises(
+                    TypeError, match="not supp
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/series/test_logical_ops.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,14 @@
+# Task ID: 5668
+# Title: Implement Correctly identifies atomic tasks with 90%+ accuracy
+- [ ] Prevents unnecessary decomposition of det (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Correctly identifies atomic tasks with 90%+ accuracy
+- [ ] Prevents unnecessary decomposition of detailed PRDs
+- [ ] Integrates seamlessly with recurs
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-2-recursive/prd-2.3-atomic-detection.md
+
+# Test Strategy:
+Validate completion of: action-item item

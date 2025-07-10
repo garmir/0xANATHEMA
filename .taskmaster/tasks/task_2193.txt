@@ -1,0 +1,11 @@
+# Task ID: 2193
+# Title: Implement 🚀 Usage Instructions with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 🚀 Usage Instructions
+# Details:
+Converted from todo: .taskmaster/automation/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

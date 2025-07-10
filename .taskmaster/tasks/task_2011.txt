@@ -1,0 +1,11 @@
+# Task ID: 2011
+# Title: Implement Primary Interaction: MCP Server vs. CLI (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Primary Interaction: MCP Server vs. CLI
+# Details:
+Converted from todo: .trae/rules/dev_workflow.md
+
+# Test Strategy:
+Validate completion of: action-item item

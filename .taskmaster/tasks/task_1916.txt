@@ -1,0 +1,17 @@
+# Task ID: 1916
+# Title: Implement Before Migration
+```
+Task Master AI → External APIs (Perplexity/Claude/OpenAI) → AI Processing
+``` (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Before Migration
+```
+Task Master AI → External APIs (Perplexity/Claude/OpenAI) → AI Processing
+```
+# Details:
+Converted from todo: LOCAL_LLM_MIGRATION_GUIDE.md
+
+# Test Strategy:
+Validate completion of: action-item item

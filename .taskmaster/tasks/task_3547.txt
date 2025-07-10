@@ -1,0 +1,16 @@
+# Task ID: 3547
+# Title: Implement Metrics Collection
+- **Response Times**: Per model and request type
+- **Success Rates**: Model relia (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Metrics Collection
+- **Response Times**: Per model and request type
+- **Success Rates**: Model reliability tracking
+- **Resource Utilization**: CPU, m
+# Details:
+Converted from todo: .taskmaster/migration/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

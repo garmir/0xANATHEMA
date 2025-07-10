@@ -1,0 +1,19 @@
+# Task ID: 3297
+# Title: Implement **Manual Execution Process**:
+1. Start with Atomic Task 1
+2. Execute as simple prompt
+3. Document ou (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Manual Execution Process**:
+1. Start with Atomic Task 1
+2. Execute as simple prompt
+3. Document output
+4. Move to Atomic Task 2
+5. Continue until al
+# Details:
+Converted from todo: .taskmaster/workflow-rules/recursive-breakdown-rule.md
+
+# Test Strategy:
+Validate completion of: action-item item

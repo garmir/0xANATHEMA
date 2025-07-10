@@ -1,0 +1,13 @@
+# Task ID: 3161
+# Title: Implement 3. Parse PRD into Tasks
+```bash (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 3. Parse PRD into Tasks
+```bash
+# Details:
+Converted from todo: .taskmaster/templates/claude-code-integration-example.md
+
+# Test Strategy:
+Validate completion of: action-item item

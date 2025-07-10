@@ -1,0 +1,11 @@
+# Task ID: 1809
+# Title: Implement Research Mode with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Research Mode
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

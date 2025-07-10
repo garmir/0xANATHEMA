@@ -1,0 +1,14 @@
+# Task ID: 5419
+# Title: Implement 2.3 Contextual Reasoning
+- **Situational Awareness**: Understand current system and business context (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 2.3 Contextual Reasoning
+- **Situational Awareness**: Understand current system and business context
+- **Risk Assessment**: Evaluate potential risks a
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/core-engine/decision-framework.md
+
+# Test Strategy:
+Validate completion of: action-item item

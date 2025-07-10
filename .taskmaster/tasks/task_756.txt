@@ -1,0 +1,17 @@
+# Task ID: 756
+# Title: Implement Replace with https://docs.python.org/3.11/library/exceptions.html#BaseException.add_note
+        (me (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Replace with https://docs.python.org/3.11/library/exceptions.html#BaseException.add_note
+        (message, *rest) = self.args
+        self.args = ((message + "\n" + note), *rest)
+
+
+class UnsupportedGL
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/ufoLib/errors.py
+
+# Test Strategy:
+Validate completion of: code-todo item

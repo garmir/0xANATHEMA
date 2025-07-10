@@ -1,0 +1,11 @@
+# Task ID: 1570
+# Title: Implement **Ollama**: Requires HTTP API at `localhost:11434` (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Ollama**: Requires HTTP API at `localhost:11434`
+# Details:
+Converted from todo: privacy_compliant_note.md
+
+# Test Strategy:
+Validate completion of: action-item item

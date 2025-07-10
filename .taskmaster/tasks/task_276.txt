@@ -1,0 +1,17 @@
+# Task ID: 276
+# Title: Implement belongs in frame groupby tests?
+    def test_groupby_function_tuple_1677(self):
+        df = DataFra (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: belongs in frame groupby tests?
+    def test_groupby_function_tuple_1677(self):
+        df = DataFrame(
+            np.random.default_rng(2).random(100),
+            index=date_range("1/1/2000", perio
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/datetimes/test_datetime.py
+
+# Test Strategy:
+Validate completion of: code-todo item

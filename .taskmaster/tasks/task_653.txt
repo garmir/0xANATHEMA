@@ -1,0 +1,18 @@
+# Task ID: 653
+# Title: Implement (1.8) remove the filterwarnings decorator
+@pytest.mark.filterwarnings(
+    "ignore:'force_all_finite (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8) remove the filterwarnings decorator
+@pytest.mark.filterwarnings(
+    "ignore:'force_all_finite' was renamed to 'ensure_all_finite':FutureWarning"
+)
+@pytest.mark.parametrize("seed", range(5))
+@py
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/test_compare_lightgbm.py
+
+# Test Strategy:
+Validate completion of: code-todo item

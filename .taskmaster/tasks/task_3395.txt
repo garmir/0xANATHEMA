@@ -1,0 +1,16 @@
+# Task ID: 3395
+# Title: Implement 3. **Red-Blue Pebbling Extension** [MEDIUM PRIORITY]
+- **Current**: Basic pebbling operational
+- **T (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 3. **Red-Blue Pebbling Extension** [MEDIUM PRIORITY]
+- **Current**: Basic pebbling operational
+- **Target**: Multiprocessor environment optimization
+-
+# Details:
+Converted from todo: .taskmaster/automation/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

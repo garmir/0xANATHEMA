@@ -1,0 +1,19 @@
+# Task ID: 315
+# Title: Implement this must be int64
+        assert res["b"].dtype == "int64"
+
+        res = dfa.iloc[:0].combine_firs (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: this must be int64
+        assert res["b"].dtype == "int64"
+
+        res = dfa.iloc[:0].combine_first(dfb)
+        exp = DataFrame({"a": [np.nan, np.nan], "b": [4, 5]}, columns=["a", "b"])
+        tm.
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/methods/test_combine_first.py
+
+# Test Strategy:
+Validate completion of: code-todo item

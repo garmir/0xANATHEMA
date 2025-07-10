@@ -1,0 +1,11 @@
+# Task ID: 3508
+# Title: Implement **Model Router** (`model_router.py`) with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Model Router** (`model_router.py`)
+# Details:
+Converted from todo: .taskmaster/migration/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

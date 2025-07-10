@@ -1,0 +1,16 @@
+# Task ID: 766
+# Title: Implement # A 0moveto that comes before all other path operations can be removed.
+    # though I find conflict (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: # A 0moveto that comes before all other path operations can be removed.
+    # though I find conflicting evidence for this.
+    #
+    # TODO
+    # "If hstem and vstem hints are both declared at the beg
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/cffLib/specializer.py
+
+# Test Strategy:
+Validate completion of: code-todo item

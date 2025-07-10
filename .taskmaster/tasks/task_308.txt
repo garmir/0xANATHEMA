@@ -1,0 +1,16 @@
+# Task ID: 308
+# Title: Implement (nullable) also string[python] should return nullable dtypes
+            expected["proportion"] = ex (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (nullable) also string[python] should return nullable dtypes
+            expected["proportion"] = expected["proportion"].convert_dtypes()
+    else:
+        expected["count"] = expected_count
+        i
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/groupby/methods/test_value_counts.py
+
+# Test Strategy:
+Validate completion of: code-todo item

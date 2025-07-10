@@ -1,0 +1,16 @@
+# Task ID: 768
+# Title: Implement This never switches back to a byte-encoding from a short-encoding.
+                # That's suboptim (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: This never switches back to a byte-encoding from a short-encoding.
+                # That's suboptimal.
+                if useByteEncoding:
+                    result.append(delta)
+                els
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/ttLib/tables/TupleVariation.py
+
+# Test Strategy:
+Validate completion of: code-todo item

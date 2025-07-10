@@ -1,0 +1,16 @@
+# Task ID: 661
+# Title: (1.9): remove test
+@pytest.mark.parametrize("raise_warning", [True, False])
+def test_likelihood_rati (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.9): remove test
+@pytest.mark.parametrize("raise_warning", [True, False])
+def test_likelihood_ratios_raise_warning_deprecation(raise_warning):
+    """Test that class_likelihood_ratios raises a `Futu
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/metrics/tests/test_classification.py
+
+# Test Strategy:
+Validate completion of: code-todo item

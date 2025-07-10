@@ -1,0 +1,11 @@
+# Task ID: 3880
+# Title: Implement **Quality Impact**: Automated validation and health scoring (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Quality Impact**: Automated validation and health scoring
+# Details:
+Converted from todo: .taskmaster/reports/github-actions-impact-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

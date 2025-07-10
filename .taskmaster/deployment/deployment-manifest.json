@@ -1,0 +1,28 @@
+{
+  "deploymentId": "deploy_1752178507524",
+  "environment": "production",
+  "deployedAt": "2025-07-10T20:15:07.524Z",
+  "version": "1.0.0",
+  "components": [
+    ".github/workflows/recursive-todo-processing.yml",
+    ".github/scripts/extract-todos.js",
+    ".github/scripts/generate-matrix.js",
+    ".github/scripts/process-batch.js",
+    ".github/scripts/atomize-todos.js",
+    ".github/scripts/validate-completion.js",
+    ".github/scripts/generate-improvement-prompts.js",
+    ".github/scripts/execute-improvements.js",
+    ".github/scripts/consolidate-results.js",
+    ".github/scripts/test-system.js"
+  ],
+  "configuration": {
+    "maxParallelRunners": 10,
+    "recursionDepth": 5,
+    "validationMode": "strict",
+    "enableRecursive": true,
+    "enableTesting": true,
+    "timeout": 300000,
+    "enableMonitoring": true,
+    "enableAlerts": true
+  }
+}

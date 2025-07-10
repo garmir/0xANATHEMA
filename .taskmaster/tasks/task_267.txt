@@ -1,0 +1,16 @@
+# Task ID: 267
+# Title: Implement This method came from test_period; de-dup with version above
+    def test_get_indexer2(self):
+       (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: This method came from test_period; de-dup with version above
+    def test_get_indexer2(self):
+        idx = period_range("2000-01-01", periods=3).asfreq("h", how="start")
+        tm.assert_numpy_array
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/period/test_indexing.py
+
+# Test Strategy:
+Validate completion of: code-todo item

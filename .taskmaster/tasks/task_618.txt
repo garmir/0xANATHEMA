@@ -1,0 +1,16 @@
+# Task ID: 618
+# Title: Implement change to averaged inverted cdf, but that means we only get bin
+    ## edges of 0.05 and 0.95 and no (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: change to averaged inverted cdf, but that means we only get bin
+    ## edges of 0.05 and 0.95 and nothing in between
+
+    warning_message = "Consider decreasing the number of bins."
+    with pytest.wa
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/preprocessing/tests/test_discretization.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,18 @@
+# Task ID: 376
+# Title: Implement Do this timedelta properly in objToJSON.c See GH #15137
+        if (
+            (obj.ndim == 1)
+    (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Do this timedelta properly in objToJSON.c See GH #15137
+        if (
+            (obj.ndim == 1)
+            and (obj.name in set(obj.index.names))
+            or len(obj.columns.intersection(obj.inde
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/io/json/_json.py
+
+# Test Strategy:
+Validate completion of: code-todo item

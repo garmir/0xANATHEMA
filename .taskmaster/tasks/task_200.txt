@@ -1,0 +1,18 @@
+# Task ID: 200
+# Title: (ArrayManager) fastparquet
+def test_fastparquet_options(fsspectest):
+    """Regression test for writ (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (ArrayManager) fastparquet
+def test_fastparquet_options(fsspectest):
+    """Regression test for writing to a not-yet-existent GCS Parquet file."""
+    pytest.importorskip("fastparquet")
+
+    df = Data
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/io/test_fsspec.py
+
+# Test Strategy:
+Validate completion of: code-todo item

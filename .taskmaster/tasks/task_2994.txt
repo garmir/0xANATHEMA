@@ -1,0 +1,13 @@
+# Task ID: 2994
+# Title: Implement For Resource-Constrained Environments
+```bash (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: For Resource-Constrained Environments
+```bash
+# Details:
+Converted from todo: .taskmaster/examples/integration-guide.md
+
+# Test Strategy:
+Validate completion of: action-item item

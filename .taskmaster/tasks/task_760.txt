@@ -1,0 +1,21 @@
+# Task ID: 760
+# Title: Implement VVAR, VORG
+
+    @contextmanager
+    def pushLocation(self, location, reset: bool):
+        self.loca (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: VVAR, VORG
+
+    @contextmanager
+    def pushLocation(self, location, reset: bool):
+        self.locationStack.append(self.location)
+        self.rawLocationStack.append(self.rawLocation)
+        if re
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/ttLib/ttGlyphSet.py
+
+# Test Strategy:
+Validate completion of: code-todo item

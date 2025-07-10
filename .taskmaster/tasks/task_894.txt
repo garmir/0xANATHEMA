@@ -1,0 +1,11 @@
+# Task ID: 894
+# Title: Implement Execute: show with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Execute: show
+# Details:
+Converted from todo: CLAUDE.md
+
+# Test Strategy:
+Validate completion of: documentation item

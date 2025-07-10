@@ -1,0 +1,17 @@
+# Task ID: 672
+# Title: Implement unintended side-effect on, e.g., "2003.05.09"
+    # PyPI stats: 77 (~2%) better
+    rs = re.sub(r"\b (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: unintended side-effect on, e.g., "2003.05.09"
+    # PyPI stats: 77 (~2%) better
+    rs = re.sub(r"\b0+(\d+)(?!\d)", r"\1", rs)
+
+    # Clean a/b/c with no version. E.g. "1.0a" -> "1.0a0". Setuptools in
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pip/_vendor/distlib/version.py
+
+# Test Strategy:
+Validate completion of: code-todo item

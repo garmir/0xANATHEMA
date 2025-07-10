@@ -1,0 +1,15 @@
+# Task ID: 2702
+# Title: Implement Claude Code Integration
+- **MCP Configuration**: Remote server support with local fallback
+- **Sessi (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Claude Code Integration
+- **MCP Configuration**: Remote server support with local fallback
+- **Session Automation**: Automatic research prompt executi
+# Details:
+Converted from todo: .taskmaster/docs/research-planning-workflow-map.md
+
+# Test Strategy:
+Validate completion of: action-item item

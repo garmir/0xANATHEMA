@@ -1,0 +1,23 @@
+# Task ID: 143
+# Title: Implement what status is this?
+    cext.SSTOP: _common.STATUS_STOPPED,
+}
+
+TCP_STATUSES = {
+    cext.TCPS_ESTAB (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: what status is this?
+    cext.SSTOP: _common.STATUS_STOPPED,
+}
+
+TCP_STATUSES = {
+    cext.TCPS_ESTABLISHED: _common.CONN_ESTABLISHED,
+    cext.TCPS_SYN_SENT: _common.CONN_SYN_SENT,
+    cext.TCPS_SYN_R
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/psutil/_psaix.py
+
+# Test Strategy:
+Validate completion of: code-todo item

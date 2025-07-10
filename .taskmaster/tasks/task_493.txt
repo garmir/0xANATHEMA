@@ -1,0 +1,22 @@
+# Task ID: 493
+# Title: Implement Optimize for hermitian and real?
+    if np.isrealobj(tmp):
+        tmp = tmp + 0.j
+
+    # Last axis  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Optimize for hermitian and real?
+    if np.isrealobj(tmp):
+        tmp = tmp + 0.j
+
+    # Last axis utilizes hermitian symmetry
+    if n is None:
+        n = (tmp.shape[axis] - 1) * 2
+        if n < 1
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/fft/_pocketfft/basic.py
+
+# Test Strategy:
+Validate completion of: code-todo item

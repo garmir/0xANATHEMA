@@ -1,0 +1,16 @@
+# Task ID: 1997
+# Title: Implement The Basic Loop
+The fundamental development cycle you will facilitate is:
+1.  **`list`**: Show the us (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: The Basic Loop
+The fundamental development cycle you will facilitate is:
+1.  **`list`**: Show the user what needs to be done.
+2.  **`next`**: Help the
+# Details:
+Converted from todo: .trae/rules/dev_workflow.md
+
+# Test Strategy:
+Validate completion of: action-item item

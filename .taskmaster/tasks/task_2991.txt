@@ -1,0 +1,18 @@
+# Task ID: 2991
+# Title: Implement 4. Team Collaboration
+- Share `.taskmaster/` directory in git
+- Use consistent naming conventions
+-  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 4. Team Collaboration
+- Share `.taskmaster/` directory in git
+- Use consistent naming conventions
+- Document custom workflows in CLAUDE.md
+- Regular c
+# Details:
+Converted from todo: .taskmaster/examples/integration-guide.md
+
+# Test Strategy:
+Validate completion of: action-item item

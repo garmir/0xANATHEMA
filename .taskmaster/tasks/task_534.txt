@@ -1,0 +1,15 @@
+# Task ID: 534
+# Title: Implement If the mixedmode resolution differs from the figure's
+            #       dpi, the image must be sca (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: If the mixedmode resolution differs from the figure's
+            #       dpi, the image must be scaled (dpi->_figdpi). Not all
+            #       backends support this.
+            self._renderer.dr
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/matplotlib/backends/backend_mixed.py
+
+# Test Strategy:
+Validate completion of: code-todo item

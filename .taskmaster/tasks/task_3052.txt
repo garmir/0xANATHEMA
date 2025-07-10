@@ -1,0 +1,20 @@
+# Task ID: 3052
+# Title: Implement Output Structure
+```
+results/
+├── benchmark_results.json          # Raw benchmark data
+├── summary_r (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Output Structure
+```
+results/
+├── benchmark_results.json          # Raw benchmark data
+├── summary_report.json             # High-level summary
+├── ca
+# Details:
+Converted from todo: .taskmaster/benchmarks/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

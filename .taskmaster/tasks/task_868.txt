@@ -1,0 +1,16 @@
+# Task ID: 868
+# Title: Implement single quoted strings and escape sequences outside of
+            # double-quoted strings
+           (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: single quoted strings and escape sequences outside of
+            # double-quoted strings
+            (r'(?:element|attribute|mixed)\b', Keyword.Declaration, 'variable'),
+            (r'(text\b|xsd:[^
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/rnc.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,16 @@
+# Task ID: 558
+# Title: Implement (1.8): remove "algorithm" entry
+    _parameter_constraints: dict = {
+        **BaseWeightBoosting._p (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8): remove "algorithm" entry
+    _parameter_constraints: dict = {
+        **BaseWeightBoosting._parameter_constraints,
+        "algorithm": [StrOptions({"SAMME"}), Hidden(StrOptions({"deprecated"})
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/ensemble/_weight_boosting.py
+
+# Test Strategy:
+Validate completion of: code-todo item

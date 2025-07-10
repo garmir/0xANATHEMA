@@ -1,0 +1,17 @@
+# Task ID: 5665
+# Title: Dependencies
+- PRD-2: Recursive PRD Generation (completed)
+- All atomic PRDs generated and available (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Dependencies
+- PRD-2: Recursive PRD Generation (completed)
+- All atomic PRDs generated and available
+- JSON processing utilities
+- Graph analysis algo
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-3-optimization/prd-3.1-dependency-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

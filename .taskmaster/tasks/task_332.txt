@@ -1,0 +1,16 @@
+# Task ID: 332
+# Title: Implement ideally we would get Int64 instead of object
+        result = df.where(mask, ser, axis=0)
+        ex (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: ideally we would get Int64 instead of object
+        result = df.where(mask, ser, axis=0)
+        expected = DataFrame({"A": [1, np.nan, 3], "B": [4, np.nan, 6]})
+        tm.assert_frame_equal(result,
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/indexing/test_where.py
+
+# Test Strategy:
+Validate completion of: code-todo item

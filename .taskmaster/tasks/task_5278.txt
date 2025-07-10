@@ -1,0 +1,14 @@
+# Task ID: 5278
+# Title: Implement 1.1 Knowledge Transfer Types
+- **Task-to-Task Transfer**: Apply learnings from one task type to anot (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 1.1 Knowledge Transfer Types
+- **Task-to-Task Transfer**: Apply learnings from one task type to another
+- **Domain-to-Domain Transfer**: Share insight
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/knowledge-management/transfer-learning.md
+
+# Test Strategy:
+Validate completion of: action-item item

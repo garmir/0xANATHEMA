@@ -1,0 +1,24 @@
+# Task ID: 481
+# Title: check that implementation is correct.
+    assert_(res.shape == x.shape)
+
+    # Check points keyword
+
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: check that implementation is correct.
+    assert_(res.shape == x.shape)
+
+    # Check points keyword
+    res = ms.rsh(x, points=[0, 1.])
+    assert_(res.size == 2)
+
+
+def test_mjci():
+    # Tests the Ma
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/stats/tests/test_mstats_extras.py
+
+# Test Strategy:
+Validate completion of: code-todo item

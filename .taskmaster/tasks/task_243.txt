@@ -1,0 +1,19 @@
+# Task ID: 243
+# Title: Implement parametrize
+    def test_pow_ops_object(self):
+        # GH#22922
+        # pow is weird with maskin (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: parametrize
+    def test_pow_ops_object(self):
+        # GH#22922
+        # pow is weird with masking & 1, so testing here
+        a = Series([1, np.nan, 1, np.nan], dtype=object)
+        b = Series([
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arithmetic/test_object.py
+
+# Test Strategy:
+Validate completion of: code-todo item

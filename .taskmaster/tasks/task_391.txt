@@ -1,0 +1,17 @@
+# Task ID: 391
+# Title: Implement (infer_string) this should be LARGE_STRING for pyarrow storage,
+        # but current tests don't co (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (infer_string) this should be LARGE_STRING for pyarrow storage,
+        # but current tests don't cover this distinction
+        return ArrowCTypes.STRING
+
+    elif lib.is_np_dtype(dtype, "M"):
+      
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/interchange/utils.py
+
+# Test Strategy:
+Validate completion of: code-todo item

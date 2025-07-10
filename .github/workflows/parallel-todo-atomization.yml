@@ -1,0 +1,818 @@
+name: Parallel Todo Atomization Engine
+
+on:
+  workflow_call:
+    inputs:
+      research_results:
+        description: 'JSON string of research results to atomize'
+        required: true
+        type: string
+      atomization_depth:
+        description: 'Maximum atomization depth'
+        required: false
+        default: '7'
+        type: string
+      batch_size:
+        description: 'Number of items per atomization batch'
+        required: false
+        default: '5'
+        type: string
+
+  workflow_dispatch:
+    inputs:
+      research_results:
+        description: 'JSON string of research results to atomize'
+        required: true
+        type: string
+      atomization_depth:
+        description: 'Maximum atomization depth'
+        required: false
+        default: '7'
+        type: string
+      batch_size:
+        description: 'Number of items per atomization batch'
+        required: false
+        default: '5'
+        type: string
+
+env:
+  ATOMIZATION_DEPTH: ${{ inputs.atomization_depth || '7' }}
+  BATCH_SIZE: ${{ inputs.batch_size || '5' }}
+
+jobs:
+  # Phase 1: Research Analysis and Preprocessing
+  analyze-research:
+    name: Analyze Research for Atomization
+    runs-on: ubuntu-latest
+    outputs:
+      atomization-matrix: ${{ steps.create-matrix.outputs.matrix }}
+      total-items: ${{ steps.create-matrix.outputs.total }}
+      complexity-metrics: ${{ steps.analyze.outputs.metrics }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python Environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Analyze Research Content
+        id: analyze
+        run: |
+          cat > analyze_research.py << 'EOF'
+          import json
+          import re
+          import os
+          from collections import Counter
+          from datetime import datetime
+
+          def analyze_research_complexity(research_data):
+              """Analyze research content for atomization complexity"""
+              if isinstance(research_data, str):
+                  try:
+                      research_data = json.loads(research_data)
+                  except json.JSONDecodeError:
+                      research_data = {"content": research_data}
+              
+              metrics = {
+                  'total_content_length': 0,
+                  'avg_sentence_length': 0,
+                  'technical_density': 0,
+                  'action_items_count': 0,
+                  'complexity_keywords': [],
+                  'recommended_depth': 3
+              }
+              
+              # Extract all text content
+              all_text = ""
+              if isinstance(research_data, dict):
+                  all_text = extract_text_recursive(research_data)
+              else:
+                  all_text = str(research_data)
+              
+              metrics['total_content_length'] = len(all_text)
+              
+              # Analyze sentence complexity
+              sentences = re.split(r'[.!?]+', all_text)
+              sentences = [s.strip() for s in sentences if s.strip()]
+              if sentences:
+                  metrics['avg_sentence_length'] = sum(len(s.split()) for s in sentences) / len(sentences)
+              
+              # Detect technical density
+              technical_keywords = [
+                  'implement', 'configure', 'optimize', 'refactor', 'deploy',
+                  'algorithm', 'architecture', 'framework', 'integration',
+                  'performance', 'scalability', 'automation', 'recursive'
+              ]
+              
+              text_lower = all_text.lower()
+              tech_count = sum(text_lower.count(keyword) for keyword in technical_keywords)
+              metrics['technical_density'] = tech_count / max(len(all_text.split()), 1) * 100
+              
+              # Count action items
+              action_patterns = [
+                  r'\b(?:implement|create|develop|build|design|configure|setup|install|update|add|remove|fix|improve)\b',
+                  r'\d+\.\s+[A-Z]',
+                  r'[-*]\s+[A-Z]',
+                  r'TODO:|FIXME:|NOTE:'
+              ]
+              
+              for pattern in action_patterns:
+                  matches = re.findall(pattern, all_text, re.IGNORECASE)
+                  metrics['action_items_count'] += len(matches)
+              
+              # Determine recommended atomization depth
+              if metrics['technical_density'] > 5 and metrics['avg_sentence_length'] > 20:
+                  metrics['recommended_depth'] = 7
+              elif metrics['technical_density'] > 3:
+                  metrics['recommended_depth'] = 5
+              else:
+                  metrics['recommended_depth'] = 3
+              
+              return metrics
+
+          def extract_text_recursive(obj, depth=0, max_depth=10):
+              """Recursively extract text from nested objects"""
+              if depth > max_depth:
+                  return ""
+              
+              text_content = ""
+              if isinstance(obj, dict):
+                  for key, value in obj.items():
+                      if isinstance(value, (str, int, float)):
+                          text_content += f" {value}"
+                      elif isinstance(value, (dict, list)):
+                          text_content += extract_text_recursive(value, depth + 1, max_depth)
+              elif isinstance(obj, list):
+                  for item in obj:
+                      text_content += extract_text_recursive(item, depth + 1, max_depth)
+              else:
+                  text_content += f" {obj}"
+              
+              return text_content
+
+          def main():
+              research_input = os.environ.get('RESEARCH_INPUT', '{}')
+              
+              try:
+                  research_data = json.loads(research_input) if research_input != '{}' else {}
+              except json.JSONDecodeError:
+                  research_data = {"raw_content": research_input}
+              
+              metrics = analyze_research_complexity(research_data)
+              
+              print(f"Analysis complete:")
+              print(f"Content length: {metrics['total_content_length']}")
+              print(f"Technical density: {metrics['technical_density']:.2f}%")
+              print(f"Action items: {metrics['action_items_count']}")
+              print(f"Recommended depth: {metrics['recommended_depth']}")
+              
+              # Output for GitHub Actions
+              print(f"::set-output name=metrics::{json.dumps(metrics)}")
+
+          if __name__ == "__main__":
+              main()
+          EOF
+
+          python analyze_research.py
+        env:
+          RESEARCH_INPUT: ${{ inputs.research_results }}
+
+      - name: Create Atomization Matrix
+        id: create-matrix
+        run: |
+          cat > create_atomization_matrix.py << 'EOF'
+          import json
+          import math
+          import os
+          import re
+
+          def extract_atomizable_units(research_data):
+              """Extract units that can be atomized"""
+              units = []
+              
+              if isinstance(research_data, str):
+                  try:
+                      research_data = json.loads(research_data)
+                  except json.JSONDecodeError:
+                      # Treat as raw text
+                      units = extract_units_from_text(research_data)
+                      return units
+              
+              # Extract from structured data
+              if isinstance(research_data, dict):
+                  # Extract research findings
+                  for key, value in research_data.items():
+                      if 'findings' in key.lower() or 'research' in key.lower():
+                          if isinstance(value, str):
+                              units.extend(extract_units_from_text(value))
+                          elif isinstance(value, list):
+                              for item in value:
+                                  if isinstance(item, str):
+                                      units.extend(extract_units_from_text(item))
+                      
+                      # Extract improvement opportunities
+                      elif 'improvement' in key.lower() or 'recommendation' in key.lower():
+                          if isinstance(value, (str, list)):
+                              units.extend(extract_units_from_text(str(value)))
+              
+              return units
+
+          def extract_units_from_text(text):
+              """Extract actionable units from text"""
+              units = []
+              
+              # Split by numbered lists
+              numbered_items = re.findall(r'\d+\.\s+(.+?)(?=\d+\.|$)', text, re.DOTALL)
+              for item in numbered_items:
+                  cleaned = item.strip().replace('\n', ' ')
+                  if len(cleaned) > 20:  # Minimum meaningful length
+                      units.append({
+                          'type': 'numbered_item',
+                          'content': cleaned,
+                          'complexity': len(cleaned.split())
+                      })
+              
+              # Split by bullet points
+              bullet_items = re.findall(r'[-*•]\s+(.+?)(?=[-*•]|$)', text, re.DOTALL)
+              for item in bullet_items:
+                  cleaned = item.strip().replace('\n', ' ')
+                  if len(cleaned) > 20:
+                      units.append({
+                          'type': 'bullet_item',
+                          'content': cleaned,
+                          'complexity': len(cleaned.split())
+                      })
+              
+              # Extract sentences with action verbs
+              action_sentences = re.findall(
+                  r'[.!?]\s*([^.!?]*(?:implement|create|develop|build|design|configure|setup|install|update|add|remove|fix|improve|optimize|refactor|deploy)[^.!?]*[.!?])',
+                  text, re.IGNORECASE
+              )
+              for sentence in action_sentences:
+                  cleaned = sentence.strip()
+                  if len(cleaned) > 20:
+                      units.append({
+                          'type': 'action_sentence',
+                          'content': cleaned,
+                          'complexity': len(cleaned.split())
+                      })
+              
+              # If no structured content found, split by paragraphs
+              if not units:
+                  paragraphs = text.split('\n\n')
+                  for para in paragraphs:
+                      cleaned = para.strip().replace('\n', ' ')
+                      if len(cleaned) > 50:  # Larger minimum for paragraphs
+                          units.append({
+                              'type': 'paragraph',
+                              'content': cleaned,
+                              'complexity': len(cleaned.split())
+                          })
+              
+              return units
+
+          def create_parallel_batches(units, batch_size):
+              """Create parallel processing batches"""
+              if not units:
+                  return {"include": []}, 0
+              
+              # Sort by complexity (higher complexity first)
+              sorted_units = sorted(units, key=lambda x: x['complexity'], reverse=True)
+              
+              batch_size = int(batch_size)
+              batches = []
+              
+              for i in range(0, len(sorted_units), batch_size):
+                  batch = sorted_units[i:i + batch_size]
+                  batch_info = {
+                      "batch_id": len(batches) + 1,
+                      "batch_size": len(batch),
+                      "units": batch,
+                      "total_complexity": sum(unit['complexity'] for unit in batch),
+                      "avg_complexity": sum(unit['complexity'] for unit in batch) / len(batch),
+                      "atomization_priority": calculate_priority(batch)
+                  }
+                  batches.append(batch_info)
+              
+              return {"include": batches}, len(sorted_units)
+
+          def calculate_priority(batch):
+              """Calculate atomization priority for a batch"""
+              avg_complexity = sum(unit['complexity'] for unit in batch) / len(batch)
+              action_count = sum(1 for unit in batch if 'action' in unit['type'])
+              
+              if avg_complexity > 30 or action_count > 2:
+                  return 'high'
+              elif avg_complexity > 15 or action_count > 0:
+                  return 'medium'
+              else:
+                  return 'low'
+
+          def main():
+              research_input = os.environ.get('RESEARCH_INPUT', '{}')
+              batch_size = os.environ.get('BATCH_SIZE', '5')
+              
+              try:
+                  research_data = json.loads(research_input) if research_input != '{}' else {}
+              except json.JSONDecodeError:
+                  research_data = research_input
+              
+              units = extract_atomizable_units(research_data)
+              matrix, total = create_parallel_batches(units, batch_size)
+              
+              print(f"Extracted {len(units)} atomizable units")
+              print(f"Created {len(matrix['include'])} parallel batches")
+              
+              # Output for GitHub Actions
+              matrix_json = json.dumps(matrix)
+              print(f"::set-output name=matrix::{matrix_json}")
+              print(f"::set-output name=total::{total}")
+
+          if __name__ == "__main__":
+              main()
+          EOF
+
+          python create_atomization_matrix.py
+        env:
+          RESEARCH_INPUT: ${{ inputs.research_results }}
+          BATCH_SIZE: ${{ env.BATCH_SIZE }}
+
+  # Phase 2: Parallel Atomization
+  atomize-batches:
+    name: Atomize Batch ${{ matrix.batch_id }}
+    runs-on: ubuntu-latest
+    needs: analyze-research
+    if: fromJson(needs.analyze-research.outputs.total-items) > 0
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.analyze-research.outputs.atomization-matrix) }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python Environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Recursive Atomization
+        id: atomize
+        run: |
+          cat > recursive_atomizer.py << 'EOF'
+          import json
+          import os
+          import re
+          from datetime import datetime
+
+          class RecursiveAtomizer:
+              def __init__(self, max_depth=7):
+                  self.max_depth = max_depth
+                  self.atomic_prompts = []
+                  self.atomization_tree = {}
+              
+              def is_atomic(self, content):
+                  """Determine if content is atomic (cannot be further decomposed)"""
+                  word_count = len(content.split())
+                  sentence_count = len(re.split(r'[.!?]+', content))
+                  
+                  # Atomic criteria:
+                  # - Less than 25 words
+                  # - Single sentence or simple statement
+                  # - Contains only one primary action
+                  primary_actions = len(re.findall(
+                      r'\b(?:implement|create|develop|build|design|configure|setup|install|update|add|remove|fix|improve|optimize|refactor|deploy)\b',
+                      content, re.IGNORECASE
+                  ))
+                  
+                  return (word_count <= 25 and 
+                          sentence_count <= 2 and 
+                          primary_actions <= 1)
+              
+              def extract_sub_actions(self, content):
+                  """Extract sub-actions from complex content"""
+                  sub_actions = []
+                  
+                  # Method 1: Split by conjunction
+                  conjunction_split = re.split(r'\b(?:and|then|also|additionally|furthermore|moreover)\b', content, flags=re.IGNORECASE)
+                  for part in conjunction_split:
+                      part = part.strip()
+                      if len(part) > 10:
+                          sub_actions.append(part)
+                  
+                  # Method 2: Extract parenthetical clarifications
+                  parenthetical = re.findall(r'\(([^)]+)\)', content)
+                  for item in parenthetical:
+                      if len(item) > 10:
+                          sub_actions.append(item)
+                  
+                  # Method 3: Split by semicolons
+                  semicolon_split = content.split(';')
+                  if len(semicolon_split) > 1:
+                      sub_actions.extend([part.strip() for part in semicolon_split if len(part.strip()) > 10])
+                  
+                  # Method 4: Extract step-like patterns
+                  step_patterns = re.findall(r'(?:step \d+|first|second|third|finally|lastly):\s*([^.!?]+)', content, re.IGNORECASE)
+                  sub_actions.extend(step_patterns)
+                  
+                  # Remove duplicates and empty items
+                  sub_actions = list(set([action.strip() for action in sub_actions if action.strip()]))
+                  
+                  return sub_actions if sub_actions else [content]
+              
+              def atomize_recursive(self, content, depth=0, parent_id=""):
+                  """Recursively atomize content into atomic prompts"""
+                  if depth >= self.max_depth or self.is_atomic(content):
+                      # Create atomic prompt
+                      prompt_id = f"{parent_id}.{len(self.atomic_prompts)+1}" if parent_id else str(len(self.atomic_prompts)+1)
+                      atomic_prompt = {
+                          'id': prompt_id,
+                          'content': content.strip(),
+                          'depth': depth,
+                          'parent_id': parent_id,
+                          'word_count': len(content.split()),
+                          'priority': self.calculate_priority(content),
+                          'implementation_complexity': self.estimate_complexity(content),
+                          'validation_criteria': self.generate_validation_criteria(content)
+                      }
+                      self.atomic_prompts.append(atomic_prompt)
+                      return [atomic_prompt]
+                  
+                  # Decompose further
+                  sub_actions = self.extract_sub_actions(content)
+                  decomposed = []
+                  
+                  for i, action in enumerate(sub_actions):
+                      child_id = f"{parent_id}.{i+1}" if parent_id else str(i+1)
+                      child_prompts = self.atomize_recursive(action, depth+1, child_id)
+                      decomposed.extend(child_prompts)
+                  
+                  # If no meaningful decomposition, treat as atomic
+                  if not decomposed or len(sub_actions) == 1:
+                      return self.atomize_recursive(content, self.max_depth, parent_id)
+                  
+                  return decomposed
+              
+              def calculate_priority(self, content):
+                  """Calculate implementation priority"""
+                  high_priority_keywords = ['critical', 'urgent', 'error', 'bug', 'security', 'performance', 'failure']
+                  medium_priority_keywords = ['improve', 'enhance', 'optimize', 'refactor', 'update']
+                  
+                  content_lower = content.lower()
+                  
+                  if any(keyword in content_lower for keyword in high_priority_keywords):
+                      return 'critical'
+                  elif any(keyword in content_lower for keyword in medium_priority_keywords):
+                      return 'high'
+                  elif any(keyword in content_lower for keyword in ['implement', 'create', 'develop']):
+                      return 'medium'
+                  else:
+                      return 'low'
+              
+              def estimate_complexity(self, content):
+                  """Estimate implementation complexity"""
+                  word_count = len(content.split())
+                  technical_terms = len(re.findall(r'\b(?:algorithm|architecture|framework|integration|api|database|server|network|protocol|encryption|authentication|authorization)\b', content, re.IGNORECASE))
+                  
+                  if word_count > 20 or technical_terms > 2:
+                      return 'high'
+                  elif word_count > 10 or technical_terms > 1:
+                      return 'medium'
+                  else:
+                      return 'low'
+              
+              def generate_validation_criteria(self, content):
+                  """Generate validation criteria for atomic prompt"""
+                  criteria = []
+                  
+                  if 'implement' in content.lower():
+                      criteria.append('Code compiles without errors')
+                      criteria.append('Functionality works as expected')
+                  
+                  if 'test' in content.lower():
+                      criteria.append('All tests pass')
+                      criteria.append('Test coverage is adequate')
+                  
+                  if 'document' in content.lower():
+                      criteria.append('Documentation is clear and complete')
+                      criteria.append('Examples are provided')
+                  
+                  if 'configure' in content.lower() or 'setup' in content.lower():
+                      criteria.append('Configuration is valid')
+                      criteria.append('System operates correctly')
+                  
+                  # Default criteria
+                  if not criteria:
+                      criteria = [
+                          'Implementation is complete',
+                          'No errors or warnings',
+                          'Meets specified requirements'
+                      ]
+                  
+                  return criteria
+
+          def main():
+              batch_data = json.loads(os.environ.get('BATCH_DATA', '{}'))
+              max_depth = int(os.environ.get('ATOMIZATION_DEPTH', '7'))
+              
+              atomizer = RecursiveAtomizer(max_depth)
+              
+              batch_results = {
+                  'batch_id': batch_data.get('batch_id', 0),
+                  'atomic_prompts': [],
+                  'atomization_summary': {
+                      'input_units': len(batch_data.get('units', [])),
+                      'atomic_prompts_generated': 0,
+                      'max_depth_reached': False,
+                      'avg_atomization_depth': 0,
+                      'priority_distribution': {'critical': 0, 'high': 0, 'medium': 0, 'low': 0},
+                      'complexity_distribution': {'high': 0, 'medium': 0, 'low': 0}
+                  }
+              }
+              
+              depths = []
+              
+              for unit in batch_data.get('units', []):
+                  content = unit.get('content', '')
+                  if content:
+                      atomic_prompts = atomizer.atomize_recursive(content)
+                      batch_results['atomic_prompts'].extend(atomic_prompts)
+                      
+                      # Collect depth statistics
+                      depths.extend([prompt['depth'] for prompt in atomic_prompts])
+                      
+                      # Update priority distribution
+                      for prompt in atomic_prompts:
+                          priority = prompt.get('priority', 'low')
+                          if priority in batch_results['atomization_summary']['priority_distribution']:
+                              batch_results['atomization_summary']['priority_distribution'][priority] += 1
+                          
+                          complexity = prompt.get('implementation_complexity', 'low')
+                          if complexity in batch_results['atomization_summary']['complexity_distribution']:
+                              batch_results['atomization_summary']['complexity_distribution'][complexity] += 1
+              
+              # Calculate summary statistics
+              batch_results['atomization_summary']['atomic_prompts_generated'] = len(batch_results['atomic_prompts'])
+              batch_results['atomization_summary']['max_depth_reached'] = max_depth in depths if depths else False
+              batch_results['atomization_summary']['avg_atomization_depth'] = sum(depths) / len(depths) if depths else 0
+              
+              # Save results
+              with open(f'atomization_batch_{batch_data.get("batch_id", 0)}.json', 'w') as f:
+                  json.dump(batch_results, f, indent=2)
+              
+              print(f"Batch {batch_data.get('batch_id', 0)} atomization completed")
+              print(f"Generated {len(batch_results['atomic_prompts'])} atomic prompts")
+              print(f"Average depth: {batch_results['atomization_summary']['avg_atomization_depth']:.2f}")
+
+          if __name__ == "__main__":
+              main()
+          EOF
+
+          python recursive_atomizer.py
+        env:
+          BATCH_DATA: ${{ toJson(matrix) }}
+          ATOMIZATION_DEPTH: ${{ env.ATOMIZATION_DEPTH }}
+
+      - name: Upload Atomization Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: atomization-batch-${{ matrix.batch_id }}
+          path: atomization_batch_${{ matrix.batch_id }}.json
+
+  # Phase 3: Aggregate and Generate Implementation Prompts
+  aggregate-atomic-prompts:
+    name: Aggregate Atomic Prompts
+    runs-on: ubuntu-latest
+    needs: [analyze-research, atomize-batches]
+    if: always() && needs.analyze-research.outputs.total-items > 0
+    outputs:
+      implementation-prompts: ${{ steps.generate-prompts.outputs.prompts }}
+      prompt-count: ${{ steps.generate-prompts.outputs.count }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download All Atomization Results
+        uses: actions/download-artifact@v4
+        with:
+          pattern: atomization-batch-*
+
+      - name: Aggregate and Generate Implementation Prompts
+        id: generate-prompts
+        run: |
+          cat > aggregate_prompts.py << 'EOF'
+          import json
+          import glob
+          import os
+          from datetime import datetime
+          from collections import defaultdict
+
+          def aggregate_atomic_prompts():
+              """Aggregate all atomic prompts from parallel batches"""
+              all_prompts = []
+              batch_summaries = []
+              
+              # Find all atomization batch files
+              batch_files = glob.glob('atomization-batch-*/atomization_batch_*.json')
+              
+              for batch_file in batch_files:
+                  try:
+                      with open(batch_file, 'r') as f:
+                          batch_data = json.load(f)
+                      
+                      all_prompts.extend(batch_data.get('atomic_prompts', []))
+                      batch_summaries.append(batch_data.get('atomization_summary', {}))
+                  except Exception as e:
+                      print(f"Error loading {batch_file}: {e}")
+              
+              return all_prompts, batch_summaries
+
+          def generate_implementation_prompts(atomic_prompts):
+              """Generate Claude Code implementation prompts"""
+              implementation_prompts = []
+              
+              # Sort by priority and complexity
+              priority_order = {'critical': 0, 'high': 1, 'medium': 2, 'low': 3}
+              complexity_order = {'high': 0, 'medium': 1, 'low': 2}
+              
+              sorted_prompts = sorted(atomic_prompts, 
+                                    key=lambda x: (priority_order.get(x.get('priority', 'low'), 3),
+                                                 complexity_order.get(x.get('implementation_complexity', 'low'), 2)))
+              
+              for i, prompt in enumerate(sorted_prompts):
+                  implementation_prompt = {
+                      'id': f"impl-{prompt.get('id', i+1)}",
+                      'atomic_prompt_id': prompt.get('id'),
+                      'title': f"Implement: {prompt.get('content', '')[:50]}...",
+                      'priority': prompt.get('priority', 'low'),
+                      'complexity': prompt.get('implementation_complexity', 'low'),
+                      'word_count': prompt.get('word_count', 0),
+                      'depth': prompt.get('depth', 0),
+                      'claude_prompt': generate_claude_prompt(prompt),
+                      'validation_criteria': prompt.get('validation_criteria', []),
+                      'estimated_implementation_time': estimate_implementation_time(prompt),
+                      'dependencies': extract_dependencies(prompt, atomic_prompts),
+                      'tags': extract_tags(prompt)
+                  }
+                  implementation_prompts.append(implementation_prompt)
+              
+              return implementation_prompts
+
+          def generate_claude_prompt(atomic_prompt):
+              """Generate a Claude Code implementation prompt"""
+              content = atomic_prompt.get('content', '')
+              priority = atomic_prompt.get('priority', 'low')
+              complexity = atomic_prompt.get('implementation_complexity', 'low')
+              
+              prompt = f"""
+## Implementation Task
+
+**Objective**: {content}
+
+**Priority**: {priority.upper()}
+**Complexity**: {complexity.upper()}
+
+### Implementation Requirements:
+
+1. **Code Quality**:
+   - Follow existing code patterns and conventions
+   - Include appropriate error handling and logging
+   - Add comprehensive documentation
+   - Ensure backward compatibility
+
+2. **Testing**:
+   - Write unit tests for new functionality
+   - Include integration tests where applicable
+   - Verify edge cases and error conditions
+
+3. **Validation Criteria**:
+{chr(10).join(f'   - {criterion}' for criterion in atomic_prompt.get('validation_criteria', []))}
+
+4. **Implementation Steps**:
+   - Analyze existing codebase for similar patterns
+   - Create or modify necessary files
+   - Implement core functionality
+   - Add comprehensive tests
+   - Update documentation
+   - Validate implementation meets all criteria
+
+### Success Metrics:
+- All tests pass
+- Code follows project conventions
+- Documentation is complete and accurate
+- Implementation is production-ready
+
+Please implement this atomic task with careful attention to code quality and comprehensive testing.
+"""
+              return prompt.strip()
+
+          def estimate_implementation_time(prompt):
+              """Estimate implementation time in minutes"""
+              complexity = prompt.get('implementation_complexity', 'low')
+              word_count = prompt.get('word_count', 0)
+              
+              base_times = {'low': 15, 'medium': 30, 'high': 60}
+              base_time = base_times.get(complexity, 15)
+              
+              # Adjust based on word count (more complex descriptions = more time)
+              word_factor = min(word_count / 10, 2.0)  # Cap at 2x multiplier
+              
+              return int(base_time * (1 + word_factor))
+
+          def extract_dependencies(prompt, all_prompts):
+              """Extract potential dependencies between prompts"""
+              dependencies = []
+              content = prompt.get('content', '').lower()
+              
+              # Look for dependency keywords
+              if 'after' in content or 'following' in content or 'once' in content:
+                  # Find prompts that might be prerequisites
+                  for other_prompt in all_prompts:
+                      if other_prompt.get('id') != prompt.get('id'):
+                          other_content = other_prompt.get('content', '').lower()
+                          if any(keyword in other_content for keyword in ['setup', 'configure', 'initialize', 'create']):
+                              dependencies.append(other_prompt.get('id'))
+              
+              return dependencies[:3]  # Limit to 3 dependencies
+
+          def extract_tags(prompt):
+              """Extract tags for categorization"""
+              content = prompt.get('content', '').lower()
+              tags = []
+              
+              tag_keywords = {
+                  'testing': ['test', 'testing', 'validate', 'verify'],
+                  'documentation': ['document', 'doc', 'readme', 'guide'],
+                  'configuration': ['config', 'configure', 'setup', 'install'],
+                  'development': ['implement', 'develop', 'code', 'create'],
+                  'optimization': ['optimize', 'improve', 'enhance', 'refactor'],
+                  'security': ['security', 'auth', 'encrypt', 'secure'],
+                  'infrastructure': ['deploy', 'server', 'infrastructure', 'pipeline']
+              }
+              
+              for tag, keywords in tag_keywords.items():
+                  if any(keyword in content for keyword in keywords):
+                      tags.append(tag)
+              
+              return tags
+
+          def main():
+              atomic_prompts, batch_summaries = aggregate_atomic_prompts()
+              implementation_prompts = generate_implementation_prompts(atomic_prompts)
+              
+              # Generate comprehensive results
+              results = {
+                  'timestamp': datetime.now().isoformat(),
+                  'atomization_summary': {
+                      'total_atomic_prompts': len(atomic_prompts),
+                      'implementation_prompts_generated': len(implementation_prompts),
+                      'batch_count': len(batch_summaries),
+                      'priority_distribution': defaultdict(int),
+                      'complexity_distribution': defaultdict(int),
+                      'estimated_total_time_minutes': sum(p['estimated_implementation_time'] for p in implementation_prompts)
+                  },
+                  'implementation_prompts': implementation_prompts
+              }
+              
+              # Calculate distributions
+              for prompt in implementation_prompts:
+                  results['atomization_summary']['priority_distribution'][prompt['priority']] += 1
+                  results['atomization_summary']['complexity_distribution'][prompt['complexity']] += 1
+              
+              # Save results
+              with open('aggregated_implementation_prompts.json', 'w') as f:
+                  json.dump(results, f, indent=2)
+              
+              print(f"Aggregated {len(atomic_prompts)} atomic prompts")
+              print(f"Generated {len(implementation_prompts)} implementation prompts")
+              print(f"Estimated total implementation time: {results['atomization_summary']['estimated_total_time_minutes']} minutes")
+              
+              # Output for GitHub Actions
+              prompts_json = json.dumps(implementation_prompts[:50])  # Limit for output size
+              print(f"::set-output name=prompts::{prompts_json}")
+              print(f"::set-output name=count::{len(implementation_prompts)}")
+
+          if __name__ == "__main__":
+              main()
+          EOF
+
+          python aggregate_prompts.py
+
+      - name: Upload Implementation Prompts
+        uses: actions/upload-artifact@v4
+        with:
+          name: implementation-prompts
+          path: aggregated_implementation_prompts.json
+
+      - name: Create Implementation Summary
+        run: |
+          echo "## 🔬 Parallel Atomization Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Implementation Prompts Generated | ${{ steps.generate-prompts.outputs.count }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Atomization Depth | ${{ env.ATOMIZATION_DEPTH }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Batch Size | ${{ env.BATCH_SIZE }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Parallel atomization completed successfully!" >> $GITHUB_STEP_SUMMARY

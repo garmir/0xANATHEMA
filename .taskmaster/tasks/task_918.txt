@@ -1,0 +1,11 @@
+# Task ID: 918
+# Title: Implement Execute: task-master parse-prd with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Execute: task-master parse-prd
+# Details:
+Converted from todo: CLAUDE.md
+
+# Test Strategy:
+Validate completion of: documentation item

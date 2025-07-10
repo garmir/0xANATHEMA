@@ -1,0 +1,18 @@
+# Task ID: 632
+# Title: Implement # if iteration == 1:
+            # We should stop early, e.g. we already are close to the optimum,
+   (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: # if iteration == 1:
+            # We might stop early, e.g. we already are close to the optimum,
+            # usually detected by zero gradients at this stage.
+
+            # 2. Inner solver
+       
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/linear_model/_glm/_newton_solver.py
+
+# Test Strategy:
+Validate completion of: code-todo item

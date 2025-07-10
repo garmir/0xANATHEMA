@@ -1,0 +1,21 @@
+# Task ID: 5678
+# Title: Implement Responsibility Analysis
+```bash
+analyze_responsibility() {
+    local prd_file="$1"
+    local objecti (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Responsibility Analysis
+```bash
+analyze_responsibility() {
+    local prd_file="$1"
+    local objective_count
+    
+    # Count distinct objectives in P
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-2-recursive/prd-2.3-atomic-detection.md
+
+# Test Strategy:
+Validate completion of: action-item item

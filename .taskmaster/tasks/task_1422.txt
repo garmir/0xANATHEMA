@@ -1,0 +1,21 @@
+# Task ID: 1422
+# Title: HARD-CODED WORKFLOW PATTERN IMPLEMENTED:
+```
+🚨 STUCK SITUATION DETECTED
+         ↓
+📚 RESEARCH with t
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: HARD-CODED WORKFLOW PATTERN IMPLEMENTED:
+```
+🚨 STUCK SITUATION DETECTED
+         ↓
+📚 RESEARCH with task-master + Perplexity 
+         ↓
+🔧 PARSE resear
+# Details:
+Converted from todo: AUTONOMOUS_WORKFLOW_COMPLETION.md
+
+# Test Strategy:
+Validate completion of: action-item item

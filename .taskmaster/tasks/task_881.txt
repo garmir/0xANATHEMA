@@ -1,0 +1,19 @@
+# Task ID: 881
+# Title: Implement should this include single-line comments and allow nesting strings?
+            (r'\}', String.Inter (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: should this include single-line comments and allow nesting strings?
+            (r'\}', String.Interpol, '#pop'),
+            include('root'),
+        ],
+    }
+
+
+class TypeScriptLexer(JavascriptLexer)
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/javascript.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,16 @@
+# Task ID: 247
+# Title: Implement (ArrayManager) fast_xs with array-like scalars is not yet working
+    @td.skip_array_manager_not_yet (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (ArrayManager) fast_xs with array-like scalars is not yet working
+    @td.skip_array_manager_not_yet_implemented
+    def test_chained_getitem_with_lists(self):
+        # GH6394
+        # Regression in
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexing/test_chaining_and_caching.py
+
+# Test Strategy:
+Validate completion of: code-todo item

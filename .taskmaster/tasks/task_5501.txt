@@ -1,0 +1,14 @@
+# Task ID: 5501
+# Title: Implement 2.2 Model Capabilities Mapping
+- **Code Generation**: Best models for different programming language (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 2.2 Model Capabilities Mapping
+- **Code Generation**: Best models for different programming languages
+- **Natural Language**: Optimal models for diffe
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/ai-integration/llm-orchestration.md
+
+# Test Strategy:
+Validate completion of: action-item item

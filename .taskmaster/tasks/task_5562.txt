@@ -1,0 +1,16 @@
+# Task ID: 5562
+# Title: Implement 3. Crossover Methods
+- **Uniform Crossover**: Random gene exchange between parents
+- **Multi-point C (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 3. Crossover Methods
+- **Uniform Crossover**: Random gene exchange between parents
+- **Multi-point Crossover**: Structured segment exchange
+- **Semant
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-2/prd-2.1.md
+
+# Test Strategy:
+Validate completion of: action-item item

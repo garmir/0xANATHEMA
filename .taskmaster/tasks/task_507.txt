@@ -1,0 +1,16 @@
+# Task ID: 507
+# Title: Implement #   - Add more support (symmetric/complex matrices, non-assembled matrices ?)
+
+# XXX: reading is rea (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: #   - Add more support (symmetric/complex matrices, non-assembled matrices ?)
+
+# XXX: reading is reasonably efficient (>= 85 % is in numpy.fromstring), but
+# takes a lot of memory. Being faster would 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/io/_harwell_boeing/hb.py
+
+# Test Strategy:
+Validate completion of: code-todo item

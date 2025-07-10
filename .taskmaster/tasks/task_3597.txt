@@ -1,0 +1,11 @@
+# Task ID: 3597
+# Title: Implement **Claude API Replacement** with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Claude API Replacement**
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

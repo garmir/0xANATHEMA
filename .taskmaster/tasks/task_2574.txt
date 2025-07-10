@@ -1,0 +1,11 @@
+# Task ID: 2574
+# Title: Implement Resource Summary with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Resource Summary
+# Details:
+Converted from todo: .taskmaster/optimization/task-queue.md
+
+# Test Strategy:
+Validate completion of: action-item item

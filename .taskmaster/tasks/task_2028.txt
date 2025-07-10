@@ -1,0 +1,11 @@
+# Task ID: 2028
+# Title: Implement 2. Parse PRD (`parse_prd`) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 2. Parse PRD (`parse_prd`)
+# Details:
+Converted from todo: .trae/rules/taskmaster.md
+
+# Test Strategy:
+Validate completion of: action-item item

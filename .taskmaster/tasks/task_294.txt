@@ -1,0 +1,15 @@
+# Task ID: 294
+# Title: Implement also add len-1 array (np.array([scalar], dtype=data.dtype.numpy_dtype))
+    for scalar in [scalar, d (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: also add len-1 array (np.array([scalar], dtype=data.dtype.numpy_dtype))
+    for scalar in [scalar, data.dtype.type(scalar)]:
+        if is_bool_not_implemented(data, all_arithmetic_operators):
+       
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arrays/masked/test_arithmetic.py
+
+# Test Strategy:
+Validate completion of: code-todo item

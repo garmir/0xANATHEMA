@@ -1,0 +1,15 @@
+# Task ID: 2703
+# Title: Implement Self-Healing Workflows
+- **Stuck Prompt Detection**: Automatic complexity analysis
+- **Atomic Breakd (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Self-Healing Workflows
+- **Stuck Prompt Detection**: Automatic complexity analysis
+- **Atomic Breakdown Trigger**: Hard-coded workflow rule activation
+# Details:
+Converted from todo: .taskmaster/docs/research-planning-workflow-map.md
+
+# Test Strategy:
+Validate completion of: action-item item

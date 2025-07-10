@@ -1,0 +1,11 @@
+{
+  "discovery_timestamp": "2025-07-10T20:41:17.739371",
+  "total_todos": 7308,
+  "todo_sources": {
+    "tasks_json": 5918,
+    "code_comments": 1383,
+    "reports": 7
+  },
+  "batch_count": 1462,
+  "batch_size": 5
+}

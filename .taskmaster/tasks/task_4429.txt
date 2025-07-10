@@ -1,0 +1,11 @@
+# Task ID: 4429
+# Title: Implement Platform-Specific Configurations with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Platform-Specific Configurations
+# Details:
+Converted from todo: .taskmaster/examples/real-world-integration/cross-platform-compatibility.md
+
+# Test Strategy:
+Validate completion of: action-item item

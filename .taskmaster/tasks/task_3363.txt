@@ -1,0 +1,11 @@
+# Task ID: 3363
+# Title: **Prompt Generation** → Creates dynamic research-driven directives
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Prompt Generation** → Creates dynamic research-driven directives
+# Details:
+Converted from todo: .taskmaster/automation/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,16 @@
+# Task ID: 2696
+# Title: Implement Perplexity AI Integration
+- **Command**: `task-master research "<query>"`
+- **Capability**: Real-tim (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Perplexity AI Integration
+- **Command**: `task-master research "<query>"`
+- **Capability**: Real-time research with 2024-2025 findings
+- **Usage Patte
+# Details:
+Converted from todo: .taskmaster/docs/research-planning-workflow-map.md
+
+# Test Strategy:
+Validate completion of: action-item item

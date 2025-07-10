@@ -1,0 +1,15 @@
+# Task ID: 5432
+# Title: 6.2 Governance and Compliance
+- **Audit Trails**: Complete logging of all decisions
+- **Approval Wor (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 6.2 Governance and Compliance
+- **Audit Trails**: Complete logging of all decisions
+- **Approval Workflows**: Human approval for high-impact decisions
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/core-engine/decision-framework.md
+
+# Test Strategy:
+Validate completion of: action-item item

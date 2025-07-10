@@ -1,0 +1,14 @@
+# Task ID: 3356
+# Title: **Strategic Value Delivered**
+- **Problem Resolution**: Automatic stuck prompt resolution capability (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Strategic Value Delivered**
+- **Problem Resolution**: Automatic stuck prompt resolution capability
+- **Complexity Management**: Intelligent reductio
+# Details:
+Converted from todo: .taskmaster/automation/atomic-breakdown-implementation-summary.md
+
+# Test Strategy:
+Validate completion of: action-item item

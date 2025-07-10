@@ -1,0 +1,11 @@
+# Task ID: 2926
+# Title: Implement Get next task with `task-master next` (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Get next task with `task-master next`
+# Details:
+Converted from todo: .taskmaster/examples/web-app-integration.md
+
+# Test Strategy:
+Validate completion of: action-item item

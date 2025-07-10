@@ -1,0 +1,14 @@
+# Task ID: 754
+# Title: Implement Instead of counting the number of glyphs in each class,
+        # we should determine the encoded si (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Instead of counting the number of glyphs in each class,
+        # we should determine the encoded size. If the glyphs in a large
+        # class form a contiguous range, the encoding is actually quite
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/otlLib/builder.py
+
+# Test Strategy:
+Validate completion of: code-todo item

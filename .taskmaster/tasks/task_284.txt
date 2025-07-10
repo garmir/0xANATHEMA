@@ -1,0 +1,15 @@
+# Task ID: 284
+# Title: Implement (2.0): the desired output dtype may have non-nano resolution
+        msg = f"'{unit}' is deprecated  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (2.0): the desired output dtype may have non-nano resolution
+        msg = f"'{unit}' is deprecated and will be removed in a future version."
+
+        if (unit, np_unit) in (("u", "us"), ("U", "us"), 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/scalar/timedelta/test_constructors.py
+
+# Test Strategy:
+Validate completion of: code-todo item

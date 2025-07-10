@@ -1,0 +1,18 @@
+# Task ID: 520
+# Title: Implement remove this once 1892 is fixed
+    @pytest.mark.skipif(
+        MACOS and platform.machine() == 'arm (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: remove this once 1892 is fixed
+    @pytest.mark.skipif(
+        MACOS and platform.machine() == 'arm64', reason="skipped due to #1892"
+    )
+    def test_cpu_freq(self):
+        freq = psutil.cpu_freq
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/psutil/tests/test_osx.py
+
+# Test Strategy:
+Validate completion of: code-todo item

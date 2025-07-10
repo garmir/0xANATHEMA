@@ -1,0 +1,19 @@
+# Task ID: 154
+# Title: Implement (3.0): enforcing this deprecation will close GH#52501
+    from pandas.core.dtypes.missing import _us (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (3.0): enforcing this deprecation will close GH#52501
+    from pandas.core.dtypes.missing import _use_inf_as_na
+
+    _use_inf_as_na(key)
+
+
+with cf.config_prefix("mode"):
+    cf.register_option("use_in
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/config_init.py
+
+# Test Strategy:
+Validate completion of: code-todo item

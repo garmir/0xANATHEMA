@@ -1,0 +1,17 @@
+# Task ID: 469
+# Title: Implement consider returning both the mean and the standard deviation
+        # see [1] for a discussion
+      (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: consider returning both the mean and the standard deviation
+        # see [1] for a discussion
+        return np.mean(distances)
+    else:
+        raise ValueError(f"{method!r} is not a valid method. 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/stats/_qmc.py
+
+# Test Strategy:
+Validate completion of: code-todo item

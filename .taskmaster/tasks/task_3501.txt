@@ -1,0 +1,16 @@
+# Task ID: 3501
+# Title: Benefits
+- **Privacy:** Complete data locality, no external API calls
+- **Cost:** Eliminate ongoing  (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Benefits
+- **Privacy:** Complete data locality, no external API calls
+- **Cost:** Eliminate ongoing API usage fees (~$200-500/month)
+- **Control:** Fu
+# Details:
+Converted from todo: .taskmaster/migration/llm_evaluation_report.md
+
+# Test Strategy:
+Validate completion of: action-item item

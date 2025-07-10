@@ -1,0 +1,14 @@
+# Task ID: 2098
+# Title: Implement Environment variables properly set (TASKMASTER_*)
+- [ ] Directory structure conforms to requirements (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Environment variables properly set (TASKMASTER_*)
+- [ ] Directory structure conforms to requirements
+- [ ] Catalytic workspace accessible with 10GB ca
+# Details:
+Converted from todo: .taskmaster/execution-roadmap.md
+
+# Test Strategy:
+Validate completion of: action-item item

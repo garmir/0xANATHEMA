@@ -1,0 +1,20 @@
+# Task ID: 594
+# Title: Implement incorporate sample_weight in sampling here.
+                (
+                    X_train,
+          (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: incorporate sample_weight in sampling here.
+                (
+                    X_train,
+                    X_val,
+                    y_train,
+                    y_val,
+                    sample
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/neural_network/_multilayer_perceptron.py
+
+# Test Strategy:
+Validate completion of: code-todo item

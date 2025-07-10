@@ -1,0 +1,11 @@
+# Task ID: 4308
+# Title: Implement **Dynamic Context Preservation**: Maintain process context across recursive iterations (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Dynamic Context Preservation**: Maintain process context across recursive iterations
+# Details:
+Converted from todo: .taskmaster/reports/recursive-improvement-framework.md
+
+# Test Strategy:
+Validate completion of: action-item item

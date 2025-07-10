@@ -1,0 +1,11 @@
+# Task ID: 3278
+# Title: Implement **Rule ID**: `RECURSIVE_BREAKDOWN_001` with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Rule ID**: `RECURSIVE_BREAKDOWN_001`
+# Details:
+Converted from todo: .taskmaster/workflow-rules/recursive-breakdown-rule.md
+
+# Test Strategy:
+Validate completion of: action-item item

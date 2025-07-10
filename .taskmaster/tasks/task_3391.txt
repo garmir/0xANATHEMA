@@ -1,0 +1,16 @@
+# Task ID: 3391
+# Title: Adaptive Intelligence System
+- **ADaPT Framework**: Recursive decomposition implemented
+- **Capabili
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Adaptive Intelligence System
+- **ADaPT Framework**: Recursive decomposition implemented
+- **Capability Assessment**: LLM ability matching operational
+
+# Details:
+Converted from todo: .taskmaster/automation/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,19 @@
+# Task ID: 631
+# Title: Implement if alpha=0 check that X is not rank deficient
+
+        # NOTE: Rescaling of sample_weight:
+        # (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: if alpha=0 check that X is not rank deficient
+
+        # NOTE: Rescaling of sample_weight:
+        # We want to minimize
+        #     obj = 1/(2 * sum(sample_weight)) * sum(sample_weight * deviance)
+
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/linear_model/_glm/glm.py
+
+# Test Strategy:
+Validate completion of: code-todo item

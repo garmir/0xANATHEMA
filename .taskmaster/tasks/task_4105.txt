@@ -1,0 +1,18 @@
+# Task ID: 4105
+# Title: Implement **After Migration**
+```
+[Task Master] → [Local LLM Adapter] → [Research Results]
+                 ├─ (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **After Migration**
+```
+[Task Master] → [Local LLM Adapter] → [Research Results]
+                 ├─ Local LLM Engine (Ollama/LocalAI)
+               
+# Details:
+Converted from todo: .taskmaster/reports/local-llm-migration-health-check.md
+
+# Test Strategy:
+Validate completion of: action-item item

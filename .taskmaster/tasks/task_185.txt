@@ -1,0 +1,15 @@
+# Task ID: 185
+# Title: Implement should this raise TypeError
+    values = Series(["fooBAD__barBAD", np.nan, "foo"], dtype=any_string_ (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: should this raise TypeError
+    values = Series(["fooBAD__barBAD", np.nan, "foo"], dtype=any_string_dtype)
+    with pytest.raises(ValueError, match="expand must be True or False"):
+        values.str.
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/strings/test_extract.py
+
+# Test Strategy:
+Validate completion of: code-todo item

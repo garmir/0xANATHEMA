@@ -1,0 +1,15 @@
+# Task ID: 2671
+# Title: Implement Autonomy Score Calculation
+- **Task Independence**: Can tasks run without human intervention?
+- **Er (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Autonomy Score Calculation
+- **Task Independence**: Can tasks run without human intervention?
+- **Error Recovery**: Does system handle failures gracef
+# Details:
+Converted from todo: .taskmaster/docs/prd-evolution.md
+
+# Test Strategy:
+Validate completion of: action-item item

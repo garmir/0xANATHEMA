@@ -1,0 +1,11 @@
+# Task ID: 2167
+# Title: Define validation criteria for each implement type (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Define validation criteria for each todo type
+# Details:
+Converted from todo: .taskmaster/AUTONOMOUS-WORKFLOW-IMPLEMENTATION.md
+
+# Test Strategy:
+Validate completion of: action-item item

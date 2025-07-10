@@ -1,0 +1,17 @@
+# Task ID: 260
+# Title: Implement overlap with tests.series.test_ufunc.test_reductions
+    if len(index) == 0:
+        pytest.skip("Te (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: overlap with tests.series.test_ufunc.test_reductions
+    if len(index) == 0:
+        pytest.skip("Test doesn't make sense for empty index.")
+
+    if isinstance(index, CategoricalIndex) and index.dtype
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/test_numpy_compat.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,11 @@
+# Task ID: 3373
+# Title: Implement ✅ **Provides** autonomous execution directives (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: ✅ **Provides** autonomous execution directives
+# Details:
+Converted from todo: .taskmaster/automation/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

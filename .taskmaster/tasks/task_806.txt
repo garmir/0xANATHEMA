@@ -1,0 +1,16 @@
+# Task ID: 806
+# Title: Implement do we need Ti_tilde_in? What nodes does it have?
+        T2_tilde, T2_tilde_in = set(G2.nodes()), se (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: do we need Ti_tilde_in? What nodes does it have?
+        T2_tilde, T2_tilde_in = set(G2.nodes()), set()
+    else:
+        T1_tilde, T1_tilde_in = set(G1.nodes()), set()
+        T2_tilde, T2_tilde_in =
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/isomorphism/vf2pp.py
+
+# Test Strategy:
+Validate completion of: code-todo item

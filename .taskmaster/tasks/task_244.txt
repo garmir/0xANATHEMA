@@ -1,0 +1,19 @@
+# Task ID: 244
+# Title: Implement # * Binary methods (mul, div, etc.)
+# * Binary outputs (align, etc.)
+# * top-level methods (concat,  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: # * Binary methods (mul, div, etc.)
+# * Binary outputs (align, etc.)
+# * top-level methods (concat, merge, get_dummies, etc.)
+# * window
+# * cumulative reductions
+
+not_implemented_mark = pytest.mark.x
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/generic/test_finalize.py
+
+# Test Strategy:
+Validate completion of: code-todo item

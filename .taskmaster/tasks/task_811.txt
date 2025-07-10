@@ -1,0 +1,19 @@
+# Task ID: 811
+# Title: Implement This can be trivially parallelized.
+    lrc = [
+        centrality(G, node, paths=paths, weight=weig (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: This can be trivially parallelized.
+    lrc = [
+        centrality(G, node, paths=paths, weight=weight, normalized=normalized)
+        for node, paths in shortest_paths.items()
+    ]
+
+    max_lrc = ma
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/centrality/reaching.py
+
+# Test Strategy:
+Validate completion of: code-todo item

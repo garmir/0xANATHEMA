@@ -1,0 +1,14 @@
+# Task ID: 4183
+# Title: Implement Immediate Analysis Required
+1. **Recursive Frame Analysis**: Apply formal recursive analysis techniq (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Immediate Analysis Required
+1. **Recursive Frame Analysis**: Apply formal recursive analysis techniques
+2. **Bottleneck Quantification**: Measure impa
+# Details:
+Converted from todo: .taskmaster/reports/recursive-workflow-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

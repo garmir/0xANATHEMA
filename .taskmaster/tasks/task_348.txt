@@ -1,0 +1,18 @@
+# Task ID: 348
+# Title: Implement (EA.factorize): see if _values_for_factorize allows this.
+        super().test_sort_values_frame()
+
+ (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (EA.factorize): see if _values_for_factorize allows this.
+        super().test_sort_values_frame()
+
+    @pytest.mark.parametrize("ascending", [True, False])
+    def test_sort_values(self, data_for_sor
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/extension/json/test_json.py
+
+# Test Strategy:
+Validate completion of: code-todo item

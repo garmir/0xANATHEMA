@@ -1,0 +1,11 @@
+# Task ID: 4539
+# Title: Implement Generate debug report with findings (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Generate debug report with findings
+# Details:
+Converted from todo: .taskmaster/examples/real-world-integration/claude-code-mcp-integration.md
+
+# Test Strategy:
+Validate completion of: action-item item

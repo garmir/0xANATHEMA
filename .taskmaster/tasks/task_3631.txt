@@ -1,0 +1,16 @@
+# Task ID: 3631
+# Title: 2.2 Planning Engine Migration
+- Replace Claude API with Llama 3.1 70B
+- Implement optimized prompts  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 2.2 Planning Engine Migration
+- Replace Claude API with Llama 3.1 70B
+- Implement optimized prompts for local models
+- Preserve recursive task decompo
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

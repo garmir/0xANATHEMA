@@ -1,0 +1,16 @@
+# Task ID: 323
+# Title: Implement avoid this warning here?  seems like we should never be upcasting
+        #  in the first place?
+    (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: avoid this warning here?  seems like we should never be upcasting
+        #  in the first place?
+        with tm.assert_produces_warning(FutureWarning, match=msg):
+            res = s.clip(lower=[0, 4
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/series/methods/test_clip.py
+
+# Test Strategy:
+Validate completion of: code-todo item

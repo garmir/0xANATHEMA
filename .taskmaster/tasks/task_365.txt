@@ -1,0 +1,19 @@
+# Task ID: 365
+# Title: Implement ser.where(~mask, alt) unnecessarily upcasts to int64
+        ser3 = orig.copy()
+        res = ser3.w (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: ser.where(~mask, alt) unnecessarily upcasts to int64
+        ser3 = orig.copy()
+        res = ser3.where(~mask, alt)
+        tm.assert_series_equal(res, expected, check_dtype=False)
+
+
+class TestSetite
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/series/indexing/test_setitem.py
+
+# Test Strategy:
+Validate completion of: code-todo item

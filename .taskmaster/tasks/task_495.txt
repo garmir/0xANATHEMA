@@ -1,0 +1,17 @@
+# Task ID: 495
+# Title: Implement cannot use N itself yet; factorial uses `gamma(N+1)` resp. `(hi+lo)//2`
+        if dtype == np.uint6 (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: cannot use N itself yet; factorial uses `gamma(N+1)` resp. `(hi+lo)//2`
+        if dtype == np.uint64:
+            if exact:
+                # avoid attempting huge calculation
+                pass
+  
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/special/tests/test_basic.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,21 @@
+# Task ID: 490
+# Title: check that method preserve shape and type
+# TODO test both preconditioner methods
+
+
+# list of all so (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: check that method preserve shape and type
+# TODO test both preconditioner methods
+
+
+# list of all solvers under test
+_SOLVERS = [bicg, bicgstab, cg, cgs, gcrotmk, gmres, lgmres,
+            minres, qm
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/sparse/linalg/_isolve/tests/test_iterative.py
+
+# Test Strategy:
+Validate completion of: code-todo item

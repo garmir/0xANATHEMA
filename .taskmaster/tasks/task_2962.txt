@@ -1,0 +1,17 @@
+# Task ID: 2962
+# Title: Implement Profile Management
+- GET /profile - Get current user profile
+- PUT /profile - Update profile
+- POST  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Profile Management
+- GET /profile - Get current user profile
+- PUT /profile - Update profile
+- POST /profile/avatar - Upload avatar
+# Details:
+Converted from todo: .taskmaster/examples/api-service-integration.md
+
+# Test Strategy:
+Validate completion of: action-item item

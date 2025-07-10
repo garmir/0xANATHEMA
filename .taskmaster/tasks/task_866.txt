@@ -1,0 +1,19 @@
+# Task ID: 866
+# Title: Implement Make date regex more ISO 8601 compliant
+    date_regex = r'\d{4,}-\d{2}-\d{2}'
+    priority_regex =  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Make date regex more ISO 8601 compliant
+    date_regex = r'\d{4,}-\d{2}-\d{2}'
+    priority_regex = r'\([A-Z]\)'
+    project_regex = r'\+\S+'
+    context_regex = r'@\S+'
+
+    # Compound regex expressi
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/textfmts.py
+
+# Test Strategy:
+Validate completion of: code-todo item

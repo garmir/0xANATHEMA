@@ -1,0 +1,18 @@
+# Task ID: 375
+# Title: Implement support other fill patterns
+            props["pattern"] = 0 if props["pattern"] == "none" else 1
+
+  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: support other fill patterns
+            props["pattern"] = 0 if props["pattern"] == "none" else 1
+
+        for k in ["border", "top", "right", "bottom", "left"]:
+            if isinstance(props.get(k)
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/io/excel/_xlsxwriter.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,11 @@
+# Task ID: 3530
+# Title: Implement Local LLM Stack with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Local LLM Stack
+# Details:
+Converted from todo: .taskmaster/migration/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

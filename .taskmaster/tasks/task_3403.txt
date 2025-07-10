@@ -1,0 +1,15 @@
+# Task ID: 3403
+# Title: Implement Customization Options
+- **Priority Adjustment**: Modify research gap priorities in generator script
+ (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Customization Options
+- **Priority Adjustment**: Modify research gap priorities in generator script
+- **Research Focus**: Update implementation state 
+# Details:
+Converted from todo: .taskmaster/automation/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

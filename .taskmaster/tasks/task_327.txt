@@ -1,0 +1,18 @@
+# Task ID: 327
+# Title: Implement to_csv drops column name
+            tm.assert_frame_equal(frame, df, check_names=False)
+            (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: to_csv drops column name
+            tm.assert_frame_equal(frame, df, check_names=False)
+            assert frame.index.names == df.index.names
+
+            # needed if setUp becomes a class method
+  
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/methods/test_to_csv.py
+
+# Test Strategy:
+Validate completion of: code-todo item

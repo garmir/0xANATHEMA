@@ -1,0 +1,17 @@
+# Task ID: 646
+# Title: Implement (1.8): Remove
+def test_birch_copy_deprecated():
+    X, _ = make_blobs(n_samples=80, n_features=4, ra (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8): Remove
+def test_birch_copy_deprecated():
+    X, _ = make_blobs(n_samples=80, n_features=4, random_state=0)
+    brc = Birch(n_clusters=4, copy=True)
+    with pytest.warns(FutureWarning, match="`
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/cluster/tests/test_birch.py
+
+# Test Strategy:
+Validate completion of: code-todo item

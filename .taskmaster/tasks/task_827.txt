@@ -1,0 +1,21 @@
+# Task ID: 827
+# Title: implement all abstract methods
+
+
+class PlainResource(Resource):
+    def __init__(self, path: str, *, (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: implement all abstract methods
+
+
+class PlainResource(Resource):
+    def __init__(self, path: str, *, name: Optional[str] = None) -> None:
+        super().__init__(name=name)
+        assert not path or
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/aiohttp/web_urldispatcher.py
+
+# Test Strategy:
+Validate completion of: code-todo item

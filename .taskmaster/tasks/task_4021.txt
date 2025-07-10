@@ -1,0 +1,11 @@
+# Task ID: 4021
+# Title: Implement basic meta-learning state tracking in recursive PRD processor (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Implement basic meta-learning state tracking in recursive PRD processor
+# Details:
+Converted from todo: .taskmaster/reports/recursive-research-improvement-framework.md
+
+# Test Strategy:
+Validate completion of: action-item item

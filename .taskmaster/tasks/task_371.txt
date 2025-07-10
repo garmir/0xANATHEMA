@@ -1,0 +1,17 @@
+# Task ID: 371
+# Title: Implement handle cell width and height: needs support in pandas.io.excel
+
+        def remove_none(d: dict[str, (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: handle cell width and height: needs support in pandas.io.excel
+
+        def remove_none(d: dict[str, str | None]) -> None:
+            """Remove key where value is None, through nested dicts"""
+      
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/io/formats/excel.py
+
+# Test Strategy:
+Validate completion of: code-todo item

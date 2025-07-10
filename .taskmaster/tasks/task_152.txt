@@ -1,0 +1,15 @@
+# Task ID: 152
+# Title: Implement When we support multiple values in __finalize__, this
+        # should pass alignable to `__finalize (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: When we support multiple values in __finalize__, this
+        # should pass alignable to `__finalize__` instead of self.
+        # Then `np.add(a, b)` would consider attrs from both a and b
+        # 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/arraylike.py
+
+# Test Strategy:
+Validate completion of: code-todo item

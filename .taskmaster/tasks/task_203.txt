@@ -1,0 +1,19 @@
+# Task ID: 203
+# Title: Implement (ArrayManager) fastparquet
+            marks=[
+                td.skip_if_no("fastparquet"),
+        (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (ArrayManager) fastparquet
+            marks=[
+                td.skip_if_no("fastparquet"),
+                td.skip_if_no("fsspec"),
+                td.skip_array_manager_not_yet_implemented,
+       
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/io/test_http_headers.py
+
+# Test Strategy:
+Validate completion of: code-todo item

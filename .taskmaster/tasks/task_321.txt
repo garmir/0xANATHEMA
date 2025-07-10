@@ -1,0 +1,16 @@
+# Task ID: 321
+# Title: Implement nullable string[python] should also return nullable Int64
+            exp_dtype = "float64"
+         (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: nullable string[python] should also return nullable Int64
+            exp_dtype = "float64"
+        expected = Series([1, 2, None, 3], dtype=exp_dtype)
+        tm.assert_series_equal(result, expected)
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/methods/test_rank.py
+
+# Test Strategy:
+Validate completion of: code-todo item

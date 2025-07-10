@@ -1,0 +1,16 @@
+# Task ID: 352
+# Title: Implement the message being checked here isn't actually checking anything
+            msg = (
+                 (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: the message being checked here isn't actually checking anything
+            msg = (
+                "[Cc]annot perform|Categorical is not ordered for operation|"
+                "does not support redu
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/extension/base/reduce.py
+
+# Test Strategy:
+Validate completion of: code-todo item

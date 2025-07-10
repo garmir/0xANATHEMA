@@ -1,0 +1,14 @@
+# Task ID: 548
+# Title: decorrelate reducer_override (which is tied to CPython's
+        # implementation - would it make se
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: decorrelate reducer_override (which is tied to CPython's
+        # implementation - would it make sense to backport it to pypy? - and
+        # pickle's protocol 5 which is implementation agnostic. Cu
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/joblib/externals/cloudpickle/cloudpickle.py
+
+# Test Strategy:
+Validate completion of: code-todo item

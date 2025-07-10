@@ -1,0 +1,16 @@
+# Task ID: 273
+# Title: Implement This method came from test_datetime; de-dup with version above
+    @pytest.mark.parametrize("tz", [N (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: This method came from test_datetime; de-dup with version above
+    @pytest.mark.parametrize("tz", [None, "US/Eastern", "Asia/Tokyo"])
+    def test_take2(self, tz):
+        dates = [
+            dateti
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/datetimes/test_indexing.py
+
+# Test Strategy:
+Validate completion of: code-todo item

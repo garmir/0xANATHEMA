@@ -1,0 +1,16 @@
+# Task ID: 3167
+# Title: Claude Implementation Steps:
+1. **Analysis**: Claude analyzes the task requirements
+2. **Planning**:
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Claude Implementation Steps:
+1. **Analysis**: Claude analyzes the task requirements
+2. **Planning**: Creates implementation plan with file structure
+3
+# Details:
+Converted from todo: .taskmaster/templates/claude-code-integration-example.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,16 @@
+# Task ID: 2666
+# Title: Implement Evolutionary Parameters
+- **Mutation Rate**: 0.1 (10% of population)
+- **Crossover Rate**: 0.7 (70%  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Evolutionary Parameters
+- **Mutation Rate**: 0.1 (10% of population)
+- **Crossover Rate**: 0.7 (70% of population)
+- **Population Size**: Adaptive bas
+# Details:
+Converted from todo: .taskmaster/docs/prd-evolution.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,18 @@
+# Task ID: 770
+# Title: Implement Cache table.hasPropagated.
+            cleanPropagation = False
+            for conv in table.getCon (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Cache table.hasPropagated.
+            cleanPropagation = False
+            for conv in table.getConverters():
+                if conv.isPropagated:
+                    cleanPropagation = True
+       
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/ttLib/tables/otConverters.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,16 @@
+# Task ID: 404
+# Title: Implement (EA2D): with 2D EAs only this first clause would be needed
+    if not (left_ea or right_ea):
+        (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (EA2D): with 2D EAs only this first clause would be needed
+    if not (left_ea or right_ea):
+        # error: No overload variant of "__getitem__" of "ExtensionArray" matches
+        # argument type "
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/internals/ops.py
+
+# Test Strategy:
+Validate completion of: code-todo item

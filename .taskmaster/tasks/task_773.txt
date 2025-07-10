@@ -1,0 +1,17 @@
+# Task ID: 773
+# Title: Implement Should minimize BCP 47 language codes.
+        # https://github.com/fonttools/fonttools/issues/930
+  (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Should minimize BCP 47 language codes.
+        # https://github.com/fonttools/fonttools/issues/930
+        for lang, name in sorted(names.items()):
+            if windows:
+                windowsName 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/ttLib/tables/_n_a_m_e.py
+
+# Test Strategy:
+Validate completion of: code-todo item

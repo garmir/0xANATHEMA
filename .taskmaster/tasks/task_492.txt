@@ -1,0 +1,19 @@
+# Task ID: 492
+# Title: Implement write an array-agnostic pad
+    y2 = xp.asarray(np.pad(np.asarray(y), pad, mode='edge'))
+    z2 = ba (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: write an array-agnostic pad
+    y2 = xp.asarray(np.pad(np.asarray(y), pad, mode='edge'))
+    z2 = backward(y2, type, shape, axes, norm, orthogonalize=orthogonalize)
+    xp_assert_close(z2, x)
+
+
+@skip_
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/fft/tests/test_real_transforms.py
+
+# Test Strategy:
+Validate completion of: code-todo item

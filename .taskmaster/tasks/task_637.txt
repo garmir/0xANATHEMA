@@ -1,0 +1,18 @@
+# Task ID: 637
+# Title: Implement (1.9): remove
+@pytest.mark.parametrize(
+    "Estimator", [LassoCV, ElasticNetCV, MultiTaskLassoCV, M (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.9): remove
+@pytest.mark.parametrize(
+    "Estimator", [LassoCV, ElasticNetCV, MultiTaskLassoCV, MultiTaskElasticNetCV]
+)
+def test_linear_model_cv_deprecated_n_alphas(Estimator):
+    """Check the de
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/linear_model/tests/test_coordinate_descent.py
+
+# Test Strategy:
+Validate completion of: code-todo item

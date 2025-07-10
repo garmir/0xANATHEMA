@@ -1,0 +1,13 @@
+# Task ID: 2002
+# Title: Implement Pattern 1: Simple Git Feature Branching
+This is the most common and direct use case for tags. (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Pattern 1: Simple Git Feature Branching
+This is the most common and direct use case for tags.
+# Details:
+Converted from todo: .trae/rules/dev_workflow.md
+
+# Test Strategy:
+Validate completion of: action-item item

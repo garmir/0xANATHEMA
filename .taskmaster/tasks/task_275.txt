@@ -1,0 +1,17 @@
+# Task ID: 275
+# Title: Implement moved from test_datetimelike; dedup with version below
+    def test_union2(self, sort):
+        ever (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: moved from test_datetimelike; dedup with version below
+    def test_union2(self, sort):
+        everything = date_range("2020-01-01", periods=10)
+        first = everything[:5]
+        second = everyt
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/datetimes/test_setops.py
+
+# Test Strategy:
+Validate completion of: code-todo item

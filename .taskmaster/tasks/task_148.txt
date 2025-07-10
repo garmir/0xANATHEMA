@@ -1,0 +1,16 @@
+# Task ID: 148
+# Title: Implement pandas.core.tools.datetimes imports this explicitly.  Might be worth
+# making public and/or figuring
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: pandas.core.tools.datetimes imports this explicitly.  Might be worth
+# making public and/or figuring out if there is something we can
+# take off their plate.
+class _timelex(object):
+    # Fractional s
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/dateutil/parser/_parser.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,11 @@
+# Task ID: 1968
+# Title: **Add Master Reference**: Create a high-level task in `master` that references the feature tag (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Add Master Reference**: Create a high-level task in `master` that references the feature tag
+# Details:
+Converted from todo: .trae/rules/dev_workflow.md
+
+# Test Strategy:
+Validate completion of: action-item item

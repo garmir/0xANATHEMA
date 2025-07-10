@@ -1,0 +1,20 @@
+# Task ID: 248
+# Title: Implement De-duplicate/parametrize
+    #  test_at_series_raises_key_error2, test_at_frame_raises_key_error2
+
+  (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: De-duplicate/parametrize
+    #  test_at_series_raises_key_error2, test_at_frame_raises_key_error2
+
+    def test_at_series_raises_key_error(self, indexer_al):
+        # GH#31724 .at should match .loc
+
+
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexing/test_at.py
+
+# Test Strategy:
+Validate completion of: code-todo item

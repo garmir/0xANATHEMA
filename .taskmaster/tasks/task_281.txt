@@ -1,0 +1,16 @@
+# Task ID: 281
+# Title: Implement belongs in Series.drop tests?
+    @pytest.mark.parametrize("tz", [None, "Asia/Tokyo", "US/Pacific"]) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: belongs in Series.drop tests?
+    @pytest.mark.parametrize("tz", [None, "Asia/Tokyo", "US/Pacific"])
+    def test_delete_slice2(self, tz, unit):
+        dti = date_range(
+            "2000-01-01 09:00
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/datetimes/methods/test_delete.py
+
+# Test Strategy:
+Validate completion of: code-todo item

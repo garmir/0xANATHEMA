@@ -1,0 +1,11 @@
+# Task ID: 3272
+# Title: Implement Execute as simple prompt (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Execute as simple prompt
+# Details:
+Converted from todo: .taskmaster/workflow-rules/recursive-breakdown-rule.md
+
+# Test Strategy:
+Validate completion of: action-item item

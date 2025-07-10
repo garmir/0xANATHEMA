@@ -1,0 +1,34 @@
+[
+  {
+    "todo_id": "11",
+    "validation_timestamp": "2025-07-10T20:41:17.742359",
+    "original_todo": {
+      "id": "11",
+      "title": "Test main task",
+      "description": "Test description",
+      "status": "done",
+      "type": "main_task",
+      "source": "tasks.json"
+    },
+    "validation_status": "completed",
+    "completion_assessment": "100%",
+    "improvement_recommendations": []
+  },
+  {
+    "todo_id": "test_file_py_10",
+    "validation_timestamp": "2025-07-10T20:41:17.742368",
+    "original_todo": {
+      "id": "test_file_py_10",
+      "title": "Code Todo: test_file.py:10",
+      "description": "# TODO: Implement this function",
+      "status": "pending",
+      "type": "code_todo",
+      "source": "code:test_file.py",
+      "file_path": "test_file.py",
+      "line_number": 10
+    },
+    "validation_status": "file_missing",
+    "completion_assessment": "unknown",
+    "improvement_recommendations": []
+  }
+]

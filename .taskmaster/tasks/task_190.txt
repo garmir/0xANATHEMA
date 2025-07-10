@@ -1,0 +1,20 @@
+# Task ID: 190
+# Title: Implement Is this deliberate?
+        super().test_memory_usage(data)
+
+    def test_contains(self, data, data_ (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Is this deliberate?
+        super().test_memory_usage(data)
+
+    def test_contains(self, data, data_missing):
+        # GH-37867
+        # na value handling in Categorical.__contains__ is deprecated.
+
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/extension/test_categorical.py
+
+# Test Strategy:
+Validate completion of: code-todo item

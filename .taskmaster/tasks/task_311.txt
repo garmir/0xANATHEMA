@@ -1,0 +1,22 @@
+# Task ID: 311
+# Title: create xfail condition given other params
+        # {"by": 'string_missing'},
+        {"by": ["int", (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: create xfail condition given other params
+        # {"by": 'string_missing'},
+        {"by": ["int", "string"]},
+    ],
+)
+@pytest.mark.parametrize(
+    "column",
+    [
+        "float",
+        "float_
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/groupby/transform/test_transform.py
+
+# Test Strategy:
+Validate completion of: code-todo item

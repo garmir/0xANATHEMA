@@ -1,0 +1,17 @@
+# Task ID: 747
+# Title: Implement prune unused ltag tags and re-enumerate langIDs accordingly
+            excludedUnicodeLangIDs = [
+  (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: prune unused ltag tags and re-enumerate langIDs accordingly
+            excludedUnicodeLangIDs = [
+                n.langID
+                for n in varfont["name"].names
+                if n.nameID i
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/varLib/mutator.py
+
+# Test Strategy:
+Validate completion of: code-todo item

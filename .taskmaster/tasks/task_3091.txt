@@ -1,0 +1,27 @@
+# Task ID: 3091
+# Title: Implement Tool Allowlist Configuration
+```json
+{
+  "allowedTools": [
+    "Edit",
+    "MultiEdit",
+    "Read",
+ (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Tool Allowlist Configuration
+```json
+{
+  "allowedTools": [
+    "Edit",
+    "MultiEdit",
+    "Read",
+    "Write",
+    "Bash(task-master *)",
+    "Bash(
+# Details:
+Converted from todo: .taskmaster/templates/best-practices.md
+
+# Test Strategy:
+Validate completion of: action-item item

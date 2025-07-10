@@ -1,0 +1,23 @@
+# Task ID: 3094
+# Title: Implement Server Configuration
+```json
+{
+  "mcpServers": {
+    "task-master-ai": {
+      "command": "npx",
+    (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Server Configuration
+```json
+{
+  "mcpServers": {
+    "task-master-ai": {
+      "command": "npx",
+      "args": ["-y", "--package=task-master-ai", "tas
+# Details:
+Converted from todo: .taskmaster/templates/best-practices.md
+
+# Test Strategy:
+Validate completion of: action-item item

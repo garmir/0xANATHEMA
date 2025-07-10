@@ -1,0 +1,80 @@
+{
+  "workflow_rules": {
+    "recursive_breakdown": {
+      "rule_id": "RECURSIVE_BREAKDOWN_001",
+      "enabled": true,
+      "priority": "critical",
+      "description": "Automatically break down complex tasks into atomic components when prompt complexity issues arise",
+      "trigger_conditions": [
+        {
+          "condition": "task_stall_time",
+          "operator": ">",
+          "value": 600,
+          "description": "Task in-progress for more than 10 minutes"
+        },
+        {
+          "condition": "api_parse_failures",
+          "operator": ">=",
+          "value": 2,
+          "description": "API parsing failures encountered"
+        },
+        {
+          "condition": "prompt_complexity_score",
+          "operator": ">",
+          "value": 8,
+          "description": "Prompt complexity exceeds manageable threshold"
+        },
+        {
+          "condition": "manual_trigger",
+          "value": true,
+          "description": "Manual invocation via task-master research --atomic-breakdown"
+        }
+      ],
+      "execution_rules": {
+        "max_recursion_depth": 3,
+        "atomic_task_max_duration": 300,
+        "atomic_task_max_length": 100,
+        "sequential_execution": true,
+        "rollback_on_failure": true,
+        "synthesis_required": true
+      },
+      "atomic_breakdown_template": {
+        "task_analysis": {
+          "identify_objective": "Extract main task objective",
+          "list_actions": "Enumerate all required actions", 
+          "assess_dependencies": "Map task dependencies",
+          "scope_boundaries": "Define clear scope limits"
+        },
+        "decomposition_criteria": {
+          "single_action": "One verb, one object maximum",
+          "single_concept": "One concept per atomic task",
+          "single_implementation": "One implementation step only",
+          "time_limit": "Maximum 5 minutes execution time"
+        },
+        "execution_protocol": {
+          "queue_tasks": "Create ordered task queue",
+          "execute_sequentially": "Run one atomic task at a time",
+          "validate_completion": "Verify each atomic task success",
+          "synthesize_results": "Combine atomic outputs into final result"
+        }
+      },
+      "success_metrics": {
+        "completion_rate_improvement": ">30%",
+        "prompt_complexity_reduction": ">50%",
+        "time_to_completion": "<original_estimate",
+        "failure_recovery_rate": ">95%"
+      },
+      "integration_commands": {
+        "manual_trigger": "task-master research --atomic-breakdown --id=<task_id>",
+        "auto_detection": "task-master config --enable-atomic-breakdown",
+        "status_check": "task-master workflow-rules --status"
+      }
+    }
+  },
+  "metadata": {
+    "created": "2025-07-10T18:49:00.000Z",
+    "version": "1.0.0",
+    "description": "Automated workflow rules for Task-Master system",
+    "last_updated": "2025-07-10T18:49:00.000Z"
+  }
+}

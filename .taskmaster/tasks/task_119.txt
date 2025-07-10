@@ -1,0 +1,17 @@
+# Task ID: 119
+# Title: Implement Make colorbar lines auto-follow changes in contour lines.
+            return self.add_lines(
+        (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Make colorbar lines auto-follow changes in contour lines.
+            return self.add_lines(
+                cs.levels,
+                cs.to_rgba(cs.cvalues, cs.alpha),
+                cs.get_linewid
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/matplotlib/colorbar.py
+
+# Test Strategy:
+Validate completion of: code-todo item

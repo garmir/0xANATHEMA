@@ -1,0 +1,8 @@
+{
+  "current_phase": "exploration",
+  "exploration_rate": 0.5,
+  "exploitation_rate": 0.5,
+  "convergence_threshold": 0.95,
+  "adaptation_sensitivity": 0.1,
+  "learning_rate": 0.1
+}

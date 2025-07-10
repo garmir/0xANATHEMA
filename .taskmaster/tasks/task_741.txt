@@ -1,0 +1,16 @@
+# Task ID: 741
+# Title: Implement Warn if advances not the same but within tolerance.
+    if abs(g1.width - g2.width) > g1.width * tol (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Warn if advances not the same but within tolerance.
+    if abs(g1.width - g2.width) > g1.width * tolerance:
+        return False
+    if hasattr(g1, "height") and g1.height is not None:
+        if abs(
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/merge/cmap.py
+
+# Test Strategy:
+Validate completion of: code-todo item

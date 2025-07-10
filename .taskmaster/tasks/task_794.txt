@@ -1,0 +1,19 @@
+# Task ID: 794
+# Title: Implement use set for speedup?
+                    B[nextnode].append(thisnode)
+        path.pop()  # remove t (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: use set for speedup?
+                    B[nextnode].append(thisnode)
+        path.pop()  # remove thisnode from path
+        return closed
+
+    path = []  # stack of nodes in current path
+    blocked
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/cycles.py
+
+# Test Strategy:
+Validate completion of: code-todo item

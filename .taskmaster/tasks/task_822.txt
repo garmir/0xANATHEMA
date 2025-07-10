@@ -1,0 +1,18 @@
+# Task ID: 822
+# Title: To be removed when signature change complete
+    def test_custom_attrs_dep(self):
+        G = nx.pat (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: To be removed when signature change complete
+    def test_custom_attrs_dep(self):
+        G = nx.path_graph(4)
+        G.add_node(1, color="red")
+        G.add_edge(1, 2, width=7)
+        G.graph[1] =
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/readwrite/json_graph/tests/test_node_link.py
+
+# Test Strategy:
+Validate completion of: code-todo item

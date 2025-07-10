@@ -1,0 +1,15 @@
+# Task ID: 556
+# Title: Implement (slep6) remove if condition for unrouted sample_weight when metadata
+    # routing can't be disabled (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (slep6) remove if condition for unrouted sample_weight when metadata
+    # routing can't be disabled.
+    support_sample_weight = has_fit_parameter(ensemble.estimator_, "sample_weight")
+    if not _ro
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/ensemble/_bagging.py
+
+# Test Strategy:
+Validate completion of: code-todo item

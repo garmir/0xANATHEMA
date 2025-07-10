@@ -1,0 +1,17 @@
+# Task ID: 382
+# Title: Implement in all tests we have mask.any(0).all(); can we rely on that?
+
+    def get_result(self, values, value (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: in all tests we have mask.any(0).all(); can we rely on that?
+
+    def get_result(self, values, value_columns, fill_value) -> DataFrame:
+        if values.ndim == 1:
+            values = values[:, np.n
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/reshape/reshape.py
+
+# Test Strategy:
+Validate completion of: code-todo item

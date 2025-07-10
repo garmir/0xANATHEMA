@@ -1,0 +1,18 @@
+# Task ID: 739
+# Title: Implement Can we improve this?
+                        pos_glyphs = None
+                    else:
+            (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Can we improve this?
+                        pos_glyphs = None
+                    else:
+                        if seqi == 0:
+                            pos_glyphs = frozenset([c.Coverage(self).glyp
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/subset/__init__.py
+
+# Test Strategy:
+Validate completion of: code-todo item

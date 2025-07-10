@@ -1,0 +1,21 @@
+# Task ID: 239
+# Title: Implement parameterize over boxes
+
+    def test_pi_cmp_period(self):
+        idx = period_range("2007-01", per (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: parameterize over boxes
+
+    def test_pi_cmp_period(self):
+        idx = period_range("2007-01", periods=20, freq="M")
+        per = idx[10]
+
+        result = idx < per
+        exp = idx.values < idx.
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arithmetic/test_period.py
+
+# Test Strategy:
+Validate completion of: code-todo item

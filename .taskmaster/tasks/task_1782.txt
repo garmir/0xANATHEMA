@@ -1,0 +1,11 @@
+# Task ID: 1782
+# Title: Implement Standard Development Workflow with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Standard Development Workflow
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

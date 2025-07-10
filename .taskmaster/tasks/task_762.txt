@@ -1,0 +1,15 @@
+# Task ID: 762
+# Title: Implement Move this code duplicated below to MultiVarStore.__getitem__,
+                # or a getDeltasAndSup (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Move this code duplicated below to MultiVarStore.__getitem__,
+                # or a getDeltasAndSupports().
+                if varIdx != otTables.NO_VARIATION_INDEX:
+                    major = varId
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/ttLib/scaleUpem.py
+
+# Test Strategy:
+Validate completion of: code-todo item

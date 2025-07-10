@@ -1,0 +1,23 @@
+# Task ID: 750
+# Title: Implement GSUB/GDEF
+    merger.mergeTables(font, master_fonts, ["GPOS"])
+    return font
+
+
+def main(args=None) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: GSUB/GDEF
+    merger.mergeTables(font, master_fonts, ["GPOS"])
+    return font
+
+
+def main(args=None):
+    """Interpolate GDEF/GPOS/GSUB tables for a point on a designspace"""
+    from fontTools import
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/varLib/interpolate_layout.py
+
+# Test Strategy:
+Validate completion of: code-todo item

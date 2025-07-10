@@ -1,0 +1,18 @@
+# Task ID: 214
+# Title: Implement np.median(df, axis=0) gives np.array([2.0, 2.0]) instead
+        #  of expected.values
+
+    @pytest. (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: np.median(df, axis=0) gives np.array([2.0, 2.0]) instead
+        #  of expected.values
+
+    @pytest.mark.parametrize("method", ["min", "max"])
+    def test_min_max_categorical_dtype_non_ordered_nuisan
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/test_reductions.py
+
+# Test Strategy:
+Validate completion of: code-todo item

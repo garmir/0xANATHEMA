@@ -1,0 +1,19 @@
+# Task ID: 600
+# Title: Implement (1.9): change default `n_init` to 1, see PR #31117
+@validate_params(
+    {
+        "dissimilarities" (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.9): change default `n_init` to 1, see PR #31117
+@validate_params(
+    {
+        "dissimilarities": ["array-like"],
+        "metric": ["boolean"],
+        "n_components": [Interval(Integral, 1, None
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/manifold/_mds.py
+
+# Test Strategy:
+Validate completion of: code-todo item

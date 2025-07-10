@@ -1,0 +1,19 @@
+# Task ID: 395
+# Title: Implement Document public vs. private API
+    name = "category"
+    type: type[CategoricalDtypeType] = Categor (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Document public vs. private API
+    name = "category"
+    type: type[CategoricalDtypeType] = CategoricalDtypeType
+    kind: str_type = "O"
+    str = "|O08"
+    base = np.dtype("O")
+    _metadata = ("c
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/dtypes/dtypes.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,17 @@
+# Task ID: 446
+# Title: Implement # - (should?) don't use fancy indexing assignment
+# - figure out how to replace the new `try`/`except (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: # - (maybe?) don't use fancy indexing assignment
+# - figure out how to replace the new `try`/`except`s
+
+
+def _chandrupatla(func, a, b, *, args=(), xatol=None, xrtol=None,
+                  fatol=None,
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/optimize/_chandrupatla.py
+
+# Test Strategy:
+Validate completion of: code-todo item

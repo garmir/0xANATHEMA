@@ -1,0 +1,15 @@
+# Task ID: 695
+# Title: Implement performance: this means we iterate the dependencies at least twice,
+        # we may want to cache p (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: performance: this means we iterate the dependencies at least twice,
+        # we may want to cache parsed Requires-Dist
+        try:
+            list(dist.iter_dependencies(list(dist.iter_provided_ext
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pip/_internal/resolution/resolvelib/candidates.py
+
+# Test Strategy:
+Validate completion of: code-todo item

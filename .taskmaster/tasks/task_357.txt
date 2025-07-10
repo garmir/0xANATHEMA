@@ -1,0 +1,14 @@
+# Task ID: 357
+# Title: Implement expected used to be `other.astype(object)` which is a more
+            #  reasonable result.  This w (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: expected used to be `other.astype(object)` which is a more
+            #  reasonable result.  This was changed when tightening
+            #  assert_frame_equal's treatment of mismatched NAs to match 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/reshape/concat/test_append.py
+
+# Test Strategy:
+Validate completion of: code-todo item

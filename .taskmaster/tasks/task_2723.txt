@@ -1,0 +1,14 @@
+# Task ID: 2723
+# Title: Knowledge Capture Methodology
+- **Research Integration**: Direct findings-to-implementation translat
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Knowledge Capture Methodology
+- **Research Integration**: Direct findings-to-implementation translation
+- **Performance Tracking**: Continuous metric 
+# Details:
+Converted from todo: .taskmaster/docs/research-planning-workflow-map.md
+
+# Test Strategy:
+Validate completion of: action-item item

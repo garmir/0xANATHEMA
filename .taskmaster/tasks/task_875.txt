@@ -1,0 +1,16 @@
+# Task ID: 875
+# Title: Implement regexes can have other delims
+            (r'/[^/\\\n]*(?:\\[\s\S][^/\\\n]*)*/', String.Regex),
+     (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: regexes can have other delims
+            (r'/[^/\\\n]*(?:\\[\s\S][^/\\\n]*)*/', String.Regex),
+            (r'"[^"\\\n]*(?:\\[\s\S][^"\\\n]*)*"', String.Double),
+            (r"'[^\n']*(?:''[^\n']*)*
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/textedit.py
+
+# Test Strategy:
+Validate completion of: code-todo item

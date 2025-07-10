@@ -1,0 +1,11 @@
+# Task ID: 4786
+# Title: Implement 7. Risk Assessment with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 7. Risk Assessment
+# Details:
+Converted from todo: .taskmaster/docs/prd-decomposed/prd-1.7.md
+
+# Test Strategy:
+Validate completion of: action-item item

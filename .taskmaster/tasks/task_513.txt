@@ -1,0 +1,14 @@
+# Task ID: 513
+# Title: this test should really be equivalent to factorized version
+        # above, down to res.nfev. Howev (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: this test should really be equivalent to factorized version
+        # above, down to res.nfev. However, testing found that when TNC is
+        # called with or without a callback the output is differe
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/optimize/tests/test_optimize.py
+
+# Test Strategy:
+Validate completion of: code-todo item

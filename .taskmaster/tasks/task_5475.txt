@@ -1,0 +1,14 @@
+# Task ID: 5475
+# Title: Implement 3.2 Code Generation Prompts
+- **Language-Specific**: Optimized prompts for different programming lan (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 3.2 Code Generation Prompts
+- **Language-Specific**: Optimized prompts for different programming languages
+- **Framework Integration**: Prompts for sp
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/ai-integration/prompt-optimization.md
+
+# Test Strategy:
+Validate completion of: action-item item

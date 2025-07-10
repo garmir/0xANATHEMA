@@ -1,0 +1,16 @@
+# Task ID: 3183
+# Title: Implement Common Issues
+1. **Permission Errors**: Configure TouchID or sudo timeout
+2. **Memory Issues**: Adju (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Common Issues
+1. **Permission Errors**: Configure TouchID or sudo timeout
+2. **Memory Issues**: Adjust catalytic workspace size
+3. **Task Dependencies
+# Details:
+Converted from todo: .taskmaster/templates/claude-code-integration-example.md
+
+# Test Strategy:
+Validate completion of: action-item item

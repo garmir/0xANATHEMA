@@ -1,0 +1,20 @@
+# Task ID: 941
+# Title: Implement Process Hierarchy
+```
+PID 1 (init)
+  └── PID 28367 (/bin/zsh - shell wrapper)
+      └── PID 28375 (P (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Process Hierarchy
+```
+PID 1 (init)
+  └── PID 28367 (/bin/zsh - shell wrapper)
+      └── PID 28375 (Python labrys_main.py --interactive) ⚡ MAIN LABRYS
+
+# Details:
+Converted from todo: LABRYS_PID_REPORT.md
+
+# Test Strategy:
+Validate completion of: action-item item

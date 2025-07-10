@@ -1,0 +1,14 @@
+# Task ID: 210
+# Title: Implement (CoW-warn) false positive? -> block gets split because of `df["b"] = 100`
+    # which introduces add (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (CoW-warn) false positive? -> block gets split because of `df["b"] = 100`
+    # which introduces additional refs, even when those of `view` go out of scopes
+    with tm.assert_cow_warning(warn_copy_on
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/copy_view/test_core_functionalities.py
+
+# Test Strategy:
+Validate completion of: code-todo item

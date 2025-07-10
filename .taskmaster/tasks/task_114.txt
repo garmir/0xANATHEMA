@@ -1,0 +1,17 @@
+# Task ID: 114
+# Title: Implement Maybe add a warning here?
+        if hasattr(func, "func_globals") and name in func.func_globals:
+  
+# Status: done
+# Dependencies: None
+# Priority: low
+# Description: Maybe add a warning here?
+        if hasattr(func, "func_globals") and name in func.func_globals:
+            if func.func_globals[name] is not func:
+                name = "%s-alias" % name
+    if ha
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/joblib/func_inspect.py
+
+# Test Strategy:
+Validate completion of: code-todo item

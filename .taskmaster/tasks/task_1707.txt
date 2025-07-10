@@ -1,0 +1,11 @@
+# Task ID: 1707
+# Title: Implement Risk Categories with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Risk Categories
+# Details:
+Converted from todo: execution-roadmap.md
+
+# Test Strategy:
+Validate completion of: action-item item

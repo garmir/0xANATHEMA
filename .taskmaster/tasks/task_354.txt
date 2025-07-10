@@ -1,0 +1,13 @@
+# Task ID: 354
+# Title: Implement require TypeError for things that will _never_ work?
+                getattr(ser, op_name)(skipna=sk (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: require TypeError for things that will _never_ work?
+                getattr(ser, op_name)(skipna=skipna)
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/extension/base/accumulate.py
+
+# Test Strategy:
+Validate completion of: code-todo item

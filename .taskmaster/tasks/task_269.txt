@@ -1,0 +1,19 @@
+# Task ID: 269
+# Title: Implement fix these accessors!
+        assert ser["05Q4"] == ser.iloc[2]
+
+    def test_pindex_slice_index(self (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: fix these accessors!
+        assert ser["05Q4"] == ser.iloc[2]
+
+    def test_pindex_slice_index(self):
+        pi = period_range(start="1/1/10", end="12/31/12", freq="M")
+        s = Series(np.random.
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/period/test_partial_slicing.py
+
+# Test Strategy:
+Validate completion of: code-todo item

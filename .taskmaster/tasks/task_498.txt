@@ -1,0 +1,24 @@
+# Task ID: 498
+# Title: Implement import from typing (requires Python >=3.11)
+    from typing_extensions import Self
+
+
+class _AtOp(Enu (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: import from typing (requires Python >=3.11)
+    from typing_extensions import Self
+
+
+class _AtOp(Enum):
+    """Operations for use in `xpx.at`."""
+
+    SET = "set"
+    ADD = "add"
+    SUBTRACT = "subtr
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/_lib/array_api_extra/_lib/_at.py
+
+# Test Strategy:
+Validate completion of: code-todo item

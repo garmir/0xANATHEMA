@@ -1,0 +1,519 @@
+{
+  "recursive_task_breakdown": {
+    "test_cases": [
+      {
+        "id": "rtb_001",
+        "task": "Build a comprehensive e-commerce platform with modern architecture",
+        "description": "Create a full-stack e-commerce solution with microservices architecture, supporting multiple payment methods, inventory management, user authentication, and real-time analytics",
+        "expected_subtasks": [
+          "Design system architecture and technology stack",
+          "Implement user authentication and authorization system",
+          "Create product catalog management system",
+          "Build shopping cart and checkout functionality",
+          "Integrate payment processing systems",
+          "Implement inventory management system",
+          "Create order management and fulfillment system",
+          "Build real-time analytics and reporting dashboard",
+          "Implement search and recommendation engine",
+          "Setup CI/CD pipeline and deployment infrastructure",
+          "Create comprehensive testing framework",
+          "Implement monitoring and logging systems"
+        ],
+        "expected_depth": 4,
+        "complexity": "high"
+      },
+      {
+        "id": "rtb_002",
+        "task": "Migrate legacy monolithic application to microservices architecture",
+        "description": "Transform a legacy monolithic application into a scalable microservices architecture while maintaining business continuity and data integrity",
+        "expected_subtasks": [
+          "Analyze existing monolithic application architecture",
+          "Design microservices decomposition strategy",
+          "Plan data migration and synchronization approach",
+          "Implement strangler fig pattern for gradual migration",
+          "Setup service mesh and communication protocols",
+          "Implement distributed transaction management",
+          "Create comprehensive monitoring and observability",
+          "Plan and execute zero-downtime deployment strategy",
+          "Validate system performance and reliability",
+          "Update documentation and operational procedures"
+        ],
+        "expected_depth": 3,
+        "complexity": "very_high"
+      },
+      {
+        "id": "rtb_003",
+        "task": "Implement automated testing framework for web applications",
+        "description": "Create a comprehensive automated testing framework supporting unit, integration, and end-to-end testing with CI/CD integration",
+        "expected_subtasks": [
+          "Design testing strategy and framework architecture",
+          "Implement unit testing framework and utilities",
+          "Create integration testing framework",
+          "Build end-to-end testing automation",
+          "Setup test data management and fixtures",
+          "Implement parallel test execution",
+          "Create test reporting and analytics dashboard",
+          "Integrate with CI/CD pipeline",
+          "Setup cross-browser and cross-platform testing",
+          "Implement performance and load testing"
+        ],
+        "expected_depth": 3,
+        "complexity": "medium"
+      }
+    ],
+    "evaluation_criteria": {
+      "accuracy": {
+        "description": "How well the breakdown matches expected subtasks",
+        "weight": 0.4
+      },
+      "completeness": {
+        "description": "Whether all major aspects are covered",
+        "weight": 0.3
+      },
+      "logical_structure": {
+        "description": "How well subtasks are organized and sequenced",
+        "weight": 0.2
+      },
+      "depth_appropriateness": {
+        "description": "Whether decomposition depth matches complexity",
+        "weight": 0.1
+      }
+    }
+  },
+  "multi_step_reasoning": {
+    "test_cases": [
+      {
+        "id": "msr_001",
+        "problem": "A distributed system processes 1M requests per day across 5 regions. Each region has 3 servers, and each server can handle 100 requests per minute. If traffic increases by 75% over 3 months, how many additional servers are needed per region to maintain performance?",
+        "solution_steps": [
+          "Calculate current daily capacity: 5 regions × 3 servers × 100 req/min × 60 min/hr × 24 hr/day = 2,160,000 requests/day",
+          "Calculate current utilization: 1,000,000 ÷ 2,160,000 = 46.3%",
+          "Calculate future traffic: 1,000,000 × 1.75 = 1,750,000 requests/day",
+          "Calculate required capacity: 1,750,000 ÷ 0.463 = 3,780,000 requests/day (maintaining same utilization)",
+          "Calculate servers needed per region: 3,780,000 ÷ 5 ÷ (100 × 60 × 24) = 5.25 servers per region",
+          "Round up to 6 servers per region",
+          "Calculate additional servers needed: 6 - 3 = 3 additional servers per region"
+        ],
+        "expected_answer": 3,
+        "complexity": "medium"
+      },
+      {
+        "id": "msr_002",
+        "problem": "Design a caching strategy for an API that serves 50,000 unique users daily, with each user making 20 requests on average. Cache hit ratio should be 85%. If average response size is 1.5KB and cache memory is limited to 2GB, what cache eviction policy and partitioning strategy should be implemented?",
+        "solution_steps": [
+          "Calculate total daily requests: 50,000 users × 20 requests = 1,000,000 requests/day",
+          "Calculate cache hits: 1,000,000 × 0.85 = 850,000 cache hits",
+          "Calculate cache misses: 1,000,000 × 0.15 = 150,000 cache misses",
+          "Calculate memory needed for all responses: 1,000,000 × 1.5KB = 1.5GB",
+          "Available memory (2GB) > required memory (1.5GB), so LRU is feasible",
+          "Calculate effective cache size: 2GB ÷ 1.5KB = ~1,400,000 entries",
+          "Since daily requests (1M) < cache capacity (1.4M), use LRU with time-based expiration",
+          "Implement partitioning: 80% for hot data (frequent requests), 20% for warm data",
+          "Recommended: LRU with TTL (24 hours) and 80/20 hot/warm partitioning"
+        ],
+        "expected_answer": "LRU with TTL and 80/20 partitioning",
+        "complexity": "high"
+      },
+      {
+        "id": "msr_003",
+        "problem": "A machine learning model training pipeline processes datasets in 4 stages: preprocessing (2 hours), feature engineering (3 hours), model training (8 hours), and validation (1 hour). If we can parallelize preprocessing across 4 cores, feature engineering across 2 cores, and validation across 2 cores, but training must be sequential, what's the minimum total time and optimal resource allocation?",
+        "solution_steps": [
+          "Calculate parallelized preprocessing time: 2 hours ÷ 4 cores = 0.5 hours",
+          "Calculate parallelized feature engineering time: 3 hours ÷ 2 cores = 1.5 hours",
+          "Model training remains: 8 hours (sequential)",
+          "Calculate parallelized validation time: 1 hour ÷ 2 cores = 0.5 hours",
+          "Total pipeline time: 0.5 + 1.5 + 8 + 0.5 = 10.5 hours",
+          "Optimal resource allocation: 4 cores for preprocessing, 2 cores for feature engineering, 1 core for training, 2 cores for validation",
+          "Sequential bottleneck: Model training (8 hours) is the limiting factor"
+        ],
+        "expected_answer": "10.5 hours",
+        "complexity": "medium"
+      }
+    ],
+    "evaluation_criteria": {
+      "step_accuracy": {
+        "description": "Correctness of individual calculation steps",
+        "weight": 0.4
+      },
+      "logical_flow": {
+        "description": "How well steps connect and build upon each other",
+        "weight": 0.3
+      },
+      "final_answer": {
+        "description": "Correctness of the final answer",
+        "weight": 0.2
+      },
+      "methodology": {
+        "description": "Appropriateness of the chosen approach",
+        "weight": 0.1
+      }
+    }
+  },
+  "context_maintenance": {
+    "test_cases": [
+      {
+        "id": "cm_001",
+        "initial_context": "You are managing a DevOps transformation project for a fintech company. The project involves migrating from on-premises infrastructure to AWS cloud, implementing CI/CD pipelines, and establishing monitoring and security practices. Key stakeholders include: Sarah (CTO), Mike (Security Lead), Lisa (DevOps Engineer), and Tom (Development Manager). The project has a 6-month timeline and $500K budget. Current challenges include legacy system dependencies, compliance requirements (SOC 2, PCI DSS), and team skill gaps in cloud technologies.",
+        "conversation_flow": [
+          {
+            "question": "What is the project timeline and budget?",
+            "expected_answer": "6 months timeline, $500K budget"
+          },
+          {
+            "question": "Who is the Security Lead on this project?",
+            "expected_answer": "Mike"
+          },
+          {
+            "question": "What compliance requirements need to be met?",
+            "expected_answer": "SOC 2 and PCI DSS"
+          },
+          {
+            "question": "If Lisa needs help with AWS security best practices, who should she consult?",
+            "expected_answer": "Mike (Security Lead)"
+          },
+          {
+            "question": "What would be the impact of delaying the migration by 2 months?",
+            "expected_answer": "Would extend project to 8 months, potentially requiring budget adjustment and affecting compliance timeline"
+          },
+          {
+            "question": "How would you prioritize addressing the team skill gaps?",
+            "expected_answer": "Focus on cloud technologies training, particularly AWS services relevant to fintech compliance"
+          },
+          {
+            "question": "If the budget is reduced by 20%, what adjustments would you recommend?",
+            "expected_answer": "Reduce budget to $400K, may need to phase migration or reduce scope while maintaining compliance requirements"
+          }
+        ],
+        "complexity": "high"
+      },
+      {
+        "id": "cm_002",
+        "initial_context": "You are architecting a real-time data processing system for an e-commerce platform. The system needs to handle 100,000 events per second during peak traffic, process user behavior data, update recommendation engines, and trigger personalized marketing campaigns. Technologies being considered include Apache Kafka, Apache Flink, Redis, and Elasticsearch. The system must have 99.9% uptime and process events with sub-100ms latency. Budget constraints require cost-effective solutions while maintaining performance.",
+        "conversation_flow": [
+          {
+            "question": "What is the required event processing rate?",
+            "expected_answer": "100,000 events per second"
+          },
+          {
+            "question": "What latency requirement must be met?",
+            "expected_answer": "Sub-100ms latency"
+          },
+          {
+            "question": "Which technologies are being considered for the solution?",
+            "expected_answer": "Apache Kafka, Apache Flink, Redis, and Elasticsearch"
+          },
+          {
+            "question": "If Redis is used for caching, how would it integrate with the event processing pipeline?",
+            "expected_answer": "Redis would cache processed results and user profiles for sub-100ms access by recommendation engines"
+          },
+          {
+            "question": "What would be the impact of not meeting the 99.9% uptime requirement?",
+            "expected_answer": "Could affect real-time recommendations and personalized marketing, potentially reducing conversion rates"
+          },
+          {
+            "question": "How would you balance cost-effectiveness with the performance requirements?",
+            "expected_answer": "Use auto-scaling for Kafka/Flink, optimize Redis memory usage, and implement tiered storage for Elasticsearch"
+          }
+        ],
+        "complexity": "high"
+      }
+    ],
+    "evaluation_criteria": {
+      "context_retention": {
+        "description": "How well context is maintained across conversation",
+        "weight": 0.4
+      },
+      "answer_accuracy": {
+        "description": "Correctness of answers based on context",
+        "weight": 0.3
+      },
+      "contextual_reasoning": {
+        "description": "Ability to reason using context from previous exchanges",
+        "weight": 0.2
+      },
+      "consistency": {
+        "description": "Consistency of responses throughout conversation",
+        "weight": 0.1
+      }
+    }
+  },
+  "code_generation": {
+    "test_cases": [
+      {
+        "id": "cg_001",
+        "task": "Create a Python class for a thread-safe cache with TTL (Time To Live) functionality",
+        "requirements": [
+          "Class should be named 'TTLCache'",
+          "Should support get(), put(), and delete() operations",
+          "Should automatically expire entries after TTL",
+          "Should be thread-safe for concurrent access",
+          "Should have configurable maximum size",
+          "Should use LRU eviction when at capacity",
+          "Should include proper error handling",
+          "Should provide cache statistics (hits, misses, size)"
+        ],
+        "test_code": "def test_ttl_cache():\n    cache = TTLCache(max_size=100, default_ttl=2)\n    cache.put('key1', 'value1')\n    assert cache.get('key1') == 'value1'\n    time.sleep(3)\n    assert cache.get('key1') is None\n    cache.put('key2', 'value2', ttl=5)\n    assert cache.get('key2') == 'value2'\n    stats = cache.get_stats()\n    assert 'hits' in stats and 'misses' in stats",
+        "complexity": "high"
+      },
+      {
+        "id": "cg_002",
+        "task": "Implement a JavaScript function for rate limiting with sliding window algorithm",
+        "requirements": [
+          "Function should be named 'createRateLimiter'",
+          "Should implement sliding window rate limiting",
+          "Should accept max requests and window size parameters",
+          "Should return a function that checks if request is allowed",
+          "Should track request timestamps efficiently",
+          "Should handle concurrent requests properly",
+          "Should provide remaining quota information",
+          "Should support custom identifier for different clients"
+        ],
+        "test_code": "function testRateLimiter() {\n    const rateLimiter = createRateLimiter(5, 60000); // 5 requests per minute\n    \n    // Test basic functionality\n    for (let i = 0; i < 5; i++) {\n        console.assert(rateLimiter('client1').allowed === true);\n    }\n    \n    // Sixth request should be rejected\n    console.assert(rateLimiter('client1').allowed === false);\n    \n    // Different client should have own quota\n    console.assert(rateLimiter('client2').allowed === true);\n}",
+        "complexity": "medium"
+      },
+      {
+        "id": "cg_003",
+        "task": "Create a Go function for concurrent file processing with worker pool pattern",
+        "requirements": [
+          "Function should be named 'ProcessFilesWithWorkers'",
+          "Should use worker pool pattern for concurrent processing",
+          "Should accept file paths, worker count, and processing function",
+          "Should handle errors gracefully without stopping other workers",
+          "Should collect and return results from all workers",
+          "Should use channels for communication between workers",
+          "Should implement proper cleanup and resource management",
+          "Should provide progress reporting mechanism"
+        ],
+        "test_code": "func TestProcessFilesWithWorkers(t *testing.T) {\n    files := []string{\"file1.txt\", \"file2.txt\", \"file3.txt\"}\n    processFn := func(file string) (interface{}, error) {\n        return fmt.Sprintf(\"processed_%s\", file), nil\n    }\n    \n    results, errors := ProcessFilesWithWorkers(files, 3, processFn)\n    \n    if len(errors) > 0 {\n        t.Errorf(\"Unexpected errors: %v\", errors)\n    }\n    \n    if len(results) != 3 {\n        t.Errorf(\"Expected 3 results, got %d\", len(results))\n    }\n}",
+        "complexity": "high"
+      }
+    ],
+    "evaluation_criteria": {
+      "correctness": {
+        "description": "How well the code meets the requirements",
+        "weight": 0.4
+      },
+      "code_quality": {
+        "description": "Code structure, readability, and best practices",
+        "weight": 0.3
+      },
+      "completeness": {
+        "description": "Whether all requirements are addressed",
+        "weight": 0.2
+      },
+      "error_handling": {
+        "description": "Robustness and error handling quality",
+        "weight": 0.1
+      }
+    }
+  },
+  "research_synthesis": {
+    "test_cases": [
+      {
+        "id": "rs_001",
+        "topic": "Comparison of container orchestration platforms for enterprise applications",
+        "sources": [
+          "Kubernetes provides comprehensive orchestration features including auto-scaling, rolling updates, service discovery, and load balancing. It has a steep learning curve but offers maximum flexibility and is backed by a large ecosystem. Resource overhead can be significant for smaller deployments.",
+          "Docker Swarm offers simpler setup and management compared to Kubernetes, with built-in load balancing and service discovery. It has better performance for smaller clusters but lacks advanced features like custom resource definitions and complex networking policies.",
+          "Amazon ECS provides tight integration with AWS services and simplified management through managed control plane. It offers good performance and cost optimization but creates vendor lock-in and has limited multi-cloud portability.",
+          "HashiCorp Nomad focuses on simplicity and multi-workload support (containers, VMs, binaries). It has minimal resource overhead and easy operations but has a smaller ecosystem and fewer advanced orchestration features compared to Kubernetes.",
+          "Red Hat OpenShift adds enterprise features on top of Kubernetes including enhanced security, developer tools, and integrated CI/CD. It provides better enterprise support but comes with higher licensing costs and additional complexity."
+        ],
+        "research_question": "Which container orchestration platform should a mid-sized enterprise choose for migrating legacy applications to containers?",
+        "expected_synthesis_points": [
+          "Learning curve and operational complexity comparison",
+          "Feature completeness and ecosystem maturity",
+          "Performance and resource utilization considerations",
+          "Vendor lock-in and multi-cloud portability",
+          "Enterprise support and security features",
+          "Cost implications and licensing models",
+          "Migration complexity for legacy applications"
+        ],
+        "complexity": "high"
+      },
+      {
+        "id": "rs_002",
+        "topic": "Modern approaches to database design for high-scale applications",
+        "sources": [
+          "Traditional relational databases (PostgreSQL, MySQL) provide ACID compliance and strong consistency guarantees. They excel at complex queries and transactions but face scaling challenges with very large datasets and high write loads.",
+          "NoSQL databases like MongoDB and Cassandra offer horizontal scaling and flexible schemas. They handle high write volumes well but sacrifice consistency guarantees and complex query capabilities.",
+          "NewSQL databases (CockroachDB, TiDB) attempt to combine SQL familiarity with NoSQL scalability. They provide distributed architecture with ACID guarantees but are newer technologies with less mature ecosystems.",
+          "Event sourcing and CQRS patterns separate write and read models, enabling better scalability and auditability. They add architectural complexity but provide excellent scalability and data consistency guarantees.",
+          "Polyglot persistence uses different database technologies for different data types and access patterns within the same application. It optimizes for specific use cases but increases operational complexity and data consistency challenges."
+        ],
+        "research_question": "What database architecture strategy should be adopted for a high-scale e-commerce platform with complex business logic?",
+        "expected_synthesis_points": [
+          "Scalability vs consistency trade-offs",
+          "Query complexity and flexibility requirements",
+          "Operational complexity and maintenance overhead",
+          "Data consistency and transaction requirements",
+          "Performance characteristics under high load",
+          "Team expertise and learning curve considerations",
+          "Migration and integration complexity"
+        ],
+        "complexity": "high"
+      }
+    ],
+    "evaluation_criteria": {
+      "comprehensiveness": {
+        "description": "How well the synthesis covers all relevant aspects",
+        "weight": 0.4
+      },
+      "source_integration": {
+        "description": "How effectively information from sources is combined",
+        "weight": 0.3
+      },
+      "analysis_depth": {
+        "description": "Quality of analysis and insights provided",
+        "weight": 0.2
+      },
+      "practical_applicability": {
+        "description": "How actionable and practical the synthesis is",
+        "weight": 0.1
+      }
+    }
+  },
+  "autonomous_execution": {
+    "test_cases": [
+      {
+        "id": "ae_001",
+        "goal": "Deploy a microservices application to production with zero downtime and automated rollback capabilities",
+        "constraints": [
+          "Current monolithic application serves 10,000 concurrent users",
+          "Database cannot be taken offline during migration",
+          "Service level agreement guarantees 99.9% uptime",
+          "Budget allows for 2x infrastructure during transition",
+          "Rollback must be automatic if error rate exceeds 1%",
+          "Deployment must complete within 4-hour maintenance window"
+        ],
+        "expected_execution_phases": [
+          "Infrastructure provisioning and setup",
+          "Database migration and synchronization",
+          "Service-by-service deployment with traffic splitting",
+          "Progressive traffic migration with monitoring",
+          "Validation and performance testing",
+          "Automated rollback triggers and procedures",
+          "Cleanup and optimization"
+        ],
+        "success_criteria": [
+          "Zero downtime during deployment",
+          "Error rate remains below 1%",
+          "Response time degradation < 10%",
+          "All services healthy post-deployment",
+          "Automatic rollback functional",
+          "Database consistency maintained"
+        ],
+        "complexity": "very_high"
+      },
+      {
+        "id": "ae_002",
+        "goal": "Implement automated security compliance scanning and remediation for CI/CD pipeline",
+        "constraints": [
+          "Must scan for OWASP Top 10 vulnerabilities",
+          "Compliance with SOC 2 and PCI DSS required",
+          "False positive rate must be < 5%",
+          "Scan time cannot exceed 10 minutes per build",
+          "Automatic remediation for low/medium severity issues",
+          "Integration with existing Jenkins pipeline required"
+        ],
+        "expected_execution_phases": [
+          "Tool selection and integration planning",
+          "Security scanning tool configuration",
+          "CI/CD pipeline integration",
+          "Automated remediation script development",
+          "Compliance reporting and alerting setup",
+          "Testing and validation procedures",
+          "Documentation and training"
+        ],
+        "success_criteria": [
+          "All OWASP Top 10 vulnerabilities detected",
+          "Compliance requirements met",
+          "False positive rate < 5%",
+          "Scan completion within 10 minutes",
+          "Automated remediation functional",
+          "Compliance reports generated"
+        ],
+        "complexity": "high"
+      }
+    ],
+    "evaluation_criteria": {
+      "plan_completeness": {
+        "description": "How comprehensive and detailed the execution plan is",
+        "weight": 0.4
+      },
+      "constraint_adherence": {
+        "description": "How well the plan addresses all constraints",
+        "weight": 0.3
+      },
+      "risk_management": {
+        "description": "Quality of risk assessment and mitigation strategies",
+        "weight": 0.2
+      },
+      "automation_level": {
+        "description": "Degree of automation in the execution plan",
+        "weight": 0.1
+      }
+    }
+  },
+  "meta_learning": {
+    "test_cases": [
+      {
+        "id": "ml_001",
+        "learning_scenario": "You have been optimizing API response times through various strategies. First attempt: Added database indexing - improved response time by 30%. Second attempt: Implemented caching layer - improved response time by 50%. Third attempt: Combined indexing and caching - improved response time by 70%. Fourth attempt: Added connection pooling to the mix - improved response time by 85%.",
+        "new_situation": "You now need to optimize a different API that's experiencing slow response times. The API serves user profile data and has similar database access patterns. What approach would you take and why?",
+        "expected_learning_patterns": [
+          "Cumulative effect of optimizations is greater than individual effects",
+          "Database-level optimizations (indexing) should be implemented first",
+          "Caching provides significant improvement for read-heavy workloads",
+          "Connection pooling provides additional benefits for high-concurrency scenarios",
+          "Systematic approach: start with database optimization, add caching, then connection management"
+        ],
+        "complexity": "medium"
+      },
+      {
+        "id": "ml_002",
+        "learning_scenario": "You have been debugging deployment failures across different environments. Production deployment failed due to environment variable misconfiguration. Staging deployment failed due to missing database migrations. Development deployment failed due to outdated dependencies. Pattern emerged: each environment had different types of configuration issues, but all were related to environment-specific setup problems.",
+        "new_situation": "You are setting up a new deployment pipeline for a different project. What systematic approach would you implement to prevent similar deployment failures?",
+        "expected_learning_patterns": [
+          "Environment-specific issues require environment-specific validation",
+          "Configuration validation should be automated and comprehensive",
+          "Database migration validation should be part of deployment pipeline",
+          "Dependency management should be consistent across environments",
+          "Pre-deployment validation checks should be implemented for each environment type"
+        ],
+        "complexity": "medium"
+      },
+      {
+        "id": "ml_003",
+        "learning_scenario": "You have been implementing monitoring solutions for different types of applications. Web application monitoring focused on response times and error rates. Database monitoring focused on query performance and connection pools. Message queue monitoring focused on queue depth and processing rates. Pattern emerged: each application type required different key metrics, but all benefited from proactive alerting and trend analysis.",
+        "new_situation": "You need to implement monitoring for a new microservices architecture with 15 different services. How would you approach this systematically?",
+        "expected_learning_patterns": [
+          "Different service types require different monitoring approaches",
+          "Key metrics should be tailored to service function and technology",
+          "Proactive alerting prevents issues better than reactive monitoring",
+          "Trend analysis helps identify patterns before they become problems",
+          "Consistent monitoring framework across services enables better correlation"
+        ],
+        "complexity": "high"
+      }
+    ],
+    "evaluation_criteria": {
+      "pattern_recognition": {
+        "description": "How well patterns are identified and extracted",
+        "weight": 0.4
+      },
+      "knowledge_transfer": {
+        "description": "How effectively learning is applied to new situation",
+        "weight": 0.3
+      },
+      "systematic_approach": {
+        "description": "Quality of systematic methodology developed",
+        "weight": 0.2
+      },
+      "adaptation_capability": {
+        "description": "Ability to adapt approach based on new context",
+        "weight": 0.1
+      }
+    }
+  }
+}

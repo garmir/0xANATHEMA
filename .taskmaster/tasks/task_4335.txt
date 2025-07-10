@@ -1,0 +1,19 @@
+# Task ID: 4335
+# Title: Implement Retrieval-Augmented Generation Integration
+```mermaid
+graph TD
+    A[Workflow Request] --> B[Knowled (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Retrieval-Augmented Generation Integration
+```mermaid
+graph TD
+    A[Workflow Request] --> B[Knowledge Retrieval]
+    B --> C[Context Enhancement]
+   
+# Details:
+Converted from todo: .taskmaster/reports/recursive-improvement-framework.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,17 @@
+# Task ID: 2092
+# Title: Claude Code Integration
+- Automatic prompt generation with research context
+- Structured implementat
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Claude Code Integration
+- Automatic prompt generation with research context
+- Structured implementation guidance
+- Error handling and retry logic
+- Su
+# Details:
+Converted from todo: .taskmaster/README-AUTONOMOUS-WORKFLOW.md
+
+# Test Strategy:
+Validate completion of: action-item item

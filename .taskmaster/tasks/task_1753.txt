@@ -1,0 +1,11 @@
+# Task ID: 1753
+# Title: Implement Run `task-master next` to get the next task (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Run `task-master next` to get the next task
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

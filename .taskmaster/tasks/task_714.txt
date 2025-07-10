@@ -1,0 +1,15 @@
+# Task ID: 714
+# Title: Implement handle the optional third argument for __pow__?
+    __pow__, __rpow__, __ipow__ = _numeric_methods(u (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: handle the optional third argument for __pow__?
+    __pow__, __rpow__, __ipow__ = _numeric_methods(um.power, 'pow')
+    __lshift__, __rlshift__, __ilshift__ = _numeric_methods(
+        um.left_shift, 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/lib/mixins.py
+
+# Test Strategy:
+Validate completion of: code-todo item

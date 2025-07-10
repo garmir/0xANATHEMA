@@ -1,0 +1,17 @@
+# Task ID: 3286
+# Title: Implement **Step 5: Rollback Mechanism**
+**Action**: Handle failures with automatic re-breakdown
+**Atomic Comp (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Step 5: Rollback Mechanism**
+**Action**: Handle failures with automatic re-breakdown
+**Atomic Components**:
+- Detect failure/stall
+- Re-analyze fail
+# Details:
+Converted from todo: .taskmaster/workflow-rules/recursive-breakdown-rule.md
+
+# Test Strategy:
+Validate completion of: action-item item

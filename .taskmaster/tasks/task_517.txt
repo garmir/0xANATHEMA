@@ -1,0 +1,18 @@
+# Task ID: 517
+# Title: Implement Use a symmetric indefinite factorization
+    #       to solve the system twice as fast (because
+     (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Use a symmetric indefinite factorization
+    #       to solve the system twice as fast (because
+    #       of the symmetry).
+    lu = linalg.splu(kkt_matrix)
+    kkt_sol = lu.solve(kkt_vec)
+    x = k
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/optimize/_trustregion_constr/qp_subproblem.py
+
+# Test Strategy:
+Validate completion of: code-todo item

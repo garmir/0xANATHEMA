@@ -1,0 +1,50 @@
+{
+  "config": {
+    "enhancement_threshold": 0.6,
+    "auto_apply_threshold": 0.9,
+    "learning_rate": 0.1,
+    "feedback_weight": 0.7,
+    "recursive_improvement_enabled": true,
+    "max_suggestions_per_todo": 3
+  },
+  "enhancement_strategies": {
+    "clarity_improvement": {
+      "weight": 1.0,
+      "success_rate": 0.8,
+      "patterns": []
+    },
+    "task_decomposition": {
+      "weight": 1.0,
+      "success_rate": 0.75,
+      "patterns": []
+    },
+    "dependency_addition": {
+      "weight": 1.0,
+      "success_rate": 0.9,
+      "patterns": []
+    },
+    "priority_adjustment": {
+      "weight": 1.0,
+      "success_rate": 0.7,
+      "patterns": []
+    },
+    "duplicate_resolution": {
+      "weight": 1.0,
+      "success_rate": 0.95,
+      "patterns": []
+    },
+    "workflow_optimization": {
+      "weight": 1.0,
+      "success_rate": 0.6,
+      "patterns": []
+    },
+    "context_enrichment": {
+      "weight": 1.0,
+      "success_rate": 0.8,
+      "patterns": []
+    }
+  },
+  "enhancement_history": [],
+  "performance_metrics": {},
+  "timestamp": "2025-07-10T21:17:35.493628"
+}

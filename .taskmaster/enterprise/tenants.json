@@ -1,0 +1,38 @@
+[
+  {
+    "tenant_id": "tenant_cf7490df",
+    "name": "Task Master System",
+    "created_at": "2025-07-10T19:36:39.808156",
+    "owner_user_id": "user_e570fb85",
+    "subscription_plan": "enterprise",
+    "security_level": "enterprise",
+    "settings": {
+      "timezone": "UTC",
+      "date_format": "YYYY-MM-DD",
+      "default_project_visibility": "private",
+      "audit_logging_enabled": true,
+      "data_retention_days": 2555
+    },
+    "is_active": true,
+    "user_limit": 1000,
+    "project_limit": 500
+  },
+  {
+    "tenant_id": "tenant_9dd82033",
+    "name": "Acme Corporation",
+    "created_at": "2025-07-10T19:36:39.809677",
+    "owner_user_id": "user_4f6a0aad",
+    "subscription_plan": "enterprise",
+    "security_level": "enterprise",
+    "settings": {
+      "timezone": "UTC",
+      "date_format": "YYYY-MM-DD",
+      "default_project_visibility": "private",
+      "audit_logging_enabled": true,
+      "data_retention_days": 2555
+    },
+    "is_active": true,
+    "user_limit": 1000,
+    "project_limit": 500
+  }
+]

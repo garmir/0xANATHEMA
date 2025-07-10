@@ -1,0 +1,11 @@
+# Task ID: 2194
+# Title: Implement Recommended Local Stack with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Recommended Local Stack
+# Details:
+Converted from todo: .taskmaster/research/migration-summary.md
+
+# Test Strategy:
+Validate completion of: action-item item

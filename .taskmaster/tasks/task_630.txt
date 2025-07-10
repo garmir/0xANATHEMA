@@ -1,0 +1,15 @@
+# Task ID: 630
+# Title: Implement (1.8): check that `keep_empty_features=False` drop the
+# empty features due to the behaviour change. (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8): check that `keep_empty_features=False` drop the
+# empty features due to the behaviour change.
+def test_imputation_constant_integer():
+    # Test imputation using the constant strategy on intege
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/impute/tests/test_impute.py
+
+# Test Strategy:
+Validate completion of: code-todo item

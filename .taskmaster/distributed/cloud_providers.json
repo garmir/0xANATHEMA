@@ -1,0 +1,68 @@
+{
+  "aws_us-east-1": {
+    "provider": "aws",
+    "region": "us-east-1",
+    "instance_type": "t3.medium",
+    "max_concurrent_tasks": 5,
+    "cost_per_hour": 0.0416,
+    "performance_score": 0.85,
+    "availability_zones": [
+      "us-east-1a",
+      "us-east-1b",
+      "us-east-1c"
+    ],
+    "is_active": true
+  },
+  "gcp_us-central1": {
+    "provider": "gcp",
+    "region": "us-central1",
+    "instance_type": "e2-standard-2",
+    "max_concurrent_tasks": 4,
+    "cost_per_hour": 0.0335,
+    "performance_score": 0.8,
+    "availability_zones": [
+      "us-central1-a",
+      "us-central1-b",
+      "us-central1-c"
+    ],
+    "is_active": true
+  },
+  "azure_eastus": {
+    "provider": "azure",
+    "region": "eastus",
+    "instance_type": "Standard_B2s",
+    "max_concurrent_tasks": 4,
+    "cost_per_hour": 0.0408,
+    "performance_score": 0.82,
+    "availability_zones": [
+      "eastus-1",
+      "eastus-2",
+      "eastus-3"
+    ],
+    "is_active": true
+  },
+  "digitalocean_nyc1": {
+    "provider": "digitalocean",
+    "region": "nyc1",
+    "instance_type": "s-2vcpu-4gb",
+    "max_concurrent_tasks": 3,
+    "cost_per_hour": 0.024,
+    "performance_score": 0.75,
+    "availability_zones": [
+      "nyc1"
+    ],
+    "is_active": true
+  },
+  "local_local": {
+    "provider": "local",
+    "region": "local",
+    "instance_type": "local-machine",
+    "max_concurrent_tasks": 2,
+    "cost_per_hour": 0.0,
+    "performance_score": 0.9,
+    "availability_zones": [
+      "local"
+    ],
+    "is_active": true
+  }
+}

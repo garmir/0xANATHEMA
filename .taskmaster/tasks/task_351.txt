@@ -1,0 +1,18 @@
+# Task ID: 351
+# Title: Implement avoid special-casing
+            expected = expected.astype("float64")
+        elif getattr(data.dty (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: avoid special-casing
+            expected = expected.astype("float64")
+        elif getattr(data.dtype, "storage", "") == "pyarrow" or isinstance(
+            data.dtype, pd.ArrowDtype
+        ):
+    
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/extension/base/methods.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,17 @@
+# Task ID: 184
+# Title: Implement (infer_string)
+    # this particular combination of events is broken on 2.3
+    # would require cher (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (infer_string)
+    # this particular combination of events is broken on 2.3
+    # would require cherry picking #58483, which in turn requires #57481
+    # which introduce many behavioral changes
+    i
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/strings/test_find_replace.py
+
+# Test Strategy:
+Validate completion of: code-todo item

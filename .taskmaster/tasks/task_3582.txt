@@ -1,0 +1,11 @@
+# Task ID: 3582
+# Title: Implement **Other API providers** - Various models in rotation (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Other API providers** - Various models in rotation
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

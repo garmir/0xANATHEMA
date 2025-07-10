@@ -1,0 +1,17 @@
+# Task ID: 873
+# Title: Implement support other Python syntax like $foo['bar']
+            (r'(\$)([a-zA-Z_][\w.]*\w)',
+             b (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: support other Python syntax like $foo['bar']
+            (r'(\$)([a-zA-Z_][\w.]*\w)',
+             bygroups(Comment.Preproc, using(CheetahPythonLexer))),
+            (r'(?s)(\$\{!?)(.*?)(\})',
+       
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/templates.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,15 @@
+# Task ID: 451
+# Title: Implement #  figure out warning situation
+#  address https://github.com/scipy/scipy/pull/18650#discussion_r123 (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: #  figure out warning situation
+#  address https://github.com/scipy/scipy/pull/18650#discussion_r1233032521
+#  without `minweight`, we are also suppressing infinities within the interval.
+#    Is that
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/integrate/_tanhsinh.py
+
+# Test Strategy:
+Validate completion of: code-todo item

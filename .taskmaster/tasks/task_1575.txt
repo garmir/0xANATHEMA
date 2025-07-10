@@ -1,0 +1,11 @@
+# Task ID: 1575
+# Title: Implement **Fallback mode**: System gracefully degrades without external dependencies (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Fallback mode**: System gracefully degrades without external dependencies
+# Details:
+Converted from todo: privacy_compliant_note.md
+
+# Test Strategy:
+Validate completion of: action-item item

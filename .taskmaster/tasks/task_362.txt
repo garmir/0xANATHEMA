@@ -1,0 +1,21 @@
+# Task ID: 362
+# Title: Implement (__array_function__): could make np.diff return a Series
+        #  matching ser.diff()
+
+        ser
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (__array_function__): could make np.diff return a Series
+        #  matching ser.diff()
+
+        ser = Series(np.arange(5))
+
+        res = np.diff(ser)
+        expected = np.array([1, 1, 1, 1])
+      
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/series/methods/test_diff.py
+
+# Test Strategy:
+Validate completion of: code-todo item

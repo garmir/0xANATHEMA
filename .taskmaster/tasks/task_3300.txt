@@ -1,0 +1,16 @@
+# Task ID: 3300
+# Title: Implement **Long-term Success**:
+- ✅ Workflow rule documented and accessible
+- ✅ Atomic breakdown reduces prom (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Long-term Success**:
+- ✅ Workflow rule documented and accessible
+- ✅ Atomic breakdown reduces prompt complexity
+- ✅ Failure recovery through re-brea
+# Details:
+Converted from todo: .taskmaster/workflow-rules/recursive-breakdown-rule.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,22 @@
+# Task ID: 523
+# Title: Implement check ntuple fields
+
+    def cpu_percent(self, ret, info):
+        assert isinstance(ret, float)
+    (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: check ntuple fields
+
+    def cpu_percent(self, ret, info):
+        assert isinstance(ret, float)
+        assert 0.0 <= ret <= 100.0, ret
+
+    def cpu_num(self, ret, info):
+        assert isinstance(re
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/psutil/tests/test_process_all.py
+
+# Test Strategy:
+Validate completion of: code-todo item

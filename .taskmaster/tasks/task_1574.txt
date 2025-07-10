@@ -1,0 +1,11 @@
+# Task ID: 1574
+# Title: Implement **Local-only**: All URLs hardcoded to `localhost` only (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Local-only**: All URLs hardcoded to `localhost` only
+# Details:
+Converted from todo: privacy_compliant_note.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,16 @@
+# Task ID: 3312
+# Title: Implement Success Criteria
+- Complex tasks broken into atomic components
+- Each atomic task executable in 5-15 (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Success Criteria
+- Complex tasks broken into atomic components
+- Each atomic task executable in 5-15 minutes
+- Clear, simple execution prompts generat
+# Details:
+Converted from todo: .taskmaster/automation/HARD_CODED_WORKFLOW_RULE.md
+
+# Test Strategy:
+Validate completion of: action-item item

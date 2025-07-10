@@ -1,0 +1,11 @@
+# Task ID: 1803
+# Title: Implement Task File Sync Issues (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Task File Sync Issues
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,15 @@
+# Task ID: 1578
+# Title: Implement Identified "External" Calls
+All 15 detected instances are:
+1. **localhost URLs**: `http://localhost: (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Identified "External" Calls
+All 15 detected instances are:
+1. **localhost URLs**: `http://localhost:11434`, `http://localhost:8080`, `http://localhost
+# Details:
+Converted from todo: privacy_compliant_note.md
+
+# Test Strategy:
+Validate completion of: action-item item

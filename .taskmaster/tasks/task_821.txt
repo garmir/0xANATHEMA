@@ -1,0 +1,16 @@
+# Task ID: 821
+# Title: Implement Remove between the lines when `link` deprecation expires
+    # ------------------------------------- (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Remove between the lines when `link` deprecation expires
+    # -------------------------------------------------------------
+    if link is not None:
+        warnings.warn(
+            "Keyword argume
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/readwrite/json_graph/node_link.py
+
+# Test Strategy:
+Validate completion of: code-todo item

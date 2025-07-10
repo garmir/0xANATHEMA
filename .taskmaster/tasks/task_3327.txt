@@ -1,0 +1,14 @@
+# Task ID: 3327
+# Title: Implement 2. **Atomic Task Breakdown Engine**
+- **File**: `.taskmaster/scripts/atomic-task-breakdown-workflow. (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 2. **Atomic Task Breakdown Engine**
+- **File**: `.taskmaster/scripts/atomic-task-breakdown-workflow.py`
+- **Class**: `AtomicTaskBreakdownWorkflow` + `
+# Details:
+Converted from todo: .taskmaster/automation/atomic-breakdown-implementation-summary.md
+
+# Test Strategy:
+Validate completion of: action-item item

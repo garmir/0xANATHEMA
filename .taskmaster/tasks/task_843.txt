@@ -1,0 +1,19 @@
+# Task ID: 843
+# Title: Implement add a keyword-only option for keeping user/pass should?
+        return self._origin
+
+    @cached_prop (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: add a keyword-only option for keeping user/pass maybe?
+        return self._origin
+
+    @cached_property
+    def _val(self) -> SplitURLType:
+        return (self._scheme, self._netloc, self._path, sel
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/yarl/_url.py
+
+# Test Strategy:
+Validate completion of: code-todo item

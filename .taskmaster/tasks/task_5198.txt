@@ -1,0 +1,19 @@
+# Task ID: 5198
+# Title: Execution
+The complete system can be executed using:
+```bash
+claude-code --execute task-master-instr (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Execution
+The complete system can be executed using:
+```bash
+claude-code --execute task-master-instructions.md \
+           --working-dir "$(pwd)" \
+ 
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

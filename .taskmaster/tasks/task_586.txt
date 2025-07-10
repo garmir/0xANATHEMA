@@ -1,0 +1,19 @@
+# Task ID: 586
+# Title: test with intercept
+    # TODO: test with multiple responses
+    # basic testing
+    yield check_reg (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: test with intercept
+    # TODO: test with multiple responses
+    # basic testing
+    yield check_regressors_train
+    yield partial(check_regressors_train, readonly_memmap=True)
+    yield partial(chec
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/utils/estimator_checks.py
+
+# Test Strategy:
+Validate completion of: code-todo item

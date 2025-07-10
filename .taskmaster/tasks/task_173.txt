@@ -1,0 +1,17 @@
+# Task ID: 173
+# Title: Implement Check the following : is it really info['fmt'] ?
+        #  2023-09-15 this is reached in test_finde (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Check the following : is it really info['fmt'] ?
+        #  2023-09-15 this is reached in test_finder_monthly
+        info["fmt"][quarter_start] = True
+        info["min"] = True
+
+        info_fmt[qua
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/plotting/_matplotlib/converter.py
+
+# Test Strategy:
+Validate completion of: code-todo item

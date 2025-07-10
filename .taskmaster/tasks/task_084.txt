@@ -1,0 +1,11 @@
+# Task ID: 84
+# Title: Design Agent Roles and Interaction Protocols (Context: general task) (Context: general task)
+# Status: done
+# Dependencies: None
+# Priority: medium
+# Description: Design Agent Roles and Interaction Protocols
+# Details:
+Converted from todo: taskmaster
+
+# Test Strategy:
+Validate completion of: task item

@@ -1,0 +1,11 @@
+# Task ID: 1793
+# Title: Implement Task Fields with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Task Fields
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

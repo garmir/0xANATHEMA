@@ -1,0 +1,24 @@
+# Task ID: 470
+# Title: Implement # - Adjust to respect dtype
+
+
+def _xi_statistic(x, y, y_continuous):
+    # Compute xi correlation st (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: # - Adjust to respect dtype
+
+
+def _xi_statistic(x, y, y_continuous):
+    # Compute xi correlation statistic
+
+    # `axis=-1` is guaranteed by _axis_nan_policy decorator
+    n = x.shape[-1]
+
+    # "Rea
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/stats/_correlation.py
+
+# Test Strategy:
+Validate completion of: code-todo item

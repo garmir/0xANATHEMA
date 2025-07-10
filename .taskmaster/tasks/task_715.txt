@@ -1,0 +1,14 @@
+# Task ID: 715
+# Title: Implement This preserves the Python int, float, complex manually to get the
+    #       right `result_type` wi (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: This preserves the Python int, float, complex manually to get the
+    #       right `result_type` with NEP 50.  Most likely we will grow a better
+    #       way to spell this (and this can be replace
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/lib/_function_base_impl.py
+
+# Test Strategy:
+Validate completion of: code-todo item

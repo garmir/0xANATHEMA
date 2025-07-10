@@ -1,0 +1,11 @@
+# Task ID: 3600
+# Title: Implement **Performance Analytics** with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Performance Analytics**
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

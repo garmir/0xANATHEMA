@@ -1,0 +1,11 @@
+# Task ID: 2787
+# Title: Implement **Generate Individual PRDs**: Use the task-master research command with phase-specific parameters (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Generate Individual PRDs**: Use the task-master research command with phase-specific parameters
+# Details:
+Converted from todo: .taskmaster/docs/prd-generation-results.md
+
+# Test Strategy:
+Validate completion of: action-item item

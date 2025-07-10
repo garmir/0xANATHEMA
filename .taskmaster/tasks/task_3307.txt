@@ -1,0 +1,11 @@
+# Task ID: 3307
+# Title: Implement Use 'task-master next' to get atomic tasks for simple execution (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Use 'task-master next' to get atomic tasks for simple execution
+# Details:
+Converted from todo: .taskmaster/automation/HARD_CODED_WORKFLOW_RULE.md
+
+# Test Strategy:
+Validate completion of: action-item item

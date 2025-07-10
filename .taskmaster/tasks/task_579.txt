@@ -1,0 +1,15 @@
+# Task ID: 579
+# Title: Implement (1.8): Remove FutureWarning and add `np.nan` as a statistic
+            # for empty features to drop (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8): Remove FutureWarning and add `np.nan` as a statistic
+            # for empty features to drop them later.
+            if not self.keep_empty_features and any(
+                [all(missing_mask[
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/impute/_base.py
+
+# Test Strategy:
+Validate completion of: code-todo item

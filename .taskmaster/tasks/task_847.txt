@@ -1,0 +1,14 @@
+# Task ID: 847
+# Title: Implement refactor sequence validation to validate with either a list or a tuple
+    # schema, depending on th (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: refactor sequence validation to validate with either a list or a tuple
+    # schema, depending on the type of the value.
+    # Additionally, we should be able to remove one of either this validator or
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pydantic/_internal/_validators.py
+
+# Test Strategy:
+Validate completion of: code-todo item

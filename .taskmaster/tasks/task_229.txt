@@ -1,0 +1,23 @@
+# Task ID: 229
+# Title: Implement min, max *should* handle
+        # categorical (ordered) dtype
+
+        expected_columns = Index(
+   (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: min, max *should* handle
+        # categorical (ordered) dtype
+
+        expected_columns = Index(
+            [
+                "int",
+                "float",
+                "string",
+              
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/groupby/test_numeric_only.py
+
+# Test Strategy:
+Validate completion of: code-todo item

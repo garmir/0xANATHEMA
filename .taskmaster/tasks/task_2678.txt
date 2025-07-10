@@ -1,0 +1,11 @@
+# Task ID: 2678
+# Title: Implement Research Analysis (Perplexity AI) → (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Research Analysis (Perplexity AI) →
+# Details:
+Converted from todo: .taskmaster/docs/research-planning-workflow-map.md
+
+# Test Strategy:
+Validate completion of: action-item item

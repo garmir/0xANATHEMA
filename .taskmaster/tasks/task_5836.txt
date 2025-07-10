@@ -1,0 +1,11 @@
+# Task ID: 5836
+# Title: Build multi-channel interface adapters (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Build multi-channel interface adapters
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/level-2/interface-layer/conversational-ai.md
+
+# Test Strategy:
+Validate completion of: action-item item

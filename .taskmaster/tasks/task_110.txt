@@ -1,0 +1,17 @@
+# Task ID: 110
+# Title: Implement Explore the choice of using bincount + add.at as it seems sub optimal
+        # from a performance-w (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: done
+# Dependencies: None
+# Priority: low
+# Description: Explore the choice of using bincount + add.at as it seems sub optimal
+        # from a performance-wise
+        cnt = np.bincount(y)
+        np.add.at(means, y, X)
+        means /= cnt[:, None]
+    re
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/discriminant_analysis.py
+
+# Test Strategy:
+Validate completion of: code-todo item

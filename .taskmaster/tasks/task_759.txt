@@ -1,0 +1,16 @@
+# Task ID: 759
+# Title: consider lazy-loading the including parser/lexer?
+        raise FeatureLibError(
+            "Buildi
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: consider lazy-loading the including parser/lexer?
+        raise FeatureLibError(
+            "Building an include statement is not implemented yet. "
+            "Instead, use Parser(..., followInclud
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/feaLib/ast.py
+
+# Test Strategy:
+Validate completion of: code-todo item

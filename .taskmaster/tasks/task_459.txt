@@ -1,0 +1,20 @@
+# Task ID: 459
+# Title: Implement infer shape here
+                raise ValueError('need to infer shape')
+            else:
+          (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: infer shape here
+                raise ValueError('need to infer shape')
+            else:
+                self._shape = check_shape(shape)
+
+        if dtype is not None:
+            self.data = self.
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/sparse/_bsr.py
+
+# Test Strategy:
+Validate completion of: code-todo item

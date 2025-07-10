@@ -1,0 +1,14 @@
+# Task ID: 3617
+# Title: Implement Current Components Requiring Migration
+1. **Recursive PRD Processor** - Document parsing and task ge (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Current Components Requiring Migration
+1. **Recursive PRD Processor** - Document parsing and task generation
+2. **Research Workflow Loop** - Informati
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

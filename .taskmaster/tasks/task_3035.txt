@@ -1,0 +1,11 @@
+# Task ID: 3035
+# Title: Implement Quick Start with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Quick Start
+# Details:
+Converted from todo: .taskmaster/migration/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

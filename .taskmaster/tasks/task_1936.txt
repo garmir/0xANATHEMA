@@ -1,0 +1,16 @@
+# Task ID: 1936
+# Title: Implement Resource Requirements
+- **7B Models**: 8GB VRAM minimum, 16GB recommended
+- **13B Models**: 16GB VRA (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Resource Requirements
+- **7B Models**: 8GB VRAM minimum, 16GB recommended
+- **13B Models**: 16GB VRAM minimum, 24GB recommended  
+- **30B+ Models**: 2
+# Details:
+Converted from todo: LOCAL_LLM_MIGRATION_GUIDE.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,16 @@
+# Task ID: 5150
+# Title: Non-Functional Requirements
+- Each iteration must complete within 3 minutes
+- Convergence detection  (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Non-Functional Requirements
+- Each iteration must complete within 3 minutes
+- Convergence detection must be reliable and accurate
+- Evolutionary opera
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-4-evolutionary-optimization.md
+
+# Test Strategy:
+Validate completion of: action-item item

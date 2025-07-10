@@ -1,0 +1,22 @@
+# Task ID: 797
+# Title: Implement STILL NEED TO UPDATE ALL THE DOCUMENTATION!
+
+
+@nx._dispatchable(edge_attrs="weight")
+def cut_size(G, (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: STILL NEED TO UPDATE ALL THE DOCUMENTATION!
+
+
+@nx._dispatchable(edge_attrs="weight")
+def cut_size(G, S, T=None, weight=None):
+    """Returns the size of the cut between two sets of nodes.
+
+    A *cut*
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/cuts.py
+
+# Test Strategy:
+Validate completion of: code-todo item

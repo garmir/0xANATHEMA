@@ -1,0 +1,18 @@
+# Task ID: 96
+# Title: Implement : should add numpy style fancy slicing
+        if isinstance(key, slice):
+            trans = self.by (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: done
+# Dependencies: None
+# Priority: low
+# Description: : maybe add numpy style fancy slicing
+        if isinstance(key, slice):
+            trans = self.by_key()
+            return reduce(add, (_cycler(k, v[key]) for k, v in trans.items()))
+        else:
+
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/cycler/__init__.py
+
+# Test Strategy:
+Validate completion of: code-todo item

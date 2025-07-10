@@ -1,0 +1,27 @@
+# Task ID: 264
+# Title: Implement reshape
+
+
+def test_reorder_levels(idx):
+    # this blows up
+    with pytest.raises(IndexError, match (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: reshape
+
+
+def test_reorder_levels(idx):
+    # this blows up
+    with pytest.raises(IndexError, match="^Too many levels"):
+        idx.reorder_levels([2, 1, 0])
+
+
+def test_numpy_repeat():
+    reps = 2
+
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/multi/test_analytics.py
+
+# Test Strategy:
+Validate completion of: code-todo item

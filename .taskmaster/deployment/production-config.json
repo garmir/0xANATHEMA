@@ -1,0 +1,10 @@
+{
+  "maxParallelRunners": 10,
+  "recursionDepth": 5,
+  "validationMode": "strict",
+  "enableRecursive": true,
+  "enableTesting": true,
+  "timeout": 300000,
+  "enableMonitoring": true,
+  "enableAlerts": true
+}

@@ -1,0 +1,11 @@
+# Task ID: 1587
+# Title: Implement Method 2: Docker Deployment (Recommended for Production) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Method 2: Docker Deployment (Recommended for Production)
+# Details:
+Converted from todo: DEPLOYMENT.md
+
+# Test Strategy:
+Validate completion of: action-item item

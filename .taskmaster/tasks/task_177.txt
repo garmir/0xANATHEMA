@@ -1,0 +1,18 @@
+# Task ID: 177
+# Title: Implement should this be raising at all?
+            # https://github.com/pandas-dev/pandas/issues/56131
+      (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: should this be raising at all?
+            # https://github.com/pandas-dev/pandas/issues/56131
+            tm.assert_series_equal(result, expected)
+
+        data = ma.masked_all((3,), dtype=bool)
+    
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/series/test_constructors.py
+
+# Test Strategy:
+Validate completion of: code-todo item

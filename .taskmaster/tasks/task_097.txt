@@ -1,0 +1,19 @@
+# Task ID: 97
+# Title: Implement - determine why this statement can't be included in the following
+        #  if pa block
+        mat (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: done
+# Dependencies: None
+# Priority: low
+# Description: - determine why this statement can't be included in the following
+        #  if pa block
+        matchExpr = match_lookahead + matchExpr
+
+        if pa:
+            if isinstance(pa, (tuple, list)):
+ 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pyparsing/helpers.py
+
+# Test Strategy:
+Validate completion of: code-todo item

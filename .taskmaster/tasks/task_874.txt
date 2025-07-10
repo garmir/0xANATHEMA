@@ -1,0 +1,17 @@
+# Task ID: 874
+# Title: Implement broken, and prone to infinite loops.
+            # (r'(?=[^;{}][;}])', Name.Attribute, 'attr'),
+     (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: broken, and prone to infinite loops.
+            # (r'(?=[^;{}][;}])', Name.Attribute, 'attr'),
+            # (r'(?=[^;{}:]+:[^a-z])', Name.Attribute, 'attr'),
+            default('selector'),
+       
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/css.py
+
+# Test Strategy:
+Validate completion of: code-todo item

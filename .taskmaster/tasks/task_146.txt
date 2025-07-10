@@ -1,0 +1,17 @@
+# Task ID: 146
+# Title: Implement Check -numweeks for next year.
+                    i = no1wkst+numweeks*7
+                    if no1 (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Check -numweeks for next year.
+                    i = no1wkst+numweeks*7
+                    if no1wkst != firstwkst:
+                        i -= 7-firstwkst
+                    if i < self.yearlen:
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/dateutil/rrule.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,19 @@
+# Task ID: 125
+# Title: Implement actually read the postamble and finale?
+        # currently post_post just triggers closing the file (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: actually read the postamble and finale?
+        # currently post_post just triggers closing the file
+
+    @_dispatch(249)
+    def _post_post(self, _):
+        raise NotImplementedError
+
+    @_dispatch
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/matplotlib/dviread.py
+
+# Test Strategy:
+Validate completion of: code-todo item

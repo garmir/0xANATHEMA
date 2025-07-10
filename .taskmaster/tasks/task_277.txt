@@ -1,0 +1,17 @@
+# Task ID: 277
+# Title: Implement de-duplicate with test_tdi_round
+    def test_round(self):
+        t1 = timedelta_range("1 days", pe (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: de-duplicate with test_tdi_round
+    def test_round(self):
+        t1 = timedelta_range("1 days", periods=3, freq="1 min 2 s 3 us")
+        t2 = -1 * t1
+        t1a = timedelta_range("1 days", periods
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/timedeltas/test_scalar_compat.py
+
+# Test Strategy:
+Validate completion of: code-todo item

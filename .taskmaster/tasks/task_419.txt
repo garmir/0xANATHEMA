@@ -1,0 +1,14 @@
+# Task ID: 419
+# Title: Implement Inherit directly from BaseStringArrayMethods. Currently we inherit from
+# ObjectStringArrayMixin bec (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Inherit directly from BaseStringArrayMethods. Currently we inherit from
+# ObjectStringArrayMixin because we want to have the object-dtype based methods as
+# fallback for the ones that pyarrow doesn't 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/arrays/string_arrow.py
+
+# Test Strategy:
+Validate completion of: code-todo item

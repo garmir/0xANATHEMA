@@ -1,0 +1,20 @@
+# Task ID: 5788
+# Title: 2. Intent Training Data
+```sql
+CREATE TABLE intent_training_data (
+  id UUID PRIMARY KEY,
+  text_inp (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 2. Intent Training Data
+```sql
+CREATE TABLE intent_training_data (
+  id UUID PRIMARY KEY,
+  text_input TEXT NOT NULL,
+  intent_label VARCHAR(100) NOT 
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/level-3/implementation/conversational-ai-impl.md
+
+# Test Strategy:
+Validate completion of: action-item item

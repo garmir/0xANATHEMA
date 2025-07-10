@@ -1,0 +1,18 @@
+# Task ID: 3499
+# Title: Implement Model Selection Logic
+```python
+def select_model(task_type: str, complexity: str) -> str:
+    if tas (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Model Selection Logic
+```python
+def select_model(task_type: str, complexity: str) -> str:
+    if task_type == "code_generation":
+        return "codel
+# Details:
+Converted from todo: .taskmaster/migration/llm_evaluation_report.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,16 @@
+# Task ID: 757
+# Title: Implement (Python 3.10): use TypeGuard
+                if hasattr(subset, "userMinimum"):
+                     (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (Python 3.10): use TypeGuard
+                if hasattr(subset, "userMinimum"):
+                    subset = cast(RangeAxisSubsetDescriptor, subset)
+                    if subset.userMinimum != -math.
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/designspaceLib/__init__.py
+
+# Test Strategy:
+Validate completion of: code-todo item

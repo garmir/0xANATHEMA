@@ -1,0 +1,18 @@
+# Task ID: 783
+# Title: Implement allow pos to be None and use a nice TikZ default
+    if not isinstance(pos, dict):
+        pos = nx. (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: allow pos to be None and use a nice TikZ default
+    if not isinstance(pos, dict):
+        pos = nx.get_node_attributes(G, pos)
+    if not pos:
+        # circular layout with radius 2
+        pos = {n
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/drawing/nx_latex.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,17 @@
+# Task ID: 1829
+# Title: Implement **Workflow Monitoring Dashboard**
+- **Script:** `.github/scripts/workflow-monitor.py`
+- **Features:* (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Workflow Monitoring Dashboard**
+- **Script:** `.github/scripts/workflow-monitor.py`
+- **Features:**
+  - Real-time workflow monitoring
+  - Performanc
+# Details:
+Converted from todo: AUTOMATION_DEPLOYMENT_SUMMARY.md
+
+# Test Strategy:
+Validate completion of: action-item item

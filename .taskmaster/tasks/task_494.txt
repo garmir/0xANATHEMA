@@ -1,0 +1,15 @@
+# Task ID: 494
+# Title: Is this test actually valuable? The behavior it's testing shouldn't be
+# relied upon by users except (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Is this test actually valuable? The behavior it's testing shouldn't be
+# relied upon by users except for overwrite_x = False
+class TestOverwrite:
+    """Check input overwrite behavior of the FFT funct
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/fft/_pocketfft/tests/test_basic.py
+
+# Test Strategy:
+Validate completion of: code-todo item

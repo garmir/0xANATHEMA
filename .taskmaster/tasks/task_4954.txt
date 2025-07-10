@@ -1,0 +1,18 @@
+# Task ID: 4954
+# Title: Deliverables
+- Functional recursive PRD processor script
+- Hierarchical PRD directory structure
+- At (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Deliverables
+- Functional recursive PRD processor script
+- Hierarchical PRD directory structure
+- Atomic task identification system
+- Comprehensive te
+# Details:
+Converted from todo: .taskmaster/docs/prds/level-0/prd-2-recursive-generation.md
+
+# Test Strategy:
+Validate completion of: action-item item

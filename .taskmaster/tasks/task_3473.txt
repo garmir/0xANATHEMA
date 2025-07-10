@@ -1,0 +1,18 @@
+# Task ID: 3473
+# Title: Implement DeepSeek Coder 6.7B
+- **Model Size:** 6.7B parameters
+- **Context Length:** 16,384 tokens
+- **Memory (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: DeepSeek Coder 6.7B
+- **Model Size:** 6.7B parameters
+- **Context Length:** 16,384 tokens
+- **Memory Requirement:** 5.0 GB
+- **License:** DeepSeek Lic
+# Details:
+Converted from todo: .taskmaster/migration/llm_evaluation_report.md
+
+# Test Strategy:
+Validate completion of: action-item item

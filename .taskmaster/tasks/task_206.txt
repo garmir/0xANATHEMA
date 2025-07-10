@@ -1,0 +1,16 @@
+# Task ID: 206
+# Title: Implement (CoW-warn) because of the usage of *args, this doesn't warn on Py3.11+
+    if using_copy_on_write:
+  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (CoW-warn) because of the usage of *args, this doesn't warn on Py3.11+
+    if using_copy_on_write:
+        with tm.raises_chained_assignment_error(not PY311):
+            getattr(df["a"], func)(*args,
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/copy_view/test_chained_assignment_deprecation.py
+
+# Test Strategy:
+Validate completion of: code-todo item

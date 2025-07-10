@@ -1,0 +1,18 @@
+# Task ID: 93
+# Title: Implement Need to care about 32-bit PPC for ppc64 through 10.2?
+        if version > (10, 5) or version < (10, (Decomposed into 3 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: done
+# Dependencies: None
+# Priority: low
+# Description: Need to care about 32-bit PPC for ppc64 through 10.2?
+        if version > (10, 5) or version < (10, 4):
+            return []
+        formats.append("fat64")
+
+    elif cpu_arch == "ppc":
+        if v
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pip/_vendor/packaging/tags.py
+
+# Test Strategy:
+Validate completion of: code-todo item

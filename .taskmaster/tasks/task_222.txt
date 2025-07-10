@@ -1,0 +1,17 @@
+# Task ID: 222
+# Title: Implement should prob allow a str of Interval work as well
+        # IOW '(0, 5]'
+        result = g.get_group (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: should prob allow a str of Interval work as well
+        # IOW '(0, 5]'
+        result = g.get_group(pd.Interval(0, 5))
+        expected = DataFrame([3, 1], index=[0, 1])
+        tm.assert_frame_equal
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/groupby/test_grouping.py
+
+# Test Strategy:
+Validate completion of: code-todo item

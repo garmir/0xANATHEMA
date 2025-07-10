@@ -1,0 +1,11 @@
+# Task ID: 2171
+# Title: Continue autonomous loop until all tasks complete (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Continue autonomous loop until all tasks complete
+# Details:
+Converted from todo: .taskmaster/AUTONOMOUS-WORKFLOW-IMPLEMENTATION.md
+
+# Test Strategy:
+Validate completion of: action-item item

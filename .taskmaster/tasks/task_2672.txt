@@ -1,0 +1,17 @@
+# Task ID: 2672
+# Title: Implement Exponential-Evolutionary Theory
+- Apply exponential improvement curves
+- Use adaptive parameter adju (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Exponential-Evolutionary Theory
+- Apply exponential improvement curves
+- Use adaptive parameter adjustment
+- Implement elitist selection strategies
+- 
+# Details:
+Converted from todo: .taskmaster/docs/prd-evolution.md
+
+# Test Strategy:
+Validate completion of: action-item item

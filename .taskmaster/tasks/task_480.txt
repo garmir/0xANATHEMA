@@ -1,0 +1,17 @@
+# Task ID: 480
+# Title: Implement add more distributions
+@pytest.mark.fail_slow(5)
+@pytest.mark.parametrize(("distname, args"), [("bet (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: add more distributions
+@pytest.mark.fail_slow(5)
+@pytest.mark.parametrize(("distname, args"), [("beta", (0.11, 0.11))])
+def test_error_extreme_params(distname, args):
+    # take extreme parameters whe
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/stats/tests/test_fast_gen_inversion.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,11 @@
+# Task ID: 3870
+# Title: Implement **Health-Based Optimization**: Automatic system tuning based on performance scores (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Health-Based Optimization**: Automatic system tuning based on performance scores
+# Details:
+Converted from todo: .taskmaster/reports/github-actions-impact-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

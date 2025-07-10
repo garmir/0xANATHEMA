@@ -1,0 +1,11 @@
+# Task ID: 2995
+# Title: Implement Debugging Commands with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Debugging Commands
+# Details:
+Converted from todo: .taskmaster/examples/integration-guide.md
+
+# Test Strategy:
+Validate completion of: action-item item

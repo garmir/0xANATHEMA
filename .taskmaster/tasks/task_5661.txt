@@ -1,0 +1,16 @@
+# Task ID: 5661
+# Title: Non-Functional Requirements
+- Analysis must complete within 3 minutes for 100+ tasks
+- Dependency gr (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Non-Functional Requirements
+- Analysis must complete within 3 minutes for 100+ tasks
+- Dependency graph must be deterministic and reproducible
+- Memor
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-3-optimization/prd-3.1-dependency-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

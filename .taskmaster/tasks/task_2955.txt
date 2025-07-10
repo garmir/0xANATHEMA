@@ -1,0 +1,13 @@
+# Task ID: 2955
+# Title: Integration with Design Systems
+```bash (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Integration with Design Systems
+```bash
+# Details:
+Converted from todo: .taskmaster/examples/web-app-integration.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,20 @@
+# Task ID: 734
+# Title: Test masked_object, masked_equal, ...
+
+    def test_masked_values(self):
+        res = masked_values (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Test masked_object, masked_equal, ...
+
+    def test_masked_values(self):
+        res = masked_values(np.array([-32768.0]), np.int16(-32768))
+        assert_equal(res.mask, [True])
+
+        res = maske
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/ma/tests/test_core.py
+
+# Test Strategy:
+Validate completion of: code-todo item

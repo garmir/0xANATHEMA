@@ -1,0 +1,15 @@
+# Task ID: 3402
+# Title: Implement Manual Triggers
+- **Claude Command**: `/auto-research` - Manually trigger research analysis
+- **Dire (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Manual Triggers
+- **Claude Command**: `/auto-research` - Manually trigger research analysis
+- **Direct Execution**: `.claude/hooks/session-start.sh` -
+# Details:
+Converted from todo: .taskmaster/automation/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

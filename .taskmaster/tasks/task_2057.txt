@@ -1,0 +1,11 @@
+# Task ID: 2057
+# Title: Implement 24. Generate Task Files (`generate`) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 24. Generate Task Files (`generate`)
+# Details:
+Converted from todo: .trae/rules/taskmaster.md
+
+# Test Strategy:
+Validate completion of: action-item item

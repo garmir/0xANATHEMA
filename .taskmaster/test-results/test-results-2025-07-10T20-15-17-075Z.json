@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "testStartTime": "2025-07-10T20:15:17.042Z",
+    "testMode": "integration",
+    "testOptions": {
+      "testMode": "integration",
+      "maxParallelRunners": 3,
+      "recursionDepth": 2,
+      "validationMode": "moderate",
+      "enableCleanup": true
+    },
+    "testEndTime": "2025-07-10T20:15:17.064Z",
+    "totalExecutionTime": 16
+  },
+  "testSuites": [
+    {
+      "name": "ExtractionPipeline",
+      "tests": [
+        {
+          "name": "full_extraction_pipeline",
+          "description": "Test complete extraction pipeline",
+          "startTime": "2025-07-10T20:15:17.047Z",
+          "status": "passed",
+          "success": true,
+          "executionTime": 7,
+          "endTime": "2025-07-10T20:15:17.054Z"
+        }
+      ],
+      "summary": {
+        "totalTests": 1,
+        "passedTests": 1,
+        "failedTests": 0,
+        "executionTime": 0
+      },
+      "startTime": "2025-07-10T20:15:17.047Z",
+      "executionTime": 7,
+      "endTime": "2025-07-10T20:15:17.054Z"
+    },
+    {
+      "name": "ProcessingPipeline",
+      "tests": [
+        {
+          "name": "full_processing_pipeline",
+          "description": "Test complete processing pipeline",
+          "startTime": "2025-07-10T20:15:17.054Z",
+          "status": "passed",
+          "success": true,
+          "executionTime": 5,
+          "endTime": "2025-07-10T20:15:17.059Z"
+        }
+      ],
+      "summary": {
+        "totalTests": 1,
+        "passedTests": 1,
+        "failedTests": 0,
+        "executionTime": 0
+      },
+      "startTime": "2025-07-10T20:15:17.054Z",
+      "executionTime": 5,
+      "endTime": "2025-07-10T20:15:17.059Z"
+    },
+    {
+      "name": "ImprovementPipeline",
+      "tests": [
+        {
+          "name": "improvement_generation_pipeline",
+          "description": "Test improvement generation and execution pipeline",
+          "startTime": "2025-07-10T20:15:17.060Z",
+          "status": "passed",
+          "success": true,
+          "executionTime": 1,
+          "endTime": "2025-07-10T20:15:17.061Z"
+        }
+      ],
+      "summary": {
+        "totalTests": 1,
+        "passedTests": 1,
+        "failedTests": 0,
+        "executionTime": 0
+      },
+      "startTime": "2025-07-10T20:15:17.059Z",
+      "executionTime": 2,
+      "endTime": "2025-07-10T20:15:17.061Z"
+    },
+    {
+      "name": "ConsolidationPipeline",
+      "tests": [
+        {
+          "name": "results_consolidation_pipeline",
+          "description": "Test complete results consolidation pipeline",
+          "startTime": "2025-07-10T20:15:17.062Z",
+          "status": "passed",
+          "success": true,
+          "executionTime": 2,
+          "endTime": "2025-07-10T20:15:17.064Z"
+        }
+      ],
+      "summary": {
+        "totalTests": 1,
+        "passedTests": 1,
+        "failedTests": 0,
+        "executionTime": 0
+      },
+      "startTime": "2025-07-10T20:15:17.062Z",
+      "executionTime": 2,
+      "endTime": "2025-07-10T20:15:17.064Z"
+    }
+  ],
+  "summary": {
+    "totalTests": 4,
+    "passedTests": 4,
+    "failedTests": 0,
+    "skippedTests": 0,
+    "totalExecutionTime": 16,
+    "successRate": 1
+  },
+  "errors": [],
+  "warnings": [],
+  "recommendations": []
+}

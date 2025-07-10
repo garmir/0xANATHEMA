@@ -1,0 +1,18 @@
+# Task ID: 255
+# Title: Implement belongs in series arithmetic tests?
+        s1 = pd.Series(2, index=first)
+        s2 = pd.Series(3, (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: belongs in series arithmetic tests?
+        s1 = pd.Series(2, index=first)
+        s2 = pd.Series(3, index=second[:-1])
+        # See GH#13365
+        s3 = s1 * s2
+        assert s3.index.name == "mar
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/test_common.py
+
+# Test Strategy:
+Validate completion of: code-todo item

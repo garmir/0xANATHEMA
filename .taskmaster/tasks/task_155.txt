@@ -1,0 +1,18 @@
+# Task ID: 155
+# Title: Implement Decide if we care about having different examples for different
+        # kinds
+
+        if index is (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Decide if we care about having different examples for different
+        # kinds
+
+        if index is not None and columns is not None and labels is not None:
+            raise TypeError("Cannot specif
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/generic.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,17 @@
+# Task ID: 3092
+# Title: Implement Custom Slash Commands Best Practices
+```markdown
+<!-- .claude/commands/taskmaster-workflow.md -->
+Ex (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Custom Slash Commands Best Practices
+```markdown
+<!-- .claude/commands/taskmaster-workflow.md -->
+Execute complete task workflow: $ARGUMENTS
+# Details:
+Converted from todo: .taskmaster/templates/best-practices.md
+
+# Test Strategy:
+Validate completion of: action-item item

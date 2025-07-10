@@ -1,0 +1,19 @@
+# Task ID: 258
+# Title: Implement pin down desired dtype; do we want it to be commutative?
+    result = a.intersection(b)
+    assert r (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: pin down desired dtype; do we want it to be commutative?
+    result = a.intersection(b)
+    assert result.name == names[2]
+
+
+@pytest.mark.parametrize("values", [[1, 2, 2, 3], [3, 3]])
+def test_interse
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/test_setops.py
+
+# Test Strategy:
+Validate completion of: code-todo item

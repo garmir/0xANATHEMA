@@ -1,0 +1,15 @@
+# Task ID: 2722
+# Title: Implement Workflow Documentation Format
+- **Research Queries**: Comprehensive Perplexity AI analysis
+- **Imple (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Workflow Documentation Format
+- **Research Queries**: Comprehensive Perplexity AI analysis
+- **Implementation Status**: Detailed progress tracking wit
+# Details:
+Converted from todo: .taskmaster/docs/research-planning-workflow-map.md
+
+# Test Strategy:
+Validate completion of: action-item item

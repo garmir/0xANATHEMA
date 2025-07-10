@@ -1,0 +1,11 @@
+# Task ID: 917
+# Title: Implement Execute: task-master update-subtask with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Execute: task-master update-subtask
+# Details:
+Converted from todo: CLAUDE.md
+
+# Test Strategy:
+Validate completion of: documentation item

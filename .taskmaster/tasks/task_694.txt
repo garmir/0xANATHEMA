@@ -1,0 +1,18 @@
+# Task ID: 694
+# Title: Implement Check already installed candidate, and use it if the link and
+        # editable flag match.
+
+       (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Check already installed candidate, and use it if the link and
+        # editable flag match.
+
+        if link in self._build_failures:
+            # We already tried this candidate before, and it does
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pip/_internal/resolution/resolvelib/factory.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,21 @@
+# Task ID: 111
+# Title: Implement (1.8): Remove this attribute
+    _estimator_type = "classifier"
+
+    def __sklearn_tags__(self):
+    (Context: software_development task) (Context: software_development task)
+# Status: done
+# Dependencies: None
+# Priority: low
+# Description: (1.8): Remove this attribute
+    _estimator_type = "classifier"
+
+    def __sklearn_tags__(self):
+        tags = super().__sklearn_tags__()
+        tags.estimator_type = "classifier"
+        tags.class
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/base.py
+
+# Test Strategy:
+Validate completion of: code-todo item

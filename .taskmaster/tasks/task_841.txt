@@ -1,0 +1,15 @@
+# Task ID: 841
+# Title: Implement at some point, we could switch to an enum flag, so that multiple sources
+# can be combined. However,
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: at some point, we could switch to an enum flag, so that multiple sources
+# can be combined. However, is there a need for this?
+class AnnotationSource(IntEnum):
+    # TODO if/when https://peps.python.o
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/typing_inspection/introspection.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,18 @@
+# Task ID: 3558
+# Title: Implement Response Time Targets
+- **Simple tasks**: < 5 seconds
+- **Moderate tasks**: < 15 seconds
+- **Complex (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Response Time Targets
+- **Simple tasks**: < 5 seconds
+- **Moderate tasks**: < 15 seconds
+- **Complex tasks**: < 30 seconds
+- **Critical tasks**: < 60 
+# Details:
+Converted from todo: .taskmaster/migration/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

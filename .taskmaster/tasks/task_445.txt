@@ -1,0 +1,19 @@
+# Task ID: 445
+# Title: Implement add hessp (callable or FD) to ScalarFunction?
+    sf = _prepare_scalar_function(
+        fun, x0, ja (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: add hessp (callable or FD) to ScalarFunction?
+    sf = _prepare_scalar_function(
+        fun, x0, jac, args=args, epsilon=eps, hess=hess, workers=workers
+    )
+    f = sf.fun
+    fprime = sf.grad
+    
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/optimize/_optimize.py
+
+# Test Strategy:
+Validate completion of: code-todo item

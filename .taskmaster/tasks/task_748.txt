@@ -1,0 +1,22 @@
+# Task ID: 748
+# Title: Implement return vhAdvanceDeltasAndSupports, vOrigDeltasAndSupports
+
+
+def add_HVAR(font):
+    if "HVAR" in fon (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: return vhAdvanceDeltasAndSupports, vOrigDeltasAndSupports
+
+
+def add_HVAR(font):
+    if "HVAR" in font:
+        del font["HVAR"]
+    axisTags = [axis.axisTag for axis in font["fvar"].axes]
+    getAdvan
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/varLib/hvar.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,11 @@
+# Task ID: 2971
+# Title: Implement Follow project-specific setup guide (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Follow project-specific setup guide
+# Details:
+Converted from todo: .taskmaster/examples/integration-guide.md
+
+# Test Strategy:
+Validate completion of: action-item item

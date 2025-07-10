@@ -1,0 +1,11 @@
+# Task ID: 4063
+# Title: Implement **hardcoded_research_workflow.py** with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **hardcoded_research_workflow.py**
+# Details:
+Converted from todo: .taskmaster/reports/local-llm-migration-health-check.md
+
+# Test Strategy:
+Validate completion of: action-item item

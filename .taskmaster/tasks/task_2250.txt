@@ -1,0 +1,11 @@
+# Task ID: 2250
+# Title: Implement Open Source LLM Analysis (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Open Source LLM Analysis
+# Details:
+Converted from todo: .taskmaster/research/local-llm-survey-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

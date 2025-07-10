@@ -1,0 +1,18 @@
+# Task ID: 462
+# Title: Implement delete next 15 lines [combine with _eye()] once spmatrix removed
+    return _eye(m, n, k, dtype, for (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: delete next 15 lines [combine with _eye()] once spmatrix removed
+    return _eye(m, n, k, dtype, format)
+
+
+def _eye(m, n, k, dtype, format, as_sparray=True):
+    if as_sparray:
+        csr_sparse = cs
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/sparse/_construct.py
+
+# Test Strategy:
+Validate completion of: code-todo item

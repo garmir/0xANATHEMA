@@ -1,0 +1,16 @@
+# Task ID: 698
+# Title: Implement Optimize case when `where` is broadcast along a non-reduction
+        # axis and full sum is more ex (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Optimize case when `where` is broadcast along a non-reduction
+        # axis and full sum is more excessive than needed.
+
+        # guarded to protect circular imports
+        from numpy.lib._stride_t
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/_core/_methods.py
+
+# Test Strategy:
+Validate completion of: code-todo item

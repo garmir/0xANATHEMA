@@ -1,0 +1,20 @@
+# Task ID: 412
+# Title: Implement Preserve complex dtypes
+
+float_dtype_mapping: dict[np.dtype, Any] = {
+    np.dtype("int8"): np.float (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Preserve complex dtypes
+
+float_dtype_mapping: dict[np.dtype, Any] = {
+    np.dtype("int8"): np.float64,
+    np.dtype("int16"): np.float64,
+    np.dtype("int32"): np.float64,
+    np.dtype("int64"): np.
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/_numba/executor.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,17 @@
+# Task ID: 591
+# Title: Implement (1.9) remove UserList when the force_int_remainder_cols param
+    # of ColumnTransformer is removed
+ (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.9) remove UserList when the force_int_remainder_cols param
+    # of ColumnTransformer is removed
+    if isinstance(key, (list, tuple, UserList)):
+        unique_key = set(key)
+        key_type = {_
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/utils/_indexing.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,18 @@
+# Task ID: 867
+# Title: txt.com/'
+    aliases = ['implementtxt']
+    version_added = '2.0'
+    # *.todotxt is not a standard exte
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: txt.com/'
+    aliases = ['todotxt']
+    version_added = '2.0'
+    # *.todotxt is not a standard extension for Todo.txt files; including it
+    # makes testing easier, and also makes autodetecting file
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/textfmts.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,16 @@
+# Task ID: 4772
+# Title: Core Files
+- `.taskmaster/tasks/tasks.json` - Complete task database
+- `.taskmaster/optimization/tas (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Core Files
+- `.taskmaster/tasks/tasks.json` - Complete task database
+- `.taskmaster/optimization/task-tree.json` - Dependency graph
+- `.taskmaster/opt
+# Details:
+Converted from todo: .taskmaster/docs/active/task-queue.md
+
+# Test Strategy:
+Validate completion of: action-item item

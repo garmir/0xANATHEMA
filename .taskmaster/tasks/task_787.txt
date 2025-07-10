@@ -1,0 +1,14 @@
+# Task ID: 787
+# Title: Implement Rm csr_array wrapper when spdiags array creation becomes available
+    D = sp.sparse.csr_array(sp.sp (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Rm csr_array wrapper when spdiags array creation becomes available
+    D = sp.sparse.csr_array(sp.sparse.spdiags(A.sum(axis=1), 0, m, n, format="csr"))
+    # TODO: Rm csr_array wrapper when eye array 
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/linalg/bethehessianmatrix.py
+
+# Test Strategy:
+Validate completion of: code-todo item

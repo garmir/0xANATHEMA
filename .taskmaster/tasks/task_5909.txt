@@ -1,0 +1,11 @@
+# Task ID: 5909
+# Title: Implement Run task-master research for breakdown analysis (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Run task-master research for breakdown analysis
+# Details:
+Converted from todo: .claude/commands/stuck-prompt-resolve.md
+
+# Test Strategy:
+Validate completion of: action-item item

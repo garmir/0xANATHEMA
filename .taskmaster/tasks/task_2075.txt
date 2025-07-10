@@ -1,0 +1,11 @@
+# Task ID: 2075
+# Title: Implement **Research timeouts** with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Research timeouts**
+# Details:
+Converted from todo: .taskmaster/README-AUTONOMOUS-WORKFLOW.md
+
+# Test Strategy:
+Validate completion of: action-item item

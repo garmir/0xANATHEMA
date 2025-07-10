@@ -1,0 +1,17 @@
+# Task ID: 1943
+# Title: Implement Memory Issues
+- Reduce model size (7B instead of 13B)
+- Increase system swap space
+- Use model quant (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Memory Issues
+- Reduce model size (7B instead of 13B)
+- Increase system swap space
+- Use model quantization (4-bit, 8-bit)
+# Details:
+Converted from todo: LOCAL_LLM_MIGRATION_GUIDE.md
+
+# Test Strategy:
+Validate completion of: action-item item

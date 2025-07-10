@@ -1,0 +1,16 @@
+# Task ID: 665
+# Title: Implement (1.9): remove
+@pytest.mark.parametrize("sparse", [True, False])
+def test_fowlkes_mallows_sparse_depr (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.9): remove
+@pytest.mark.parametrize("sparse", [True, False])
+def test_fowlkes_mallows_sparse_deprecated(sparse):
+    """Check deprecation warning for 'sparse' parameter of fowlkes_mallows_score."""
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/metrics/cluster/tests/test_supervised.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,14 @@
+# Task ID: 854
+# Title: Implement This could be unified with `get_standard_typevars_map` if we stored the generic metadata
+    #   in 
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: This could be unified with `get_standard_typevars_map` if we stored the generic metadata
+    #   in the __origin__, __args__, and __parameters__ attributes of the model.
+    generic_metadata = cls.__p
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pydantic/_internal/_generics.py
+
+# Test Strategy:
+Validate completion of: code-todo item

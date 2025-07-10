@@ -1,0 +1,11 @@
+# Task ID: 1571
+# Title: Implement **LocalAI**: Uses OpenAI-compatible API at `localhost:8080` (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **LocalAI**: Uses OpenAI-compatible API at `localhost:8080`
+# Details:
+Converted from todo: privacy_compliant_note.md
+
+# Test Strategy:
+Validate completion of: action-item item

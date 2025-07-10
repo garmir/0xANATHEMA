@@ -1,0 +1,17 @@
+# Task ID: 5684
+# Title: Success Metrics
+- Correctly classifies 90%+ of test PRDs
+- Prevents infinite recursion in 100% of ca (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Success Metrics
+- Correctly classifies 90%+ of test PRDs
+- Prevents infinite recursion in 100% of cases
+- Analysis completes within 5 seconds per PRD
+
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-2-recursive/prd-2.3-atomic-detection.md
+
+# Test Strategy:
+Validate completion of: action-item item

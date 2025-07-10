@@ -1,0 +1,16 @@
+# Task ID: 2253
+# Title: Implement Qwen 2.5 72B
+- **Capabilities**: Mixture-of-experts, 1M token context, multilingual
+- **Strengths**: (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Qwen 2.5 72B
+- **Capabilities**: Mixture-of-experts, 1M token context, multilingual
+- **Strengths**:
+  - Extremely large context window for complex wo
+# Details:
+Converted from todo: .taskmaster/research/local-llm-survey-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

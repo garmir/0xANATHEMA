@@ -1,0 +1,15 @@
+# Task ID: 567
+# Title: Implement (1.9):  remove when deprecated `base_estimator` is removed
+@pytest.mark.parametrize("Estimator", [Cl (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.9):  remove when deprecated `base_estimator` is removed
+@pytest.mark.parametrize("Estimator", [ClassifierChain, RegressorChain])
+def test_base_estimator_deprecation(Estimator):
+    """Check that we
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/tests/test_multioutput.py
+
+# Test Strategy:
+Validate completion of: code-todo item

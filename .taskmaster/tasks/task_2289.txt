@@ -1,0 +1,16 @@
+# Task ID: 2289
+# Title: Implement GPTQ (4-bit)
+- **Memory Reduction**: 75% reduction in VRAM requirements
+- **Performance**: Good for  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: GPTQ (4-bit)
+- **Memory Reduction**: 75% reduction in VRAM requirements
+- **Performance**: Good for GPU inference
+- **Quality**: Minimal degradation f
+# Details:
+Converted from todo: .taskmaster/research/local-llm-survey-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

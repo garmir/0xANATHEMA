@@ -1,0 +1,19 @@
+# Task ID: 467
+# Title: Implement relax this to accept 3d arrays?
+        raise ValueError("`data` must be a 2d array.")
+
+    m, n = r (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: relax this to accept 3d arrays?
+        raise ValueError("`data` must be a 2d array.")
+
+    m, n = ranks.shape
+    if m < 2 or n < 3:
+        raise ValueError("Page's L is only appropriate for data wi
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/stats/_page_trend_test.py
+
+# Test Strategy:
+Validate completion of: code-todo item

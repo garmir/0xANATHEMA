@@ -1,0 +1,13 @@
+# Task ID: 2938
+# Title: Overview
+Build a modern React dashboard application with authentication, data visualization, and rea (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Overview
+Build a modern React dashboard application with authentication, data visualization, and real-time updates.
+# Details:
+Converted from todo: .taskmaster/examples/web-app-integration.md
+
+# Test Strategy:
+Validate completion of: action-item item

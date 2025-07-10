@@ -1,0 +1,11 @@
+# Task ID: 4072
+# Title: Implement **Model Download**: Large models require disk space (2-8GB per model) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Model Download**: Large models require disk space (2-8GB per model)
+# Details:
+Converted from todo: .taskmaster/reports/local-llm-migration-health-check.md
+
+# Test Strategy:
+Validate completion of: action-item item

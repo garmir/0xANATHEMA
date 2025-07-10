@@ -1,0 +1,20 @@
+# Task ID: 3383
+# Title: Implement File Structure
+```
+.claude/
+├── settings.json              # Claude Code configuration with hooks
+├─ (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: File Structure
+```
+.claude/
+├── settings.json              # Claude Code configuration with hooks
+├── commands/
+│   └── auto-research.md       # Manua
+# Details:
+Converted from todo: .taskmaster/automation/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

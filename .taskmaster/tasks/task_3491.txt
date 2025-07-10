@@ -1,0 +1,16 @@
+# Task ID: 3491
+# Title: Phase 2: Specialized Integration  
+- Add **DeepSeek Coder 6.7B** for code analysis
+- Implement **Mix (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Phase 2: Specialized Integration  
+- Add **DeepSeek Coder 6.7B** for code analysis
+- Implement **Mixtral 8x7B** for complex planning tasks
+- Develop i
+# Details:
+Converted from todo: .taskmaster/migration/llm_evaluation_report.md
+
+# Test Strategy:
+Validate completion of: action-item item

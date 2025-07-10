@@ -1,0 +1,15 @@
+# Task ID: 1069
+# Title: Implement Short-term (1-2 cycles):
+- **Immediate Issues Resolution**: Fix critical bugs and gaps
+- **Code Qual (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Short-term (1-2 cycles):
+- **Immediate Issues Resolution**: Fix critical bugs and gaps
+- **Code Quality Improvement**: Reduce complexity, improve main
+# Details:
+Converted from todo: introspection.md
+
+# Test Strategy:
+Validate completion of: action-item item

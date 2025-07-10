@@ -1,0 +1,19 @@
+# Task ID: 500
+# Title: Implement Does this depend on device?
+        return {
+            "real floating": dtype(float64),
+           (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Does this depend on device?
+        return {
+            "real floating": dtype(float64),
+            "complex floating": dtype(complex128),
+            "integral": dtype(intp),
+            "indexing"
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/_lib/array_api_compat/cupy/_info.py
+
+# Test Strategy:
+Validate completion of: code-todo item

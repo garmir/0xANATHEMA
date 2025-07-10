@@ -1,0 +1,20 @@
+# Task ID: 398
+# Title: min_count
+            if self.how != "rank":
+                # TODO: should rank take result_mask?
+ 
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: min_count
+            if self.how != "rank":
+                # TODO: should rank take result_mask?
+                kwargs["result_mask"] = result_mask
+            func(
+                out=result,
+   
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/groupby/ops.py
+
+# Test Strategy:
+Validate completion of: code-todo item

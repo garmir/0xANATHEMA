@@ -1,0 +1,11 @@
+# Task ID: 2396
+# Title: **Delivers Adaptive Intelligence** - ADaPT methodology with capability-aware decomposition (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Delivers Adaptive Intelligence** - ADaPT methodology with capability-aware decomposition
+# Details:
+Converted from todo: .taskmaster/research/comprehensive-research-implementation-report.md
+
+# Test Strategy:
+Validate completion of: action-item item

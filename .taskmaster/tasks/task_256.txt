@@ -1,0 +1,18 @@
+# Task ID: 256
+# Title: Implement could work that into the 'exact="equiv"'?
+        return  # FIXME: doesn't belong in this file anymo
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: could work that into the 'exact="equiv"'?
+        return  # FIXME: doesn't belong in this file anymore!
+    tm.assert_index_equal(result, index, exact="equiv")
+
+
+def test_wrong_number_names(index):
+  
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/test_any_index.py
+
+# Test Strategy:
+Validate completion of: code-todo item

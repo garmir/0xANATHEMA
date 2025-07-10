@@ -1,0 +1,18 @@
+# Task ID: 440
+# Title: Implement renovate or move this class when scipy operators are more mature
+class _MatrixM1PowerOperator(Linear (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: renovate or move this class when scipy operators are more mature
+class _MatrixM1PowerOperator(LinearOperator):
+    """
+    A representation of the linear operator (A - I)^p.
+    """
+
+    def __init__(
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/linalg/_matfuncs_inv_ssq.py
+
+# Test Strategy:
+Validate completion of: code-todo item

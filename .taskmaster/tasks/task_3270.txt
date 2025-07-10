@@ -1,0 +1,11 @@
+# Task ID: 3270
+# Title: Implement Manual invocation via `task-master research --atomic-breakdown` (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Manual invocation via `task-master research --atomic-breakdown`
+# Details:
+Converted from todo: .taskmaster/workflow-rules/recursive-breakdown-rule.md
+
+# Test Strategy:
+Validate completion of: action-item item

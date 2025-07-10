@@ -1,0 +1,15 @@
+# Task ID: 309
+# Title: Implement (non-nano): this should be unnecessary once array_to_datetime
+        #  correctly infers non-nano f (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (non-nano): this should be unnecessary once array_to_datetime
+        #  correctly infers non-nano from Timestamp.unit
+        expected = expected.astype(all_vals.dtype)
+    result = df.groupby("key")
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/groupby/methods/test_quantile.py
+
+# Test Strategy:
+Validate completion of: code-todo item

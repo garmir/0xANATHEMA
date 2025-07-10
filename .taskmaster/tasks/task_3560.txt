@@ -1,0 +1,18 @@
+# Task ID: 3560
+# Title: Implement Reliability Targets
+- **Service uptime**: > 99.5%
+- **Success rate**: > 95%
+- **Error recovery**: <  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Reliability Targets
+- **Service uptime**: > 99.5%
+- **Success rate**: > 95%
+- **Error recovery**: < 5 minutes
+- **Data consistency**: 100%
+# Details:
+Converted from todo: .taskmaster/migration/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

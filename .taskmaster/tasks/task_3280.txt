@@ -1,0 +1,16 @@
+# Task ID: 3280
+# Title: Implement **Auto-trigger Conditions**:
+1. Task has been in-progress for >10 minutes without completion
+2. API  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Auto-trigger Conditions**:
+1. Task has been in-progress for >10 minutes without completion
+2. API calls fail with parsing errors
+3. Prompt complexit
+# Details:
+Converted from todo: .taskmaster/workflow-rules/recursive-breakdown-rule.md
+
+# Test Strategy:
+Validate completion of: action-item item

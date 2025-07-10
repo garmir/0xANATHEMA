@@ -1,0 +1,15 @@
+# Task ID: 3288
+# Title: **Atomic Task 1**: Research ROME Framework Details
+**Action**: Find specific implementation details 
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Atomic Task 1**: Research ROME Framework Details
+**Action**: Find specific implementation details of ROME framework
+**Duration**: 3 minutes
+**Output
+# Details:
+Converted from todo: .taskmaster/workflow-rules/recursive-breakdown-rule.md
+
+# Test Strategy:
+Validate completion of: action-item item

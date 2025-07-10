@@ -1,0 +1,18 @@
+# Task ID: 3944
+# Title: Implement Catalytic Workspace Results
+- **Capacity**: 10GB workspace
+- **Cache Hit Rate**: 0.500 (50%)
+- **Tar (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Catalytic Workspace Results
+- **Capacity**: 10GB workspace
+- **Cache Hit Rate**: 0.500 (50%)
+- **Target**: 0.8 reuse factor (80%)
+- **Compression**: A
+# Details:
+Converted from todo: .taskmaster/reports/performance-optimization-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

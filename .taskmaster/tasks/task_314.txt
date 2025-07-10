@@ -1,0 +1,17 @@
+# Task ID: 314
+# Title: Implement (ArrayManager) axis=1 support
+    def test_shift_axis1_multiple_blocks_with_int_fill(self):
+         (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (ArrayManager) axis=1 support
+    def test_shift_axis1_multiple_blocks_with_int_fill(self):
+        # GH#42719
+        rng = np.random.default_rng(2)
+        df1 = DataFrame(rng.integers(1000, size=(5
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/methods/test_shift.py
+
+# Test Strategy:
+Validate completion of: code-todo item

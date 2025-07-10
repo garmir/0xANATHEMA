@@ -1,0 +1,18 @@
+# Task ID: 2836
+# Title: Implement Execution Metadata
+- Generated: 2025-07-10T17:00:00Z
+- Autonomy Score: 0.97
+- Estimated Duration: 45 (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Execution Metadata
+- Generated: 2025-07-10T17:00:00Z
+- Autonomy Score: 0.97
+- Estimated Duration: 45 minutes
+- Total Tasks: 45
+# Details:
+Converted from todo: .taskmaster/docs/prd-execution.md
+
+# Test Strategy:
+Validate completion of: action-item item

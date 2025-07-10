@@ -1,0 +1,18 @@
+# Task ID: 449
+# Title: Implement # - find bracket with sign change in specified direction
+    # - Add tolerance
+    # - allow factor  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: # - find bracket with sign change in specified direction
+    # - Add tolerance
+    # - allow factor < 1?
+
+    callback = None  # works; I just don't want to test it
+    temp = _bracket_root_iv(func, x
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/optimize/_bracket.py
+
+# Test Strategy:
+Validate completion of: code-todo item

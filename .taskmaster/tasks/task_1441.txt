@@ -1,0 +1,15 @@
+# Task ID: 1441
+# Title: Implement Core Workflow Classes
+- `WorkflowState`: Tracks execution state and stuck situations
+- `ResearchResu (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Core Workflow Classes
+- `WorkflowState`: Tracks execution state and stuck situations
+- `ResearchResult`: Structured research results from task-master 
+# Details:
+Converted from todo: AUTONOMOUS_WORKFLOW_COMPLETION.md
+
+# Test Strategy:
+Validate completion of: action-item item

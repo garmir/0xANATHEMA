@@ -1,0 +1,29 @@
+# Task ID: 789
+# Title: Implement support DiGraph
+
+    import numpy as np
+    import scipy as sp
+
+    @dataclass
+    class CostMatrix: (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: support DiGraph
+
+    import numpy as np
+    import scipy as sp
+
+    @dataclass
+    class CostMatrix:
+        C: ...
+        lsa_row_ind: ...
+        lsa_col_ind: ...
+        ls: ...
+
+    def make_Cost
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/similarity.py
+
+# Test Strategy:
+Validate completion of: code-todo item

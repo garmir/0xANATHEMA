@@ -1,0 +1,14 @@
+# Task ID: 852
+# Title: Implement When we drop 3.9, use a match statement to get better type checking and remove
+    # file-level type (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: When we drop 3.9, use a match statement to get better type checking and remove
+    # file-level type ignore.
+    # (the `'type'` could also be fetched in every `if/elif` statement, but this alters per
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pydantic/_internal/_schema_gather.py
+
+# Test Strategy:
+Validate completion of: code-todo item

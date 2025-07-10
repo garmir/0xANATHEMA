@@ -1,0 +1,11 @@
+# Task ID: 3529
+# Title: Implement Architecture Overview with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Architecture Overview
+# Details:
+Converted from todo: .taskmaster/migration/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

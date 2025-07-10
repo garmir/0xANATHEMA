@@ -1,0 +1,18 @@
+# Task ID: 358
+# Title: Implement what exact behaviour do we want for integer eventually?
+        if empty_dtype == "float64":
+        (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: what exact behaviour do we want for integer eventually?
+        if empty_dtype == "float64":
+            expected = df.astype("float64")
+        else:
+            expected = df.astype("object")
+    tm
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/reshape/concat/test_concat.py
+
+# Test Strategy:
+Validate completion of: code-todo item

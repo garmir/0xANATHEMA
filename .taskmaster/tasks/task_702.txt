@@ -1,0 +1,15 @@
+# Task ID: 702
+# Title: Implement add `_StringCodes` once it has a scalar type
+    # _StringCodes,
+] (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: add `_StringCodes` once it has a scalar type
+    # _StringCodes,
+]
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/_typing/_char_codes.py
+
+# Test Strategy:
+Validate completion of: code-todo item

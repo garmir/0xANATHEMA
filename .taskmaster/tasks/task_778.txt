@@ -1,0 +1,14 @@
+# Task ID: 778
+# Title: Implement if ttFont has no maxp, cmap etc., ignore glyph names and compile by index?
+            # (needed if  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: if ttFont has no maxp, cmap etc., ignore glyph names and compile by index?
+            # (needed if you just want to compile the sbix table on its own)
+        self.gid = struct.pack(">H", ttFont.getG
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/ttLib/tables/sbixGlyph.py
+
+# Test Strategy:
+Validate completion of: code-todo item

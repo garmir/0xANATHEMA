@@ -1,0 +1,38 @@
+{
+  "task_master_semantic_conventions": {
+    "version": "1.0.0",
+    "description": "Standardized semantic conventions for Task-Master telemetry",
+    "service_attributes": {
+      "service.name": "Name of the service",
+      "service.version": "Version of the service",
+      "service.instance.id": "Unique identifier for service instance",
+      "service.namespace": "Namespace for service grouping"
+    },
+    "task_attributes": {
+      "task.id": "Unique identifier for task",
+      "task.type": "Type of task (e.g., research, optimization)",
+      "task.status": "Current status of task",
+      "task.priority": "Priority level of task",
+      "task.complexity": "Complexity rating of task",
+      "task.duration_seconds": "Task execution duration in seconds",
+      "task.dependencies": "List of task dependencies",
+      "task.parent.id": "Parent task identifier",
+      "task.depth": "Depth in task hierarchy"
+    },
+    "research_attributes": {
+      "research.query": "Research query string",
+      "research.source": "Source of research (e.g., perplexity, openai)",
+      "research.results.count": "Number of research results",
+      "research.confidence": "Confidence score of research results",
+      "research.tokens.used": "Number of tokens used in research",
+      "research.api.endpoint": "API endpoint used for research"
+    },
+    "correlation_requirements": {
+      "trace_id": "32-character hexadecimal trace identifier",
+      "span_id": "16-character hexadecimal span identifier",
+      "timestamp": "ISO 8601 formatted timestamp",
+      "service.name": "Required service identifier",
+      "environment": "Deployment environment"
+    }
+  }
+}

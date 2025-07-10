@@ -1,0 +1,11 @@
+# Task ID: 2973
+# Title: Implement Customize configuration for your workflow (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Customize configuration for your workflow
+# Details:
+Converted from todo: .taskmaster/examples/integration-guide.md
+
+# Test Strategy:
+Validate completion of: action-item item

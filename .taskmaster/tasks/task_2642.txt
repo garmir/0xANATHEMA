@@ -1,0 +1,16 @@
+# Task ID: 2642
+# Title: Implement 3.2 Project Management Integration
+- Integrate with Jira for enterprise task management
+- Add Linear (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 3.2 Project Management Integration
+- Integrate with Jira for enterprise task management
+- Add Linear integration for modern teams
+- Connect with Notio
+# Details:
+Converted from todo: .taskmaster/planning/next_development_roadmap.md
+
+# Test Strategy:
+Validate completion of: action-item item

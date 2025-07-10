@@ -1,0 +1,11 @@
+# Task ID: 1938
+# Title: Implement Privacy Compliance with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Privacy Compliance
+# Details:
+Converted from todo: LOCAL_LLM_MIGRATION_GUIDE.md
+
+# Test Strategy:
+Validate completion of: action-item item

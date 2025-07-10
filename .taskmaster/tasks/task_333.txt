@@ -1,0 +1,17 @@
+# Task ID: 333
+# Title: Implement (cython3): "arg: datetime" annotation will impose
+    # datetime limitations on Timestamp. The fused (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (cython3): "arg: datetime" annotation will impose
+    # datetime limitations on Timestamp. The fused type below works in cy3
+    # ctypedef fused datetimelike:
+    #     _Timestamp
+    #     datetime
+
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/tseries/offsets/test_year.py
+
+# Test Strategy:
+Validate completion of: code-todo item

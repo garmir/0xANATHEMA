@@ -1,0 +1,11 @@
+# Task ID: 3511
+# Title: Implement **Local LLM Config** (`.taskmaster/config/local-llm-config.json`) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Local LLM Config** (`.taskmaster/config/local-llm-config.json`)
+# Details:
+Converted from todo: .taskmaster/migration/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

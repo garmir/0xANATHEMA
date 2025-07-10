@@ -1,0 +1,81 @@
+[
+  {
+    "user_id": "user_e570fb85",
+    "tenant_id": "tenant_cf7490df",
+    "username": "admin",
+    "email": "admin@taskmaster.ai",
+    "role": "tenant_admin",
+    "permissions": [
+      "manage_users",
+      "create_project",
+      "manage_project",
+      "view_analytics",
+      "export_data",
+      "manage_billing",
+      "view_audit_logs"
+    ],
+    "created_at": "2025-07-10T19:36:39.808171",
+    "last_login": null,
+    "is_active": true,
+    "mfa_enabled": true,
+    "security_clearance": "admin"
+  },
+  {
+    "user_id": "user_4f6a0aad",
+    "tenant_id": "tenant_9dd82033",
+    "username": "admin",
+    "email": "admin@acme.com",
+    "role": "tenant_admin",
+    "permissions": [
+      "manage_users",
+      "create_project",
+      "manage_project",
+      "view_analytics",
+      "export_data",
+      "manage_billing",
+      "view_audit_logs"
+    ],
+    "created_at": "2025-07-10T19:36:39.809687",
+    "last_login": "2025-07-10T19:36:39.833859",
+    "is_active": true,
+    "mfa_enabled": true,
+    "security_clearance": "admin"
+  },
+  {
+    "user_id": "user_e4833b43",
+    "tenant_id": "tenant_9dd82033",
+    "username": "john_pm",
+    "email": "john@acme.com",
+    "role": "project_manager",
+    "permissions": [
+      "create_project",
+      "manage_project",
+      "create_task",
+      "edit_task",
+      "delete_task",
+      "view_analytics"
+    ],
+    "created_at": "2025-07-10T19:36:39.817994",
+    "last_login": null,
+    "is_active": true,
+    "mfa_enabled": true,
+    "security_clearance": "standard"
+  },
+  {
+    "user_id": "user_117eb7b8",
+    "tenant_id": "tenant_9dd82033",
+    "username": "jane_dev",
+    "email": "jane@acme.com",
+    "role": "developer",
+    "permissions": [
+      "create_task",
+      "edit_task",
+      "view_analytics"
+    ],
+    "created_at": "2025-07-10T19:36:39.827797",
+    "last_login": null,
+    "is_active": true,
+    "mfa_enabled": false,
+    "security_clearance": "standard"
+  }
+]

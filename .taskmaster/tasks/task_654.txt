@@ -1,0 +1,18 @@
+# Task ID: 654
+# Title: Implement (1.9): remove the sparse parameter
+    if sparse != "deprecated":
+        warnings.warn(
+            (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.9): remove the sparse parameter
+    if sparse != "deprecated":
+        warnings.warn(
+            "The 'sparse' parameter was deprecated in 1.7 and will be removed in 1.9. "
+            "It has no 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/metrics/cluster/_supervised.py
+
+# Test Strategy:
+Validate completion of: code-todo item

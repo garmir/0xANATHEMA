@@ -1,0 +1,19 @@
+# Task ID: 3476
+# Title: Implement Neural Chat 7B
+- **Model Size:** 7B parameters
+- **Context Length:** 8,192 tokens
+- **Memory Require (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Neural Chat 7B
+- **Model Size:** 7B parameters
+- **Context Length:** 8,192 tokens
+- **Memory Requirement:** 5.5 GB
+- **License:** Apache 2.0
+- **Stren
+# Details:
+Converted from todo: .taskmaster/migration/llm_evaluation_report.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,17 @@
+# Task ID: 356
+# Title: Implement is there a less hacky way of checking this?
+                pytest.skip(f"{dtype} does not support 2 (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: is there a less hacky way of checking this?
+                pytest.skip(f"{dtype} does not support 2D.")
+
+    def test_transpose(self, data):
+        arr2d = data.repeat(2).reshape(-1, 2)
+        shap
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/extension/base/dim2.py
+
+# Test Strategy:
+Validate completion of: code-todo item

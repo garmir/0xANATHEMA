@@ -1,0 +1,26 @@
+# Task ID: 703
+# Title: Implement wait for support for recursive types
+
+
+# Mandatory keys
+class _DTypeDictBase(TypedDict):
+    names:  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: wait for support for recursive types
+
+
+# Mandatory keys
+class _DTypeDictBase(TypedDict):
+    names: Sequence[str]
+    formats: Sequence[_DTypeLikeNested]
+
+
+# Mandatory + optional keys
+class _DTypeDict
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/_typing/_dtype_like.py
+
+# Test Strategy:
+Validate completion of: code-todo item

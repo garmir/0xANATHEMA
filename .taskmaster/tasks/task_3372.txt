@@ -1,0 +1,11 @@
+# Task ID: 3372
+# Title: Implement ✅ **Generates** research-driven development prompts (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: ✅ **Generates** research-driven development prompts
+# Details:
+Converted from todo: .taskmaster/automation/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

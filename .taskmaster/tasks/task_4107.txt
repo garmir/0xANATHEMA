@@ -1,0 +1,11 @@
+# Task ID: 4107
+# Title: Implement 🚨 Known Limitations & Mitigations (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 🚨 Known Limitations & Mitigations
+# Details:
+Converted from todo: .taskmaster/reports/local-llm-migration-health-check.md
+
+# Test Strategy:
+Validate completion of: action-item item

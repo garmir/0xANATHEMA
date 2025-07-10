@@ -1,0 +1,13 @@
+# Task ID: 3401
+# Title: Implement Automatic Operation
+The system operates automatically on every Claude session start. No manual inter (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Automatic Operation
+The system operates automatically on every Claude session start. No manual intervention required.
+# Details:
+Converted from todo: .taskmaster/automation/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

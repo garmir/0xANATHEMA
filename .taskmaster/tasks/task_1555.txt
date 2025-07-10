@@ -1,0 +1,15 @@
+# Task ID: 1555
+# Title: Implement Healing Strategies:
+- **Level 1**: Simple conflicts - Auto-resolve with upstream priority
+- **Level  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Healing Strategies:
+- **Level 1**: Simple conflicts - Auto-resolve with upstream priority
+- **Level 2**: Complex conflicts - Stash local changes, pull
+# Details:
+Converted from todo: gitconf.md
+
+# Test Strategy:
+Validate completion of: action-item item

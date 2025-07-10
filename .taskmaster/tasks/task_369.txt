@@ -1,0 +1,15 @@
+# Task ID: 369
+# Title: Implement Refactor to remove code duplication with code
+                # block below for standard columns ind (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Refactor to remove code duplication with code
+                # block below for standard columns index.
+                row = [""] * (self.row_levels - 1)
+                if self.fmt.index or self.sho
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/io/formats/html.py
+
+# Test Strategy:
+Validate completion of: code-todo item

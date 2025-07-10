@@ -1,0 +1,11 @@
+# Task ID: 2898
+# Title: Test the recursive PRD generation system with real-world scenarios (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Test the recursive PRD generation system with real-world scenarios
+# Details:
+Converted from todo: .taskmaster/docs/execution-planning.md
+
+# Test Strategy:
+Validate completion of: action-item item

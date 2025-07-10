@@ -1,0 +1,15 @@
+# Task ID: 876
+# Title: add '*.s' and '*.asm', which will require designing an analyse_text
+    # method for this lexer and 
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: add '*.s' and '*.asm', which will require designing an analyse_text
+    # method for this lexer and refactoring those from Gas and Nasm in order to
+    # have relatively reliable detection
+    filenam
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/mips.py
+
+# Test Strategy:
+Validate completion of: code-todo item

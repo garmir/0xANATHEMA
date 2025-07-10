@@ -1,0 +1,22 @@
+# Task ID: 3081
+# Title: Implement Model Configuration Best Practices
+```json
+{
+  "models": {
+    "main": {
+      "provider": "anthropi (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Model Configuration Best Practices
+```json
+{
+  "models": {
+    "main": {
+      "provider": "anthropic",
+      "modelId": "claude-3-5-sonnet-20241022",
+# Details:
+Converted from todo: .taskmaster/templates/best-practices.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,11 @@
+# Task ID: 5817
+# Title: Implement **Conflict Resolver**: Algorithm for handling resource contention (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Conflict Resolver**: Algorithm for handling resource contention
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/level-2/core-engine/intelligent-scheduler.md
+
+# Test Strategy:
+Validate completion of: action-item item

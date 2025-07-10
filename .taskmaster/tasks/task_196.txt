@@ -1,0 +1,21 @@
+# Task ID: 196
+# Title: Implement is this desired?
+    tm.assert_frame_equal(expected, dt_result)
+    assert dt_result.index.name == " (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: is this desired?
+    tm.assert_frame_equal(expected, dt_result)
+    assert dt_result.index.name == "key"
+
+
+def test_aggregate_with_nat_size():
+    # GH 9925
+    n = 20
+    data = np.random.default_rng
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/resample/test_time_grouper.py
+
+# Test Strategy:
+Validate completion of: code-todo item

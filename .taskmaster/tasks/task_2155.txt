@@ -1,0 +1,16 @@
+# Task ID: 2155
+# Title: Implement Operational Runbooks:
+- `runbooks/deployment-guide.md` - Step-by-step deployment
+- `runbooks/trouble (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Operational Runbooks:
+- `runbooks/deployment-guide.md` - Step-by-step deployment
+- `runbooks/troubleshooting-guide.md` - Common issues and solutions
+-
+# Details:
+Converted from todo: .taskmaster/execution-roadmap.md
+
+# Test Strategy:
+Validate completion of: action-item item

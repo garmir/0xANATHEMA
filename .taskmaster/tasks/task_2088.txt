@@ -1,0 +1,15 @@
+# Task ID: 2088
+# Title: Implement Log Locations
+- **Workflow Logs**: `.taskmaster/logs/autonomous-workflow-YYYYMMDD-HHMMSS.log`
+- **Cl (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Log Locations
+- **Workflow Logs**: `.taskmaster/logs/autonomous-workflow-YYYYMMDD-HHMMSS.log`
+- **Claude Integration**: `.taskmaster/logs/claude-integ
+# Details:
+Converted from todo: .taskmaster/README-AUTONOMOUS-WORKFLOW.md
+
+# Test Strategy:
+Validate completion of: action-item item

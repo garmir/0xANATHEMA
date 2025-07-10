@@ -1,0 +1,12 @@
+# Task ID: 855
+# Title: Implement ultimately, make this public, see https://github.com/pydantic/pydantic/pull/9459#discussion_r1628197 (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: ultimately, make this public, see https://github.com/pydantic/pydantic/pull/9459#discussion_r1628197626
+# Also, make this frozen eventually, but that doesn't work right now because of the generic base
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pydantic/experimental/pipeline.py
+
+# Test Strategy:
+Validate completion of: code-todo item

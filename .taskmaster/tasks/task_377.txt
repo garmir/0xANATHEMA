@@ -1,0 +1,17 @@
+# Task ID: 377
+# Title: Implement handle record value which are lists, at least error
+            #       reasonably
+            data  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: handle record value which are lists, at least error
+            #       reasonably
+            data = nested_to_record(data, sep=sep, max_level=max_level)
+        return DataFrame(data)
+    elif not i
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/io/json/_normalize.py
+
+# Test Strategy:
+Validate completion of: code-todo item

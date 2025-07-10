@@ -1,0 +1,15 @@
+# Task ID: 1061
+# Title: Implement Primary Metrics:
+- **Improvement Success Rate**: Percentage of successfully applied improvements
+- * (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Primary Metrics:
+- **Improvement Success Rate**: Percentage of successfully applied improvements
+- **System Stability**: Uptime and error rates after 
+# Details:
+Converted from todo: introspection.md
+
+# Test Strategy:
+Validate completion of: action-item item

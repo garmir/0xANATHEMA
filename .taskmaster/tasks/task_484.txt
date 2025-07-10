@@ -1,0 +1,15 @@
+# Task ID: 484
+# Title: Implement Why are we using _as_euler_from_matrix here? As a sanity check? It is not
+    # part of the public A (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Why are we using _as_euler_from_matrix here? As a sanity check? It is not
+    # part of the public API and should not be used anywhere else
+    angles_mat = rotation._as_euler_from_matrix(seq)
+    xp_
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/spatial/transform/tests/test_rotation.py
+
+# Test Strategy:
+Validate completion of: code-todo item

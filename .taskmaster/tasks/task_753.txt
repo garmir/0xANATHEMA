@@ -1,0 +1,19 @@
+# Task ID: 753
+# Title: Implement Simplify like 3e8ebcdce592fe8a59ca4c3a294cc9724351e1ce
+    # Remove start_pts and _add_moveTO
+
+    d (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Simplify like 3e8ebcdce592fe8a59ca4c3a294cc9724351e1ce
+    # Remove start_pts and _add_moveTO
+
+    def __init__(self, other_pens, max_err, reverse_direction=False):
+        if reverse_direction:
+     
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/pens/cu2quPen.py
+
+# Test Strategy:
+Validate completion of: code-todo item

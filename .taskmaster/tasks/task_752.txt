@@ -1,0 +1,22 @@
+# Task ID: 752
+# Title: Implement accept set names
+            st = int(line[1])
+            if st not in sets:
+                sets[s (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: accept set names
+            st = int(line[1])
+            if st not in sets:
+                sets[st] = []
+            sets[st].append(glyph)
+    return makeMarkFilteringSets(sets, font)
+
+
+def parseG
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/mtiLib/__init__.py
+
+# Test Strategy:
+Validate completion of: code-todo item

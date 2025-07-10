@@ -1,0 +1,16 @@
+# Task ID: 410
+# Title: Implement (py314): deprecated since Python 3.8. Remove after Python 3.14 is min
+    def visit_NameConstant(sel (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (py314): deprecated since Python 3.8. Remove after Python 3.14 is min
+    def visit_NameConstant(self, node, **kwargs) -> Term:
+        return self.const_type(node.value, self.env)
+
+    # TODO(py314):
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/computation/expr.py
+
+# Test Strategy:
+Validate completion of: code-todo item

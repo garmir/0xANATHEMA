@@ -1,0 +1,16 @@
+# Task ID: 3762
+# Title: Implement Current Issues:
+- ⚠️ Anthropic API key format verification needed
+- ⚠️ Perplexity API key authentica (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Current Issues:
+- ⚠️ Anthropic API key format verification needed
+- ⚠️ Perplexity API key authentication failing
+- ⚠️ MCP server integration requires 
+# Details:
+Converted from todo: .taskmaster/reports/api-optimization-validation.md
+
+# Test Strategy:
+Validate completion of: action-item item

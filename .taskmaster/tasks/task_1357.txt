@@ -1,0 +1,15 @@
+# Task ID: 1357
+# Title: Implement Programmatic Usage
+```python
+from taskmaster_labrys import TaskMasterLabrys (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Programmatic Usage
+```python
+from taskmaster_labrys import TaskMasterLabrys
+# Details:
+Converted from todo: IMPLEMENTATION_COMPLETE.md
+
+# Test Strategy:
+Validate completion of: action-item item

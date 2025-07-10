@@ -1,0 +1,16 @@
+# Task ID: 2030
+# Title: Implement 2. Manage Models (`models`)
+*   **MCP Tool:** `models`
+*   **CLI Command:** `task-master models [opt (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 2. Manage Models (`models`)
+*   **MCP Tool:** `models`
+*   **CLI Command:** `task-master models [options]`
+*   **Description:** `View the current AI m
+# Details:
+Converted from todo: .trae/rules/taskmaster.md
+
+# Test Strategy:
+Validate completion of: action-item item

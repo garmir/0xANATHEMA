@@ -1,0 +1,17 @@
+# Task ID: 436
+# Title: Implement Support negative key but pyarrow does not allow
+            # element index to be an array.
+         (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Support negative key but pyarrow does not allow
+            # element index to be an array.
+            # if key < 0:
+            #     key = pc.add(key, pc.list_value_length(self._pa_array))
+        
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/arrays/arrow/accessors.py
+
+# Test Strategy:
+Validate completion of: code-todo item

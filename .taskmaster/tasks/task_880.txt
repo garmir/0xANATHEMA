@@ -1,0 +1,15 @@
+# Task ID: 880
+# Title: Implement these don't match the comments in docs, remove.
+            # (r'--(?![!#$%&*+./<=>?@^|_~:\\]).*?$', (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: these don't match the comments in docs, remove.
+            # (r'--(?![!#$%&*+./<=>?@^|_~:\\]).*?$', Comment.Single),
+            # (r'{-', Comment.Multiline, 'comment'),
+            (r',', Punctuatio
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/haskell.py
+
+# Test Strategy:
+Validate completion of: code-todo item

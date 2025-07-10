@@ -1,0 +1,23 @@
+# Task ID: 414
+# Title: Implement GH#15362
+
+        mask = self.isna()
+        if len(hashed):
+            result = hashed.take(self._ (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: GH#15362
+
+        mask = self.isna()
+        if len(hashed):
+            result = hashed.take(self._codes)
+        else:
+            result = np.zeros(len(mask), dtype="uint64")
+
+        if mask.any()
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/arrays/categorical.py
+
+# Test Strategy:
+Validate completion of: code-todo item

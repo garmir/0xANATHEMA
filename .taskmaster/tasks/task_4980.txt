@@ -1,0 +1,11 @@
+# Task ID: 4980
+# Title: Implement Resource Allocation Summary with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Resource Allocation Summary
+# Details:
+Converted from todo: .taskmaster/optimization/.taskmaster/task-queue.md
+
+# Test Strategy:
+Validate completion of: action-item item

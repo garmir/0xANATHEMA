@@ -1,0 +1,16 @@
+# Task ID: 334
+# Title: Implement (GH#55564): as_unit will be unnecessary
+        pointwise = DatetimeIndex([x + off for x in idx]).as (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (GH#55564): as_unit will be unnecessary
+        pointwise = DatetimeIndex([x + off for x in idx]).as_unit(exp_unit)
+        tm.assert_index_equal(pointwise, expected)
+
+    def test_add_bday_offset_nan
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/tseries/offsets/test_business_hour.py
+
+# Test Strategy:
+Validate completion of: code-todo item

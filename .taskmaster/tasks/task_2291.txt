@@ -1,0 +1,17 @@
+# Task ID: 2291
+# Title: Implement GGUF
+- **Memory Reduction**: Variable (2-8 bits)
+- **Performance**: CPU-friendly, GPU offloading
+- * (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: GGUF
+- **Memory Reduction**: Variable (2-8 bits)
+- **Performance**: CPU-friendly, GPU offloading
+- **Quality**: Good balance across quantization level
+# Details:
+Converted from todo: .taskmaster/research/local-llm-survey-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

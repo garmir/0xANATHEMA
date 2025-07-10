@@ -1,0 +1,15 @@
+# Task ID: 5915
+# Title: Implement Execution Steps
+1. Run task-master research for breakdown analysis
+2. Recursively expand current tas (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Execution Steps
+1. Run task-master research for breakdown analysis
+2. Recursively expand current task to atomic levels using task-master expand --id=<
+# Details:
+Converted from todo: .claude/commands/stuck-prompt-resolve.md
+
+# Test Strategy:
+Validate completion of: action-item item

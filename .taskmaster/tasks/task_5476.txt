@@ -1,0 +1,14 @@
+# Task ID: 5476
+# Title: Implement 3.3 Business Analysis Prompts
+- **Requirement Analysis**: Extract and formalize business requirement (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 3.3 Business Analysis Prompts
+- **Requirement Analysis**: Extract and formalize business requirements
+- **Risk Assessment**: Identify and evaluate pot
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/ai-integration/prompt-optimization.md
+
+# Test Strategy:
+Validate completion of: action-item item

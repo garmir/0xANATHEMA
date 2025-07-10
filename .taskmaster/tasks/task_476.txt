@@ -1,0 +1,16 @@
+# Task ID: 476
+# Title: Implement add method "pearsonr" after fix overflow issue
+    @pytest.mark.parametrize("method", ["mle"])
+    d (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: add method "pearsonr" after fix overflow issue
+    @pytest.mark.parametrize("method", ["mle"])
+    def test_user_defined_ymax_input_float64_32(self, x, ymax, method):
+        # Test the maximum of the
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/stats/tests/test_morestats.py
+
+# Test Strategy:
+Validate completion of: code-todo item

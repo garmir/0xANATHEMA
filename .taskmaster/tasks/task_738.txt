@@ -1,0 +1,15 @@
+# Task ID: 738
+# Title: Implement on python3+, there's os.path.samefile
+    path1 = os.path.normcase(os.path.abspath(os.path.realpath( (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: on python3+, there's os.path.samefile
+    path1 = os.path.normcase(os.path.abspath(os.path.realpath(path1)))
+    path2 = os.path.normcase(os.path.abspath(os.path.realpath(path2)))
+    return path1 == 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/cu2qu/cli.py
+
+# Test Strategy:
+Validate completion of: code-todo item

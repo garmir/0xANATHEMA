@@ -1,0 +1,19 @@
+# Task ID: 624
+# Title: Implement extend to HistGradientBoosting once sample_weight is supported
+    N = 1000
+    rng = np.random.Rand (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: extend to HistGradientBoosting once sample_weight is supported
+    N = 1000
+    rng = np.random.RandomState(123456)
+    mask = rng.randint(2, size=N, dtype=bool)
+
+    x = rng.rand(N)
+    # set y = x o
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/inspection/tests/test_partial_dependence.py
+
+# Test Strategy:
+Validate completion of: code-todo item

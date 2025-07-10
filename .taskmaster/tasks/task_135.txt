@@ -1,0 +1,15 @@
+# Task ID: 135
+# Title: Implement slice input array first
+                    # Scale to appropriately sized float: use float32 if the (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: slice input array first
+                    # Scale to appropriately sized float: use float32 if the
+                    # dynamic range is small, to limit the memory footprint.
+                    da
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/matplotlib/image.py
+
+# Test Strategy:
+Validate completion of: code-todo item

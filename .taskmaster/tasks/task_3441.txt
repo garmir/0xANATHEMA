@@ -1,0 +1,11 @@
+# Task ID: 3441
+# Title: Implement **Performance Degradation** - Local models may be slower than cloud APIs (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Performance Degradation** - Local models may be slower than cloud APIs
+# Details:
+Converted from todo: .taskmaster/migration/llm_evaluation_report.md
+
+# Test Strategy:
+Validate completion of: action-item item

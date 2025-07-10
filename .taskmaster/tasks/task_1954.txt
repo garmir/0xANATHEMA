@@ -1,0 +1,16 @@
+# Task ID: 1954
+# Title: Implement Community Resources
+- **Ollama Documentation**: https://ollama.ai/docs
+- **LM Studio Guides**: https (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Community Resources
+- **Ollama Documentation**: https://ollama.ai/docs
+- **LM Studio Guides**: https://lmstudio.ai/docs  
+- **LocalAI Examples**: http
+# Details:
+Converted from todo: LOCAL_LLM_MIGRATION_GUIDE.md
+
+# Test Strategy:
+Validate completion of: action-item item

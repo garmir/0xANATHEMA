@@ -1,0 +1,19 @@
+# Task ID: 396
+# Title: Implement this properly
+            # https://github.com/pandas-dev/pandas/issues/52576
+             (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Implement this properly
+            # https://github.com/pandas-dev/pandas/issues/52576
+            return dtype.numpy_dtype.type
+        return dtype.type
+
+    try:
+        dtype = pandas_dtype(dtype
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/dtypes/common.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,20 @@
+# Task ID: 271
+# Title: Implement better place for tests shared by DTI/TDI?
+    @pytest.mark.parametrize(
+        "index",
+        [
+  (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: better place for tests shared by DTI/TDI?
+    @pytest.mark.parametrize(
+        "index",
+        [
+            date_range("2016-01-01", periods=5, tz="US/Pacific"),
+            pd.timedelta_range("1 D
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/datetimes/test_constructors.py
+
+# Test Strategy:
+Validate completion of: code-todo item

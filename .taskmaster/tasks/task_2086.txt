@@ -1,0 +1,15 @@
+# Task ID: 2086
+# Title: Implement Environment Variables
+The workflow expects these environment variables (automatically set by setup): (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Environment Variables
+The workflow expects these environment variables (automatically set by setup):
+```bash
+export TASKMASTER_HOME="/Users/anam/archi
+# Details:
+Converted from todo: .taskmaster/README-AUTONOMOUS-WORKFLOW.md
+
+# Test Strategy:
+Validate completion of: action-item item

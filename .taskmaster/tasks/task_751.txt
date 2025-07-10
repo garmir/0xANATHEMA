@@ -1,0 +1,19 @@
+# Task ID: 751
+# Title: Implement Speed up
+                if rec.SecondGlyph == secondGlyph:
+                    return rec
+          (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Speed up
+                if rec.SecondGlyph == secondGlyph:
+                    return rec
+            continue
+        elif self.Format == 2:
+            klass1 = self.ClassDef1.classDefs.get(firstGl
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/varLib/merger.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,19 @@
+# Task ID: 384
+# Title: Implement can we avoid this?  this used to be handled by
+            #  downcast="infer" in fillna
+            (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: can we avoid this?  this used to be handled by
+            #  downcast="infer" in fillna
+            table = table.astype(np.int64)
+
+    if margins:
+        if dropna:
+            data = data[data.not
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/reshape/pivot.py
+
+# Test Strategy:
+Validate completion of: code-todo item

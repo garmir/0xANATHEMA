@@ -1,0 +1,20 @@
+# Task ID: 486
+# Title: Implement expose through function
+        S = csr_matrix(D)
+        v = array([1,2,3])
+        csr_scale_rows( (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: expose through function
+        S = csr_matrix(D)
+        v = array([1,2,3])
+        csr_scale_rows(3,5,S.indptr,S.indices,S.data,v)
+        assert_equal(S.toarray(), diag(v)@D)
+
+        S = csr_matri
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/sparse/tests/test_spfuncs.py
+
+# Test Strategy:
+Validate completion of: code-todo item

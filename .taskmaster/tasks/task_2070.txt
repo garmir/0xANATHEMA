@@ -1,0 +1,11 @@
+# Task ID: 2070
+# Title: Implement **Autonomy Score ≥ Threshold** (default 0.95) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Autonomy Score ≥ Threshold** (default 0.95)
+# Details:
+Converted from todo: .taskmaster/README-AUTONOMOUS-WORKFLOW.md
+
+# Test Strategy:
+Validate completion of: action-item item

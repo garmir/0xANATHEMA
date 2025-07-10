@@ -1,0 +1,16 @@
+# Task ID: 292
+# Title: modify this test when implemented
+        interval_container = constructor.from_breaks(range(5))
+    (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: modify this test when implemented
+        interval_container = constructor.from_breaks(range(5))
+        other_container = other_constructor.from_breaks(range(5))
+        with pytest.raises(NotImpleme
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arrays/interval/test_overlaps.py
+
+# Test Strategy:
+Validate completion of: code-todo item

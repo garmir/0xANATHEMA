@@ -1,0 +1,11 @@
+# Task ID: 3206
+# Title: Mark complete: task-master set-status --id=$ARGUMENTS --status=done (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Mark complete: task-master set-status --id=$ARGUMENTS --status=done
+# Details:
+Converted from todo: .taskmaster/templates/project-templates.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,19 @@
+# Task ID: 300
+# Title: Implement (jreback) - these need testing / are broken
+
+# shift
+
+# set_index (destroys type) (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (jreback) - these need testing / are broken
+
+# shift
+
+# set_index (destroys type)
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arrays/integer/test_function.py
+
+# Test Strategy:
+Validate completion of: code-todo item

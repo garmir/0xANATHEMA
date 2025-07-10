@@ -1,0 +1,11 @@
+# Task ID: 2986
+# Title: Implement Windows Setup (WSL) with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Windows Setup (WSL)
+# Details:
+Converted from todo: .taskmaster/examples/integration-guide.md
+
+# Test Strategy:
+Validate completion of: action-item item

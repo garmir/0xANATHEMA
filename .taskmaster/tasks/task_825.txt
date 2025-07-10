@@ -1,0 +1,18 @@
+# Task ID: 825
+# Title: Implement (py311): Convert to StrEnum for wider use
+class ContentCoding(enum.Enum):
+    # The content codings  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (py311): Convert to StrEnum for wider use
+class ContentCoding(enum.Enum):
+    # The content codings that we have support for.
+    #
+    # Additional registered codings are listed at:
+    # https://www
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/aiohttp/web_response.py
+
+# Test Strategy:
+Validate completion of: code-todo item

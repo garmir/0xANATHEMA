@@ -1,0 +1,18 @@
+# Task ID: 212
+# Title: (ArrayManager) check which of those tests need to be rewritten to test the
+# equivalent for ArrayMan (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (ArrayManager) check which of those tests need to be rewritten to test the
+# equivalent for ArrayManager
+pytestmark = td.skip_array_manager_invalid_test
+
+
+class TestDataFrameBlockInternals:
+    def te
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/test_block_internals.py
+
+# Test Strategy:
+Validate completion of: code-todo item

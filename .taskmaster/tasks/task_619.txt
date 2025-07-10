@@ -1,0 +1,18 @@
+# Task ID: 619
+# Title: Implement check that it actually does something useful
+    X, y = datasets.make_blobs(random_state=0)
+    X =  (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: check that it actually does something useful
+    X, y = datasets.make_blobs(random_state=0)
+    X = X.astype(global_dtype, copy=False)
+    clf = pipeline.Pipeline(
+        [
+            ("isomap", man
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/manifold/tests/test_isomap.py
+
+# Test Strategy:
+Validate completion of: code-todo item

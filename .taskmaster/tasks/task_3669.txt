@@ -1,0 +1,15 @@
+# Task ID: 3669
+# Title: User Experience Metrics
+- **Feature Completeness**: 100% feature parity with external API version
+-  (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: User Experience Metrics
+- **Feature Completeness**: 100% feature parity with external API version
+- **Workflow Preservation**: All existing workflows 
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,16 @@
+# Task ID: 3668
+# Title: Implement Business Metrics
+- **Privacy Compliance**: 100% data locality, zero external calls
+- **Cost Reductio (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Business Metrics
+- **Privacy Compliance**: 100% data locality, zero external calls
+- **Cost Reduction**: Elimination of API costs after initial setup
+
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,14 @@
+# Task ID: 5569
+# Title: Implement 2. Autonomy Score Calculation
+- **Task Independence**: Can tasks execute without human intervention? (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 2. Autonomy Score Calculation
+- **Task Independence**: Can tasks execute without human intervention?
+- **Dependency Resolution**: Are all dependencies
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-2/prd-2.2.md
+
+# Test Strategy:
+Validate completion of: action-item item

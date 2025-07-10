@@ -1,0 +1,17 @@
+# Task ID: 349
+# Title: Implement Use a regular dict. See _NDFrameIndexer._setitem_with_indexer
+    rng = np.random.default_rng(2)
+    (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Use a regular dict. See _NDFrameIndexer._setitem_with_indexer
+    rng = np.random.default_rng(2)
+    data = np.empty(100, dtype=object)
+    data[:] = [
+        [rng.choice(list(string.ascii_letters)) 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/extension/list/array.py
+
+# Test Strategy:
+Validate completion of: code-todo item

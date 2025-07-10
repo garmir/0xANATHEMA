@@ -1,0 +1,11 @@
+# Task ID: 2984
+# Title: Implement macOS Setup with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: macOS Setup
+# Details:
+Converted from todo: .taskmaster/examples/integration-guide.md
+
+# Test Strategy:
+Validate completion of: action-item item

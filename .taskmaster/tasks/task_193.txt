@@ -1,0 +1,21 @@
+# Task ID: 193
+# Title: Implement skip otherwise?
+
+
+class TestArrowArray(base.ExtensionTests):
+    def test_compare_scalar(self, data, (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: skip otherwise?
+
+
+class TestArrowArray(base.ExtensionTests):
+    def test_compare_scalar(self, data, comparison_op):
+        ser = pd.Series(data)
+        self._compare_other(ser, data, comparison_op,
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/extension/test_arrow.py
+
+# Test Strategy:
+Validate completion of: code-todo item

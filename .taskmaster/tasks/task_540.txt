@@ -1,0 +1,19 @@
+# Task ID: 540
+# Title: Implement enable fallback for other backends!
+    for fmt in ['png', 'raw']:  # ["svg", "pdf", "ps"]:
+         (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: enable fallback for other backends!
+    for fmt in ['png', 'raw']:  # ["svg", "pdf", "ps"]:
+        fig.savefig(io.BytesIO(), format=fmt)
+
+
+@pytest.mark.parametrize('family_name, file_name',
+         
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/matplotlib/tests/test_ft2font.py
+
+# Test Strategy:
+Validate completion of: code-todo item

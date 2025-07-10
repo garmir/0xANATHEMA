@@ -1,0 +1,18 @@
+# Task ID: 2960
+# Title: Implement Authentication
+- POST /auth/login - User authentication
+- POST /auth/register - User registration  
+ (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Authentication
+- POST /auth/login - User authentication
+- POST /auth/register - User registration  
+- POST /auth/refresh - Token refresh
+- DELETE /aut
+# Details:
+Converted from todo: .taskmaster/examples/api-service-integration.md
+
+# Test Strategy:
+Validate completion of: action-item item

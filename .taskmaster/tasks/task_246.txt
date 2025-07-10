@@ -1,0 +1,19 @@
+# Task ID: 246
+# Title: Implement tests that include tzs, ints
+
+    def test_infer_all_nat(self):
+        arr = np.array([NaT, np.nan] (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: tests that include tzs, ints
+
+    def test_infer_all_nat(self):
+        arr = np.array([NaT, np.nan], dtype=object)
+        result, tz = tslib.array_to_datetime(arr, creso=creso_infer)
+        assert 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/tslibs/test_array_to_datetime.py
+
+# Test Strategy:
+Validate completion of: code-todo item

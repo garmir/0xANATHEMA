@@ -1,0 +1,18 @@
+# Task ID: 705
+# Title: Implement These should be dynamically generated, too many mapped to int things,
+# see note in _isocbind.py
+nee (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: These should be dynamically generated, too many mapped to int things,
+# see note in _isocbind.py
+needs['char_from_pyobj'] = ['int_from_pyobj']
+cfuncs['char_from_pyobj'] = """
+static int
+char_from_pyob
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/f2py/cfuncs.py
+
+# Test Strategy:
+Validate completion of: code-todo item

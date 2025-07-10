@@ -1,0 +1,14 @@
+# Task ID: 466
+# Title: Implement # Avoid special-casing key 'n' in _lib._elementwise_iterative_method::_check_termination
+# Rearrange (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: # Avoid special-casing key 'n' in _lib._elementwise_iterative_method::_check_termination
+# Rearrange termination condition to allow absolute and relative tolerances?
+# Interpret/return |f_n - f_{n-1}|
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/stats/_continued_fraction.py
+
+# Test Strategy:
+Validate completion of: code-todo item

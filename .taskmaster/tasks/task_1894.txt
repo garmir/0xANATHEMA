@@ -1,0 +1,11 @@
+# Task ID: 1894
+# Title: Implement **text-generation-webui** - Highly extensible interface (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **text-generation-webui** - Highly extensible interface
+# Details:
+Converted from todo: LOCAL_LLM_MIGRATION_GUIDE.md
+
+# Test Strategy:
+Validate completion of: action-item item

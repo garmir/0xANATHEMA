@@ -1,0 +1,22 @@
+# Task ID: 725
+# Title: Implement detect the size of buf and make sure that size(buf) >= size(localbuf).
+  strcpy(buf, localbuf);
+  re (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: detect the size of buf and make sure that size(buf) >= size(localbuf).
+  strcpy(buf, localbuf);
+  return 1;
+}
+
+extern npy_intp
+f2py_size_impl(PyArrayObject* var, ...)
+{
+  npy_intp sz = 0;
+  npy_intp d
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/f2py/src/fortranobject.c
+
+# Test Strategy:
+Validate completion of: code-todo item

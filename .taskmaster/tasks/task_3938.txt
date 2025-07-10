@@ -1,0 +1,11 @@
+# Task ID: 3938
+# Title: Implement **Deploy parallel evolution** with island-based optimization (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Deploy parallel evolution** with island-based optimization
+# Details:
+Converted from todo: .taskmaster/reports/performance-optimization-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,20 @@
+# Task ID: 485
+# Title: Implement check whether format=XXX is respected
+
+
+def _sprandn(m, n, density=0.01, format="coo", dtype=None, r (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: check whether format=XXX is respected
+
+
+def _sprandn(m, n, density=0.01, format="coo", dtype=None, rng=None):
+    # Helper function for testing.
+    rng = np.random.default_rng(rng)
+    data_rvs = rng
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/sparse/tests/test_construct.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,15 @@
+# Task ID: 131
+# Title: Implement Return index of the cell containing the cursor so that the user
+        # doesn't have to bind to ea (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Return index of the cell containing the cursor so that the user
+        # doesn't have to bind to each one individually.
+        renderer = self.get_figure(root=True)._get_renderer()
+        if render
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/matplotlib/table.py
+
+# Test Strategy:
+Validate completion of: code-todo item

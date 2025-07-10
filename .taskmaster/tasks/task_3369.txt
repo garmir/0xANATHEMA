@@ -1,0 +1,11 @@
+# Task ID: 3369
+# Title: Implement **CCC 2025**: Red-blue pebbling multiprocessor advances (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **CCC 2025**: Red-blue pebbling multiprocessor advances
+# Details:
+Converted from todo: .taskmaster/automation/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

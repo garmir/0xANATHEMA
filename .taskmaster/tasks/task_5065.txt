@@ -1,0 +1,22 @@
+# Task ID: 5065
+# Title: Implement System Status Functions
+```bash
+check_system_status() {
+    echo "=== System Status Check ==="
+    
+ (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: System Status Functions
+```bash
+check_system_status() {
+    echo "=== System Status Check ==="
+    
+    # Check task-master availability
+    if ! comm
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-7-helper-functions.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,21 @@
+# Task ID: 795
+# Title: Implement This can be made more efficient by computing all pairs shortest
+    # path lengths in parallel.
+     (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: This can be made more efficient by computing all pairs shortest
+    # path lengths in parallel.
+    return g_eff
+
+
+@not_implemented_for("directed")
+@nx._dispatchable
+def local_efficiency(G):
+    """Re
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/efficiency_measures.py
+
+# Test Strategy:
+Validate completion of: code-todo item

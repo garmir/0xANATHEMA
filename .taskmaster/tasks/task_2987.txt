@@ -1,0 +1,11 @@
+# Task ID: 2987
+# Title: Implement Claude Code Settings with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Claude Code Settings
+# Details:
+Converted from todo: .taskmaster/examples/integration-guide.md
+
+# Test Strategy:
+Validate completion of: action-item item

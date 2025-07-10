@@ -1,0 +1,15 @@
+# Task ID: 3311
+# Title: Implement Execution Protocol
+```python
+from atomic_task_breakdown_workflow import StuckPromptDetector (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Execution Protocol
+```python
+from atomic_task_breakdown_workflow import StuckPromptDetector
+# Details:
+Converted from todo: .taskmaster/automation/HARD_CODED_WORKFLOW_RULE.md
+
+# Test Strategy:
+Validate completion of: action-item item

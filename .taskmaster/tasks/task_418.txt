@@ -1,0 +1,21 @@
+# Task ID: 418
+# Title: Implement assert we have floating dtype?
+        missing.interpolate_2d_inplace(
+            out_data,
+        (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: assert we have floating dtype?
+        missing.interpolate_2d_inplace(
+            out_data,
+            method=method,
+            axis=axis,
+            index=index,
+            limit=limit,
+       
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/arrays/numpy_.py
+
+# Test Strategy:
+Validate completion of: code-todo item

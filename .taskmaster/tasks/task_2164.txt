@@ -1,0 +1,11 @@
+# Task ID: 2164
+# Title: Extract step indicators (`Step 1:`, `First,`, `Install`, `Create`, etc.)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Extract step indicators (`Step 1:`, `First,`, `Install`, `Create`, etc.)
+# Details:
+Converted from todo: .taskmaster/AUTONOMOUS-WORKFLOW-IMPLEMENTATION.md
+
+# Test Strategy:
+Validate completion of: action-item item

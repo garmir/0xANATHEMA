@@ -1,0 +1,18 @@
+# Task ID: 835
+# Title: Implement PEP 747: use TypeForm:
+    annotation: type[Any] | None
+    default_factory: Callable[[], Any] | Cal (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: PEP 747: use TypeForm:
+    annotation: type[Any] | None
+    default_factory: Callable[[], Any] | Callable[[dict[str, Any]], Any] | None
+    alias: str | None
+    alias_priority: int | None
+    validat
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pydantic/fields.py
+
+# Test Strategy:
+Validate completion of: code-todo item

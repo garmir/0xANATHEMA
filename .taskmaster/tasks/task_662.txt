@@ -1,0 +1,22 @@
+# Task ID: 662
+# Title: implement a stable simultaneous_sort.
+            "hamming",
+            *BOOL_METRICS,
+        }
+   (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: implement a stable simultaneous_sort.
+            "hamming",
+            *BOOL_METRICS,
+        }
+        return sorted(({"sqeuclidean"} | set(METRIC_MAPPING64.keys())) - excluded)
+
+    @classmethod
+ 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/metrics/_pairwise_distances_reduction/_dispatcher.py
+
+# Test Strategy:
+Validate completion of: code-todo item

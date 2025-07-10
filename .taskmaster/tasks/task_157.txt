@@ -1,0 +1,21 @@
+# Task ID: 157
+# Title: Implement used only once in indexing; belongs elsewhere?
+def is_full_slice(obj, line: int) -> bool:
+    """
+   (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: used only once in indexing; belongs elsewhere?
+def is_full_slice(obj, line: int) -> bool:
+    """
+    We have a full length slice.
+    """
+    return (
+        isinstance(obj, slice)
+        and obj.s
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/common.py
+
+# Test Strategy:
+Validate completion of: code-todo item

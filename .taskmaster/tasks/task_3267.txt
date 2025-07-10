@@ -1,0 +1,11 @@
+# Task ID: 3267
+# Title: Implement Task has been in-progress for >10 minutes without completion (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Task has been in-progress for >10 minutes without completion
+# Details:
+Converted from todo: .taskmaster/workflow-rules/recursive-breakdown-rule.md
+
+# Test Strategy:
+Validate completion of: action-item item

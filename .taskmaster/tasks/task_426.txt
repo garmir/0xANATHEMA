@@ -1,0 +1,18 @@
+# Task ID: 426
+# Title: Implement can remove this after dropping some future numpy version?
+        return invalid_comparison(left, ri (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: can remove this after dropping some future numpy version?
+        return invalid_comparison(left, right, op)
+
+    return missing.dispatch_fill_zeros(op, left, right, result)
+
+
+def arithmetic_op(left: 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/ops/array_ops.py
+
+# Test Strategy:
+Validate completion of: code-todo item

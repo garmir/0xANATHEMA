@@ -1,0 +1,21 @@
+# Task ID: 364
+# Title: Implement assert something?
+    ts.align(ts[::2], join=join_type)
+
+
+def test_align_stringindex(any_string_dtyp (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: assert something?
+    ts.align(ts[::2], join=join_type)
+
+
+def test_align_stringindex(any_string_dtype):
+    left = Series(range(3), index=pd.Index(["a", "b", "d"], dtype=any_string_dtype))
+    right =
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/series/methods/test_align.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,16 @@
+# Task ID: 370
+# Title: Implement (3.0): this will be unreachable when use_inf_as_na
+                    #  deprecation is enforced
+   (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (3.0): this will be unreachable when use_inf_as_na
+                    #  deprecation is enforced
+                    return str(x)
+                elif x is NaT or isinstance(x, (np.datetime64, np.ti
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/io/formats/format.py
+
+# Test Strategy:
+Validate completion of: code-todo item

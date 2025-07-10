@@ -1,0 +1,16 @@
+# Task ID: 2278
+# Title: Implement BGE (BAAI General Embedding)
+- **Capabilities**: Multi-functional, multi-lingual, multi-granular
+- * (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: BGE (BAAI General Embedding)
+- **Capabilities**: Multi-functional, multi-lingual, multi-granular
+- **Strengths**:
+  - BGE-M3 provides exceptional vers
+# Details:
+Converted from todo: .taskmaster/research/local-llm-survey-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

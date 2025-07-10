@@ -1,0 +1,16 @@
+# Task ID: 726
+# Title: Implement It would be nice to resolve this issue.
+        pytest.skip("array**2 can have incorrect/weird resul (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: It would be nice to resolve this issue.
+        pytest.skip("array**2 can have incorrect/weird result dtype")
+
+    # ignore fpe's since they may just mismatch for integers anyway.
+    with warnings.ca
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/_core/tests/test_scalarmath.py
+
+# Test Strategy:
+Validate completion of: code-todo item

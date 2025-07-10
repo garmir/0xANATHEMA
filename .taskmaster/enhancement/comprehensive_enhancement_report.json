@@ -1,0 +1,165 @@
+{
+  "project_overview": {
+    "total_todos": 5,
+    "by_status": {
+      "pending": 5
+    },
+    "by_priority": {
+      "medium": 5
+    }
+  },
+  "quality_analysis": {
+    "average_score": 0.58,
+    "median_score": 0.565,
+    "min_score": 0.44499999999999995,
+    "max_score": 0.7,
+    "individual_scores": {
+      "1": {
+        "clarity_score": 0.6,
+        "completeness_score": 0.3,
+        "actionability_score": 0.6000000000000001,
+        "specificity_score": 0.2,
+        "testability_score": 0.7,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.525
+      },
+      "2": {
+        "clarity_score": 0.7999999999999999,
+        "completeness_score": 0.5,
+        "actionability_score": 1.0,
+        "specificity_score": 0.2,
+        "testability_score": 0.7999999999999999,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.7
+      },
+      "3": {
+        "clarity_score": 0.7999999999999999,
+        "completeness_score": 0.5,
+        "actionability_score": 0.6000000000000001,
+        "specificity_score": 0.4,
+        "testability_score": 0.8999999999999999,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.6649999999999999
+      },
+      "4": {
+        "clarity_score": 0.6,
+        "completeness_score": 0.3,
+        "actionability_score": 0.2,
+        "specificity_score": 0.2,
+        "testability_score": 0.7,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.44499999999999995
+      },
+      "5": {
+        "clarity_score": 0.7999999999999999,
+        "completeness_score": 0.3,
+        "actionability_score": 0.6000000000000001,
+        "specificity_score": 0.2,
+        "testability_score": 0.7,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.565
+      }
+    },
+    "recommendations": [
+      "Focus on improving 1 low-scoring tasks",
+      "Add more details to 3 tasks"
+    ]
+  },
+  "optimization_opportunities": [
+    {
+      "type": "missing_dependency",
+      "task_id": "5",
+      "suggested_dependency": "3",
+      "suggestion": "Task 'Deployment' may depend on 'Testing'"
+    },
+    {
+      "type": "low_quality_task",
+      "task_id": "4",
+      "quality_score": 0.44499999999999995,
+      "suggestion": "Task 'Documentation' has low quality score (0.44) and needs improvement"
+    }
+  ],
+  "dependency_analysis": {
+    "circular_dependencies": [],
+    "parallel_opportunities": [
+      [
+        "1",
+        "2"
+      ]
+    ],
+    "optimal_order": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
+  },
+  "decomposition_recommendations": [],
+  "performance_metrics": {
+    "enhancement_statistics": {
+      "decomposition": {
+        "average_time": 0,
+        "average_improvement": 0,
+        "success_count": 0,
+        "error_count": 0,
+        "success_rate": 0
+      },
+      "dependency_analysis": {
+        "average_time": 0,
+        "average_improvement": 0,
+        "success_count": 0,
+        "error_count": 0,
+        "success_rate": 0
+      },
+      "quality_improvement": {
+        "average_time": 0,
+        "average_improvement": 0,
+        "success_count": 0,
+        "error_count": 0,
+        "success_rate": 0
+      },
+      "description_enhancement": {
+        "average_time": 0.00037915706634521483,
+        "average_improvement": 0.06949999999999998,
+        "success_count": 10,
+        "error_count": 0,
+        "success_rate": 1.0
+      },
+      "time_estimation": {
+        "average_time": 0.00037915706634521483,
+        "average_improvement": 0.06949999999999998,
+        "success_count": 10,
+        "error_count": 0,
+        "success_rate": 1.0
+      },
+      "resource_planning": {
+        "average_time": 0.00037915706634521483,
+        "average_improvement": 0.06949999999999998,
+        "success_count": 10,
+        "error_count": 0,
+        "success_rate": 1.0
+      },
+      "test_strategy": {
+        "average_time": 0.00037915706634521483,
+        "average_improvement": 0.06949999999999998,
+        "success_count": 10,
+        "error_count": 0,
+        "success_rate": 1.0
+      },
+      "validation_criteria": {
+        "average_time": 0.00037915706634521483,
+        "average_improvement": 0.06949999999999998,
+        "success_count": 10,
+        "error_count": 0,
+        "success_rate": 1.0
+      }
+    },
+    "overall_performance": {
+      "total_enhancements": 50,
+      "average_time": 0.00037915706634521483,
+      "average_improvement": 0.06949999999999998,
+      "total_errors": 0
+    }
+  }
+}

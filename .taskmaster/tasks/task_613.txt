@@ -1,0 +1,15 @@
+# Task ID: 613
+# Title: Implement compare results on dense and sparse data as proposed in:
+    # https://github.com/scikit-learn/sciki (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: compare results on dense and sparse data as proposed in:
+    # https://github.com/scikit-learn/scikit-learn/pull/23585#discussion_r968388186
+    # X can be a sparse matrix.
+    rng = check_random_stat
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/manifold/tests/test_t_sne.py
+
+# Test Strategy:
+Validate completion of: code-todo item

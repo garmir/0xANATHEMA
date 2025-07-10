@@ -1,0 +1,17 @@
+# Task ID: 728
+# Title: Implement Allowing unsafe casting by
+        #       default in ufuncs strikes again... :(
+        a = np.arra (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Allowing unsafe casting by
+        #       default in ufuncs strikes again... :(
+        a = np.array(3, dtype='m8[h]')
+        b = np.array('1999-03-12T12', dtype='M8[s]')
+        #assert_raises(Type
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/_core/tests/test_datetime.py
+
+# Test Strategy:
+Validate completion of: code-todo item

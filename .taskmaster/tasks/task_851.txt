@@ -1,0 +1,14 @@
+# Task ID: 851
+# Title: Implement in theory we should check that the schema accepts a serialization key
+        schema['serialization' (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: in theory we should check that the schema accepts a serialization key
+        schema['serialization'] = core_schema.plain_serializer_function_ser_schema(encoder, when_used='json')
+        return schem
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pydantic/_internal/_generate_schema.py
+
+# Test Strategy:
+Validate completion of: code-todo item

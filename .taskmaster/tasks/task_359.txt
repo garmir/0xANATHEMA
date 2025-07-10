@@ -1,0 +1,15 @@
+# Task ID: 359
+# Title: setting nan here is to keep the test passing as we
+                #  make assert_frame_equal strict (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: setting nan here is to keep the test passing as we
+                #  make assert_frame_equal stricter, but is nan really the
+                #  ideal behavior here?
+                if tz1 is not None
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/reshape/concat/test_datetimes.py
+
+# Test Strategy:
+Validate completion of: code-todo item

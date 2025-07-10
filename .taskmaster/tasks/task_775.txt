@@ -1,0 +1,19 @@
+# Task ID: 775
+# Title: Implement Currently non-lazy decompiling doesn't work for this class...
+        # if not ttFont.lazy:
+         (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Currently non-lazy decompiling doesn't work for this class...
+        # if not ttFont.lazy:
+        # 	self.decompile()
+        # 	del self.data, self.ttFont
+
+    def __getattr__(self, attr):
+        
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/ttLib/tables/E_B_L_C_.py
+
+# Test Strategy:
+Validate completion of: code-todo item

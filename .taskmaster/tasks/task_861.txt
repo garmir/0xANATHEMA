@@ -1,0 +1,17 @@
+# Task ID: 861
+# Title: Implement varname the right fit?
+            ),
+            (r"(var)(\s+)", bygroups(Keyword, Whitespace), "va (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: varname the right fit?
+            ),
+            (r"(var)(\s+)", bygroups(Keyword, Whitespace), "varname"),
+            (r"(def)(\s+)", bygroups(Keyword, Whitespace), "funcname"),
+            (r"(fn)
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/mojo.py
+
+# Test Strategy:
+Validate completion of: code-todo item

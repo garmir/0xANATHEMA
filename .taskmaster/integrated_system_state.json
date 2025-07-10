@@ -1,0 +1,170 @@
+{
+  "integration_statistics": {
+    "total_cycles": 3,
+    "architectures_discovered": 3,
+    "performance_improvements": 0,
+    "convergence_achieved": true
+  },
+  "search_history": [
+    {
+      "task_id": "integrated_test_001",
+      "optimization_cycles": 3,
+      "best_architecture": {
+        "id": "mutated_arch_16",
+        "performance": 0.5242255913580685,
+        "complexity": 0.776,
+        "efficiency": 0.6755484424717377,
+        "layers": [
+          {
+            "layer_type": "lstm",
+            "units": 32,
+            "activation": "relu",
+            "dropout_rate": null,
+            "kernel_size": null,
+            "filters": null,
+            "attention_heads": null,
+            "layer_id": "layer_0"
+          },
+          {
+            "layer_type": "dense",
+            "units": 256,
+            "activation": "gelu",
+            "dropout_rate": null,
+            "kernel_size": null,
+            "filters": null,
+            "attention_heads": null,
+            "layer_id": "layer_1"
+          },
+          {
+            "layer_type": "lstm",
+            "units": 60,
+            "activation": "swish",
+            "dropout_rate": null,
+            "kernel_size": null,
+            "filters": null,
+            "attention_heads": null,
+            "layer_id": "layer_2"
+          },
+          {
+            "layer_type": "lstm",
+            "units": 32,
+            "activation": "sigmoid",
+            "dropout_rate": null,
+            "kernel_size": null,
+            "filters": null,
+            "attention_heads": null,
+            "layer_id": "layer_3"
+          },
+          {
+            "layer_type": "dense",
+            "units": 32,
+            "activation": "gelu",
+            "dropout_rate": null,
+            "kernel_size": null,
+            "filters": null,
+            "attention_heads": null,
+            "layer_id": "layer_4"
+          },
+          {
+            "layer_type": "dense",
+            "units": 64,
+            "activation": "sigmoid",
+            "dropout_rate": null,
+            "kernel_size": null,
+            "filters": null,
+            "attention_heads": null,
+            "layer_id": "layer_6"
+          }
+        ]
+      },
+      "best_integrated_performance": 0.8218361280893425,
+      "performance_history": [
+        0.8218361280893425,
+        0.8183579788244157,
+        0.796890958644786
+      ],
+      "meta_learning_summary": {
+        "total_adaptations": 3,
+        "final_performance": 0.704717753370613,
+        "convergence_achieved": false
+      },
+      "nas_summary": {
+        "architectures_evaluated": 3,
+        "average_performance": 0.8078526726491863,
+        "complexity_range": [
+          0.776,
+          0.852
+        ]
+      },
+      "integration_statistics": {
+        "total_cycles": 0,
+        "architectures_discovered": 0,
+        "performance_improvements": 0,
+        "convergence_achieved": true
+      },
+      "optimization_recommendations": [
+        "Limited improvement - consider adjusting search strategy or constraints",
+        "Low architecture diversity - increase exploration parameters",
+        "Meta-learning still adapting - continue exploration-heavy search"
+      ],
+      "timestamp": 1752177043.9453409
+    }
+  ],
+  "optimizer_preferences": {
+    "lstm": {
+      "count": 5,
+      "performance_sum": 4.958926993902901
+    },
+    "dense": {
+      "count": 4,
+      "performance_sum": 3.958926993902901
+    },
+    "complexity_range": [
+      0.776,
+      0.836
+    ],
+    "attention": {
+      "count": 1,
+      "performance_sum": 1.0
+    },
+    "gru": {
+      "count": 1,
+      "performance_sum": 1.0
+    }
+  },
+  "meta_learning_framework_status": {
+    "total_decision_points": 45,
+    "registered_meta_learners": [
+      "simple_meta_learner"
+    ],
+    "global_performance_history": [
+      0.716835764362541,
+      0.6778599294147192,
+      0.704717753370613
+    ],
+    "adaptation_cycles": 45,
+    "average_performance": 0.6998044823826244,
+    "framework_uptime": 0.0063631534576416016
+  },
+  "nas_system_status": {
+    "generations_completed": 4,
+    "population_size": 15,
+    "best_overall_performance": 0.9507927210560037,
+    "avg_performance_trend": [
+      0.6902155617212969,
+      0.8294390931178734,
+      0.775450821467497,
+      0.774291988595343
+    ],
+    "best_performance_trend": [
+      0.8687217262878589,
+      0.9863089979676336,
+      1.0,
+      0.9507927210560037
+    ],
+    "total_architectures_evaluated": 57,
+    "search_duration": 0.004547119140625,
+    "convergence_achieved": true
+  },
+  "timestamp": 1752177043.9453921
+}

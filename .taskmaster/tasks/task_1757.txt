@@ -1,0 +1,11 @@
+# Task ID: 1757
+# Title: Implement Review the current task with `task-master show $ARGUMENTS` (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Review the current task with `task-master show $ARGUMENTS`
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

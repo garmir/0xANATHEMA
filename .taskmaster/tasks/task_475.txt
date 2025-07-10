@@ -1,0 +1,17 @@
+# Task ID: 475
+# Title: Implement for all ttest functions, add tests with masked array inputs
+class TestTtest_rel:
+    def test_vs_non (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: for all ttest functions, add tests with masked array inputs
+class TestTtest_rel:
+    def test_vs_nonmasked(self):
+        np.random.seed(1234567)
+        outcome = np.random.randn(20, 4) + [0, 0, 1, 2
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/stats/tests/test_mstats_basic.py
+
+# Test Strategy:
+Validate completion of: code-todo item

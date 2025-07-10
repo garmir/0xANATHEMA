@@ -1,0 +1,20 @@
+# Task ID: 468
+# Title: Implement better way to do that?
+        return np.ma.var(a) * n/(n-1.)
+    am = _mask_to_limits(a, limits=lim (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: better way to do that?
+        return np.ma.var(a) * n/(n-1.)
+    am = _mask_to_limits(a, limits=limits, inclusive=inclusive)
+
+    return np.ma.var(am, axis=axis, ddof=ddof)
+
+
+def tmin(a, lowerlimit=N
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/stats/_mstats_basic.py
+
+# Test Strategy:
+Validate completion of: code-todo item

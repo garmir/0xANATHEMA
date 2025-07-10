@@ -1,0 +1,11 @@
+# Task ID: 1762
+# Title: Implement `task-master show <subtask-id>` - Understand requirements (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: `task-master show <subtask-id>` - Understand requirements
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

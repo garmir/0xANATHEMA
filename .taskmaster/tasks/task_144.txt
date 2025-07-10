@@ -1,0 +1,17 @@
+# Task ID: 144
+# Title: Implement - the filtering logic should be better checked so that
+    # it tries to reflect 'df' as much as pos (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: - the filtering logic should be better checked so that
+    # it tries to reflect 'df' as much as possible
+    retlist = []
+    partitions = cext.disk_partitions()
+    for partition in partitions:
+    
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/psutil/_pssunos.py
+
+# Test Strategy:
+Validate completion of: code-todo item

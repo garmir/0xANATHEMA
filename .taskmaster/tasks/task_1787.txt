@@ -1,0 +1,11 @@
+# Task ID: 1787
+# Title: Implement Tool Allowlist Recommendations with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Tool Allowlist Recommendations
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

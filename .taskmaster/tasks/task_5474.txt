@@ -1,0 +1,15 @@
+# Task ID: 5474
+# Title: Implement 3.1 Task Management Prompts
+- **Task Analysis**: Prompts for breaking down complex tasks
+- **Depende (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 3.1 Task Management Prompts
+- **Task Analysis**: Prompts for breaking down complex tasks
+- **Dependency Identification**: Extract task relationships a
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/ai-integration/prompt-optimization.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,11 @@
+# Task ID: 2685
+# Title: Implement Loop Optimization (Recursive) with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Loop Optimization (Recursive)
+# Details:
+Converted from todo: .taskmaster/docs/research-planning-workflow-map.md
+
+# Test Strategy:
+Validate completion of: action-item item

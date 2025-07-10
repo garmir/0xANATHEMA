@@ -1,0 +1,15 @@
+# Task ID: 107
+# Title: Implement remove this branch when Scipy 1.12 is the minimum supported version
+        # Also remove _inplace_c (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: remove this branch when Scipy 1.12 is the minimum supported version
+        # Also remove _inplace_contiguous_isotonic_regression.
+        order = np.s_[:] if increasing else np.s_[::-1]
+        y = n
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/isotonic.py
+
+# Test Strategy:
+Validate completion of: code-todo item

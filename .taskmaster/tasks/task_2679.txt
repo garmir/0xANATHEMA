@@ -1,0 +1,11 @@
+# Task ID: 2679
+# Title: Implement Findings Integration → with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Findings Integration →
+# Details:
+Converted from todo: .taskmaster/docs/research-planning-workflow-map.md
+
+# Test Strategy:
+Validate completion of: action-item item

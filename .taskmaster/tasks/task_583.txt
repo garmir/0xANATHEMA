@@ -1,0 +1,15 @@
+# Task ID: 583
+# Title: Implement We can consider removing the containers and importing
+# directly from SciPy when sparse matrices wil (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: We can consider removing the containers and importing
+# directly from SciPy when sparse matrices will be deprecated.
+CSR_CONTAINERS = [scipy.sparse.csr_matrix, scipy.sparse.csr_array]
+CSC_CONTAINERS =
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/utils/fixes.py
+
+# Test Strategy:
+Validate completion of: code-todo item

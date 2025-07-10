@@ -1,0 +1,11 @@
+# Task ID: 3936
+# Title: **Implement memoization** for recursive PRD processing (highest impact)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Implement memoization** for recursive PRD processing (highest impact)
+# Details:
+Converted from todo: .taskmaster/reports/performance-optimization-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

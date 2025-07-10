@@ -1,0 +1,16 @@
+# Task ID: 733
+# Title: Implement FIXME: Find out what the following raises a warning in r8247
+        with np.errstate(divide='ignore (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: FIXME: Find out what the following raises a warning in r8247
+        with np.errstate(divide='ignore'):
+            assert_((1 / array(0)).mask)
+        assert_((1 + xm).mask)
+        assert_((-xm).ma
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/ma/tests/test_old_ma.py
+
+# Test Strategy:
+Validate completion of: code-todo item

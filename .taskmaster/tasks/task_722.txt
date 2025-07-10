@@ -1,0 +1,16 @@
+# Task ID: 722
+# Title: Implement Note that times have dubious rounding as of fixing NaTs!
+        # NaT and NaN should behave the sam (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Note that times have dubious rounding as of fixing NaTs!
+        # NaT and NaN should behave the same, do basic tests for NaT:
+        a = np.arange(0, 24, dtype=dtype)
+        a[pos] = "NaT"
+        
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/lib/tests/test_function_base.py
+
+# Test Strategy:
+Validate completion of: code-todo item

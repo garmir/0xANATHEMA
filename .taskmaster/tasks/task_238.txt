@@ -1,0 +1,16 @@
+# Task ID: 238
+# Title: Implement simplify once we can just .astype to other unit
+        exp = np.asarray(dti.normalize()).astype(f"M (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: simplify once we can just .astype to other unit
+        exp = np.asarray(dti.normalize()).astype(f"M8[{unit}]")
+        expected = DatetimeArray._simple_new(exp, dtype=exp.dtype)
+
+        res = dta.no
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arrays/test_datetimes.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,14 @@
+# Task ID: 3817
+# Title: Implement Integration Architecture Patterns
+- **Microservices for Research**: Modular research services with i (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Integration Architecture Patterns
+- **Microservices for Research**: Modular research services with independent scaling
+- **Event-Driven Research**: Tr
+# Details:
+Converted from todo: .taskmaster/reports/comprehensive-research-assessment.md
+
+# Test Strategy:
+Validate completion of: action-item item

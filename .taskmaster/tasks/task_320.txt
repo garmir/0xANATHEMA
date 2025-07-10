@@ -1,0 +1,16 @@
+# Task ID: 320
+# Title: Implement better name, de-duplicate with test_sort_index_level above
+    def test_sort_index_level2(self, mult (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: better name, de-duplicate with test_sort_index_level above
+    def test_sort_index_level2(self, multiindex_dataframe_random_data):
+        frame = multiindex_dataframe_random_data
+
+        df = frame.
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/methods/test_sort_index.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,25 @@
+# Task ID: 337
+# Title: split this test
+    df = biggie_df_fixture
+    s = df.to_html()
+
+    buf = StringIO()
+    retval = d (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: split this test
+    df = biggie_df_fixture
+    s = df.to_html()
+
+    buf = StringIO()
+    retval = df.to_html(buf=buf)
+    assert retval is None
+    assert buf.getvalue() == s
+
+    assert isinstance(s
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/io/formats/test_to_html.py
+
+# Test Strategy:
+Validate completion of: code-todo item

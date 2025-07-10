@@ -1,0 +1,11 @@
+# Task ID: 1902
+# Title: Implement **✅ Research Query Processing**: Local models successfully process complex research queries with opt (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **✅ Research Query Processing**: Local models successfully process complex research queries with optimized prompts
+# Details:
+Converted from todo: LOCAL_LLM_MIGRATION_GUIDE.md
+
+# Test Strategy:
+Validate completion of: action-item item

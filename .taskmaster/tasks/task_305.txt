@@ -1,0 +1,17 @@
+# Task ID: 305
+# Title: Implement actionable?
+        # XXX: Behavior change: specifying SparseIndex no longer changes the
+        # f (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: actionable?
+        # XXX: Behavior change: specifying SparseIndex no longer changes the
+        # fill_value
+        expected = SparseArray([0, 1, 2, 0], kind="integer")
+        tm.assert_sp_array_eq
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arrays/sparse/test_constructors.py
+
+# Test Strategy:
+Validate completion of: code-todo item

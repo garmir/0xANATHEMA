@@ -1,0 +1,11 @@
+# Task ID: 3451
+# Title: Implement **Code Analysis** → DeepSeek Coder 6.7B (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Code Analysis** → DeepSeek Coder 6.7B
+# Details:
+Converted from todo: .taskmaster/migration/llm_evaluation_report.md
+
+# Test Strategy:
+Validate completion of: action-item item

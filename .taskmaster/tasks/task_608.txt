@@ -1,0 +1,16 @@
+# Task ID: 608
+# Title: Implement remove the following two lines when scikit-learn only depends
+        # on scipy versions that no lo (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: remove the following two lines when scikit-learn only depends
+        # on scipy versions that no longer support scipy.sparse matrices.
+        self.mean_ = xp.reshape(xp.asarray(self.mean_), (-1,))
+
+
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/decomposition/_pca.py
+
+# Test Strategy:
+Validate completion of: code-todo item

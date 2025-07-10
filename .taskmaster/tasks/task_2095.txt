@@ -1,0 +1,15 @@
+# Task ID: 2095
+# Title: Implement Advanced Usage with Python Interface
+```python
+from claude_integration_wrapper import ClaudeIntegrat (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Advanced Usage with Python Interface
+```python
+from claude_integration_wrapper import ClaudeIntegrationWrapper
+# Details:
+Converted from todo: .taskmaster/README-AUTONOMOUS-WORKFLOW.md
+
+# Test Strategy:
+Validate completion of: action-item item

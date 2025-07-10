@@ -1,0 +1,16 @@
+# Task ID: 651
+# Title: Implement complexity is O(n_categorical_features * 255). Maybe this is
+        # worth cythonizing
+        for
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: complexity is O(n_categorical_features * 255). Maybe this is
+        # worth cythonizing
+        for mapped_f_idx, f_idx in enumerate(categorical_features_indices):
+            for raw_cat_val in know
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/ensemble/_hist_gradient_boosting/binning.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,20 @@
+# Task ID: 224
+# Title: split this test
+    cats = Categorical(
+        ["a", "a", "a", "b", "b", "b", "c", "c", "c"],
+      (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: split this test
+    cats = Categorical(
+        ["a", "a", "a", "b", "b", "b", "c", "c", "c"],
+        categories=["a", "b", "c", "d"],
+        ordered=True,
+    )
+    data = DataFrame({"a": [1, 1, 1,
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/groupby/test_categorical.py
+
+# Test Strategy:
+Validate completion of: code-todo item

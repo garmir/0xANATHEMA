@@ -1,0 +1,16 @@
+# Task ID: 2643
+# Title: Implement 3.3 Development Tools Integration
+- Add Docker and Kubernetes native support
+- Integrate with CI/CD  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: 3.3 Development Tools Integration
+- Add Docker and Kubernetes native support
+- Integrate with CI/CD platforms (Jenkins, GitLab CI)
+- Connect with moni
+# Details:
+Converted from todo: .taskmaster/planning/next_development_roadmap.md
+
+# Test Strategy:
+Validate completion of: action-item item

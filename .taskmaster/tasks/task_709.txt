@@ -1,0 +1,20 @@
+# Task ID: 709
+# Title: test .eq., .neq., etc replacements.
+                ]:
+                    v = v.replace(*repl)
+
+    (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: test .eq., .neq., etc replacements.
+                ]:
+                    v = v.replace(*repl)
+
+            v = kind_re.sub(r'kind("\1")', v)
+            v = selected_int_kind_re.sub(r'selected_int_k
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/f2py/crackfortran.py
+
+# Test Strategy:
+Validate completion of: code-todo item

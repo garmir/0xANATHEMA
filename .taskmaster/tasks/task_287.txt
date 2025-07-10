@@ -1,0 +1,17 @@
+# Task ID: 287
+# Title: Implement if we passed microsecond with a keyword we would mess up
+        #  xref GH#45307
+        if kwd !=  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: if we passed microsecond with a keyword we would mess up
+        #  xref GH#45307
+        if kwd != "nanosecond":
+            # nanosecond is keyword-only as of 2.0, others are not
+            mark = 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/scalar/timestamp/test_constructors.py
+
+# Test Strategy:
+Validate completion of: code-todo item

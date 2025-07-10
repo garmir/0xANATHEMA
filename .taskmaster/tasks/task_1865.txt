@@ -1,0 +1,11 @@
+# Task ID: 1865
+# Title: **Execute Complete Pipeline Test**: Run the full autonomous system end-to-end and capture all metric (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Execute Complete Pipeline Test**: Run the full autonomous system end-to-end and capture all metrics
+# Details:
+Converted from todo: execution-planning.md
+
+# Test Strategy:
+Validate completion of: action-item item

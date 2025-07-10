@@ -1,3 +1,27 @@
+
+# Local LLM imports for autonomous operation
+import asyncio
+from pathlib import Path
+import sys
+
+# Add local LLM modules to path
+sys.path.append(str(Path(__file__).parent / ".taskmaster"))
+try:
+    from adapters.local_api_adapter import (
+        LocalAPIAdapter, 
+        replace_perplexity_call,
+        replace_task_master_research,
+        replace_autonomous_stuck_handler
+    )
+    from research.local_research_workflow import (
+        LocalResearchWorkflow,
+        local_autonomous_stuck_handler
+    )
+    LOCAL_LLM_AVAILABLE = True
+except ImportError as e:
+    print(f"⚠️ Local LLM modules not available: {e}")
+    LOCAL_LLM_AVAILABLE = False
+
 #!/usr/bin/env python3
 """
 Autonomous Workflow Loop - Hard-coded workflow implementation
@@ -43,7 +67,7 @@ class WorkflowState:
     
 @dataclass
 class ResearchResult:
-    """Research result from perplexity/task-master"""
+    """Research result # from perplexity  # Replaced with local LLM adapter
     query: str
     solution_steps: List[str]
     confidence: float
@@ -823,3 +847,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def run_async_research(coro):
+    """Helper to run async research functions"""
+    try:
+        loop = asyncio.get_event_loop()
+    except RuntimeError:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+    
+    return loop.run_until_complete(coro)

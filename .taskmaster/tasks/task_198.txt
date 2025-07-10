@@ -1,0 +1,14 @@
+# Task ID: 198
+# Title: Implement to get the same deprecation in assert_numpy_array_equal we need
+        #  to change/deprecate the d (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: to get the same deprecation in assert_numpy_array_equal we need
+        #  to change/deprecate the default for strict_nan to become True
+        # TODO: to get the same deprecation in assert_index_equ
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/util/test_assert_almost_equal.py
+
+# Test Strategy:
+Validate completion of: code-todo item

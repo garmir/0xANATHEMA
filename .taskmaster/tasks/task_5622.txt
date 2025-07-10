@@ -1,0 +1,19 @@
+# Task ID: 5622
+# Title: Implement Workspace Initialization
+```bash
+task-master catalytic-init \
+    --workspace "$TASKMASTER_HOME/cata (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Workspace Initialization
+```bash
+task-master catalytic-init \
+    --workspace "$TASKMASTER_HOME/catalytic" \
+    --size "10GB" \
+    --partition-count
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-3-optimization/prd-3.4-catalytic-execution.md
+
+# Test Strategy:
+Validate completion of: action-item item

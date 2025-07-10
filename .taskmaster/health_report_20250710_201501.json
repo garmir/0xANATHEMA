@@ -1,0 +1,284 @@
+{
+  "health_check_summary": {
+    "timestamp": "2025-07-10T20:15:01.618026",
+    "duration_seconds": 1.212561,
+    "total_tests": 40,
+    "passed_tests": 36,
+    "failed_tests": 4,
+    "warnings": 1,
+    "health_score": 90.0
+  },
+  "test_results": {
+    "file_exists_local_llm_adapter.py": {
+      "passed": true,
+      "message": "Found local_llm_adapter.py",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.405482"
+    },
+    "file_exists_local_research_module.py": {
+      "passed": true,
+      "message": "Found local_research_module.py",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.405491"
+    },
+    "file_exists_local_planning_engine.py": {
+      "passed": true,
+      "message": "Found local_planning_engine.py",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.405497"
+    },
+    "file_exists_autonomous_research_integration.py": {
+      "passed": true,
+      "message": "Found autonomous_research_integration.py",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.405502"
+    },
+    "file_exists_.taskmaster/config.json": {
+      "passed": true,
+      "message": "Found .taskmaster/config.json",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.405508"
+    },
+    "import_os": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.405511"
+    },
+    "import_sys": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.405513"
+    },
+    "import_json": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.405514"
+    },
+    "import_time": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.405516"
+    },
+    "import_logging": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.406830"
+    },
+    "import_pathlib": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.406834"
+    },
+    "import_datetime": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.406836"
+    },
+    "import_dataclasses": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.411506"
+    },
+    "import_typing": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.412890"
+    },
+    "import_abc": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.412893"
+    },
+    "config_section_models": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.413352"
+    },
+    "config_section_global": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.413367"
+    },
+    "model_config_main": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.413372"
+    },
+    "model_config_research": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.413376"
+    },
+    "model_config_fallback": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.413379"
+    },
+    "syntax_local_llm_adapter.py": {
+      "passed": true,
+      "message": "Valid Python syntax",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.417546"
+    },
+    "syntax_local_research_module.py": {
+      "passed": true,
+      "message": "Valid Python syntax",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.418620"
+    },
+    "syntax_local_planning_engine.py": {
+      "passed": true,
+      "message": "Valid Python syntax",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.428184"
+    },
+    "class_defined_LocalLLMAdapter": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.428427"
+    },
+    "class_defined_OllamaProvider": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.428436"
+    },
+    "class_defined_LocalAIProvider": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.428443"
+    },
+    "method_defined_inference": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.428447"
+    },
+    "method_defined_research": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.428467"
+    },
+    "method_defined_is_available": {
+      "passed": true,
+      "message": "",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:00.428470"
+    },
+    "privacy_compliance": {
+      "passed": false,
+      "message": "Found 15 potential external calls",
+      "details": {
+        "external_calls": [
+          "local_llm_adapter.py:51 - def __init__(self, base_url: str = \"http://localhost:11434\"):",
+          "local_llm_adapter.py:131 - def __init__(self, base_url: str = \"http://localhost:8080\"):",
+          "local_llm_adapter.py:178 - def __init__(self, base_url: str = \"http://localhost:5000\"):",
+          "local_llm_adapter.py:328 - \"base_url\": \"http://localhost:11434\",",
+          "local_llm_adapter.py:332 - \"base_url\": \"http://localhost:8080\",",
+          "local_llm_adapter.py:336 - \"base_url\": \"http://localhost:5000\",",
+          "local_llm_adapter.py:72 - response = requests.post(f\"{self.api_url}/generate\", json=payload, timeout=300)",
+          "local_llm_adapter.py:147 - response = requests.post(f\"{self.base_url}/v1/chat/completions\",",
+          "local_llm_adapter.py:196 - response = requests.post(f\"{self.base_url}/api/v1/generate\",",
+          "local_llm_adapter.py:112 - response = requests.get(f\"{self.base_url}/api/tags\", timeout=5)",
+          "local_llm_adapter.py:120 - response = requests.get(f\"{self.api_url}/tags\", timeout=5)",
+          "local_llm_adapter.py:159 - response = requests.get(f\"{self.base_url}/v1/models\", timeout=5)",
+          "local_llm_adapter.py:167 - response = requests.get(f\"{self.base_url}/v1/models\", timeout=5)",
+          "local_llm_adapter.py:238 - response = requests.get(f\"{self.base_url}/api/v1/model\", timeout=5)",
+          "local_llm_adapter.py:246 - response = requests.get(f\"{self.base_url}/api/v1/model\", timeout=5)"
+        ]
+      },
+      "timestamp": "2025-07-10T20:15:00.430074"
+    },
+    "taskmaster_cli": {
+      "passed": true,
+      "message": "Task Master CLI available",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:01.606368"
+    },
+    "tasks_structure": {
+      "passed": true,
+      "message": "Found 43 tasks",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:01.607486"
+    },
+    "recursive_planning": {
+      "passed": true,
+      "message": "Found recursive indicators: plan_recursive_breakdown, recursive, depth, atomic",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:01.607840"
+    },
+    "error_handling_local_llm_adapter.py": {
+      "passed": true,
+      "message": "Found error handling: try:, except, fallback, error, Exception",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:01.608038"
+    },
+    "error_handling_local_research_module.py": {
+      "passed": false,
+      "message": "Insufficient error handling",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:01.608122"
+    },
+    "error_handling_local_planning_engine.py": {
+      "passed": true,
+      "message": "Found error handling: try:, except, fallback, error, Exception",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:01.608249"
+    },
+    "doc_updated_CLAUDE.md": {
+      "passed": true,
+      "message": "Documentation appears updated for local LLMs",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:01.609120"
+    },
+    "doc_updated_README.md": {
+      "passed": false,
+      "message": "Documentation may need updating for local LLMs",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:01.617190"
+    },
+    "performance_local_llm_adapter.py": {
+      "passed": true,
+      "message": "Found performance optimizations: performance, timeout",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:01.617899"
+    },
+    "performance_local_research_module.py": {
+      "passed": false,
+      "message": "Limited performance optimizations detected",
+      "details": {},
+      "timestamp": "2025-07-10T20:15:01.617990"
+    }
+  },
+  "errors": [
+    "privacy_compliance: Found 15 potential external calls",
+    "error_handling_local_research_module.py: Insufficient error handling",
+    "doc_updated_README.md: Documentation may need updating for local LLMs",
+    "performance_local_research_module.py: Limited performance optimizations detected"
+  ],
+  "warnings": [
+    "external_import_requests: Module requests not available - local LLM providers may not work"
+  ],
+  "recommendations": [
+    "Remove external API calls to ensure privacy compliance",
+    "Update documentation to reflect local LLM migration"
+  ]
+}

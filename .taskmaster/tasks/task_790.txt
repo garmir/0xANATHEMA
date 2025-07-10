@@ -1,0 +1,18 @@
+# Task ID: 790
+# Title: Should this also be not implemented for directed graphs?
+@nx._dispatchable
+def find_cliques_recursiv
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Should this also be not implemented for directed graphs?
+@nx._dispatchable
+def find_cliques_recursive(G, nodes=None):
+    """Returns all maximal cliques in a graph.
+
+    For each node *v*, a *maximal 
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/clique.py
+
+# Test Strategy:
+Validate completion of: code-todo item

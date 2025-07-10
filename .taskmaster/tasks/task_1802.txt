@@ -1,0 +1,11 @@
+# Task ID: 1802
+# Title: Implement MCP Connection Issues with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: MCP Connection Issues
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,11 @@
+# Task ID: 4868
+# Title: Test tree evaluation optimization on complex hierarchies (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Test tree evaluation optimization on complex hierarchies
+# Details:
+Converted from todo: .taskmaster/docs/prds/level-1/prd-optimization.md
+
+# Test Strategy:
+Validate completion of: action-item item

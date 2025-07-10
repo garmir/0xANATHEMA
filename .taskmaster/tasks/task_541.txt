@@ -1,0 +1,16 @@
+# Task ID: 541
+# Title: Implement guarantee offset > 0 results in some offsets < 0
+    vert_offsets = (np.random.rand(15) - offset) *  (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: guarantee offset > 0 results in some offsets < 0
+    vert_offsets = (np.random.rand(15) - offset) * scale
+    # always start at 0 so rotation makes sense
+    vert_offsets[0] = 0
+    # always take the 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/matplotlib/tests/test_simplification.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,17 @@
+# Task ID: 659
+# Title: Implement support CSR matrices without non-zeros elements
+    X_csr_0_nnz = csr_container(X * 0)
+    assert no (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: support CSR matrices without non-zeros elements
+    X_csr_0_nnz = csr_container(X * 0)
+    assert not BaseDistancesReductionDispatcher.is_usable_for(X_csr_0_nnz, Y, metric)
+
+    # CSR matrices with in
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/metrics/tests/test_pairwise_distances_reduction.py
+
+# Test Strategy:
+Validate completion of: code-todo item

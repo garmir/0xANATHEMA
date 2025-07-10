@@ -1,0 +1,19 @@
+# Task ID: 330
+# Title: Implement (ArrayManager) rewrite not using .values
+    def test_setitem_fancy_scalar(self, float_frame):
+      (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (ArrayManager) rewrite not using .values
+    def test_setitem_fancy_scalar(self, float_frame):
+        f = float_frame
+        expected = float_frame.copy()
+        ix = f.loc
+
+        # individual va
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/indexing/test_indexing.py
+
+# Test Strategy:
+Validate completion of: code-todo item

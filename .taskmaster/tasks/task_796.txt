@@ -1,0 +1,16 @@
+# Task ID: 796
+# Title: Implement Use matrix_power from scipy.sparse when available
+    # power = sp.sparse.linalg.matrix_power(A, wal (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Use matrix_power from scipy.sparse when available
+    # power = sp.sparse.linalg.matrix_power(A, walk_length)
+    power = np.linalg.matrix_power(A.toarray(), walk_length)
+    result = {
+        u: {v:
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/walks.py
+
+# Test Strategy:
+Validate completion of: code-todo item

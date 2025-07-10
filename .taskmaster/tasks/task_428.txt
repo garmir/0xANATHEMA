@@ -1,0 +1,17 @@
+# Task ID: 428
+# Title: Implement if other is a RangeIndex we may have more efficient options
+        right = extract_array(other, ext (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: if other is a RangeIndex we may have more efficient options
+        right = extract_array(other, extract_numpy=True, extract_range=True)
+        left = self
+
+        try:
+            # apply if we hav
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/indexes/range.py
+
+# Test Strategy:
+Validate completion of: code-todo item

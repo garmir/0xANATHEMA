@@ -1,0 +1,16 @@
+# Task ID: 474
+# Title: add more where possible with test coverage,
+    # eg https://en.wikipedia.org/wiki/Stable_distributi (Context: general task) (Context: general task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: add more where possible with test coverage,
+    # eg https://en.wikipedia.org/wiki/Stable_distribution#Other_analytic_cases
+    if alpha == 2.0:
+        # normal
+        return _norm_pdf(x0 / np.sqrt(
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/stats/_levy_stable/__init__.py
+
+# Test Strategy:
+Validate completion of: code-todo item

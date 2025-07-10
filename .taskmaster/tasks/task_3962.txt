@@ -1,0 +1,11 @@
+# Task ID: 3962
+# Title: Implement **Analyze Task-Master Workflow Structure** (4 min) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Analyze Task-Master Workflow Structure** (4 min)
+# Details:
+Converted from todo: .taskmaster/reports/atomic-breakdown-effectiveness-45-2.md
+
+# Test Strategy:
+Validate completion of: action-item item

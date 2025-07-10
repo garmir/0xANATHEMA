@@ -1,0 +1,17 @@
+# Task ID: 429
+# Title: Implement If we knew what was going in to **d, we should be able to
+            #  go through _simple_new inste (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: If we knew what was going in to **d, we might be able to
+            #  go through _simple_new instead
+            warnings.simplefilter("ignore")
+            result = cls.__new__(cls, **d)
+
+    retur
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/indexes/datetimes.py
+
+# Test Strategy:
+Validate completion of: code-todo item

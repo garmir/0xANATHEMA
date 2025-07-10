@@ -1,0 +1,11 @@
+# Task ID: 1977
+# Title: Implement Add high-level "User Dashboard" task to master (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Add high-level "User Dashboard" task to master
+# Details:
+Converted from todo: .trae/rules/dev_workflow.md
+
+# Test Strategy:
+Validate completion of: action-item item

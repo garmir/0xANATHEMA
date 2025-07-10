@@ -1,0 +1,17 @@
+# Task ID: 3189
+# Title: Implement Success Criteria
+- {Criterion 1}
+- {Criterion 2}
+- {Criterion 3} (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Success Criteria
+- {Criterion 1}
+- {Criterion 2}
+- {Criterion 3}
+# Details:
+Converted from todo: .taskmaster/templates/task-template.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,15 @@
+# Task ID: 1442
+# Title: Key Methods
+- `handle_stuck_situation()`: **HARD-CODED** workflow implementation
+- `research_solutio
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Key Methods
+- `handle_stuck_situation()`: **HARD-CODED** workflow implementation
+- `research_solution()`: **HARD-CODED** task-master + Perplexity inte
+# Details:
+Converted from todo: AUTONOMOUS_WORKFLOW_COMPLETION.md
+
+# Test Strategy:
+Validate completion of: action-item item

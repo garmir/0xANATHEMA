@@ -1,0 +1,17 @@
+# Task ID: 261
+# Title: Implement with mismatched resolution get_indexer currently raises;
+        #  this should will coerce?
+    (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: with mismatched resolution get_indexer currently raises;
+        #  this should probably coerce?
+        target = DatetimeIndex(["2018-01-02"], dtype="M8[ns]")
+        result = ii.get_indexer(target)
+
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/indexes/interval/test_indexing.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,18 @@
+# Task ID: 303
+# Title: Implement pending NA/NaN discussion
+    # https://github.com/pandas-dev/pandas/issues/32265/
+    a = pd.array( (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: pending NA/NaN discussion
+    # https://github.com/pandas-dev/pandas/issues/32265/
+    a = pd.array([0, 1, -1, None], dtype=dtype)
+    result = a / zero
+    expected = FloatingArray(
+        np.array(
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arrays/floating/test_arithmetic.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,15 @@
+# Task ID: 570
+# Title: these test classes can be moved to sklearn.utils._testing once we
+    # have a better idea of what t (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: these test classes can be moved to sklearn.utils._testing once we
+    # have a better idea of what the commonly used classes are.
+    class SimpleEstimator(BaseEstimator):
+        # This class should 
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/tests/test_metadata_routing.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,11 @@
+# Task ID: 3911
+# Title: Implement Strategic Impact Assessment with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Strategic Impact Assessment
+# Details:
+Converted from todo: .taskmaster/reports/github-actions-impact-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,15 @@
+# Task ID: 341
+# Title: this test isn't about the na_values keyword, it is about the empty entries
+#  being returned with Na (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: this test isn't about the na_values keyword, it is about the empty entries
+#  being returned with NaN entries, whereas the pyarrow engine returns "nan"
+@xfail_pyarrow  # mismatched shapes
+def test_str
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/io/parser/test_na_values.py
+
+# Test Strategy:
+Validate completion of: code-todo item

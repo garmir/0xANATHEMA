@@ -1,0 +1,21 @@
+# Task ID: 729
+# Title: branch cuts (use Pauli code)
+# TODO: conj 'symmetry'
+# TODO: FPU exceptions
+
+# At least on Windows t
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: branch cuts (use Pauli code)
+# TODO: conj 'symmetry'
+# TODO: FPU exceptions
+
+# At least on Windows the results of many complex functions are not conforming
+# to the C99 standard. See ticket 1574.
+# Di
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/_core/tests/test_umath_complex.py
+
+# Test Strategy:
+Validate completion of: code-todo item

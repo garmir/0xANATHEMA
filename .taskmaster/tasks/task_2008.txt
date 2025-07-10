@@ -1,0 +1,14 @@
+# Task ID: 2008
+# Title: Implement Master List Strategy (High-Value Focus)
+Once you transition to tag-based workflows, the `master` tag (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Master List Strategy (High-Value Focus)
+Once you transition to tag-based workflows, the `master` tag should ideally contain only:
+- **High-level deliv
+# Details:
+Converted from todo: .trae/rules/dev_workflow.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,18 @@
+# Task ID: 2944
+# Title: Technical Requirements
+- React 18+ with TypeScript
+- Modern build tooling (Vite/Webpack)
+- Testing f (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Technical Requirements
+- React 18+ with TypeScript
+- Modern build tooling (Vite/Webpack)
+- Testing framework (Jest + Testing Library)
+- Linting and fo
+# Details:
+Converted from todo: .taskmaster/examples/web-app-integration.md
+
+# Test Strategy:
+Validate completion of: action-item item

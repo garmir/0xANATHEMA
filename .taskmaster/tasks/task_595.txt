@@ -1,0 +1,21 @@
+# Task ID: 595
+# Title: Implement (1.8) remove this property
+    @property
+    def _estimator_type(self):
+        return self.estimato (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8) remove this property
+    @property
+    def _estimator_type(self):
+        return self.estimator._estimator_type
+
+    @property
+    def classes_(self):
+        """Classes labels available when `e
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/feature_selection/_rfe.py
+
+# Test Strategy:
+Validate completion of: code-todo item

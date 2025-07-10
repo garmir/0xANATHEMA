@@ -1,0 +1,19 @@
+# Task ID: 767
+# Title: Implement move type aliases to colorLib.types?
+T = TypeVar("T")
+_Kwargs = Mapping[str, Any]
+_PaintInput = Unio (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: move type aliases to colorLib.types?
+T = TypeVar("T")
+_Kwargs = Mapping[str, Any]
+_PaintInput = Union[int, _Kwargs, ot.Paint, Tuple[str, "_PaintInput"]]
+_PaintInputList = Sequence[_PaintInput]
+_ColorG
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/colorLib/builder.py
+
+# Test Strategy:
+Validate completion of: code-todo item

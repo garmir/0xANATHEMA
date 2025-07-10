@@ -1,0 +1,14 @@
+# Task ID: 765
+# Title: Implement (behdad): What does the following comment even mean? Both CFF and CFF2
+    # use the same T2Charstri (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (behdad): What does the following comment even mean? Both CFF and CFF2
+    # use the same T2Charstring class. I *think* what it means is that the CharStrings
+    # were loaded for CFF1, and we need to
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/cffLib/CFFToCFF2.py
+
+# Test Strategy:
+Validate completion of: code-todo item

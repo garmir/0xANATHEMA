@@ -1,0 +1,18 @@
+# Task ID: 742
+# Title: Implement Move me to unicodedata module and autogenerate.
+    #
+    # Unicode 14.0:
+    # $ grep '; Default_Ig (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Move me to unicodedata module and autogenerate.
+    #
+    # Unicode 14.0:
+    # $ grep '; Default_Ignorable_Code_Point ' DerivedCoreProperties.txt | sed 's/;.*#/#/'
+    # 00AD          # Cf       SOFT
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/merge/unicode.py
+
+# Test Strategy:
+Validate completion of: code-todo item

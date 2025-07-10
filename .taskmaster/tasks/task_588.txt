@@ -1,0 +1,15 @@
+# Task ID: 588
+# Title: Implement refactor to do the symmetrisation inside _weighted_percentile to avoid
+# sorting the input array twi (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: refactor to do the symmetrisation inside _weighted_percentile to avoid
+# sorting the input array twice.
+def _averaged_weighted_percentile(array, sample_weight, percentile_rank=50, xp=None):
+    return
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/utils/stats.py
+
+# Test Strategy:
+Validate completion of: code-todo item

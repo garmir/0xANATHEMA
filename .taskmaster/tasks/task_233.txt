@@ -1,0 +1,14 @@
+# Task ID: 233
+# Title: Implement (3.0): this can be removed once Period[B] deprecation is enforced
+        with tm.assert_produces_wa (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (3.0): this can be removed once Period[B] deprecation is enforced
+        with tm.assert_produces_warning(False):
+            _ = ts.plot()
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/plotting/test_series.py
+
+# Test Strategy:
+Validate completion of: code-todo item

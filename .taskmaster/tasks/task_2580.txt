@@ -1,0 +1,16 @@
+# Task ID: 2580
+# Title: Install required Python packages (psutil)
+- [ ] Complete API key configuration
+- [ ] Test async exec
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Install required Python packages (psutil)
+- [ ] Complete API key configuration
+- [ ] Test async executor performance
+- [ ] Validate memory optimizatio
+# Details:
+Converted from todo: .taskmaster/optimization/speed-optimization-summary.md
+
+# Test Strategy:
+Validate completion of: action-item item

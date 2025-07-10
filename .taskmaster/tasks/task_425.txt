@@ -1,0 +1,18 @@
+# Task ID: 425
+# Title: Implement NumpyExtensionArray didn't used to copy, need tests
+                #  for this
+                new_ (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: NumpyExtensionArray didn't used to copy, need tests
+                #  for this
+                new_values = self._from_backing_data(npvalues)
+            else:
+                # fill with value
+     
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/arrays/_mixins.py
+
+# Test Strategy:
+Validate completion of: code-todo item

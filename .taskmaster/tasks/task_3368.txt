@@ -1,0 +1,11 @@
+# Task ID: 3368
+# Title: Implement **Claude Opus 4**: Autonomous execution capabilities (72.5% SWE-bench) (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Claude Opus 4**: Autonomous execution capabilities (72.5% SWE-bench)
+# Details:
+Converted from todo: .taskmaster/automation/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

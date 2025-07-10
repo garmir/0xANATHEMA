@@ -1,0 +1,18 @@
+# Task ID: 2283
+# Title: Implement LlamaIndex
+- **Capabilities**: Knowledge indexing, document workflows
+- **Strengths**:
+  - Excellent (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: LlamaIndex
+- **Capabilities**: Knowledge indexing, document workflows
+- **Strengths**:
+  - Excellent for data-intensive applications
+  - Advanced pars
+# Details:
+Converted from todo: .taskmaster/research/local-llm-survey-analysis.md
+
+# Test Strategy:
+Validate completion of: action-item item

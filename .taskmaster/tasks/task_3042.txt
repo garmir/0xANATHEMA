@@ -1,0 +1,11 @@
+# Task ID: 3042
+# Title: Implement Core Capability Tests with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Core Capability Tests
+# Details:
+Converted from todo: .taskmaster/benchmarks/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

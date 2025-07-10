@@ -1,0 +1,16 @@
+# Task ID: 522
+# Title: Implement should try to use "swap -l" to check "used" too, but its units
+        # are not guaranteed to be "MB (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: maybe try to use "swap -l" to check "used" too, but its units
+        # are not guaranteed to be "MB" so parsing may not be consistent
+        matchobj = re.search(
+            r"(?P<space>\S+)\s+"
+  
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/psutil/tests/test_aix.py
+
+# Test Strategy:
+Validate completion of: code-todo item

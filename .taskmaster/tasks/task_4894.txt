@@ -1,0 +1,14 @@
+# Task ID: 4894
+# Title: Implement Atomicity Detection
+- Use `task-master next --check-atomic` to determine if further decomposition is (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Atomicity Detection
+- Use `task-master next --check-atomic` to determine if further decomposition is needed
+- Mark atomic tasks to prevent over-decomp
+# Details:
+Converted from todo: .taskmaster/docs/prds/level-1/prd-decomposition.md
+
+# Test Strategy:
+Validate completion of: action-item item

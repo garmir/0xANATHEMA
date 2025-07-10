@@ -1,0 +1,16 @@
+{
+  "models": [
+    {
+      "model_name": "test-llama",
+      "endpoint_url": "http://localhost:11434/api/generate",
+      "max_tokens": 4000,
+      "temperature": 0.1,
+      "context_window": 8192
+    }
+  ],
+  "fallback_model": "test-llama",
+  "research_settings": {
+    "max_research_depth": 3,
+    "enable_caching": true
+  }
+}

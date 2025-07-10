@@ -1,0 +1,17 @@
+# Task ID: 791
+# Title: Implement csr_array
+    D = sp.sparse.csr_array(sp.sparse.diags((1.0 / degrees), offsets=0))
+    P = (D @ X).t (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: csr_array
+    D = sp.sparse.csr_array(sp.sparse.diags((1.0 / degrees), offsets=0))
+    P = (D @ X).tolil()
+    P[labels[:, 0]] = 0  # labels[:, 0] indicates IDs of labeled nodes
+    # Build base matri
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/algorithms/node_classification.py
+
+# Test Strategy:
+Validate completion of: code-todo item

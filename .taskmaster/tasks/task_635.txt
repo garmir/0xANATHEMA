@@ -1,0 +1,18 @@
+# Task ID: 635
+# Title: Implement (1.8): Remove
+def test_copy_X_deprecated():
+    X, y, _, _ = gen_toy_problem_1d()
+    theil_sen = Th (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.8): Remove
+def test_copy_X_deprecated():
+    X, y, _, _ = gen_toy_problem_1d()
+    theil_sen = TheilSenRegressor(copy_X=True, random_state=0)
+    with pytest.warns(FutureWarning, match="`copy_X` wa
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/linear_model/tests/test_theil_sen.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,16 @@
+# Task ID: 3535
+# Title: Implement Phase 3: Planning Engine Migration (Weeks 5-6)
+- ⏳ Replace Claude API with Llama 3.1 70B
+- ⏳ Migrate (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Phase 3: Planning Engine Migration (Weeks 5-6)
+- ⏳ Replace Claude API with Llama 3.1 70B
+- ⏳ Migrate task generation workflows
+- ⏳ Implement recursive
+# Details:
+Converted from todo: .taskmaster/migration/README.md
+
+# Test Strategy:
+Validate completion of: action-item item

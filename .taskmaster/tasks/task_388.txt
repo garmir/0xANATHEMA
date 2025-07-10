@@ -1,0 +1,19 @@
+# Task ID: 388
+# Title: Implement should use missing.mask_missing?
+        op = lambda x: operator.eq(x, b)
+    else:
+        op = np. (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: should use missing.mask_missing?
+        op = lambda x: operator.eq(x, b)
+    else:
+        op = np.vectorize(
+            lambda x: bool(re.search(b, x))
+            if isinstance(x, str) and isinsta
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/array_algos/replace.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,23 @@
+# Task ID: 380
+# Title: Implement , should merge_pieces do this?
+        merged[by] = key
+
+        pieces.append(merged)
+
+    # preser (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: , should merge_pieces do this?
+        merged[by] = key
+
+        pieces.append(merged)
+
+    # preserve the original order
+    # if we have a missing piece this can be reset
+    from pandas.core.reshap
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/reshape/merge.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,21 @@
+# Task ID: 325
+# Title: Implement actually check that this worked.
+
+        # don't forget!
+        rule_monthly.asfreq("B", method="p (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: actually check that this worked.
+
+        # don't forget!
+        rule_monthly.asfreq("B", method="pad")
+
+    def test_asfreq_datetimeindex(self):
+        df = DataFrame(
+            {"A": [1, 2, 3]},
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/frame/methods/test_asfreq.py
+
+# Test Strategy:
+Validate completion of: code-todo item

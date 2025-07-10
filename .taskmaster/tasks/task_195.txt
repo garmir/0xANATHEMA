@@ -1,0 +1,15 @@
+# Task ID: 195
+# Title: Implement no tests with len(df.columns) > 0
+        mi = MultiIndex.from_product([df.columns, ["open", "high", (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: no tests with len(df.columns) > 0
+        mi = MultiIndex.from_product([df.columns, ["open", "high", "low", "close"]])
+        expected = DataFrame(
+            [], index=df.index[:0].copy(), columns=
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/resample/test_base.py
+
+# Test Strategy:
+Validate completion of: code-todo item

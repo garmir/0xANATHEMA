@@ -1,0 +1,19 @@
+# Task ID: 826
+# Title: Implement size is ignored, remove the param later
+    def feed_data(self, data: bytes, size: int = 0) -> None: (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: size is ignored, remove the param later
+    def feed_data(self, data: bytes, size: int = 0) -> None:
+        assert not self._eof, "feed_data after feed_eof"
+
+        if not data:
+            return
+
+
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/aiohttp/streams.py
+
+# Test Strategy:
+Validate completion of: code-todo item

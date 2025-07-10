@@ -1,0 +1,29 @@
+# Task ID: 132
+# Title: Implement numpy/numpy#24738
+    ...
+
+
+@overload
+def subplots(
+    nrows: int = ...,
+    ncols: int = ...,
+     (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: numpy/numpy#24738
+    ...
+
+
+@overload
+def subplots(
+    nrows: int = ...,
+    ncols: int = ...,
+    *,
+    sharex: bool | Literal["none", "all", "row", "col"] = ...,
+    sharey: bool | Literal["none",
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/matplotlib/pyplot.py
+
+# Test Strategy:
+Validate completion of: code-todo item

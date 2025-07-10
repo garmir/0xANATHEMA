@@ -1,0 +1,17 @@
+# Task ID: 559
+# Title: Implement (SLEP6): remove when metadata routing cannot be disabled.
+            routed_params = Bunch()
+       (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (SLEP6): remove when metadata routing cannot be disabled.
+            routed_params = Bunch()
+            routed_params.splitter = Bunch(split={})
+        max_iter = (
+            min(max(int(0.1 * X.
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/linear_model/_omp.py
+
+# Test Strategy:
+Validate completion of: code-todo item

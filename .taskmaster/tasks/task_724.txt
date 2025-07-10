@@ -1,0 +1,21 @@
+# Task ID: 724
+# Title: Implement Clean up to prevent passing --overwrite-signature
+    monkeypatch.setattr(
+        sys,
+        "arg (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Clean up to prevent passing --overwrite-signature
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        f'f2py {ipath} -h {foutl.pyf} -m test --overwrite-signature'.split(),
+    )
+
+    with ut
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/numpy/f2py/tests/test_f2py2e.py
+
+# Test Strategy:
+Validate completion of: code-todo item

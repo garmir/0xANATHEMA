@@ -1,0 +1,16 @@
+# Task ID: 437
+# Title: Implement Replace with pyarrow floordiv kernel.
+        # https://github.com/apache/arrow/issues/39386
+        (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Replace with pyarrow floordiv kernel.
+        # https://github.com/apache/arrow/issues/39386
+        if pa.types.is_integer(left.type) and pa.types.is_integer(right.type):
+            divided = pc.div
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/arrays/arrow/array.py
+
+# Test Strategy:
+Validate completion of: code-todo item

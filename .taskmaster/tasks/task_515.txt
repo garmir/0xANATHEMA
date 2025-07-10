@@ -1,0 +1,21 @@
+# Task ID: 515
+# Title: Choose another det of j instead?
+            # TODO: Unlikely to work in many cases
+
+        if A_j0
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Choose another det of j instead?
+            # TODO: Unlikely to work in many cases
+
+        if A_j0 is None:
+            A_j0 = S - v_x
+
+        for d in range(self.dim + 1):
+            det_A_jj = (
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/optimize/_shgo_lib/_complex.py
+
+# Test Strategy:
+Validate completion of: code-todo item

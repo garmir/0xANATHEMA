@@ -1,0 +1,16 @@
+# Task ID: 625
+# Title: Implement (1.9) : Remove
+@pytest.mark.parametrize("curve_kwargs", [{"alpha": 1.0}, None])
+@pytest.mark.paramet (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: (1.9) : Remove
+@pytest.mark.parametrize("curve_kwargs", [{"alpha": 1.0}, None])
+@pytest.mark.parametrize("kwargs", [{}, {"alpha": 1.0}])
+def test_validate_curve_kwargs_deprecate_kwargs(curve_kwargs, k
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/utils/tests/test_plotting.py
+
+# Test Strategy:
+Validate completion of: code-todo item

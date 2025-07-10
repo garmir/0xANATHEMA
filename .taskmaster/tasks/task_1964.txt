@@ -1,0 +1,11 @@
+# Task ID: 1964
+# Title: Implement **Identify the Initiative**: When user describes a significant feature (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Identify the Initiative**: When user describes a significant feature
+# Details:
+Converted from todo: .trae/rules/dev_workflow.md
+
+# Test Strategy:
+Validate completion of: action-item item

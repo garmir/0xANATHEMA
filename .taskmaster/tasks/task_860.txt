@@ -1,0 +1,17 @@
+# Task ID: 860
+# Title: Implement unsure if ellipses are allowed elsewhere, see
+                # discussion in Issue 789
+             (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: unsure if ellipses are allowed elsewhere, see
+                # discussion in Issue 789
+                (r',', Punctuation),
+                (r'\.\.\.', Punctuation),
+                (r'(\(.*?\))(\s*)
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/pygments/lexers/objective.py
+
+# Test Strategy:
+Validate completion of: code-todo item

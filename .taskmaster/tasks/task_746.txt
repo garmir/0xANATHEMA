@@ -1,0 +1,19 @@
+# Task ID: 746
+# Title: Implement Skip axes that have no variation.
+        axis.minValue, axis.defaultValue, axis.maxValue = (
+       (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Skip axes that have no variation.
+        axis.minValue, axis.defaultValue, axis.maxValue = (
+            a.minimum,
+            a.default,
+            a.maximum,
+        )
+        axis.axisNameID = n
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/fontTools/varLib/__init__.py
+
+# Test Strategy:
+Validate completion of: code-todo item

@@ -1,0 +1,233 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Project setup",
+      "description": "Initialize project",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": [],
+      "subtasks": [],
+      "details": "",
+      "testStrategy": "Unit tests for core functionality",
+      "timeEstimate": 120,
+      "resourceRequirements": [
+        "Developer time"
+      ],
+      "validationCriteria": [
+        "Task requirements are met",
+        "Implementation is tested and validated",
+        "Documentation is updated"
+      ],
+      "createdAt": "2025-07-10T21:20:06.234044",
+      "updatedAt": "2025-07-10T21:20:06.234047",
+      "qualityMetrics": {
+        "clarity_score": 0.6,
+        "completeness_score": 0.3,
+        "actionability_score": 0.6000000000000001,
+        "specificity_score": 0.2,
+        "testability_score": 0.7,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.525
+      },
+      "enhancementHistory": [
+        {
+          "type": "validation_criteria",
+          "qualityImprovement": 0.0,
+          "suggestions": [
+            "Make criteria measurable and specific",
+            "Include both functional and non-functional requirements"
+          ],
+          "timestamp": "2025-07-10T21:20:06.237388",
+          "metadata": {}
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "2",
+      "title": "Core implementation",
+      "description": "Main functionality",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": [],
+      "subtasks": [],
+      "details": "",
+      "testStrategy": "Unit tests for core functionality",
+      "timeEstimate": 120,
+      "resourceRequirements": [
+        "Developer time"
+      ],
+      "validationCriteria": [
+        "Implementation is complete and functional",
+        "Code follows project standards and conventions",
+        "All tests pass successfully"
+      ],
+      "createdAt": "2025-07-10T21:20:06.234051",
+      "updatedAt": "2025-07-10T21:20:06.234052",
+      "qualityMetrics": {
+        "clarity_score": 0.7999999999999999,
+        "completeness_score": 0.5,
+        "actionability_score": 1.0,
+        "specificity_score": 0.2,
+        "testability_score": 0.7999999999999999,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.7
+      },
+      "enhancementHistory": [
+        {
+          "type": "validation_criteria",
+          "qualityImprovement": 0.0,
+          "suggestions": [
+            "Make criteria measurable and specific",
+            "Include both functional and non-functional requirements"
+          ],
+          "timestamp": "2025-07-10T21:20:06.237563",
+          "metadata": {}
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "3",
+      "title": "Testing",
+      "description": "Test suite. Create comprehensive test suite with unit and integration tests.",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": [
+        "2"
+      ],
+      "subtasks": [],
+      "details": "",
+      "testStrategy": "Unit tests for core functionality",
+      "timeEstimate": 144,
+      "resourceRequirements": [
+        "Developer time"
+      ],
+      "validationCriteria": [
+        "Task requirements are met",
+        "Implementation is tested and validated",
+        "Documentation is updated"
+      ],
+      "createdAt": "2025-07-10T21:20:06.234055",
+      "updatedAt": "2025-07-10T21:20:06.234055",
+      "qualityMetrics": {
+        "clarity_score": 0.7999999999999999,
+        "completeness_score": 0.5,
+        "actionability_score": 0.6000000000000001,
+        "specificity_score": 0.4,
+        "testability_score": 0.8999999999999999,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.6649999999999999
+      },
+      "enhancementHistory": [
+        {
+          "type": "validation_criteria",
+          "qualityImprovement": 0.0,
+          "suggestions": [
+            "Make criteria measurable and specific",
+            "Include both functional and non-functional requirements"
+          ],
+          "timestamp": "2025-07-10T21:20:06.237741",
+          "metadata": {}
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "4",
+      "title": "Documentation",
+      "description": "Technical docs",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": [
+        "3"
+      ],
+      "subtasks": [],
+      "details": "",
+      "testStrategy": "Unit tests for core functionality",
+      "timeEstimate": 120,
+      "resourceRequirements": [
+        "Developer time"
+      ],
+      "validationCriteria": [
+        "Task requirements are met",
+        "Implementation is tested and validated",
+        "Documentation is updated"
+      ],
+      "createdAt": "2025-07-10T21:20:06.234058",
+      "updatedAt": "2025-07-10T21:20:06.234058",
+      "qualityMetrics": {
+        "clarity_score": 0.6,
+        "completeness_score": 0.3,
+        "actionability_score": 0.2,
+        "specificity_score": 0.2,
+        "testability_score": 0.7,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.44499999999999995
+      },
+      "enhancementHistory": [
+        {
+          "type": "validation_criteria",
+          "qualityImprovement": 0.0,
+          "suggestions": [
+            "Make criteria measurable and specific",
+            "Include both functional and non-functional requirements"
+          ],
+          "timestamp": "2025-07-10T21:20:06.237968",
+          "metadata": {}
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "5",
+      "title": "Deployment",
+      "description": "Production deployment",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": [
+        "4"
+      ],
+      "subtasks": [],
+      "details": "",
+      "testStrategy": "Unit tests for core functionality",
+      "timeEstimate": 120,
+      "resourceRequirements": [
+        "DevOps engineer",
+        "Production environment",
+        "Monitoring tools"
+      ],
+      "validationCriteria": [
+        "Task requirements are met",
+        "Implementation is tested and validated",
+        "Documentation is updated"
+      ],
+      "createdAt": "2025-07-10T21:20:06.234060",
+      "updatedAt": "2025-07-10T21:20:06.234061",
+      "qualityMetrics": {
+        "clarity_score": 0.7999999999999999,
+        "completeness_score": 0.3,
+        "actionability_score": 0.6000000000000001,
+        "specificity_score": 0.2,
+        "testability_score": 0.7,
+        "feasibility_score": 0.8999999999999999,
+        "overall_score": 0.565
+      },
+      "enhancementHistory": [
+        {
+          "type": "validation_criteria",
+          "qualityImprovement": 0.0,
+          "suggestions": [
+            "Make criteria measurable and specific",
+            "Include both functional and non-functional requirements"
+          ],
+          "timestamp": "2025-07-10T21:20:06.238134",
+          "metadata": {}
+        }
+      ],
+      "metadata": {}
+    }
+  ],
+  "lastUpdated": "2025-07-10T21:20:06.238203"
+}

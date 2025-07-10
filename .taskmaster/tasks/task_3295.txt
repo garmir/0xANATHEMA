@@ -1,0 +1,15 @@
+# Task ID: 3295
+# Title: Implement **Atomic Task 8**: Compare with Task-Master Current State
+**Action**: Identify gaps and opportunitie (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Atomic Task 8**: Compare with Task-Master Current State
+**Action**: Identify gaps and opportunities
+**Duration**: 5 minutes
+**Output**: Gap analysis
+# Details:
+Converted from todo: .taskmaster/workflow-rules/recursive-breakdown-rule.md
+
+# Test Strategy:
+Validate completion of: action-item item

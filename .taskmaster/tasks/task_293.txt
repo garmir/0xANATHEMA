@@ -1,0 +1,25 @@
+# Task ID: 293
+# Title: Implement so, so many other variants of this...
+
+    _invalid_scalars = [
+        1 + 2j,
+        "True",
+     (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: so, so many other variants of this...
+
+    _invalid_scalars = [
+        1 + 2j,
+        "True",
+        "1",
+        "1.0",
+        pd.NaT,
+        np.datetime64("NaT"),
+        np.timedelta64("NaT"),
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/tests/arrays/masked/test_indexing.py
+
+# Test Strategy:
+Validate completion of: code-todo item

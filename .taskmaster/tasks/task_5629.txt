@@ -1,0 +1,20 @@
+# Task ID: 5629
+# Title: Implement Partition Layout
+```
+$TASKMASTER_HOME/catalytic/
+├── pools/
+│   ├── prd_generation_pool/     # 1.5GB (Context: software_development task) (Context: software_development task)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Partition Layout
+```
+$TASKMASTER_HOME/catalytic/
+├── pools/
+│   ├── prd_generation_pool/     # 1.5GB for PRD tasks
+│   ├── optimization_pool/       # 
+# Details:
+Converted from todo: .taskmaster/artifacts/original-prds/prd-tree/prd-3-optimization/prd-3.4-catalytic-execution.md
+
+# Test Strategy:
+Validate completion of: action-item item

@@ -1,0 +1,14 @@
+# Task ID: 3794
+# Title: Implement Real-Time Analytics & Alerting
+- **Anomaly Detection**: ML-based anomaly detection using time-series (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Real-Time Analytics & Alerting
+- **Anomaly Detection**: ML-based anomaly detection using time-series analysis
+- **Adaptive Thresholds**: Dynamic thres
+# Details:
+Converted from todo: .taskmaster/reports/comprehensive-research-assessment.md
+
+# Test Strategy:
+Validate completion of: action-item item

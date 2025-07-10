@@ -1,0 +1,18 @@
+# Task ID: 799
+# Title: Implement Is this function just a special case of the geographical
+    # threshold graph?
+    #
+    #     half (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Is this function just a special case of the geographical
+    # threshold graph?
+    #
+    #     half_radius = {v: radius / 2 for v in n}
+    #     return geographical_threshold_graph(nodes, theta=1, a
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/generators/geometric.py
+
+# Test Strategy:
+Validate completion of: code-todo item

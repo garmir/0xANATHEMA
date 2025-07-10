@@ -1,0 +1,17 @@
+# Task ID: 612
+# Title: implement a brute force version for testing purposes
+# TODO: create a density estimation base class? (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: implement a brute force version for testing purposes
+# TODO: create a density estimation base class?
+class KernelDensity(BaseEstimator):
+    """Kernel Density Estimation.
+
+    Read more in the :ref:`U
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/sklearn/neighbors/_kde.py
+
+# Test Strategy:
+Validate completion of: code-todo item

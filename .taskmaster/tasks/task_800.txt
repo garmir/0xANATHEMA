@@ -1,0 +1,14 @@
+# Task ID: 800
+# Title: Implement The original code incremented the number of iterations each
+    # time a new Zipf random value was d (Decomposed into 4 atomic tasks) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: The original code incremented the number of iterations each
+    # time a new Zipf random value was drawn from the distribution. This
+    # differed from the way the number of iterations was incremente
+# Details:
+Converted from todo: venv/lib/python3.13/site-packages/networkx/generators/community.py
+
+# Test Strategy:
+Validate completion of: code-todo item

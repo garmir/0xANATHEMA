@@ -1,0 +1,16 @@
+# Task ID: 472
+# Title: #  Test sample dtypes
+#  Add dtype kwarg (especially for distributions with no parameters)
+#  When d (Decomposed into 3 atomic tasks) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: #  Test sample dtypes
+#  Add dtype kwarg (especially for distributions with no parameters)
+#  When drawing endpoint/out-of-bounds values of a parameter, draw them from
+#   the endpoints/out-of-bounds 
+# Details:
+Converted from todo: .venv/lib/python3.13/site-packages/scipy/stats/_distribution_infrastructure.py
+
+# Test Strategy:
+Validate completion of: code-todo item

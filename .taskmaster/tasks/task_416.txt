@@ -1,0 +1,17 @@
+# Task ID: 416
+# Title: require any NAs be valid-for-DTA
+            # TODO: if dtype is passed, check for tzawareness compa
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: require any NAs be valid-for-DTA
+            # TODO: if dtype is passed, check for tzawareness compat?
+            raise ValueError
+        return cls._from_sequence(scalars, dtype=dtype)
+
+    @classm
+# Details:
+Converted from todo: .taskmaster/venv/lib/python3.13/site-packages/pandas/core/arrays/datetimes.py
+
+# Test Strategy:
+Validate completion of: code-todo item

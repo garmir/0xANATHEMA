@@ -1,0 +1,11 @@
+# Task ID: 3601
+# Title: Implement **Adaptive Behavior** with clear acceptance criteria and deliverables
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Adaptive Behavior**
+# Details:
+Converted from todo: .taskmaster/migration/local-llm-migration-strategy.md
+
+# Test Strategy:
+Validate completion of: action-item item

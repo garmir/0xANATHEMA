@@ -1,0 +1,15 @@
+# Task ID: 4109
+# Title: Implement **Active Mitigations**
+1. **Graceful Fallback**: System operates without local LLMs
+2. **Manual Rese (Context: software_development task) (Decomposed into 4 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: **Active Mitigations**
+1. **Graceful Fallback**: System operates without local LLMs
+2. **Manual Research Prompts**: Clear guidance when automation una
+# Details:
+Converted from todo: .taskmaster/reports/local-llm-migration-health-check.md
+
+# Test Strategy:
+Validate completion of: action-item item

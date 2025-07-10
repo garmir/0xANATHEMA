@@ -1,0 +1,11 @@
+# Task ID: 1769
+# Title: Create a markdown PRD file describing the new changes: `touch task-migration-checklist.md` (prds can (Context: general task) (Decomposed into 3 atomic tasks)
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Create a markdown PRD file describing the new changes: `touch task-migration-checklist.md` (prds can be .txt or .md)
+# Details:
+Converted from todo: AGENTS.md
+
+# Test Strategy:
+Validate completion of: action-item item
