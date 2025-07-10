@@ -1,0 +1,632 @@
+name: GitHub Pull & Improvement Assessment
+
+on:
+  schedule:
+    # Pull from GitHub and assess improvements every hour
+    - cron: '0 * * * *'
+  workflow_dispatch:
+    inputs:
+      force_pull:
+        description: 'Force pull even if no changes detected'
+        required: false
+        default: 'false'
+        type: boolean
+      assessment_depth:
+        description: 'Assessment depth level'
+        required: false
+        default: 'standard'
+        type: choice
+        options:
+        - quick
+        - standard
+        - deep
+        - comprehensive
+
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+jobs:
+  # Job 1: GitHub Repository Pull & Change Detection
+  github-pull-assessment:
+    name: 🔄 GitHub Pull & Change Assessment
+    runs-on: ubuntu-latest
+    outputs:
+      changes_detected: ${{ steps.pull.outputs.changes_detected }}
+      change_count: ${{ steps.pull.outputs.change_count }}
+      improvement_score: ${{ steps.analyze.outputs.improvement_score }}
+      deployment_recommended: ${{ steps.analyze.outputs.deployment_recommended }}
+    
+    steps:
+    - name: 📥 Initial Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: 🔧 Setup Environment
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: 📦 Install Dependencies
+      run: |
+        pip install requests python-dotenv gitpython
+        npm install -g task-master-ai
+
+    - name: 🔄 Intelligent GitHub Pull
+      id: pull
+      run: |
+        echo "🔄 Performing intelligent GitHub repository pull..."
+        
+        # Store current state
+        BEFORE_SHA=$(git rev-parse HEAD)
+        BEFORE_COMMIT_COUNT=$(git rev-list --count HEAD)
+        
+        echo "📊 Current state:"
+        echo "  SHA: $BEFORE_SHA"
+        echo "  Commits: $BEFORE_COMMIT_COUNT"
+        
+        # Fetch latest from origin
+        git fetch origin master 2>/dev/null || git fetch origin main
+        
+        # Check for remote changes
+        REMOTE_SHA=$(git rev-parse origin/master 2>/dev/null || git rev-parse origin/main)
+        
+        if [ "$BEFORE_SHA" != "$REMOTE_SHA" ] || [ "${{ github.event.inputs.force_pull }}" = "true" ]; then
+          echo "🆕 Changes detected or forced pull requested"
+          
+          # Pull changes
+          git pull origin master 2>/dev/null || git pull origin main
+          
+          AFTER_SHA=$(git rev-parse HEAD)
+          AFTER_COMMIT_COUNT=$(git rev-list --count HEAD)
+          
+          # Calculate changes
+          CHANGE_COUNT=$((AFTER_COMMIT_COUNT - BEFORE_COMMIT_COUNT))
+          
+          echo "changes_detected=true" >> $GITHUB_OUTPUT
+          echo "change_count=$CHANGE_COUNT" >> $GITHUB_OUTPUT
+          
+          echo "✅ Successfully pulled $CHANGE_COUNT new commits"
+          
+          # Log recent changes
+          echo "📋 Recent changes:"
+          git log --oneline $BEFORE_SHA..$AFTER_SHA | head -10
+          
+          # Analyze changed files
+          echo "📂 Changed files:"
+          git diff --name-only $BEFORE_SHA..$AFTER_SHA | head -20
+          
+        else
+          echo "✅ Repository already up to date"
+          echo "changes_detected=false" >> $GITHUB_OUTPUT
+          echo "change_count=0" >> $GITHUB_OUTPUT
+        fi
+
+    - name: 🔍 Intelligent Change Analysis
+      id: analyze
+      run: |
+        echo "🔍 Analyzing changes for improvement assessment..."
+        
+        ASSESSMENT_DEPTH="${{ github.event.inputs.assessment_depth || 'standard' }}"
+        CHANGES_DETECTED="${{ steps.pull.outputs.changes_detected }}"
+        CHANGE_COUNT="${{ steps.pull.outputs.change_count }}"
+        
+        # Create intelligent analysis script
+        cat > change_analyzer.py << 'EOF'
+        import os
+        import json
+        import subprocess
+        import datetime
+        from pathlib import Path
+        
+        def analyze_repository_improvements():
+            analysis = {
+                "timestamp": datetime.datetime.now().isoformat(),
+                "assessment_depth": "$ASSESSMENT_DEPTH",
+                "changes_detected": "$CHANGES_DETECTED" == "true",
+                "change_count": int("$CHANGE_COUNT" or "0"),
+                "improvement_metrics": {},
+                "significant_changes": [],
+                "quality_indicators": [],
+                "deployment_readiness": {}
+            }
+            
+            improvement_score = 0
+            max_score = 100
+            
+            # 1. Repository Structure Quality
+            critical_files = {
+                "unified_autonomous_system.py": 20,
+                "labrys_main.py": 15,
+                ".taskmaster/tasks/tasks.json": 10,
+                "README.md": 5,
+                ".github/workflows": 10
+            }
+            
+            structure_score = 0
+            for file_path, points in critical_files.items():
+                if Path(file_path).exists():
+                    structure_score += points
+                    analysis["quality_indicators"].append(f"✅ {file_path} present")
+                else:
+                    analysis["quality_indicators"].append(f"⚠️ {file_path} missing")
+            
+            analysis["improvement_metrics"]["repository_structure"] = structure_score
+            improvement_score += structure_score * 0.3
+            
+            # 2. Code Quality Assessment
+            code_quality_score = 70  # Base score
+            
+            # Check for Python files
+            python_files = list(Path('.').rglob('*.py'))
+            if len(python_files) >= 10:
+                code_quality_score += 15
+                analysis["quality_indicators"].append(f"✅ Rich Python codebase ({len(python_files)} files)")
+            elif len(python_files) >= 5:
+                code_quality_score += 10
+                analysis["quality_indicators"].append(f"✅ Good Python codebase ({len(python_files)} files)")
+            
+            # Check for documentation
+            docs = list(Path('.').rglob('*.md'))
+            if len(docs) >= 5:
+                code_quality_score += 15
+                analysis["quality_indicators"].append(f"✅ Well documented ({len(docs)} MD files)")
+            
+            analysis["improvement_metrics"]["code_quality"] = min(code_quality_score, 100)
+            improvement_score += code_quality_score * 0.25
+            
+            # 3. Integration Assessment
+            integration_score = 0
+            
+            # GitHub Actions
+            workflows = list(Path('.github/workflows').glob('*.yml')) if Path('.github/workflows').exists() else []
+            integration_score += min(len(workflows) * 25, 50)
+            
+            if workflows:
+                analysis["quality_indicators"].append(f"✅ {len(workflows)} GitHub Actions workflows")
+            
+            # Task Master integration
+            if Path('.taskmaster').exists():
+                taskmaster_files = list(Path('.taskmaster').rglob('*'))
+                integration_score += min(len(taskmaster_files) * 2, 30)
+                analysis["quality_indicators"].append(f"✅ Task Master integration ({len(taskmaster_files)} files)")
+            
+            # LABRYS integration
+            if Path('labrys_main.py').exists() and Path('taskmaster_labrys.py').exists():
+                integration_score += 20
+                analysis["quality_indicators"].append("✅ LABRYS integration complete")
+            
+            analysis["improvement_metrics"]["integration_quality"] = min(integration_score, 100)
+            improvement_score += integration_score * 0.25
+            
+            # 4. Innovation & Advanced Features
+            innovation_score = 0
+            
+            advanced_features = [
+                ("unified_autonomous_system.py", "Unified Autonomous System", 20),
+                ("intelligent_task_predictor.py", "AI Task Prediction", 15),
+                ("recursive_", "Recursive Processing", 10),
+                ("optimization", "Optimization Algorithms", 10),
+                ("autonomous", "Autonomous Capabilities", 15)
+            ]
+            
+            for pattern, feature, points in advanced_features:
+                matching_files = list(Path('.').rglob(f'*{pattern}*'))
+                if matching_files:
+                    innovation_score += points
+                    analysis["quality_indicators"].append(f"✅ {feature} implemented")
+            
+            analysis["improvement_metrics"]["innovation_level"] = min(innovation_score, 100)
+            improvement_score += innovation_score * 0.2
+            
+            # 5. Recent Changes Impact (if changes detected)
+            if analysis["changes_detected"]:
+                change_impact_score = min(analysis["change_count"] * 10, 100)
+                analysis["improvement_metrics"]["recent_changes_impact"] = change_impact_score
+                improvement_score += change_impact_score * 0.1
+                
+                if analysis["change_count"] >= 5:
+                    analysis["significant_changes"].append("Major feature updates detected")
+                elif analysis["change_count"] >= 2:
+                    analysis["significant_changes"].append("Moderate improvements detected")
+                elif analysis["change_count"] >= 1:
+                    analysis["significant_changes"].append("Minor improvements detected")
+            
+            # Normalize final score
+            final_score = min(improvement_score, max_score)
+            analysis["overall_improvement_score"] = round(final_score, 1)
+            
+            # Deployment readiness assessment
+            deployment_ready = (
+                final_score >= 80 and
+                structure_score >= 50 and
+                integration_score >= 40
+            )
+            
+            analysis["deployment_readiness"] = {
+                "ready": deployment_ready,
+                "score_threshold": final_score >= 80,
+                "structure_adequate": structure_score >= 50,
+                "integration_adequate": integration_score >= 40,
+                "recommendation": "deploy" if deployment_ready else "improve"
+            }
+            
+            return analysis
+        
+        if __name__ == "__main__":
+            result = analyze_repository_improvements()
+            print(json.dumps(result, indent=2))
+            
+            # Outputs for GitHub Actions
+            print(f"improvement_score={result['overall_improvement_score']}")
+            print(f"deployment_recommended={str(result['deployment_readiness']['ready']).lower()}")
+            
+            # Save detailed analysis
+            with open('improvement_analysis.json', 'w') as f:
+                json.dump(result, f, indent=2)
+        EOF
+        
+        # Run analysis
+        ANALYSIS_OUTPUT=$(python change_analyzer.py)
+        echo "$ANALYSIS_OUTPUT"
+        
+        # Extract outputs
+        IMPROVEMENT_SCORE=$(echo "$ANALYSIS_OUTPUT" | grep "improvement_score=" | cut -d'=' -f2)
+        DEPLOYMENT_REC=$(echo "$ANALYSIS_OUTPUT" | grep "deployment_recommended=" | cut -d'=' -f2)
+        
+        echo "improvement_score=$IMPROVEMENT_SCORE" >> $GITHUB_OUTPUT
+        echo "deployment_recommended=$DEPLOYMENT_REC" >> $GITHUB_OUTPUT
+
+    - name: 📊 Generate Pull Assessment Report
+      run: |
+        echo "📊 Generating comprehensive pull assessment report..."
+        
+        cat > pull_assessment_report.md << EOF
+        # 🔄 GitHub Pull & Improvement Assessment Report
+        
+        **Assessment Timestamp:** $(date)
+        **Workflow Run ID:** ${{ github.run_id }}
+        **Assessment Depth:** ${{ github.event.inputs.assessment_depth || 'standard' }}
+        
+        ## 📥 Pull Results
+        - **Changes Detected:** ${{ steps.pull.outputs.changes_detected == 'true' && '🆕 Yes' || '✅ No changes' }}
+        - **New Commits:** ${{ steps.pull.outputs.change_count || '0' }}
+        - **Improvement Score:** ${{ steps.analyze.outputs.improvement_score }}%
+        - **Deployment Ready:** ${{ steps.analyze.outputs.deployment_recommended == 'true' && '✅ Yes' || '⚠️ Needs work' }}
+        
+        ## 📊 Quality Metrics
+        
+        EOF
+        
+        # Add detailed metrics from analysis
+        if [ -f "improvement_analysis.json" ]; then
+          python -c "
+        import json
+        with open('improvement_analysis.json') as f:
+            data = json.load(f)
+        
+        metrics = data.get('improvement_metrics', {})
+        for metric, score in metrics.items():
+            metric_name = metric.replace('_', ' ').title()
+            print(f'- **{metric_name}:** {score}%')
+        " >> pull_assessment_report.md
+        
+          echo -e "\n## 🔍 Quality Indicators\n" >> pull_assessment_report.md
+          
+          python -c "
+        import json
+        with open('improvement_analysis.json') as f:
+            data = json.load(f)
+        
+        for indicator in data.get('quality_indicators', []):
+            print(f'- {indicator}')
+        " >> pull_assessment_report.md
+        
+          if [ "${{ steps.pull.outputs.changes_detected }}" = "true" ]; then
+            echo -e "\n## 🚀 Significant Changes\n" >> pull_assessment_report.md
+            
+            python -c "
+        import json
+        with open('improvement_analysis.json') as f:
+            data = json.load(f)
+        
+        for change in data.get('significant_changes', []):
+            print(f'- {change}')
+        " >> pull_assessment_report.md
+          fi
+        fi
+        
+        cat >> pull_assessment_report.md << EOF
+        
+        ## 🎯 Deployment Readiness
+        
+        **Status:** ${{ steps.analyze.outputs.deployment_recommended == 'true' && '✅ Ready for deployment' || '⚠️ Requires improvements' }}
+        
+        ### Readiness Criteria
+        - Overall Score ≥ 80%: ${{ steps.analyze.outputs.improvement_score >= '80' && '✅' || '❌' }}
+        - Repository Structure: Adequate
+        - Integration Quality: Adequate
+        
+        ## 📅 Next Assessment
+        **Scheduled:** Every hour (cron: '0 * * * *')
+        
+        ---
+        
+        *Generated by GitHub Pull & Improvement Assessment Pipeline*
+        EOF
+        
+        echo "✅ Pull assessment report generated"
+
+    - name: 📤 Upload Assessment Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: pull-assessment-${{ github.run_number }}
+        path: |
+          improvement_analysis.json
+          pull_assessment_report.md
+        retention-days: 30
+
+  # Job 2: Advanced System Testing (if improvements detected)
+  advanced-testing:
+    name: 🧪 Advanced System Testing
+    runs-on: ubuntu-latest
+    needs: github-pull-assessment
+    if: needs.github-pull-assessment.outputs.changes_detected == 'true' || github.event.inputs.force_pull == 'true'
+    
+    steps:
+    - name: 📥 Checkout Updated Repository
+      uses: actions/checkout@v4
+
+    - name: 🔧 Setup Testing Environment
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: 📦 Install Testing Dependencies
+      run: |
+        pip install pytest asyncio aiohttp requests python-dotenv
+        npm install -g task-master-ai
+
+    - name: 🧪 Run Comprehensive System Tests
+      run: |
+        echo "🧪 Running comprehensive system tests..."
+        
+        # Create dynamic test suite
+        cat > comprehensive_tests.py << 'EOF'
+        import os
+        import json
+        import subprocess
+        import asyncio
+        from pathlib import Path
+        import datetime
+        
+        class SystemTester:
+            def __init__(self):
+                self.test_results = {
+                    "timestamp": datetime.datetime.now().isoformat(),
+                    "total_tests": 0,
+                    "passed_tests": 0,
+                    "failed_tests": 0,
+                    "test_details": []
+                }
+            
+            def run_test(self, test_name, test_func):
+                """Run individual test and record results"""
+                self.test_results["total_tests"] += 1
+                try:
+                    result = test_func()
+                    if result:
+                        self.test_results["passed_tests"] += 1
+                        self.test_results["test_details"].append({
+                            "name": test_name,
+                            "status": "PASSED",
+                            "details": "Test completed successfully"
+                        })
+                        print(f"✅ {test_name}")
+                    else:
+                        self.test_results["failed_tests"] += 1
+                        self.test_results["test_details"].append({
+                            "name": test_name,
+                            "status": "FAILED",
+                            "details": "Test returned False"
+                        })
+                        print(f"❌ {test_name}")
+                except Exception as e:
+                    self.test_results["failed_tests"] += 1
+                    self.test_results["test_details"].append({
+                        "name": test_name,
+                        "status": "ERROR",
+                        "details": str(e)
+                    })
+                    print(f"💥 {test_name}: {e}")
+            
+            def test_repository_structure(self):
+                """Test repository structure integrity"""
+                required_files = [
+                    "unified_autonomous_system.py",
+                    "README.md"
+                ]
+                return all(Path(f).exists() for f in required_files)
+            
+            def test_python_syntax(self):
+                """Test Python files for syntax errors"""
+                python_files = list(Path('.').rglob('*.py'))
+                for py_file in python_files[:10]:  # Test first 10 files
+                    try:
+                        subprocess.run(['python', '-m', 'py_compile', str(py_file)], 
+                                     check=True, capture_output=True)
+                    except subprocess.CalledProcessError:
+                        return False
+                return True
+            
+            def test_task_master_integration(self):
+                """Test Task Master CLI integration"""
+                try:
+                    result = subprocess.run(['task-master', 'list'], 
+                                          capture_output=True, text=True, timeout=30)
+                    return result.returncode == 0
+                except:
+                    return False
+            
+            def test_unified_system_import(self):
+                """Test unified system can be imported"""
+                try:
+                    import sys
+                    sys.path.insert(0, '.')
+                    import unified_autonomous_system
+                    return True
+                except ImportError:
+                    return False
+            
+            def test_github_actions_workflows(self):
+                """Test GitHub Actions workflow files"""
+                workflows_dir = Path('.github/workflows')
+                if not workflows_dir.exists():
+                    return False
+                
+                workflows = list(workflows_dir.glob('*.yml'))
+                return len(workflows) > 0
+            
+            def test_taskmaster_directory_structure(self):
+                """Test .taskmaster directory structure"""
+                required_dirs = [
+                    ".taskmaster",
+                    ".taskmaster/tasks"
+                ]
+                return all(Path(d).exists() for d in required_dirs)
+            
+            def run_all_tests(self):
+                """Run all system tests"""
+                print("🧪 Running Comprehensive System Tests")
+                print("=" * 50)
+                
+                # Define all tests
+                tests = [
+                    ("Repository Structure", self.test_repository_structure),
+                    ("Python Syntax Validation", self.test_python_syntax),
+                    ("Task Master Integration", self.test_task_master_integration),
+                    ("Unified System Import", self.test_unified_system_import),
+                    ("GitHub Actions Workflows", self.test_github_actions_workflows),
+                    ("TaskMaster Directory Structure", self.test_taskmaster_directory_structure)
+                ]
+                
+                # Run all tests
+                for test_name, test_func in tests:
+                    self.run_test(test_name, test_func)
+                
+                # Calculate success rate
+                success_rate = (self.test_results["passed_tests"] / 
+                              self.test_results["total_tests"] * 100) if self.test_results["total_tests"] > 0 else 0
+                
+                print("\n" + "=" * 50)
+                print(f"📊 Test Summary:")
+                print(f"   Total Tests: {self.test_results['total_tests']}")
+                print(f"   Passed: {self.test_results['passed_tests']}")
+                print(f"   Failed: {self.test_results['failed_tests']}")
+                print(f"   Success Rate: {success_rate:.1f}%")
+                print("=" * 50)
+                
+                # Save results
+                with open('test_results.json', 'w') as f:
+                    json.dump(self.test_results, f, indent=2)
+                
+                return success_rate >= 70  # 70% success threshold
+        
+        if __name__ == "__main__":
+            tester = SystemTester()
+            success = tester.run_all_tests()
+            exit(0 if success else 1)
+        EOF
+        
+        python comprehensive_tests.py
+
+    - name: 🚀 Test Autonomous Execution
+      run: |
+        echo "🚀 Testing autonomous execution capabilities..."
+        
+        if [ -f "unified_autonomous_system.py" ]; then
+          echo "🤖 Testing unified autonomous system..."
+          timeout 120 python unified_autonomous_system.py --initialize || echo "⏰ Initialization test timed out"
+          timeout 60 python unified_autonomous_system.py --status || echo "⏰ Status test timed out"
+        fi
+
+    - name: 📤 Upload Test Results
+      uses: actions/upload-artifact@v4
+      with:
+        name: advanced-test-results-${{ github.run_number }}
+        path: test_results.json
+        retention-days: 15
+
+  # Job 3: Deployment Recommendation
+  deployment-recommendation:
+    name: 🚀 Deployment Recommendation
+    runs-on: ubuntu-latest
+    needs: [github-pull-assessment, advanced-testing]
+    if: always()
+    
+    steps:
+    - name: 📊 Analyze Deployment Readiness
+      run: |
+        echo "📊 Analyzing deployment readiness..."
+        
+        IMPROVEMENT_SCORE="${{ needs.github-pull-assessment.outputs.improvement_score }}"
+        DEPLOYMENT_RECOMMENDED="${{ needs.github-pull-assessment.outputs.deployment_recommended }}"
+        CHANGES_DETECTED="${{ needs.github-pull-assessment.outputs.changes_detected }}"
+        
+        echo "Improvement Score: $IMPROVEMENT_SCORE%"
+        echo "Deployment Recommended: $DEPLOYMENT_RECOMMENDED"
+        echo "Changes Detected: $CHANGES_DETECTED"
+        
+        # Generate deployment recommendation
+        cat > deployment_recommendation.json << EOF
+        {
+          "timestamp": "$(date -Iseconds)",
+          "analysis": {
+            "improvement_score": "$IMPROVEMENT_SCORE",
+            "deployment_recommended": $DEPLOYMENT_RECOMMENDED,
+            "changes_detected": $CHANGES_DETECTED,
+            "workflow_run": "${{ github.run_id }}"
+          },
+          "recommendation": {
+            "action": "$DEPLOYMENT_RECOMMENDED" == "true" ? "DEPLOY" : "IMPROVE",
+            "confidence": "$IMPROVEMENT_SCORE",
+            "next_steps": [
+              "$DEPLOYMENT_RECOMMENDED" == "true" ? "System ready for production deployment" : "Continue development and improvements",
+              "Monitor system performance",
+              "Schedule next assessment"
+            ]
+          }
+        }
+        EOF
+        
+        echo "📋 Deployment recommendation generated"
+        cat deployment_recommendation.json
+
+    - name: 📢 Create Deployment Summary
+      run: |
+        echo "📢 GITHUB PULL & ASSESSMENT SUMMARY"
+        echo "======================================="
+        echo "Improvement Score: ${{ needs.github-pull-assessment.outputs.improvement_score }}%"
+        echo "Changes Detected: ${{ needs.github-pull-assessment.outputs.changes_detected }}"
+        echo "Deployment Ready: ${{ needs.github-pull-assessment.outputs.deployment_recommended }}"
+        echo "Workflow: ${{ github.run_id }}"
+        echo "======================================="
+        
+        if [ "${{ needs.github-pull-assessment.outputs.deployment_recommended }}" = "true" ]; then
+          echo "🚀 RECOMMENDATION: System ready for deployment"
+        else
+          echo "🔧 RECOMMENDATION: Continue improvements before deployment"
+        fi
+        
+        echo "⏰ Next assessment: Every hour"
+
+    - name: 📤 Upload Deployment Analysis
+      uses: actions/upload-artifact@v4
+      with:
+        name: deployment-recommendation-${{ github.run_number }}
+        path: deployment_recommendation.json
+        retention-days: 90

@@ -1,0 +1,650 @@
+name: Results Aggregation and Reporting
+on:
+  workflow_run:
+    workflows: ["Claude Task Execution at Scale"]
+    types:
+      - completed
+  
+  workflow_dispatch:
+    inputs:
+      report_period:
+        description: 'Report period (hours)'
+        required: false
+        default: '24'
+        type: string
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  aggregate-execution-results:
+    name: Aggregate Task Execution Results
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        pip install matplotlib seaborn pandas numpy jinja2
+        sudo apt-get update
+        sudo apt-get install -y jq
+        
+    - name: Download execution artifacts
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const { owner, repo } = context.repo;
+          const reportPeriod = parseInt('${{ github.event.inputs.report_period || "24" }}');
+          const cutoffTime = new Date(Date.now() - reportPeriod * 60 * 60 * 1000);
+          
+          console.log(`📊 Collecting execution results from last ${reportPeriod} hours...`);
+          
+          // Get recent workflow runs
+          const runs = await github.rest.actions.listWorkflowRuns({
+            owner,
+            repo,
+            workflow_id: 'claude-task-execution.yml',
+            per_page: 50
+          });
+          
+          const recentRuns = runs.data.workflow_runs.filter(run => 
+            new Date(run.created_at) > cutoffTime && run.conclusion === 'success'
+          );
+          
+          console.log(`Found ${recentRuns.length} recent successful runs`);
+          
+          // Download artifacts from recent runs
+          let downloadCount = 0;
+          for (const run of recentRuns.slice(0, 10)) { // Limit to 10 most recent
+            try {
+              const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+                owner,
+                repo,
+                run_id: run.id
+              });
+              
+              for (const artifact of artifacts.data.artifacts) {
+                if (artifact.name.startsWith('task-results-runner-') || 
+                    artifact.name === 'execution-summary') {
+                  
+                  const download = await github.rest.actions.downloadArtifact({
+                    owner,
+                    repo,
+                    artifact_id: artifact.id,
+                    archive_format: 'zip'
+                  });
+                  
+                  // Save artifact data
+                  const fs = require('fs');
+                  const artifactPath = `artifacts/${artifact.name}-${run.id}.zip`;
+                  fs.mkdirSync('artifacts', { recursive: true });
+                  fs.writeFileSync(artifactPath, Buffer.from(download.data));
+                  
+                  downloadCount++;
+                }
+              }
+            } catch (error) {
+              console.log(`⚠️ Failed to download artifacts from run ${run.id}: ${error.message}`);
+            }
+          }
+          
+          console.log(`📦 Downloaded ${downloadCount} artifacts`);
+    
+    - name: Extract and process results
+      run: |
+        #!/bin/bash
+        set -e
+        
+        echo "📂 Extracting and processing execution results..."
+        
+        # Create processing directory
+        mkdir -p results extracted
+        
+        # Extract all downloaded artifacts
+        for zipfile in artifacts/*.zip; do
+          if [[ -f "$zipfile" ]]; then
+            echo "📦 Extracting $zipfile..."
+            unzip -q "$zipfile" -d extracted/
+          fi
+        done
+        
+        # Combine all result files
+        echo "🔄 Combining result files..."
+        
+        # Combine task results
+        echo "[]" > results/combined_task_results.json
+        for result_file in extracted/task_results_runner_*.json; do
+          if [[ -f "$result_file" ]]; then
+            echo "  Processing $result_file..."
+            jq -s '.[0] + .[1].task_results' results/combined_task_results.json "$result_file" > results/temp.json
+            mv results/temp.json results/combined_task_results.json
+          fi
+        done
+        
+        # Combine execution summaries
+        echo "[]" > results/combined_summaries.json
+        for summary_file in extracted/execution_summary.json; do
+          if [[ -f "$summary_file" ]]; then
+            echo "  Processing $summary_file..."
+            jq -s '.[0] + [.[1]]' results/combined_summaries.json "$summary_file" > results/temp.json
+            mv results/temp.json results/combined_summaries.json
+          fi
+        done
+        
+        echo "✅ Results processing complete"
+        
+        # Show basic stats
+        task_count=$(jq '. | length' results/combined_task_results.json)
+        summary_count=$(jq '. | length' results/combined_summaries.json)
+        echo "📊 Aggregated $task_count task results from $summary_count execution runs"
+    
+    - name: Generate analytics and insights
+      run: |
+        cat > analytics_generator.py << 'EOF'
+        #!/usr/bin/env python3
+        import json
+        import pandas as pd
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+        from datetime import datetime, timedelta
+        import numpy as np
+        from pathlib import Path
+        
+        class ExecutionAnalytics:
+            def __init__(self):
+                self.task_results = []
+                self.summaries = []
+                self.insights = {}
+                
+            def load_data(self):
+                try:
+                    with open('results/combined_task_results.json', 'r') as f:
+                        self.task_results = json.load(f)
+                    
+                    with open('results/combined_summaries.json', 'r') as f:
+                        self.summaries = json.load(f)
+                        
+                    print(f"📊 Loaded {len(self.task_results)} task results and {len(self.summaries)} summaries")
+                except Exception as e:
+                    print(f"⚠️ Error loading data: {e}")
+                    self.task_results = []
+                    self.summaries = []
+            
+            def analyze_performance_trends(self):
+                if not self.task_results:
+                    return
+                    
+                df = pd.DataFrame(self.task_results)
+                
+                if 'timestamp' in df.columns:
+                    df['timestamp'] = pd.to_datetime(df['timestamp'])
+                    df = df.sort_values('timestamp')
+                
+                # Success rate over time
+                if len(df) > 0:
+                    df['success_rate'] = df['success'].rolling(window=10, min_periods=1).mean()
+                    
+                    # Execution time trends
+                    df['avg_execution_time'] = df['execution_time'].rolling(window=10, min_periods=1).mean()
+                    
+                    # Generate trend plots
+                    plt.figure(figsize=(15, 10))
+                    
+                    # Success rate trend
+                    plt.subplot(2, 3, 1)
+                    plt.plot(df.index, df['success_rate'] * 100)
+                    plt.title('Success Rate Trend (%)')
+                    plt.ylabel('Success Rate')
+                    plt.xlabel('Task Sequence')
+                    plt.grid(True, alpha=0.3)
+                    
+                    # Execution time trend
+                    plt.subplot(2, 3, 2)
+                    plt.plot(df.index, df['avg_execution_time'])
+                    plt.title('Average Execution Time Trend')
+                    plt.ylabel('Time (seconds)')
+                    plt.xlabel('Task Sequence')
+                    plt.grid(True, alpha=0.3)
+                    
+                    # Task complexity distribution
+                    plt.subplot(2, 3, 3)
+                    if 'complexity_score' in df.columns:
+                        df['complexity_score'].hist(bins=10, alpha=0.7)
+                        plt.title('Task Complexity Distribution')
+                        plt.xlabel('Complexity Score')
+                        plt.ylabel('Frequency')
+                    
+                    # Success rate by priority
+                    plt.subplot(2, 3, 4)
+                    if 'priority' in df.columns:
+                        priority_success = df.groupby('priority')['success'].mean()
+                        priority_success.plot(kind='bar')
+                        plt.title('Success Rate by Priority')
+                        plt.ylabel('Success Rate')
+                        plt.xticks(rotation=45)
+                    
+                    # Execution time by runner
+                    plt.subplot(2, 3, 5)
+                    if 'runner_id' in df.columns:
+                        runner_times = df.groupby('runner_id')['execution_time'].mean()
+                        runner_times.plot(kind='bar')
+                        plt.title('Avg Execution Time by Runner')
+                        plt.ylabel('Time (seconds)')
+                        plt.xticks(rotation=45)
+                    
+                    # Tests passed rate
+                    plt.subplot(2, 3, 6)
+                    if 'tests_passed' in df.columns:
+                        test_pass_rate = df['tests_passed'].mean()
+                        plt.bar(['Tests Passed', 'Tests Failed'], 
+                               [test_pass_rate, 1 - test_pass_rate])
+                        plt.title('Test Pass Rate')
+                        plt.ylabel('Rate')
+                    
+                    plt.tight_layout()
+                    plt.savefig('results/performance_analytics.png', dpi=300, bbox_inches='tight')
+                    plt.close()
+                    
+                    print("📈 Performance analytics generated")
+            
+            def generate_insights(self):
+                insights = {
+                    'timestamp': datetime.now().isoformat(),
+                    'data_summary': {
+                        'total_tasks_analyzed': len(self.task_results),
+                        'total_execution_runs': len(self.summaries),
+                        'analysis_period': '24h'
+                    }
+                }
+                
+                if self.task_results:
+                    df = pd.DataFrame(self.task_results)
+                    
+                    # Overall metrics
+                    insights['overall_metrics'] = {
+                        'success_rate': float(df['success'].mean()) if 'success' in df.columns else 0,
+                        'average_execution_time': float(df['execution_time'].mean()) if 'execution_time' in df.columns else 0,
+                        'total_execution_time': float(df['execution_time'].sum()) if 'execution_time' in df.columns else 0,
+                        'fastest_task_time': float(df['execution_time'].min()) if 'execution_time' in df.columns else 0,
+                        'slowest_task_time': float(df['execution_time'].max()) if 'execution_time' in df.columns else 0
+                    }
+                    
+                    # Performance by category
+                    if 'priority' in df.columns:
+                        insights['priority_performance'] = {
+                            priority: {
+                                'success_rate': float(group['success'].mean()),
+                                'avg_execution_time': float(group['execution_time'].mean()),
+                                'task_count': len(group)
+                            }
+                            for priority, group in df.groupby('priority')
+                        }
+                    
+                    # Runner performance
+                    if 'runner_id' in df.columns:
+                        insights['runner_performance'] = {
+                            runner_id: {
+                                'success_rate': float(group['success'].mean()),
+                                'avg_execution_time': float(group['execution_time'].mean()),
+                                'task_count': len(group)
+                            }
+                            for runner_id, group in df.groupby('runner_id')
+                        }
+                    
+                    # Error analysis
+                    failed_tasks = df[df['success'] == False] if 'success' in df.columns else pd.DataFrame()
+                    if len(failed_tasks) > 0:
+                        insights['error_analysis'] = {
+                            'total_failures': len(failed_tasks),
+                            'failure_rate': float(len(failed_tasks) / len(df)),
+                            'common_error_patterns': self._analyze_error_patterns(failed_tasks)
+                        }
+                    
+                    # Scaling efficiency
+                    if self.summaries:
+                        scaling_data = []
+                        for summary in self.summaries:
+                            if 'runners_deployed' in summary and 'total_tasks' in summary:
+                                scaling_data.append({
+                                    'runners': summary.get('runners_deployed', 1),
+                                    'tasks': summary.get('total_tasks', 0),
+                                    'success_rate': summary.get('success_rate', 0)
+                                })
+                        
+                        if scaling_data:
+                            scaling_df = pd.DataFrame(scaling_data)
+                            insights['scaling_efficiency'] = {
+                                'avg_tasks_per_runner': float(scaling_df['tasks'].sum() / scaling_df['runners'].sum()) if scaling_df['runners'].sum() > 0 else 0,
+                                'optimal_runner_count': self._find_optimal_runner_count(scaling_df),
+                                'scaling_effectiveness': float(scaling_df['success_rate'].mean())
+                            }
+                
+                # Save insights
+                with open('results/execution_insights.json', 'w') as f:
+                    json.dump(insights, f, indent=2)
+                
+                self.insights = insights
+                print("🧠 Execution insights generated")
+                
+            def _analyze_error_patterns(self, failed_tasks):
+                if 'error_message' not in failed_tasks.columns:
+                    return {}
+                    
+                error_patterns = {}
+                for error_msg in failed_tasks['error_message'].dropna():
+                    error_lower = str(error_msg).lower()
+                    if 'timeout' in error_lower:
+                        error_patterns['timeout'] = error_patterns.get('timeout', 0) + 1
+                    elif 'permission' in error_lower:
+                        error_patterns['permission'] = error_patterns.get('permission', 0) + 1
+                    elif 'network' in error_lower or 'connection' in error_lower:
+                        error_patterns['network'] = error_patterns.get('network', 0) + 1
+                    elif 'rate limit' in error_lower:
+                        error_patterns['rate_limit'] = error_patterns.get('rate_limit', 0) + 1
+                    else:
+                        error_patterns['other'] = error_patterns.get('other', 0) + 1
+                
+                return error_patterns
+            
+            def _find_optimal_runner_count(self, scaling_df):
+                if len(scaling_df) < 2:
+                    return 1
+                    
+                # Find runner count with best success rate and reasonable task distribution
+                scaling_df['efficiency_score'] = scaling_df['success_rate'] * (scaling_df['tasks'] / scaling_df['runners'])
+                optimal_row = scaling_df.loc[scaling_df['efficiency_score'].idxmax()]
+                return int(optimal_row['runners'])
+            
+            def generate_report_html(self):
+                html_template = '''
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Claude Task Execution Analytics Report</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
+                        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+                        .header { text-align: center; margin-bottom: 30px; }
+                        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0; }
+                        .metric-card { background: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center; }
+                        .metric-value { font-size: 2em; font-weight: bold; color: #007bff; }
+                        .metric-label { color: #6c757d; font-size: 0.9em; }
+                        .chart { margin: 20px 0; text-align: center; }
+                        .section { margin: 30px 0; }
+                        .section h2 { color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+                        table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+                        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+                        th { background-color: #f8f9fa; font-weight: bold; }
+                        .success { color: #28a745; }
+                        .failure { color: #dc3545; }
+                        .warning { color: #ffc107; }
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <div class="header">
+                            <h1>🤖 Claude Task Execution Analytics Report</h1>
+                            <p>Generated on {{ timestamp }}</p>
+                        </div>
+                        
+                        <div class="section">
+                            <h2>📊 Overall Performance Metrics</h2>
+                            <div class="metric-grid">
+                                <div class="metric-card">
+                                    <div class="metric-value">{{ "%.1f"|format(overall_metrics.success_rate * 100) }}%</div>
+                                    <div class="metric-label">Success Rate</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">{{ data_summary.total_tasks_analyzed }}</div>
+                                    <div class="metric-label">Tasks Executed</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">{{ "%.1f"|format(overall_metrics.average_execution_time) }}s</div>
+                                    <div class="metric-label">Avg Execution Time</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">{{ data_summary.total_execution_runs }}</div>
+                                    <div class="metric-label">Execution Runs</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        {% if priority_performance %}
+                        <div class="section">
+                            <h2>🎯 Performance by Priority</h2>
+                            <table>
+                                <tr><th>Priority</th><th>Success Rate</th><th>Avg Time</th><th>Task Count</th></tr>
+                                {% for priority, metrics in priority_performance.items() %}
+                                <tr>
+                                    <td>{{ priority|title }}</td>
+                                    <td class="{{ 'success' if metrics.success_rate > 0.9 else 'warning' if metrics.success_rate > 0.7 else 'failure' }}">
+                                        {{ "%.1f"|format(metrics.success_rate * 100) }}%
+                                    </td>
+                                    <td>{{ "%.1f"|format(metrics.avg_execution_time) }}s</td>
+                                    <td>{{ metrics.task_count }}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                        {% endif %}
+                        
+                        {% if runner_performance %}
+                        <div class="section">
+                            <h2>🏃 Runner Performance</h2>
+                            <table>
+                                <tr><th>Runner ID</th><th>Success Rate</th><th>Avg Time</th><th>Tasks Handled</th></tr>
+                                {% for runner_id, metrics in runner_performance.items() %}
+                                <tr>
+                                    <td>Runner {{ runner_id }}</td>
+                                    <td class="{{ 'success' if metrics.success_rate > 0.9 else 'warning' if metrics.success_rate > 0.7 else 'failure' }}">
+                                        {{ "%.1f"|format(metrics.success_rate * 100) }}%
+                                    </td>
+                                    <td>{{ "%.1f"|format(metrics.avg_execution_time) }}s</td>
+                                    <td>{{ metrics.task_count }}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                        {% endif %}
+                        
+                        {% if scaling_efficiency %}
+                        <div class="section">
+                            <h2>⚡ Scaling Efficiency</h2>
+                            <div class="metric-grid">
+                                <div class="metric-card">
+                                    <div class="metric-value">{{ "%.1f"|format(scaling_efficiency.avg_tasks_per_runner) }}</div>
+                                    <div class="metric-label">Avg Tasks per Runner</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">{{ scaling_efficiency.optimal_runner_count }}</div>
+                                    <div class="metric-label">Optimal Runner Count</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">{{ "%.1f"|format(scaling_efficiency.scaling_effectiveness * 100) }}%</div>
+                                    <div class="metric-label">Scaling Effectiveness</div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        
+                        {% if error_analysis %}
+                        <div class="section">
+                            <h2>🚨 Error Analysis</h2>
+                            <div class="metric-grid">
+                                <div class="metric-card">
+                                    <div class="metric-value failure">{{ error_analysis.total_failures }}</div>
+                                    <div class="metric-label">Total Failures</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value {{ 'failure' if error_analysis.failure_rate > 0.1 else 'warning' if error_analysis.failure_rate > 0.05 else 'success' }}">
+                                        {{ "%.1f"|format(error_analysis.failure_rate * 100) }}%
+                                    </div>
+                                    <div class="metric-label">Failure Rate</div>
+                                </div>
+                            </div>
+                            
+                            {% if error_analysis.common_error_patterns %}
+                            <h3>Common Error Patterns</h3>
+                            <table>
+                                <tr><th>Error Type</th><th>Count</th><th>Percentage</th></tr>
+                                {% for error_type, count in error_analysis.common_error_patterns.items() %}
+                                <tr>
+                                    <td>{{ error_type|title }}</td>
+                                    <td>{{ count }}</td>
+                                    <td>{{ "%.1f"|format(count / error_analysis.total_failures * 100) }}%</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                        
+                        <div class="section">
+                            <h2>📈 Performance Charts</h2>
+                            <div class="chart">
+                                <img src="performance_analytics.png" alt="Performance Analytics" style="max-width: 100%; height: auto;">
+                            </div>
+                        </div>
+                        
+                        <div class="section">
+                            <h2>📝 Recommendations</h2>
+                            <ul>
+                                {% if overall_metrics.success_rate < 0.9 %}
+                                <li>🔧 Success rate is below 90%. Consider investigating common failure patterns and improving error recovery mechanisms.</li>
+                                {% endif %}
+                                
+                                {% if scaling_efficiency and scaling_efficiency.avg_tasks_per_runner < 2 %}
+                                <li>⚡ Low tasks per runner ratio. Consider reducing runner count for better resource utilization.</li>
+                                {% elif scaling_efficiency and scaling_efficiency.avg_tasks_per_runner > 5 %}
+                                <li>🏃 High tasks per runner ratio. Consider increasing runner count for better parallel execution.</li>
+                                {% endif %}
+                                
+                                {% if overall_metrics.average_execution_time > 300 %}
+                                <li>⏱️ Average execution time is high ({{ "%.1f"|format(overall_metrics.average_execution_time) }}s). Consider optimizing task complexity or execution environment.</li>
+                                {% endif %}
+                                
+                                {% if error_analysis and error_analysis.failure_rate > 0.1 %}
+                                <li>🚨 High failure rate detected. Focus on improving error handling and autonomous recovery mechanisms.</li>
+                                {% endif %}
+                                
+                                <li>✅ Continue monitoring performance trends and adjust scaling strategies based on workload patterns.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </body>
+                </html>
+                '''
+                
+                from jinja2 import Template
+                template = Template(html_template)
+                
+                html_content = template.render(**self.insights)
+                
+                with open('results/execution_report.html', 'w') as f:
+                    f.write(html_content)
+                
+                print("📄 HTML report generated")
+            
+            def run_full_analysis(self):
+                print("🚀 Starting full execution analytics...")
+                self.load_data()
+                self.analyze_performance_trends()
+                self.generate_insights()
+                self.generate_report_html()
+                print("✅ Full analytics completed")
+        
+        if __name__ == "__main__":
+            analytics = ExecutionAnalytics()
+            analytics.run_full_analysis()
+        EOF
+        
+        python analytics_generator.py
+    
+    - name: Upload analytics results
+      uses: actions/upload-artifact@v4
+      with:
+        name: execution-analytics
+        path: |
+          results/execution_insights.json
+          results/execution_report.html
+          results/performance_analytics.png
+        retention-days: 90
+    
+    - name: Create GitHub Pages deployment
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./results
+        destination_dir: task-execution-reports
+        
+    - name: Comment results summary
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          
+          try {
+            const insights = JSON.parse(fs.readFileSync('results/execution_insights.json', 'utf8'));
+            
+            const summary = `## 📊 Task Execution Analytics Report
+            
+            ### Overall Performance
+            - **Success Rate**: ${(insights.overall_metrics?.success_rate * 100 || 0).toFixed(1)}%
+            - **Tasks Analyzed**: ${insights.data_summary?.total_tasks_analyzed || 0}
+            - **Average Execution Time**: ${(insights.overall_metrics?.average_execution_time || 0).toFixed(1)}s
+            - **Total Execution Runs**: ${insights.data_summary?.total_execution_runs || 0}
+            
+            ### Scaling Efficiency
+            ${insights.scaling_efficiency ? `
+            - **Avg Tasks per Runner**: ${insights.scaling_efficiency.avg_tasks_per_runner.toFixed(1)}
+            - **Optimal Runner Count**: ${insights.scaling_efficiency.optimal_runner_count}
+            - **Scaling Effectiveness**: ${(insights.scaling_efficiency.scaling_effectiveness * 100).toFixed(1)}%
+            ` : '- No scaling data available'}
+            
+            ### Error Analysis
+            ${insights.error_analysis ? `
+            - **Total Failures**: ${insights.error_analysis.total_failures}
+            - **Failure Rate**: ${(insights.error_analysis.failure_rate * 100).toFixed(1)}%
+            ` : '- No errors detected 🎉'}
+            
+            📄 **Full Report**: [View detailed analytics](https://github.com/${{ github.repository }}/blob/gh-pages/task-execution-reports/execution_report.html)
+            
+            ---
+            *Report generated: ${new Date().toISOString()}*`;
+            
+            // Find the most recent issue to comment on
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 1
+            });
+            
+            if (issues.data.length > 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issues.data[0].number,
+                body: summary
+              });
+              
+              console.log('📝 Analytics summary posted to issue');
+            } else {
+              console.log('📝 No open issues found, skipping comment');
+            }
+            
+          } catch (error) {
+            console.error('❌ Failed to post analytics summary:', error.message);
+          }
