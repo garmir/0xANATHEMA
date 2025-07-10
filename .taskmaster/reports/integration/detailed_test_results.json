@@ -1,0 +1,222 @@
+[
+  {
+    "test_name": "directory_structure_validation",
+    "component": "Environment Setup",
+    "status": "passed",
+    "execution_time": 0.00023818016052246094,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "configuration_validation",
+    "component": "Environment Setup",
+    "status": "passed",
+    "execution_time": 0.0003879070281982422,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "dependencies_validation",
+    "component": "Environment Setup",
+    "status": "passed",
+    "execution_time": 0.9437038898468018,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "prd_parsing_basic",
+    "component": "PRD Processing",
+    "status": "passed",
+    "execution_time": 0.0043489933013916016,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "recursive_decomposition_depth",
+    "component": "PRD Processing",
+    "status": "passed",
+    "execution_time": 0.0006389617919921875,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "atomicity_detection",
+    "component": "PRD Processing",
+    "status": "passed",
+    "execution_time": 4.673004150390625e-05,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "sqrt_space_optimization",
+    "component": "Optimization Pipeline",
+    "status": "passed",
+    "execution_time": 0.00011706352233886719,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "tree_evaluation_optimization",
+    "component": "Optimization Pipeline",
+    "status": "passed",
+    "execution_time": 3.1948089599609375e-05,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "pebbling_strategy_generation",
+    "component": "Optimization Pipeline",
+    "status": "passed",
+    "execution_time": 2.6941299438476562e-05,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "catalytic_workspace_init",
+    "component": "Catalytic Execution",
+    "status": "passed",
+    "execution_time": 3.0994415283203125e-05,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "memory_reuse_verification",
+    "component": "Catalytic Execution",
+    "status": "passed",
+    "execution_time": 2.002716064453125e-05,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "pattern_analysis_accuracy",
+    "component": "Intelligent Prediction",
+    "status": "passed",
+    "execution_time": 3.409385681152344e-05,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "task_generation_quality",
+    "component": "Intelligent Prediction",
+    "status": "passed",
+    "execution_time": 0.06611800193786621,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "metrics_collection_accuracy",
+    "component": "System Monitoring",
+    "status": "passed",
+    "execution_time": 6.985664367675781e-05,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "performance_optimization_effectiveness",
+    "component": "System Monitoring",
+    "status": "passed",
+    "execution_time": 31.780606031417847,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "complete_workflow_integration",
+    "component": "End-to-End Workflow",
+    "status": "passed",
+    "execution_time": 0.0001289844512939453,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "load_testing_performance",
+    "component": "Performance Benchmarks",
+    "status": "passed",
+    "execution_time": 9.939210891723633,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "memory_efficiency_validation",
+    "component": "Performance Benchmarks",
+    "status": "passed",
+    "execution_time": 5.1021575927734375e-05,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "checkpoint_resume_functionality",
+    "component": "Failure Recovery",
+    "status": "passed",
+    "execution_time": 2.47955322265625e-05,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  },
+  {
+    "test_name": "autonomy_score_accuracy",
+    "component": "Autonomous Execution",
+    "status": "passed",
+    "execution_time": 2.193450927734375e-05,
+    "memory_usage": 0.0,
+    "error_message": null,
+    "details": {
+      "result": true
+    }
+  }
+]

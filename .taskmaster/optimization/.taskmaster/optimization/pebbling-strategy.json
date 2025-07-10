@@ -1,0 +1,142 @@
+{
+  "strategy_type": "branching-program",
+  "memory_minimization": true,
+  "pebbles": [
+    {
+      "node_id": "sample-1",
+      "pebble_id": "P1",
+      "allocation_time": 0,
+      "resource_requirement": {
+        "memory": "5MB",
+        "cpu": "2",
+        "time": "12min"
+      },
+      "priority": "low",
+      "memory_footprint": 5
+    },
+    {
+      "node_id": "sample-2",
+      "pebble_id": "P2",
+      "allocation_time": 5,
+      "resource_requirement": {
+        "memory": "5MB",
+        "cpu": "2",
+        "time": "17min"
+      },
+      "priority": "high",
+      "memory_footprint": 5
+    },
+    {
+      "node_id": "sample-4",
+      "pebble_id": "P4",
+      "allocation_time": 15,
+      "resource_requirement": {
+        "memory": "5MB",
+        "cpu": "2",
+        "time": "17min"
+      },
+      "priority": "medium",
+      "memory_footprint": 5
+    },
+    {
+      "node_id": "sample-6",
+      "pebble_id": "P6",
+      "allocation_time": 25,
+      "resource_requirement": {
+        "memory": "5MB",
+        "cpu": "1",
+        "time": "34min"
+      },
+      "priority": "low",
+      "memory_footprint": 5
+    },
+    {
+      "node_id": "sample-8",
+      "pebble_id": "P8",
+      "allocation_time": 35,
+      "resource_requirement": {
+        "memory": "5MB",
+        "cpu": "4",
+        "time": "25min"
+      },
+      "priority": "low",
+      "memory_footprint": 5
+    },
+    {
+      "node_id": "sample-9",
+      "pebble_id": "P9",
+      "allocation_time": 40,
+      "resource_requirement": {
+        "memory": "5MB",
+        "cpu": "3",
+        "time": "16min"
+      },
+      "priority": "high",
+      "memory_footprint": 5
+    },
+    {
+      "node_id": "sample-10",
+      "pebble_id": "P10",
+      "allocation_time": 45,
+      "resource_requirement": {
+        "memory": "5MB",
+        "cpu": "2",
+        "time": "12min"
+      },
+      "priority": "high",
+      "memory_footprint": 5
+    },
+    {
+      "node_id": "sample-3",
+      "pebble_id": "P3",
+      "allocation_time": 10,
+      "resource_requirement": {
+        "memory": "6MB",
+        "cpu": "1",
+        "time": "27min"
+      },
+      "priority": "low",
+      "memory_footprint": 6
+    },
+    {
+      "node_id": "sample-7",
+      "pebble_id": "P7",
+      "allocation_time": 30,
+      "resource_requirement": {
+        "memory": "8MB",
+        "cpu": "2",
+        "time": "23min"
+      },
+      "priority": "low",
+      "memory_footprint": 8
+    },
+    {
+      "node_id": "sample-5",
+      "pebble_id": "P5",
+      "allocation_time": 20,
+      "resource_requirement": {
+        "memory": "9MB",
+        "cpu": "2",
+        "time": "26min"
+      },
+      "priority": "medium",
+      "memory_footprint": 9
+    }
+  ],
+  "allocation_order": [
+    "sample-1",
+    "sample-2",
+    "sample-3",
+    "sample-4",
+    "sample-5",
+    "sample-6",
+    "sample-7",
+    "sample-8",
+    "sample-9",
+    "sample-10"
+  ],
+  "resource_conflicts": [],
+  "timing_constraints": {},
+  "total_memory_required": "58MB",
+  "peak_memory": "9MB"
+}

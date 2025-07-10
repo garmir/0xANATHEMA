@@ -1,0 +1,293 @@
+name: Dynamic Runner Scaling for Task Queue
+on:
+  workflow_dispatch:
+    inputs:
+      scaling_strategy:
+        description: 'Scaling strategy'
+        required: true
+        default: 'auto'
+        type: choice
+        options:
+        - auto
+        - aggressive  
+        - conservative
+        - manual
+      target_runners:
+        description: 'Target runner count (manual mode)'
+        required: false
+        default: '5'
+        type: string
+        
+  repository_dispatch:
+    types: [scale-runners]
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+jobs:
+  calculate-scaling:
+    name: Calculate Optimal Runner Scaling
+    runs-on: ubuntu-latest
+    outputs:
+      current_queue_size: ${{ steps.analyze.outputs.current_queue_size }}
+      recommended_runners: ${{ steps.analyze.outputs.recommended_runners }}
+      scaling_factor: ${{ steps.analyze.outputs.scaling_factor }}
+      scaling_strategy: ${{ steps.analyze.outputs.scaling_strategy }}
+      should_scale: ${{ steps.analyze.outputs.should_scale }}
+      
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y jq curl
+        npm install -g task-master-ai
+        
+    - name: Analyze task queue and calculate scaling
+      id: analyze
+      run: |
+        #!/bin/bash
+        set -e
+        
+        echo "🔍 Analyzing task queue for optimal scaling..."
+        
+        # Get current task queue metrics
+        if [[ -f ".taskmaster/tasks/tasks.json" ]]; then
+          # Count pending tasks by priority
+          high_priority=$(jq -r '.master.tasks[] | select(.status == "pending" and .priority == "high") | .id' .taskmaster/tasks/tasks.json | wc -l)
+          medium_priority=$(jq -r '.master.tasks[] | select(.status == "pending" and .priority == "medium") | .id' .taskmaster/tasks/tasks.json | wc -l)
+          low_priority=$(jq -r '.master.tasks[] | select(.status == "pending" and .priority == "low") | .id' .taskmaster/tasks/tasks.json | wc -l)
+          
+          total_pending=$((high_priority + medium_priority + low_priority))
+          
+          # Count in-progress tasks
+          in_progress=$(jq -r '.master.tasks[] | select(.status == "in-progress") | .id' .taskmaster/tasks/tasks.json | wc -l)
+          
+          # Calculate complexity score
+          complex_tasks=$(jq -r '.master.tasks[] | select(.status == "pending" and (.details | length > 500)) | .id' .taskmaster/tasks/tasks.json | wc -l)
+          
+        else
+          echo "⚠️ No tasks.json found"
+          total_pending=0
+          high_priority=0
+          medium_priority=0  
+          low_priority=0
+          in_progress=0
+          complex_tasks=0
+        fi
+        
+        echo "📊 Task Queue Analysis:"
+        echo "  Total pending: $total_pending"
+        echo "  High priority: $high_priority"
+        echo "  Medium priority: $medium_priority"
+        echo "  Low priority: $low_priority"
+        echo "  In progress: $in_progress"
+        echo "  Complex tasks: $complex_tasks"
+        
+        # Determine scaling strategy
+        strategy="${{ github.event.inputs.scaling_strategy || 'auto' }}"
+        
+        # Calculate recommended runners based on strategy
+        case "$strategy" in
+          "aggressive")
+            # Aggressive: 1 runner per task for high priority, 1 per 2 for others
+            runners_for_high=$high_priority
+            runners_for_medium=$(( (medium_priority + 1) / 2 ))
+            runners_for_low=$(( (low_priority + 2) / 3 ))
+            recommended_runners=$((runners_for_high + runners_for_medium + runners_for_low))
+            max_runners=20
+            ;;
+            
+          "conservative")
+            # Conservative: 1 runner per 3-4 tasks
+            recommended_runners=$(( (total_pending + 3) / 4 ))
+            max_runners=8
+            ;;
+            
+          "manual")
+            # Manual: Use specified target
+            recommended_runners="${{ github.event.inputs.target_runners || '5' }}"
+            max_runners=25
+            ;;
+            
+          "auto"|*)
+            # Auto: Balanced approach with priority weighting
+            # High priority tasks get more runners
+            weighted_tasks=$((high_priority * 3 + medium_priority * 2 + low_priority))
+            recommended_runners=$(( (weighted_tasks + 4) / 5 ))
+            
+            # Account for complex tasks
+            if [[ $complex_tasks -gt 0 ]]; then
+              recommended_runners=$((recommended_runners + (complex_tasks + 1) / 2))
+            fi
+            
+            max_runners=15
+            ;;
+        esac
+        
+        # Apply limits
+        if [[ $recommended_runners -gt $max_runners ]]; then
+          recommended_runners=$max_runners
+        fi
+        
+        if [[ $recommended_runners -lt 1 && $total_pending -gt 0 ]]; then
+          recommended_runners=1
+        fi
+        
+        # Calculate scaling factor
+        current_runners=$in_progress
+        if [[ $current_runners -eq 0 ]]; then
+          current_runners=1
+        fi
+        
+        scaling_factor=$(echo "scale=2; $recommended_runners / $current_runners" | bc -l)
+        
+        # Determine if scaling is needed
+        should_scale="false"
+        if [[ $total_pending -gt 0 ]] && [[ $recommended_runners -gt 0 ]]; then
+          if [[ $recommended_runners -ne $current_runners ]]; then
+            should_scale="true"
+          fi
+        fi
+        
+        echo ""
+        echo "🎯 Scaling Recommendation:"
+        echo "  Strategy: $strategy"
+        echo "  Current runners: $current_runners"
+        echo "  Recommended runners: $recommended_runners"
+        echo "  Scaling factor: ${scaling_factor}x"
+        echo "  Should scale: $should_scale"
+        
+        # Output for next jobs
+        echo "current_queue_size=$total_pending" >> $GITHUB_OUTPUT
+        echo "recommended_runners=$recommended_runners" >> $GITHUB_OUTPUT
+        echo "scaling_factor=$scaling_factor" >> $GITHUB_OUTPUT  
+        echo "scaling_strategy=$strategy" >> $GITHUB_OUTPUT
+        echo "should_scale=$should_scale" >> $GITHUB_OUTPUT
+
+  trigger-scaled-execution:
+    name: Trigger Scaled Task Execution
+    runs-on: ubuntu-latest
+    needs: calculate-scaling
+    if: needs.calculate-scaling.outputs.should_scale == 'true'
+    
+    steps:
+    - name: Trigger Claude task execution with scaling
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const { owner, repo } = context.repo;
+          
+          console.log('🚀 Triggering scaled Claude task execution...');
+          
+          const result = await github.rest.actions.createWorkflowDispatch({
+            owner,
+            repo,
+            workflow_id: 'claude-task-execution.yml',
+            ref: 'main',
+            inputs: {
+              max_runners: '${{ needs.calculate-scaling.outputs.recommended_runners }}',
+              task_filter: 'status:pending',
+              force_scaling: 'true'
+            }
+          });
+          
+          console.log('✅ Scaled execution triggered');
+          console.log(`   Runners: ${{ needs.calculate-scaling.outputs.recommended_runners }}`);
+          console.log(`   Strategy: ${{ needs.calculate-scaling.outputs.scaling_strategy }}`);
+          console.log(`   Queue size: ${{ needs.calculate-scaling.outputs.current_queue_size }}`);
+
+  monitor-execution:
+    name: Monitor Execution Progress  
+    runs-on: ubuntu-latest
+    needs: [calculate-scaling, trigger-scaled-execution]
+    if: needs.calculate-scaling.outputs.should_scale == 'true'
+    
+    steps:
+    - name: Monitor and report execution progress
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const { owner, repo } = context.repo;
+          
+          console.log('📊 Monitoring execution progress...');
+          
+          // Wait for execution to start
+          await new Promise(resolve => setTimeout(resolve, 30000)); // 30 seconds
+          
+          // Get recent workflow runs
+          const runs = await github.rest.actions.listWorkflowRuns({
+            owner,
+            repo,
+            workflow_id: 'claude-task-execution.yml',
+            per_page: 5
+          });
+          
+          const recentRun = runs.data.workflow_runs.find(run => 
+            run.created_at > new Date(Date.now() - 10 * 60 * 1000).toISOString()
+          );
+          
+          if (recentRun) {
+            console.log(`📋 Recent execution found: ${recentRun.html_url}`);
+            console.log(`   Status: ${recentRun.status}`);
+            console.log(`   Conclusion: ${recentRun.conclusion || 'running'}`);
+          } else {
+            console.log('⚠️ No recent execution found');
+          }
+          
+          // Create issue comment with scaling report
+          const scalingReport = `## 🚀 Dynamic Runner Scaling Report
+          
+          **Scaling Triggered**: \`${{ needs.calculate-scaling.outputs.scaling_strategy }}\` strategy
+          
+          ### Queue Analysis
+          - **Queue Size**: ${{ needs.calculate-scaling.outputs.current_queue_size }} pending tasks
+          - **Recommended Runners**: ${{ needs.calculate-scaling.outputs.recommended_runners }}
+          - **Scaling Factor**: ${{ needs.calculate-scaling.outputs.scaling_factor }}x
+          
+          ### Execution Status
+          ${recentRun ? `- **Workflow**: [${recentRun.status}](${recentRun.html_url})` : '- **Workflow**: Not found'}
+          - **Triggered**: ${new Date().toISOString()}
+          
+          ---
+          *Automated scaling by Task Master AI*`;
+          
+          // Post as issue comment if there are open issues
+          const issues = await github.rest.issues.listForRepo({
+            owner,
+            repo,
+            state: 'open',
+            per_page: 1
+          });
+          
+          if (issues.data.length > 0) {
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: issues.data[0].number,
+              body: scalingReport
+            });
+            
+            console.log('📝 Scaling report posted to latest issue');
+          }
+
+  no-scaling-needed:
+    name: No Scaling Required
+    runs-on: ubuntu-latest
+    needs: calculate-scaling
+    if: needs.calculate-scaling.outputs.should_scale == 'false'
+    
+    steps:
+    - name: Report no scaling needed
+      run: |
+        echo "✅ No scaling required"
+        echo "   Queue size: ${{ needs.calculate-scaling.outputs.current_queue_size }}"
+        echo "   Current capacity sufficient for workload"
+        echo ""
+        echo "💡 Scaling would be triggered when:"
+        echo "   - Queue size exceeds current runner capacity"
+        echo "   - High priority tasks are waiting"
+        echo "   - Complex tasks require dedicated resources"

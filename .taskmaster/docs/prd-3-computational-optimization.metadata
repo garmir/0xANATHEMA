@@ -1,0 +1,10 @@
+{
+    "input_prd": "/Users/anam/archive/.taskmaster/docs/prd-3-computational-optimization.md",
+    "output_dir": "/Users/anam/archive/.taskmaster/docs/prd-3-computational-optimization", 
+    "depth": 1,
+    "max_depth": 5,
+    "atomicity": "COMPOSITE",
+    "processed_count": 1,
+    "failed_count": 0,
+    "timestamp": "2025-07-10T18:52:46+01:00"
+}

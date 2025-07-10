@@ -1,0 +1,32 @@
+{
+  "test_run_id": "integration_run_1752169394",
+  "start_time": 1752169394.928205,
+  "end_time": 1752169493.304887,
+  "total_duration": 98.37668204307556,
+  "summary": {
+    "total_tests": 9,
+    "passed": 5,
+    "failed": 3,
+    "errors": 0,
+    "skipped": 1,
+    "overall_success_rate": 0.5555555555555556
+  },
+  "suite_results": [
+    {
+      "suite_id": "core_functionality",
+      "suite_name": "Core Functionality Tests",
+      "start_time": 1752169394.9282382,
+      "end_time": 1752169398.4556658,
+      "duration": 3.5274276733398438,
+      "total_tests": 2,
+      "passed": 1,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "success_rate": 0.5,
+      "test_executions": [
+        {
+          "test_id": "recursive_prd_001",
+          "start_time": 1752169394.92826,
+          "end_time": 1752169398.454525,
+          "result": 

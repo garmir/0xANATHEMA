@@ -1,0 +1,11 @@
+# Task ID: 25
+# Title: Implement comprehensive directory cleanup and reorganization based on research findings
+# Status: done
+# Dependencies: None
+# Priority: medium
+# Description: Consolidate optimization artifacts, reorganize PRD files into hierarchical structure, consolidate scattered markdown files, create templates directory, and implement archive system for historical versions
+# Details:
+1) Consolidate optimization artifacts by moving all files from .taskmaster/optimization/ and .taskmaster/catalytic/ into a unified .taskmaster/artifacts/ directory with subdirectories for each optimization type (sqrt-space, tree-eval, pebbling, catalytic). Remove redundant intermediate files and keep only final outputs. 2) Reorganize PRD files from flat structure in .taskmaster/docs/ to hierarchical structure based on decomposition levels: level-0/ for top-level PRDs, level-1/ for first decomposition, etc. up to level-5/ matching the recursive depth limit. 3) Consolidate scattered markdown files (project-plan.md, task-tree.json.md, etc.) into .taskmaster/docs/project/ directory with logical naming. 4) Create .taskmaster/templates/ directory with reusable templates for PRD generation, task structures, and optimization configurations. 5) Implement .taskmaster/archive/ system with timestamped subdirectories for historical versions of all generated files, maintaining traceability of the optimization process.
+
+# Test Strategy:
+Verify all optimization artifacts are properly consolidated in .taskmaster/artifacts/ with correct subdirectory structure. Confirm PRD files are organized hierarchically by decomposition level with no broken references. Check that all markdown files are consolidated in .taskmaster/docs/project/ and accessible. Validate .taskmaster/templates/ directory contains reusable templates for future use. Ensure .taskmaster/archive/ system properly timestamps and stores historical versions without data loss. Run task-master commands to verify all reorganized files are still properly referenced and functional.

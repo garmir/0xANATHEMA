@@ -1,0 +1,26 @@
+{
+  "implementation_followup": {
+    "title_template": "Implement tests for {previous_task}",
+    "description_template": "Create comprehensive tests for the {previous_task} implementation",
+    "priority": "medium",
+    "complexity": 4
+  },
+  "documentation_followup": {
+    "title_template": "Document {previous_task} implementation",
+    "description_template": "Create documentation for {previous_task} including usage examples and API reference",
+    "priority": "medium",
+    "complexity": 3
+  },
+  "optimization_followup": {
+    "title_template": "Optimize {previous_task} performance",
+    "description_template": "Analyze and optimize the performance of {previous_task}",
+    "priority": "low",
+    "complexity": 6
+  },
+  "integration_followup": {
+    "title_template": "Integrate {previous_task} with existing systems",
+    "description_template": "Ensure {previous_task} integrates properly with existing codebase and workflows",
+    "priority": "high",
+    "complexity": 5
+  }
+}

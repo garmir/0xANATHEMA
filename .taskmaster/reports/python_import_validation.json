@@ -1,0 +1,183 @@
+{
+  "timestamp": "sys.version_info(major=3, minor=13, micro=5, releaselevel='final', serial=0)",
+  "python_version": "3.13.5 (main, Jun 11 2025, 15:36:57) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "virtual_environment": {
+    "in_venv": true,
+    "python_executable": "/Users/anam/archive/.venv/bin/python3",
+    "python_path": [
+      "/Users/anam/archive/.taskmaster/scripts",
+      "/opt/homebrew/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python313.zip",
+      "/opt/homebrew/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python3.13"
+    ],
+    "venv_path": "/Users/anam/archive/.venv"
+  },
+  "requirements_files": [
+    "requirements.txt",
+    ".taskmaster/scripts/requirements.txt",
+    ".taskmaster/e2e-testing/test_env_api_service_5_fc45ca38/requirements.txt",
+    ".taskmaster/scripts/requirements.txt",
+    ".taskmaster/venv/lib/python3.13/site-packages/pandas/pyproject.toml",
+    ".taskmaster/venv/lib/python3.13/site-packages/numpy/_core/tests/examples/cython/setup.py",
+    ".taskmaster/venv/lib/python3.13/site-packages/numpy/_core/tests/examples/limited_api/setup.py",
+    ".venv/lib/python3.13/site-packages/numpy/_core/tests/examples/cython/setup.py",
+    ".venv/lib/python3.13/site-packages/numpy/_core/tests/examples/limited_api/setup.py"
+  ],
+  "validation_results": {
+    "requests": {
+      "status": "success",
+      "version": "2.32.4",
+      "required": ">=2.31.0",
+      "error": null
+    },
+    "aiohttp": {
+      "status": "success",
+      "version": "3.12.14",
+      "required": ">=3.8.0",
+      "error": null
+    },
+    "pydantic": {
+      "status": "success",
+      "version": "2.11.7",
+      "required": ">=2.0.0",
+      "error": null
+    },
+    "click": {
+      "status": "success",
+      "version": "8.2.1",
+      "required": ">=8.0.0",
+      "error": null
+    },
+    "colorama": {
+      "status": "success",
+      "version": "0.4.6",
+      "required": ">=0.4.6",
+      "error": null
+    },
+    "rich": {
+      "status": "success",
+      "version": "unknown",
+      "required": ">=13.0.0",
+      "error": null
+    },
+    "numpy": {
+      "status": "success",
+      "version": "2.3.1",
+      "required": ">=1.22.0",
+      "error": null
+    },
+    "scipy": {
+      "status": "success",
+      "version": "1.16.0",
+      "required": ">=1.8.0",
+      "error": null
+    },
+    "matplotlib": {
+      "status": "success",
+      "version": "3.10.3",
+      "required": ">=3.5.0",
+      "error": null
+    },
+    "psutil": {
+      "status": "success",
+      "version": "7.0.0",
+      "required": ">=5.8.0",
+      "error": null
+    },
+    "json": {
+      "status": "success",
+      "version": "2.0.9",
+      "required": null,
+      "error": null
+    },
+    "os": {
+      "status": "success",
+      "version": "unknown",
+      "required": null,
+      "error": null
+    },
+    "sys": {
+      "status": "success",
+      "version": "unknown",
+      "required": null,
+      "error": null
+    },
+    "subprocess": {
+      "status": "success",
+      "version": "unknown",
+      "required": null,
+      "error": null
+    },
+    "pathlib": {
+      "status": "success",
+      "version": "unknown",
+      "required": null,
+      "error": null
+    },
+    "time": {
+      "status": "success",
+      "version": "unknown",
+      "required": null,
+      "error": null
+    },
+    "threading": {
+      "status": "success",
+      "version": "unknown",
+      "required": null,
+      "error": null
+    },
+    "traceback": {
+      "status": "success",
+      "version": "unknown",
+      "required": null,
+      "error": null
+    },
+    "tempfile": {
+      "status": "success",
+      "version": "unknown",
+      "required": null,
+      "error": null
+    },
+    "shutil": {
+      "status": "success",
+      "version": "unknown",
+      "required": null,
+      "error": null
+    },
+    "uuid": {
+      "status": "success",
+      "version": "unknown",
+      "required": null,
+      "error": null
+    },
+    "queue": {
+      "status": "success",
+      "version": "unknown",
+      "required": null,
+      "error": null
+    },
+    "enum": {
+      "status": "success",
+      "version": "unknown",
+      "required": null,
+      "error": null
+    },
+    "dataclasses": {
+      "status": "success",
+      "version": "unknown",
+      "required": null,
+      "error": null
+    },
+    "typing": {
+      "status": "success",
+      "version": "unknown",
+      "required": null,
+      "error": null
+    }
+  },
+  "summary": {
+    "total_packages": 25,
+    "successful_imports": 25,
+    "missing_packages": 0,
+    "success_rate": 1.0
+  }
+}

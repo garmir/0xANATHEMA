@@ -1,0 +1,320 @@
+{
+  "test_execution_summary": {
+    "overall_success": true,
+    "overall_success_rate": 1.0,
+    "total_tests": 18,
+    "total_passed": 18,
+    "total_failed": 0,
+    "total_execution_time": 0.614307,
+    "suites_passed": 5,
+    "suites_failed": 0,
+    "success_threshold": 0.8
+  },
+  "validation_suites": [
+    {
+      "suite_name": "Core Components",
+      "total_tests": 6,
+      "passed_tests": 6,
+      "failed_tests": 0,
+      "test_results": [
+        {
+          "test_name": "analysis_engine_initialization",
+          "test_category": "core_components",
+          "passed": true,
+          "duration": 0.05741,
+          "details": {
+            "complexity_score": 19.57894736842105,
+            "maintainability_score": 55.40827794721543,
+            "findings_count": 11
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.083359"
+        },
+        {
+          "test_name": "synthesis_engine_initialization",
+          "test_category": "core_components",
+          "passed": true,
+          "duration": 0.001649,
+          "details": {
+            "modifications_attempted": 1,
+            "backup_dir_exists": true
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.085020"
+        },
+        {
+          "test_name": "safety_validator_initialization",
+          "test_category": "core_components",
+          "passed": true,
+          "duration": 0.000437,
+          "details": {
+            "safety_score": 0.8333333333333333,
+            "approved": true,
+            "checks_count": 7
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.085462"
+        },
+        {
+          "test_name": "system_validator_initialization",
+          "test_category": "core_components",
+          "passed": true,
+          "duration": 0.065481,
+          "details": {
+            "overall_status": "FAIL",
+            "success_rate": 61.53846153846154,
+            "tests_run": 0
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.150952"
+        },
+        {
+          "test_name": "coordinator_initialization",
+          "test_category": "core_components",
+          "passed": true,
+          "duration": 0.008439,
+          "details": {
+            "analytical_status": "success",
+            "synthesis_status": "success",
+            "synchronization_status": "synchronized"
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.159411"
+        },
+        {
+          "test_name": "taskmaster_initialization",
+          "test_category": "core_components",
+          "passed": true,
+          "duration": 0.008201,
+          "details": {
+            "status": "success",
+            "coordination_initialized": true
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.167636"
+        }
+      ],
+      "overall_success": true,
+      "execution_time": 0.141617,
+      "success_rate": 1.0,
+      "timestamp": "2025-07-09T18:29:45.167651"
+    },
+    {
+      "suite_name": "Dual-Blade Integration",
+      "total_tests": 3,
+      "passed_tests": 3,
+      "failed_tests": 0,
+      "test_results": [
+        {
+          "test_name": "blade_synchronization",
+          "test_category": "integration",
+          "passed": true,
+          "duration": 0.006542,
+          "details": {
+            "sync_status": "synchronized",
+            "analytical_response_time": 0.0007920265197753906,
+            "synthesis_response_time": 0.0007920265197753906
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.174201"
+        },
+        {
+          "test_name": "analysis_synthesis_pipeline",
+          "test_category": "integration",
+          "passed": true,
+          "duration": 0.058635,
+          "details": {
+            "analysis_findings": 11,
+            "improvement_suggestions": 11,
+            "complexity_score": 19.57894736842105
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.232847"
+        },
+        {
+          "test_name": "coordinated_workflow",
+          "test_category": "integration",
+          "passed": true,
+          "duration": 0.00991,
+          "details": {
+            "workflow_executed": true,
+            "result_type": "dict"
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.242768"
+        }
+      ],
+      "overall_success": true,
+      "execution_time": 0.075087,
+      "success_rate": 1.0,
+      "timestamp": "2025-07-09T18:29:45.242779"
+    },
+    {
+      "suite_name": "Recursive Improvement",
+      "total_tests": 4,
+      "passed_tests": 4,
+      "failed_tests": 0,
+      "test_results": [
+        {
+          "test_name": "self_analysis",
+          "test_category": "recursive_improvement",
+          "passed": true,
+          "duration": 0.058445,
+          "details": {
+            "confidence_level": 0.85,
+            "complexity_score": 19.57894736842105,
+            "maintainability_score": 55.40827794721543,
+            "component_name": "LABRYS_ARCHITECTURE"
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.301235"
+        },
+        {
+          "test_name": "self_synthesis",
+          "test_category": "recursive_improvement",
+          "passed": true,
+          "duration": 0.001999,
+          "details": {
+            "modifications_generated": 1,
+            "modifications_attempted": 1
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.303242"
+        },
+        {
+          "test_name": "improvement_loop",
+          "test_category": "recursive_improvement",
+          "passed": true,
+          "duration": 0.332723,
+          "details": {
+            "iterations_completed": 1,
+            "status": "completed",
+            "convergence_achieved": false
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.635977"
+        },
+        {
+          "test_name": "convergence_detection",
+          "test_category": "recursive_improvement",
+          "passed": true,
+          "duration": 1.4e-05,
+          "details": {
+            "convergence_detected": true,
+            "test_delta": 0.05,
+            "threshold": 0.1
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.636002"
+        }
+      ],
+      "overall_success": true,
+      "execution_time": 0.393181,
+      "success_rate": 1.0,
+      "timestamp": "2025-07-09T18:29:45.636007"
+    },
+    {
+      "suite_name": "Safety and Validation",
+      "total_tests": 3,
+      "passed_tests": 3,
+      "failed_tests": 0,
+      "test_results": [
+        {
+          "test_name": "safety_checks",
+          "test_category": "safety_validation",
+          "passed": true,
+          "duration": 0.000289,
+          "details": {
+            "safe_code_approved": true,
+            "unsafe_code_rejected": true,
+            "safe_score": 0.8333333333333333,
+            "unsafe_score": 0.5625
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.636301"
+        },
+        {
+          "test_name": "code_validation",
+          "test_category": "safety_validation",
+          "passed": true,
+          "duration": 5.1e-05,
+          "details": {
+            "valid_code_passed": true,
+            "invalid_code_failed": true
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.636355"
+        },
+        {
+          "test_name": "emergency_stop",
+          "test_category": "safety_validation",
+          "passed": true,
+          "duration": 0.003853,
+          "details": {
+            "emergency_stop_triggered": true,
+            "exception_message": "EMERGENCY STOP: Test emergency stop"
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.640214"
+        }
+      ],
+      "overall_success": true,
+      "execution_time": 0.004193,
+      "success_rate": 1.0,
+      "timestamp": "2025-07-09T18:29:45.640222"
+    },
+    {
+      "suite_name": "Performance and Convergence",
+      "total_tests": 2,
+      "passed_tests": 2,
+      "failed_tests": 0,
+      "test_results": [
+        {
+          "test_name": "performance_metrics",
+          "test_category": "performance",
+          "passed": true,
+          "duration": 9e-06,
+          "details": {
+            "metrics_structure": [
+              "total_iterations",
+              "successful_improvements",
+              "failed_improvements",
+              "convergence_achieved",
+              "improvement_velocity"
+            ],
+            "metrics_available": true
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.640235"
+        },
+        {
+          "test_name": "convergence_metrics",
+          "test_category": "performance",
+          "passed": true,
+          "duration": 4e-06,
+          "details": {
+            "convergence_threshold": 0.1,
+            "threshold_valid": true
+          },
+          "error_message": null,
+          "timestamp": "2025-07-09T18:29:45.640243"
+        }
+      ],
+      "overall_success": true,
+      "execution_time": 1.3000000000000001e-05,
+      "success_rate": 1.0,
+      "timestamp": "2025-07-09T18:29:45.640246"
+    }
+  ],
+  "recursive_validation": {
+    "recursive_validation_passed": true,
+    "recursive_depth": 1,
+    "self_reference_successful": true,
+    "details": {
+      "complexity_score": 19.57894736842105,
+      "maintainability_score": 55.40827794721543,
+      "findings_count": 11
+    }
+  },
+  "timestamp": "2025-07-09T18:29:45.710173"
+}

@@ -1,0 +1,562 @@
+name: Claude Task Execution at Scale
+on:
+  workflow_dispatch:
+    inputs:
+      max_runners:
+        description: 'Maximum number of parallel runners'
+        required: false
+        default: '10'
+        type: string
+      task_filter:
+        description: 'Task filter (e.g., priority:high, status:pending)'
+        required: false
+        default: 'status:pending'
+        type: string
+      force_scaling:
+        description: 'Force scaling even with few tasks'
+        required: false
+        default: false
+        type: boolean
+  
+  schedule:
+    # Run every 30 minutes during business hours (UTC)
+    - cron: '*/30 9-17 * * 1-5'
+  
+  push:
+    paths:
+      - '.taskmaster/tasks/tasks.json'
+      - '.github/workflows/claude-task-execution.yml'
+
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+  TASKMASTER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  MAX_RUNNERS: ${{ github.event.inputs.max_runners || '10' }}
+  TASK_FILTER: ${{ github.event.inputs.task_filter || 'status:pending' }}
+
+jobs:
+  analyze-task-queue:
+    name: Analyze Task Queue and Plan Scaling
+    runs-on: ubuntu-latest
+    outputs:
+      task_count: ${{ steps.analyze.outputs.task_count }}
+      runner_count: ${{ steps.analyze.outputs.runner_count }}
+      task_matrix: ${{ steps.analyze.outputs.task_matrix }}
+      scaling_needed: ${{ steps.analyze.outputs.scaling_needed }}
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js for task-master
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install task-master CLI
+      run: |
+        npm install -g task-master-ai
+        
+    - name: Configure task-master models
+      run: |
+        mkdir -p .taskmaster
+        echo '{
+          "main_model": "claude-3-5-sonnet-20241022",
+          "research_model": "perplexity-llama-3.1-sonar-large-128k-online", 
+          "fallback_model": "claude-3-5-sonnet-20241022"
+        }' > .taskmaster/config.json
+        
+    - name: Analyze task queue and determine scaling
+      id: analyze
+      run: |
+        #!/bin/bash
+        set -e
+        
+        echo "🔍 Analyzing task queue for scaling decisions..."
+        
+        # Get pending tasks matching filter
+        if [[ -f ".taskmaster/tasks/tasks.json" ]]; then
+          # Parse task filter
+          filter_key=$(echo "$TASK_FILTER" | cut -d: -f1)
+          filter_value=$(echo "$TASK_FILTER" | cut -d: -f2)
+          
+          # Count matching tasks using jq
+          task_count=$(jq -r ".master.tasks[] | select(.$filter_key == \"$filter_value\") | .id" .taskmaster/tasks/tasks.json | wc -l)
+          
+          echo "📊 Found $task_count tasks matching filter: $TASK_FILTER"
+        else
+          echo "⚠️ No tasks.json found, creating sample tasks..."
+          task_count=0
+        fi
+        
+        # Determine optimal runner count
+        max_runners=${{ env.MAX_RUNNERS }}
+        
+        if [[ $task_count -eq 0 ]]; then
+          runner_count=0
+          scaling_needed="false"
+          echo "✅ No tasks to execute, no scaling needed"
+        elif [[ $task_count -le 3 && "${{ github.event.inputs.force_scaling }}" != "true" ]]; then
+          runner_count=1
+          scaling_needed="false"
+          echo "📈 Few tasks ($task_count), using single runner"
+        else
+          # Scale runners: 1 runner per 2-3 tasks, capped at max_runners
+          runner_count=$(( (task_count + 2) / 3 ))
+          if [[ $runner_count -gt $max_runners ]]; then
+            runner_count=$max_runners
+          fi
+          scaling_needed="true"
+          echo "🚀 Scaling to $runner_count runners for $task_count tasks"
+        fi
+        
+        # Generate task distribution matrix
+        if [[ $task_count -gt 0 ]]; then
+          # Create matrix of runner assignments
+          task_matrix=$(jq -r --argjson runners $runner_count --arg filter_key "$filter_key" --arg filter_value "$filter_value" '
+            [.master.tasks[] | select(.[$filter_key] == $filter_value) | .id] as $task_ids |
+            [range($runners)] as $runner_indices |
+            [
+              $runner_indices[] as $runner_idx |
+              {
+                runner_id: ($runner_idx + 1),
+                tasks: [
+                  $task_ids[] | 
+                  select((. - 1) % $runners == $runner_idx)
+                ]
+              } |
+              select(.tasks | length > 0)
+            ]
+          ' .taskmaster/tasks/tasks.json)
+        else
+          task_matrix="[]"
+        fi
+        
+        # Output results for next jobs
+        echo "task_count=$task_count" >> $GITHUB_OUTPUT
+        echo "runner_count=$runner_count" >> $GITHUB_OUTPUT
+        echo "scaling_needed=$scaling_needed" >> $GITHUB_OUTPUT
+        echo "task_matrix<<EOF" >> $GITHUB_OUTPUT
+        echo "$task_matrix" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+        
+        echo "📋 Analysis complete:"
+        echo "  Tasks: $task_count"
+        echo "  Runners: $runner_count" 
+        echo "  Scaling: $scaling_needed"
+
+  execute-tasks-parallel:
+    name: Execute Tasks on Runner ${{ matrix.runner_id }}
+    runs-on: ubuntu-latest
+    needs: analyze-task-queue
+    if: needs.analyze-task-queue.outputs.scaling_needed == 'true'
+    timeout-minutes: 60
+    
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        include: ${{ fromJson(needs.analyze-task-queue.outputs.task_matrix) }}
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js and Python
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        # Install task-master CLI
+        npm install -g task-master-ai
+        
+        # Install Python dependencies for Claude integration
+        pip install anthropic httpx python-dotenv
+        
+        # Install additional tools
+        sudo apt-get update
+        sudo apt-get install -y jq curl git
+        
+    - name: Configure task-master and Claude
+      run: |
+        # Create task-master config
+        mkdir -p .taskmaster/logs
+        echo '{
+          "main_model": "claude-3-5-sonnet-20241022",
+          "research_model": "perplexity-llama-3.1-sonar-large-128k-online",
+          "fallback_model": "claude-3-5-sonnet-20241022"
+        }' > .taskmaster/config.json
+        
+        # Set up environment
+        echo "ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY" >> $GITHUB_ENV
+        echo "RUNNER_ID=${{ matrix.runner_id }}" >> $GITHUB_ENV
+        
+    - name: Create Claude execution engine
+      run: |
+        cat > claude_executor.py << 'EOF'
+        #!/usr/bin/env python3
+        """
+        Claude Task Execution Engine for GitHub Actions
+        Executes task-master tasks using Claude API
+        """
+        
+        import os
+        import sys
+        import json
+        import subprocess
+        import time
+        from datetime import datetime
+        from typing import Dict, List, Any, Optional
+        import anthropic
+        
+        class ClaudeTaskExecutor:
+            def __init__(self):
+                self.client = anthropic.Anthropic(
+                    api_key=os.getenv('ANTHROPIC_API_KEY')
+                )
+                self.runner_id = os.getenv('RUNNER_ID', 'unknown')
+                self.start_time = datetime.now()
+                
+            def log(self, message: str):
+                timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                print(f"[{timestamp}] [Runner-{self.runner_id}] {message}")
+                
+            def execute_task_with_claude(self, task_id: str, task_data: Dict[str, Any]) -> Dict[str, Any]:
+                """Execute a single task using Claude"""
+                self.log(f"🎯 Executing task {task_id}: {task_data.get('title', 'Unknown')}")
+                
+                # Prepare Claude prompt
+                prompt = f"""You are a GitHub Actions runner executing a task from Task Master AI.
+        
+        Task ID: {task_id}
+        Title: {task_data.get('title', 'Unknown')}
+        Description: {task_data.get('description', 'No description')}
+        Details: {task_data.get('details', 'No details')}
+        Priority: {task_data.get('priority', 'medium')}
+        Dependencies: {task_data.get('dependencies', [])}
+        
+        Your job is to:
+        1. Analyze the task requirements
+        2. Plan the implementation approach  
+        3. Execute the necessary steps
+        4. Report success/failure with details
+        
+        You have access to:
+        - Ubuntu Linux environment
+        - Node.js, Python, git, curl, jq
+        - task-master CLI
+        - Full read/write access to the repository
+        
+        Please execute this task step by step and report your progress.
+        If you encounter any issues, use the autonomous research loop to find solutions.
+        
+        Start your response with either "SUCCESS:" or "FAILURE:" followed by detailed execution log."""
+                
+                try:
+                    # Execute with Claude
+                    response = self.client.messages.create(
+                        model="claude-3-5-sonnet-20241022",
+                        max_tokens=4000,
+                        temperature=0.1,
+                        messages=[{"role": "user", "content": prompt}]
+                    )
+                    
+                    claude_response = response.content[0].text
+                    self.log(f"📝 Claude response length: {len(claude_response)} chars")
+                    
+                    # Parse success/failure
+                    success = claude_response.strip().startswith("SUCCESS:")
+                    
+                    result = {
+                        "task_id": task_id,
+                        "success": success,
+                        "claude_response": claude_response,
+                        "execution_time": (datetime.now() - self.start_time).total_seconds(),
+                        "runner_id": self.runner_id,
+                        "timestamp": datetime.now().isoformat()
+                    }
+                    
+                    if success:
+                        self.log(f"✅ Task {task_id} completed successfully")
+                    else:
+                        self.log(f"❌ Task {task_id} failed")
+                        
+                    return result
+                    
+                except Exception as e:
+                    self.log(f"💥 Error executing task {task_id}: {e}")
+                    return {
+                        "task_id": task_id,
+                        "success": False,
+                        "error": str(e),
+                        "execution_time": (datetime.now() - self.start_time).total_seconds(),
+                        "runner_id": self.runner_id,
+                        "timestamp": datetime.now().isoformat()
+                    }
+            
+            def execute_tasks(self, task_ids: List[str]) -> List[Dict[str, Any]]:
+                """Execute multiple tasks assigned to this runner"""
+                self.log(f"🚀 Starting execution of {len(task_ids)} tasks")
+                
+                results = []
+                
+                # Load tasks data
+                try:
+                    with open('.taskmaster/tasks/tasks.json', 'r') as f:
+                        tasks_data = json.load(f)
+                    
+                    task_map = {
+                        str(task['id']): task 
+                        for task in tasks_data['master']['tasks']
+                    }
+                    
+                except Exception as e:
+                    self.log(f"💥 Failed to load tasks data: {e}")
+                    return []
+                
+                # Execute each assigned task
+                for task_id in task_ids:
+                    if str(task_id) not in task_map:
+                        self.log(f"⚠️ Task {task_id} not found in tasks data")
+                        continue
+                        
+                    task_data = task_map[str(task_id)]
+                    
+                    # Skip if already completed
+                    if task_data.get('status') == 'done':
+                        self.log(f"⏭️ Task {task_id} already completed, skipping")
+                        continue
+                    
+                    # Mark as in-progress
+                    try:
+                        subprocess.run([
+                            'task-master', 'set-status', 
+                            f'--id={task_id}', '--status=in-progress'
+                        ], check=True, capture_output=True)
+                    except subprocess.CalledProcessError as e:
+                        self.log(f"⚠️ Failed to set task {task_id} in-progress: {e}")
+                    
+                    # Execute task
+                    result = self.execute_task_with_claude(task_id, task_data)
+                    results.append(result)
+                    
+                    # Update task status based on result
+                    try:
+                        new_status = 'done' if result['success'] else 'blocked'
+                        subprocess.run([
+                            'task-master', 'set-status',
+                            f'--id={task_id}', f'--status={new_status}'
+                        ], check=True, capture_output=True)
+                        
+                        # Add execution notes
+                        notes = f"Executed by GitHub Actions runner {self.runner_id}. "
+                        notes += "SUCCESS" if result['success'] else "FAILED"
+                        notes += f" at {result['timestamp']}"
+                        
+                        subprocess.run([
+                            'task-master', 'update-subtask',
+                            f'--id={task_id}', f'--prompt={notes}'
+                        ], check=True, capture_output=True)
+                        
+                    except subprocess.CalledProcessError as e:
+                        self.log(f"⚠️ Failed to update task {task_id} status: {e}")
+                    
+                    # Brief pause between tasks
+                    time.sleep(2)
+                
+                self.log(f"🏁 Completed execution of {len(results)} tasks")
+                return results
+        
+        if __name__ == "__main__":
+            if len(sys.argv) < 2:
+                print("Usage: python claude_executor.py <task_id1> [task_id2] ...")
+                sys.exit(1)
+            
+            task_ids = sys.argv[1:]
+            executor = ClaudeTaskExecutor()
+            results = executor.execute_tasks(task_ids)
+            
+            # Save results
+            results_file = f"task_results_runner_{executor.runner_id}.json"
+            with open(results_file, 'w') as f:
+                json.dump(results, f, indent=2)
+            
+            print(f"Results saved to {results_file}")
+            
+            # Print summary
+            successful = sum(1 for r in results if r.get('success', False))
+            total = len(results)
+            print(f"Summary: {successful}/{total} tasks completed successfully")
+        EOF
+        
+        chmod +x claude_executor.py
+        
+    - name: Execute assigned tasks with Claude
+      run: |
+        echo "🎯 Runner ${{ matrix.runner_id }} executing tasks: ${{ join(matrix.tasks, ' ') }}"
+        
+        # Execute tasks using Claude
+        python claude_executor.py ${{ join(matrix.tasks, ' ') }}
+        
+    - name: Upload task results
+      uses: actions/upload-artifact@v4
+      with:
+        name: task-results-runner-${{ matrix.runner_id }}
+        path: task_results_runner_${{ matrix.runner_id }}.json
+        retention-days: 30
+        
+    - name: Commit task updates
+      run: |
+        # Configure git
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Actions (Runner ${{ matrix.runner_id }})"
+        
+        # Add changes
+        git add .taskmaster/tasks/tasks.json
+        
+        # Commit if there are changes
+        if ! git diff --cached --quiet; then
+          git commit -m "Update task status from runner ${{ matrix.runner_id }} 
+
+          Executed tasks: ${{ join(matrix.tasks, ', ') }}
+          Timestamp: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+          
+          git push
+        else
+          echo "No task updates to commit"
+        fi
+
+  execute-single-task:
+    name: Execute Single Task (No Scaling)
+    runs-on: ubuntu-latest
+    needs: analyze-task-queue
+    if: needs.analyze-task-queue.outputs.scaling_needed == 'false' && needs.analyze-task-queue.outputs.task_count > 0
+    timeout-minutes: 30
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup environment
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies and execute
+      run: |
+        # Install task-master CLI
+        npm install -g task-master-ai
+        
+        # Install Python dependencies
+        pip install anthropic httpx python-dotenv
+        
+        # Configure task-master
+        mkdir -p .taskmaster/logs
+        echo '{
+          "main_model": "claude-3-5-sonnet-20241022",
+          "research_model": "perplexity-llama-3.1-sonar-large-128k-online",
+          "fallback_model": "claude-3-5-sonnet-20241022"
+        }' > .taskmaster/config.json
+        
+        echo "🎯 Executing single task (no scaling needed)"
+        
+        # Get next task and execute with built-in autonomous loop
+        .taskmaster/workflows/claude-auto-recovery.sh auto
+
+  aggregate-results:
+    name: Aggregate Results and Report
+    runs-on: ubuntu-latest
+    needs: [analyze-task-queue, execute-tasks-parallel, execute-single-task]
+    if: always()
+    
+    steps:
+    - name: Checkout repository  
+      uses: actions/checkout@v4
+      
+    - name: Download all task results
+      uses: actions/download-artifact@v4
+      with:
+        pattern: task-results-runner-*
+        merge-multiple: true
+        
+    - name: Aggregate and report results
+      run: |
+        echo "📊 CLAUDE TASK EXECUTION SUMMARY"
+        echo "================================="
+        echo ""
+        
+        total_tasks=0
+        successful_tasks=0
+        failed_tasks=0
+        total_runners=0
+        
+        # Process all result files
+        for result_file in task_results_runner_*.json; do
+          if [[ -f "$result_file" ]]; then
+            echo "📋 Processing $result_file..."
+            
+            # Count tasks in this file
+            file_total=$(jq '. | length' "$result_file")
+            file_successful=$(jq '[.[] | select(.success == true)] | length' "$result_file")
+            file_failed=$(jq '[.[] | select(.success == false)] | length' "$result_file")
+            
+            total_tasks=$((total_tasks + file_total))
+            successful_tasks=$((successful_tasks + file_successful))
+            failed_tasks=$((failed_tasks + file_failed))
+            total_runners=$((total_runners + 1))
+            
+            echo "  Tasks: $file_total | Success: $file_successful | Failed: $file_failed"
+          fi
+        done
+        
+        echo ""
+        echo "🎯 OVERALL RESULTS:"
+        echo "  Total Runners: $total_runners"
+        echo "  Total Tasks: $total_tasks"
+        echo "  Successful: $successful_tasks"
+        echo "  Failed: $failed_tasks"
+        
+        if [[ $total_tasks -gt 0 ]]; then
+          success_rate=$(( (successful_tasks * 100) / total_tasks ))
+          echo "  Success Rate: ${success_rate}%"
+        fi
+        
+        echo ""
+        echo "📈 SCALING METRICS:"
+        echo "  Queue Analysis: ${{ needs.analyze-task-queue.outputs.task_count }} tasks found"
+        echo "  Scaling Decision: ${{ needs.analyze-task-queue.outputs.scaling_needed }}"
+        echo "  Runners Deployed: ${{ needs.analyze-task-queue.outputs.runner_count }}"
+        
+        # Create summary artifact
+        cat > execution_summary.json << EOF
+        {
+          "timestamp": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+          "total_runners": $total_runners,
+          "total_tasks": $total_tasks,
+          "successful_tasks": $successful_tasks,
+          "failed_tasks": $failed_tasks,
+          "success_rate": $(( total_tasks > 0 ? (successful_tasks * 100) / total_tasks : 0 )),
+          "scaling_enabled": ${{ needs.analyze-task-queue.outputs.scaling_needed }},
+          "queue_size": ${{ needs.analyze-task-queue.outputs.task_count }},
+          "runners_deployed": ${{ needs.analyze-task-queue.outputs.runner_count }}
+        }
+        EOF
+        
+    - name: Upload execution summary
+      uses: actions/upload-artifact@v4
+      with:
+        name: execution-summary
+        path: execution_summary.json
+        retention-days: 90

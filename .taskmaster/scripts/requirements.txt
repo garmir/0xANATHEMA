@@ -1,0 +1,48 @@
+# Task Master AI System - Python Dependencies
+# Generated for comprehensive package import resolution
+
+# Core scientific computing
+numpy>=1.22.0
+scipy>=1.8.0
+matplotlib>=3.5.0
+
+# Machine learning and AI
+scikit-learn>=1.0.0
+
+# System monitoring and utilities
+psutil>=5.8.0
+
+# Data processing and serialization
+pyyaml>=6.0
+
+# HTTP requests (for API integrations)
+requests>=2.25.0
+
+# Statistical and numerical computing
+pandas>=1.3.0
+
+# Parallel computing
+joblib>=1.2.0
+
+# Threading control
+threadpoolctl>=3.1.0
+
+# Image processing (for matplotlib)
+pillow>=8.0.0
+
+# Date/time utilities
+python-dateutil>=2.7.0
+
+# Text processing
+pyparsing>=2.3.1
+
+# Packaging utilities
+packaging>=20.0
+
+# Font handling (for matplotlib)
+fonttools>=4.22.0
+
+# Mathematical plotting utilities
+cycler>=0.10
+kiwisolver>=1.3.1
+contourpy>=1.0.1

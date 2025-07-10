@@ -1,0 +1,125 @@
+{
+  "version": "1.0",
+  "generated": "2025-07-10T16:36:56Z",
+  "algorithm": "dependency-analysis",
+  "nodes": [
+    {
+      "id": "sample-1",
+      "type": "task",
+      "resources": {
+        "memory": "57MB",
+        "cpu": "2",
+        "time": "12min"
+      },
+      "dependencies": [],
+      "complexity": "2"
+    },
+    {
+      "id": "sample-2",
+      "type": "task",
+      "resources": {
+        "memory": "67MB",
+        "cpu": "2",
+        "time": "17min"
+      },
+      "dependencies": [],
+      "complexity": "2"
+    },
+    {
+      "id": "sample-3",
+      "type": "task",
+      "resources": {
+        "memory": "95MB",
+        "cpu": "1",
+        "time": "27min"
+      },
+      "dependencies": [],
+      "complexity": "8"
+    },
+    {
+      "id": "sample-4",
+      "type": "task",
+      "resources": {
+        "memory": "79MB",
+        "cpu": "2",
+        "time": "17min"
+      },
+      "dependencies": [],
+      "complexity": "4"
+    },
+    {
+      "id": "sample-5",
+      "type": "task",
+      "resources": {
+        "memory": "141MB",
+        "cpu": "2",
+        "time": "26min"
+      },
+      "dependencies": [],
+      "complexity": "10"
+    },
+    {
+      "id": "sample-6",
+      "type": "task",
+      "resources": {
+        "memory": "53MB",
+        "cpu": "1",
+        "time": "34min"
+      },
+      "dependencies": [],
+      "complexity": "1"
+    },
+    {
+      "id": "sample-7",
+      "type": "task",
+      "resources": {
+        "memory": "134MB",
+        "cpu": "2",
+        "time": "23min"
+      },
+      "dependencies": [],
+      "complexity": "10"
+    },
+    {
+      "id": "sample-8",
+      "type": "task",
+      "resources": {
+        "memory": "51MB",
+        "cpu": "4",
+        "time": "25min"
+      },
+      "dependencies": [],
+      "complexity": "9"
+    },
+    {
+      "id": "sample-9",
+      "type": "task",
+      "resources": {
+        "memory": "59MB",
+        "cpu": "3",
+        "time": "16min"
+      },
+      "dependencies": [],
+      "complexity": "2"
+    },
+    {
+      "id": "sample-10",
+      "type": "task",
+      "resources": {
+        "memory": "86MB",
+        "cpu": "2",
+        "time": "12min"
+      },
+      "dependencies": [],
+      "complexity": "6"
+    }
+  ],
+  "edges": [],
+  "cycles_detected": false,
+  "total_nodes": 10,
+  "total_resources": {
+    "memory_total": "650MB",
+    "cpu_total": "25",
+    "time_total": "175min"
+  }
+}

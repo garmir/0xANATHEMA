@@ -1,0 +1,12 @@
+{
+    "execution_time": .005873000,
+    "success": false,
+    "reuse_factor": .82407116916409802536,
+    "mutation_rate": .05839503158665730772,
+    "autonomy_score": .86381423383281960507,
+    "base_score": 0.6,
+    "reuse_bonus": .16481423383281960507,
+    "time_bonus": 0.099,
+    "success_bonus": 0.0,
+    "timestamp": "2025-07-10T16:35:01Z"
+}

@@ -1,0 +1,26 @@
+{
+  "error_recovery": {
+    "enabled": true,
+    "recovery_strategies": [
+      {
+        "error_type": "memory_exhaustion",
+        "action": "trigger_garbage_collection_and_retry"
+      },
+      {
+        "error_type": "dependency_failure",
+        "action": "recompute_dependencies_and_continue"
+      },
+      {
+        "error_type": "timeout",
+        "action": "increase_timeout_and_retry"
+      },
+      {
+        "error_type": "permission_denied",
+        "action": "escalate_privileges_and_retry"
+      }
+    ],
+    "max_retries": 3,
+    "exponential_backoff": true,
+    "learning_from_failures": true
+  }
+}

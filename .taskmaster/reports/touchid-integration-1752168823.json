@@ -1,0 +1,45 @@
+{
+  "timestamp": 1752168823.1158469,
+  "integration_type": "touchid_sudo",
+  "system_info": {
+    "platform": "Darwin",
+    "version": "15.5",
+    "architecture": "arm64",
+    "user": "anam",
+    "is_admin": false
+  },
+  "validation_results": {
+    "macos_compatibility": {
+      "status": true,
+      "message": "macOS version compatible with TouchID"
+    },
+    "hardware_available": {
+      "status": true,
+      "message": "TouchID hardware detected"
+    },
+    "pam_configured": {
+      "status": true,
+      "message": "TouchID PAM module is configured"
+    },
+    "security_policies": {
+      "status": false,
+      "message": "TouchID security policies not properly configured"
+    },
+    "overall_status": false
+  },
+  "touchid_available": false,
+  "test_results": {
+    "sudo_test_passed": true,
+    "test_message": "TouchID sudo authentication successful"
+  },
+  "configuration": {
+    "enabled": true,
+    "fallback_to_password": true,
+    "max_retry_attempts": 3,
+    "timeout_seconds": 30
+  },
+  "recommendations": [
+    "Enable TouchID in System Preferences > Security & Privacy > TouchID",
+    "Consider enabling password fallback for autonomous execution when TouchID is unavailable"
+  ]
+}

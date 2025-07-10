@@ -1,0 +1,14 @@
+{
+  "checkpoint_id": "checkpoint_1752168360884",
+  "timestamp": "2025-07-10 18:26:00.884821",
+  "workspace_state": "active",
+  "memory_usage_mb": 0.0,
+  "data_integrity_hash": "f0e901e14e9d9312c7cc6caaf195d8c9d1480868623d164fa82f9fef51c4a1e1",
+  "task_context": {
+    "task_id": "test-checkpoint",
+    "description": "Testing checkpoint functionality",
+    "dependencies": []
+  },
+  "dependencies": [],
+  "rollback_point": true
+}

@@ -1,0 +1,118 @@
+{
+  "analysis_timestamp": "2025-07-10T17:40:00Z",
+  "total_tasks": 10,
+  "atomic_tasks": 9,
+  "atomicity_ratio": 0.9,
+  "target_ratio": 0.8,
+  "target_met": true,
+  "improvement_needed": 0,
+  "detailed_results": [
+    {
+      "task_id": "task-11",
+      "is_atomic": true,
+      "confidence": 0.85,
+      "complexity_score": 0.0,
+      "reasons": [
+        "Low complexity indicators",
+        "Minimal dependencies",
+        "Concise task description"
+      ]
+    },
+    {
+      "task_id": "task-12",
+      "is_atomic": true,
+      "confidence": 0.94,
+      "complexity_score": 0.0,
+      "reasons": [
+        "Strong atomic action patterns detected",
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    },
+    {
+      "task_id": "task-13",
+      "is_atomic": false,
+      "confidence": 0.59,
+      "complexity_score": 0.167,
+      "reasons": [
+        "Complex/composite action patterns detected",
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    },
+    {
+      "task_id": "task-14",
+      "is_atomic": true,
+      "confidence": 0.94,
+      "complexity_score": 0.0,
+      "reasons": [
+        "Strong atomic action patterns detected",
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    },
+    {
+      "task_id": "task-15",
+      "is_atomic": true,
+      "confidence": 0.89,
+      "complexity_score": 0.167,
+      "reasons": [
+        "Strong atomic action patterns detected",
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    },
+    {
+      "task_id": "task-16",
+      "is_atomic": true,
+      "confidence": 0.79,
+      "complexity_score": 0.0,
+      "reasons": [
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    },
+    {
+      "task_id": "task-17",
+      "is_atomic": true,
+      "confidence": 0.79,
+      "complexity_score": 0.0,
+      "reasons": [
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    },
+    {
+      "task_id": "task-18",
+      "is_atomic": true,
+      "confidence": 0.89,
+      "complexity_score": 0.167,
+      "reasons": [
+        "Strong atomic action patterns detected",
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    },
+    {
+      "task_id": "task-19",
+      "is_atomic": true,
+      "confidence": 0.94,
+      "complexity_score": 0.0,
+      "reasons": [
+        "Strong atomic action patterns detected",
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    },
+    {
+      "task_id": "task-20",
+      "is_atomic": true,
+      "confidence": 0.77,
+      "complexity_score": 0.067,
+      "reasons": [
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    }
+  ]
+}

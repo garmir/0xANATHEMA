@@ -1,0 +1,11 @@
+# Task ID: 29
+# Title: Implement Recursive PRD Generation System
+# Status: done
+# Dependencies: 28
+# Priority: high
+# Description: Create recursive PRD decomposition system with depth tracking and atomic task detection
+# Details:
+Build recursive PRD processor with configurable depth limits (max 5 levels). Implement atomic task detection using complexity analysis. Create PRD decomposition functions that generate sub-PRDs and manage directory structure. Include depth tracking, memory management, and convergence detection. Integrate with existing task-master CLI for seamless operation.
+
+# Test Strategy:
+Test with complex project PRDs, validate depth limiting, verify atomic task detection accuracy, and test memory usage during deep recursion scenarios

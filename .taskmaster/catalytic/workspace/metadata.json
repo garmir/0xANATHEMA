@@ -1,0 +1,12 @@
+{
+  "size": "10GB",
+  "created": "2025-07-10T16:43:15Z",
+  "type": "catalytic_workspace",
+  "reuse_factor": 0.8,
+  "memory_pools": {
+    "primary": "6GB",
+    "secondary": "3GB",
+    "buffer": "1GB"
+  },
+  "status": "initialized"
+}

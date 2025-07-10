@@ -1,0 +1,11 @@
+# Task ID: 35
+# Title: Implement Real-World Integration Examples
+# Status: done
+# Dependencies: 28, 29, 33
+# Priority: medium
+# Description: Create practical integration examples with existing development workflows
+# Details:
+Create sample project scenarios demonstrating recursive PRD generation and optimization. Implement integration patterns with Claude Code and MCP. Create workflow examples for different project types (web apps, APIs, data processing). Include configuration templates and best practice documentation. Ensure cross-platform compatibility for macOS and Linux.
+
+# Test Strategy:
+Test integration examples with real projects, validate workflow effectiveness, and verify cross-platform compatibility

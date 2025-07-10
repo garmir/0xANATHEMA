@@ -1,0 +1,101 @@
+{
+  "execution_type": "catalytic",
+  "workspace_size": "10GB",
+  "reuse_factor": 0.8,
+  "memory_efficiency": "high",
+  "execution_phases": [
+    {
+      "phase_id": 1,
+      "task_id": "sample-1",
+      "memory_allocated": 5,
+      "memory_reused": 0,
+      "net_memory": 5,
+      "execution_time": 0,
+      "catalytic_efficiency": 1.0
+    },
+    {
+      "phase_id": 2,
+      "task_id": "sample-2",
+      "memory_allocated": 5,
+      "memory_reused": 4,
+      "net_memory": 1,
+      "execution_time": 5,
+      "catalytic_efficiency": 0.8
+    },
+    {
+      "phase_id": 3,
+      "task_id": "sample-4",
+      "memory_allocated": 5,
+      "memory_reused": 4,
+      "net_memory": 1,
+      "execution_time": 15,
+      "catalytic_efficiency": 0.8
+    },
+    {
+      "phase_id": 4,
+      "task_id": "sample-6",
+      "memory_allocated": 5,
+      "memory_reused": 4,
+      "net_memory": 1,
+      "execution_time": 25,
+      "catalytic_efficiency": 0.8
+    },
+    {
+      "phase_id": 5,
+      "task_id": "sample-8",
+      "memory_allocated": 5,
+      "memory_reused": 4,
+      "net_memory": 1,
+      "execution_time": 35,
+      "catalytic_efficiency": 0.8
+    },
+    {
+      "phase_id": 6,
+      "task_id": "sample-9",
+      "memory_allocated": 5,
+      "memory_reused": 4,
+      "net_memory": 1,
+      "execution_time": 40,
+      "catalytic_efficiency": 0.8
+    },
+    {
+      "phase_id": 7,
+      "task_id": "sample-10",
+      "memory_allocated": 5,
+      "memory_reused": 4,
+      "net_memory": 1,
+      "execution_time": 45,
+      "catalytic_efficiency": 0.8
+    },
+    {
+      "phase_id": 8,
+      "task_id": "sample-3",
+      "memory_allocated": 6,
+      "memory_reused": 4,
+      "net_memory": 2,
+      "execution_time": 10,
+      "catalytic_efficiency": 0.8
+    },
+    {
+      "phase_id": 9,
+      "task_id": "sample-7",
+      "memory_allocated": 8,
+      "memory_reused": 4,
+      "net_memory": 4,
+      "execution_time": 30,
+      "catalytic_efficiency": 0.8
+    },
+    {
+      "phase_id": 10,
+      "task_id": "sample-5",
+      "memory_allocated": 9,
+      "memory_reused": 6,
+      "net_memory": 3,
+      "execution_time": 20,
+      "catalytic_efficiency": 0.8
+    }
+  ],
+  "resource_reuse_map": {},
+  "total_execution_time": 225,
+  "memory_savings": "65.5%"
+}

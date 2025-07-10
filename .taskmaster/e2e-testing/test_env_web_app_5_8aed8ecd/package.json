@@ -1,0 +1,8 @@
+{
+  "name": "test-web-app-web_app_5_8aed8ecd",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  }
+}

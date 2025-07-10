@@ -1,0 +1,160 @@
+{
+  "timestamp": 1752169524.481736,
+  "report_type": "task_complexity_analysis",
+  "summary": {
+    "total_tasks": 5,
+    "total_estimated_time_ms": 1015500.0,
+    "bottleneck_tasks": 1,
+    "parallelizable_tasks": 1,
+    "optimization_opportunities": 4
+  },
+  "complexity_distribution": {
+    "time_complexity_distribution": {
+      "O(n\u00b3)": 1,
+      "O(n)": 1,
+      "O(1)": 1,
+      "O(2^n)": 1,
+      "O(n log n)": 1
+    },
+    "space_complexity_distribution": {
+      "O(n\u00b2)": 1,
+      "O(n)": 3,
+      "O(1)": 1
+    }
+  },
+  "resource_analysis": {
+    "total_cpu_cores_needed": 31.0,
+    "total_memory_mb_needed": 650.0,
+    "average_cpu_per_task": 6.2,
+    "average_memory_per_task": 130.0,
+    "peak_memory_task": "1",
+    "peak_cpu_task": "4"
+  },
+  "execution_plan": {
+    "timestamp": 1752169524.481689,
+    "optimization_strategy": "adaptive",
+    "system_constraints": {
+      "cpu_cores": 11,
+      "available_memory_mb": 22050.40625,
+      "cpu_utilization": 50.0
+    },
+    "execution_order": [
+      {
+        "position": 1,
+        "task_id": "3",
+        "estimated_time_ms": 500.0,
+        "resource_requirements": {
+          "cpu_cores": 0.5,
+          "memory_mb": 50.0,
+          "parallelizable": false
+        },
+        "complexity": {
+          "time": "O(1)",
+          "space": "O(1)"
+        }
+      },
+      {
+        "position": 2,
+        "task_id": "5",
+        "estimated_time_ms": 0.0,
+        "resource_requirements": {
+          "cpu_cores": 1.5,
+          "memory_mb": 100.0,
+          "parallelizable": false
+        },
+        "complexity": {
+          "time": "O(n log n)",
+          "space": "O(n)"
+        }
+      },
+      {
+        "position": 3,
+        "task_id": "1",
+        "estimated_time_ms": 1000000.0,
+        "resource_requirements": {
+          "cpu_cores": 8.0,
+          "memory_mb": 300.0,
+          "parallelizable": false
+        },
+        "complexity": {
+          "time": "O(n\u00b3)",
+          "space": "O(n\u00b2)"
+        }
+      },
+      {
+        "position": 4,
+        "task_id": "2",
+        "estimated_time_ms": 3000.0,
+        "resource_requirements": {
+          "cpu_cores": 1.0,
+          "memory_mb": 100.0,
+          "parallelizable": true
+        },
+        "complexity": {
+          "time": "O(n)",
+          "space": "O(n)"
+        }
+      },
+      {
+        "position": 5,
+        "task_id": "4",
+        "estimated_time_ms": 12000.0,
+        "resource_requirements": {
+          "cpu_cores": 20.0,
+          "memory_mb": 100.0,
+          "parallelizable": false
+        },
+        "complexity": {
+          "time": "O(2^n)",
+          "space": "O(n)"
+        }
+      }
+    ],
+    "resource_allocation": {},
+    "bottlenecks": [
+      {
+        "task_id": "4",
+        "bottleneck_type": "cpu"
+      }
+    ],
+    "optimization_opportunities": [
+      {
+        "task_id": "1",
+        "opportunity": "Consider space-efficient algorithms to reduce memory usage"
+      },
+      {
+        "task_id": "1",
+        "opportunity": "Batch I/O operations to reduce overhead"
+      },
+      {
+        "task_id": "4",
+        "opportunity": "Algorithm optimization critical - consider approximation methods"
+      },
+      {
+        "task_id": "4",
+        "opportunity": "Batch I/O operations to reduce overhead"
+      }
+    ],
+    "estimated_total_time_ms": 1015500.0,
+    "parallelization_groups": [
+      [
+        "2"
+      ]
+    ]
+  },
+  "bottleneck_analysis": {
+    "bottleneck_distribution": {
+      "cpu": 1
+    },
+    "bottleneck_tasks": {
+      "cpu": [
+        "4"
+      ]
+    }
+  },
+  "optimization_recommendations": [
+    "Consider algorithm optimization for 1 high-complexity tasks",
+    "Leverage parallelization for 1 tasks to improve performance",
+    "Address 1 identified bottlenecks to improve overall performance"
+  ]
+}

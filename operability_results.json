@@ -1,0 +1,74 @@
+{
+  "operational_status": "OPERATIONAL",
+  "operability_score": 100.0,
+  "total_checks": 7,
+  "passed_checks": 7,
+  "failed_checks": 0,
+  "critical_failures": 0,
+  "check_results": [
+    {
+      "check_name": "python_environment",
+      "passed": true,
+      "message": "Python 3.13 OK",
+      "severity": "critical",
+      "fix_attempted": false,
+      "fix_successful": false,
+      "timestamp": "2025-07-09T18:47:23.122787"
+    },
+    {
+      "check_name": "labrys_imports",
+      "passed": true,
+      "message": "LABRYS core modules imported successfully",
+      "severity": "critical",
+      "fix_attempted": false,
+      "fix_successful": false,
+      "timestamp": "2025-07-09T18:47:23.150579"
+    },
+    {
+      "check_name": "system_initialization",
+      "passed": true,
+      "message": "System initialized successfully",
+      "severity": "high",
+      "fix_attempted": false,
+      "fix_successful": false,
+      "timestamp": "2025-07-09T18:47:23.165178"
+    },
+    {
+      "check_name": "basic_functionality",
+      "passed": true,
+      "message": "Basic functionality working",
+      "severity": "high",
+      "fix_attempted": false,
+      "fix_successful": false,
+      "timestamp": "2025-07-09T18:47:23.185434"
+    },
+    {
+      "check_name": "self_test_capability",
+      "passed": true,
+      "message": "Self-test capability available",
+      "severity": "medium",
+      "fix_attempted": false,
+      "fix_successful": false,
+      "timestamp": "2025-07-09T18:47:23.192470"
+    },
+    {
+      "check_name": "introspection_capability",
+      "passed": true,
+      "message": "Introspection capability available",
+      "severity": "medium",
+      "fix_attempted": false,
+      "fix_successful": false,
+      "timestamp": "2025-07-09T18:47:23.195959"
+    },
+    {
+      "check_name": "api_integration",
+      "passed": true,
+      "message": "API key configured and valid",
+      "severity": "low",
+      "fix_attempted": false,
+      "fix_successful": false,
+      "timestamp": "2025-07-09T18:47:23.198722"
+    }
+  ],
+  "timestamp": "2025-07-09T18:47:23.198732"
+}

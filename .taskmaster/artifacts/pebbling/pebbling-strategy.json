@@ -1,0 +1,145 @@
+{
+  "pebbling_strategy": {
+    "algorithm": "branching-program",
+    "optimization_goal": "memory_minimization",
+    "max_pebbles": 3,
+    "reuse_factor": 0.9,
+    "spill_threshold": 0.6
+  },
+  "resource_allocation": {
+    "memory_phases": [
+      {
+        "phase": "initialization",
+        "duration": "2min",
+        "peak_memory": "100MB",
+        "pebbles_used": 2,
+        "tasks": [
+          "task-11"
+        ]
+      },
+      {
+        "phase": "prd_generation",
+        "duration": "15min",
+        "peak_memory": "300MB",
+        "pebbles_used": 3,
+        "tasks": [
+          "task-12",
+          "task-13"
+        ]
+      },
+      {
+        "phase": "optimization",
+        "duration": "45min",
+        "peak_memory": "200MB",
+        "pebbles_used": 4,
+        "tasks": [
+          "task-14",
+          "task-15",
+          "task-16"
+        ]
+      },
+      {
+        "phase": "evolution",
+        "duration": "30min",
+        "peak_memory": "150MB",
+        "pebbles_used": 3,
+        "tasks": [
+          "task-17",
+          "task-18"
+        ]
+      },
+      {
+        "phase": "finalization",
+        "duration": "20min",
+        "peak_memory": "120MB",
+        "pebbles_used": 2,
+        "tasks": [
+          "task-19",
+          "task-20"
+        ]
+      }
+    ]
+  },
+  "timing_optimization": {
+    "critical_path": [
+      "task-11",
+      "task-12",
+      "task-13",
+      "task-14",
+      "task-15",
+      "task-16",
+      "task-17",
+      "task-18",
+      "task-19",
+      "task-20"
+    ],
+    "parallel_opportunities": [
+      {
+        "group": [
+          "task-14",
+          "task-15"
+        ],
+        "type": "data_independent",
+        "savings": "15min"
+      },
+      {
+        "group": [
+          "task-19",
+          "task-20"
+        ],
+        "type": "pipeline",
+        "savings": "10min"
+      }
+    ],
+    "resource_conflicts": [],
+    "bottlenecks": [
+      {
+        "task": "task-18",
+        "reason": "evolutionary_computation",
+        "mitigation": "distributed_processing"
+      }
+    ]
+  },
+  "branching_program": {
+    "nodes": 20,
+    "branches": 20,
+    "decision_points": [
+      {
+        "condition": "memory_usage > 80%",
+        "action": "spill_to_disk"
+      },
+      {
+        "condition": "task_ready && pebbles_available",
+        "action": "execute_task"
+      },
+      {
+        "condition": "dependencies_unsatisfied",
+        "action": "wait_or_reorder"
+      },
+      {
+        "condition": "memory_usage > 60%",
+        "action": "preemptive_optimization"
+      }
+    ],
+    "optimization_rules": [
+      "minimize_peak_memory",
+      "maximize_parallel_execution",
+      "avoid_resource_conflicts",
+      "maintain_execution_order"
+    ]
+  },
+  "execution_plan": {
+    "total_duration": "112min",
+    "peak_memory_usage": "300MB",
+    "average_memory_usage": "180MB",
+    "memory_efficiency": 0.95,
+    "parallelization_factor": 1.4,
+    "resource_utilization": 0.88
+  },
+  "metadata": {
+    "created": "2025-07-10T16:43:15Z",
+    "source": ".taskmaster/optimization/tree-optimized.json",
+    "generator": "pebbling-v1.0",
+    "strategy": "branching-program"
+  }
+}

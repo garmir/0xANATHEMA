@@ -1,0 +1,86 @@
+{
+  "db_path": ".taskmaster/intelligence/predictions.db",
+  "api_port": 8081,
+  "log_level": "INFO",
+  "prediction_threshold": 0.5,
+  "max_predictions": 10,
+  "auto_generate_enabled": true,
+  "learning_enabled": true,
+  "pattern_analysis": {
+    "min_pattern_frequency": 2,
+    "min_confidence_threshold": 0.3,
+    "semantic_clustering": {
+      "max_clusters": 5,
+      "min_cluster_size": 2
+    },
+    "temporal_analysis": {
+      "time_windows": ["hour", "day_of_week", "date"],
+      "min_occurrences": 3
+    },
+    "sequence_analysis": {
+      "window_size": 3,
+      "min_sequence_frequency": 2
+    }
+  },
+  "trajectory_prediction": {
+    "models": {
+      "priority_classifier": {
+        "type": "RandomForest",
+        "n_estimators": 100,
+        "random_state": 42
+      },
+      "duration_regressor": {
+        "type": "GradientBoosting",
+        "n_estimators": 100,
+        "random_state": 42
+      },
+      "next_task_classifier": {
+        "type": "MLP",
+        "hidden_layers": [100, 50],
+        "max_iter": 500
+      }
+    },
+    "feature_engineering": {
+      "text_features": {
+        "max_features": 1000,
+        "stop_words": "english"
+      },
+      "context_features": {
+        "lookback_window": 10,
+        "feature_size": 20
+      }
+    }
+  },
+  "behavioral_learning": {
+    "user_tracking": {
+      "track_completion_patterns": true,
+      "track_priority_preferences": true,
+      "track_time_patterns": true,
+      "track_acceptance_patterns": true
+    },
+    "feedback_weighting": {
+      "accept": 1.0,
+      "reject": -0.5,
+      "modify": 0.5
+    },
+    "adaptation_rate": 0.1
+  },
+  "auto_generation": {
+    "confidence_threshold": 0.6,
+    "max_auto_tasks": 5,
+    "require_approval": true,
+    "generation_interval_hours": 24
+  },
+  "integration": {
+    "task_master": {
+      "tasks_file": ".taskmaster/tasks/tasks.json",
+      "auto_add_predictions": false,
+      "notification_webhook": null
+    },
+    "monitoring": {
+      "performance_tracking": true,
+      "prediction_accuracy_tracking": true,
+      "user_satisfaction_tracking": true
+    }
+  }
+}

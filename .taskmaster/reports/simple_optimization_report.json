@@ -1,0 +1,35 @@
+{
+  "report_timestamp": "2025-07-10T18:41:57.799203",
+  "monitoring_duration_seconds": 30,
+  "data_points": 6,
+  "performance_summary": {
+    "cpu_usage": {
+      "average": 30.171666666666667,
+      "max": 38.75,
+      "min": 25.84
+    },
+    "memory_usage": {
+      "average": 16.0,
+      "max": 16.0,
+      "min": 16.0
+    },
+    "disk_usage": {
+      "average": 4.0,
+      "max": 4.0,
+      "min": 4.0
+    }
+  },
+  "optimization_summary": {
+    "total_anomalies_detected": 0,
+    "optimization_actions_taken": 0,
+    "successful_optimizations": 0
+  },
+  "health_assessment": {
+    "score": 100.0,
+    "status": "excellent",
+    "trend": "stable"
+  },
+  "recommendations": [
+    "System performance is within acceptable parameters"
+  ]
+}

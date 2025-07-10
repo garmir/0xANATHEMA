@@ -1,0 +1,15 @@
+{
+  "workspace_size": "10GB",
+  "allocation_time": "2025-07-10T17:15:46Z",
+  "memory_pool": {
+    "active": "0MB",
+    "cached": "0MB", 
+    "free": "10GB"
+  },
+  "reuse_statistics": {
+    "total_allocations": 0,
+    "reuse_events": 0,
+    "reuse_ratio": 0.0
+  },
+  "status": "ready"
+}

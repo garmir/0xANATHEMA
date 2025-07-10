@@ -1,0 +1,67 @@
+{
+  "monitoring_interval": 30,
+  "alert_thresholds": {
+    "cpu_percent": 80,
+    "memory_percent": 80,
+    "disk_usage_percent": 85,
+    "temperature": 70,
+    "load_average": 5.0
+  },
+  "ai_training_interval": 3600,
+  "self_healing_enabled": true,
+  "api_port": 8080,
+  "log_level": "INFO",
+  "db_path": ".taskmaster/monitoring/system_metrics.db",
+  "catalytic_integration": {
+    "enabled": true,
+    "workspace_path": ".taskmaster/catalytic/",
+    "memory_reuse_factor": 0.8,
+    "checkpoint_interval": 300
+  },
+  "optimization_strategies": {
+    "cpu_optimization": {
+      "enabled": true,
+      "nice_adjustment": 5,
+      "process_priority_threshold": 5.0
+    },
+    "memory_optimization": {
+      "enabled": true,
+      "cache_clear_threshold": 85,
+      "swap_optimization": true
+    },
+    "disk_optimization": {
+      "enabled": true,
+      "temp_cleanup": true,
+      "log_rotation": true
+    }
+  },
+  "advanced_features": {
+    "anomaly_detection": {
+      "enabled": true,
+      "sensitivity": 0.7,
+      "training_window": 1000
+    },
+    "predictive_analysis": {
+      "enabled": true,
+      "prediction_horizon": 3600,
+      "confidence_threshold": 0.8
+    },
+    "self_diagnostics": {
+      "enabled": true,
+      "diagnostic_interval": 1800,
+      "auto_repair": true
+    }
+  },
+  "integration": {
+    "task_master": {
+      "enabled": true,
+      "optimization_feedback": true,
+      "performance_tracking": true
+    },
+    "claude_code": {
+      "enabled": true,
+      "mcp_integration": true,
+      "context_optimization": true
+    }
+  }
+}

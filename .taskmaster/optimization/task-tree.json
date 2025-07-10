@@ -1,0 +1,339 @@
+{
+  "tasks": [
+    {
+      "id": "task-11",
+      "title": "Initialize Environment and Directory Structure",
+      "dependencies": [],
+      "resources": {
+        "memory": "25MB",
+        "cpu": "low",
+        "io": "moderate",
+        "disk": "100MB"
+      },
+      "complexity": 3,
+      "estimated_duration": "3min",
+      "status": "done",
+      "priority": "high",
+      "phase": "environment",
+      "atomic": true,
+      "atomicity_confidence": 0.85,
+      "atomicity_reasons": [
+        "Low complexity indicators",
+        "Minimal dependencies",
+        "Concise task description"
+      ]
+    },
+    {
+      "id": "task-12",
+      "title": "Implement First-Level PRD Generation",
+      "dependencies": [
+        "task-11"
+      ],
+      "resources": {
+        "memory": "25MB",
+        "cpu": "moderate",
+        "io": "high",
+        "disk": "50MB"
+      },
+      "complexity": 3,
+      "estimated_duration": "6min",
+      "status": "done",
+      "priority": "high",
+      "phase": "prd-generation",
+      "atomic": true,
+      "atomicity_confidence": 0.94,
+      "atomicity_reasons": [
+        "Strong atomic action patterns detected",
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    },
+    {
+      "id": "task-13",
+      "title": "Develop Recursive PRD Decomposition System",
+      "dependencies": [
+        "task-12"
+      ],
+      "resources": {
+        "memory": "35MB",
+        "cpu": "high",
+        "io": "high",
+        "disk": "200MB"
+      },
+      "complexity": 8,
+      "estimated_duration": "12min",
+      "status": "done",
+      "priority": "high",
+      "phase": "decomposition",
+      "atomic": false,
+      "atomicity_confidence": 0.59,
+      "atomicity_reasons": [
+        "Complex/composite action patterns detected",
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    },
+    {
+      "id": "task-14",
+      "title": "Build Dependency Analysis and Task Graph",
+      "dependencies": [
+        "task-13"
+      ],
+      "resources": {
+        "memory": "25MB",
+        "cpu": "high",
+        "io": "moderate",
+        "disk": "100MB"
+      },
+      "complexity": 3,
+      "estimated_duration": "9min",
+      "status": "in-progress",
+      "priority": "medium",
+      "phase": "dependency-analysis",
+      "atomic": true,
+      "atomicity_confidence": 0.94,
+      "atomicity_reasons": [
+        "Strong atomic action patterns detected",
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    },
+    {
+      "id": "task-15",
+      "title": "Implement Space-Efficient Optimization Algorithms",
+      "dependencies": [
+        "task-14"
+      ],
+      "resources": {
+        "memory": "25MB",
+        "cpu": "high",
+        "io": "moderate",
+        "disk": "300MB"
+      },
+      "complexity": 3,
+      "estimated_duration": "15min",
+      "status": "pending",
+      "priority": "medium",
+      "phase": "optimization",
+      "atomic": true,
+      "atomicity_confidence": 0.89,
+      "atomicity_reasons": [
+        "Strong atomic action patterns detected",
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    },
+    {
+      "id": "task-16",
+      "title": "Generate Pebbling Strategy for Resource Allocation",
+      "dependencies": [
+        "task-15"
+      ],
+      "resources": {
+        "memory": "25MB",
+        "cpu": "moderate",
+        "io": "low",
+        "disk": "50MB"
+      },
+      "complexity": 3,
+      "estimated_duration": "7min",
+      "status": "pending",
+      "priority": "medium",
+      "phase": "pebbling",
+      "atomic": true,
+      "atomicity_confidence": 0.79,
+      "atomicity_reasons": [
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    },
+    {
+      "id": "task-17",
+      "title": "Initialize Catalytic Execution Planning",
+      "dependencies": [
+        "task-16"
+      ],
+      "resources": {
+        "memory": "25MB",
+        "cpu": "moderate",
+        "io": "high",
+        "disk": "10GB"
+      },
+      "complexity": 3,
+      "estimated_duration": "10min",
+      "status": "pending",
+      "priority": "medium",
+      "phase": "catalytic",
+      "atomic": true,
+      "atomicity_confidence": 0.79,
+      "atomicity_reasons": [
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    },
+    {
+      "id": "task-18",
+      "title": "Implement Evolutionary Optimization Loop",
+      "dependencies": [
+        "task-17"
+      ],
+      "resources": {
+        "memory": "25MB",
+        "cpu": "very-high",
+        "io": "moderate",
+        "disk": "500MB"
+      },
+      "complexity": 3,
+      "estimated_duration": "18min",
+      "status": "pending",
+      "priority": "high",
+      "phase": "evolution",
+      "atomic": true,
+      "atomicity_confidence": 0.89,
+      "atomicity_reasons": [
+        "Strong atomic action patterns detected",
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    },
+    {
+      "id": "task-19",
+      "title": "Implement Final Validation and Queue Generation",
+      "dependencies": [
+        "task-18"
+      ],
+      "resources": {
+        "memory": "25MB",
+        "cpu": "moderate",
+        "io": "moderate",
+        "disk": "200MB"
+      },
+      "complexity": 3,
+      "estimated_duration": "12min",
+      "status": "pending",
+      "priority": "medium",
+      "phase": "validation",
+      "atomic": true,
+      "atomicity_confidence": 0.94,
+      "atomicity_reasons": [
+        "Strong atomic action patterns detected",
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    },
+    {
+      "id": "task-20",
+      "title": "Setup Execution Monitoring and Dashboard",
+      "dependencies": [
+        "task-19"
+      ],
+      "resources": {
+        "memory": "25MB",
+        "cpu": "moderate",
+        "io": "high",
+        "disk": "100MB"
+      },
+      "complexity": 3,
+      "estimated_duration": "9min",
+      "status": "pending",
+      "priority": "medium",
+      "phase": "monitoring",
+      "atomic": true,
+      "atomicity_confidence": 0.77,
+      "atomicity_reasons": [
+        "Low complexity indicators",
+        "Concise task description"
+      ]
+    }
+  ],
+  "metadata": {
+    "total_tasks": 10,
+    "cycles_detected": 0,
+    "max_depth": 1,
+    "max_complexity": 10,
+    "total_estimated_duration": "170min",
+    "critical_path": [
+      "task-11",
+      "task-12",
+      "task-13",
+      "task-14",
+      "task-15",
+      "task-16",
+      "task-17",
+      "task-18",
+      "task-19",
+      "task-20"
+    ],
+    "phases": [
+      "environment",
+      "prd-generation",
+      "decomposition",
+      "dependency-analysis",
+      "optimization",
+      "pebbling",
+      "catalytic",
+      "evolution",
+      "validation",
+      "monitoring"
+    ],
+    "resource_requirements": {
+      "peak_memory": "1GB",
+      "total_disk": "11.7GB",
+      "peak_cpu": "very-high"
+    },
+    "created": "2025-07-10T17:00:00Z",
+    "analysis_version": "1.0"
+  },
+  "analysis": {
+    "dependency_chains": [
+      {
+        "chain": [
+          "task-11",
+          "task-12",
+          "task-13",
+          "task-14",
+          "task-15",
+          "task-16",
+          "task-17",
+          "task-18",
+          "task-19",
+          "task-20"
+        ],
+        "length": 10,
+        "is_critical_path": true
+      }
+    ],
+    "resource_conflicts": [],
+    "bottlenecks": [
+      {
+        "task": "task-18",
+        "reason": "Highest complexity (10) and CPU usage (very-high)",
+        "impact": "May require additional compute resources"
+      }
+    ],
+    "optimization_opportunities": [
+      {
+        "type": "parallelization",
+        "description": "Tasks in different phases could potentially run in parallel if dependencies allow",
+        "potential_savings": "Up to 50% time reduction"
+      },
+      {
+        "type": "resource_pooling",
+        "description": "Memory usage could be optimized through catalytic reuse",
+        "potential_savings": "Up to 80% memory reduction"
+      }
+    ],
+    "dependency_optimization": {
+      "cycle_detection": "advanced",
+      "parallel_execution": "maximized",
+      "critical_path_optimization": true,
+      "dependency_inference": true,
+      "automatic_reordering": true
+    },
+    "autonomy_features": {
+      "self_healing_dependencies": true,
+      "dynamic_recomputation": true,
+      "intelligent_scheduling": true
+    }
+  }
+}

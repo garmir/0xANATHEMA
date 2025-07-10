@@ -1,0 +1,292 @@
+{
+  "timestamp": "2025-07-10T18:41:16.737802",
+  "pattern_analysis": {
+    "timestamp": "2025-07-10T18:41:16.738329",
+    "total_tasks_analyzed": 30,
+    "patterns_identified": 9,
+    "pattern_types": {
+      "status_transition": 2,
+      "dependency_hub": 5,
+      "semantic_cluster": 1,
+      "complexity_trend": 1
+    },
+    "high_confidence_patterns": [
+      {
+        "pattern_id": "922f36da",
+        "pattern_type": "status_transition",
+        "confidence": 1.0,
+        "frequency": 11,
+        "examples": [
+          "high->done"
+        ],
+        "description": "Common transition pattern: high->done",
+        "metadata": {
+          "transition": "high->done",
+          "count": 11
+        }
+      },
+      {
+        "pattern_id": "1db96520",
+        "pattern_type": "status_transition",
+        "confidence": 1.0,
+        "frequency": 17,
+        "examples": [
+          "medium->done"
+        ],
+        "description": "Common transition pattern: medium->done",
+        "metadata": {
+          "transition": "medium->done",
+          "count": 17
+        }
+      },
+      {
+        "pattern_id": "98cd027e",
+        "pattern_type": "semantic_cluster",
+        "confidence": 1.0,
+        "frequency": 30,
+        "examples": [
+          "Initialize Environment and Directory Structure",
+          "Implement First-Level PRD Generation",
+          "Develop Recursive PRD Decomposition System"
+        ],
+        "description": "Semantic cluster with 30 related tasks",
+        "metadata": {
+          "cluster_id": 0,
+          "task_count": 30
+        }
+      },
+      {
+        "pattern_id": "6088c70f",
+        "pattern_type": "complexity_trend",
+        "confidence": 0.8,
+        "frequency": 30,
+        "examples": [
+          "Increasing task complexity over time"
+        ],
+        "description": "Project tasks are becoming more complex",
+        "metadata": {
+          "trend": "increasing",
+          "early_avg": 89,
+          "recent_avg": 209.66666666666666
+        }
+      }
+    ],
+    "pattern_summary": [
+      {
+        "pattern_id": "922f36da",
+        "pattern_type": "status_transition",
+        "confidence": 1.0,
+        "frequency": 11,
+        "examples": [
+          "high->done"
+        ],
+        "description": "Common transition pattern: high->done",
+        "metadata": {
+          "transition": "high->done",
+          "count": 11
+        }
+      },
+      {
+        "pattern_id": "1db96520",
+        "pattern_type": "status_transition",
+        "confidence": 1.0,
+        "frequency": 17,
+        "examples": [
+          "medium->done"
+        ],
+        "description": "Common transition pattern: medium->done",
+        "metadata": {
+          "transition": "medium->done",
+          "count": 17
+        }
+      },
+      {
+        "pattern_id": "36768250",
+        "pattern_type": "dependency_hub",
+        "confidence": 0.5,
+        "frequency": 5,
+        "examples": [
+          "Task 28 -> [29, 30, 31, 33, 35]"
+        ],
+        "description": "Task 28 is a dependency hub with 5 dependent tasks",
+        "metadata": {
+          "parent": 28,
+          "children": [
+            29,
+            30,
+            31,
+            33,
+            35
+          ]
+        }
+      },
+      {
+        "pattern_id": "e39b0be9",
+        "pattern_type": "dependency_hub",
+        "confidence": 0.3,
+        "frequency": 3,
+        "examples": [
+          "Task 29 -> [30, 34, 35]"
+        ],
+        "description": "Task 29 is a dependency hub with 3 dependent tasks",
+        "metadata": {
+          "parent": 29,
+          "children": [
+            30,
+            34,
+            35
+          ]
+        }
+      },
+      {
+        "pattern_id": "97079543",
+        "pattern_type": "dependency_hub",
+        "confidence": 0.2,
+        "frequency": 2,
+        "examples": [
+          "Task 31 -> [32, 34]"
+        ],
+        "description": "Task 31 is a dependency hub with 2 dependent tasks",
+        "metadata": {
+          "parent": 31,
+          "children": [
+            32,
+            34
+          ]
+        }
+      },
+      {
+        "pattern_id": "b412d645",
+        "pattern_type": "dependency_hub",
+        "confidence": 0.2,
+        "frequency": 2,
+        "examples": [
+          "Task 30 -> [33, 36]"
+        ],
+        "description": "Task 30 is a dependency hub with 2 dependent tasks",
+        "metadata": {
+          "parent": 30,
+          "children": [
+            33,
+            36
+          ]
+        }
+      },
+      {
+        "pattern_id": "3a0b8c80",
+        "pattern_type": "dependency_hub",
+        "confidence": 0.2,
+        "frequency": 2,
+        "examples": [
+          "Task 33 -> [35, 36]"
+        ],
+        "description": "Task 33 is a dependency hub with 2 dependent tasks",
+        "metadata": {
+          "parent": 33,
+          "children": [
+            35,
+            36
+          ]
+        }
+      },
+      {
+        "pattern_id": "98cd027e",
+        "pattern_type": "semantic_cluster",
+        "confidence": 1.0,
+        "frequency": 30,
+        "examples": [
+          "Initialize Environment and Directory Structure",
+          "Implement First-Level PRD Generation",
+          "Develop Recursive PRD Decomposition System"
+        ],
+        "description": "Semantic cluster with 30 related tasks",
+        "metadata": {
+          "cluster_id": 0,
+          "task_count": 30
+        }
+      },
+      {
+        "pattern_id": "6088c70f",
+        "pattern_type": "complexity_trend",
+        "confidence": 0.8,
+        "frequency": 30,
+        "examples": [
+          "Increasing task complexity over time"
+        ],
+        "description": "Project tasks are becoming more complex",
+        "metadata": {
+          "trend": "increasing",
+          "early_avg": 89,
+          "recent_avg": 209.66666666666666
+        }
+      }
+    ]
+  },
+  "trajectory_predictions": [
+    "general"
+  ],
+  "task_suggestions": [
+    {
+      "prediction_id": "0f508783",
+      "predicted_task": {
+        "id": 41,
+        "title": "Implement Core System Feature",
+        "description": "Develop essential system functionality based on project requirements",
+        "details": "Analyze requirements and implement core feature with proper documentation and testing support.",
+        "priority": "medium",
+        "status": "pending",
+        "dependencies": [],
+        "subtasks": []
+      },
+      "confidence_score": 0.9,
+      "prediction_method": "trajectory_analysis",
+      "historical_evidence": [
+        "Predicted based on general pattern analysis"
+      ],
+      "timestamp": "2025-07-10T18:41:16.739421",
+      "requires_approval": true
+    },
+    {
+      "prediction_id": "49655212",
+      "predicted_task": {
+        "id": 41,
+        "title": "Continue Pattern-Based Development",
+        "description": "Extend existing patterns for consistent development",
+        "details": "Build upon identified patterns to maintain consistency and leverage established workflows.",
+        "priority": "medium",
+        "status": "pending",
+        "dependencies": [],
+        "subtasks": []
+      },
+      "confidence_score": 1.0,
+      "prediction_method": "pattern_analysis",
+      "historical_evidence": [
+        "Common transition pattern: high->done"
+      ],
+      "timestamp": "2025-07-10T18:41:16.739429",
+      "requires_approval": true
+    },
+    {
+      "prediction_id": "49655212",
+      "predicted_task": {
+        "id": 41,
+        "title": "Continue Pattern-Based Development",
+        "description": "Extend existing patterns for consistent development",
+        "details": "Build upon identified patterns to maintain consistency and leverage established workflows.",
+        "priority": "medium",
+        "status": "pending",
+        "dependencies": [],
+        "subtasks": []
+      },
+      "confidence_score": 1.0,
+      "prediction_method": "pattern_analysis",
+      "historical_evidence": [
+        "Common transition pattern: medium->done"
+      ],
+      "timestamp": "2025-07-10T18:41:16.739434",
+      "requires_approval": true
+    }
+  ],
+  "behavioral_insights": [],
+  "status": "completed"
+}
