@@ -8,7 +8,7 @@
     "learning_updates": [
       {
         "task_id": "11",
-        "execution_time": 0.10111093521118164,
+        "execution_time": 0.10072517395019531,
         "resource_usage": {
           "cpu_cores": 2,
           "memory_mb": 1024,
@@ -21,7 +21,7 @@
       },
       {
         "task_id": "12",
-        "execution_time": 0.1007239818572998,
+        "execution_time": 0.10112404823303223,
         "resource_usage": {
           "cpu_cores": 1,
           "memory_mb": 768,
@@ -34,7 +34,7 @@
       },
       {
         "task_id": "13",
-        "execution_time": 0.10108280181884766,
+        "execution_time": 0.10121321678161621,
         "resource_usage": {
           "cpu_cores": 1,
           "memory_mb": 512,
@@ -47,7 +47,7 @@
       },
       {
         "task_id": "14",
-        "execution_time": 0.10108804702758789,
+        "execution_time": 0.1009981632232666,
         "resource_usage": {
           "cpu_cores": 1,
           "memory_mb": 768,
@@ -60,7 +60,7 @@
       },
       {
         "task_id": "15",
-        "execution_time": 0.1007380485534668,
+        "execution_time": 0.10110282897949219,
         "resource_usage": {
           "cpu_cores": 2,
           "memory_mb": 768,
@@ -73,7 +73,7 @@
       },
       {
         "task_id": "16",
-        "execution_time": 0.10109090805053711,
+        "execution_time": 0.10115909576416016,
         "resource_usage": {
           "cpu_cores": 2,
           "memory_mb": 1024,
@@ -86,7 +86,7 @@
       },
       {
         "task_id": "17",
-        "execution_time": 0.10108518600463867,
+        "execution_time": 0.10109329223632812,
         "resource_usage": {
           "cpu_cores": 1,
           "memory_mb": 512,
@@ -99,7 +99,7 @@
       },
       {
         "task_id": "18",
-        "execution_time": 0.10108804702758789,
+        "execution_time": 0.10109734535217285,
         "resource_usage": {
           "cpu_cores": 1,
           "memory_mb": 512,
@@ -112,7 +112,7 @@
       },
       {
         "task_id": "19",
-        "execution_time": 0.10108685493469238,
+        "execution_time": 0.10114932060241699,
         "resource_usage": {
           "cpu_cores": 1,
           "memory_mb": 768,
@@ -125,7 +125,7 @@
       },
       {
         "task_id": "20",
-        "execution_time": 0.10080289840698242,
+        "execution_time": 0.10109996795654297,
         "resource_usage": {
           "cpu_cores": 1,
           "memory_mb": 512,
@@ -138,7 +138,7 @@
       },
       {
         "task_id": "29",
-        "execution_time": 0.10105395317077637,
+        "execution_time": 0.10030508041381836,
         "resource_usage": {
           "cpu_cores": 1,
           "memory_mb": 768,
@@ -151,7 +151,7 @@
       },
       {
         "task_id": "30",
-        "execution_time": 0.1010897159576416,
+        "execution_time": 0.10111403465270996,
         "resource_usage": {
           "cpu_cores": 2,
           "memory_mb": 768,
@@ -164,7 +164,7 @@
       },
       {
         "task_id": "31",
-        "execution_time": 0.10032510757446289,
+        "execution_time": 0.10088086128234863,
         "resource_usage": {
           "cpu_cores": 1,
           "memory_mb": 512,
@@ -177,7 +177,7 @@
       },
       {
         "task_id": "32",
-        "execution_time": 0.10022592544555664,
+        "execution_time": 0.1005859375,
         "resource_usage": {
           "cpu_cores": 1,
           "memory_mb": 768,
@@ -190,7 +190,7 @@
       },
       {
         "task_id": "33",
-        "execution_time": 0.10093307495117188,
+        "execution_time": 0.1009206771850586,
         "resource_usage": {
           "cpu_cores": 2,
           "memory_mb": 1024,
@@ -203,7 +203,7 @@
       },
       {
         "task_id": "36",
-        "execution_time": 0.10109281539916992,
+        "execution_time": 0.10109806060791016,
         "resource_usage": {
           "cpu_cores": 2,
           "memory_mb": 768,
@@ -216,7 +216,7 @@
       },
       {
         "task_id": "37",
-        "execution_time": 0.1003568172454834,
+        "execution_time": 0.10113883018493652,
         "resource_usage": {
           "cpu_cores": 2,
           "memory_mb": 1024,
@@ -229,7 +229,7 @@
       },
       {
         "task_id": "39",
-        "execution_time": 0.10016393661499023,
+        "execution_time": 0.10114693641662598,
         "resource_usage": {
           "cpu_cores": 1,
           "memory_mb": 768,
@@ -242,7 +242,7 @@
       },
       {
         "task_id": "42",
-        "execution_time": 0.10109281539916992,
+        "execution_time": 0.10120701789855957,
         "resource_usage": {
           "cpu_cores": 1,
           "memory_mb": 512,
@@ -255,7 +255,7 @@
       },
       {
         "task_id": "21",
-        "execution_time": 0.10110116004943848,
+        "execution_time": 0.10110282897949219,
         "resource_usage": {
           "cpu_cores": 1,
           "memory_mb": 768,
@@ -268,7 +268,7 @@
       },
       {
         "task_id": "22",
-        "execution_time": 0.10109496116638184,
+        "execution_time": 0.10108375549316406,
         "resource_usage": {
           "cpu_cores": 2,
           "memory_mb": 768,
@@ -281,7 +281,7 @@
       },
       {
         "task_id": "23",
-        "execution_time": 0.10109210014343262,
+        "execution_time": 0.10107898712158203,
         "resource_usage": {
           "cpu_cores": 2,
           "memory_mb": 768,
@@ -294,7 +294,7 @@
       },
       {
         "task_id": "24",
-        "execution_time": 0.10109066963195801,
+        "execution_time": 0.10107588768005371,
         "resource_usage": {
           "cpu_cores": 1,
           "memory_mb": 512,
@@ -307,7 +307,7 @@
       },
       {
         "task_id": "26",
-        "execution_time": 0.1010899543762207,
+        "execution_time": 0.10107302665710449,
         "resource_usage": {
           "cpu_cores": 2,
           "memory_mb": 768,
@@ -320,7 +320,7 @@
       },
       {
         "task_id": "27",
-        "execution_time": 0.1010890007019043,
+        "execution_time": 0.10108304023742676,
         "resource_usage": {
           "cpu_cores": 2,
           "memory_mb": 768,
@@ -333,7 +333,7 @@
       },
       {
         "task_id": "28",
-        "execution_time": 0.10108804702758789,
+        "execution_time": 0.10108089447021484,
         "resource_usage": {
           "cpu_cores": 2,
           "memory_mb": 768,
@@ -346,7 +346,7 @@
       },
       {
         "task_id": "38",
-        "execution_time": 0.10108709335327148,
+        "execution_time": 0.10107994079589844,
         "resource_usage": {
           "cpu_cores": 2,
           "memory_mb": 768,
@@ -359,7 +359,7 @@
       },
       {
         "task_id": "41",
-        "execution_time": 0.10108685493469238,
+        "execution_time": 0.10107898712158203,
         "resource_usage": {
           "cpu_cores": 2,
           "memory_mb": 768,
@@ -372,7 +372,7 @@
       },
       {
         "task_id": "25",
-        "execution_time": 0.05108523368835449,
+        "execution_time": 0.051140785217285156,
         "resource_usage": {
           "cpu_cores": 2,
           "memory_mb": 1024,
@@ -385,7 +385,7 @@
       },
       {
         "task_id": "40",
-        "execution_time": 0.051080942153930664,
+        "execution_time": 0.05111813545227051,
         "resource_usage": {
           "cpu_cores": 2,
           "memory_mb": 768,
@@ -398,7 +398,7 @@
       },
       {
         "task_id": "34",
-        "execution_time": 0.08108091354370117,
+        "execution_time": 0.08090996742248535,
         "resource_usage": {
           "cpu_cores": 1,
           "memory_mb": 768,
@@ -411,7 +411,7 @@
       },
       {
         "task_id": "35",
-        "execution_time": 0.08108210563659668,
+        "execution_time": 0.08113503456115723,
         "resource_usage": {
           "cpu_cores": 2,
           "memory_mb": 1024,

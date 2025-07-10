@@ -1,0 +1,50 @@
+[
+  {
+    "task_id": "demo-1",
+    "task_type": "implementation",
+    "complexity_score": 0.07479999999999999,
+    "execution_time": 240,
+    "success_rate": 1.0,
+    "resource_usage": {
+      "memory": 150,
+      "cpu": 45
+    },
+    "context_features": {
+      "has_dependencies": false,
+      "dependency_count": 0,
+      "has_subtasks": false,
+      "subtask_count": 0,
+      "priority": "high",
+      "title_length": 29,
+      "details_length": 56,
+      "has_test_strategy": false,
+      "creation_hour": 19,
+      "creation_day": 3
+    },
+    "timestamp": "2025-07-10T19:24:55.451679"
+  },
+  {
+    "task_id": "demo-2",
+    "task_type": "implementation",
+    "complexity_score": 0.1068,
+    "execution_time": 180,
+    "success_rate": 1.0,
+    "resource_usage": {
+      "memory": 120,
+      "cpu": 35
+    },
+    "context_features": {
+      "has_dependencies": true,
+      "dependency_count": 1,
+      "has_subtasks": false,
+      "subtask_count": 0,
+      "priority": "medium",
+      "title_length": 25,
+      "details_length": 56,
+      "has_test_strategy": false,
+      "creation_hour": 19,
+      "creation_day": 3
+    },
+    "timestamp": "2025-07-10T19:24:55.452181"
+  }
+]

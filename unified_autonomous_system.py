@@ -21,11 +21,46 @@ from dataclasses import dataclass, asdict
 from datetime import datetime
 from pathlib import Path
 
-# Import Task Master AI components
-from intelligent_task_predictor import TaskPredictionEngine
-from autonomous_workflow_loop import AutonomousWorkflowLoop
-from task_complexity_analyzer import TaskComplexityAnalyzer
-from optimization_engine import OptimizationEngine
+# Import Task Master AI components with fallbacks
+try:
+    from intelligent_task_predictor import TaskPredictionEngine
+except ImportError:
+    print("Warning: TaskPredictionEngine not available, using fallback")
+    class TaskPredictionEngine:
+        def analyze_patterns(self):
+            return {"status": "fallback", "patterns": []}
+        def run_full_analysis(self):
+            return {"task_suggestions": [], "pattern_analysis": {"pattern_summary": []}, "behavioral_insights": []}
+
+try:
+    from autonomous_workflow_loop import AutonomousWorkflowLoop
+except ImportError:
+    print("Warning: AutonomousWorkflowLoop not available, using fallback")
+    class AutonomousWorkflowLoop:
+        def research_solution(self, problem, context=""):
+            from types import SimpleNamespace
+            return SimpleNamespace(solution_steps=["Fallback solution"], confidence=0.8)
+
+try:
+    from task_complexity_analyzer import TaskComplexityAnalyzer
+except ImportError:
+    print("Warning: TaskComplexityAnalyzer not available, using fallback")
+    class TaskComplexityAnalyzer:
+        def __init__(self, tasks_file):
+            self.tasks_file = tasks_file
+        def generate_complexity_report(self):
+            return {"status": "fallback", "complexity": "moderate"}
+
+try:
+    from optimization_engine import OptimizationEngine
+except ImportError:
+    print("Warning: OptimizationEngine not available, using fallback")
+    class OptimizationEngine:
+        def __init__(self, complexity_analyzer):
+            self.complexity_analyzer = complexity_analyzer
+        def optimize_execution_order(self):
+            from types import SimpleNamespace
+            return SimpleNamespace(efficiency_score=0.8, strategy=SimpleNamespace(value="fallback"), bottlenecks=[])
 
 # Import LABRYS components
 try:
@@ -35,6 +70,34 @@ try:
 except ImportError:
     LABRYS_AVAILABLE = False
     print("Warning: LABRYS components not available, running in Task Master AI only mode")
+    
+    # Create fallback classes when LABRYS is not available
+    @dataclass
+    class LabrysTask:
+        id: str
+        title: str
+        description: str
+        type: str = "general"
+        priority: str = "medium"
+        dependencies: List[str] = None
+        validation: List[str] = None
+        
+        def __post_init__(self):
+            if self.dependencies is None:
+                self.dependencies = []
+            if self.validation is None:
+                self.validation = []
+    
+    class TaskType:
+        ANALYTICAL = "analytical"
+        SYNTHESIS = "synthesis"
+        COORDINATION = "coordination"
+    
+    class TaskStatus:
+        PENDING = "pending"
+        IN_PROGRESS = "in_progress"
+        COMPLETED = "completed"
+        FAILED = "failed"
 
 
 @dataclass

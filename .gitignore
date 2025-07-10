@@ -91,3 +91,13 @@ api_keys.txt
 *.temp
 temp/
 tmp/
+
+logs
+# Editor directories and files
+.idea
+.vscode
+# OS specific
+
+# Task files
+# tasks.json
+# tasks/ 

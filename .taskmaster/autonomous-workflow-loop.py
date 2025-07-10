@@ -178,10 +178,10 @@ class AutonomousWorkflowLoop:
                 else:
                     self.state.execution_attempts = attempt
                     
-                    # Check if we're stuck
+                    # Check if we're stuck - implement get_stuck pattern
                     if attempt >= self.stuck_threshold:
                         self.state.stuck_indicator = True
-                        logger.warning(f"🚫 Stuck on task {task['id']} after {attempt} attempts")
+                        logger.warning(f"🚫 GET_STUCK pattern triggered for task {task['id']} after {attempt} attempts")
                         break
                         
             except Exception as e:
@@ -192,32 +192,56 @@ class AutonomousWorkflowLoop:
         return False
     
     def _execute_single_task(self, task: Dict) -> bool:
-        """Execute a single task using various strategies"""
+        """Execute a single task using various strategies with comprehensive error handling"""
         task_id = task['id']
         task_description = task.get('description', '')
         task_details = task.get('details', '')
         
         logger.info(f"🔨 Executing task {task_id}")
         
-        # Strategy 1: Try direct execution if task has clear implementation details
-        if self._has_implementation_details(task):
-            success = self._execute_with_details(task)
-            if success:
-                return True
-        
-        # Strategy 2: Try automated execution patterns
-        success = self._execute_with_patterns(task)
-        if success:
-            return True
-        
-        # Strategy 3: Try Claude Code integration for code-related tasks
-        if self._is_code_task(task):
-            success = self._execute_with_claude_code(task)
-            if success:
-                return True
-        
-        # If all strategies fail, we're stuck
-        return False
+        try:
+            # Strategy 1: Try direct execution if task has clear implementation details
+            if self._has_implementation_details(task):
+                try:
+                    success = self._execute_with_details(task)
+                    if success:
+                        return True
+                except Exception as e:
+                    logger.warning(f"Strategy 1 failed for task {task_id}: {e}")
+                    self.state.last_error = f"Direct execution failed: {e}"
+            
+            # Strategy 2: Try automated execution patterns
+            try:
+                success = self._execute_with_patterns(task)
+                if success:
+                    return True
+            except Exception as e:
+                logger.warning(f"Strategy 2 failed for task {task_id}: {e}")
+                self.state.last_error = f"Pattern execution failed: {e}"
+            
+            # Strategy 3: Try Claude Code integration for code-related tasks
+            if self._is_code_task(task):
+                try:
+                    success = self._execute_with_claude_code(task)
+                    if success:
+                        return True
+                except Exception as e:
+                    logger.warning(f"Strategy 3 failed for task {task_id}: {e}")
+                    self.state.last_error = f"Claude Code execution failed: {e}"
+            
+            # If all strategies fail, we're stuck - trigger recovery
+            logger.warning(f"🚫 All execution strategies failed for task {task_id} - STUCK!")
+            self.state.stuck_indicator = True
+            return False
+            
+        except Exception as e:
+            logger.error(f"💥 Critical error executing task {task_id}: {e}")
+            self.state.last_error = f"Critical execution error: {e}"
+            return False
+        except:
+            logger.error(f"💥 Unknown error executing task {task_id}")
+            self.state.last_error = "Unknown execution error"
+            return False
     
     def _research_driven_problem_solving(self, task: Dict) -> bool:
         """Core research-driven problem solving workflow"""

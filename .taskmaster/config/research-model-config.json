@@ -1,0 +1,57 @@
+{
+  "research_configuration": {
+    "enabled": true,
+    "primary_provider": "perplexity",
+    "fallback_provider": "anthropic",
+    "research_model": "perplexity-llama-3.1-sonar-large-128k-online",
+    "timeout_seconds": 60,
+    "max_retries": 3,
+    "research_quality_threshold": 0.8
+  },
+  "provider_settings": {
+    "perplexity": {
+      "model": "perplexity-llama-3.1-sonar-large-128k-online",
+      "max_tokens": 4000,
+      "temperature": 0.1,
+      "api_key_env": "PERPLEXITY_API_KEY",
+      "base_url": "https://api.perplexity.ai"
+    },
+    "anthropic": {
+      "model": "claude-3-5-sonnet-20241022",
+      "max_tokens": 4000,
+      "temperature": 0.2,
+      "api_key_env": "ANTHROPIC_API_KEY"
+    }
+  },
+  "research_strategies": {
+    "get_stuck_pattern": {
+      "enabled": true,
+      "trigger_threshold": 2,
+      "research_query_template": "How to solve: {task_title}. Context: {task_description}. Error: {last_error}. Provide step-by-step implementation solution.",
+      "max_research_attempts": 2
+    },
+    "complexity_analysis": {
+      "enabled": true,
+      "research_complex_tasks": true,
+      "complexity_threshold": 7
+    },
+    "error_recovery": {
+      "enabled": true,
+      "research_on_failures": true,
+      "failure_threshold": 3
+    }
+  },
+  "integration": {
+    "task_master_integration": true,
+    "claude_code_integration": true,
+    "autonomous_workflow_integration": true,
+    "research_caching": true,
+    "cache_duration_hours": 24
+  },
+  "validation": {
+    "validate_research_quality": true,
+    "require_actionable_steps": true,
+    "minimum_solution_steps": 3,
+    "validate_implementation_feasibility": true
+  }
+}

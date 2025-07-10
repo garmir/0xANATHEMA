@@ -1,0 +1,255 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: task-master-data
+  namespace: task-master-ai
+  labels:
+    app.kubernetes.io/name: task-master-ai
+    app.kubernetes.io/component: storage
+    app.kubernetes.io/part-of: task-master-platform
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi
+  storageClassName: fast-ssd
+  volumeMode: Filesystem
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: task-master-workspace
+  namespace: task-master-ai
+  labels:
+    app.kubernetes.io/name: task-master-ai
+    app.kubernetes.io/component: storage
+    app.kubernetes.io/part-of: task-master-platform
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 100Gi
+  storageClassName: shared-storage
+  volumeMode: Filesystem
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: task-master-backup
+  namespace: task-master-ai
+  labels:
+    app.kubernetes.io/name: task-master-ai
+    app.kubernetes.io/component: storage
+    app.kubernetes.io/part-of: task-master-platform
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Gi
+  storageClassName: backup-storage
+  volumeMode: Filesystem
+
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: fast-ssd
+  labels:
+    app.kubernetes.io/name: task-master-ai
+    app.kubernetes.io/component: storage-class
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: gp3
+  fsType: ext4
+  encrypted: "true"
+  iops: "3000"
+  throughput: "125"
+allowVolumeExpansion: true
+volumeBindingMode: WaitForFirstConsumer
+reclaimPolicy: Retain
+
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: shared-storage
+  labels:
+    app.kubernetes.io/name: task-master-ai
+    app.kubernetes.io/component: storage-class
+provisioner: efs.csi.aws.com
+parameters:
+  provisioningMode: efs-ap
+  fileSystemId: fs-92107410  # Replace with your EFS file system ID
+  directoryPerms: "0755"
+  gidRangeStart: "1000"
+  gidRangeEnd: "2000"
+  basePath: "/task-master-workspace"
+allowVolumeExpansion: true
+volumeBindingMode: Immediate
+reclaimPolicy: Retain
+
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: backup-storage
+  labels:
+    app.kubernetes.io/name: task-master-ai
+    app.kubernetes.io/component: storage-class
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: sc1  # Cold HDD for cost-effective backup storage
+  fsType: ext4
+  encrypted: "true"
+allowVolumeExpansion: true
+volumeBindingMode: WaitForFirstConsumer
+reclaimPolicy: Retain
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: task-master-local-storage
+  labels:
+    app.kubernetes.io/name: task-master-ai
+    app.kubernetes.io/component: storage
+spec:
+  capacity:
+    storage: 200Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  local:
+    path: /mnt/task-master-data
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - task-master-node-1  # Replace with actual node name
+
+---
+apiVersion: snapshot.storage.k8s.io/v1
+kind: VolumeSnapshotClass
+metadata:
+  name: task-master-snapshot-class
+  labels:
+    app.kubernetes.io/name: task-master-ai
+    app.kubernetes.io/component: snapshot
+driver: ebs.csi.aws.com
+deletionPolicy: Retain
+parameters:
+  encrypted: "true"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backup-scripts
+  namespace: task-master-ai
+  labels:
+    app.kubernetes.io/name: task-master-ai
+    app.kubernetes.io/component: backup
+data:
+  create-snapshot.sh: |
+    #!/bin/bash
+    set -e
+    
+    SNAPSHOT_NAME="task-master-snapshot-$(date +%Y%m%d-%H%M%S)"
+    PVC_NAME="task-master-data"
+    NAMESPACE="task-master-ai"
+    
+    echo "Creating volume snapshot: $SNAPSHOT_NAME"
+    
+    cat <<EOF | kubectl apply -f -
+    apiVersion: snapshot.storage.k8s.io/v1
+    kind: VolumeSnapshot
+    metadata:
+      name: $SNAPSHOT_NAME
+      namespace: $NAMESPACE
+    spec:
+      volumeSnapshotClassName: task-master-snapshot-class
+      source:
+        persistentVolumeClaimName: $PVC_NAME
+    EOF
+    
+    echo "Waiting for snapshot to be ready..."
+    kubectl wait --for=condition=ReadyToUse volumesnapshot/$SNAPSHOT_NAME -n $NAMESPACE --timeout=300s
+    
+    echo "Snapshot created successfully: $SNAPSHOT_NAME"
+  
+  restore-from-snapshot.sh: |
+    #!/bin/bash
+    set -e
+    
+    if [ -z "$1" ]; then
+      echo "Usage: $0 <snapshot-name>"
+      exit 1
+    fi
+    
+    SNAPSHOT_NAME="$1"
+    NEW_PVC_NAME="task-master-data-restored-$(date +%Y%m%d-%H%M%S)"
+    NAMESPACE="task-master-ai"
+    
+    echo "Restoring from snapshot: $SNAPSHOT_NAME"
+    
+    cat <<EOF | kubectl apply -f -
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: $NEW_PVC_NAME
+      namespace: $NAMESPACE
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 20Gi
+      storageClassName: fast-ssd
+      dataSource:
+        name: $SNAPSHOT_NAME
+        kind: VolumeSnapshot
+        apiGroup: snapshot.storage.k8s.io
+    EOF
+    
+    echo "PVC restored successfully: $NEW_PVC_NAME"
+    echo "Update your deployment to use the new PVC: $NEW_PVC_NAME"
+  
+  cleanup-old-snapshots.sh: |
+    #!/bin/bash
+    set -e
+    
+    NAMESPACE="task-master-ai"
+    RETENTION_DAYS="${RETENTION_DAYS:-7}"
+    
+    echo "Cleaning up snapshots older than $RETENTION_DAYS days..."
+    
+    # Get snapshots older than retention period
+    OLD_SNAPSHOTS=$(kubectl get volumesnapshots -n $NAMESPACE \
+      -o json | jq -r ".items[] | select(.metadata.creationTimestamp < \"$(date -d \"$RETENTION_DAYS days ago\" -u +%Y-%m-%dT%H:%M:%SZ)\") | .metadata.name")
+    
+    if [ -z "$OLD_SNAPSHOTS" ]; then
+      echo "No old snapshots found"
+      exit 0
+    fi
+    
+    echo "Found old snapshots:"
+    echo "$OLD_SNAPSHOTS"
+    
+    # Delete old snapshots
+    echo "$OLD_SNAPSHOTS" | while read -r snapshot; do
+      if [ -n "$snapshot" ]; then
+        echo "Deleting snapshot: $snapshot"
+        kubectl delete volumesnapshot "$snapshot" -n $NAMESPACE
+      fi
+    done
+    
+    echo "Cleanup completed"

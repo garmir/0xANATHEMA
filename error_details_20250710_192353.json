@@ -1,0 +1,8 @@
+{
+  "timestamp": "2025-07-10T19:23:53.551569",
+  "error_type": "ValueError",
+  "error_message": "Test error",
+  "context": "Primary function: failing_function",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/anam/archive/error_handler.py\", line 71, in safe_execute_with_fallback\n    return primary_func(*args, **kwargs)\n  File \"/Users/anam/archive/test_with_fixes.py\", line 125, in failing_function\n    raise ValueError(\"Test error\")\nValueError: Test error\n",
+  "recovery_action": "Using fallback function"
+}

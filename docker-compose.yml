@@ -1,0 +1,286 @@
+version: '3.8'
+
+services:
+  task-master-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    image: task-master-ai:latest
+    container_name: task-master-ai
+    restart: unless-stopped
+    
+    # Environment variables
+    environment:
+      # Core configuration
+      NODE_ENV: production
+      LOG_LEVEL: info
+      PORT: 8080
+      METRICS_PORT: 9090
+      
+      # Task Master configuration
+      MAX_PARALLEL_TASKS: 10
+      MAX_CONCURRENT_RUNNERS: 10
+      TASK_TIMEOUT_SECONDS: 300
+      RESEARCH_TIMEOUT_SECONDS: 120
+      
+      # Autonomous workflow
+      MAX_STUCK_ATTEMPTS: 3
+      MAX_RESEARCH_ATTEMPTS: 2
+      MAX_EXECUTION_ATTEMPTS: 5
+      AUTONOMY_THRESHOLD: 0.95
+      
+      # Performance
+      MEMORY_REUSE_FACTOR: 0.8
+      CHECKPOINT_INTERVAL_SECONDS: 60
+      RATE_LIMIT_DELAY_MS: 1000
+      
+      # Monitoring
+      ENABLE_DETAILED_METRICS: "true"
+      HEALTH_CHECK_INTERVAL: 30
+      
+      # API Keys (use .env file or Docker secrets)
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      PERPLEXITY_API_KEY: ${PERPLEXITY_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY:-}
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+    
+    # Ports
+    ports:
+      - "8080:8080"  # Main API
+      - "9090:9090"  # Metrics
+    
+    # Volumes
+    volumes:
+      - task_data:/.taskmaster
+      - workspace:/workspace
+      - cache:/cache
+      - logs:/logs
+      - backup:/backup
+      - ./config:/config:ro
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/healthcheck.sh"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: '2.0'
+        reservations:
+          memory: 2G
+          cpus: '1.0'
+    
+    # Dependencies
+    depends_on:
+      - redis
+      - prometheus
+    
+    # Networks
+    networks:
+      - task-master-network
+    
+    # Security
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+    read_only: false
+    user: "1001:1001"
+
+  # Redis for caching and session management
+  redis:
+    image: redis:7-alpine
+    container_name: task-master-redis
+    restart: unless-stopped
+    
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-taskmaster123}
+    
+    volumes:
+      - redis_data:/data
+    
+    ports:
+      - "6379:6379"
+    
+    networks:
+      - task-master-network
+    
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 30s
+      timeout: 3s
+      retries: 5
+
+  # Prometheus for metrics collection
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: task-master-prometheus
+    restart: unless-stopped
+    
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    
+    ports:
+      - "9091:9090"
+    
+    networks:
+      - task-master-network
+
+  # Grafana for metrics visualization
+  grafana:
+    image: grafana/grafana:latest
+    container_name: task-master-grafana
+    restart: unless-stopped
+    
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:-admin123}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_SECURITY_ADMIN_USER: admin
+    
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources:ro
+    
+    ports:
+      - "3000:3000"
+    
+    depends_on:
+      - prometheus
+    
+    networks:
+      - task-master-network
+
+  # PostgreSQL for persistent data (optional)
+  postgres:
+    image: postgres:15-alpine
+    container_name: task-master-postgres
+    restart: unless-stopped
+    
+    environment:
+      POSTGRES_DB: taskmaster
+      POSTGRES_USER: taskmaster
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-taskmaster123}
+      POSTGRES_INITDB_ARGS: "--auth-host=scram-sha-256"
+    
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    
+    ports:
+      - "5432:5432"
+    
+    networks:
+      - task-master-network
+    
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U taskmaster -d taskmaster"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # Nginx reverse proxy (optional)
+  nginx:
+    image: nginx:alpine
+    container_name: task-master-nginx
+    restart: unless-stopped
+    
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+    
+    ports:
+      - "80:80"
+      - "443:443"
+    
+    depends_on:
+      - task-master-ai
+    
+    networks:
+      - task-master-network
+
+  # Log aggregation with Fluentd (optional)
+  fluentd:
+    image: fluent/fluentd:v1.16-debian-1
+    container_name: task-master-fluentd
+    restart: unless-stopped
+    
+    volumes:
+      - ./fluentd/fluent.conf:/fluentd/etc/fluent.conf:ro
+      - logs:/var/log/task-master:ro
+    
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+    
+    networks:
+      - task-master-network
+
+# Networks
+networks:
+  task-master-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+# Volumes
+volumes:
+  task_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./data/taskmaster
+  
+  workspace:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./data/workspace
+  
+  cache:
+    driver: local
+  
+  logs:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./data/logs
+  
+  backup:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./data/backup
+  
+  redis_data:
+    driver: local
+  
+  prometheus_data:
+    driver: local
+  
+  grafana_data:
+    driver: local
+  
+  postgres_data:
+    driver: local

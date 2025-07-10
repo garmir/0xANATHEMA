@@ -1,0 +1,162 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: task-master-config
+  namespace: task-master-ai
+  labels:
+    app.kubernetes.io/name: task-master-ai
+    app.kubernetes.io/component: configuration
+data:
+  # Environment configuration
+  NODE_ENV: "production"
+  LOG_LEVEL: "info"
+  
+  # Task Master AI configuration
+  MAX_PARALLEL_TASKS: "20"
+  MAX_CONCURRENT_RUNNERS: "20"
+  TASK_TIMEOUT_SECONDS: "300"
+  RESEARCH_TIMEOUT_SECONDS: "120"
+  
+  # Autonomous workflow configuration
+  MAX_STUCK_ATTEMPTS: "3"
+  MAX_RESEARCH_ATTEMPTS: "2"
+  MAX_EXECUTION_ATTEMPTS: "5"
+  AUTONOMY_THRESHOLD: "0.95"
+  
+  # Performance optimization
+  MEMORY_REUSE_FACTOR: "0.8"
+  CHECKPOINT_INTERVAL_SECONDS: "60"
+  RATE_LIMIT_DELAY_MS: "1000"
+  
+  # Monitoring configuration
+  METRICS_PORT: "9090"
+  HEALTH_CHECK_INTERVAL: "30"
+  ENABLE_DETAILED_METRICS: "true"
+  
+  # GitHub Actions integration
+  GITHUB_ACTIONS_ENABLED: "true"
+  SCALING_STRATEGY: "auto"
+  MIN_RUNNERS: "1"
+  MAX_RUNNERS: "20"
+  
+  # Claude integration
+  CLAUDE_MODEL: "claude-3-5-sonnet-20241022"
+  CLAUDE_TIMEOUT_SECONDS: "60"
+  CLAUDE_MAX_RETRIES: "3"
+  
+  # Research integration
+  RESEARCH_PROVIDER: "perplexity"
+  RESEARCH_MODEL: "llama-3.1-sonar-large-128k-online"
+  FALLBACK_RESEARCH_ENABLED: "true"
+  
+  # Security configuration
+  ENABLE_AUDIT_LOGGING: "true"
+  API_RATE_LIMIT_REQUESTS: "100"
+  API_RATE_LIMIT_WINDOW_SECONDS: "60"
+  
+  # Database configuration (if using external storage)
+  DATABASE_ENABLED: "false"
+  DATABASE_TYPE: "postgresql"
+  DATABASE_POOL_SIZE: "10"
+  DATABASE_CONNECTION_TIMEOUT: "5000"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: task-master-scripts
+  namespace: task-master-ai
+  labels:
+    app.kubernetes.io/name: task-master-ai
+    app.kubernetes.io/component: scripts
+data:
+  healthcheck.sh: |
+    #!/bin/bash
+    set -e
+    
+    echo "Running Task Master AI health check..."
+    
+    # Check if process is running
+    if ! pgrep -f "task-master" > /dev/null; then
+        echo "ERROR: Task Master process not running"
+        exit 1
+    fi
+    
+    # Check API endpoint
+    if ! curl -f -s http://localhost:8080/health > /dev/null; then
+        echo "ERROR: Health endpoint not responding"
+        exit 1
+    fi
+    
+    # Check critical services
+    if ! task-master status --quiet; then
+        echo "ERROR: Task Master status check failed"
+        exit 1
+    fi
+    
+    echo "Health check passed"
+    exit 0
+  
+  backup.sh: |
+    #!/bin/bash
+    set -e
+    
+    BACKUP_DIR="/backup"
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    BACKUP_FILE="task-master-backup-${TIMESTAMP}.tar.gz"
+    
+    echo "Creating backup: ${BACKUP_FILE}"
+    
+    # Create backup directory
+    mkdir -p ${BACKUP_DIR}
+    
+    # Backup task data and configuration
+    tar -czf "${BACKUP_DIR}/${BACKUP_FILE}" \
+        .taskmaster/ \
+        .claude/ \
+        .github/ \
+        --exclude="*.log" \
+        --exclude="node_modules" \
+        --exclude="venv"
+    
+    echo "Backup created: ${BACKUP_DIR}/${BACKUP_FILE}"
+    
+    # Keep only last 7 backups
+    cd ${BACKUP_DIR}
+    ls -1t task-master-backup-*.tar.gz | tail -n +8 | xargs -r rm
+    
+    echo "Backup cleanup completed"
+  
+  startup.sh: |
+    #!/bin/bash
+    set -e
+    
+    echo "Starting Task Master AI..."
+    
+    # Verify environment variables
+    if [ -z "$ANTHROPIC_API_KEY" ]; then
+        echo "ERROR: ANTHROPIC_API_KEY not set"
+        exit 1
+    fi
+    
+    # Initialize Task Master if needed
+    if [ ! -f ".taskmaster/config.json" ]; then
+        echo "Initializing Task Master..."
+        task-master init --non-interactive
+    fi
+    
+    # Configure models
+    echo "Configuring AI models..."
+    task-master models --set-main claude-3-5-sonnet-20241022
+    
+    if [ -n "$PERPLEXITY_API_KEY" ]; then
+        task-master models --set-research perplexity-llama-3.1-sonar-large-128k-online
+    fi
+    
+    # Start monitoring
+    echo "Starting monitoring..."
+    /usr/local/bin/start-monitoring.sh &
+    
+    # Start main application
+    echo "Task Master AI startup completed"
+    exec "$@"

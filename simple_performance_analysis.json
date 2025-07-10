@@ -1,0 +1,3590 @@
+{
+  "file_structure": {
+    "python_files": [
+      {
+        "path": "labrys_main.py",
+        "size_bytes": 11789,
+        "lines": 317,
+        "is_large": false
+      },
+      {
+        "path": "autonomous_workflow_loop.py",
+        "size_bytes": 38241,
+        "lines": 825,
+        "is_large": true
+      },
+      {
+        "path": "improved_test_runner.py",
+        "size_bytes": 2017,
+        "lines": 62,
+        "is_large": false
+      },
+      {
+        "path": "labrys_process_guardian.py",
+        "size_bytes": 31721,
+        "lines": 805,
+        "is_large": true
+      },
+      {
+        "path": "setup_environment.py",
+        "size_bytes": 3806,
+        "lines": 120,
+        "is_large": false
+      },
+      {
+        "path": "performance_analyzer.py",
+        "size_bytes": 21334,
+        "lines": 538,
+        "is_large": true
+      },
+      {
+        "path": "complexity_dashboard.py",
+        "size_bytes": 29033,
+        "lines": 933,
+        "is_large": true
+      },
+      {
+        "path": "test_optimization_engine.py",
+        "size_bytes": 24729,
+        "lines": 578,
+        "is_large": true
+      },
+      {
+        "path": "unified_autonomous_system.py",
+        "size_bytes": 33113,
+        "lines": 749,
+        "is_large": true
+      },
+      {
+        "path": "system_performance_optimizer.py",
+        "size_bytes": 22038,
+        "lines": 617,
+        "is_large": true
+      },
+      {
+        "path": "ai_system_optimizer.py",
+        "size_bytes": 43251,
+        "lines": 1138,
+        "is_large": true
+      },
+      {
+        "path": "autonomous_research_integration.py",
+        "size_bytes": 23421,
+        "lines": 626,
+        "is_large": true
+      },
+      {
+        "path": "simple_performance_analyzer.py",
+        "size_bytes": 19598,
+        "lines": 470,
+        "is_large": false
+      },
+      {
+        "path": "validation_report.py",
+        "size_bytes": 15366,
+        "lines": 370,
+        "is_large": false
+      },
+      {
+        "path": "taskmaster_labrys.py",
+        "size_bytes": 21143,
+        "lines": 570,
+        "is_large": true
+      },
+      {
+        "path": "hardcoded_research_workflow.py",
+        "size_bytes": 20298,
+        "lines": 536,
+        "is_large": true
+      },
+      {
+        "path": "test_task_master_integration_detailed.py",
+        "size_bytes": 18972,
+        "lines": 449,
+        "is_large": false
+      },
+      {
+        "path": "system_validator.py",
+        "size_bytes": 2547,
+        "lines": 72,
+        "is_large": false
+      },
+      {
+        "path": "system_fixes_and_improvements.py",
+        "size_bytes": 31620,
+        "lines": 946,
+        "is_large": true
+      },
+      {
+        "path": "test_with_fixes.py",
+        "size_bytes": 10349,
+        "lines": 289,
+        "is_large": false
+      },
+      {
+        "path": "performance_monitor.py",
+        "size_bytes": 2557,
+        "lines": 77,
+        "is_large": false
+      },
+      {
+        "path": "optimization_engine.py",
+        "size_bytes": 33712,
+        "lines": 760,
+        "is_large": true
+      },
+      {
+        "path": "test_task_complexity_analyzer.py",
+        "size_bytes": 17289,
+        "lines": 406,
+        "is_large": false
+      },
+      {
+        "path": "labrys_ghostty_monitor.py",
+        "size_bytes": 16533,
+        "lines": 471,
+        "is_large": false
+      },
+      {
+        "path": "labrys_operability_validator.py",
+        "size_bytes": 23836,
+        "lines": 642,
+        "is_large": true
+      },
+      {
+        "path": "fallback_imports.py",
+        "size_bytes": 842,
+        "lines": 29,
+        "is_large": false
+      },
+      {
+        "path": "fallback_labrys.py",
+        "size_bytes": 2028,
+        "lines": 68,
+        "is_large": false
+      },
+      {
+        "path": "intelligent_task_predictor.py",
+        "size_bytes": 45466,
+        "lines": 1093,
+        "is_large": true
+      },
+      {
+        "path": "current_pid_manager.py",
+        "size_bytes": 23808,
+        "lines": 597,
+        "is_large": true
+      },
+      {
+        "path": "task_complexity_analyzer.py",
+        "size_bytes": 21052,
+        "lines": 534,
+        "is_large": true
+      },
+      {
+        "path": "test_complexity_dashboard.py",
+        "size_bytes": 25543,
+        "lines": 612,
+        "is_large": true
+      },
+      {
+        "path": "advanced_analytics_dashboard.py",
+        "size_bytes": 53667,
+        "lines": 1679,
+        "is_large": true
+      },
+      {
+        "path": "test_runner.py",
+        "size_bytes": 14105,
+        "lines": 398,
+        "is_large": false
+      },
+      {
+        "path": "test_config.py",
+        "size_bytes": 1281,
+        "lines": 47,
+        "is_large": false
+      },
+      {
+        "path": "touchid_integration.py",
+        "size_bytes": 23620,
+        "lines": 642,
+        "is_large": true
+      },
+      {
+        "path": "install_dependencies.py",
+        "size_bytes": 701,
+        "lines": 26,
+        "is_large": false
+      },
+      {
+        "path": "error_handler.py",
+        "size_bytes": 2606,
+        "lines": 74,
+        "is_large": false
+      },
+      {
+        "path": "labrys_deployment_system.py",
+        "size_bytes": 27608,
+        "lines": 712,
+        "is_large": true
+      },
+      {
+        "path": "labrys_self_test.py",
+        "size_bytes": 32092,
+        "lines": 840,
+        "is_large": true
+      },
+      {
+        "path": "check_labrys_health.py",
+        "size_bytes": 4672,
+        "lines": 141,
+        "is_large": false
+      },
+      {
+        "path": "task_completion_simulator.py",
+        "size_bytes": 7809,
+        "lines": 232,
+        "is_large": false
+      },
+      {
+        "path": "recursive_labrys_improvement.py",
+        "size_bytes": 15724,
+        "lines": 371,
+        "is_large": false
+      },
+      {
+        "path": "labrys_introspection_runner.py",
+        "size_bytes": 41216,
+        "lines": 953,
+        "is_large": true
+      },
+      {
+        "path": "test_comprehensive_system_validation.py",
+        "size_bytes": 24477,
+        "lines": 546,
+        "is_large": true
+      },
+      {
+        "path": "test_autonomous_workflow_comprehensive.py",
+        "size_bytes": 26482,
+        "lines": 671,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/autonomous-workflow-loop.py",
+        "size_bytes": 24785,
+        "lines": 611,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/claude-integration-wrapper.py",
+        "size_bytes": 3163,
+        "lines": 64,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/comprehensive-project-validation.py",
+        "size_bytes": 74762,
+        "lines": 1724,
+        "is_large": true
+      },
+      {
+        "path": ".labrys/coordination/coordinator.py",
+        "size_bytes": 1084,
+        "lines": 34,
+        "is_large": false
+      },
+      {
+        "path": ".labrys/coordination/__init__.py",
+        "size_bytes": 0,
+        "lines": 0,
+        "is_large": false
+      },
+      {
+        "path": ".labrys/analytical/__init__.py",
+        "size_bytes": 0,
+        "lines": 0,
+        "is_large": false
+      },
+      {
+        "path": ".labrys/analytical/blade.py",
+        "size_bytes": 808,
+        "lines": 27,
+        "is_large": false
+      },
+      {
+        "path": ".labrys/synthesis/__init__.py",
+        "size_bytes": 0,
+        "lines": 0,
+        "is_large": false
+      },
+      {
+        "path": ".labrys/synthesis/blade.py",
+        "size_bytes": 883,
+        "lines": 26,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/checkpoint/checkpoint_manager.py",
+        "size_bytes": 10912,
+        "lines": 317,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/catalytic/memory-pool-simulator.py",
+        "size_bytes": 8553,
+        "lines": 212,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/catalytic/checkpoint_manager.py",
+        "size_bytes": 15095,
+        "lines": 399,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/intelligence/task_prediction_engine.py",
+        "size_bytes": 42507,
+        "lines": 1001,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/complexity-validation/sqrt_test.py",
+        "size_bytes": 740,
+        "lines": 29,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/complexity-validation/space-profiler.py",
+        "size_bytes": 15507,
+        "lines": 400,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/complexity-validation/task_complexity_analyzer.py",
+        "size_bytes": 26547,
+        "lines": 639,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/complexity-validation/analyze_growth.py",
+        "size_bytes": 3237,
+        "lines": 89,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/complexity-validation/loglog_test.py",
+        "size_bytes": 881,
+        "lines": 33,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/integration/system_verification_framework.py",
+        "size_bytes": 32191,
+        "lines": 765,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/integration/comprehensive_integration_framework.py",
+        "size_bytes": 27547,
+        "lines": 761,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/optimization/sqrt-compliance-enforcer.py",
+        "size_bytes": 3958,
+        "lines": 102,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/aggressive-memory-optimizer.py",
+        "size_bytes": 14338,
+        "lines": 326,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/final-autonomy-booster.py",
+        "size_bytes": 12352,
+        "lines": 338,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/cook-mertz-tree-optimizer.py",
+        "size_bytes": 12912,
+        "lines": 320,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/ai_system_optimizer.py",
+        "size_bytes": 27995,
+        "lines": 702,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/optimization/williams-sqrt-optimizer.py",
+        "size_bytes": 10421,
+        "lines": 253,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/comprehensive-validator.py",
+        "size_bytes": 15217,
+        "lines": 397,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/intelligent_task_predictor.py",
+        "size_bytes": 30137,
+        "lines": 710,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/optimization/evolutionary-optimizer.py",
+        "size_bytes": 13681,
+        "lines": 357,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/task_complexity_analyzer.py",
+        "size_bytes": 7016,
+        "lines": 192,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/task-complexity-analyzer.py",
+        "size_bytes": 35566,
+        "lines": 855,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/optimization/autonomous-system-validator.py",
+        "size_bytes": 22220,
+        "lines": 492,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/task-queue-generator.py",
+        "size_bytes": 4152,
+        "lines": 132,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/autonomy-scorer.py",
+        "size_bytes": 15495,
+        "lines": 406,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/memory-pool-optimizer.py",
+        "size_bytes": 15707,
+        "lines": 405,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/production_readiness_validator.py",
+        "size_bytes": 7126,
+        "lines": 199,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/space_complexity_validator.py",
+        "size_bytes": 14869,
+        "lines": 375,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/advanced-pebbling-generator.py",
+        "size_bytes": 10668,
+        "lines": 270,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/enhanced-atomic-detector.py",
+        "size_bytes": 13243,
+        "lines": 340,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/autonomous_execution_validator.py",
+        "size_bytes": 14950,
+        "lines": 407,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/simple_system_optimizer.py",
+        "size_bytes": 14850,
+        "lines": 395,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/async-task-executor.py",
+        "size_bytes": 13847,
+        "lines": 351,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/assessment/project_plan_assessment.py",
+        "size_bytes": 38422,
+        "lines": 936,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/testing/advanced_validation_suite.py",
+        "size_bytes": 44885,
+        "lines": 1197,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/testing/github_actions_validator.py",
+        "size_bytes": 18208,
+        "lines": 475,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/testing/comprehensive-implementation-validation-suite.py",
+        "size_bytes": 85979,
+        "lines": 1972,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/testing/end_to_end_framework.py",
+        "size_bytes": 25462,
+        "lines": 675,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/testing/advanced-project-plan-validation.py",
+        "size_bytes": 37447,
+        "lines": 868,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/testing/project-conformance-validation.py",
+        "size_bytes": 46489,
+        "lines": 1015,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/ai/adaptive_learning_engine.py",
+        "size_bytes": 23562,
+        "lines": 564,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/workflow/autonomous_research_loop.py",
+        "size_bytes": 28469,
+        "lines": 736,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/workflow/todo_integration.py",
+        "size_bytes": 4711,
+        "lines": 130,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/catalytic-workspace-system.py",
+        "size_bytes": 20673,
+        "lines": 526,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/analyze-performance-results.py",
+        "size_bytes": 86,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/space-complexity-validator-simple.py",
+        "size_bytes": 18705,
+        "lines": 482,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/evolutionary-optimization.py",
+        "size_bytes": 38063,
+        "lines": 914,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/space-complexity-test-harness.py",
+        "size_bytes": 20911,
+        "lines": 508,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/recursive-prd-processor.py",
+        "size_bytes": 30247,
+        "lines": 763,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/touchid-integration.py",
+        "size_bytes": 13318,
+        "lines": 383,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/autonomous-workflow-loop.py",
+        "size_bytes": 27298,
+        "lines": 675,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/space-complexity-validator.py",
+        "size_bytes": 21953,
+        "lines": 540,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/complex-project-validator.py",
+        "size_bytes": 84,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/comprehensive-integration-tester.py",
+        "size_bytes": 40597,
+        "lines": 1011,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/touchid-sudo.py",
+        "size_bytes": 21418,
+        "lines": 495,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/setup-checkpoint-test.py",
+        "size_bytes": 80,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/comprehensive-integration-test-suite.py",
+        "size_bytes": 38962,
+        "lines": 968,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/autonomous-e2e-tester.py",
+        "size_bytes": 43371,
+        "lines": 1073,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/generate-stress-test-prd.py",
+        "size_bytes": 83,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/python-import-validation.py",
+        "size_bytes": 12441,
+        "lines": 341,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/claude-flow-integration.py",
+        "size_bytes": 24522,
+        "lines": 588,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/stress-test-validator.py",
+        "size_bytes": 80,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/setup-performance-benchmark.py",
+        "size_bytes": 86,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/hierarchical-prd-structure-implementation.py",
+        "size_bytes": 18795,
+        "lines": 474,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/validate-network-recovery.py",
+        "size_bytes": 84,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/restore-network.py",
+        "size_bytes": 74,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/setup-memory-constraints.py",
+        "size_bytes": 83,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/validate-recovery.py",
+        "size_bytes": 76,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/complexity-cli.py",
+        "size_bytes": 7420,
+        "lines": 204,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/run-performance-benchmark.py",
+        "size_bytes": 84,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/simulate-network-issues.py",
+        "size_bytes": 82,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/validate-implementation.py",
+        "size_bytes": 6604,
+        "lines": 159,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/end-to-end-testing-framework.py",
+        "size_bytes": 28259,
+        "lines": 726,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/e2e-testing-framework.py",
+        "size_bytes": 35136,
+        "lines": 853,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/mathematical-optimization-algorithms.py",
+        "size_bytes": 33284,
+        "lines": 794,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/intelligent-task-predictor.py",
+        "size_bytes": 39568,
+        "lines": 921,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/simulate-execution-failure.py",
+        "size_bytes": 85,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/autonomous-execution.py",
+        "size_bytes": 79,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/generate-complex-project.py",
+        "size_bytes": 83,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/validate-imports.py",
+        "size_bytes": 8156,
+        "lines": 221,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/resume-from-checkpoint.py",
+        "size_bytes": 81,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/network-resilience-test.py",
+        "size_bytes": 82,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/catalytic-workspace-10gb.py",
+        "size_bytes": 33353,
+        "lines": 759,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/catalytic-workspace.py",
+        "size_bytes": 24574,
+        "lines": 623,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/autonomy-validator.py",
+        "size_bytes": 12752,
+        "lines": 310,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/memory-usage-validator.py",
+        "size_bytes": 81,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/scripts/remove-memory-constraints.py",
+        "size_bytes": 84,
+        "lines": 3,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/monitoring/ai_optimization_suite.py",
+        "size_bytes": 35561,
+        "lines": 866,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/optimization/.taskmaster/optimization/pebbling-strategy.py",
+        "size_bytes": 1747,
+        "lines": 50,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/.taskmaster/optimization/evolution-improver.py",
+        "size_bytes": 2021,
+        "lines": 57,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/.taskmaster/optimization/sqrt-optimization.py",
+        "size_bytes": 1377,
+        "lines": 42,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/.taskmaster/optimization/catalytic-planning.py",
+        "size_bytes": 1908,
+        "lines": 54,
+        "is_large": false
+      },
+      {
+        "path": ".taskmaster/optimization/.taskmaster/optimization/tree-optimization.py",
+        "size_bytes": 1438,
+        "lines": 43,
+        "is_large": false
+      }
+    ],
+    "large_files": [
+      {
+        "path": "autonomous_workflow_loop.py",
+        "size_bytes": 38241,
+        "lines": 825,
+        "is_large": true
+      },
+      {
+        "path": "labrys_process_guardian.py",
+        "size_bytes": 31721,
+        "lines": 805,
+        "is_large": true
+      },
+      {
+        "path": "performance_analyzer.py",
+        "size_bytes": 21334,
+        "lines": 538,
+        "is_large": true
+      },
+      {
+        "path": "complexity_dashboard.py",
+        "size_bytes": 29033,
+        "lines": 933,
+        "is_large": true
+      },
+      {
+        "path": "test_optimization_engine.py",
+        "size_bytes": 24729,
+        "lines": 578,
+        "is_large": true
+      },
+      {
+        "path": "unified_autonomous_system.py",
+        "size_bytes": 33113,
+        "lines": 749,
+        "is_large": true
+      },
+      {
+        "path": "system_performance_optimizer.py",
+        "size_bytes": 22038,
+        "lines": 617,
+        "is_large": true
+      },
+      {
+        "path": "ai_system_optimizer.py",
+        "size_bytes": 43251,
+        "lines": 1138,
+        "is_large": true
+      },
+      {
+        "path": "autonomous_research_integration.py",
+        "size_bytes": 23421,
+        "lines": 626,
+        "is_large": true
+      },
+      {
+        "path": "taskmaster_labrys.py",
+        "size_bytes": 21143,
+        "lines": 570,
+        "is_large": true
+      },
+      {
+        "path": "hardcoded_research_workflow.py",
+        "size_bytes": 20298,
+        "lines": 536,
+        "is_large": true
+      },
+      {
+        "path": "system_fixes_and_improvements.py",
+        "size_bytes": 31620,
+        "lines": 946,
+        "is_large": true
+      },
+      {
+        "path": "optimization_engine.py",
+        "size_bytes": 33712,
+        "lines": 760,
+        "is_large": true
+      },
+      {
+        "path": "labrys_operability_validator.py",
+        "size_bytes": 23836,
+        "lines": 642,
+        "is_large": true
+      },
+      {
+        "path": "intelligent_task_predictor.py",
+        "size_bytes": 45466,
+        "lines": 1093,
+        "is_large": true
+      },
+      {
+        "path": "current_pid_manager.py",
+        "size_bytes": 23808,
+        "lines": 597,
+        "is_large": true
+      },
+      {
+        "path": "task_complexity_analyzer.py",
+        "size_bytes": 21052,
+        "lines": 534,
+        "is_large": true
+      },
+      {
+        "path": "test_complexity_dashboard.py",
+        "size_bytes": 25543,
+        "lines": 612,
+        "is_large": true
+      },
+      {
+        "path": "advanced_analytics_dashboard.py",
+        "size_bytes": 53667,
+        "lines": 1679,
+        "is_large": true
+      },
+      {
+        "path": "touchid_integration.py",
+        "size_bytes": 23620,
+        "lines": 642,
+        "is_large": true
+      },
+      {
+        "path": "labrys_deployment_system.py",
+        "size_bytes": 27608,
+        "lines": 712,
+        "is_large": true
+      },
+      {
+        "path": "labrys_self_test.py",
+        "size_bytes": 32092,
+        "lines": 840,
+        "is_large": true
+      },
+      {
+        "path": "labrys_introspection_runner.py",
+        "size_bytes": 41216,
+        "lines": 953,
+        "is_large": true
+      },
+      {
+        "path": "test_comprehensive_system_validation.py",
+        "size_bytes": 24477,
+        "lines": 546,
+        "is_large": true
+      },
+      {
+        "path": "test_autonomous_workflow_comprehensive.py",
+        "size_bytes": 26482,
+        "lines": 671,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/autonomous-workflow-loop.py",
+        "size_bytes": 24785,
+        "lines": 611,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/comprehensive-project-validation.py",
+        "size_bytes": 74762,
+        "lines": 1724,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/intelligence/task_prediction_engine.py",
+        "size_bytes": 42507,
+        "lines": 1001,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/complexity-validation/task_complexity_analyzer.py",
+        "size_bytes": 26547,
+        "lines": 639,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/integration/system_verification_framework.py",
+        "size_bytes": 32191,
+        "lines": 765,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/integration/comprehensive_integration_framework.py",
+        "size_bytes": 27547,
+        "lines": 761,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/optimization/ai_system_optimizer.py",
+        "size_bytes": 27995,
+        "lines": 702,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/optimization/intelligent_task_predictor.py",
+        "size_bytes": 30137,
+        "lines": 710,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/optimization/task-complexity-analyzer.py",
+        "size_bytes": 35566,
+        "lines": 855,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/assessment/project_plan_assessment.py",
+        "size_bytes": 38422,
+        "lines": 936,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/testing/advanced_validation_suite.py",
+        "size_bytes": 44885,
+        "lines": 1197,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/testing/comprehensive-implementation-validation-suite.py",
+        "size_bytes": 85979,
+        "lines": 1972,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/testing/end_to_end_framework.py",
+        "size_bytes": 25462,
+        "lines": 675,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/testing/advanced-project-plan-validation.py",
+        "size_bytes": 37447,
+        "lines": 868,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/testing/project-conformance-validation.py",
+        "size_bytes": 46489,
+        "lines": 1015,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/ai/adaptive_learning_engine.py",
+        "size_bytes": 23562,
+        "lines": 564,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/workflow/autonomous_research_loop.py",
+        "size_bytes": 28469,
+        "lines": 736,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/catalytic-workspace-system.py",
+        "size_bytes": 20673,
+        "lines": 526,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/evolutionary-optimization.py",
+        "size_bytes": 38063,
+        "lines": 914,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/space-complexity-test-harness.py",
+        "size_bytes": 20911,
+        "lines": 508,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/recursive-prd-processor.py",
+        "size_bytes": 30247,
+        "lines": 763,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/autonomous-workflow-loop.py",
+        "size_bytes": 27298,
+        "lines": 675,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/space-complexity-validator.py",
+        "size_bytes": 21953,
+        "lines": 540,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/comprehensive-integration-tester.py",
+        "size_bytes": 40597,
+        "lines": 1011,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/comprehensive-integration-test-suite.py",
+        "size_bytes": 38962,
+        "lines": 968,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/autonomous-e2e-tester.py",
+        "size_bytes": 43371,
+        "lines": 1073,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/claude-flow-integration.py",
+        "size_bytes": 24522,
+        "lines": 588,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/end-to-end-testing-framework.py",
+        "size_bytes": 28259,
+        "lines": 726,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/e2e-testing-framework.py",
+        "size_bytes": 35136,
+        "lines": 853,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/mathematical-optimization-algorithms.py",
+        "size_bytes": 33284,
+        "lines": 794,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/intelligent-task-predictor.py",
+        "size_bytes": 39568,
+        "lines": 921,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/catalytic-workspace-10gb.py",
+        "size_bytes": 33353,
+        "lines": 759,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/scripts/catalytic-workspace.py",
+        "size_bytes": 24574,
+        "lines": 623,
+        "is_large": true
+      },
+      {
+        "path": ".taskmaster/monitoring/ai_optimization_suite.py",
+        "size_bytes": 35561,
+        "lines": 866,
+        "is_large": true
+      }
+    ],
+    "total_lines": 64134,
+    "file_count": 147
+  },
+  "code_patterns": {
+    "blocking_calls": {
+      "patterns": [
+        "time\\.sleep\\(",
+        "input\\(",
+        "requests\\.get\\(",
+        "subprocess\\.run\\("
+      ],
+      "description": "Blocking operations that could be async",
+      "files": [
+        {
+          "file": "labrys_main.py",
+          "matches": 1,
+          "examples": [
+            "input("
+          ]
+        },
+        {
+          "file": "autonomous_workflow_loop.py",
+          "matches": 1,
+          "examples": [
+            "time.sleep("
+          ]
+        },
+        {
+          "file": "setup_environment.py",
+          "matches": 2,
+          "examples": [
+            "input(",
+            "input("
+          ]
+        },
+        {
+          "file": "performance_analyzer.py",
+          "matches": 3,
+          "examples": [
+            "time.sleep(",
+            "time.sleep(",
+            "time.sleep("
+          ]
+        },
+        {
+          "file": "complexity_dashboard.py",
+          "matches": 1,
+          "examples": [
+            "time.sleep("
+          ]
+        },
+        {
+          "file": "ai_system_optimizer.py",
+          "matches": 3,
+          "examples": [
+            "time.sleep(",
+            "time.sleep(",
+            "time.sleep("
+          ]
+        },
+        {
+          "file": "ai_system_optimizer.py",
+          "matches": 5,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": "autonomous_research_integration.py",
+          "matches": 1,
+          "examples": [
+            "time.sleep("
+          ]
+        },
+        {
+          "file": "autonomous_research_integration.py",
+          "matches": 9,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": "simple_performance_analyzer.py",
+          "matches": 2,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": "taskmaster_labrys.py",
+          "matches": 2,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": "hardcoded_research_workflow.py",
+          "matches": 1,
+          "examples": [
+            "time.sleep("
+          ]
+        },
+        {
+          "file": "hardcoded_research_workflow.py",
+          "matches": 9,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": "test_with_fixes.py",
+          "matches": 1,
+          "examples": [
+            "time.sleep("
+          ]
+        },
+        {
+          "file": "labrys_ghostty_monitor.py",
+          "matches": 1,
+          "examples": [
+            "input("
+          ]
+        },
+        {
+          "file": "test_complexity_dashboard.py",
+          "matches": 1,
+          "examples": [
+            "time.sleep("
+          ]
+        },
+        {
+          "file": "advanced_analytics_dashboard.py",
+          "matches": 3,
+          "examples": [
+            "time.sleep(",
+            "time.sleep(",
+            "time.sleep("
+          ]
+        },
+        {
+          "file": "advanced_analytics_dashboard.py",
+          "matches": 1,
+          "examples": [
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": "touchid_integration.py",
+          "matches": 5,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": "labrys_deployment_system.py",
+          "matches": 6,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": "test_comprehensive_system_validation.py",
+          "matches": 1,
+          "examples": [
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/autonomous-workflow-loop.py",
+          "matches": 7,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/comprehensive-project-validation.py",
+          "matches": 5,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/complexity-validation/sqrt_test.py",
+          "matches": 1,
+          "examples": [
+            "time.sleep("
+          ]
+        },
+        {
+          "file": ".taskmaster/complexity-validation/loglog_test.py",
+          "matches": 1,
+          "examples": [
+            "time.sleep("
+          ]
+        },
+        {
+          "file": ".taskmaster/integration/system_verification_framework.py",
+          "matches": 7,
+          "examples": [
+            "time.sleep(",
+            "time.sleep(",
+            "time.sleep("
+          ]
+        },
+        {
+          "file": ".taskmaster/integration/comprehensive_integration_framework.py",
+          "matches": 4,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/ai_system_optimizer.py",
+          "matches": 4,
+          "examples": [
+            "time.sleep(",
+            "time.sleep(",
+            "time.sleep("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/ai_system_optimizer.py",
+          "matches": 3,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/task-complexity-analyzer.py",
+          "matches": 1,
+          "examples": [
+            "time.sleep("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/autonomous-system-validator.py",
+          "matches": 1,
+          "examples": [
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/autonomy-scorer.py",
+          "matches": 3,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/production_readiness_validator.py",
+          "matches": 1,
+          "examples": [
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/simple_system_optimizer.py",
+          "matches": 2,
+          "examples": [
+            "time.sleep(",
+            "time.sleep("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/simple_system_optimizer.py",
+          "matches": 5,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/assessment/project_plan_assessment.py",
+          "matches": 3,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/advanced_validation_suite.py",
+          "matches": 2,
+          "examples": [
+            "time.sleep(",
+            "time.sleep("
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/advanced_validation_suite.py",
+          "matches": 5,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/comprehensive-implementation-validation-suite.py",
+          "matches": 1,
+          "examples": [
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/end_to_end_framework.py",
+          "matches": 1,
+          "examples": [
+            "time.sleep("
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/end_to_end_framework.py",
+          "matches": 9,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/advanced-project-plan-validation.py",
+          "matches": 1,
+          "examples": [
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/project-conformance-validation.py",
+          "matches": 9,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/workflow/autonomous_research_loop.py",
+          "matches": 5,
+          "examples": [
+            "time.sleep(",
+            "time.sleep(",
+            "time.sleep("
+          ]
+        },
+        {
+          "file": ".taskmaster/workflow/autonomous_research_loop.py",
+          "matches": 4,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/catalytic-workspace-system.py",
+          "matches": 1,
+          "examples": [
+            "time.sleep("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/space-complexity-test-harness.py",
+          "matches": 1,
+          "examples": [
+            "time.sleep("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/touchid-integration.py",
+          "matches": 2,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/autonomous-workflow-loop.py",
+          "matches": 1,
+          "examples": [
+            "time.sleep("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/autonomous-workflow-loop.py",
+          "matches": 14,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/comprehensive-integration-tester.py",
+          "matches": 1,
+          "examples": [
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/touchid-sudo.py",
+          "matches": 1,
+          "examples": [
+            "time.sleep("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/touchid-sudo.py",
+          "matches": 10,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/comprehensive-integration-test-suite.py",
+          "matches": 1,
+          "examples": [
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/autonomous-e2e-tester.py",
+          "matches": 11,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/python-import-validation.py",
+          "matches": 1,
+          "examples": [
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/end-to-end-testing-framework.py",
+          "matches": 1,
+          "examples": [
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/e2e-testing-framework.py",
+          "matches": 2,
+          "examples": [
+            "time.sleep(",
+            "time.sleep("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/e2e-testing-framework.py",
+          "matches": 4,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/catalytic-workspace-10gb.py",
+          "matches": 1,
+          "examples": [
+            "time.sleep("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/catalytic-workspace.py",
+          "matches": 1,
+          "examples": [
+            "time.sleep("
+          ]
+        },
+        {
+          "file": ".taskmaster/monitoring/ai_optimization_suite.py",
+          "matches": 4,
+          "examples": [
+            "time.sleep(",
+            "time.sleep(",
+            "time.sleep("
+          ]
+        },
+        {
+          "file": ".taskmaster/monitoring/ai_optimization_suite.py",
+          "matches": 2,
+          "examples": [
+            "subprocess.run(",
+            "subprocess.run("
+          ]
+        }
+      ]
+    },
+    "inefficient_loops": {
+      "patterns": [
+        "while\\s+True:",
+        "for.*in.*range\\(\\d+\\)"
+      ],
+      "description": "Potentially inefficient loop patterns",
+      "files": [
+        {
+          "file": "labrys_main.py",
+          "matches": 1,
+          "examples": [
+            "while True:"
+          ]
+        },
+        {
+          "file": "performance_analyzer.py",
+          "matches": 1,
+          "examples": [
+            "while True:"
+          ]
+        },
+        {
+          "file": "complexity_dashboard.py",
+          "matches": 2,
+          "examples": [
+            "while True:",
+            "while True:"
+          ]
+        },
+        {
+          "file": "ai_system_optimizer.py",
+          "matches": 1,
+          "examples": [
+            "while True:"
+          ]
+        },
+        {
+          "file": "advanced_analytics_dashboard.py",
+          "matches": 1,
+          "examples": [
+            "while True:"
+          ]
+        },
+        {
+          "file": "task_completion_simulator.py",
+          "matches": 1,
+          "examples": [
+            "for i in range(30)"
+          ]
+        },
+        {
+          "file": "test_autonomous_workflow_comprehensive.py",
+          "matches": 1,
+          "examples": [
+            "for i in range(3)"
+          ]
+        },
+        {
+          "file": ".taskmaster/autonomous-workflow-loop.py",
+          "matches": 1,
+          "examples": [
+            "while True:"
+          ]
+        },
+        {
+          "file": ".taskmaster/integration/comprehensive_integration_framework.py",
+          "matches": 1,
+          "examples": [
+            "for _ in range(5)"
+          ]
+        },
+        {
+          "file": ".taskmaster/workflow/autonomous_research_loop.py",
+          "matches": 1,
+          "examples": [
+            "while True:"
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/space-complexity-test-harness.py",
+          "matches": 1,
+          "examples": [
+            "while True:"
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/autonomous-workflow-loop.py",
+          "matches": 1,
+          "examples": [
+            "while True:"
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/autonomous-e2e-tester.py",
+          "matches": 1,
+          "examples": [
+            "for i in range(3)"
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/catalytic-workspace-10gb.py",
+          "matches": 4,
+          "examples": [
+            "for i in range(10)",
+            "for i in range(10)",
+            "for i in range(20)"
+          ]
+        },
+        {
+          "file": ".taskmaster/monitoring/ai_optimization_suite.py",
+          "matches": 1,
+          "examples": [
+            "while True:"
+          ]
+        }
+      ]
+    },
+    "memory_intensive": {
+      "patterns": [
+        "\\.read\\(\\)",
+        "\\.readlines\\(\\)",
+        "json\\.load\\("
+      ],
+      "description": "Operations that load large amounts into memory",
+      "files": [
+        {
+          "file": "labrys_main.py",
+          "matches": 1,
+          "examples": [
+            ".read()"
+          ]
+        },
+        {
+          "file": "labrys_main.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": "autonomous_workflow_loop.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": "labrys_process_guardian.py",
+          "matches": 1,
+          "examples": [
+            ".read()"
+          ]
+        },
+        {
+          "file": "setup_environment.py",
+          "matches": 1,
+          "examples": [
+            ".read()"
+          ]
+        },
+        {
+          "file": "performance_analyzer.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": "test_optimization_engine.py",
+          "matches": 1,
+          "examples": [
+            ".read()"
+          ]
+        },
+        {
+          "file": "test_optimization_engine.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": "unified_autonomous_system.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": "system_performance_optimizer.py",
+          "matches": 2,
+          "examples": [
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": "ai_system_optimizer.py",
+          "matches": 1,
+          "examples": [
+            ".read()"
+          ]
+        },
+        {
+          "file": "ai_system_optimizer.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": "simple_performance_analyzer.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": "validation_report.py",
+          "matches": 2,
+          "examples": [
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": "taskmaster_labrys.py",
+          "matches": 2,
+          "examples": [
+            "json.load(",
+            "json.load("
+          ]
+        },
+        {
+          "file": "test_task_master_integration_detailed.py",
+          "matches": 5,
+          "examples": [
+            ".read()",
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": "test_task_master_integration_detailed.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": "system_fixes_and_improvements.py",
+          "matches": 3,
+          "examples": [
+            ".read()",
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": "test_with_fixes.py",
+          "matches": 1,
+          "examples": [
+            ".read()"
+          ]
+        },
+        {
+          "file": "performance_monitor.py",
+          "matches": 1,
+          "examples": [
+            ".read()"
+          ]
+        },
+        {
+          "file": "test_task_complexity_analyzer.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": "labrys_ghostty_monitor.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": "intelligent_task_predictor.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": "task_complexity_analyzer.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": "test_complexity_dashboard.py",
+          "matches": 8,
+          "examples": [
+            ".read()",
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": "test_complexity_dashboard.py",
+          "matches": 2,
+          "examples": [
+            "json.load(",
+            "json.load("
+          ]
+        },
+        {
+          "file": "test_runner.py",
+          "matches": 2,
+          "examples": [
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": "test_config.py",
+          "matches": 1,
+          "examples": [
+            ".read()"
+          ]
+        },
+        {
+          "file": "touchid_integration.py",
+          "matches": 1,
+          "examples": [
+            ".readlines()"
+          ]
+        },
+        {
+          "file": "labrys_introspection_runner.py",
+          "matches": 3,
+          "examples": [
+            ".read()",
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": "labrys_introspection_runner.py",
+          "matches": 1,
+          "examples": [
+            ".readlines()"
+          ]
+        },
+        {
+          "file": "test_comprehensive_system_validation.py",
+          "matches": 3,
+          "examples": [
+            ".read()",
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": "test_comprehensive_system_validation.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/comprehensive-project-validation.py",
+          "matches": 3,
+          "examples": [
+            ".read()",
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": ".taskmaster/comprehensive-project-validation.py",
+          "matches": 11,
+          "examples": [
+            "json.load(",
+            "json.load(",
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/checkpoint/checkpoint_manager.py",
+          "matches": 4,
+          "examples": [
+            "json.load(",
+            "json.load(",
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/catalytic/checkpoint_manager.py",
+          "matches": 1,
+          "examples": [
+            ".read()"
+          ]
+        },
+        {
+          "file": ".taskmaster/catalytic/checkpoint_manager.py",
+          "matches": 5,
+          "examples": [
+            "json.load(",
+            "json.load(",
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/intelligence/task_prediction_engine.py",
+          "matches": 3,
+          "examples": [
+            "json.load(",
+            "json.load(",
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/integration/comprehensive_integration_framework.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/sqrt-compliance-enforcer.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/aggressive-memory-optimizer.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/final-autonomy-booster.py",
+          "matches": 2,
+          "examples": [
+            "json.load(",
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/cook-mertz-tree-optimizer.py",
+          "matches": 2,
+          "examples": [
+            "json.load(",
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/ai_system_optimizer.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/williams-sqrt-optimizer.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/comprehensive-validator.py",
+          "matches": 2,
+          "examples": [
+            "json.load(",
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/intelligent_task_predictor.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/task_complexity_analyzer.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/autonomous-system-validator.py",
+          "matches": 8,
+          "examples": [
+            "json.load(",
+            "json.load(",
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/task-queue-generator.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/autonomy-scorer.py",
+          "matches": 2,
+          "examples": [
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/autonomy-scorer.py",
+          "matches": 4,
+          "examples": [
+            "json.load(",
+            "json.load(",
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/enhanced-atomic-detector.py",
+          "matches": 2,
+          "examples": [
+            "json.load(",
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/autonomous_execution_validator.py",
+          "matches": 3,
+          "examples": [
+            ".read()",
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/autonomous_execution_validator.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/assessment/project_plan_assessment.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/advanced_validation_suite.py",
+          "matches": 3,
+          "examples": [
+            "json.load(",
+            "json.load(",
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/github_actions_validator.py",
+          "matches": 5,
+          "examples": [
+            ".read()",
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/comprehensive-implementation-validation-suite.py",
+          "matches": 11,
+          "examples": [
+            ".read()",
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/comprehensive-implementation-validation-suite.py",
+          "matches": 3,
+          "examples": [
+            "json.load(",
+            "json.load(",
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/advanced-project-plan-validation.py",
+          "matches": 3,
+          "examples": [
+            ".read()",
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/project-conformance-validation.py",
+          "matches": 14,
+          "examples": [
+            ".read()",
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": ".taskmaster/ai/adaptive_learning_engine.py",
+          "matches": 2,
+          "examples": [
+            "json.load(",
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/catalytic-workspace-system.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/space-complexity-test-harness.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/recursive-prd-processor.py",
+          "matches": 2,
+          "examples": [
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/touchid-integration.py",
+          "matches": 1,
+          "examples": [
+            ".read()"
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/touchid-integration.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/comprehensive-integration-tester.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/touchid-sudo.py",
+          "matches": 2,
+          "examples": [
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/autonomous-e2e-tester.py",
+          "matches": 1,
+          "examples": [
+            ".read()"
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/autonomous-e2e-tester.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/claude-flow-integration.py",
+          "matches": 2,
+          "examples": [
+            "json.load(",
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/complexity-cli.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/validate-implementation.py",
+          "matches": 2,
+          "examples": [
+            ".read()",
+            ".read()"
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/validate-implementation.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/intelligent-task-predictor.py",
+          "matches": 4,
+          "examples": [
+            "json.load(",
+            "json.load(",
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/autonomy-validator.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/monitoring/ai_optimization_suite.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/.taskmaster/optimization/pebbling-strategy.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/.taskmaster/optimization/evolution-improver.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/.taskmaster/optimization/sqrt-optimization.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/.taskmaster/optimization/catalytic-planning.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/.taskmaster/optimization/tree-optimization.py",
+          "matches": 1,
+          "examples": [
+            "json.load("
+          ]
+        }
+      ]
+    },
+    "thread_usage": {
+      "patterns": [
+        "threading\\.Thread\\(",
+        "Thread\\(",
+        "ThreadPoolExecutor"
+      ],
+      "description": "Threading usage (check for optimization)",
+      "files": [
+        {
+          "file": "performance_analyzer.py",
+          "matches": 1,
+          "examples": [
+            "threading.Thread("
+          ]
+        },
+        {
+          "file": "performance_analyzer.py",
+          "matches": 1,
+          "examples": [
+            "Thread("
+          ]
+        },
+        {
+          "file": "complexity_dashboard.py",
+          "matches": 1,
+          "examples": [
+            "threading.Thread("
+          ]
+        },
+        {
+          "file": "complexity_dashboard.py",
+          "matches": 1,
+          "examples": [
+            "Thread("
+          ]
+        },
+        {
+          "file": "system_performance_optimizer.py",
+          "matches": 3,
+          "examples": [
+            "ThreadPoolExecutor",
+            "ThreadPoolExecutor",
+            "ThreadPoolExecutor"
+          ]
+        },
+        {
+          "file": "ai_system_optimizer.py",
+          "matches": 1,
+          "examples": [
+            "threading.Thread("
+          ]
+        },
+        {
+          "file": "ai_system_optimizer.py",
+          "matches": 1,
+          "examples": [
+            "Thread("
+          ]
+        },
+        {
+          "file": "simple_performance_analyzer.py",
+          "matches": 1,
+          "examples": [
+            "ThreadPoolExecutor"
+          ]
+        },
+        {
+          "file": "optimization_engine.py",
+          "matches": 1,
+          "examples": [
+            "ThreadPoolExecutor"
+          ]
+        },
+        {
+          "file": "test_complexity_dashboard.py",
+          "matches": 1,
+          "examples": [
+            "threading.Thread("
+          ]
+        },
+        {
+          "file": "test_complexity_dashboard.py",
+          "matches": 2,
+          "examples": [
+            "thread(",
+            "Thread("
+          ]
+        },
+        {
+          "file": "advanced_analytics_dashboard.py",
+          "matches": 2,
+          "examples": [
+            "threading.Thread(",
+            "threading.Thread("
+          ]
+        },
+        {
+          "file": "advanced_analytics_dashboard.py",
+          "matches": 2,
+          "examples": [
+            "Thread(",
+            "Thread("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/ai_system_optimizer.py",
+          "matches": 2,
+          "examples": [
+            "threading.Thread(",
+            "threading.Thread("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/ai_system_optimizer.py",
+          "matches": 2,
+          "examples": [
+            "Thread(",
+            "Thread("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/task-complexity-analyzer.py",
+          "matches": 1,
+          "examples": [
+            "threading.Thread("
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/task-complexity-analyzer.py",
+          "matches": 1,
+          "examples": [
+            "Thread("
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/advanced_validation_suite.py",
+          "matches": 1,
+          "examples": [
+            "ThreadPoolExecutor"
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/comprehensive-implementation-validation-suite.py",
+          "matches": 1,
+          "examples": [
+            "threading.Thread("
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/comprehensive-implementation-validation-suite.py",
+          "matches": 1,
+          "examples": [
+            "Thread("
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/comprehensive-implementation-validation-suite.py",
+          "matches": 1,
+          "examples": [
+            "ThreadPoolExecutor"
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/advanced-project-plan-validation.py",
+          "matches": 1,
+          "examples": [
+            "ThreadPoolExecutor"
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/space-complexity-test-harness.py",
+          "matches": 1,
+          "examples": [
+            "threading.Thread("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/space-complexity-test-harness.py",
+          "matches": 1,
+          "examples": [
+            "Thread("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/e2e-testing-framework.py",
+          "matches": 1,
+          "examples": [
+            "threading.Thread("
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/e2e-testing-framework.py",
+          "matches": 1,
+          "examples": [
+            "Thread("
+          ]
+        },
+        {
+          "file": ".taskmaster/monitoring/ai_optimization_suite.py",
+          "matches": 1,
+          "examples": [
+            "threading.Thread("
+          ]
+        },
+        {
+          "file": ".taskmaster/monitoring/ai_optimization_suite.py",
+          "matches": 1,
+          "examples": [
+            "Thread("
+          ]
+        },
+        {
+          "file": ".taskmaster/monitoring/ai_optimization_suite.py",
+          "matches": 1,
+          "examples": [
+            "ThreadPoolExecutor"
+          ]
+        }
+      ]
+    },
+    "process_usage": {
+      "patterns": [
+        "multiprocessing\\.",
+        "ProcessPoolExecutor",
+        "subprocess\\."
+      ],
+      "description": "Process/subprocess usage",
+      "files": [
+        {
+          "file": "autonomous_workflow_loop.py",
+          "matches": 4,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": "labrys_process_guardian.py",
+          "matches": 2,
+          "examples": [
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": "performance_analyzer.py",
+          "matches": 1,
+          "examples": [
+            "subprocess."
+          ]
+        },
+        {
+          "file": "system_performance_optimizer.py",
+          "matches": 3,
+          "examples": [
+            "ProcessPoolExecutor",
+            "ProcessPoolExecutor",
+            "ProcessPoolExecutor"
+          ]
+        },
+        {
+          "file": "ai_system_optimizer.py",
+          "matches": 7,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": "autonomous_research_integration.py",
+          "matches": 9,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": "simple_performance_analyzer.py",
+          "matches": 1,
+          "examples": [
+            "ProcessPoolExecutor"
+          ]
+        },
+        {
+          "file": "simple_performance_analyzer.py",
+          "matches": 2,
+          "examples": [
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": "taskmaster_labrys.py",
+          "matches": 2,
+          "examples": [
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": "hardcoded_research_workflow.py",
+          "matches": 9,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": "system_fixes_and_improvements.py",
+          "matches": 2,
+          "examples": [
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": "optimization_engine.py",
+          "matches": 1,
+          "examples": [
+            "ProcessPoolExecutor"
+          ]
+        },
+        {
+          "file": "labrys_ghostty_monitor.py",
+          "matches": 4,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": "task_complexity_analyzer.py",
+          "matches": 2,
+          "examples": [
+            "multiprocessing.",
+            "multiprocessing."
+          ]
+        },
+        {
+          "file": "advanced_analytics_dashboard.py",
+          "matches": 1,
+          "examples": [
+            "subprocess."
+          ]
+        },
+        {
+          "file": "touchid_integration.py",
+          "matches": 20,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": "install_dependencies.py",
+          "matches": 2,
+          "examples": [
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": "labrys_deployment_system.py",
+          "matches": 9,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": "test_comprehensive_system_validation.py",
+          "matches": 5,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": "test_autonomous_workflow_comprehensive.py",
+          "matches": 2,
+          "examples": [
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/autonomous-workflow-loop.py",
+          "matches": 7,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/comprehensive-project-validation.py",
+          "matches": 5,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/integration/comprehensive_integration_framework.py",
+          "matches": 8,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/ai_system_optimizer.py",
+          "matches": 3,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/autonomous-system-validator.py",
+          "matches": 1,
+          "examples": [
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/autonomy-scorer.py",
+          "matches": 3,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/production_readiness_validator.py",
+          "matches": 1,
+          "examples": [
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/simple_system_optimizer.py",
+          "matches": 5,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/optimization/async-task-executor.py",
+          "matches": 6,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/assessment/project_plan_assessment.py",
+          "matches": 4,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/advanced_validation_suite.py",
+          "matches": 5,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/comprehensive-implementation-validation-suite.py",
+          "matches": 3,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/end_to_end_framework.py",
+          "matches": 12,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/advanced-project-plan-validation.py",
+          "matches": 4,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/testing/project-conformance-validation.py",
+          "matches": 18,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/workflow/autonomous_research_loop.py",
+          "matches": 4,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/touchid-integration.py",
+          "matches": 9,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/autonomous-workflow-loop.py",
+          "matches": 18,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/comprehensive-integration-tester.py",
+          "matches": 2,
+          "examples": [
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/touchid-sudo.py",
+          "matches": 13,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/comprehensive-integration-test-suite.py",
+          "matches": 2,
+          "examples": [
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/autonomous-e2e-tester.py",
+          "matches": 15,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/python-import-validation.py",
+          "matches": 2,
+          "examples": [
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/end-to-end-testing-framework.py",
+          "matches": 2,
+          "examples": [
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/scripts/e2e-testing-framework.py",
+          "matches": 4,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        },
+        {
+          "file": ".taskmaster/monitoring/ai_optimization_suite.py",
+          "matches": 3,
+          "examples": [
+            "subprocess.",
+            "subprocess.",
+            "subprocess."
+          ]
+        }
+      ]
+    }
+  },
+  "imports": {
+    "heavy_imports": [
+      {
+        "file": "ai_system_optimizer.py",
+        "line": 15,
+        "import": "import numpy as np",
+        "library": "numpy"
+      },
+      {
+        "file": "ai_system_optimizer.py",
+        "line": 16,
+        "import": "import pandas as pd",
+        "library": "pandas"
+      },
+      {
+        "file": "ai_system_optimizer.py",
+        "line": 27,
+        "import": "from sklearn.ensemble import IsolationForest, RandomForestRegressor",
+        "library": "sklearn"
+      },
+      {
+        "file": "ai_system_optimizer.py",
+        "line": 28,
+        "import": "from sklearn.preprocessing import StandardScaler",
+        "library": "sklearn"
+      },
+      {
+        "file": "ai_system_optimizer.py",
+        "line": 29,
+        "import": "from sklearn.model_selection import train_test_split",
+        "library": "sklearn"
+      },
+      {
+        "file": "intelligent_task_predictor.py",
+        "line": 29,
+        "import": "import numpy as np",
+        "library": "numpy"
+      },
+      {
+        "file": "intelligent_task_predictor.py",
+        "line": 30,
+        "import": "import pandas as pd",
+        "library": "pandas"
+      },
+      {
+        "file": "intelligent_task_predictor.py",
+        "line": 31,
+        "import": "from sklearn.feature_extraction.text import TfidfVectorizer",
+        "library": "sklearn"
+      },
+      {
+        "file": "intelligent_task_predictor.py",
+        "line": 32,
+        "import": "from sklearn.ensemble import RandomForestClassifier",
+        "library": "sklearn"
+      },
+      {
+        "file": "intelligent_task_predictor.py",
+        "line": 33,
+        "import": "from sklearn.cluster import KMeans",
+        "library": "sklearn"
+      },
+      {
+        "file": "intelligent_task_predictor.py",
+        "line": 34,
+        "import": "from sklearn.preprocessing import StandardScaler",
+        "library": "sklearn"
+      },
+      {
+        "file": "intelligent_task_predictor.py",
+        "line": 35,
+        "import": "from sklearn.model_selection import train_test_split",
+        "library": "sklearn"
+      },
+      {
+        "file": "intelligent_task_predictor.py",
+        "line": 36,
+        "import": "from sklearn.metrics import accuracy_score",
+        "library": "sklearn"
+      },
+      {
+        "file": ".taskmaster/intelligence/task_prediction_engine.py",
+        "line": 18,
+        "import": "import numpy as np",
+        "library": "numpy"
+      },
+      {
+        "file": ".taskmaster/intelligence/task_prediction_engine.py",
+        "line": 19,
+        "import": "import pandas as pd",
+        "library": "pandas"
+      },
+      {
+        "file": ".taskmaster/intelligence/task_prediction_engine.py",
+        "line": 20,
+        "import": "from sklearn.feature_extraction.text import TfidfVectorizer",
+        "library": "sklearn"
+      },
+      {
+        "file": ".taskmaster/intelligence/task_prediction_engine.py",
+        "line": 21,
+        "import": "from sklearn.cluster import KMeans",
+        "library": "sklearn"
+      },
+      {
+        "file": ".taskmaster/intelligence/task_prediction_engine.py",
+        "line": 22,
+        "import": "from sklearn.ensemble import RandomForestClassifier, GradientBoostingRegressor",
+        "library": "sklearn"
+      },
+      {
+        "file": ".taskmaster/intelligence/task_prediction_engine.py",
+        "line": 23,
+        "import": "from sklearn.neural_network import MLPClassifier",
+        "library": "sklearn"
+      },
+      {
+        "file": ".taskmaster/intelligence/task_prediction_engine.py",
+        "line": 24,
+        "import": "from sklearn.preprocessing import StandardScaler, LabelEncoder",
+        "library": "sklearn"
+      },
+      {
+        "file": ".taskmaster/intelligence/task_prediction_engine.py",
+        "line": 25,
+        "import": "from sklearn.model_selection import train_test_split",
+        "library": "sklearn"
+      },
+      {
+        "file": ".taskmaster/intelligence/task_prediction_engine.py",
+        "line": 26,
+        "import": "from sklearn.metrics import accuracy_score, mean_squared_error",
+        "library": "sklearn"
+      },
+      {
+        "file": ".taskmaster/complexity-validation/space-profiler.py",
+        "line": 17,
+        "import": "import matplotlib.pyplot as plt",
+        "library": "matplotlib"
+      },
+      {
+        "file": ".taskmaster/complexity-validation/space-profiler.py",
+        "line": 18,
+        "import": "import numpy as np",
+        "library": "numpy"
+      },
+      {
+        "file": ".taskmaster/complexity-validation/space-profiler.py",
+        "line": 19,
+        "import": "from scipy import stats",
+        "library": "scipy"
+      },
+      {
+        "file": ".taskmaster/complexity-validation/task_complexity_analyzer.py",
+        "line": 11,
+        "import": "import numpy as np",
+        "library": "numpy"
+      },
+      {
+        "file": ".taskmaster/integration/system_verification_framework.py",
+        "line": 22,
+        "import": "import numpy as np",
+        "library": "numpy"
+      },
+      {
+        "file": ".taskmaster/optimization/ai_system_optimizer.py",
+        "line": 11,
+        "import": "import numpy as np",
+        "library": "numpy"
+      },
+      {
+        "file": ".taskmaster/optimization/task-complexity-analyzer.py",
+        "line": 14,
+        "import": "import numpy as np",
+        "library": "numpy"
+      },
+      {
+        "file": ".taskmaster/scripts/space-complexity-test-harness.py",
+        "line": 14,
+        "import": "import numpy as np",
+        "library": "numpy"
+      },
+      {
+        "file": ".taskmaster/scripts/space-complexity-test-harness.py",
+        "line": 15,
+        "import": "import matplotlib.pyplot as plt",
+        "library": "matplotlib"
+      },
+      {
+        "file": ".taskmaster/scripts/space-complexity-validator.py",
+        "line": 15,
+        "import": "import numpy as np",
+        "library": "numpy"
+      },
+      {
+        "file": ".taskmaster/scripts/space-complexity-validator.py",
+        "line": 16,
+        "import": "import matplotlib.pyplot as plt",
+        "library": "matplotlib"
+      },
+      {
+        "file": ".taskmaster/scripts/space-complexity-validator.py",
+        "line": 19,
+        "import": "from scipy import stats",
+        "library": "scipy"
+      },
+      {
+        "file": ".taskmaster/scripts/space-complexity-validator.py",
+        "line": 20,
+        "import": "from scipy.optimize import curve_fit",
+        "library": "scipy"
+      },
+      {
+        "file": ".taskmaster/scripts/validate-implementation.py",
+        "line": 137,
+        "import": "import numpy, matplotlib, scipy, psutil",
+        "library": "numpy"
+      },
+      {
+        "file": ".taskmaster/scripts/validate-implementation.py",
+        "line": 137,
+        "import": "import numpy, matplotlib, scipy, psutil",
+        "library": "matplotlib"
+      },
+      {
+        "file": ".taskmaster/scripts/validate-implementation.py",
+        "line": 137,
+        "import": "import numpy, matplotlib, scipy, psutil",
+        "library": "scipy"
+      },
+      {
+        "file": ".taskmaster/scripts/intelligent-task-predictor.py",
+        "line": 25,
+        "import": "import numpy as np",
+        "library": "numpy"
+      },
+      {
+        "file": ".taskmaster/scripts/intelligent-task-predictor.py",
+        "line": 26,
+        "import": "from sklearn.feature_extraction.text import TfidfVectorizer",
+        "library": "sklearn"
+      },
+      {
+        "file": ".taskmaster/scripts/intelligent-task-predictor.py",
+        "line": 27,
+        "import": "from sklearn.cluster import KMeans",
+        "library": "sklearn"
+      },
+      {
+        "file": ".taskmaster/scripts/intelligent-task-predictor.py",
+        "line": 28,
+        "import": "from sklearn.ensemble import RandomForestClassifier",
+        "library": "sklearn"
+      },
+      {
+        "file": ".taskmaster/scripts/intelligent-task-predictor.py",
+        "line": 29,
+        "import": "from sklearn.linear_model import LinearRegression",
+        "library": "sklearn"
+      },
+      {
+        "file": ".taskmaster/scripts/intelligent-task-predictor.py",
+        "line": 30,
+        "import": "from sklearn.metrics.pairwise import cosine_similarity",
+        "library": "sklearn"
+      },
+      {
+        "file": ".taskmaster/scripts/intelligent-task-predictor.py",
+        "line": 31,
+        "import": "from sklearn.model_selection import train_test_split",
+        "library": "sklearn"
+      },
+      {
+        "file": ".taskmaster/scripts/intelligent-task-predictor.py",
+        "line": 32,
+        "import": "from sklearn.preprocessing import StandardScaler",
+        "library": "sklearn"
+      },
+      {
+        "file": ".taskmaster/monitoring/ai_optimization_suite.py",
+        "line": 14,
+        "import": "import numpy as np",
+        "library": "numpy"
+      },
+      {
+        "file": ".taskmaster/monitoring/ai_optimization_suite.py",
+        "line": 15,
+        "import": "import pandas as pd",
+        "library": "pandas"
+      },
+      {
+        "file": ".taskmaster/monitoring/ai_optimization_suite.py",
+        "line": 22,
+        "import": "from sklearn.ensemble import IsolationForest",
+        "library": "sklearn"
+      },
+      {
+        "file": ".taskmaster/monitoring/ai_optimization_suite.py",
+        "line": 23,
+        "import": "from sklearn.preprocessing import StandardScaler",
+        "library": "sklearn"
+      },
+      {
+        "file": ".taskmaster/monitoring/ai_optimization_suite.py",
+        "line": 24,
+        "import": "from sklearn.model_selection import train_test_split",
+        "library": "sklearn"
+      }
+    ],
+    "unused_imports": [],
+    "import_patterns": {
+      "direct_import": 890,
+      "from_import": 487
+    },
+    "recommendations": [
+      "Consider lazy loading for heavy libraries",
+      "Move heavy imports inside functions if not used globally"
+    ]
+  },
+  "task_master": {
+    "task_files_found": true,
+    "task_count": 0,
+    "large_tasks": [],
+    "complexity_distribution": {
+      "low": 0,
+      "medium": 0,
+      "high": 0
+    },
+    "recommendations": []
+  },
+  "github_actions": {
+    "workflow_files": [
+      {
+        "file": ".github/workflows/continuous-integration.yml",
+        "jobs": 95,
+        "steps": 18,
+        "has_caching": true,
+        "has_matrix": false,
+        "has_parallel": true,
+        "estimated_runtime_minutes": 36
+      },
+      {
+        "file": ".github/workflows/claude-task-execution.yml",
+        "jobs": 119,
+        "steps": 22,
+        "has_caching": false,
+        "has_matrix": true,
+        "has_parallel": true,
+        "estimated_runtime_minutes": 44
+      },
+      {
+        "file": ".github/workflows/unified-development-acceleration.yml",
+        "jobs": 146,
+        "steps": 32,
+        "has_caching": true,
+        "has_matrix": true,
+        "has_parallel": true,
+        "estimated_runtime_minutes": 64
+      },
+      {
+        "file": ".github/workflows/results-aggregation.yml",
+        "jobs": 61,
+        "steps": 10,
+        "has_caching": false,
+        "has_matrix": false,
+        "has_parallel": true,
+        "estimated_runtime_minutes": 20
+      },
+      {
+        "file": ".github/workflows/scale-runners.yml",
+        "jobs": 71,
+        "steps": 6,
+        "has_caching": false,
+        "has_matrix": false,
+        "has_parallel": true,
+        "estimated_runtime_minutes": 12
+      },
+      {
+        "file": ".github/workflows/github-pull-assessment.yml",
+        "jobs": 86,
+        "steps": 16,
+        "has_caching": true,
+        "has_matrix": false,
+        "has_parallel": true,
+        "estimated_runtime_minutes": 32
+      }
+    ],
+    "total_jobs": 578,
+    "total_steps": 104,
+    "optimization_opportunities": [
+      "continuous-integration.yml: Consider matrix builds",
+      "claude-task-execution.yml: Add dependency caching",
+      "results-aggregation.yml: Add dependency caching",
+      "scale-runners.yml: Add dependency caching",
+      "github-pull-assessment.yml: Consider matrix builds"
+    ]
+  },
+  "system_info": {
+    "python_version": "3.13.5 (main, Jun 11 2025, 15:36:57) [Clang 17.0.0 (clang-1700.0.13.3)]",
+    "platform": "darwin",
+    "cpu_count": 11,
+    "current_directory": "/Users/anam/archive",
+    "environment_variables": {
+      "PATH": "/Users/anam/.deno/bin:/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/bin:/Users/angusm/.cargo/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin...",
+      "PYTHONPATH": "",
+      "HOME": "/Users/anam"
+    },
+    "memory_info": "Available (vm_stat output truncated)"
+  },
+  "recommendations": [
+    "\ud83d\udd27 Consider splitting large files into smaller modules",
+    "\u26a1 Replace blocking calls with async alternatives (time.sleep, requests)",
+    "\ud83d\udd04 Optimize loop patterns - consider generators and vectorization",
+    "\ud83d\udcbe Implement streaming/chunked processing for large data operations",
+    "\ud83d\udce6 Implement lazy loading for heavy libraries",
+    "\ud83d\ude80 Optimize GitHub Actions workflows with caching and parallelization",
+    "\ud83c\udfaf Implement performance monitoring decorators",
+    "\ud83d\uddc4\ufe0f Add intelligent caching for expensive operations",
+    "\ud83e\uddf5 Use thread/process pools for concurrent execution",
+    "\ud83d\udcca Add performance profiling to identify bottlenecks",
+    "\ud83d\udd0d Implement connection pooling for external services",
+    "\u26a1 Use batch processing for similar operations",
+    "\ud83c\udf9b\ufe0f Optimize garbage collection settings",
+    "\ud83d\udcc8 Add real-time performance monitoring"
+  ],
+  "metadata": {
+    "analysis_time": 2.457247018814087,
+    "timestamp": 1752171887.692214,
+    "analyzer_version": "1.0.0"
+  }
+}

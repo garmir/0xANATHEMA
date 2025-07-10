@@ -215,8 +215,62 @@
       "reuse_count": 0,
       "data_type": "analysis",
       "is_locked": false
+    },
+    {
+      "id": "f4dd3ed2-ba5e-4dec-a2a6-e03e8854529b",
+      "size": 1048576,
+      "content_hash": "0940955da34fca6c18051a4e13a3bd6061868f314f1036c4c9778ce895d15a9b",
+      "last_used": 1752171040.9092312,
+      "reuse_count": 0,
+      "data_type": "optimization",
+      "is_locked": false
+    },
+    {
+      "id": "7ca775cb-31c2-41f2-8e36-e44109db45d4",
+      "size": 2097152,
+      "content_hash": "2f6aa2d857c24428a0abfc8fa07152ded899545bc250e28503cb77efe0ff21bd",
+      "last_used": 1752171041.438783,
+      "reuse_count": 1,
+      "data_type": "analysis",
+      "is_locked": false
+    },
+    {
+      "id": "dbf86ac9-b386-4dbd-8eea-39fc3c81ae43",
+      "size": 3145728,
+      "content_hash": "3827424326db626c66bf002a3c0de557651326b1a44d6e0c75b20427bdacb276",
+      "last_used": 1752171041.544252,
+      "reuse_count": 1,
+      "data_type": "validation",
+      "is_locked": false
+    },
+    {
+      "id": "fd09dbcf-0269-4580-8612-996d31430ea4",
+      "size": 4194304,
+      "content_hash": "460674dc9fc4d7801241218585fd8a25a5122d44ebe7eb0b05790028fdae12d7",
+      "last_used": 1752171041.649007,
+      "reuse_count": 1,
+      "data_type": "generation",
+      "is_locked": false
+    },
+    {
+      "id": "14dc75d6-de19-492f-af63-44e50b6ddadf",
+      "size": 5242880,
+      "content_hash": "5a8ef8bd1ba654634479771c673c38d135227431e0cb94714c6a37d400cdafb3",
+      "last_used": 1752171041.7540941,
+      "reuse_count": 1,
+      "data_type": "optimization",
+      "is_locked": false
+    },
+    {
+      "id": "faa33054-d15f-4825-be33-fb8b26f4ee58",
+      "size": 5242880,
+      "content_hash": "4f20858e345de0ef1e7748eb3e0e9c44617c24c44e2630bc369d85c20879011c",
+      "last_used": 1752171041.859652,
+      "reuse_count": 0,
+      "data_type": "analysis",
+      "is_locked": false
     }
   ],
   "state": "active",
-  "timestamp": 1752169896.6394591
+  "timestamp": 1752171041.970929
 }

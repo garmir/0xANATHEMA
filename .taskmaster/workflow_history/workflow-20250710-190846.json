@@ -1,0 +1,11 @@
+{
+  "timestamp": "2025-07-10T19:08:46.807724",
+  "research_query": "Invalid test",
+  "research_source": "invalid-test",
+  "research_confidence": 0.0,
+  "workflow_success": false,
+  "total_steps": 0,
+  "completed_steps": 0,
+  "failed_steps": 0,
+  "execution_details": []
+}
