@@ -1,0 +1,122 @@
+name: Task Master AI - CI/CD Pipeline
+'on':
+  push:
+    branches:
+    - main
+    - develop
+  pull_request:
+    branches:
+    - main
+  workflow_dispatch: {}
+env:
+  NODE_VERSION: 18.x
+  PYTHON_VERSION: '3.9'
+  DOCKER_REGISTRY: ghcr.io
+  IMAGE_NAME: taskmaster-ai
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version:
+        - '3.9'
+        - '3.10'
+        - '3.11'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: pip install -r requirements.txt && pip install -r requirements-dev.txt
+    - name: Run linting
+      run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+    - name: Run type checking
+      run: mypy .
+    - name: Run tests
+      run: python -m pytest tests/ --cov=./ --cov-report=xml
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Run security scan
+      uses: securecodewarrior/github-action-add-sarif@v1
+      with:
+        sarif-file: security-scan-results.sarif
+    - name: Run dependency vulnerability check
+      run: pip install safety && safety check
+  build:
+    runs-on: ubuntu-latest
+    needs:
+    - test
+    - security-scan
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+    - name: Login to Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.DOCKER_REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/${{ env.IMAGE_NAME
+          }}:${{ github.sha }},${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/${{
+          env.IMAGE_NAME }}:latest
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+  deploy-dev:
+    runs-on: ubuntu-latest
+    needs:
+    - build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+    environment:
+      name: development
+      url: https://dev.taskmaster.ai
+    steps:
+    - name: Deploy to development
+      run: echo 'Deploying to development environment'
+    - name: Run smoke tests
+      run: curl -f https://dev.taskmaster.ai/health || exit 1
+  deploy-staging:
+    runs-on: ubuntu-latest
+    needs:
+    - build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    environment:
+      name: staging
+      url: https://staging.taskmaster.ai
+    steps:
+    - name: Deploy to staging
+      run: echo 'Deploying to staging environment'
+    - name: Run integration tests
+      run: python -m pytest tests/integration/ --env=staging
+  deploy-production:
+    runs-on: ubuntu-latest
+    needs:
+    - deploy-staging
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    environment:
+      name: production
+      url: https://taskmaster.ai
+    steps:
+    - name: Deploy to production (Blue-Green)
+      run: echo 'Deploying to production with blue-green strategy'
+    - name: Run production health checks
+      run: curl -f https://taskmaster.ai/health || exit 1
+    - name: Complete blue-green switch
+      run: echo 'Switching traffic to new deployment'

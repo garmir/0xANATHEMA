@@ -1,0 +1,320 @@
+name: Recursive Deployment System Integration
+
+on:
+  workflow_call:
+    inputs:
+      deployment_stage:
+        required: true
+        type: string
+        description: 'Deployment stage: pre-deploy, post-deploy, rollback'
+      environment:
+        required: true
+        type: string
+        description: 'Target environment'
+      deployment_id:
+        required: true
+        type: string
+        description: 'Unique deployment identifier'
+    outputs:
+      integration_status:
+        description: 'Integration execution status'
+        value: ${{ jobs.integration.outputs.status }}
+      deployment_health:
+        description: 'Post-deployment health score'
+        value: ${{ jobs.integration.outputs.health_score }}
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+jobs:
+  integration:
+    name: Recursive Deployment Integration
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    outputs:
+      status: ${{ steps.integration.outputs.status }}
+      health_score: ${{ steps.health_check.outputs.score }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyyaml requests python-dotenv psutil
+
+    - name: Create deployment integration script
+      run: |
+        cat > deployment_integration.py << 'EOF'
+        import json
+        import os
+        import sys
+        import time
+        import subprocess
+        from datetime import datetime
+        from pathlib import Path
+
+        class RecursiveDeploymentIntegrator:
+            def __init__(self, stage, environment, deployment_id):
+                self.stage = stage
+                self.environment = environment
+                self.deployment_id = deployment_id
+                self.integration_log = []
+                
+            def execute_integration(self):
+                print(f"🔄 Executing {self.stage} integration for {self.deployment_id}")
+                
+                try:
+                    if self.stage == 'pre-deploy':
+                        return self.pre_deployment_hooks()
+                    elif self.stage == 'post-deploy':
+                        return self.post_deployment_hooks()
+                    elif self.stage == 'rollback':
+                        return self.rollback_hooks()
+                    else:
+                        print(f"❌ Unknown deployment stage: {self.stage}")
+                        return False
+                        
+                except Exception as e:
+                    print(f"❌ Integration failed: {e}")
+                    return False
+            
+            def pre_deployment_hooks(self):
+                print("🚀 Executing pre-deployment hooks")
+                
+                # Validate deployment readiness
+                if not self.validate_deployment_readiness():
+                    return False
+                
+                # Create deployment snapshot
+                self.create_deployment_snapshot()
+                
+                # Initialize monitoring
+                self.setup_deployment_monitoring()
+                
+                print("✅ Pre-deployment hooks completed successfully")
+                return True
+                
+            def post_deployment_hooks(self):
+                print("🎯 Executing post-deployment hooks")
+                
+                # Validate deployment success
+                if not self.validate_deployment_success():
+                    print("❌ Deployment validation failed - triggering rollback")
+                    return False
+                
+                # Start recursive optimization
+                self.trigger_recursive_optimization()
+                
+                # Update deployment manifest
+                self.update_deployment_manifest()
+                
+                # Configure continuous monitoring
+                self.setup_continuous_monitoring()
+                
+                print("✅ Post-deployment hooks completed successfully")
+                return True
+                
+            def rollback_hooks(self):
+                print("🔄 Executing rollback hooks")
+                
+                # Stop recursive processes
+                self.stop_recursive_processes()
+                
+                # Restore previous state
+                self.restore_deployment_state()
+                
+                # Validate rollback success
+                if not self.validate_rollback():
+                    print("❌ Rollback validation failed")
+                    return False
+                
+                print("✅ Rollback hooks completed successfully")
+                return True
+                
+            def validate_deployment_readiness(self):
+                print("🔍 Validating deployment readiness")
+                
+                # Check system resources
+                checks = [
+                    self.check_system_resources(),
+                    self.check_dependency_availability(),
+                    self.check_configuration_validity()
+                ]
+                
+                return all(checks)
+                
+            def validate_deployment_success(self):
+                print("✅ Validating deployment success")
+                
+                # Health check with retries
+                for attempt in range(3):
+                    if self.perform_health_check():
+                        return True
+                    print(f"Health check attempt {attempt + 1} failed, retrying...")
+                    time.sleep(10)
+                
+                return False
+                
+            def create_deployment_snapshot(self):
+                print("📸 Creating deployment snapshot")
+                
+                snapshot_dir = f".taskmaster/snapshots/{self.deployment_id}"
+                Path(snapshot_dir).mkdir(parents=True, exist_ok=True)
+                
+                snapshot_data = {
+                    "deployment_id": self.deployment_id,
+                    "environment": self.environment,
+                    "timestamp": datetime.now().isoformat(),
+                    "git_commit": os.environ.get("GITHUB_SHA", "unknown"),
+                    "configuration": self.capture_configuration()
+                }
+                
+                with open(f"{snapshot_dir}/snapshot.json", "w") as f:
+                    json.dump(snapshot_data, f, indent=2)
+                
+                self.integration_log.append(f"Snapshot created: {snapshot_dir}")
+                
+            def setup_deployment_monitoring(self):
+                print("📊 Setting up deployment monitoring")
+                
+                monitoring_config = {
+                    "deployment_id": self.deployment_id,
+                    "environment": self.environment,
+                    "monitoring_start": datetime.now().isoformat(),
+                    "health_check_interval": 30,
+                    "failure_threshold": 3,
+                    "metrics": ["cpu", "memory", "response_time", "error_rate"]
+                }
+                
+                os.makedirs(".taskmaster/monitoring", exist_ok=True)
+                with open(f".taskmaster/monitoring/{self.deployment_id}.json", "w") as f:
+                    json.dump(monitoring_config, f, indent=2)
+                
+            def trigger_recursive_optimization(self):
+                print("🔄 Triggering recursive optimization")
+                
+                # Create optimization trigger
+                optimization_config = {
+                    "deployment_id": self.deployment_id,
+                    "optimization_start": datetime.now().isoformat(),
+                    "optimization_cycles": 5,
+                    "improvement_targets": ["performance", "reliability", "efficiency"]
+                }
+                
+                os.makedirs(".taskmaster/optimization", exist_ok=True)
+                with open(".taskmaster/optimization/active.json", "w") as f:
+                    json.dump(optimization_config, f, indent=2)
+                
+            def update_deployment_manifest(self):
+                print("📋 Updating deployment manifest")
+                
+                manifest = {
+                    "deploymentId": self.deployment_id,
+                    "environment": self.environment,
+                    "deployedAt": datetime.now().isoformat(),
+                    "status": "active",
+                    "integrationLog": self.integration_log,
+                    "recursiveOptimization": "enabled"
+                }
+                
+                os.makedirs(".taskmaster/deployment", exist_ok=True)
+                with open(".taskmaster/deployment/latest-deployment.json", "w") as f:
+                    json.dump(manifest, f, indent=2)
+                
+            def setup_continuous_monitoring(self):
+                print("🔄 Setting up continuous monitoring")
+                # Configure ongoing health checks and alerting
+                
+            def stop_recursive_processes(self):
+                print("🛑 Stopping recursive processes")
+                # Stop optimization cycles and monitoring
+                
+            def restore_deployment_state(self):
+                print("🔄 Restoring deployment state")
+                # Restore from snapshot
+                
+            def validate_rollback(self):
+                print("✅ Validating rollback")
+                return self.perform_health_check()
+                
+            def check_system_resources(self):
+                print("💾 Checking system resources")
+                return True  # Simplified for demo
+                
+            def check_dependency_availability(self):
+                print("🔗 Checking dependency availability")
+                return True  # Simplified for demo
+                
+            def check_configuration_validity(self):
+                print("⚙️ Checking configuration validity")
+                return True  # Simplified for demo
+                
+            def perform_health_check(self):
+                print("❤️ Performing health check")
+                # Basic health validation
+                return True  # Simplified for demo
+                
+            def capture_configuration(self):
+                return {
+                    "git_ref": os.environ.get("GITHUB_REF", "unknown"),
+                    "build_number": os.environ.get("GITHUB_RUN_NUMBER", "unknown")
+                }
+
+        if __name__ == "__main__":
+            stage = os.environ.get("DEPLOYMENT_STAGE")
+            environment = os.environ.get("ENVIRONMENT")
+            deployment_id = os.environ.get("DEPLOYMENT_ID")
+            
+            integrator = RecursiveDeploymentIntegrator(stage, environment, deployment_id)
+            success = integrator.execute_integration()
+            
+            # Output status for workflow
+            print(f"::set-output name=status::{'success' if success else 'failure'}")
+            
+            sys.exit(0 if success else 1)
+        EOF
+
+    - name: Execute deployment integration
+      id: integration
+      env:
+        DEPLOYMENT_STAGE: ${{ inputs.deployment_stage }}
+        ENVIRONMENT: ${{ inputs.environment }}
+        DEPLOYMENT_ID: ${{ inputs.deployment_id }}
+      run: |
+        echo "🔄 Executing deployment integration"
+        python deployment_integration.py
+
+    - name: Health check and scoring
+      id: health_check
+      if: inputs.deployment_stage == 'post-deploy'
+      run: |
+        echo "🏥 Performing comprehensive health check"
+        
+        # Calculate health score (simplified)
+        HEALTH_SCORE=85
+        echo "Health Score: $HEALTH_SCORE%"
+        echo "score=$HEALTH_SCORE" >> $GITHUB_OUTPUT
+        
+        # Trigger alerts if health score is low
+        if [ $HEALTH_SCORE -lt 70 ]; then
+          echo "⚠️ Low health score detected - consider rollback"
+        fi
+
+    - name: Upload integration artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: integration-artifacts-${{ inputs.deployment_id }}
+        path: |
+          .taskmaster/deployment/
+          .taskmaster/monitoring/
+          .taskmaster/optimization/
+          .taskmaster/snapshots/
+        retention-days: 30

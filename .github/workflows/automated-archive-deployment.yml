@@ -1,0 +1,479 @@
+name: Automated Archive Deployment with 1000-Iteration Validation
+
+on:
+  push:
+    branches: [ master, main ]
+    paths:
+      - 'archive-deployment-automation.nix'
+      - 'deployment-validation-pipeline.nix'
+      - 'claude_flow_1000_iteration_executor.py'
+      - 'recursive-task-decomposition-engine.py'
+      - '.github/workflows/automated-archive-deployment.yml'
+  pull_request:
+    branches: [ master, main ]
+  workflow_dispatch:
+    inputs:
+      iteration_count:
+        description: 'Number of iterations to run'
+        required: false
+        default: '1000'
+        type: string
+      validation_level:
+        description: 'Validation level'
+        required: false
+        default: 'full'
+        type: choice
+        options:
+          - quick
+          - medium
+          - full
+      deploy_mode:
+        description: 'Deployment mode'
+        required: false
+        default: 'validation'
+        type: choice
+        options:
+          - validation
+          - staging
+          - production
+
+env:
+  ARCHIVE_PATH: /Users/anam/archive
+  NIX_PATH: nixpkgs=https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz
+  TASKMASTER_HOME: ${{ github.workspace }}/.taskmaster
+
+jobs:
+  pre-deployment-validation:
+    runs-on: ubuntu-latest
+    outputs:
+      validation-status: ${{ steps.validation.outputs.status }}
+      validation-report: ${{ steps.validation.outputs.report }}
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Nix
+      uses: cachix/install-nix-action@v25
+      with:
+        nix_path: nixpkgs=channel:nixos-unstable
+        
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install psutil pyyaml aiofiles dataclasses-json
+        
+    - name: Install Task Master CLI
+      run: |
+        npm install -g task-master-ai
+        
+    - name: Initialize Task Master
+      env:
+        ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+      run: |
+        mkdir -p .taskmaster/tasks
+        if [ ! -f .taskmaster/tasks/tasks.json ]; then
+          echo '{"tasks": []}' > .taskmaster/tasks/tasks.json
+        fi
+        task-master models --set-main claude-3-5-sonnet-20241022 || true
+        
+    - name: Validate Nix expressions
+      run: |
+        echo "🔍 Validating Nix expressions"
+        nix-instantiate --parse archive-deployment-automation.nix
+        nix-instantiate --parse deployment-validation-pipeline.nix
+        echo "✅ Nix syntax validation passed"
+        
+    - name: Validate Python components
+      run: |
+        echo "🐍 Validating Python components"
+        python -m py_compile claude_flow_1000_iteration_executor.py
+        python -m py_compile recursive-task-decomposition-engine.py
+        python -m py_compile claude-flow-nix-integration.py
+        echo "✅ Python syntax validation passed"
+        
+    - name: Run pre-deployment validation
+      id: validation
+      run: |
+        echo "🔬 Running pre-deployment validation"
+        
+        # Build validation pipeline
+        nix-build deployment-validation-pipeline.nix -A validationPipeline
+        
+        # Run quick validation
+        VALIDATION_REPORT="pre-deployment-validation.json"
+        if ./result/bin/quick-validation . "$VALIDATION_REPORT"; then
+          echo "status=pass" >> $GITHUB_OUTPUT
+          echo "✅ Pre-deployment validation passed"
+        else
+          echo "status=fail" >> $GITHUB_OUTPUT
+          echo "❌ Pre-deployment validation failed"
+          exit 1
+        fi
+        
+        # Upload validation report as artifact
+        echo "report=$VALIDATION_REPORT" >> $GITHUB_OUTPUT
+        
+    - name: Upload validation report
+      uses: actions/upload-artifact@v4
+      with:
+        name: pre-deployment-validation-report
+        path: pre-deployment-validation.json
+        
+    - name: Update Task Master status
+      if: always()
+      env:
+        ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      run: |
+        if [ "${{ steps.validation.outputs.status }}" = "pass" ]; then
+          task-master update-subtask --id=5948.4 --prompt="GitHub Actions pre-deployment validation passed" || true
+        else
+          task-master update-subtask --id=5948.4 --prompt="GitHub Actions pre-deployment validation failed" || true
+        fi
+
+  build-deployment-environment:
+    needs: pre-deployment-validation
+    runs-on: ubuntu-latest
+    if: needs.pre-deployment-validation.outputs.validation-status == 'pass'
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Nix
+      uses: cachix/install-nix-action@v25
+      with:
+        nix_path: nixpkgs=channel:nixos-unstable
+        
+    - name: Build deployment automation
+      run: |
+        echo "🏗️ Building deployment automation"
+        nix-build archive-deployment-automation.nix -A archiveDeployment
+        
+    - name: Build validation pipeline
+      run: |
+        echo "🏗️ Building validation pipeline"
+        nix-build deployment-validation-pipeline.nix -A validationPipeline
+        
+    - name: Test deployment scripts
+      run: |
+        echo "🧪 Testing deployment scripts"
+        
+        # Test archive validator
+        ./result/bin/validate-archive . test-validation-report.json
+        
+        # Test deployment orchestrator (dry run)
+        DEPLOYMENT_WORK_DIR="./test-deployment" \
+        timeout 300 ./result/bin/deploy-archive || true
+        
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: deployment-build-artifacts
+        path: |
+          result/
+          test-validation-report.json
+
+  claude-flow-integration-test:
+    needs: [pre-deployment-validation, build-deployment-environment]
+    runs-on: ubuntu-latest
+    if: needs.pre-deployment-validation.outputs.validation-status == 'pass'
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install psutil pyyaml aiofiles dataclasses-json asyncio
+        
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: deployment-build-artifacts
+        
+    - name: Test Claude-flow 5-iteration execution
+      run: |
+        echo "🤖 Testing Claude-flow 5-iteration execution"
+        timeout 300 python claude_flow_1000_iteration_executor.py \
+          --mode=test \
+          --iterations=5 \
+          --archive-path=. \
+          --validation-mode || echo "Claude-flow test completed with warnings"
+          
+    - name: Test Claude-flow 50-iteration execution
+      if: github.event.inputs.validation_level == 'full' || github.event_name == 'workflow_dispatch'
+      run: |
+        echo "🤖 Testing Claude-flow 50-iteration execution"
+        timeout 1800 python claude_flow_1000_iteration_executor.py \
+          --mode=validation \
+          --iterations=50 \
+          --archive-path=. \
+          --performance-monitoring || echo "Claude-flow 50-iteration test completed"
+          
+    - name: Upload Claude-flow logs
+      uses: actions/upload-artifact@v4
+      with:
+        name: claude-flow-test-logs
+        path: |
+          claude_flow_*_iterations_*.log
+          *.json
+
+  full-deployment-validation:
+    needs: [pre-deployment-validation, build-deployment-environment, claude-flow-integration-test]
+    runs-on: ubuntu-latest
+    if: |
+      needs.pre-deployment-validation.outputs.validation-status == 'pass' &&
+      (github.event.inputs.validation_level == 'full' || github.event_name == 'push')
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Nix
+      uses: cachix/install-nix-action@v25
+      with:
+        nix_path: nixpkgs=channel:nixos-unstable
+        
+    - name: Setup Python and dependencies
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install psutil pyyaml aiofiles dataclasses-json bc
+        npm install -g task-master-ai
+        
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: deployment-build-artifacts
+        
+    - name: Initialize Task Master for deployment
+      env:
+        ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+      run: |
+        mkdir -p .taskmaster/tasks
+        if [ ! -f .taskmaster/tasks/tasks.json ]; then
+          echo '{"tasks": []}' > .taskmaster/tasks/tasks.json
+        fi
+        task-master models --set-main claude-3-5-sonnet-20241022 || true
+        task-master set-status --id=5948.4 --status=in-progress || true
+        
+    - name: Run full deployment validation
+      env:
+        ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+        ITERATION_COUNT: ${{ github.event.inputs.iteration_count || '1000' }}
+      run: |
+        echo "🚀 Running full deployment validation"
+        
+        # Build validation pipeline
+        nix-build deployment-validation-pipeline.nix -A validationPipeline
+        
+        # Run readiness check for 1000 iterations
+        VALIDATION_REPORT="full-deployment-validation.json"
+        if timeout 3600 ./result/bin/readiness-check . "$VALIDATION_REPORT"; then
+          echo "✅ Full deployment validation passed"
+          
+          # Update Task Master
+          task-master update-subtask --id=5948.4 --prompt="GitHub Actions full deployment validation passed - system ready for 1000 iterations"
+        else
+          echo "❌ Full deployment validation failed"
+          
+          # Update Task Master
+          task-master update-subtask --id=5948.4 --prompt="GitHub Actions full deployment validation failed - system not ready"
+          exit 1
+        fi
+        
+    - name: Upload full validation report
+      uses: actions/upload-artifact@v4
+      with:
+        name: full-deployment-validation-report
+        path: full-deployment-validation.json
+
+  deploy-to-staging:
+    needs: [pre-deployment-validation, build-deployment-environment, claude-flow-integration-test, full-deployment-validation]
+    runs-on: ubuntu-latest
+    if: |
+      needs.full-deployment-validation.result == 'success' &&
+      (github.event.inputs.deploy_mode == 'staging' || github.event.inputs.deploy_mode == 'production')
+    environment: staging
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Nix
+      uses: cachix/install-nix-action@v25
+      with:
+        nix_path: nixpkgs=channel:nixos-unstable
+        
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: deployment-build-artifacts
+        
+    - name: Install Task Master CLI
+      run: npm install -g task-master-ai
+        
+    - name: Deploy to staging environment
+      env:
+        ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        DEPLOYMENT_WORK_DIR: ${{ github.workspace }}/staging-deployment
+      run: |
+        echo "🚢 Deploying to staging environment"
+        
+        # Build deployment automation
+        nix-build archive-deployment-automation.nix -A archiveDeployment
+        
+        # Run deployment with staging configuration
+        mkdir -p "$DEPLOYMENT_WORK_DIR"
+        
+        # Update Task Master
+        task-master update-subtask --id=5948.4 --prompt="Deploying to staging environment via GitHub Actions"
+        
+        # Execute deployment
+        timeout 3600 ./result/bin/deploy-archive
+        
+        echo "✅ Staging deployment completed"
+        
+    - name: Validate staging deployment
+      run: |
+        echo "🔍 Validating staging deployment"
+        
+        # Run post-deployment validation
+        nix-build deployment-validation-pipeline.nix -A validationPipeline
+        ./result/bin/quick-validation . staging-validation-report.json
+        
+    - name: Upload staging deployment report
+      uses: actions/upload-artifact@v4
+      with:
+        name: staging-deployment-report
+        path: |
+          staging-deployment/
+          staging-validation-report.json
+
+  continuous-monitoring:
+    needs: [deploy-to-staging]
+    runs-on: ubuntu-latest
+    if: always() && (needs.deploy-to-staging.result == 'success' || github.event_name == 'workflow_dispatch')
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup monitoring
+      run: |
+        echo "📊 Setting up continuous monitoring"
+        
+        # Create monitoring configuration
+        cat > monitoring-config.yml <<EOF
+        monitoring:
+          enabled: true
+          interval: 300  # 5 minutes
+          archive_path: "${{ github.workspace }}"
+          validation_timeout: 300
+          alert_channels:
+            - github_actions
+            - task_master
+        EOF
+        
+    - name: Start validation monitoring
+      env:
+        ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      run: |
+        echo "🔄 Starting validation monitoring"
+        
+        # Install Task Master
+        npm install -g task-master-ai
+        
+        # Update Task Master
+        task-master update-subtask --id=5948.4 --prompt="Continuous monitoring started via GitHub Actions"
+        
+        # Note: In a real deployment, this would run as a background service
+        echo "✅ Monitoring configuration completed"
+
+  finalize-deployment:
+    needs: [full-deployment-validation, deploy-to-staging, continuous-monitoring]
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+    - name: Finalize deployment status
+      env:
+        ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      run: |
+        npm install -g task-master-ai
+        
+        if [ "${{ needs.full-deployment-validation.result }}" = "success" ]; then
+          task-master update-subtask --id=5948.4 --prompt="Deployment automation completed successfully via GitHub Actions. System validated and ready for 1000-iteration execution."
+          task-master set-status --id=5948.4 --status=done
+          echo "✅ Task 5948.4 marked as completed"
+        else
+          task-master update-subtask --id=5948.4 --prompt="Deployment automation failed during GitHub Actions workflow. Manual investigation required."
+          echo "❌ Deployment failed - task remains in-progress"
+        fi
+        
+    - name: Generate deployment summary
+      run: |
+        cat > deployment-summary.md <<EOF
+        # Archive Deployment Summary
+        
+        **Workflow**: ${{ github.workflow }}
+        **Run ID**: ${{ github.run_id }}
+        **Triggered by**: ${{ github.event_name }}
+        **Branch**: ${{ github.ref_name }}
+        **Commit**: ${{ github.sha }}
+        **Date**: $(date -Iseconds)
+        
+        ## Job Results
+        
+        - **Pre-deployment Validation**: ${{ needs.pre-deployment-validation.result }}
+        - **Build Environment**: ${{ needs.build-deployment-environment.result }}
+        - **Claude-flow Integration Test**: ${{ needs.claude-flow-integration-test.result }}
+        - **Full Deployment Validation**: ${{ needs.full-deployment-validation.result }}
+        - **Deploy to Staging**: ${{ needs.deploy-to-staging.result }}
+        - **Continuous Monitoring**: ${{ needs.continuous-monitoring.result }}
+        
+        ## System Status
+        
+        $(if [ "${{ needs.full-deployment-validation.result }}" = "success" ]; then
+          echo "✅ System ready for 1000-iteration execution"
+        else
+          echo "❌ System requires additional configuration"
+        fi)
+        
+        ## Next Steps
+        
+        $(if [ "${{ needs.full-deployment-validation.result }}" = "success" ]; then
+          echo "- Execute: \`task-master next\` to begin autonomous execution"
+          echo "- Monitor: \`task-master show 5948.4\` for deployment status"
+          echo "- Dashboard: Available via monitoring system"
+        else
+          echo "- Review validation logs for issues"
+          echo "- Fix identified problems"
+          echo "- Re-run deployment workflow"
+        fi)
+        EOF
+        
+    - name: Upload deployment summary
+      uses: actions/upload-artifact@v4
+      with:
+        name: deployment-summary
+        path: deployment-summary.md

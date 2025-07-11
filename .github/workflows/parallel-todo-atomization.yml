@@ -169,7 +169,8 @@ jobs:
               print(f"Recommended depth: {metrics['recommended_depth']}")
               
               # Output for GitHub Actions
-              print(f"::set-output name=metrics::{json.dumps(metrics)}")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"metrics={json.dumps(metrics)}\n"))
 
           if __name__ == "__main__":
               main()
@@ -327,8 +328,10 @@ jobs:
               
               # Output for GitHub Actions
               matrix_json = json.dumps(matrix)
-              print(f"::set-output name=matrix::{matrix_json}")
-              print(f"::set-output name=total::{total}")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"matrix={matrix_json}\n"))
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"total={total}\n"))
 
           if __name__ == "__main__":
               main()
@@ -790,8 +793,10 @@ Please implement this atomic task with careful attention to code quality and com
               
               # Output for GitHub Actions
               prompts_json = json.dumps(implementation_prompts[:50])  # Limit for output size
-              print(f"::set-output name=prompts::{prompts_json}")
-              print(f"::set-output name=count::{len(implementation_prompts)}")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"prompts={prompts_json}\n"))
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"count={len(implementation_prompts)}\n"))
 
           if __name__ == "__main__":
               main()

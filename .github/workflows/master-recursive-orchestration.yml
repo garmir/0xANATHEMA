@@ -165,11 +165,16 @@ jobs:
               
               # Output for GitHub Actions
               plan_json = json.dumps(plan)
-              print(f"::set-output name=plan::{plan_json}")
-              print(f"::set-output name=should_validate::{plan['phases']['validation']}")
-              print(f"::set-output name=should_research::{plan['phases']['research']}")
-              print(f"::set-output name=should_implement::{plan['phases']['implementation']}")
-              print(f"::set-output name=pipeline_id::{plan['pipeline_id']}")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"plan={plan_json}\n"))
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"should_validate={plan['phases']['validation']}\n"))
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"should_research={plan['phases']['research']}\n"))
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"should_implement={plan['phases']['implementation']}\n"))
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"pipeline_id={plan['pipeline_id']}\n"))
 
           if __name__ == "__main__":
               main()
@@ -437,7 +442,8 @@ jobs:
               
               # Output for GitHub Actions
               results_json = json.dumps(results)
-              print(f"::set-output name=results::{results_json}")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"results={results_json}\n"))
 
           if __name__ == "__main__":
               main()
@@ -710,8 +716,10 @@ jobs:
               
               # Output for GitHub Actions
               status = 'success' if results['overall_metrics']['overall_success_rate'] > 0.7 else 'needs_review'
-              print(f"::set-output name=status::{status}")
-              print(f"::set-output name=auto_merge_eligible::{results['auto_merge_decision']['eligible']}")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"status={status}\n"))
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"auto_merge_eligible={results['auto_merge_decision']['eligible']}\n"))
 
           if __name__ == "__main__":
               main()

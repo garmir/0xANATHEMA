@@ -195,7 +195,8 @@ jobs:
               print(f"Independent prompts: {dependency_analysis['independent_prompts']}")
               
               # Output for GitHub Actions
-              print(f"::set-output name=graph::{json.dumps(dependency_analysis)}")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"graph={json.dumps(dependency_analysis)}\n"))
 
           if __name__ == "__main__":
               main()
@@ -314,7 +315,8 @@ jobs:
               print(f"Estimated duration: {strategy['estimated_duration_minutes']:.1f} minutes")
               
               # Output for GitHub Actions
-              print(f"::set-output name=strategy::{json.dumps(strategy)}")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"strategy={json.dumps(strategy)}\n"))
 
           if __name__ == "__main__":
               main()
@@ -376,7 +378,8 @@ jobs:
               
               # Output for GitHub Actions
               matrix_json = json.dumps(matrix)
-              print(f"::set-output name=matrix::{matrix_json}")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"matrix={matrix_json}\n"))
 
           if __name__ == "__main__":
               main()
@@ -408,9 +411,12 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install --upgrade pip
-          pip install anthropic openai httpx aiofiles
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          python -m pip install --upgrade pip
+        pip install --upgrade pip
+          python -m pip install --upgrade pip
+        pip install anthropic openai httpx aiofiles
+          if [ -f requirements.txt ]; then python -m pip install --upgrade pip
+        pip install -r requirements.txt; fi
 
       - name: Execute Implementation Prompts
         id: implement
@@ -792,8 +798,10 @@ This implementation pipeline:
               print(f"Tests added: {aggregated_results['overall_summary']['tests_added']}")
               
               # Output for GitHub Actions
-              print(f"::set-output name=success_rate::{aggregated_results['success_rate']}")
-              print(f"::set-output name=total_implementations::{aggregated_results['total_prompts']}")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"success_rate={aggregated_results['success_rate']}\n"))
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"total_implementations={aggregated_results['total_prompts']}\n"))
 
           if __name__ == "__main__":
               main()

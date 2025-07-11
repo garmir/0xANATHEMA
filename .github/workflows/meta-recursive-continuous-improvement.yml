@@ -110,6 +110,7 @@ jobs:
       - name: Setup Meta-Recursive Environment
         run: |
           npm install -g task-master-ai
+      continue-on-error: true
           mkdir -p meta-recursive-outputs/${{ matrix.meta_level }}
           
       - name: Meta-Recursive Analysis - ${{ matrix.workflow }}

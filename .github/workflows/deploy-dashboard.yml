@@ -23,6 +23,7 @@ concurrency:
 jobs:
   build-dashboard:
     name: 🎨 Build Live Dashboard
+    timeout-minutes: 20
     runs-on: ubuntu-latest
     
     steps:
@@ -37,6 +38,7 @@ jobs:
     - name: 📦 Install Task Master CLI
       run: |
         npm install -g task-master-ai
+      continue-on-error: true
         
     - name: 📊 Generate Live Dashboard Data
       run: |

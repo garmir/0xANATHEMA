@@ -1,0 +1,499 @@
+name: Task Master AI - CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop, feature/* ]
+  pull_request:
+    branches: [ main, develop ]
+  release:
+    types: [published]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: taskmaster/ai-optimization
+  DOCKER_BUILDKIT: 1
+
+jobs:
+  # Code Quality and Security
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8 black isort mypy bandit safety
+          pip install -r requirements.txt
+
+      - name: Code formatting check
+        run: |
+          black --check --diff .
+          isort --check-only --diff .
+
+      - name: Linting
+        run: |
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+      - name: Type checking
+        run: mypy . --ignore-missing-imports
+
+      - name: Security scan
+        run: |
+          bandit -r . -f json -o bandit-report.json
+          safety check --json --output safety-report.json
+
+      - name: Upload security reports
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: security-reports
+          path: |
+            bandit-report.json
+            safety-report.json
+
+  # Unit and Integration Tests
+  test:
+    runs-on: ubuntu-latest
+    needs: code-quality
+    strategy:
+      matrix:
+        python-version: [3.9, 3.10, 3.11]
+    
+    services:
+      postgres:
+        image: postgres:13
+        env:
+          POSTGRES_PASSWORD: testpass
+          POSTGRES_DB: taskmaster_test
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      
+      redis:
+        image: redis:7
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest pytest-cov pytest-asyncio pytest-mock
+          pip install -r requirements.txt
+
+      - name: Run unit tests
+        env:
+          DATABASE_URL: postgresql://postgres:testpass@localhost:5432/taskmaster_test
+          REDIS_URL: redis://localhost:6379/0
+        run: |
+          pytest tests/unit --cov=src --cov-report=xml --cov-report=html
+
+      - name: Run integration tests
+        env:
+          DATABASE_URL: postgresql://postgres:testpass@localhost:5432/taskmaster_test
+          REDIS_URL: redis://localhost:6379/0
+        run: |
+          pytest tests/integration --cov=src --cov-append --cov-report=xml
+
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage.xml
+          flags: unittests
+          name: codecov-umbrella
+
+  # Performance and Load Testing
+  performance-test:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install locust pytest-benchmark
+          pip install -r requirements.txt
+
+      - name: Run performance tests
+        run: |
+          python -m pytest tests/performance --benchmark-json=benchmark.json
+
+      - name: Run load tests
+        run: |
+          locust -f tests/load/locustfile.py --headless -u 100 -r 10 -t 60s --host=http://localhost:8000
+
+      - name: Upload performance reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: performance-reports
+          path: |
+            benchmark.json
+            locust_report.html
+
+  # Build and Push Docker Images
+  build:
+    runs-on: ubuntu-latest
+    needs: [code-quality, test]
+    outputs:
+      image: ${{ steps.image.outputs.image }}
+      digest: ${{ steps.build.outputs.digest }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix=sha-{{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+
+      - name: Build and push Docker image
+        id: build
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          platforms: linux/amd64,linux/arm64
+
+      - name: Output image
+        id: image
+        run: echo "image=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.version }}" >> $GITHUB_OUTPUT
+
+  # Container Security Scanning
+  security-scan:
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: ${{ needs.build.outputs.image }}
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+
+      - name: Upload Trivy scan results
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: 'trivy-results.sarif'
+
+  # Deploy to Development Environment
+  deploy-dev:
+    runs-on: ubuntu-latest
+    needs: [build, security-scan]
+    if: github.ref == 'refs/heads/develop'
+    environment: development
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'v1.28.0'
+
+      - name: Update kubeconfig
+        run: |
+          aws eks update-kubeconfig --region us-west-2 --name taskmaster-dev-cluster
+
+      - name: Pre-deployment hooks
+        uses: ./.github/workflows/recursive-deployment-hooks.yml
+        with:
+          deployment_stage: pre-deploy
+          environment: development
+          deployment_id: dev-${{ github.run_number }}
+
+      - name: Deploy to development
+        run: |
+          # Apply Kubernetes manifests
+          kubectl apply -f k8s/development/
+          kubectl set image deployment/taskmaster-api taskmaster-api=${{ needs.build.outputs.image }}
+          kubectl rollout status deployment/taskmaster-api -n development
+          
+          # Run database migrations
+          kubectl run migration-job-$(date +%s) \
+            --image=${{ needs.build.outputs.image }} \
+            --restart=Never \
+            --rm -i --tty \
+            --command -- python manage.py migrate
+
+      - name: Post-deployment hooks
+        uses: ./.github/workflows/recursive-deployment-hooks.yml
+        with:
+          deployment_stage: post-deploy
+          environment: development
+          deployment_id: dev-${{ github.run_number }}
+
+      - name: Run smoke tests
+        run: |
+          kubectl apply -f k8s/tests/smoke-tests.yaml
+          kubectl wait --for=condition=complete job/smoke-tests --timeout=300s
+
+  # Deploy to Staging Environment
+  deploy-staging:
+    runs-on: ubuntu-latest
+    needs: [build, security-scan, deploy-dev]
+    if: github.ref == 'refs/heads/main'
+    environment: staging
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'v1.28.0'
+
+      - name: Update kubeconfig
+        run: |
+          aws eks update-kubeconfig --region us-west-2 --name taskmaster-staging-cluster
+
+      - name: Pre-deployment hooks (Staging)
+        uses: ./.github/workflows/recursive-deployment-hooks.yml
+        with:
+          deployment_stage: pre-deploy
+          environment: staging
+          deployment_id: staging-${{ github.run_number }}
+
+      - name: Blue-Green Deployment to Staging
+        run: |
+          # Create green deployment
+          kubectl apply -f k8s/staging/
+          kubectl set image deployment/taskmaster-api-green taskmaster-api=${{ needs.build.outputs.image }}
+          kubectl rollout status deployment/taskmaster-api-green -n staging
+          
+          # Run health checks
+          kubectl run health-check-$(date +%s) \
+            --image=${{ needs.build.outputs.image }} \
+            --restart=Never \
+            --rm -i --tty \
+            --command -- python health_check.py --target=green
+          
+          # Switch traffic to green
+          kubectl patch service taskmaster-api-service -n staging \
+            -p '{"spec":{"selector":{"version":"green"}}}'
+          
+          # Wait and then remove blue deployment
+          sleep 60
+          kubectl delete deployment taskmaster-api-blue -n staging --ignore-not-found
+
+      - name: Post-deployment hooks (Staging)
+        uses: ./.github/workflows/recursive-deployment-hooks.yml
+        with:
+          deployment_stage: post-deploy
+          environment: staging
+          deployment_id: staging-${{ github.run_number }}
+
+      - name: Run integration tests
+        run: |
+          kubectl apply -f k8s/tests/integration-tests.yaml
+          kubectl wait --for=condition=complete job/integration-tests --timeout=600s
+
+  # Deploy to Production Environment
+  deploy-production:
+    runs-on: ubuntu-latest
+    needs: [build, security-scan, deploy-staging]
+    if: github.event_name == 'release' && github.event.action == 'published'
+    environment: production
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_PROD_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_PROD_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'v1.28.0'
+
+      - name: Update kubeconfig
+        run: |
+          aws eks update-kubeconfig --region us-east-1 --name taskmaster-prod-cluster
+
+      - name: Create backup
+        run: |
+          # Backup current deployment
+          kubectl get deployment taskmaster-api -o yaml > backup-deployment.yaml
+          
+          # Backup database
+          kubectl run db-backup-$(date +%s) \
+            --image=${{ needs.build.outputs.image }} \
+            --restart=Never \
+            --rm -i --tty \
+            --command -- python manage.py backup_db
+
+      - name: Pre-deployment hooks (Production)
+        uses: ./.github/workflows/recursive-deployment-hooks.yml
+        with:
+          deployment_stage: pre-deploy
+          environment: production
+          deployment_id: prod-${{ github.run_number }}
+
+      - name: Blue-Green Production Deployment
+        run: |
+          # Deploy green version
+          kubectl apply -f k8s/production/
+          kubectl set image deployment/taskmaster-api-green taskmaster-api=${{ needs.build.outputs.image }}
+          kubectl rollout status deployment/taskmaster-api-green -n production --timeout=600s
+          
+          # Comprehensive health checks
+          kubectl run production-health-check-$(date +%s) \
+            --image=${{ needs.build.outputs.image }} \
+            --restart=Never \
+            --rm -i --tty \
+            --command -- python health_check.py --target=green --comprehensive
+          
+          # Gradual traffic shift (canary)
+          kubectl patch service taskmaster-api-service -n production \
+            -p '{"spec":{"selector":{"version":"green"}}}'
+          
+          # Monitor for 5 minutes
+          sleep 300
+          
+          # Final switch and cleanup
+          kubectl delete deployment taskmaster-api-blue -n production --ignore-not-found
+
+      - name: Post-deployment hooks (Production)
+        uses: ./.github/workflows/recursive-deployment-hooks.yml
+        with:
+          deployment_stage: post-deploy
+          environment: production
+          deployment_id: prod-${{ github.run_number }}
+
+      - name: Post-deployment verification
+        run: |
+          # Run production verification tests
+          kubectl apply -f k8s/tests/production-verification.yaml
+          kubectl wait --for=condition=complete job/production-verification --timeout=300s
+          
+          # Check metrics and alerts
+          python scripts/verify_production_metrics.py
+
+      - name: Notify deployment success
+        uses: 8398a7/action-slack@v3
+        with:
+          status: success
+          text: "🚀 Task Master AI successfully deployed to production!"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+
+  # Rollback capability
+  rollback:
+    runs-on: ubuntu-latest
+    if: failure() && github.event_name == 'release'
+    needs: [deploy-production]
+    environment: production
+    
+    steps:
+      - name: Emergency rollback
+        run: |
+          kubectl rollout undo deployment/taskmaster-api-green -n production
+          kubectl patch service taskmaster-api-service -n production \
+            -p '{"spec":{"selector":{"version":"blue"}}}'
+
+      - name: Notify rollback
+        uses: 8398a7/action-slack@v3
+        with:
+          status: failure
+          text: "⚠️ Emergency rollback executed for Task Master AI production deployment"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+
+  # Cleanup old images
+  cleanup:
+    runs-on: ubuntu-latest
+    if: always()
+    needs: [deploy-production]
+    
+    steps:
+      - name: Delete old container images
+        uses: actions/delete-package-versions@v4
+        with:
+          package-name: ai-optimization
+          package-type: container
+          min-versions-to-keep: 10
+          delete-only-untagged-versions: true

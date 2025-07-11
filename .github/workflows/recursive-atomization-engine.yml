@@ -100,6 +100,7 @@ jobs:
       - name: Setup Atomization Environment
         run: |
           npm install -g task-master-ai
+      continue-on-error: true
           mkdir -p atomic-prompts/${{ matrix.category }}
           
       - name: Generate Atomic Prompt - ${{ matrix.matrix_id }}

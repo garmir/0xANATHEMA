@@ -57,6 +57,7 @@ jobs:
   # Phase 1: Initialize Recursive CI Environment
   initialize-recursive-ci:
     name: Initialize Recursive CI System
+    timeout-minutes: 25
     runs-on: ubuntu-latest
     outputs:
       ci-session-id: ${{ steps.init.outputs.session_id }}
@@ -124,11 +125,12 @@ jobs:
               print(f"⚡ Parallel Jobs: {execution_plan['configuration']['parallel_jobs']}")
               
               # Output for GitHub Actions
-              print(f"::set-output name=session_id::{session_id}")
-              print(f"::set-output name=execution_plan::{json.dumps(execution_plan)}")
-              print(f"::set-output name=should_validate::{execution_plan['phases']['validation']}")
-              print(f"::set-output name=should_improve::{execution_plan['phases']['improvement']}")
-              print(f"::set-output name=should_monitor::{execution_plan['phases']['monitoring']}")
+              with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                  f.write(f"session_id={session_id}\n")
+                  f.write(f"execution_plan={json.dumps(execution_plan)}\n")
+                  f.write(f"should_validate={execution_plan['phases']['validation']}\n")
+                  f.write(f"should_improve={execution_plan['phases']['improvement']}\n")
+                  f.write(f"should_monitor={execution_plan['phases']['monitoring']}\n")
               
               # Save execution plan
               with open(f'recursive_ci_plan_{session_id}.json', 'w') as f:
@@ -167,6 +169,7 @@ jobs:
     name: Execute Recursive Enhancement Engine
     needs: [initialize-recursive-ci, trigger-master-orchestration]
     if: always() && needs.initialize-recursive-ci.outputs.should-improve == 'true'
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -179,8 +182,10 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install --upgrade pip
-          pip install task-master-ai anthropic perplexity-python
+          python -m pip install --upgrade pip
+        pip install --upgrade pip
+          python -m pip install --upgrade pip
+        pip install task-master-ai anthropic perplexity-python
 
       - name: Execute Recursive Enhancement
         run: |
@@ -326,6 +331,7 @@ jobs:
     name: Monitor Recursive CI Performance
     needs: [initialize-recursive-ci, trigger-master-orchestration, execute-enhancement-engine]
     if: always() && needs.initialize-recursive-ci.outputs.should-monitor == 'true'
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -444,6 +450,7 @@ jobs:
     name: Finalize Recursive CI and Deploy
     needs: [initialize-recursive-ci, trigger-master-orchestration, execute-enhancement-engine, monitor-recursive-ci]
     if: always()
+    timeout-minutes: 20
     runs-on: ubuntu-latest
     outputs:
       ci-status: ${{ steps.finalize.outputs.ci_status }}
@@ -555,8 +562,9 @@ jobs:
                   print(f"📈 Average Success Rate: {avg_success_rate:.1%}")
               
               # Output for GitHub Actions
-              print(f"::set-output name=ci_status::{final_report['ci_summary']['overall_status']}")
-              print(f"::set-output name=deployment_eligible::{final_report['ci_summary']['deployment_eligible']}")
+              with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                  f.write(f"ci_status={final_report['ci_summary']['overall_status']}\n")
+                  f.write(f"deployment_eligible={final_report['ci_summary']['deployment_eligible']}\n")
               
               return final_report
 

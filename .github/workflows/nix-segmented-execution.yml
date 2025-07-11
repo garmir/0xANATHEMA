@@ -1,0 +1,485 @@
+name: Enhanced Nix Segmented Task Execution
+
+on:
+  workflow_dispatch:
+    inputs:
+      task_id:
+        description: 'Task ID to execute'
+        required: true
+        type: string
+      segments:
+        description: 'Comma-separated list of segments to execute'
+        required: true
+        default: 'analysis,validation'
+        type: string
+      resource_profile:
+        description: 'Resource profile for execution'
+        required: false
+        default: 'medium'
+        type: choice
+        options:
+          - small
+          - medium
+          - large
+          - gpu
+      isolation_level:
+        description: 'Isolation level for segments'
+        required: false
+        default: 'moderate'
+        type: choice
+        options:
+          - strict
+          - moderate
+          - containerized
+          - shared
+      parallel_execution:
+        description: 'Execute segments in parallel'
+        required: false
+        default: true
+        type: boolean
+      coordination_mode:
+        description: 'Coordination mode for distributed execution'
+        required: false
+        default: 'github-actions'
+        type: choice
+        options:
+          - github-actions
+          - nats
+          - etcd
+          - redis
+
+  schedule:
+    # Run automatically every 4 hours for continuous optimization
+    - cron: '0 */4 * * *'
+
+  push:
+    branches: [ main, master ]
+    paths:
+      - '.taskmaster/segments/**'
+      - '.taskmaster/config/segmented-execution.json'
+      - 'flake.nix'
+
+env:
+  NIX_CONFIG: "experimental-features = nix-command flakes"
+  TASK_MASTER_CONFIG: ".taskmaster/config/segmented-execution.json"
+
+jobs:
+  prepare-execution:
+    name: Prepare Segmented Execution
+    runs-on: ubuntu-latest
+    outputs:
+      segments: ${{ steps.parse-inputs.outputs.segments }}
+      task_id: ${{ steps.parse-inputs.outputs.task_id }}
+      resource_profile: ${{ steps.parse-inputs.outputs.resource_profile }}
+      isolation_level: ${{ steps.parse-inputs.outputs.isolation_level }}
+      execution_matrix: ${{ steps.create-matrix.outputs.matrix }}
+      coordination_config: ${{ steps.setup-coordination.outputs.config }}
+      
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: Install Nix
+        uses: nixbuild/nix-quick-install-action@v26
+        with:
+          nix_conf: |
+            experimental-features = nix-command flakes
+            substituters = https://cache.nixos.org/ https://nix-community.cachix.org
+            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
+            
+      - name: Parse Inputs
+        id: parse-inputs
+        run: |
+          # Handle scheduled runs vs manual dispatch
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            TASK_ID=$(task-master next --format=json | jq -r '.id // "auto"')
+            SEGMENTS="analysis,validation,optimization,monitoring"
+            RESOURCE_PROFILE="medium"
+            ISOLATION_LEVEL="moderate"
+          else
+            TASK_ID="${{ github.event.inputs.task_id }}"
+            SEGMENTS="${{ github.event.inputs.segments }}"
+            RESOURCE_PROFILE="${{ github.event.inputs.resource_profile }}"
+            ISOLATION_LEVEL="${{ github.event.inputs.isolation_level }}"
+          fi
+          
+          echo "task_id=$TASK_ID" >> $GITHUB_OUTPUT
+          echo "segments=$SEGMENTS" >> $GITHUB_OUTPUT
+          echo "resource_profile=$RESOURCE_PROFILE" >> $GITHUB_OUTPUT
+          echo "isolation_level=$ISOLATION_LEVEL" >> $GITHUB_OUTPUT
+          
+          echo "Execution Configuration:"
+          echo "  Task ID: $TASK_ID"
+          echo "  Segments: $SEGMENTS"
+          echo "  Resource Profile: $RESOURCE_PROFILE"
+          echo "  Isolation Level: $ISOLATION_LEVEL"
+          
+      - name: Create Execution Matrix
+        id: create-matrix
+        run: |
+          # Convert comma-separated segments to JSON array
+          SEGMENTS_ARRAY=$(echo "${{ steps.parse-inputs.outputs.segments }}" | jq -R 'split(",") | map(select(length > 0))')
+          
+          # Create matrix configuration
+          MATRIX=$(cat << EOF
+          {
+            "segment": $SEGMENTS_ARRAY,
+            "include": [
+              {
+                "segment": "analysis",
+                "runner": "ubuntu-latest",
+                "timeout": 30
+              },
+              {
+                "segment": "validation", 
+                "runner": "ubuntu-latest",
+                "timeout": 45
+              },
+              {
+                "segment": "deployment",
+                "runner": "ubuntu-latest-8-cores",
+                "timeout": 60
+              },
+              {
+                "segment": "optimization",
+                "runner": "ubuntu-latest-16-cores",
+                "timeout": 120
+              },
+              {
+                "segment": "monitoring",
+                "runner": "ubuntu-latest",
+                "timeout": 15
+              },
+              {
+                "segment": "research",
+                "runner": "gpu-runner",
+                "timeout": 240
+              },
+              {
+                "segment": "coordination",
+                "runner": "ubuntu-latest",
+                "timeout": 20
+              }
+            ]
+          }
+          EOF
+          )
+          
+          echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
+          echo "Execution Matrix:"
+          echo "$MATRIX" | jq '.'
+          
+      - name: Setup Coordination
+        id: setup-coordination
+        run: |
+          COORDINATION_MODE="${{ github.event.inputs.coordination_mode || 'github-actions' }}"
+          
+          CONFIG=$(cat << EOF
+          {
+            "mode": "$COORDINATION_MODE",
+            "github_actions": {
+              "run_id": "${{ github.run_id }}",
+              "run_number": "${{ github.run_number }}",
+              "artifact_sharing": true
+            },
+            "nats": {
+              "url": "nats://coordination.taskmaster.local:4222",
+              "subject_prefix": "taskmaster.execution.${{ github.run_id }}"
+            },
+            "etcd": {
+              "endpoints": ["http://coordination.taskmaster.local:2379"],
+              "key_prefix": "/taskmaster/execution/${{ github.run_id }}/"
+            }
+          }
+          EOF
+          )
+          
+          echo "config=$CONFIG" >> $GITHUB_OUTPUT
+          echo "Coordination Configuration:"
+          echo "$CONFIG" | jq '.'
+
+  execute-segments:
+    name: Execute Segment (${{ matrix.segment }})
+    needs: prepare-execution
+    runs-on: ${{ matrix.runner || 'ubuntu-latest' }}
+    timeout-minutes: ${{ matrix.timeout || 60 }}
+    
+    strategy:
+      matrix: ${{ fromJson(needs.prepare-execution.outputs.execution_matrix) }}
+      fail-fast: false
+      max-parallel: ${{ github.event.inputs.parallel_execution == 'true' && 7 || 1 }}
+      
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: Install Nix
+        uses: nixbuild/nix-quick-install-action@v26
+        with:
+          nix_conf: |
+            experimental-features = nix-command flakes
+            substituters = https://cache.nixos.org/ https://nix-community.cachix.org
+            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
+            
+      - name: Setup Segment Environment
+        run: |
+          echo "Setting up ${{ matrix.segment }} segment environment"
+          
+          # Create segment-specific directories
+          mkdir -p .taskmaster/segments/${{ matrix.segment }}/{data,cache,logs,state}
+          mkdir -p .taskmaster/artifacts/${{ github.run_id }}/${{ matrix.segment }}
+          
+          # Set environment variables
+          echo "SEGMENT_NAME=${{ matrix.segment }}" >> $GITHUB_ENV
+          echo "TASK_ID=${{ needs.prepare-execution.outputs.task_id }}" >> $GITHUB_ENV
+          echo "RESOURCE_PROFILE=${{ needs.prepare-execution.outputs.resource_profile }}" >> $GITHUB_ENV
+          echo "ISOLATION_LEVEL=${{ needs.prepare-execution.outputs.isolation_level }}" >> $GITHUB_ENV
+          echo "GITHUB_RUN_ID=${{ github.run_id }}" >> $GITHUB_ENV
+          echo "COORDINATION_CONFIG=${{ needs.prepare-execution.outputs.coordination_config }}" >> $GITHUB_ENV
+          
+          # Log system information
+          echo "System Information:"
+          echo "  CPU: $(nproc) cores"
+          echo "  Memory: $(free -h | grep '^Mem:' | awk '{print $2}')"
+          echo "  Disk: $(df -h / | tail -1 | awk '{print $4}') available"
+          
+      - name: Download Previous Artifacts
+        if: ${{ matrix.segment != 'analysis' }}
+        uses: actions/download-artifact@v4
+        with:
+          pattern: segment-*-results
+          path: .taskmaster/artifacts/${{ github.run_id }}/inputs/
+          merge-multiple: true
+        continue-on-error: true
+        
+      - name: Pre-Execution Validation
+        run: |
+          echo "Validating segment configuration for ${{ matrix.segment }}"
+          
+          # Validate segment configuration exists
+          if ! jq -e ".segments.${{ matrix.segment }}" "$TASK_MASTER_CONFIG" > /dev/null; then
+            echo "ERROR: Segment '${{ matrix.segment }}' not found in configuration"
+            exit 1
+          fi
+          
+          # Extract and validate resource requirements
+          REQUIRED_CPU=$(jq -r ".segments.${{ matrix.segment }}.resources.cpu" "$TASK_MASTER_CONFIG")
+          REQUIRED_MEMORY=$(jq -r ".segments.${{ matrix.segment }}.resources.memory" "$TASK_MASTER_CONFIG")
+          
+          echo "Resource Requirements:"
+          echo "  CPU: $REQUIRED_CPU"
+          echo "  Memory: $REQUIRED_MEMORY"
+          
+          # Validate Nix flake can build segment
+          nix flake check --show-trace
+          
+      - name: Execute Segment
+        id: execute
+        run: |
+          echo "Executing ${{ matrix.segment }} segment with profile ${{ needs.prepare-execution.outputs.resource_profile }}"
+          
+          START_TIME=$(date +%s)
+          
+          # Execute segment using Nix
+          nix run .#nix-segmented-executor -- \
+            --segment "${{ matrix.segment }}" \
+            --profile "${{ needs.prepare-execution.outputs.resource_profile }}" \
+            --isolation "${{ needs.prepare-execution.outputs.isolation_level }}" \
+            --task-id "${{ needs.prepare-execution.outputs.task_id }}" \
+            --config "$TASK_MASTER_CONFIG" \
+            2>&1 | tee .taskmaster/segments/${{ matrix.segment }}/logs/execution.log
+          
+          EXECUTION_STATUS=$?
+          END_TIME=$(date +%s)
+          DURATION=$((END_TIME - START_TIME))
+          
+          echo "status=$EXECUTION_STATUS" >> $GITHUB_OUTPUT
+          echo "duration=$DURATION" >> $GITHUB_OUTPUT
+          echo "start_time=$START_TIME" >> $GITHUB_OUTPUT
+          echo "end_time=$END_TIME" >> $GITHUB_OUTPUT
+          
+          if [ $EXECUTION_STATUS -eq 0 ]; then
+            echo "✅ Segment ${{ matrix.segment }} executed successfully in ${DURATION}s"
+          else
+            echo "❌ Segment ${{ matrix.segment }} failed with status $EXECUTION_STATUS after ${DURATION}s"
+            exit $EXECUTION_STATUS
+          fi
+          
+      - name: Collect Segment Results
+        if: always()
+        run: |
+          echo "Collecting results for ${{ matrix.segment }} segment"
+          
+          # Create results summary
+          cat > .taskmaster/artifacts/${{ github.run_id }}/${{ matrix.segment }}/results.json << EOF
+          {
+            "segment": "${{ matrix.segment }}",
+            "task_id": "${{ needs.prepare-execution.outputs.task_id }}",
+            "status": "${{ steps.execute.outputs.status }}",
+            "duration": ${{ steps.execute.outputs.duration }},
+            "start_time": ${{ steps.execute.outputs.start_time }},
+            "end_time": ${{ steps.execute.outputs.end_time }},
+            "resource_profile": "${{ needs.prepare-execution.outputs.resource_profile }}",
+            "isolation_level": "${{ needs.prepare-execution.outputs.isolation_level }}",
+            "runner": "${{ matrix.runner || 'ubuntu-latest' }}",
+            "github_run_id": "${{ github.run_id }}",
+            "execution_log": "execution.log"
+          }
+          EOF
+          
+          # Copy logs and data
+          cp -r .taskmaster/segments/${{ matrix.segment }}/logs/* .taskmaster/artifacts/${{ github.run_id }}/${{ matrix.segment }}/ || true
+          cp -r .taskmaster/segments/${{ matrix.segment }}/data/* .taskmaster/artifacts/${{ github.run_id }}/${{ matrix.segment }}/ || true
+          
+          echo "Results collected for ${{ matrix.segment }}"
+          
+      - name: Upload Segment Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment-${{ matrix.segment }}-results
+          path: .taskmaster/artifacts/${{ github.run_id }}/${{ matrix.segment }}/
+          retention-days: 30
+          
+      - name: Update Task Status
+        if: success()
+        run: |
+          echo "Updating task status for successful segment execution"
+          
+          # Update subtask status if this completes a specific subtask
+          if [ -n "${{ needs.prepare-execution.outputs.task_id }}" ] && [ "${{ needs.prepare-execution.outputs.task_id }}" != "auto" ]; then
+            task-master update-subtask \
+              --id="${{ needs.prepare-execution.outputs.task_id }}" \
+              --prompt="Segment ${{ matrix.segment }} completed successfully in ${{ steps.execute.outputs.duration }}s using ${{ needs.prepare-execution.outputs.resource_profile }} profile"
+          fi
+
+  aggregate-results:
+    name: Aggregate Execution Results
+    needs: [prepare-execution, execute-segments]
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: segment-*-results
+          path: .taskmaster/artifacts/${{ github.run_id }}/
+          merge-multiple: true
+          
+      - name: Aggregate Results
+        run: |
+          echo "Aggregating results from all segments"
+          
+          mkdir -p .taskmaster/reports/${{ github.run_id }}
+          
+          # Combine all segment results
+          SEGMENTS=()
+          TOTAL_DURATION=0
+          SUCCESS_COUNT=0
+          FAILURE_COUNT=0
+          
+          for result_file in .taskmaster/artifacts/${{ github.run_id }}/*/results.json; do
+            if [ -f "$result_file" ]; then
+              SEGMENT=$(jq -r '.segment' "$result_file")
+              STATUS=$(jq -r '.status' "$result_file")
+              DURATION=$(jq -r '.duration' "$result_file")
+              
+              SEGMENTS+=("$SEGMENT")
+              TOTAL_DURATION=$((TOTAL_DURATION + DURATION))
+              
+              if [ "$STATUS" = "0" ]; then
+                SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
+              else
+                FAILURE_COUNT=$((FAILURE_COUNT + 1))
+              fi
+              
+              echo "  $SEGMENT: $([ "$STATUS" = "0" ] && echo "✅ SUCCESS" || echo "❌ FAILED") (${DURATION}s)"
+            fi
+          done
+          
+          # Create aggregated report
+          cat > .taskmaster/reports/${{ github.run_id }}/execution-summary.json << EOF
+          {
+            "execution_id": "${{ github.run_id }}",
+            "task_id": "${{ needs.prepare-execution.outputs.task_id }}",
+            "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "segments_executed": $(printf '%s\n' "${SEGMENTS[@]}" | jq -R . | jq -s .),
+            "total_segments": ${#SEGMENTS[@]},
+            "successful_segments": $SUCCESS_COUNT,
+            "failed_segments": $FAILURE_COUNT,
+            "total_duration": $TOTAL_DURATION,
+            "resource_profile": "${{ needs.prepare-execution.outputs.resource_profile }}",
+            "isolation_level": "${{ needs.prepare-execution.outputs.isolation_level }}",
+            "coordination_mode": "$(echo '${{ needs.prepare-execution.outputs.coordination_config }}' | jq -r '.mode')"
+          }
+          EOF
+          
+          echo "Execution Summary:"
+          cat .taskmaster/reports/${{ github.run_id }}/execution-summary.json | jq '.'
+          
+          # Update overall task status
+          if [ $FAILURE_COUNT -eq 0 ] && [ -n "${{ needs.prepare-execution.outputs.task_id }}" ] && [ "${{ needs.prepare-execution.outputs.task_id }}" != "auto" ]; then
+            echo "All segments completed successfully, marking task as done"
+            task-master set-status --id="${{ needs.prepare-execution.outputs.task_id }}" --status=done
+          elif [ $FAILURE_COUNT -gt 0 ]; then
+            echo "Some segments failed, updating task with failure information"
+            task-master update-subtask \
+              --id="${{ needs.prepare-execution.outputs.task_id }}" \
+              --prompt="Segmented execution partially failed: $SUCCESS_COUNT successful, $FAILURE_COUNT failed"
+          fi
+          
+      - name: Upload Execution Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: execution-summary-${{ github.run_id }}
+          path: .taskmaster/reports/${{ github.run_id }}/
+          retention-days: 90
+
+  trigger-next-iteration:
+    name: Trigger Next Iteration
+    needs: [prepare-execution, aggregate-results]
+    runs-on: ubuntu-latest
+    if: success() && github.event_name == 'schedule'
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: Determine Next Task
+        id: next-task
+        run: |
+          NEXT_TASK=$(task-master next --format=json | jq -r '.id // empty')
+          
+          if [ -n "$NEXT_TASK" ]; then
+            echo "next_task_id=$NEXT_TASK" >> $GITHUB_OUTPUT
+            echo "has_next_task=true" >> $GITHUB_OUTPUT
+            echo "Next task found: $NEXT_TASK"
+          else
+            echo "has_next_task=false" >> $GITHUB_OUTPUT
+            echo "No more tasks available"
+          fi
+          
+      - name: Trigger Next Execution
+        if: steps.next-task.outputs.has_next_task == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'nix-segmented-execution.yml',
+              ref: 'main',
+              inputs: {
+                task_id: '${{ steps.next-task.outputs.next_task_id }}',
+                segments: 'analysis,validation,optimization',
+                resource_profile: 'medium',
+                isolation_level: 'moderate',
+                parallel_execution: 'true'
+              }
+            });
+            
+            console.log('Triggered next iteration for task: ${{ steps.next-task.outputs.next_task_id }}');

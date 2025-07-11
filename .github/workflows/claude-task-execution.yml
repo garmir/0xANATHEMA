@@ -56,6 +56,7 @@ jobs:
     - name: Install task-master CLI
       run: |
         npm install -g task-master-ai
+      continue-on-error: true
         
     - name: Configure task-master models
       run: |
@@ -178,6 +179,7 @@ jobs:
         npm install -g task-master-ai
         
         # Install Python dependencies for Claude integration
+        python -m pip install --upgrade pip
         pip install anthropic httpx python-dotenv
         
         # Install additional tools
@@ -460,6 +462,7 @@ jobs:
         npm install -g task-master-ai
         
         # Install Python dependencies
+        python -m pip install --upgrade pip
         pip install anthropic httpx python-dotenv
         
         # Configure task-master

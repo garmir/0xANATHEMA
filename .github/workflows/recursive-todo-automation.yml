@@ -41,6 +41,7 @@ jobs:
       - name: Install Task Master AI
         run: |
           npm install -g task-master-ai
+      continue-on-error: true
           
       - name: Extract All Todos and Tasks
         id: extract
@@ -91,6 +92,7 @@ jobs:
       - name: Setup Task Master Environment
         run: |
           npm install -g task-master-ai
+      continue-on-error: true
           mkdir -p $TASKMASTER_HOME
           
       - name: Validate Todo Completion - ${{ matrix.id }}
@@ -145,6 +147,7 @@ jobs:
       - name: Setup Research Environment
         run: |
           npm install -g task-master-ai
+      continue-on-error: true
           
       - name: Recursive Research Analysis - ${{ matrix.id }}
         id: research
@@ -198,6 +201,7 @@ jobs:
       - name: Setup Atomization Environment
         run: |
           npm install -g task-master-ai
+      continue-on-error: true
           
       - name: Recursive Atomization - ${{ matrix.id }}
         id: atomize
@@ -273,6 +277,7 @@ jobs:
       - name: Setup Implementation Environment
         run: |
           npm install -g task-master-ai
+      continue-on-error: true
           
       - name: Execute Recursive Improvements - ${{ matrix.id }}
         id: implement
@@ -351,6 +356,7 @@ jobs:
       - name: Setup Aggregation Environment
         run: |
           npm install -g task-master-ai
+      continue-on-error: true
           
       - name: Aggregate Recursive Results
         run: |

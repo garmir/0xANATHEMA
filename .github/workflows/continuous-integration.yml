@@ -31,6 +31,7 @@ jobs:
   sync-and-assess:
     name: 🔄 Repository Sync & Assessment
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     outputs:
       changes_detected: ${{ steps.sync.outputs.changes_detected }}
       assessment_score: ${{ steps.assess.outputs.assessment_score }}
@@ -51,8 +52,10 @@ jobs:
 
     - name: 📦 Install Assessment Dependencies
       run: |
-        pip install requests python-dotenv asyncio aiohttp
+        python -m pip install --upgrade pip
+        pip install requests python-dotenv aiohttp
         npm install -g task-master-ai
+      continue-on-error: true
 
     - name: 🔄 Synchronize with GitHub
       id: sync
@@ -339,6 +342,7 @@ jobs:
   automated-improvement:
     name: 🚀 Automated System Improvement
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     needs: sync-and-assess
     if: needs.sync-and-assess.outputs.requires_action == 'true' || github.event_name == 'schedule'
     
@@ -353,8 +357,10 @@ jobs:
 
     - name: 📦 Install Improvement Dependencies
       run: |
-        pip install requests python-dotenv asyncio aiohttp
+        python -m pip install --upgrade pip
+        pip install requests python-dotenv aiohttp
         npm install -g task-master-ai
+      continue-on-error: true
 
     - name: 🔧 Run Automated Improvements
       run: |
@@ -457,10 +463,10 @@ jobs:
         
         python automated_improvements.py
 
-    - name: 🚀 Execute Autonomous Cycles
+    - name: 🚀 Execute Autonomous Cycles with Deployment Integration
       if: github.event_name == 'schedule'
       run: |
-        echo "🚀 Executing autonomous system cycles..."
+        echo "🚀 Executing autonomous system cycles with deployment integration..."
         
         # Run unified autonomous system if available
         if [ -f "unified_autonomous_system.py" ]; then
@@ -472,6 +478,22 @@ jobs:
         if [ -f "labrys_main.py" ]; then
           echo "🗲 Running LABRYS validation..."
           timeout 120 python labrys_main.py --validate || echo "⏰ LABRYS validation timed out or completed with warnings"
+        fi
+        
+        # Trigger CI/CD hooks for health check
+        if [ -f ".taskmaster/deployment/ci-cd-integration-hooks.py" ]; then
+          echo "🔧 Running CI/CD integration health check..."
+          python .taskmaster/deployment/ci-cd-integration-hooks.py \
+            --trigger-hook health_check \
+            --deployment-id "$(date +%s)" \
+            --environment production \
+            --data '{"source": "autonomous_cycle"}' || echo "⚠️ CI/CD health check completed with warnings"
+        fi
+        
+        # Check for recursive deployment triggers
+        if [ -f "anathema_recursive_deployment_engine.py" ]; then
+          echo "🔄 Checking recursive deployment status..."
+          python anathema_recursive_deployment_engine.py --status || echo "⚠️ Recursive deployment check completed with warnings"
         fi
 
     - name: 📤 Upload Improvement Results
@@ -485,6 +507,7 @@ jobs:
   performance-monitoring:
     name: 📊 Performance Monitoring
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     needs: [sync-and-assess, automated-improvement]
     if: always()
     

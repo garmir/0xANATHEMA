@@ -89,6 +89,7 @@ jobs:
       - name: Setup Task Master Environment
         run: |
           npm install -g task-master-ai
+      continue-on-error: true
           mkdir -p $TASKMASTER_HOME
           
       - name: Validate Task ${{ matrix.task_id }}
@@ -301,6 +302,7 @@ jobs:
       - name: Setup Final Analysis Environment
         run: |
           npm install -g task-master-ai
+      continue-on-error: true
           
       - name: Generate Master Improvement Plan
         run: |

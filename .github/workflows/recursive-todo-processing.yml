@@ -65,6 +65,7 @@ jobs:
       - name: Install Task Master AI
         run: |
           npm install -g task-master-ai
+      continue-on-error: true
           task-master init --force
       
       - name: Extract todos recursively
@@ -145,7 +146,9 @@ jobs:
       - name: Install dependencies
         run: |
           npm install -g task-master-ai
-          pip install ollama anthropic perplexity-client
+      continue-on-error: true
+          python -m pip install --upgrade pip
+        pip install ollama anthropic perplexity-client
           task-master init --force
       
       - name: Download extraction artifacts

@@ -1,0 +1,403 @@
+name: Deployment Strategy Testing
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_environment:
+        description: 'Environment to test deployment strategies'
+        required: true
+        type: choice
+        options:
+        - development
+        - staging
+        default: 'development'
+      strategy_type:
+        description: 'Deployment strategy to test'
+        required: true
+        type: choice
+        options:
+        - incremental
+        - phased
+        - atomic
+        - all
+        default: 'incremental'
+  schedule:
+    # Run strategy tests weekly
+    - cron: '0 2 * * 1'
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+jobs:
+  strategy-validation:
+    name: Deployment Strategy Validation
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.test_environment || 'development' }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyyaml requests python-dotenv psutil
+
+    - name: Create deployment strategy test framework
+      run: |
+        cat > deployment_strategy_tester.py << 'EOF'
+        import json
+        import os
+        import sys
+        import time
+        import subprocess
+        from datetime import datetime
+        from typing import Dict, List, Any
+
+        class DeploymentStrategyTester:
+            def __init__(self, environment: str, strategy_type: str):
+                self.environment = environment
+                self.strategy_type = strategy_type
+                self.test_results = []
+                self.test_id = f"test-{int(time.time())}"
+                
+            def run_all_tests(self):
+                print(f"🧪 Starting deployment strategy tests for {self.strategy_type}")
+                
+                if self.strategy_type == 'all':
+                    strategies = ['incremental', 'phased', 'atomic']
+                else:
+                    strategies = [self.strategy_type]
+                
+                overall_success = True
+                for strategy in strategies:
+                    print(f"\n🔄 Testing {strategy} deployment strategy")
+                    success = self.test_deployment_strategy(strategy)
+                    if not success:
+                        overall_success = False
+                
+                self.generate_test_report(overall_success)
+                return overall_success
+                
+            def test_deployment_strategy(self, strategy: str) -> bool:
+                test_start = datetime.now()
+                
+                try:
+                    # Test deployment execution
+                    deployment_success = self.simulate_deployment(strategy)
+                    
+                    # Test rollback capability
+                    rollback_success = self.test_rollback_capability(strategy)
+                    
+                    # Test failure recovery
+                    recovery_success = self.test_failure_recovery(strategy)
+                    
+                    # Performance validation
+                    performance_score = self.validate_performance(strategy)
+                    
+                    test_result = {
+                        "strategy": strategy,
+                        "test_start": test_start.isoformat(),
+                        "test_duration": (datetime.now() - test_start).total_seconds(),
+                        "deployment_success": deployment_success,
+                        "rollback_success": rollback_success,
+                        "recovery_success": recovery_success,
+                        "performance_score": performance_score,
+                        "overall_success": all([
+                            deployment_success, 
+                            rollback_success, 
+                            recovery_success,
+                            performance_score >= 70
+                        ])
+                    }
+                    
+                    self.test_results.append(test_result)
+                    
+                    if test_result["overall_success"]:
+                        print(f"✅ {strategy} strategy test passed")
+                    else:
+                        print(f"❌ {strategy} strategy test failed")
+                    
+                    return test_result["overall_success"]
+                    
+                except Exception as e:
+                    print(f"❌ {strategy} strategy test error: {e}")
+                    self.test_results.append({
+                        "strategy": strategy,
+                        "test_start": test_start.isoformat(),
+                        "error": str(e),
+                        "overall_success": False
+                    })
+                    return False
+                    
+            def simulate_deployment(self, strategy: str) -> bool:
+                print(f"🚀 Simulating {strategy} deployment")
+                
+                # Simulate different deployment strategies
+                if strategy == 'incremental':
+                    return self.test_incremental_deployment()
+                elif strategy == 'phased':
+                    return self.test_phased_deployment()
+                elif strategy == 'atomic':
+                    return self.test_atomic_deployment()
+                
+                return False
+                
+            def test_incremental_deployment(self) -> bool:
+                print("📈 Testing incremental deployment")
+                
+                # Simulate incremental rollout phases
+                phases = ["5%", "25%", "50%", "100%"]
+                for phase in phases:
+                    print(f"  Rolling out to {phase} of traffic")
+                    time.sleep(1)  # Simulate deployment time
+                    
+                    # Simulate health check
+                    if not self.simulate_health_check():
+                        print(f"  ❌ Health check failed at {phase}")
+                        return False
+                    
+                    print(f"  ✅ {phase} rollout successful")
+                
+                return True
+                
+            def test_phased_deployment(self) -> bool:
+                print("🎯 Testing phased deployment")
+                
+                # Simulate phased deployment with validation gates
+                phases = [
+                    ("Infrastructure", 2),
+                    ("Core Services", 3),
+                    ("Application Layer", 2),
+                    ("Frontend", 1)
+                ]
+                
+                for phase_name, duration in phases:
+                    print(f"  Deploying {phase_name}")
+                    time.sleep(duration)
+                    
+                    if not self.simulate_validation_gate():
+                        print(f"  ❌ Validation gate failed for {phase_name}")
+                        return False
+                    
+                    print(f"  ✅ {phase_name} deployed successfully")
+                
+                return True
+                
+            def test_atomic_deployment(self) -> bool:
+                print("⚡ Testing atomic deployment")
+                
+                # Simulate atomic all-or-nothing deployment
+                print("  Preparing atomic deployment")
+                time.sleep(1)
+                
+                print("  Executing atomic switch")
+                time.sleep(2)
+                
+                if not self.simulate_health_check():
+                    print("  ❌ Post-atomic health check failed")
+                    return False
+                
+                print("  ✅ Atomic deployment successful")
+                return True
+                
+            def test_rollback_capability(self, strategy: str) -> bool:
+                print(f"🔄 Testing rollback capability for {strategy}")
+                
+                # Simulate rollback scenarios
+                rollback_scenarios = ["configuration_error", "performance_degradation", "dependency_failure"]
+                
+                for scenario in rollback_scenarios:
+                    print(f"  Testing rollback for: {scenario}")
+                    
+                    # Simulate rollback execution
+                    rollback_success = self.simulate_rollback(strategy, scenario)
+                    
+                    if not rollback_success:
+                        print(f"  ❌ Rollback failed for {scenario}")
+                        return False
+                    
+                    print(f"  ✅ Rollback successful for {scenario}")
+                
+                return True
+                
+            def test_failure_recovery(self, strategy: str) -> bool:
+                print(f"🛡️ Testing failure recovery for {strategy}")
+                
+                # Test various failure scenarios
+                failure_scenarios = ["network_partition", "resource_exhaustion", "service_crash"]
+                
+                for scenario in failure_scenarios:
+                    print(f"  Testing recovery from: {scenario}")
+                    
+                    recovery_success = self.simulate_failure_recovery(scenario)
+                    
+                    if not recovery_success:
+                        print(f"  ❌ Recovery failed for {scenario}")
+                        return False
+                    
+                    print(f"  ✅ Recovery successful for {scenario}")
+                
+                return True
+                
+            def validate_performance(self, strategy: str) -> int:
+                print(f"📊 Validating performance for {strategy}")
+                
+                # Simulate performance metrics
+                metrics = {
+                    "deployment_time": self.measure_deployment_time(strategy),
+                    "rollback_time": self.measure_rollback_time(strategy),
+                    "downtime": self.measure_downtime(strategy),
+                    "resource_efficiency": self.measure_resource_efficiency(strategy)
+                }
+                
+                # Calculate performance score (0-100)
+                score = min(100, sum(metrics.values()) // len(metrics))
+                print(f"  Performance score: {score}/100")
+                
+                return score
+                
+            def simulate_health_check(self) -> bool:
+                # Simulate health check with 95% success rate
+                import random
+                return random.random() > 0.05
+                
+            def simulate_validation_gate(self) -> bool:
+                # Simulate validation gate with 90% success rate
+                import random
+                return random.random() > 0.10
+                
+            def simulate_rollback(self, strategy: str, scenario: str) -> bool:
+                print(f"    Executing rollback for {scenario}")
+                time.sleep(1)  # Simulate rollback time
+                return True  # Simplified success
+                
+            def simulate_failure_recovery(self, scenario: str) -> bool:
+                print(f"    Recovering from {scenario}")
+                time.sleep(2)  # Simulate recovery time
+                return True  # Simplified success
+                
+            def measure_deployment_time(self, strategy: str) -> int:
+                # Return score based on deployment speed (higher is better)
+                times = {"incremental": 70, "phased": 60, "atomic": 90}
+                return times.get(strategy, 50)
+                
+            def measure_rollback_time(self, strategy: str) -> int:
+                # Return score based on rollback speed (higher is better)
+                times = {"incremental": 60, "phased": 50, "atomic": 95}
+                return times.get(strategy, 50)
+                
+            def measure_downtime(self, strategy: str) -> int:
+                # Return score based on downtime (higher score = less downtime)
+                downtimes = {"incremental": 95, "phased": 85, "atomic": 70}
+                return downtimes.get(strategy, 50)
+                
+            def measure_resource_efficiency(self, strategy: str) -> int:
+                # Return score based on resource usage (higher is better)
+                efficiency = {"incremental": 80, "phased": 75, "atomic": 85}
+                return efficiency.get(strategy, 50)
+                
+            def generate_test_report(self, overall_success: bool):
+                print("\n📋 Generating test report")
+                
+                report = {
+                    "test_id": self.test_id,
+                    "environment": self.environment,
+                    "strategy_type": self.strategy_type,
+                    "test_timestamp": datetime.now().isoformat(),
+                    "overall_success": overall_success,
+                    "test_results": self.test_results,
+                    "summary": self.generate_summary()
+                }
+                
+                os.makedirs(".taskmaster/test-reports", exist_ok=True)
+                with open(f".taskmaster/test-reports/deployment-strategy-{self.test_id}.json", "w") as f:
+                    json.dump(report, f, indent=2)
+                
+                print(f"✅ Test report saved: deployment-strategy-{self.test_id}.json")
+                
+            def generate_summary(self) -> Dict[str, Any]:
+                total_tests = len(self.test_results)
+                passed_tests = sum(1 for result in self.test_results if result.get("overall_success", False))
+                
+                return {
+                    "total_tests": total_tests,
+                    "passed_tests": passed_tests,
+                    "success_rate": (passed_tests / total_tests * 100) if total_tests > 0 else 0,
+                    "recommendations": self.generate_recommendations()
+                }
+                
+            def generate_recommendations(self) -> List[str]:
+                recommendations = []
+                
+                for result in self.test_results:
+                    if not result.get("overall_success", True):
+                        strategy = result.get("strategy", "unknown")
+                        recommendations.append(f"Review {strategy} strategy implementation")
+                
+                if not recommendations:
+                    recommendations.append("All deployment strategies are performing well")
+                
+                return recommendations
+
+        if __name__ == "__main__":
+            environment = os.environ.get("TEST_ENVIRONMENT", "development")
+            strategy_type = os.environ.get("STRATEGY_TYPE", "incremental")
+            
+            tester = DeploymentStrategyTester(environment, strategy_type)
+            success = tester.run_all_tests()
+            
+            sys.exit(0 if success else 1)
+        EOF
+
+    - name: Execute deployment strategy tests
+      env:
+        TEST_ENVIRONMENT: ${{ github.event.inputs.test_environment || 'development' }}
+        STRATEGY_TYPE: ${{ github.event.inputs.strategy_type || 'incremental' }}
+      run: |
+        echo "🧪 Running deployment strategy tests"
+        python deployment_strategy_tester.py
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      with:
+        name: deployment-strategy-test-results-${{ github.run_number }}
+        path: |
+          .taskmaster/test-reports/
+        retention-days: 30
+
+    - name: Create test summary
+      run: |
+        echo "📊 Creating test summary"
+        
+        # Find the latest test report
+        LATEST_REPORT=$(ls -t .taskmaster/test-reports/deployment-strategy-*.json | head -1)
+        
+        if [ -f "$LATEST_REPORT" ]; then
+          echo "## Deployment Strategy Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Extract summary information
+          TOTAL_TESTS=$(cat "$LATEST_REPORT" | python -c "import json, sys; print(json.load(sys.stdin)['summary']['total_tests'])")
+          PASSED_TESTS=$(cat "$LATEST_REPORT" | python -c "import json, sys; print(json.load(sys.stdin)['summary']['passed_tests'])")
+          SUCCESS_RATE=$(cat "$LATEST_REPORT" | python -c "import json, sys; print(json.load(sys.stdin)['summary']['success_rate'])")
+          
+          echo "- **Total Tests:** $TOTAL_TESTS" >> $GITHUB_STEP_SUMMARY
+          echo "- **Passed Tests:** $PASSED_TESTS" >> $GITHUB_STEP_SUMMARY
+          echo "- **Success Rate:** $SUCCESS_RATE%" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "$SUCCESS_RATE" -ge "90" ]; then
+            echo "✅ **Status:** All deployment strategies are performing excellently" >> $GITHUB_STEP_SUMMARY
+          elif [ "$SUCCESS_RATE" -ge "70" ]; then
+            echo "⚠️ **Status:** Some deployment strategies need attention" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **Status:** Deployment strategies require immediate review" >> $GITHUB_STEP_SUMMARY
+          fi
+        fi

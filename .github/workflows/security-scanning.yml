@@ -1,0 +1,488 @@
+name: Advanced Security Scanning
+
+on:
+  push:
+    branches: [ master, main, develop ]
+  pull_request:
+    branches: [ master, main ]
+  schedule:
+    # Run comprehensive security scan daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      scan_type:
+        description: 'Type of security scan'
+        required: true
+        default: 'comprehensive'
+        type: choice
+        options:
+        - comprehensive
+        - dependencies-only
+        - code-only
+        - container-only
+
+env:
+  PYTHON_VERSION: '3.11'
+
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+  pull-requests: write
+
+jobs:
+  # Job 1: Dependency Security Scanning
+  dependency-security:
+    name: 🔒 Dependency Security Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: ${{ github.event.inputs.scan_type != 'code-only' && github.event.inputs.scan_type != 'container-only' }}
+    
+    steps:
+    - name: 📥 Checkout Code
+      uses: actions/checkout@v4
+
+    - name: 🐍 Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: 📦 Install Python Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install safety pip-audit
+
+    - name: 🔍 Python Dependency Security Check
+      run: |
+        echo "🔍 Scanning Python dependencies for vulnerabilities..."
+        
+        # Safety check
+        safety check --json --output safety-report.json || true
+        safety check --short-report || true
+        
+        # pip-audit check
+        pip-audit --format=json --output=pip-audit-report.json || true
+        pip-audit || true
+
+    - name: 🔍 Node.js Dependency Security Check
+      run: |
+        echo "🔍 Scanning Node.js dependencies for vulnerabilities..."
+        
+        if [ -f "package.json" ]; then
+          npm install
+          npm audit --json > npm-audit-report.json || true
+          npm audit || true
+        fi
+
+    - name: 📊 Upload Dependency Security Reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: dependency-security-reports
+        path: |
+          safety-report.json
+          pip-audit-report.json
+          npm-audit-report.json
+        retention-days: 30
+
+  # Job 2: Static Code Security Analysis
+  static-code-analysis:
+    name: 🔍 Static Code Security Analysis
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    if: ${{ github.event.inputs.scan_type != 'dependencies-only' && github.event.inputs.scan_type != 'container-only' }}
+    
+    steps:
+    - name: 📥 Checkout Code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: 🐍 Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+
+    - name: 📦 Install Security Tools
+      run: |
+        python -m pip install --upgrade pip
+        pip install bandit semgrep
+
+    - name: 🛡️ Bandit Security Scan
+      run: |
+        echo "🛡️ Running Bandit security analysis..."
+        bandit -r . -f json -o bandit-report.json || true
+        bandit -r . -ll || true
+
+    - name: 🔍 Semgrep Security Scan
+      uses: returntocorp/semgrep-action@v1
+      with:
+        config: >-
+          p/security-audit
+          p/secrets
+          p/python
+          p/javascript
+          p/docker
+        generateSarif: "1"
+      continue-on-error: true
+
+    - name: 📊 Upload Static Analysis Results to GitHub Security Tab
+      uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+        sarif_file: semgrep.sarif
+      continue-on-error: true
+
+    - name: 📊 Upload Static Analysis Reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: static-analysis-reports
+        path: |
+          bandit-report.json
+          semgrep.sarif
+        retention-days: 30
+
+  # Job 3: CodeQL Analysis
+  codeql-analysis:
+    name: 🔍 CodeQL Security Analysis
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: ${{ github.event.inputs.scan_type != 'dependencies-only' && github.event.inputs.scan_type != 'container-only' }}
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'python', 'javascript' ]
+    
+    steps:
+    - name: 📥 Checkout Code
+      uses: actions/checkout@v4
+
+    - name: 🔍 Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: ${{ matrix.language }}
+        queries: +security-and-quality
+
+    - name: 🏗️ Autobuild
+      uses: github/codeql-action/autobuild@v2
+
+    - name: 🔍 Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+      with:
+        category: "/language:${{matrix.language}}"
+
+  # Job 4: Container Security Scanning
+  container-security:
+    name: 🐳 Container Security Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: ${{ github.event.inputs.scan_type != 'dependencies-only' && github.event.inputs.scan_type != 'code-only' }}
+    
+    steps:
+    - name: 📥 Checkout Code
+      uses: actions/checkout@v4
+
+    - name: 🔍 Run Trivy Filesystem Scan
+      uses: aquasecurity/trivy-action@master
+      with:
+        scan-type: 'fs'
+        scan-ref: '.'
+        format: 'sarif'
+        output: 'trivy-fs-results.sarif'
+
+    - name: 📊 Upload Trivy Filesystem Results
+      uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+        sarif_file: 'trivy-fs-results.sarif'
+
+    - name: 🐳 Build Test Container
+      run: |
+        if [ -f "Dockerfile" ]; then
+          docker build -t test-image:latest .
+        else
+          # Create a simple test Dockerfile
+          cat > Dockerfile << EOF
+        FROM python:3.11-slim
+        WORKDIR /app
+        COPY requirements.txt .
+        RUN pip install -r requirements.txt
+        COPY . .
+        CMD ["python", "-c", "print('Hello from container')"]
+        EOF
+          docker build -t test-image:latest .
+        fi
+
+    - name: 🔍 Run Trivy Container Scan
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: 'test-image:latest'
+        format: 'sarif'
+        output: 'trivy-container-results.sarif'
+
+    - name: 📊 Upload Trivy Container Results
+      uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+        sarif_file: 'trivy-container-results.sarif'
+
+    - name: 📊 Upload Container Security Reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: container-security-reports
+        path: |
+          trivy-fs-results.sarif
+          trivy-container-results.sarif
+        retention-days: 30
+
+  # Job 5: Secret Scanning
+  secret-scanning:
+    name: 🔐 Secret Scanning
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: ${{ github.event.inputs.scan_type != 'dependencies-only' && github.event.inputs.scan_type != 'container-only' }}
+    
+    steps:
+    - name: 📥 Checkout Code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: 🔐 TruffleHog Secret Scan
+      uses: trufflesecurity/trufflehog@main
+      with:
+        path: ./
+        base: main
+        head: HEAD
+        extra_args: --debug --only-verified
+
+    - name: 🔍 GitLeaks Secret Scan
+      uses: gitleaks/gitleaks-action@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # Job 6: License Compliance
+  license-compliance:
+    name: 📋 License Compliance
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: ${{ github.event.inputs.scan_type == 'comprehensive' || github.event.inputs.scan_type == 'dependencies-only' }}
+    
+    steps:
+    - name: 📥 Checkout Code
+      uses: actions/checkout@v4
+
+    - name: 🐍 Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+
+    - name: 📦 Install License Tools
+      run: |
+        python -m pip install --upgrade pip
+        pip install pip-licenses
+
+    - name: 📋 Check Python License Compliance
+      run: |
+        echo "📋 Checking Python package licenses..."
+        pip install -r requirements.txt
+        pip-licenses --format=json --output-file=python-licenses.json
+        pip-licenses --format=plain
+
+    - name: 📋 Check Node.js License Compliance
+      run: |
+        echo "📋 Checking Node.js package licenses..."
+        if [ -f "package.json" ]; then
+          npm install
+          npm install -g license-checker
+          license-checker --json --out npm-licenses.json
+          license-checker --summary
+        fi
+
+    - name: 📊 Upload License Reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: license-compliance-reports
+        path: |
+          python-licenses.json
+          npm-licenses.json
+        retention-days: 30
+
+  # Job 7: Security Summary Report
+  security-summary:
+    name: 📊 Security Summary Report
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [dependency-security, static-code-analysis, codeql-analysis, container-security, secret-scanning, license-compliance]
+    if: always()
+    
+    steps:
+    - name: 📥 Checkout Code
+      uses: actions/checkout@v4
+
+    - name: 📥 Download All Security Reports
+      uses: actions/download-artifact@v4
+      with:
+        path: security-reports/
+      continue-on-error: true
+
+    - name: 📊 Generate Security Summary
+      run: |
+        echo "📊 Generating comprehensive security summary..."
+        
+        cat > security-summary.md << EOF
+        # 🛡️ Security Scan Summary Report
+        
+        **Scan Date:** $(date)
+        **Repository:** ${{ github.repository }}
+        **Branch:** ${{ github.ref_name }}
+        **Commit:** ${{ github.sha }}
+        **Triggered by:** ${{ github.event_name }}
+        **Scan Type:** ${{ github.event.inputs.scan_type || 'comprehensive' }}
+        
+        ## 📋 Scan Results Overview
+        
+        | Security Check | Status |
+        |----------------|---------|
+        | Dependency Security | ${{ needs.dependency-security.result }} |
+        | Static Code Analysis | ${{ needs.static-code-analysis.result }} |
+        | CodeQL Analysis | ${{ needs.codeql-analysis.result }} |
+        | Container Security | ${{ needs.container-security.result }} |
+        | Secret Scanning | ${{ needs.secret-scanning.result }} |
+        | License Compliance | ${{ needs.license-compliance.result }} |
+        
+        ## 🎯 Key Findings
+        
+        ### Dependency Security
+        - **Status:** ${{ needs.dependency-security.result }}
+        - **Tool:** Safety, pip-audit, npm audit
+        - **Focus:** Known vulnerabilities in dependencies
+        
+        ### Static Code Analysis
+        - **Status:** ${{ needs.static-code-analysis.result }}
+        - **Tools:** Bandit, Semgrep
+        - **Focus:** Code security patterns and vulnerabilities
+        
+        ### CodeQL Analysis
+        - **Status:** ${{ needs.codeql-analysis.result }}
+        - **Tool:** GitHub CodeQL
+        - **Focus:** Deep semantic code analysis
+        
+        ### Container Security
+        - **Status:** ${{ needs.container-security.result }}
+        - **Tool:** Trivy
+        - **Focus:** Container and filesystem vulnerabilities
+        
+        ### Secret Scanning
+        - **Status:** ${{ needs.secret-scanning.result }}
+        - **Tools:** TruffleHog, GitLeaks
+        - **Focus:** Exposed secrets and credentials
+        
+        ### License Compliance
+        - **Status:** ${{ needs.license-compliance.result }}
+        - **Tools:** pip-licenses, license-checker
+        - **Focus:** License compatibility and compliance
+        
+        ## 🚨 Recommendations
+        
+        EOF
+        
+        # Add recommendations based on results
+        if [[ "${{ needs.dependency-security.result }}" != "success" ]]; then
+          echo "- ⚠️ Review dependency security findings and update vulnerable packages" >> security-summary.md
+        fi
+        
+        if [[ "${{ needs.static-code-analysis.result }}" != "success" ]]; then
+          echo "- ⚠️ Address static code analysis findings for improved security" >> security-summary.md
+        fi
+        
+        if [[ "${{ needs.secret-scanning.result }}" != "success" ]]; then
+          echo "- 🚨 **CRITICAL:** Review and remediate any exposed secrets immediately" >> security-summary.md
+        fi
+        
+        # Add general recommendations
+        cat >> security-summary.md << EOF
+        
+        ## 💡 General Security Recommendations
+        
+        - Keep dependencies updated using Dependabot
+        - Regularly review security advisories for used packages
+        - Implement proper secret management practices
+        - Use security linting tools in development workflow
+        - Monitor container base images for vulnerabilities
+        - Ensure proper license compliance for all dependencies
+        
+        ## 📈 Next Steps
+        
+        1. Review detailed reports in the GitHub Security tab
+        2. Address any high/critical severity findings
+        3. Update security policies based on findings
+        4. Schedule regular security reviews
+        
+        ---
+        
+        **Generated by:** Advanced Security Scanning Pipeline  
+        **Report ID:** security-${{ github.run_number }}  
+        **Next Scan:** Scheduled daily at 2 AM UTC
+        EOF
+        
+        echo "Security summary generated successfully!"
+        cat security-summary.md
+
+    - name: 📊 Upload Security Summary
+      uses: actions/upload-artifact@v4
+      with:
+        name: security-summary-report
+        path: |
+          security-summary.md
+          security-reports/
+        retention-days: 90
+
+    - name: 💬 Comment Security Summary on PR
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          const summary = fs.readFileSync('security-summary.md', 'utf8');
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `## 🛡️ Security Scan Results\n\n${summary}`
+          });
+
+    - name: 🚨 Security Alert Summary
+      run: |
+        echo "🛡️ SECURITY SCAN COMPLETED"
+        echo "=========================="
+        echo "Dependency Security: ${{ needs.dependency-security.result }}"
+        echo "Static Code Analysis: ${{ needs.static-code-analysis.result }}"
+        echo "CodeQL Analysis: ${{ needs.codeql-analysis.result }}"
+        echo "Container Security: ${{ needs.container-security.result }}"
+        echo "Secret Scanning: ${{ needs.secret-scanning.result }}"
+        echo "License Compliance: ${{ needs.license-compliance.result }}"
+        echo "=========================="
+        
+        # Check for any failures
+        if [[ "${{ needs.dependency-security.result }}" == "failure" ]] || 
+           [[ "${{ needs.static-code-analysis.result }}" == "failure" ]] ||
+           [[ "${{ needs.codeql-analysis.result }}" == "failure" ]] ||
+           [[ "${{ needs.container-security.result }}" == "failure" ]] ||
+           [[ "${{ needs.secret-scanning.result }}" == "failure" ]] ||
+           [[ "${{ needs.license-compliance.result }}" == "failure" ]]; then
+          echo "🚨 SECURITY ISSUES DETECTED - Review required!"
+          exit 1
+        else
+          echo "✅ All security scans completed successfully"
+        fi

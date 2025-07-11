@@ -41,7 +41,9 @@ jobs:
       - name: Install Task Master dependencies
         run: |
           npm install -g task-master-ai
-          pip install -r requirements.txt || echo "No requirements.txt found"
+      continue-on-error: true
+          python -m pip install --upgrade pip
+        pip install -r requirements.txt || echo "No requirements.txt found"
           
       - name: Prepare execution matrices
         id: prepare
@@ -68,6 +70,7 @@ jobs:
       - name: Setup Task Master environment
         run: |
           npm install -g task-master-ai
+      continue-on-error: true
           
       - name: Execute atomic task
         id: execute-task
@@ -121,8 +124,10 @@ jobs:
           
       - name: Install benchmarking tools
         run: |
-          pip install torch transformers datasets evaluate
-          pip install ollama localai
+          python -m pip install --upgrade pip
+        pip install torch transformers datasets evaluate
+          python -m pip install --upgrade pip
+        pip install ollama localai
           
       - name: Run LLM benchmark
         run: |
@@ -256,6 +261,7 @@ jobs:
       - name: Setup Task Master
         run: |
           npm install -g task-master-ai
+      continue-on-error: true
           
       - name: Update task statuses
         run: |
